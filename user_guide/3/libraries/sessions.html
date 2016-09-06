@@ -1,0 +1,1922 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>セッションライブラリ &mdash; CodeIgniter 3.2.0-dev ドキュメント</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/ci-icon.ico"/>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="CodeIgniter 3.2.0-dev ドキュメント" href="../index.html"/>
+        <link rel="up" title="ライブラリ" href="index.html"/>
+        <link rel="next" title="HTML テーブルクラス" href="table.html"/>
+        <link rel="prev" title="セキュリティクラス" href="security.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div id="nav">
+  <div id="nav_inner">
+    
+    
+    
+      <div id="pulldown-menu" class="ciNav">
+        <ul>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../installation/downloads.html">CodeIgniter のダウンロード</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/index.html">インストール方法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">以前のバージョンからのアップグレード</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/troubleshooting.html">トラブルシューティング</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview/index.html">CodeIgniter 概要</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../overview/getting_started.html">CodeIgniter をはじめよう</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/at_a_glance.html">CodeIgniter の簡単な紹介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/features.html">CodeIgniter の機能</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/appflow.html">アプリケーションフローチャート</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/mvc.html">Model-View-Controller</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/goals.html">設計とアーキテクチャのゴール</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">チュートリアル</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/static_pages.html">静的なページ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/news_section.html">ニュースセクション</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/create_news_items.html">ニュース記事を作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/conclusion.html">おわりに</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contributing/index.html">CodeIgniter への貢献</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/index.html">CodeIgniter のドキュメントを書く</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DCO.html">Developer&#8217;s Certificate of Origin 1.1</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../general/index.html">一般的なトピック</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../general/urls.html">CodeIgniter の URL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/controllers.html">コントローラ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/reserved_names.html">予約語</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/views.html">ビュー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/models.html">モデル</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/helpers.html">ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/libraries.html">CodeIgniter のライブラリの利用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/creating_libraries.html">ライブラリの作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/drivers.html">CodeIgniter のドライバを使う</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/creating_drivers.html">ドライバの作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/core_classes.html">コアシステムクラスの作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/ancillary_classes.html">補助的なクラス作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/hooks.html">フック――フレームワークコアの拡張</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/autoloader.html">リソースのオートロード</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/common_functions.html">共通関数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/compatibility_functions.html">互換関数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/routing.html">URI ルーティング</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/errors.html">エラー処理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/caching.html">キャッシュ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/profiling.html">アプリケーションのプロファイリング</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/cli.html">CLI で実行する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/managing_apps.html">アプリケーションの管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/environments.html">複数環境への対応</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/alternative_php.html">ビューファイルでの PHP の代替構文</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/security.html">セキュリティ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/styleguide.html">PHP スタイルガイド</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">ライブラリ</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="benchmark.html">ベンチマーククラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="caching.html">キャッシングドライバ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="calendar.html">カレンダークラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cart.html">ショッピングカートクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html">設定クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="email.html">Email クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encrypt.html">Encrypt クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encryption.html">Encryption ライブラリ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_uploading.html">ファイルアップロードクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="form_validation.html">フォームバリデーション（検証）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ftp.html">FTP クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="image_lib.html">画像操作クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="input.html">入力クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javascript.html">JavaScript クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="language.html">言語クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loader.html">ローダ（読み込み処理）クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="migration.html">マイグレーションクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="output.html">出力クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pagination.html">ページネーションクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="parser.html">テンプレートパーサクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security.html">セキュリティクラス</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">セッションライブラリ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="table.html">HTML テーブルクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trackback.html">トラックバッククラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="typography.html">タイポグラフィークラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unit_testing.html">ユニットテストクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="uri.html">URI クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_agent.html">ユーザエージェントクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xmlrpc.html">XML-RPC および XML-RPC サーバクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zip.html">Zip 圧縮クラス</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../database/index.html">データベースリファレンス</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../database/examples.html">クイックスタート: 使用例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/configuration.html">データベース設定</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/connecting.html">データベースへの接続</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/queries.html">クエリの実行</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/results.html">クエリ結果の生成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/helpers.html">クエリヘルパー関数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/query_builder.html">クエリビルダクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/transactions.html">トランザクション</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/metadata.html">メタデータの取得</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/call_function.html">カスタム関数呼び出し</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/caching.html">クエリキャッシュ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/forge.html">データベースフォージを使用したデータベース操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/utilities.html">データベースユーティリティクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/db_driver_reference.html">データベースドライバリファレンス</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../helpers/index.html">ヘルパー</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/array_helper.html">配列ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/captcha_helper.html">キャプチャ ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/cookie_helper.html">Cookie ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/date_helper.html">日付ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/directory_helper.html">ディレクトリヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/download_helper.html">ダウンロードヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/email_helper.html">Email ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/file_helper.html">ファイルヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/form_helper.html">フォームヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/html_helper.html">HTML ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/inflector_helper.html">語形変換ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/language_helper.html">言語ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/number_helper.html">数字ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/path_helper.html">パスヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/security_helper.html">セキュリティヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/smiley_helper.html">スマイリーヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/string_helper.html">文字列ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/text_helper.html">テキストヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/typography_helper.html">タイポグラフィーヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/url_helper.html">URL ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/xml_helper.html">XML ヘルパー</a></li>
+</ul>
+</li>
+</ul>
+
+      </div>
+    
+      
+  </div>
+</div>
+<div id="nav2">
+  <a href="#" id="openToc">
+    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAgAAZABkAAD/7AARRHVja3kAAQAEAAAARgAA/+4ADkFkb2JlAGTAAAAAAf/bAIQABAMDAwMDBAMDBAYEAwQGBwUEBAUHCAYGBwYGCAoICQkJCQgKCgwMDAwMCgwMDQ0MDBERERERFBQUFBQUFBQUFAEEBQUIBwgPCgoPFA4ODhQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQU/8AAEQgAKwCaAwERAAIRAQMRAf/EAHsAAQAABwEBAAAAAAAAAAAAAAABAwQFBgcIAgkBAQAAAAAAAAAAAAAAAAAAAAAQAAEDAwICBwYEAgsAAAAAAAIBAwQAEQUSBiEHkROTVNQWGDFBUVIUCHEiMtOUFWGBobHRQlMkZIRVEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDSC+ygkOOaUoKigUCgUCgUCgUCgUCgUCgUCgkuGguIP9FBMFb0Hqg7We+3jlmIqqYFf4ub+/QYlnOR/LqIBKGFUbf8qWv971BytQXXE7Y3Lnm3HsFhp2TaZJAdchRXpIgSpdEJWxJEW3xoKV7F5OMy7JkQn2o7D6w33XGjEAkoiqrJEqIiOIiKuhePCgqp22dyYyS3CyWHnQ5joG61HkRnmnTbaFSMhExRVQRRVJU9iUHjE7ez+fJ0MFipmUNhBV8YUd2SoIV9KkjQla9ltegttBdPLW4/qocL+UTfrMiHW4+P9M71shuyrqaHTcxsl7jegpsji8nh5ZwMvDfgTm0RTjSmjYdFCS6KoOIipdFunCgmNYTMv457MMY6U7iI6oMieDDhRm1VbIhuoOkbqtuK0Hpzb+eZcYZexUxt6UyUqK2cd0SdjtgrhOgijcgERUlJOCIl6CpgbP3blRI8XgMjNARAyKNDfeRBdFDBVUAXgQrqH4pxoJTu2NysY97LP4ac1io5q1InHFeGO24LnVKJuKOkSQ/yKir+rh7aCLG1dzypZQI2FnvTgccYOM3FeN0XWERXAUEFVQgQkUktdLpegm+Td3/Xli/L+S/mYNJIOF9G/wBeLKrZHFb0akG6W1WtQWSg3Dyg5e7V3fipE3O4/wCrktyzYA+ufas2LbZIlmnAT2kvuoN1wft95augilglX/tzP3qCu9O3LL/wV/i5v79BvmTADq14UGu91467Z6U9y0HzH/ncj/U/sT/CgynZG7I2NezpZGUjIycJkYkZSG+uQ81pbBNKLxJfjwoMqZ3/ALYHl35AJ7/cuwHcu5k7r1Q5pHetBjquqVVJWGxj9Zrtcl/Ggy3dHMvauR3HFZj5nHNxSyW5JISYDMoIwx8tFIGHZhPNaykGapr6rUAiicEoMG21lMRj8buPAz8xhJrr7uOeiPTCyAwXUaGR1mgozbTusOsFLEiJ7fbQa/h7gcjy2H3V6xppwDNtUSxCJIqp7valBuWVzJ22xuCROXNNZiJkMtms0DbjUkAZjzoDrTMd9dDRI44ZC2YsrYdKWP2WDT2S3N9dNdlRYrGMYc06IURXSYb0igrpWS485xVNS6nF4rwslkoMwnbpgZLB7bmt5uMweAhDEl4B5uSLzzqTnnyVpW2jaJHRMSIjdDiiotvy3DOE5rYTEbkl5yFn28k7JyG4c7AU2HtLH1uKfaiMPI40CdYbpNtmLdwTSn5rewLNld+7TLdeal4WarWBkbVKBjgdElMJJwAAY5fl4kB3b1fp4XvagsGS3FjJfLzDNtS8aeXx7LzT7TyzByQE5PccRGRC0ZRUDRV6y62vbjagzLmJzS2vuPK43JY6aP1TW6Jz+RIWyFtyC06y3EkiiinAo7YCqfq1AqqnGgsOH3lhZO8d1pmcpB8j5XIm9OYlBJSQ/FSS4427DKO0RC8AlcEMhFdViRR1WDWR5t3WXVuL1d106kG9vdeye2g60+1FDyW0shIcXVpyroXt8I8dfd+NB1vioAdWnD3UF1+gD4UFc6CEKpagxXN43rwJLUHz7yX2c8zokt9uHlsPIhA4aRnnHJTLptIS6CNsY7iASpxUUMkReGpfbQW0vtN5pitvrsN28rwtBD0nc0+/Yft5XhaB6TuaXfsP28rwtA9J3NPv2H7eV4Wgek7mn37D9vK8LQPSdzT79h+3leFoHpO5pd+w/byvC0D0nc0u/Yft5XhaB6TuaXfsP28rwtA9J3NLv2H7eV4Wgek7ml37D9vK8LQPSdzS79h+3leFoHpO5p9+w/byvC0E9r7Reazy2HIYVPxkS/CUHVn26cosxyv2g7h89LYmZSXOenvLEQ1YaQ222RATcQCP8rSGqqA8S02W2pQ6FhMoAIlqCtsnwoCpdKClejI4i3Sgtb+GBxVuNBSFt1pV/RQefLjPyUDy4z8lA8uM/JQPLjPyUDy4z8lA8uM/JQPLjPyUDy4z8lA8uM/JQPLjPyUDy4z8lA8utJ/koJ7WCbBU/LQXOPAFq1koK8B0pag90CggtBBf6qB0UDooHRQOigdFA6KB0UDooHRQOigdFA6KB0UDooI0EaBQf//Z" title="Toggle Table of Contents" alt="Toggle Table of Contents" />
+  </a>
+</div>
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+          <a href="../index.html" class="fa fa-home"> CodeIgniter</a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../installation/downloads.html">CodeIgniter のダウンロード</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/index.html">インストール方法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">以前のバージョンからのアップグレード</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/troubleshooting.html">トラブルシューティング</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview/index.html">CodeIgniter 概要</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../overview/getting_started.html">CodeIgniter をはじめよう</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/at_a_glance.html">CodeIgniter の簡単な紹介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/features.html">CodeIgniter の機能</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/appflow.html">アプリケーションフローチャート</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/mvc.html">Model-View-Controller</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/goals.html">設計とアーキテクチャのゴール</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">チュートリアル</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/static_pages.html">静的なページ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/news_section.html">ニュースセクション</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/create_news_items.html">ニュース記事を作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/conclusion.html">おわりに</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contributing/index.html">CodeIgniter への貢献</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/index.html">CodeIgniter のドキュメントを書く</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DCO.html">Developer&#8217;s Certificate of Origin 1.1</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../general/index.html">一般的なトピック</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../general/urls.html">CodeIgniter の URL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/controllers.html">コントローラ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/reserved_names.html">予約語</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/views.html">ビュー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/models.html">モデル</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/helpers.html">ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/libraries.html">CodeIgniter のライブラリの利用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/creating_libraries.html">ライブラリの作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/drivers.html">CodeIgniter のドライバを使う</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/creating_drivers.html">ドライバの作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/core_classes.html">コアシステムクラスの作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/ancillary_classes.html">補助的なクラス作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/hooks.html">フック――フレームワークコアの拡張</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/autoloader.html">リソースのオートロード</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/common_functions.html">共通関数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/compatibility_functions.html">互換関数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/routing.html">URI ルーティング</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/errors.html">エラー処理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/caching.html">キャッシュ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/profiling.html">アプリケーションのプロファイリング</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/cli.html">CLI で実行する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/managing_apps.html">アプリケーションの管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/environments.html">複数環境への対応</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/alternative_php.html">ビューファイルでの PHP の代替構文</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/security.html">セキュリティ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/styleguide.html">PHP スタイルガイド</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">ライブラリ</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="benchmark.html">ベンチマーククラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="caching.html">キャッシングドライバ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="calendar.html">カレンダークラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cart.html">ショッピングカートクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html">設定クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="email.html">Email クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encrypt.html">Encrypt クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encryption.html">Encryption ライブラリ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_uploading.html">ファイルアップロードクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="form_validation.html">フォームバリデーション（検証）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ftp.html">FTP クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="image_lib.html">画像操作クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="input.html">入力クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javascript.html">JavaScript クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="language.html">言語クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loader.html">ローダ（読み込み処理）クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="migration.html">マイグレーションクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="output.html">出力クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pagination.html">ページネーションクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="parser.html">テンプレートパーサクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security.html">セキュリティクラス</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">セッションライブラリ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="table.html">HTML テーブルクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trackback.html">トラックバッククラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="typography.html">タイポグラフィークラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unit_testing.html">ユニットテストクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="uri.html">URI クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_agent.html">ユーザエージェントクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xmlrpc.html">XML-RPC および XML-RPC サーバクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zip.html">Zip 圧縮クラス</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../database/index.html">データベースリファレンス</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../database/examples.html">クイックスタート: 使用例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/configuration.html">データベース設定</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/connecting.html">データベースへの接続</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/queries.html">クエリの実行</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/results.html">クエリ結果の生成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/helpers.html">クエリヘルパー関数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/query_builder.html">クエリビルダクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/transactions.html">トランザクション</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/metadata.html">メタデータの取得</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/call_function.html">カスタム関数呼び出し</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/caching.html">クエリキャッシュ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/forge.html">データベースフォージを使用したデータベース操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/utilities.html">データベースユーティリティクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/db_driver_reference.html">データベースドライバリファレンス</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../helpers/index.html">ヘルパー</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/array_helper.html">配列ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/captcha_helper.html">キャプチャ ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/cookie_helper.html">Cookie ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/date_helper.html">日付ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/directory_helper.html">ディレクトリヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/download_helper.html">ダウンロードヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/email_helper.html">Email ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/file_helper.html">ファイルヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/form_helper.html">フォームヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/html_helper.html">HTML ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/inflector_helper.html">語形変換ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/language_helper.html">言語ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/number_helper.html">数字ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/path_helper.html">パスヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/security_helper.html">セキュリティヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/smiley_helper.html">スマイリーヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/string_helper.html">文字列ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/text_helper.html">テキストヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/typography_helper.html">タイポグラフィーヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/url_helper.html">URL ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/xml_helper.html">XML ヘルパー</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">CodeIgniter</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+        <li><a href="index.html">ライブラリ</a> &raquo;</li>
+      
+    <li>セッションライブラリ</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+    <div style="float:right;margin-left:5px;" id="closeMe">
+      <img title="Classic Layout" alt="classic layout" src="data:image/gif;base64,R0lGODlhFAAUAJEAAAAAADMzM////wAAACH5BAUUAAIALAAAAAAUABQAAAImlI+py+0PU5gRBRDM3DxbWoXis42X13USOLauUIqnlsaH/eY6UwAAOw==" />
+    </div>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="id1">
+<h1>セッションライブラリ<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>セッションクラスは、サイトを見ている間のユーザの「状態」を維持し、
+ユーザのアクティビティの追跡を可能にします。</p>
+<p>CodeIgniter にはいくつかのセッションストレージドライバが付属しています:</p>
+<blockquote>
+<div><ul class="simple">
+<li>files（デフォルト; ファイルシステムベース）</li>
+<li>database</li>
+<li>redis</li>
+<li>memcached</li>
+</ul>
+</div></blockquote>
+<p>また、あなた自身のカスタムセッションドライバを作ることができます。
+セッションクラスの機能の良さを利用ながら、ほかの種類のストレージをベースにして、
+です。</p>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#id2" id="id24">セッションクラスの使い方</a><ul>
+<li><a class="reference internal" href="#id3" id="id25">セッションの初期化</a></li>
+<li><a class="reference internal" href="#id4" id="id26">セッションはどのように動作しますか？</a><ul>
+<li><a class="reference internal" href="#id5" id="id27">並行性に関する注意</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id6" id="id28">セッションデータとは何か？</a></li>
+<li><a class="reference internal" href="#id7" id="id29">セッションデータの取得</a></li>
+<li><a class="reference internal" href="#id8" id="id30">セッションデータを追加する</a></li>
+<li><a class="reference internal" href="#id9" id="id31">セッションデータを削除する</a></li>
+<li><a class="reference internal" href="#id10" id="id32">フラッシュデータ</a></li>
+<li><a class="reference internal" href="#id11" id="id33">テンプデータ</a></li>
+<li><a class="reference internal" href="#id12" id="id34">セッションの破棄</a></li>
+<li><a class="reference internal" href="#id13" id="id35">セッションメタデータへのアクセス</a></li>
+<li><a class="reference internal" href="#id14" id="id36">セッションの設定</a></li>
+<li><a class="reference internal" href="#id15" id="id37">セッションドライバ</a><ul>
+<li><a class="reference internal" href="#id16" id="id38">ファイルドライバ</a><ul>
+<li><a class="reference internal" href="#id17" id="id39">ボーナスヒント</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id18" id="id40">データベースドライバ</a></li>
+<li><a class="reference internal" href="#redis" id="id41">Redis ドライバ</a></li>
+<li><a class="reference internal" href="#memcached" id="id42">Memcached ドライバ</a><ul>
+<li><a class="reference internal" href="#id20" id="id43">ボーナスヒント</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id21" id="id44">カスタムドライバ</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id22" id="id45">クラスリファレンス</a></li>
+</ul>
+</div>
+<div class="custom-index container"></div><div class="section" id="id2">
+<h2><a class="toc-backref" href="#id24">セッションクラスの使い方</a><a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="id3">
+<h3><a class="toc-backref" href="#id25">セッションの初期化</a><a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>セッションは通常、各ページをまたいでグローバルに実行されます。
+そのため、セッションクラスは次のどちらかによって初期化されるべきです、
+<a class="reference internal" href="../general/controllers.html"><span class="doc">コントローラ</span></a> のコンストラクタ、
+またはシステムによる <a class="reference internal" href="../general/autoloader.html"><span class="doc">オートロード</span></a> によってです。
+たいていの場合、セッションクラスはバックグラウンドで黙って実行されます。
+そして明示的なクラスの初期化は読み込み、作成、更新が必要な時にだけ
+行えばよいです。</p>
+<p>セッションクラスの初期化をコントローラのコンストラクタで手動で
+行うには、 <code class="docutils literal"><span class="pre">$this-&gt;load-&gt;library()</span></code> メソッドを使用します:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;load-&gt;library(&#39;session&#39;);
+</pre></div>
+</div>
+<p>いちどロードされれば、セッションライブラリのオブジェクトは次のように利用することができます:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;session
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="first admonition-title">重要</p>
+<p class="last">変数 <code class="docutils literal"><span class="pre">$this-&gt;load</span></code> の <a class="reference internal" href="loader.html"><span class="doc">ローダクラス</span></a> は CodeIgniter の基本となる
+コントローラによってインスタンス化されるため、コントローラのコンストラクタでの
+<code class="docutils literal"><span class="pre">parent::__construct()</span></code> の呼び出しはライブラリをロードしようとする前に
+行ってください。</p>
+</div>
+</div>
+<div class="section" id="id4">
+<h3><a class="toc-backref" href="#id26">セッションはどのように動作しますか？</a><a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>ページが読み込まれると、セッションクラスは有効なセッションクッキーが
+ユーザのブラウザから送信されたかどうかをチェックします。
+セッションクッキーが存在 <strong>しない</strong> 場合（またはサーバに保存されているものと一致しないか、
+有効期限が切れている場合は）、新しいセッションが作成され、保存されます。</p>
+<p>有効なセッションが存在する場合、その情報が更新されます。
+更新するごとにセッション ID を再生成されるように設定することもできます。</p>
+<p>いちど初期化されたら、セッションクラスは自動的に実行されるということを
+理解することは重要なことです。上記の動作をさせるためにあなたが何かをする
+必要はありません。以降に書かれているように、セッションデータを使いながら
+あなたのやりたい処理を書くことができますが、セッションの読み込み、書き込み、
+更新のプロセスは自動的に行われます。</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">CLIにおいては、セッションライブラリは自動的に停止します。
+セッションはもっぱら HTTP プロトコルにもとづく概念だからです。</p>
+</div>
+<div class="section" id="id5">
+<h4><a class="toc-backref" href="#id27">並行性に関する注意</a><a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>AJAX を多用しているウェブサイトを開発しているわけではないかぎり、
+このセクションはスキップしてもよいです。しかしながらそうでない場合、さらには
+パフォーマンスの問題が発生している場合、この注意はまさにあなたが探しているものでしょう。</p>
+<p>CodeIgniter の以前のバージョンのセッションはロックを実装していませんでした。
+すなわち、同一のセッションを利用するふたつの HTTP リクエストはまったく同時に
+実行できていました。より適切な専門用語で言うならば、
+リクエストは non-blocking でした。</p>
+<p>しかしながら、セッションを使う状況においての non-blocking なリクエストは安全ではないと
+いうことも意味しました。なぜなら片方のリクエストにおけるセッションデータの更新（または
+セッション ID の再生成）はもう片方の、同時実行しているリクエストの妨げになりえるからです。
+このことはいろいろな問題の根っことなり、 CodeIgniter 3.0 でセッションライブラリを
+完全に書き直すおもな理由となりました。</p>
+<p>なぜ私たちはわざわざこんなことを言っているのですか？　それはこのあとあなたが
+パフォーマンス問題の原因を見つけ出そうとして、ロックが問題であると断定して
+それゆえロックをどうやって外そうかと調べ始めるだろうから……。</p>
+<p>そ　ん　な　こ　と　は　し　な　い　で　！　ロックの削除は間違っているでしょう、
+そしてより多くの問題が発生します！</p>
+<p>ロックは問題ではなく、それは解決になりません。あなたの問題は、あなたがもうすでに
+処理をし終わってもう不要になったにもかかわらず、ひらいたセッションを持ちっぱなしに
+していることです。なので必要なことは、現在のリクエストのためのセッションが
+もういらなくなったあと、セッションを閉じることです。</p>
+<p>短く言えば、セッション変数を使い終えたら <code class="docutils literal"><span class="pre">session_write_close()</span></code> を
+呼び出してください。</p>
+</div>
+</div>
+<div class="section" id="id6">
+<h3><a class="toc-backref" href="#id28">セッションデータとは何か？</a><a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>セッションデータは、特定のセッション ID（クッキー）に結びつけられた
+単なる配列です。</p>
+<p>もし以前から PHP でセッションを利用しているなら、
+PHP の <a class="reference external" href="http://php.net/manual/ja/reserved.variables.session.php">$_SESSION スーパーグローバル変数</a> に精通している
+ことでしょう（そうでない場合は、そのリンクのコンテンツをお読みください）。</p>
+<p>CodeIgniter はセッションデータへのアクセス方法をそれと同じ手段で提供します。
+つまり、 PHP のセッションハンドラの仕組みを使っています。
+セッションデータの使い方は $ _SESSION 配列を操作（読み込み、設定および削除）するのと同じくらい
+簡単です。</p>
+<p>くわえて、CodeIgniterでは以下に説明されているさらに 2 種類の
+セッションデータを提供します: flashdata と tempdata です。</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">以前のバージョンでは、CodeIgniter の標準的なセッションデータは
+「 userdata 」と呼ばれていました。その用語がマニュアルの他の場所で使用されている場合は、
+このことを気に留めておいてくださいそのほとんどがカスタム「 userdata 」メソッドが
+どのように動作するかを説明するために書かれています。</p>
+</div>
+</div>
+<div class="section" id="id7">
+<h3><a class="toc-backref" href="#id29">セッションデータの取得</a><a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>セッション配列のどんな情報でも、 <code class="docutils literal"><span class="pre">$</span> <span class="pre">_SESSION</span></code> スーパーグローバル変数を通して
+利用できます:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$_SESSION[&#39;item&#39;]
+</pre></div>
+</div>
+<p>もしくはマジックメソッドを通して:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;session-&gt;item
+</pre></div>
+</div>
+<p>そして後方互換性のために、 <code class="docutils literal"><span class="pre">userdata()</span></code> メソッドを通して:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;session-&gt;userdata(&#39;item&#39;);
+</pre></div>
+</div>
+<p>item は、取得したい項目に対応する配列のキーです。
+たとえば <code class="docutils literal"><span class="pre">$name</span></code> 変数に以前に格納した「 name 」の項目を割り当てるには、
+こうします:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$name = $_SESSION[&#39;name&#39;];
+
+// または:
+
+$name = $this-&gt;session-&gt;name
+
+// または:
+
+$name = $this-&gt;session-&gt;userdata(&#39;name&#39;);
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">あなたがアクセスしようとしている項目が存在しない場合、 <code class="docutils literal"><span class="pre">userdata()</span></code> メソッドは NULL を
+返します。</p>
+</div>
+<p>存在するすべてのユーザーデータを取得したい場合は、
+単にキーを省略してください（マジックメソッドはプロパティとしてのみ動きます）:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$_SESSION
+
+// または:
+
+$this-&gt;session-&gt;userdata();
+</pre></div>
+</div>
+</div>
+<div class="section" id="id8">
+<h3><a class="toc-backref" href="#id30">セッションデータを追加する</a><a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>それでは、あなたのサイトにあるユーザがログインしたとしましょう。
+認証されると、セッションにユーザー名とメールアドレスを追加することができます。
+あなたがそれを必要とするときに、どこでも、データベースクエリを実行することなく
+取得できるようにするためです。</p>
+<p>シンプルに <code class="docutils literal"><span class="pre">$</span> <span class="pre">_SESSION</span></code> 配列にデータを割り当てることができます、ほかの変数と同じようにです。
+もしくは <code class="docutils literal"><span class="pre">$this-&gt;session</span></code> プロパティとして割り当てられます。</p>
+<p>あるいは、古い方法である「 userdata 」も使えます。
+とはいえそれは <code class="docutils literal"><span class="pre">set_userdata()</span></code> メソッドに新しいデータを含む配列を
+渡すだけです:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;session-&gt;set_userdata($array);
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">$array</span></code> はあなたの新しいデータを含む連想配列です。
+次に例を示します:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$newdata = array(
+        &#39;username&#39;  =&gt; &#39;johndoe&#39;,
+        &#39;email&#39;     =&gt; &#39;johndoe@some-site.com&#39;,
+        &#39;logged_in&#39; =&gt; TRUE
+);
+
+$this-&gt;session-&gt;set_userdata($newdata);
+</pre></div>
+</div>
+<p>ユーザデータにひとつひとつ値を追加したい場合、 <code class="docutils literal"><span class="pre">set_userdata()</span></code> は
+次の構文もサポートしています:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;session-&gt;set_userdata(&#39;some_name&#39;, &#39;some_value&#39;);
+</pre></div>
+</div>
+<p>セッション値が存在することを確認したい場合は、単に <code class="docutils literal"><span class="pre">isset()</span></code> で
+確認してください:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>// &#39;some_name&#39; の値が存在しない場合またはNULLである場合は FALSE を、
+// それ以外の場合は TRUE を返します:
+isset($_SESSION[&#39;some_name&#39;])
+</pre></div>
+</div>
+<p>もしくは <code class="docutils literal"><span class="pre">has_userdata()</span></code> を呼び出します:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;session-&gt;has_userdata(&#39;some_name&#39;);
+</pre></div>
+</div>
+</div>
+<div class="section" id="id9">
+<h3><a class="toc-backref" href="#id31">セッションデータを削除する</a><a class="headerlink" href="#id9" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>他の変数とまったく同じように、 <code class="docutils literal"><span class="pre">$_SESSION</span></code> の値を
+削除するには <code class="docutils literal"><span class="pre">unset()</span></code> を使えます:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>unset($_SESSION[&#39;some_name&#39;]);
+
+// 複数の値を削除したい場合:
+
+unset(
+        $_SESSION[&#39;some_name&#39;],
+        $_SESSION[&#39;another_name&#39;]
+);
+</pre></div>
+</div>
+<p>また、セッションに情報を追加するために <code class="docutils literal"><span class="pre">set_userdata()</span></code> が
+使えるように、 <code class="docutils literal"><span class="pre">unset_userdata()</span></code> にキーを渡すことで削除することができます。
+例として、セッションデータ配列から「 some_name 」を
+削除したい場合は:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;session-&gt;unset_userdata(&#39;some_name&#39;);
+</pre></div>
+</div>
+<p>このメソッドは削除したい項目のキーの配列を受けつけます:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$array_items = array(&#39;username&#39;, &#39;email&#39;);
+
+$this-&gt;session-&gt;unset_userdata($array_items);
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">以前のバージョンでは <code class="docutils literal"><span class="pre">unset_userdata()</span></code> メソッド
+は <code class="docutils literal"><span class="pre">key</span> <span class="pre">=&gt;</span> <span class="pre">'dummy</span> <span class="pre">value'</span></code> の連想配列を受けつけていました。
+これはもうサポートされなくなりました。</p>
+</div>
+</div>
+<div class="section" id="id10">
+<h3><a class="toc-backref" href="#id32">フラッシュデータ</a><a class="headerlink" href="#id10" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>CodeIgniter では「 flashdata 」をサポートします。すなわち、次のリクエストのためだけに利用でき、
+その後自動的にクリアされるセッションデータです。</p>
+<p>これは非常に便利で、特に1回だけの情報、エラーまたは
+ステータスメッセージに使えます（たとえば: 「レコード2を削除しました」）。</p>
+<p>flashdata 変数は通常のセッション変数であり、「 __ci_vars 」キーによりとある方法で
+マークされただけのものであることに注意してください
+（__ci_vars には触らないでくださいね、忠告しましたよ？）。</p>
+<p>「 flashdata 」としてすでに作ったアイテムをマークするにはこうします:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;session-&gt;mark_as_flash(&#39;item&#39;);
+</pre></div>
+</div>
+<p>フラッシュデータとして複数の項目をマークしたい場合は、単に配列としてキーを
+渡します:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;session-&gt;mark_as_flash(array(&#39;item&#39;, &#39;item2&#39;));
+</pre></div>
+</div>
+<p>フラッシュデータを追加するにはこうします:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$_SESSION[&#39;item&#39;] = &#39;value&#39;;
+$this-&gt;session-&gt;mark_as_flash(&#39;item&#39;);
+</pre></div>
+</div>
+<p>または別法として、 <code class="docutils literal"><span class="pre">set_flashdata()</span></code> メソッドを使います:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;session-&gt;set_flashdata(&#39;item&#39;, &#39;value&#39;);
+</pre></div>
+</div>
+<p>また、 <code class="docutils literal"><span class="pre">set_userdata()</span></code> と同じ方法で <code class="docutils literal"><span class="pre">set_flashdata()</span></code> に配列を渡すことが
+できます。</p>
+<p>フラッシュデータ変数の読み取りは通常のセッションデータと同じく
+<code class="docutils literal"><span class="pre">$_SESSION</span></code> を使います:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$_SESSION[&#39;item&#39;]
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="first admonition-title">重要</p>
+<p class="last"><code class="docutils literal"><span class="pre">userdata()</span></code> メソッドはフラッシュデータを返しません。</p>
+</div>
+<p>「 flashdata 」だけを確実に読みたい場合（ほかの種類のセッションを
+読みたくない場合）、 <code class="docutils literal"><span class="pre">flashdata()</span></code> メソッドを使用することができます:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;session-&gt;flashdata(&#39;item&#39;);
+</pre></div>
+</div>
+<p>フラッシュデータを全部取得するには、単にキーパラメータを省略します:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;session-&gt;flashdata();
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">フラッシュデータがない場合、 <code class="docutils literal"><span class="pre">flashdata()</span></code> メソッドはNULLを
+返します。</p>
+</div>
+<p>もし次のリクエストでもフラシュデータ変数を保持する必要があるとわかった場合、
+<code class="docutils literal"><span class="pre">keep_flashdata()</span></code> メソッドを使用して保持することができます。
+単一のフラッシュデータ、またはフラッシュデータの配列を渡せます。</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;session-&gt;keep_flashdata(&#39;item&#39;);
+$this-&gt;session-&gt;keep_flashdata(array(&#39;item1&#39;, &#39;item2&#39;, &#39;item3&#39;));
+</pre></div>
+</div>
+</div>
+<div class="section" id="id11">
+<h3><a class="toc-backref" href="#id33">テンプデータ</a><a class="headerlink" href="#id11" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>CodeIgniter は「 tempdata 」をサポートします。特定の有効期限を持つセッションデータです。
+値の有効期限が切れた、またはセッションの有効期限が切れるか削除された後、
+値は自動的に削除されます。</p>
+<p>フラッシュデータと同様に、テンプデータ変数はとある方法で「 __ci_vars 」キーで
+マークされた通常のセッション変数です（もう一度言います。
+__ci_vars には触らないでください）。</p>
+<p>すでにあるアイテムを「 tempdata 」としてマークするには、シンプルにそのキーと有効期限を
+（単位は秒で！）``mark_as_temp()`` メソッドに渡してください:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>// &#39;item&#39; は 300 秒後に消されます
+$this-&gt;session-&gt;mark_as_temp(&#39;item&#39;, 300);
+</pre></div>
+</div>
+<p>複数のアイテムを tempdata としてマークできますが、
+有効期限が同じかどうかにより方法がふたつあります:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>// &#39;item&#39; と &#39;item2&#39; の両方が 300 秒後に期限切れします
+$this-&gt;session-&gt;mark_as_temp(array(&#39;item&#39;, &#39;item2&#39;), 300);
+
+// &#39;item&#39;  は 300 秒後に、
+// そのあいだに &#39;item2&#39; は240 秒後に消えます
+$this-&gt;session-&gt;mark_as_temp(array(
+        &#39;item&#39;  =&gt; 300,
+        &#39;item2&#39; =&gt; 240
+));
+</pre></div>
+</div>
+<p>テンプデータを追加するにはこうします:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$_SESSION[&#39;item&#39;] = &#39;value&#39;;
+$this-&gt;session-&gt;mark_as_temp(&#39;item&#39;, 300); // 5 分で期限切れ
+</pre></div>
+</div>
+<p>または別法として、 set_tempdata() メソッドを使用します:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;session-&gt;set_tempdata(&#39;item&#39;, &#39;value&#39;, 300);
+</pre></div>
+</div>
+<p>また、 <code class="docutils literal"><span class="pre">set_tempdata()</span></code> には配列を渡すことができます:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$tempdata = array(&#39;newuser&#39; =&gt; TRUE, &#39;message&#39; =&gt; &#39;Thanks for joining!&#39;);
+
+$this-&gt;session-&gt;set_tempdata($tempdata, NULL, $expire);
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">有効期限を省略するか 0 に設定した場合、
+デフォルトの有効期限 300 秒（5分）が使用されます。</p>
+</div>
+<p>テンプデータ変数を読み取るには、またですが、
+$_SESSION スーパーグローバル配列でアクセスすることができます:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$_SESSION[&#39;item&#39;]
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="first admonition-title">重要</p>
+<p class="last"><code class="docutils literal"><span class="pre">userdata()</span></code> メソッドはテンプデータを返しません。</p>
+</div>
+<p>「 tempdata 」だけを確実に読みたい場合（ほかの種類のセッションを読みたくない場合）、
+<code class="docutils literal"><span class="pre">tempdata()</span></code> メソッドを使用することができます:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;session-&gt;tempdata(&#39;item&#39;);
+</pre></div>
+</div>
+<p>そしてもちろん、すべてのテンプデータを取得する場合はこうします:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;session-&gt;tempdata();
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">テンプデータが見つからない場合 <code class="docutils literal"><span class="pre">tempdata()</span></code> メソッドは
+NULL を返します。</p>
+</div>
+<p>有効期限が切れる前にテンプデータ値を削除する必要がある場合は
+<code class="docutils literal"><span class="pre">$_SESSION</span></code> 配列を直接 unset してください:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>unset($_SESSION[&#39;item&#39;]);
+</pre></div>
+</div>
+<p>しかしながら、この方法はアイテムをテンプデータとするマーカーを削除しません
+(次の HTTP リクエストで不正扱いになります) 。
+そのため同じリクエストで同じキーを再利用したい場合、
+<code class="docutils literal"><span class="pre">unset_tempdata()</span></code> を使用すべきところでしょう:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;session-&gt;unset_tempdata(&#39;item&#39;);
+</pre></div>
+</div>
+</div>
+<div class="section" id="id12">
+<h3><a class="toc-backref" href="#id34">セッションの破棄</a><a class="headerlink" href="#id12" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>現在のセッションをクリアするには（たとえばログアウト時）、
+単に PHP の <a class="reference external" href="http://php.net/session_destroy">session_destroy()</a> 関数を使うか、
+<code class="docutils literal"><span class="pre">sess_destroy()</span></code> メソッドを使います。
+どちらもまったく同じです:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>session_destroy();
+
+// または
+
+$this-&gt;session-&gt;sess_destroy();
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">これは同じリクエストで行うセッション関連の最後の操作でなければなりません。
+すべてのセッションデータ（フラッシュデータとテンプデータを含む）
+は永続的に破棄され、
+その後は同じリクエスト内ではセッション機能は使えなくなります。</p>
+</div>
+</div>
+<div class="section" id="id13">
+<h3><a class="toc-backref" href="#id35">セッションメタデータへのアクセス</a><a class="headerlink" href="#id13" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>CodeIgniter の以前のバージョンでは、セッションデータ配列はデフォルトで4つの項目を含んでいました:
+「session_id」「ip_address」「user_agent」「last_activity」です。</p>
+<p>これはセッションを動かすために必要だった変数ですが、今の新しい実装には不要になりました。
+しかしながら、あなたのアプリケーションがこれらの値に依存しているということもあるでしょう。
+そこで、
+これらにアクセスするための代替手段を記します:</p>
+<blockquote>
+<div><ul class="simple">
+<li>session_id: <code class="docutils literal"><span class="pre">session_id()</span></code></li>
+<li>ip_address: <code class="docutils literal"><span class="pre">$_SERVER['REMOTE_ADDR']</span></code></li>
+<li>user_agent: <code class="docutils literal"><span class="pre">$this-&gt;input-&gt;user_agent()</span></code> （セッションでは使われません）</li>
+<li>last_activity: ストレージによります。ストレートな方法はありません。ごめんなさい！</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="id14">
+<h3><a class="toc-backref" href="#id36">セッションの設定</a><a class="headerlink" href="#id14" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>CodeIgniter は通常、セットアップしてすぐ動きます。
+しかしながらセッションはいろいろなアプリケーションで非常に敏感な部品であるため、
+いくらか慎重に設定を行われなければなりません。
+オプションとその影響のすべてを考慮するため、どうか時間を取って検討してください。</p>
+<p>次のセッション関連の設定は
+<strong>application/config/config.php</strong> ファイルにあります:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="16%" />
+<col width="9%" />
+<col width="23%" />
+<col width="53%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">設定</th>
+<th class="head">デフォルト</th>
+<th class="head">オプション</th>
+<th class="head">説明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>sess_driver</strong></td>
+<td>files</td>
+<td>files/database/redis/memcached/<em>custom</em></td>
+<td>使用するセッションストレージドライバ。</td>
+</tr>
+<tr class="row-odd"><td><strong>sess_cookie_name</strong></td>
+<td>ci_session</td>
+<td>[A-Za-z_-] のみ</td>
+<td>セッションクッキーの名前。</td>
+</tr>
+<tr class="row-even"><td><strong>sess_expiration</strong></td>
+<td>7200（2 時間）</td>
+<td>秒数（整数）</td>
+<td>セッションを保持したい秒数。
+有効期限のないセッション（ブラウザを閉じるまで）にしたい場合は値を 0 に設定します。</td>
+</tr>
+<tr class="row-odd"><td><strong>sess_save_path</strong></td>
+<td>NULL</td>
+<td>なし</td>
+<td>ストレージの保存場所を指定しますが、使用するドライバに依存します。</td>
+</tr>
+<tr class="row-even"><td><strong>sess_match_ip</strong></td>
+<td>FALSE</td>
+<td>TRUE/FALSE（真偽値）</td>
+<td>セッションクッキーを読み取る際に、ユーザーの IP アドレスを検証するかどうか。
+一部のインターネットサービスプロバイダが動的に IP アドレスを変更することに注意してください。
+そのため、有効期限のないセッションをしたい場合は FALSE に設定するのが適当でしょう。</td>
+</tr>
+<tr class="row-odd"><td><strong>sess_time_to_update</strong></td>
+<td>300</td>
+<td>秒数（整数）</td>
+<td>このオプションは、セッションクラスが自分自身を再生成し、新しいセッション ID を作成する頻度を
+制御します。 0 に設定すると、セッション ID の再生成を無効にします。</td>
+</tr>
+<tr class="row-even"><td><strong>sess_regenerate_destroy</strong></td>
+<td>FALSE</td>
+<td>TRUE/FALSE（真偽値）</td>
+<td>セッション ID の自動再生成をするときに古いセッション ID に関連付けられたセッションデータを
+破棄するかどうか。 FALSE に設定すると、データはガベージコレクタによってあとで削除されます。</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">上記のいずれも設定されていない場合、セッションライブラリは最後の手段として PHP の
+INI 設定を取得しようとします。古い CodeIgniter の
+「 sess_expire_on_close 」と同様にです。
+しかしながら、その振る舞いに依存してはなりません。
+予期しない結果を引き起こすか、将来変更される可能性があります。
+どうかすべてきちんと設定してください。</p>
+</div>
+<p>上記の値に加えて、クッキーとネイティブドライバは
+次の設定値が適用されます。この値は <a class="reference internal" href="input.html"><span class="doc">入力</span></a> および
+<a class="reference internal" href="security.html"><span class="doc">セキュリティ</span></a> クラスと共有しています:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="17%" />
+<col width="14%" />
+<col width="69%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">設定</th>
+<th class="head">デフォルト</th>
+<th class="head">説明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>cookie_domain</strong></td>
+<td>&#8216;&#8217;</td>
+<td>セッションが適用されるドメイン</td>
+</tr>
+<tr class="row-odd"><td><strong>cookie_path</strong></td>
+<td>/</td>
+<td>セッションが適用されるパス</td>
+</tr>
+<tr class="row-even"><td><strong>cookie_secure</strong></td>
+<td>FALSE</td>
+<td>暗号化接続（HTTPS）でのみセッションクッキーを作成するかどうか</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">「 cookie_httponly 」の設定はセッションには影響しません。
+HttpOnly のパラメータはセキュリティ上の理由から常に有効になっています。
+加えて、「 cookie_prefix 」の設定は完全に
+無視されます。</p>
+</div>
+</div>
+<div class="section" id="id15">
+<h3><a class="toc-backref" href="#id37">セッションドライバ</a><a class="headerlink" href="#id15" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>既に述べたように、セッションライブラリには 4 つのドライバ、
+つまりストレージエンジンが付属しています:</p>
+<blockquote>
+<div><ul class="simple">
+<li>files</li>
+<li>database</li>
+<li>redis</li>
+<li>memcached</li>
+</ul>
+</div></blockquote>
+<p>デフォルトでは <a class="reference internal" href="#id16">ファイルドライバ</a> がセッションが初期化されるときに使用されます。
+それは最も安全な選択であり、どこでも動くと期待されるからです
+（実質的にあらゆる実行環境はファイルシステムを持っています）。</p>
+<p>一方、他のドライバは <strong>application/config/config.php</strong> ファイルの <code class="docutils literal"><span class="pre">$config['sess_driver']</span></code>
+により選択することができます、あなたがそれを選ぶなら。
+しかし、それぞれのドライバには異なる注意点があり、それらを使う前にそれら
+（後述します）に熟知しておくべきということを頭にとどめておいてください。</p>
+<p>また、デフォルトがあなたのユースケースを満たしていない場合、 <a class="reference internal" href="#id21">カスタムドライバ</a>
+を作成して使うことができます。</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">CodeIgniter の以前のバージョンでは状況が異なり、「クッキードライバ」が唯一の選択肢であり、
+私たちは上記のオプションを提供していないことに対して
+遺憾の意を受けていました。私たちはコミュニティからのフィードバックに耳を傾けていますが、
+一方で私たちはクッキードライバが <strong>安全ではない</strong> ので機能落ちされたことを警告し、
+カスタムドライバでそれを複製　し　な　い　よ　う
+おすすめします。</p>
+</div>
+<div class="section" id="id16">
+<h4><a class="toc-backref" href="#id38">ファイルドライバ</a><a class="headerlink" href="#id16" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>「 files 」ドライバはセッションデータを格納するためにファイルシステムを使用しています。</p>
+<p>それは正確に PHP そのもののデフォルトセッション実装のように動作するといって差し支えありませんが、
+しかし場合により重要な細部となりえることに、
+実際には同じコードではありません。それはいくつかの制限
+（と利点）を持っているということを気にかけておいてください。</p>
+<p>具体的には、
+PHP の session.save_path
+&lt;<a class="reference external" href="http://php.net/manual/ja/session.configuration.php#ini.session.save-path">http://php.net/manual/ja/session.configuration.php#ini.session.save-path</a>&gt;`_
+で使用されるディレクトリレベルとモードの形式を サポートしていません、そして、そのオプションのほとんどは、
+安全のためにハードコーディングされています。そのかわり、ただひとつ絶対パスだけは <code class="docutils literal"><span class="pre">$config['sess_save_path']</span></code> でサポートされています。</p>
+<p>知っておくべきもう一つの重要なことは、
+セッションファイルを格納するティレクトリとして広範囲に読み込み可能なディレクトリ、
+または共有ディレクトリを使用していないことを確認することです。 <em>ただ一人あなただけが</em>
+アクセス可能であるディレクトリを <em>sess_save_path</em> ディレクトリに選んだことを確実にしてください。
+さもなくば、それを行うことができる誰もが、現在のセッションのどれでも盗むことができます
+（「セッション固定」攻撃として知られています）。</p>
+<p>UNIX ライクなオペレーティングシステムでは、
+これは通常 <cite>chmod</cite> コマンドによって 0700 モードで設定して保存されます。
+そのモードはディレクトリの所有者だけが読み書き操作を実行することを可能にするものです。
+しかし気をつけるべきは、スクリプトを <em>実行</em> しているシステムのユーザは通常、
+あなた自身ではなく、かわりに「 www-data 」のようなものが使われるため、
+パーミッションの設定だけではたぶんアプリケーションは動かなくなります。</p>
+<p>かわりに、ご使用の環境に応じて、次のようなものを行う必要があります</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>mkdir /&lt;path to your application directory&gt;/sessions/
+chmod 0700 /&lt;path to your application directory&gt;/sessions/
+chown www-data /&lt;path to your application directory&gt;/sessions/
+</pre></div>
+</div>
+<div class="section" id="id17">
+<h5><a class="toc-backref" href="#id39">ボーナスヒント</a><a class="headerlink" href="#id17" title="このヘッドラインへのパーマリンク">¶</a></h5>
+<p>あなたがたの何人かは、ファイルストレージは通常遅いので、
+おそらく別のセッションのドライバを選択するでしょう。これは半分だけ真実です。</p>
+<p>非常に簡単なテストはおそらく、 SQL データベースがより高速であると信じ込ませるようにあなたをだましますが、
+しかし 99% のケースで、わずか数セッションだけ持っているあいだだけの真実です。
+セッションが積み重ねられサーバ負荷が増えるにしたがい
+――それが問題になったとき―― ほぼ一貫してファイルシステムのほうが
+リレーショナルデータベースで組み上げるよりパフォーマンスに優れるでしょう。</p>
+<p>つけくわえると、パフォーマンスだけが関心事であるなら、 <a class="reference external" href="http://eddmann.com/posts/storing-php-sessions-file-caches-in-memory-using-tmpfs/">tmpfs</a> （警告: 外部リソースです）
+の使い方を調べるといいかもしれません 、
+それは燃えるがごとくセッションを速くします。</p>
+</div>
+</div>
+<div class="section" id="id18">
+<h4><a class="toc-backref" href="#id40">データベースドライバ</a><a class="headerlink" href="#id18" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>「 database 」ドライバは MySQL や PostgreSQL などのリレーショナルデータベースに
+セッションを保存するのに使います。これは多くのユーザーに人気のある選択肢です。
+開発者にとって容易にアプリケーションからアクセス可能になるからです――
+単にデータベースにテーブルを新しく作るだけです。</p>
+<p>しかしながら、満たされなければならないいくつかの条件があります:</p>
+<blockquote>
+<div><ul class="simple">
+<li><strong>デフォルト</strong> のデータベース接続（つまりコントローラから
+<code class="docutils literal"><span class="pre">$this-&gt;db</span></code> としてアクセスできるもの）だけを使えます。</li>
+<li><a class="reference internal" href="../database/query_builder.html"><span class="doc">クエリビルダ</span></a> を有効にしていることが
+必要です。</li>
+<li>持続的接続を使用することは　で　き　ま　せ　ん　。</li>
+<li><em>cache_on</em> 設定が有効な接続では使用することは　で　き　ま　せ　ん　。</li>
+</ul>
+</div></blockquote>
+<p>「 database 」セッションドライバを使用するためにはまた、すでに言及したように、
+テーブルをデータベース上に作成する必要があり、そして
+<code class="docutils literal"><span class="pre">$config['sess_save_path']</span></code> にテーブル名を設定します。
+たとえばテーブル名として「 ci_sessions 」を使用する場合、
+こうします:</p>
+<blockquote>
+<div>$config[&#8216;sess_driver&#8217;] = &#8216;database&#8217;;
+$config[&#8216;sess_save_path&#8217;] = &#8216;ci_sessions&#8217;;</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">CodeIgniter の古いバージョンからアップグレードした際に
+「 sess_save_path 」を設定していない場合は、
+セッションライブラリは古い設定である「 sess_table_name 」をかわりに使います。
+将来的に削除されますので、
+この動作に頼らないようにしてください。</p>
+</div>
+<p>そしてもちろん、データベースにテーブルを作成します……</p>
+<p>MySQL の場合:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>CREATE TABLE IF NOT EXISTS `ci_sessions` (
+        `id` varchar(40) NOT NULL,
+        `ip_address` varchar(45) NOT NULL,
+        `timestamp` int(10) unsigned DEFAULT 0 NOT NULL,
+        `data` blob NOT NULL,
+        KEY `ci_sessions_timestamp` (`timestamp`)
+);
+</pre></div>
+</div>
+<p>PostgreSQL の場合:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>CREATE TABLE &quot;ci_sessions&quot; (
+        &quot;id&quot; varchar(40) NOT NULL,
+        &quot;ip_address&quot; varchar(45) NOT NULL,
+        &quot;timestamp&quot; bigint DEFAULT 0 NOT NULL,
+        &quot;data&quot; text DEFAULT &#39;&#39; NOT NULL
+);
+
+CREATE INDEX &quot;ci_sessions_timestamp&quot; ON &quot;ci_sessions&quot; (&quot;timestamp&quot;);
+</pre></div>
+</div>
+<p>また、<strong>「 sess_match_ip 」の設定に応じて</strong> PRIMARY KEY を追加する必要があります。
+次の例は MySQL と PostgreSQL の両方で動きます:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>// sess_match_ip = TRUE のとき
+ALTER TABLE ci_sessions ADD PRIMARY KEY (id, ip_address);
+
+// sess_match_ip = FALSE のとき
+ALTER TABLE ci_sessions ADD PRIMARY KEY (id);
+
+// 以前のプライマリキーを削除するとき（設定を変更するときに使います）
+ALTER TABLE ci_sessions DROP PRIMARY KEY;
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="first admonition-title">重要</p>
+<p class="last">MySQL と PostgreSQL のデータベースのみが
+公式サポート対象です。ほかのデータベースでアドバイザリロック機構が
+提供されていないためです。ロックなしにセッションを使うと、
+特にAJAXを多用する場合において、あらゆる種類の問題を引き起こします。
+私たちはそのようなものはサポートしません。パフォーマンス問題を抱えている場合は、
+セッションデータを処理したあとに <code class="docutils literal"><span class="pre">session_write_close()</span></code> を
+使用してください。</p>
+</div>
+</div>
+<div class="section" id="redis">
+<h4><a class="toc-backref" href="#id41">Redis ドライバ</a><a class="headerlink" href="#redis" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">Redis はロック機構を提供していないので、
+このドライバのロックは最大 300 秒間保持される別の値によって
+エミュレートされています。</p>
+</div>
+<p>Redis はそのハイパフォーマンスさからキャッシュにとてもよく使われるストレージエンジンで、
+あなたが「 Redis 」セッションドライバを使用するのもまた
+その性能の高さからでしょう。</p>
+<p>欠点としては、リレーショナルデータベースほどにはどこでも使えるわけではなく、
+<a class="reference external" href="https://github.com/phpredis/phpredis">phpredis</a> PHP拡張モジュールを
+インストールしなければなりません、しかしそれは PHP
+にはバンドルされていません。
+Redisとその使われ方に詳しくなければ「 Redis 」ドライバは
+使えないでしょう。</p>
+<p>「 file 」と「 databse 」のドライバと同じように、
+セッションを保存するストレージの場所を
+<code class="docutils literal"><span class="pre">$config['sess_save_path']</span></code> に設定する必要があります。
+そのフォーマットはすこしだけそれらと異なり、また複雑です。
+最高の説明が <em>phpredis</em> 拡張の README ファイルでなされているので、
+私たちはそれへのリンクを渡すにとどめましょう。</p>
+<blockquote>
+<div><a class="reference external" href="https://github.com/phpredis/phpredis#php-session-handler">https://github.com/phpredis/phpredis#php-session-handler</a></div></blockquote>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p class="last">CodeIgniter のセッションライブラリは実際の「 Redis 」の
+<code class="docutils literal"><span class="pre">session.save_handler</span></code> を使用して　い　ま　せ　ん　。上記リンクのパス形式に <strong>だけ</strong>
+注意してください。</p>
+</div>
+<p>しかしながら、最も一般的なケースではシンプルな <code class="docutils literal"><span class="pre">host:port</span></code> のペアで
+十分でしょう:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$config[&#39;sess_driver&#39;] = &#39;redis&#39;;
+$config[&#39;sess_save_path&#39;] = &#39;tcp://localhost:6379&#39;;
+</pre></div>
+</div>
+</div>
+<div class="section" id="memcached">
+<h4><a class="toc-backref" href="#id42">Memcached ドライバ</a><a class="headerlink" href="#memcached" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">Memcache はロック機構を提供していないので、
+このドライバのロックは最大 300 秒間保持される別の値によって
+エミュレートされています。</p>
+</div>
+<p>「 memcached 」ドライバはほぼすべての項目で「 redis 」と非常によく似ています、
+おそらくは用いやすさを除いては。 PHP の <a class="reference external" href="http://php.net/memcached">Memcached</a> 拡張は PECL により提供され、また、いくつかの
+Linux ディストリビューションはパッケージインストールで利用しやすくしています。</p>
+<p>それ以外には、とくに偏見もひいきもなく、 Memcached は Redis
+と変わるところはないと言えましょう――これもまたキャッシュによく使われ、
+その速度で名高い製品です。</p>
+<p>しかしながら重要な注意点として、 Memcached により保証されることは唯一、
+Y 秒の期限を定められた値 X が Y 秒経過後にそれが削除されていることだけです
+（その時間より前には削除されないということでは必ずしもありません）。
+極めてまれではありますが、
+それによりセッションが失われる可能性があることを考慮するべきです。</p>
+<p><code class="docutils literal"><span class="pre">$config['sess_save_path']</span></code> の形式は非常に簡便で、
+<code class="docutils literal"><span class="pre">host:port</span></code> のペアだけです:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$config[&#39;sess_driver&#39;] = &#39;memcached&#39;;
+$config[&#39;sess_save_path&#39;] = &#39;localhost:11211&#39;;
+</pre></div>
+</div>
+<div class="section" id="id20">
+<h5><a class="toc-backref" href="#id43">ボーナスヒント</a><a class="headerlink" href="#id20" title="このヘッドラインへのパーマリンク">¶</a></h5>
+<p>複数サーバを使ったコロン区切りの値（<code class="docutils literal"><span class="pre">:weight</span></code>）の <em>重みづけ</em> パラメータも
+サポートされています。しかし、
+私たちはそれを信頼できるほどのテストはしていないことにご注意ください。</p>
+<p>あなたが（あなた自身のリスクで）この機能を試してみたい場合、
+単にカンマ区切りで複数のサーバパスを並べます:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>// localhost はより高い優先度（5）を与えられます、
+// 192.0.2.1 の重みづけ 1 と比べ。
+$config[&#39;sess_save_path&#39;] = &#39;localhost:11211:5,192.0.2.1:11211:1&#39;;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id21">
+<h4><a class="toc-backref" href="#id44">カスタムドライバ</a><a class="headerlink" href="#id21" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>独自のカスタムセッションドライバを作成することもできます。
+しかしながら、それはたいていの場合かんたんな仕事ではありません、
+正しく動作させるにはたくさんの知識を必要とします。</p>
+<p>次のことを知っておく必要があります。セッションが一般的にどのように機能するかだけでなく、
+特に PHP でどのように機能するか、基礎となるストレージ機構がどのように機能するか、
+デッドロックを避け（しかしロックの　抜　け　を避けながら）同時実行をどのように制御するか、
+そして最後に大事なこととして――潜在的セキュリティ問題をどのように制御するか、
+これは軽んずべきことではありません。</p>
+<p>かいつまんで言うと――素の PHP でどう実装すべきかを知らないなら、
+CodeIgniter においても実装しようとすべきではありません。
+忠告しましたよ。</p>
+<p>セッションにいくつか機能を追加したい場合は、ベースとなる Session
+クラスを継承してください、そのほうがはるかに簡単です。
+その方法を学ぶには <a class="reference internal" href="../general/creating_libraries.html"><span class="doc">ライブラリの作成</span></a>
+の記事を読んでください。</p>
+<p>さて、話を戻しましょう―― CodeIgniter のセッションドライバを作成するとき、
+従わなければならない 3 つの原則があります:</p>
+<blockquote>
+<div><ul>
+<li><p class="first">ドライバのファイルは <strong>application/libraries/Session/drivers/</strong>
+の下に置いて、セッションクラスで使用される命名規則に従ってください。</p>
+<p>たとえば「 dummy 」ドライバを作成するとすれば、
+<code class="docutils literal"><span class="pre">Session_dummy_driver</span></code> のクラス名で、
+<em>application/libraries/Session/drivers/Session_dummy_driver.php</em> で定義する必要があります。</p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">CI_Session_driver</span></code> クラスを継承します。</p>
+<p>これはいくつかの内部向けヘルパーメソッドを持つ基礎的なクラスです。
+それはほかのクラスと同様に拡張できます、あなたが本当にそれが必要なら。
+しかし私たちはその方法を説明しようとは思いません……あなたがCIでの継承とオーバーライドに詳しいなら、
+もうすでにやり方がわかるはずです。
+そうでないなら、ええ、そもそもやるべきではありません。</p>
+</li>
+<li><p class="first"><a class="reference external" href="http://php.net/sessionhandlerinterface">SessionHandlerInterface</a> インターフェースを実装します。</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last"><code class="docutils literal"><span class="pre">SessionHandlerInterface</span></code> はPHP 5.4.0 以降からの提供であることに
+気づかれたかもしれません。古い PHP で実行している場合、 CodeIgniter は
+自動的に同じ内容のインターフェースを作ります。</p>
+</div>
+<p>リンク先はどうして、どのように実装するかを説明しています。</p>
+</li>
+</ul>
+</div></blockquote>
+<p>そして、上記「 dummy 」ドライバの例をもとにすると、
+次のようなものでおしまいになります:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>// application/libraries/Session/drivers/Session_dummy_driver.php:
+
+class CI_Session_dummy_driver extends CI_Session_driver implements SessionHandlerInterface
+{
+
+        public function __construct(&amp;$params)
+        {
+                // これを忘れては　な　り　ま　せ　ん
+                parent::__construct($params);
+
+                // 設定その他の初期化をします
+        }
+
+        public function open($save_path, $name)
+        {
+                // ストレージ機構（接続）の初期化
+        }
+
+        public function read($session_id)
+        {
+                // （もしあれば）セッションデータの読み込み、ロックの獲得
+        }
+
+        public function write($session_id, $session_data)
+        {
+                // セッションデータの作成、更新（データは存在しないかもしれません！）
+        }
+
+        public function close()
+        {
+                // ロックの開放、接続の切断など
+        }
+
+        public function destroy($session_id)
+        {
+                // close() メソッドの呼び出しと、現在のセッションデータの破棄（順序は逆かもしれません）
+        }
+
+        public function gc($maxlifetime)
+        {
+                // 期限切れセッションの削除
+        }
+
+}
+</pre></div>
+</div>
+<p>すべてを適切にできたなら、ただいまから <em>sess_driver</em> 設定値に
+「 dummy 」を設定し、独自ドライバを使用することができます。おめでとうございます！</p>
+</div>
+</div>
+</div>
+<div class="section" id="id22">
+<h2><a class="toc-backref" href="#id45">クラスリファレンス</a><a class="headerlink" href="#id22" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<dl class="class">
+<dt id="CI_Session">
+<em class="property">class </em><code class="descname">CI_Session</code><a class="headerlink" href="#CI_Session" title="この定義へのパーマリンク">¶</a></dt>
+<dd><dl class="method">
+<dt id="CI_Session::userdata">
+<code class="descname">userdata</code><span class="sig-paren">(</span><span class="optional">[</span><em>$key = NULL</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Session::userdata" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$key</strong> (<em>mixed</em>) &#8211; セッション値のキーまたは NULL</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">指定のキーに対応する値、またはすべての userdata の配列</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">mixed</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Gets 特定の <code class="docutils literal"><span class="pre">$_SESSION</span></code> アイテムの値または、
+キーを指定しない場合はすべての「 userdata 」アイテムの値を取得します。</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">これは古いアプリケーションの
+後方互換性のためだけに残されたメソッドです。
+かわりに直接 <code class="docutils literal"><span class="pre">$_SESSION</span></code> を使うべきです。</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="CI_Session::all_userdata">
+<code class="descname">all_userdata</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Session::all_userdata" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">返り値:</th><td class="field-body">すべての userdata の配列</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値の型:</th><td class="field-body">array</td>
+</tr>
+</tbody>
+</table>
+<p>すべての「 userdata 」を含む配列を返します。</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">このメソッドは廃止予定です。かわりに <code class="docutils literal"><span class="pre">userdata()</span></code>
+を引数なしで使ってください。</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">&amp;get_userdata()</code></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">返り値:</th><td class="field-body"><code class="docutils literal"><span class="pre">$_SESSION</span></code> への参照</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値の型:</th><td class="field-body">array</td>
+</tr>
+</tbody>
+</table>
+<p><code class="docutils literal"><span class="pre">$_SESSION</span></code> 配列への参照を返します。</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">これは古いアプリケーションの
+後方互換性のためだけに残されたメソッドです。</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="CI_Session::has_userdata">
+<code class="descname">has_userdata</code><span class="sig-paren">(</span><em>$key</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_Session::has_userdata" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$key</strong> (<em>string</em>) &#8211; セッションアイテムのキー</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">キーが存在すれば TRUE 、そうでなければ FALSE</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">bool</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>アイテムが <code class="docutils literal"><span class="pre">$_SESSION</span></code> に存在するかを確認します。</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">これは古いアプリケーションの
+後方互換性のためだけに残されたメソッドです。
+これは <code class="docutils literal"><span class="pre">isset($_SESSION[$key])</span></code> のエイリアスにすぎません
+――どうぞかわりに isset() を使ってください。</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="CI_Session::set_userdata">
+<code class="descname">set_userdata</code><span class="sig-paren">(</span><em>$data</em><span class="optional">[</span>, <em>$value = NULL</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Session::set_userdata" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$data</strong> (<em>mixed</em>) &#8211; セッションに設定するキーと値のペアの配列、または単体のキー。</li>
+<li><strong>$value</strong> (<em>mixed</em>) &#8211; 引数 $data がキーなら、設定されたセッション値</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">void</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>スーパーグローバル変数 <code class="docutils literal"><span class="pre">$_SESSION</span></code> にデータを設定します。</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">これは古いアプリケーションの
+後方互換性のためだけに残されたメソッドです。</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="CI_Session::unset_userdata">
+<code class="descname">unset_userdata</code><span class="sig-paren">(</span><em>$key</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_Session::unset_userdata" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$key</strong> (<em>mixed</em>) &#8211; 削除するセッションデータのキー、またはキーの配列</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">void</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>指定のキーをスーパーグローバル変数 <code class="docutils literal"><span class="pre">$_SESSION</span></code>
+から削除します。</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">これは古いアプリケーションの
+後方互換性のためだけに残されたメソッドです。
+これは <code class="docutils literal"><span class="pre">unset($_SESSION[$key])</span></code> のエイリアスにすぎません
+――どうぞかわりに unset() を使ってください。</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="CI_Session::mark_as_flash">
+<code class="descname">mark_as_flash</code><span class="sig-paren">(</span><em>$key</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_Session::mark_as_flash" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$key</strong> (<em>mixed</em>) &#8211; flashdata としてマークするキー、またはキーの配列</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">成功すれば TRUE 、失敗したら FALSE</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">bool</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><code class="docutils literal"><span class="pre">$_SESSION</span></code> アイテムのキー（または複数のキー）を
+「 flashdata 」としてマークします。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="CI_Session::get_flash_keys">
+<code class="descname">get_flash_keys</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Session::get_flash_keys" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">返り値:</th><td class="field-body">すべての「 flashdata 」を含む配列.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値の型:</th><td class="field-body">array</td>
+</tr>
+</tbody>
+</table>
+<p><code class="docutils literal"><span class="pre">$_SESSION</span></code> のうち
+「 flashdata 」としてマークされたすべての値の配列を取得します。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="CI_Session::unmark_flash">
+<code class="descname">unmark_flash</code><span class="sig-paren">(</span><em>$key</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_Session::unmark_flash" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$key</strong> (<em>mixed</em>) &#8211; 「 flashdata 」のマークを外すキー、または複数のキーの配列</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">void</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><code class="docutils literal"><span class="pre">$_SESSION</span></code> アイテムのキー（または複数のキー）の
+「 flashdata 」としてのマークを外します。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="CI_Session::flashdata">
+<code class="descname">flashdata</code><span class="sig-paren">(</span><span class="optional">[</span><em>$key = NULL</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Session::flashdata" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$key</strong> (<em>mixed</em>) &#8211; Flashdata のキーまたは NULL</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">指定したキーに対応する値、またはすべての flashdata の配列</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">mixed</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><code class="docutils literal"><span class="pre">$_SESSION</span></code> アイテムのうち
+「 flashdata 」としてマークされた値、または引数が指定されない場合はすべての「 flashdata 」の配列
+を取得します。</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">これは古いアプリケーションの
+後方互換性のためだけに残されたメソッドです。
+かわりに直接 <code class="docutils literal"><span class="pre">$_SESSION</span></code> を使うべきです。</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="CI_Session::keep_flashdata">
+<code class="descname">keep_flashdata</code><span class="sig-paren">(</span><em>$key</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_Session::keep_flashdata" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$key</strong> (<em>mixed</em>) &#8211; 保持したい Flashdata のキー、またはキーの配列</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">成功すれば TRUE 、失敗したら FALSE</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">bool</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>指定の「 flashdata 」のキーを
+次のリクエストでも保持します。</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">これは古いアプリケーションの
+後方互換性のためだけに残されたメソッドです。
+これは <code class="docutils literal"><span class="pre">mark_as_flash()</span></code> のエイリアスにすぎません。</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="CI_Session::set_flashdata">
+<code class="descname">set_flashdata</code><span class="sig-paren">(</span><em>$data</em><span class="optional">[</span>, <em>$value = NULL</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Session::set_flashdata" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$data</strong> (<em>mixed</em>) &#8211; flashdata のキーと値のセットの配列、または単体のキー</li>
+<li><strong>$value</strong> (<em>mixed</em>) &#8211; 引数 $data がキーなら、設定されたセッション値</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">void</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>スーパーグローバル変数 <code class="docutils literal"><span class="pre">$_SESSION</span></code> にデータを設定し、
+「 flashdata 」としてマークします。</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">これは古いアプリケーションの
+後方互換性のためだけに残されたメソッドです。</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="CI_Session::mark_as_temp">
+<code class="descname">mark_as_temp</code><span class="sig-paren">(</span><em>$key</em><span class="optional">[</span>, <em>$ttl = 300</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Session::mark_as_temp" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$key</strong> (<em>mixed</em>) &#8211; tempdata としてマークするキー、またはキーの配列</li>
+<li><strong>$ttl</strong> (<em>int</em>) &#8211; tempdata の生存秒数</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">成功すれば TRUE 、失敗したら FALSE</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">bool</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><code class="docutils literal"><span class="pre">$_SESSION</span></code> アイテムのキー（または複数のキー）を
+「 tempdata 」としてマークします。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="CI_Session::get_temp_keys">
+<code class="descname">get_temp_keys</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Session::get_temp_keys" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">返り値:</th><td class="field-body">すべての「 tempdata 」を含む配列.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値の型:</th><td class="field-body">array</td>
+</tr>
+</tbody>
+</table>
+<p><code class="docutils literal"><span class="pre">$_SESSION</span></code> のうち
+「 tempdata 」としてマークされたすべての値の配列を取得します。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="CI_Session::unmark_temp">
+<code class="descname">unmark_temp</code><span class="sig-paren">(</span><em>$key</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_Session::unmark_temp" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$key</strong> (<em>mixed</em>) &#8211; 「 tempdata 」のマークを外すキー、または複数のキーの配列</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">void</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><code class="docutils literal"><span class="pre">$_SESSION</span></code> アイテムのキー（または複数のキー）の
+「 tempdata 」としてのマークを外します。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="CI_Session::tempdata">
+<code class="descname">tempdata</code><span class="sig-paren">(</span><span class="optional">[</span><em>$key = NULL</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Session::tempdata" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$key</strong> (<em>mixed</em>) &#8211; Tempdata のキーまたは NULL</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">指定したキーに対応する値、またはすべての tempdata の配列</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">mixed</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><code class="docutils literal"><span class="pre">$_SESSION</span></code> アイテムのうち
+「 tempdata 」としてマークされた値、または引数が指定されない場合はすべての「 flashdata 」の配列
+を取得します。</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">これは古いアプリケーションの
+後方互換性のためだけに残されたメソッドです。
+かわりに直接 <code class="docutils literal"><span class="pre">$_SESSION</span></code> を使うべきです。</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="CI_Session::set_tempdata">
+<code class="descname">set_tempdata</code><span class="sig-paren">(</span><em>$data</em><span class="optional">[</span>, <em>$value = NULL</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Session::set_tempdata" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$data</strong> (<em>mixed</em>) &#8211; tempdata のキーと値のセットの配列、または単体のキー</li>
+<li><strong>$value</strong> (<em>mixed</em>) &#8211; 引数 $data がキーなら、設定されたセッション値</li>
+<li><strong>$ttl</strong> (<em>int</em>) &#8211; tempdata の生存秒数</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">void</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>スーパーグローバル変数 <code class="docutils literal"><span class="pre">$_SESSION</span></code> にデータを設定し、
+「 tempdata 」としてマークします。</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">これは古いアプリケーションの
+後方互換性のためだけに残されたメソッドです。</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="CI_Session::sess_regenerate">
+<code class="descname">sess_regenerate</code><span class="sig-paren">(</span><span class="optional">[</span><em>$destroy = FALSE</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Session::sess_regenerate" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$destroy</strong> (<em>bool</em>) &#8211; セッションを破棄するかどうか</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">void</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>セッション ID を再生成します。
+オプションで現在のセッションを破棄します。</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">このメソッドは素の PHP の
+<a class="reference external" href="http://php.net/session_regenerate_id">session_regenerate_id()</a> 関数のエイリアスにすぎません。</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="CI_Session::sess_destroy">
+<code class="descname">sess_destroy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Session::sess_destroy" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body">void</td>
+</tr>
+</tbody>
+</table>
+<p>現在のセッションを破棄します。</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">これはセッション関連機能の <em>最後に</em> 呼ばれる必要があります。
+すべてのセッションデータはこれのあとには
+失われます。</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">このメソッドは素の PHP の
+<a class="reference external" href="http://php.net/session_destroy">session_destroy()</a> 関数のエイリアスにすぎません。</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="CI_Session::__get">
+<code class="descname">__get</code><span class="sig-paren">(</span><em>$key</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_Session::__get" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$key</strong> (<em>string</em>) &#8211; セッションアイテムのキー</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">要求されたセッションアイテム、または存在しない場合は NULL</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">mixed</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>これはマジックメソッドで、
+<code class="docutils literal"><span class="pre">$_SESSION['item']</span></code> のかわりに <code class="docutils literal"><span class="pre">$this-&gt;session-&gt;item</span></code> で使えるようにするものです、
+もしあなたがお好みなら。</p>
+<p><code class="docutils literal"><span class="pre">$this-&gt;session-&gt;session_id</span></code> にアクセスした場合、
+これは <code class="docutils literal"><span class="pre">session_id()</span></code> によって取得されるセッション ID を
+返します。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="CI_Session::__set">
+<code class="descname">__set</code><span class="sig-paren">(</span><em>$key</em>, <em>$value</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_Session::__set" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$key</strong> (<em>string</em>) &#8211; セッションアイテムのキー</li>
+<li><strong>$value</strong> (<em>mixed</em>) &#8211; セッションアイテムのキーに設定する値</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first last">void</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>これはマジックメソッドで、
+<code class="docutils literal"><span class="pre">$this-&gt;session</span></code> プロパティで <code class="docutils literal"><span class="pre">$_SESSION</span></code> に
+アクセスできるようにするものです:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;session-&gt;foo = &#39;bar&#39;;
+
+// 結果として:
+// $_SESSION[&#39;foo&#39;] = &#39;bar&#39;;
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="table.html" class="btn btn-neutral float-right" title="HTML テーブルクラス">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="security.html" class="btn btn-neutral" title="セキュリティクラス"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
+      最終更新: 9月 06, 2016
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'3.2.0-dev',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  false
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

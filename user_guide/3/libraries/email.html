@@ -1,0 +1,1213 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Email クラス &mdash; CodeIgniter 3.2.0-dev ドキュメント</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/ci-icon.ico"/>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="CodeIgniter 3.2.0-dev ドキュメント" href="../index.html"/>
+        <link rel="up" title="ライブラリ" href="index.html"/>
+        <link rel="next" title="Encrypt クラス" href="encrypt.html"/>
+        <link rel="prev" title="設定クラス" href="config.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div id="nav">
+  <div id="nav_inner">
+    
+    
+    
+      <div id="pulldown-menu" class="ciNav">
+        <ul>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../installation/downloads.html">CodeIgniter のダウンロード</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/index.html">インストール方法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">以前のバージョンからのアップグレード</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/troubleshooting.html">トラブルシューティング</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview/index.html">CodeIgniter 概要</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../overview/getting_started.html">CodeIgniter をはじめよう</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/at_a_glance.html">CodeIgniter の簡単な紹介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/features.html">CodeIgniter の機能</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/appflow.html">アプリケーションフローチャート</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/mvc.html">Model-View-Controller</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/goals.html">設計とアーキテクチャのゴール</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">チュートリアル</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/static_pages.html">静的なページ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/news_section.html">ニュースセクション</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/create_news_items.html">ニュース記事を作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/conclusion.html">おわりに</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contributing/index.html">CodeIgniter への貢献</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/index.html">CodeIgniter のドキュメントを書く</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DCO.html">Developer&#8217;s Certificate of Origin 1.1</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../general/index.html">一般的なトピック</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../general/urls.html">CodeIgniter の URL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/controllers.html">コントローラ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/reserved_names.html">予約語</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/views.html">ビュー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/models.html">モデル</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/helpers.html">ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/libraries.html">CodeIgniter のライブラリの利用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/creating_libraries.html">ライブラリの作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/drivers.html">CodeIgniter のドライバを使う</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/creating_drivers.html">ドライバの作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/core_classes.html">コアシステムクラスの作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/ancillary_classes.html">補助的なクラス作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/hooks.html">フック――フレームワークコアの拡張</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/autoloader.html">リソースのオートロード</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/common_functions.html">共通関数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/compatibility_functions.html">互換関数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/routing.html">URI ルーティング</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/errors.html">エラー処理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/caching.html">キャッシュ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/profiling.html">アプリケーションのプロファイリング</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/cli.html">CLI で実行する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/managing_apps.html">アプリケーションの管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/environments.html">複数環境への対応</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/alternative_php.html">ビューファイルでの PHP の代替構文</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/security.html">セキュリティ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/styleguide.html">PHP スタイルガイド</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">ライブラリ</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="benchmark.html">ベンチマーククラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="caching.html">キャッシングドライバ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="calendar.html">カレンダークラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cart.html">ショッピングカートクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html">設定クラス</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Email クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encrypt.html">Encrypt クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encryption.html">Encryption ライブラリ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_uploading.html">ファイルアップロードクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="form_validation.html">フォームバリデーション（検証）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ftp.html">FTP クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="image_lib.html">画像操作クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="input.html">入力クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javascript.html">JavaScript クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="language.html">言語クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loader.html">ローダ（読み込み処理）クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="migration.html">マイグレーションクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="output.html">出力クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pagination.html">ページネーションクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="parser.html">テンプレートパーサクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security.html">セキュリティクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sessions.html">セッションライブラリ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="table.html">HTML テーブルクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trackback.html">トラックバッククラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="typography.html">タイポグラフィークラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unit_testing.html">ユニットテストクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="uri.html">URI クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_agent.html">ユーザエージェントクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xmlrpc.html">XML-RPC および XML-RPC サーバクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zip.html">Zip 圧縮クラス</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../database/index.html">データベースリファレンス</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../database/examples.html">クイックスタート: 使用例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/configuration.html">データベース設定</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/connecting.html">データベースへの接続</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/queries.html">クエリの実行</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/results.html">クエリ結果の生成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/helpers.html">クエリヘルパー関数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/query_builder.html">クエリビルダクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/transactions.html">トランザクション</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/metadata.html">メタデータの取得</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/call_function.html">カスタム関数呼び出し</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/caching.html">クエリキャッシュ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/forge.html">データベースフォージを使用したデータベース操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/utilities.html">データベースユーティリティクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/db_driver_reference.html">データベースドライバリファレンス</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../helpers/index.html">ヘルパー</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/array_helper.html">配列ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/captcha_helper.html">キャプチャ ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/cookie_helper.html">Cookie ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/date_helper.html">日付ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/directory_helper.html">ディレクトリヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/download_helper.html">ダウンロードヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/email_helper.html">Email ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/file_helper.html">ファイルヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/form_helper.html">フォームヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/html_helper.html">HTML ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/inflector_helper.html">語形変換ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/language_helper.html">言語ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/number_helper.html">数字ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/path_helper.html">パスヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/security_helper.html">セキュリティヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/smiley_helper.html">スマイリーヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/string_helper.html">文字列ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/text_helper.html">テキストヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/typography_helper.html">タイポグラフィーヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/url_helper.html">URL ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/xml_helper.html">XML ヘルパー</a></li>
+</ul>
+</li>
+</ul>
+
+      </div>
+    
+      
+  </div>
+</div>
+<div id="nav2">
+  <a href="#" id="openToc">
+    <img src="data:image/jpeg;base64,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" title="Toggle Table of Contents" alt="Toggle Table of Contents" />
+  </a>
+</div>
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+          <a href="../index.html" class="fa fa-home"> CodeIgniter</a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../installation/downloads.html">CodeIgniter のダウンロード</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/index.html">インストール方法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">以前のバージョンからのアップグレード</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/troubleshooting.html">トラブルシューティング</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview/index.html">CodeIgniter 概要</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../overview/getting_started.html">CodeIgniter をはじめよう</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/at_a_glance.html">CodeIgniter の簡単な紹介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/features.html">CodeIgniter の機能</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/appflow.html">アプリケーションフローチャート</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/mvc.html">Model-View-Controller</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/goals.html">設計とアーキテクチャのゴール</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">チュートリアル</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/static_pages.html">静的なページ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/news_section.html">ニュースセクション</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/create_news_items.html">ニュース記事を作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/conclusion.html">おわりに</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contributing/index.html">CodeIgniter への貢献</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/index.html">CodeIgniter のドキュメントを書く</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DCO.html">Developer&#8217;s Certificate of Origin 1.1</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../general/index.html">一般的なトピック</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../general/urls.html">CodeIgniter の URL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/controllers.html">コントローラ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/reserved_names.html">予約語</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/views.html">ビュー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/models.html">モデル</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/helpers.html">ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/libraries.html">CodeIgniter のライブラリの利用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/creating_libraries.html">ライブラリの作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/drivers.html">CodeIgniter のドライバを使う</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/creating_drivers.html">ドライバの作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/core_classes.html">コアシステムクラスの作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/ancillary_classes.html">補助的なクラス作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/hooks.html">フック――フレームワークコアの拡張</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/autoloader.html">リソースのオートロード</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/common_functions.html">共通関数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/compatibility_functions.html">互換関数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/routing.html">URI ルーティング</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/errors.html">エラー処理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/caching.html">キャッシュ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/profiling.html">アプリケーションのプロファイリング</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/cli.html">CLI で実行する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/managing_apps.html">アプリケーションの管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/environments.html">複数環境への対応</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/alternative_php.html">ビューファイルでの PHP の代替構文</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/security.html">セキュリティ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/styleguide.html">PHP スタイルガイド</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">ライブラリ</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="benchmark.html">ベンチマーククラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="caching.html">キャッシングドライバ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="calendar.html">カレンダークラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cart.html">ショッピングカートクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html">設定クラス</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Email クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encrypt.html">Encrypt クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encryption.html">Encryption ライブラリ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_uploading.html">ファイルアップロードクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="form_validation.html">フォームバリデーション（検証）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ftp.html">FTP クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="image_lib.html">画像操作クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="input.html">入力クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javascript.html">JavaScript クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="language.html">言語クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loader.html">ローダ（読み込み処理）クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="migration.html">マイグレーションクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="output.html">出力クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pagination.html">ページネーションクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="parser.html">テンプレートパーサクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security.html">セキュリティクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sessions.html">セッションライブラリ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="table.html">HTML テーブルクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trackback.html">トラックバッククラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="typography.html">タイポグラフィークラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unit_testing.html">ユニットテストクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="uri.html">URI クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_agent.html">ユーザエージェントクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xmlrpc.html">XML-RPC および XML-RPC サーバクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zip.html">Zip 圧縮クラス</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../database/index.html">データベースリファレンス</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../database/examples.html">クイックスタート: 使用例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/configuration.html">データベース設定</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/connecting.html">データベースへの接続</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/queries.html">クエリの実行</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/results.html">クエリ結果の生成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/helpers.html">クエリヘルパー関数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/query_builder.html">クエリビルダクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/transactions.html">トランザクション</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/metadata.html">メタデータの取得</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/call_function.html">カスタム関数呼び出し</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/caching.html">クエリキャッシュ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/forge.html">データベースフォージを使用したデータベース操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/utilities.html">データベースユーティリティクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/db_driver_reference.html">データベースドライバリファレンス</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../helpers/index.html">ヘルパー</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/array_helper.html">配列ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/captcha_helper.html">キャプチャ ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/cookie_helper.html">Cookie ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/date_helper.html">日付ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/directory_helper.html">ディレクトリヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/download_helper.html">ダウンロードヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/email_helper.html">Email ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/file_helper.html">ファイルヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/form_helper.html">フォームヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/html_helper.html">HTML ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/inflector_helper.html">語形変換ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/language_helper.html">言語ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/number_helper.html">数字ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/path_helper.html">パスヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/security_helper.html">セキュリティヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/smiley_helper.html">スマイリーヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/string_helper.html">文字列ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/text_helper.html">テキストヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/typography_helper.html">タイポグラフィーヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/url_helper.html">URL ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/xml_helper.html">XML ヘルパー</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">CodeIgniter</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+        <li><a href="index.html">ライブラリ</a> &raquo;</li>
+      
+    <li>Email クラス</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+    <div style="float:right;margin-left:5px;" id="closeMe">
+      <img title="Classic Layout" alt="classic layout" src="data:image/gif;base64,R0lGODlhFAAUAJEAAAAAADMzM////wAAACH5BAUUAAIALAAAAAAUABQAAAImlI+py+0PU5gRBRDM3DxbWoXis42X13USOLauUIqnlsaH/eY6UwAAOw==" />
+    </div>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="email">
+<h1>Email クラス<a class="headerlink" href="#email" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>CodeIgniter の堅牢な Email クラスは、次のような機能に対応しています:</p>
+<ul class="simple">
+<li>複数プロトコル: メール、Sendmail、および SMTP</li>
+<li>SMTPのための暗号化　TLS および SSL</li>
+<li>複数の受取人</li>
+<li>CC と BCC</li>
+<li>HTML または プレーンテキスト email</li>
+<li>添付</li>
+<li>ワードラップ</li>
+<li>優先度</li>
+<li>BCC バッチモード。これは、大きなメールリストを小さな
+BCC バッチに分割します。</li>
+<li>Email デバッグツール</li>
+</ul>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#id1" id="id8">Email クラスを使う</a><ul>
+<li><a class="reference internal" href="#id2" id="id9">Email の送信</a></li>
+<li><a class="reference internal" href="#id3" id="id10">Email のオプションを設定する</a><ul>
+<li><a class="reference internal" href="#id4" id="id11">設定ファイルでEmailの設定を行う</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id5" id="id12">Email クラスの設定項目</a></li>
+<li><a class="reference internal" href="#id6" id="id13">ワードラップ設定の上書き</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id7" id="id14">クラスリファレンス</a></li>
+</ul>
+</div>
+<div class="custom-index container"></div><div class="section" id="id1">
+<h2><a class="toc-backref" href="#id8">Email クラスを使う</a><a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="id2">
+<h3><a class="toc-backref" href="#id9">Email の送信</a><a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>メールの送信は単純なだけでなく、送信する直前にも設定ファイル
+でも、メール送信の設定ができます。</p>
+<p>以下は、どうやってメールを送信できるかを示した基本的な例です。
+.. note:: この例では、<a class="reference internal" href="../general/controllers.html"><span class="doc">コントローラ</span></a>
+でメールを送信すると仮定しています。</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;load-&gt;library(&#39;email&#39;);
+
+$this-&gt;email-&gt;from(&#39;your@example.com&#39;, &#39;Your Name&#39;);
+$this-&gt;email-&gt;to(&#39;someone@example.com&#39;);
+$this-&gt;email-&gt;cc(&#39;another@another-example.com&#39;);
+$this-&gt;email-&gt;bcc(&#39;them@their-example.com&#39;);
+
+$this-&gt;email-&gt;subject(&#39;Email Test&#39;);
+$this-&gt;email-&gt;message(&#39;Testing the email class.&#39;);
+
+$this-&gt;email-&gt;send();
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h3><a class="toc-backref" href="#id10">Email のオプションを設定する</a><a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>メールの送信方法をカスタマイズできる21の設定項目が
+利用可能です。以下で述べるように手動で設定することも
+できますし、後述するように、設定ファイルに保管された
+項目から自動設定することもできます:</p>
+<p>設定項目は、email クラスの initialize メソッドに設定項目の配列を渡す
+ことでセットすることができます。以下は、設定項目をどのようにセット
+できるかの例です:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$config[&#39;protocol&#39;] = &#39;sendmail&#39;;
+$config[&#39;mailpath&#39;] = &#39;/usr/sbin/sendmail&#39;;
+$config[&#39;charset&#39;] = &#39;iso-8859-1&#39;;
+$config[&#39;wordwrap&#39;] = TRUE;
+
+$this-&gt;email-&gt;initialize($config);
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">ほとんどの設定項目には、設定しなかった場合に使われる
+初期値があります。</p>
+</div>
+<div class="section" id="id4">
+<h4><a class="toc-backref" href="#id11">設定ファイルでEmailの設定を行う</a><a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>設定をするのに、上で述べた方法を使いたくない場合は、代わりに設定
+ファイルにその設定を書いておくことができます。 email.php という
+名前で新しいファイルをつくり、$config という配列をそのファイル
+に書くだけです。 そして、config/email.php にそのファイルを保存
+すると、自動的にそれが使われます。 設定ファイルで設定した場合は、
+$this-&gt;email-&gt;initialize() メソッドを使う必要は「ありません」。</p>
+</div>
+</div>
+<div class="section" id="id5">
+<h3><a class="toc-backref" href="#id12">Email クラスの設定項目</a><a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>次のリストは、メールを送信する際にセットできる
+設定項目の全リストです。</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="14%" />
+<col width="16%" />
+<col width="20%" />
+<col width="51%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">設定項目</th>
+<th class="head">初期値</th>
+<th class="head">選択肢</th>
+<th class="head">説明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><strong>useragent</strong></td>
+<td>CodeIgniter</td>
+<td>なし</td>
+<td>ユーザエージェント</td>
+</tr>
+<tr class="row-odd"><td><strong>protocol</strong></td>
+<td>mail</td>
+<td>mail、sendmail、または smtp</td>
+<td>メールを送信するプロトコル</td>
+</tr>
+<tr class="row-even"><td><strong>mailpath</strong></td>
+<td>/usr/sbin/sendmail</td>
+<td>なし</td>
+<td>Sendmail へのパス</td>
+</tr>
+<tr class="row-odd"><td><strong>smtp_host</strong></td>
+<td>初期値なし</td>
+<td>なし</td>
+<td>SMTP サーバのアドレス</td>
+</tr>
+<tr class="row-even"><td><strong>smtp_user</strong></td>
+<td>初期値なし</td>
+<td>なし</td>
+<td>SMTP のユーザ名</td>
+</tr>
+<tr class="row-odd"><td><strong>smtp_pass</strong></td>
+<td>初期値なし</td>
+<td>なし</td>
+<td>SMTP のパスワード</td>
+</tr>
+<tr class="row-even"><td><strong>smtp_port</strong></td>
+<td>25</td>
+<td>なし</td>
+<td>SMTP のポート番号</td>
+</tr>
+<tr class="row-odd"><td><strong>smtp_timeout</strong></td>
+<td>5</td>
+<td>なし</td>
+<td>SMTP のタイムアウト（秒単位）</td>
+</tr>
+<tr class="row-even"><td><strong>smtp_keepalive</strong></td>
+<td>FALSE</td>
+<td>TRUE または FALSE（boolean）</td>
+<td>持続的SMTP接続の有効化</td>
+</tr>
+<tr class="row-odd"><td><strong>smtp_crypto</strong></td>
+<td>初期値なし</td>
+<td>tls または ssl</td>
+<td>SMTP暗号化</td>
+</tr>
+<tr class="row-even"><td><strong>wordwrap</strong></td>
+<td>TRUE</td>
+<td>TRUE または FALSE（boolean）</td>
+<td>ワードラップの有効化設定</td>
+</tr>
+<tr class="row-odd"><td><strong>wrapchars</strong></td>
+<td>76</td>
+<td>&nbsp;</td>
+<td>何番目の文字で折り返すか</td>
+</tr>
+<tr class="row-even"><td><strong>mailtype</strong></td>
+<td>text</td>
+<td>text または html</td>
+<td><p class="first">メールのタイプ。HTML メールを送信すると、メールは完全な Web
+ページとして送信されます。このとき、相対リンクや画像への相対</p>
+<p class="last">パスがないか確かめてください。それらは動作しません。</p>
+</td>
+</tr>
+<tr class="row-odd"><td><strong>charset</strong></td>
+<td><code class="docutils literal"><span class="pre">$config['charset']</span></code></td>
+<td>&nbsp;</td>
+<td>文字セット（utf-8、iso-8859-1、など）</td>
+</tr>
+<tr class="row-even"><td><strong>validate</strong></td>
+<td>FALSE</td>
+<td>TRUE または FALSE（boolean）</td>
+<td>メールアドレスを検証するかどうか</td>
+</tr>
+<tr class="row-odd"><td><strong>priority</strong></td>
+<td>3</td>
+<td>1, 2, 3, 4, 5</td>
+<td>メールの優先度。 1 = 最高 5 = 最低 3 = 通常</td>
+</tr>
+<tr class="row-even"><td><strong>crlf</strong></td>
+<td>\n</td>
+<td>&#8220;\r\n&#8221; or &#8220;\n&#8221; or &#8220;\r&#8221;</td>
+<td>CRLF（&#8221;\r\n&#8221; RFC 822に応じて使用）。</td>
+</tr>
+<tr class="row-odd"><td><strong>newline</strong></td>
+<td>\n</td>
+<td>&#8220;\r\n&#8221; or &#8220;\n&#8221; or &#8220;\r&#8221;</td>
+<td>改行文字（&#8221;\r\n&#8221; RFC 822に応じて使用）。</td>
+</tr>
+<tr class="row-even"><td><strong>bcc_batch_mode</strong></td>
+<td>FALSE</td>
+<td>TRUE またはFALSE（boolean）</td>
+<td>BCC バッチモードを有効にするかどうか</td>
+</tr>
+<tr class="row-odd"><td><strong>bcc_batch_size</strong></td>
+<td>200</td>
+<td>なし</td>
+<td>各 BCC バッチで送るメール件数。</td>
+</tr>
+<tr class="row-even"><td><strong>dsn</strong></td>
+<td>FALSE</td>
+<td>TRUE または FALSE（boolean）</td>
+<td>サーバーからのメッセージ通知を有効にする</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id6">
+<h3><a class="toc-backref" href="#id13">ワードラップ設定の上書き</a><a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>ワードラップが有効になっている（RFC 822 に従うことを推奨します）
+場合 、email に非常に長いリンクがあると折り返されてしまい、受信
+した人がクリックできないようになります。 CodeIgniter では、次の
+ようにして、メッセージの一部で手動でワードラップ設定を上書きする
+ことができます:</p>
+<blockquote>
+<div><p>通常通り折り返された
+メールのテキスト。</p>
+<p>{unwrap}http://example.com/a_long_link_that_should_not_be_wrapped.html{/unwrap}</p>
+<p>さらに通常通り折り返
+されたテキスト.</p>
+</div></blockquote>
+<p>折り返したくない項目を {unwrap} {/unwrap}で挟んでください。</p>
+</div>
+</div>
+<div class="section" id="id7">
+<h2><a class="toc-backref" href="#id14">クラスリファレンス</a><a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<dl class="class">
+<dt id="CI_Email">
+<em class="property">class </em><code class="descname">CI_Email</code><a class="headerlink" href="#CI_Email" title="この定義へのパーマリンク">¶</a></dt>
+<dd><dl class="method">
+<dt id="CI_Email::from">
+<code class="descname">from</code><span class="sig-paren">(</span><em>$from</em><span class="optional">[</span>, <em>$name = ''</em><span class="optional">[</span>, <em>$return_path = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Email::from" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$from</strong> (<em>string</em>) &#8211; &#8220;From&#8221; メールアドレス</li>
+<li><strong>$name</strong> (<em>string</em>) &#8211; &#8220;From&#8221; 表示名</li>
+<li><strong>$return_path</strong> (<em>string</em>) &#8211; 未配達の電子メールをリダイレクトするオプションのメールアドレス</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">CI_Email インスタンス（メソッドチェーン）</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">CI_Email</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>電子メール送信者の電子メールアドレスと氏名をセットします:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;email-&gt;from(&#39;you@example.com&#39;, &#39;あなたの名前&#39;);
+</pre></div>
+</div>
+<p>送信したメールのリターンパスを決めることもできます。未配達のメールを転送するのを支援します。:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;email-&gt;from(&#39;you@example.com&#39;, &#39;あなたの名前&#39;, &#39;returned_emails@example.com&#39;);
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">プロトコルとして「SMTP」を設定した場合、
+リターンパスは使用できません。</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="CI_Email::reply_to">
+<code class="descname">reply_to</code><span class="sig-paren">(</span><em>$replyto</em><span class="optional">[</span>, <em>$name = ''</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Email::reply_to" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$replyto</strong> (<em>string</em>) &#8211; 返信の電子メール・アドレス</li>
+<li><strong>$name</strong> (<em>string</em>) &#8211; 返信の電子メールアドレス名を示します</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">CI_Email インスタンス（メソッドチェイン）</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">CI_Email</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>返信先アドレスをセットします。指定しない場合は、&#8221;from&#8221; メソッド
+で指定されたものが使われます。例:</p>
+<blockquote>
+<div>$this-&gt;email-&gt;reply_to(<a class="reference external" href="mailto:'you&#37;&#52;&#48;example&#46;com">'you<span>&#64;</span>example<span>&#46;</span>com</a>&#8216;, &#8216;あなたの名前&#8217;);</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="CI_Email::to">
+<code class="descname">to</code><span class="sig-paren">(</span><em>$to</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_Email::to" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$to</strong> (<em>mixed</em>) &#8211; メールアドレス　カンマで区切られた列または配列</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">CI_Email インスタンス（メソッドチェイン）</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">CI_Email</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>受取人のメールアドレスをセットします（複数可）。次のように、単一のメールアドレス、
+カンマ区切りのリスト、あるいは配列で指定可能です:</p>
+<blockquote>
+<div>$this-&gt;email-&gt;to(<a class="reference external" href="mailto:'someone&#37;&#52;&#48;example&#46;com">'someone<span>&#64;</span>example<span>&#46;</span>com</a>&#8216;);</div></blockquote>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;email-&gt;to(&#39;one@example.com, two@example.com, three@example.com&#39;);
+</pre></div>
+</div>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;email-&gt;to(
+        array(&#39;one@example.com&#39;, &#39;two@example.com&#39;, &#39;three@example.com&#39;)
+);
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="CI_Email::cc">
+<code class="descname">cc</code><span class="sig-paren">(</span><em>$cc</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_Email::cc" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$cc</strong> (<em>mixed</em>) &#8211; メールアドレス　カンマで区切られた列または配列</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">CI_Email インスタンス（メソッドチェイン）</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">CI_Email</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>CC のメールアドレスをセットします（複数可）。 &#8220;to&#8221; メソッドのように、単一のメールアドレス、
+カンマ区切りのリスト、あるいは配列で指定可能です。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="CI_Email::bcc">
+<code class="descname">bcc</code><span class="sig-paren">(</span><em>$bcc</em><span class="optional">[</span>, <em>$limit = ''</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Email::bcc" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$bcc</strong> (<em>mixed</em>) &#8211; メールアドレス　カンマで区切られた列または配列</li>
+<li><strong>$limit</strong> (<em>int</em>) &#8211; バッチ送信する電子メールの最大数</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">CI_Email インスタンス（メソッドチェイン）</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">CI_Email</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>BCC のメールアドレスをセットします（複数可）。&#8221;to&#8221; メソッドのように、単一のメールアドレス、
+ンマ区切りのリスト、あるいは配列で指定可能です。</p>
+<p>「$LIMIT」が設定されている場合は、「バッチモード」は、各バッチ
+が指定された「$LIMIT」を超えないと、バッチに電子メールを送信します、
+これが有効になります。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="CI_Email::subject">
+<code class="descname">subject</code><span class="sig-paren">(</span><em>$subject</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_Email::subject" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$subject</strong> (<em>string</em>) &#8211; 電子メールの件名</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">CI_Email インスタンス（メソッドチェイン）</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">CI_Email</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>電子メールの件名をセットします:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;email-&gt;subject(&#39;This is my subject&#39;);
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="CI_Email::message">
+<code class="descname">message</code><span class="sig-paren">(</span><em>$body</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_Email::message" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$body</strong> (<em>string</em>) &#8211; 電子メール本文</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">CI_Email インスタンス（メソッドチェイン）</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">CI_Email</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>電子メールの本文をセットします:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;email-&gt;message(&#39;This is my message&#39;);
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="CI_Email::set_alt_message">
+<code class="descname">set_alt_message</code><span class="sig-paren">(</span><em>$str</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_Email::set_alt_message" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$str</strong> (<em>string</em>) &#8211; 代替のメール本文:</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">CI_Email インスタンス（メソッドチェイン）</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">CI_Email</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>代替のメール本文をセットします:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;email-&gt;set_alt_message(&#39;This is the alternative message&#39;);
+</pre></div>
+</div>
+<p>これは、HTML形式にフォーマットされた電子メールを送信する場合に使用
+できるオプションのメッセージ文字列です。あなたがHTML形式のメールを
+対応していない人々の為、ヘッダ文字列に追加されていないHTMLフォーマ
+ットで代替メッセージを指定することができます。あなた自身のメッセー
+ジを設定しないとCodeIgniterはHTMLメールからメッセージを抽出しタグを
+削除します。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="CI_Email::set_header">
+<code class="descname">set_header</code><span class="sig-paren">(</span><em>$header</em>, <em>$value</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_Email::set_header" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$header</strong> (<em>string</em>) &#8211; ヘッダ名</li>
+<li><strong>$value</strong> (<em>string</em>) &#8211; ヘッダ内容</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">CI_Email インスタンス（メソッドチェイン）</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">CI_Email</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>電子メールの追加のヘッダーを付加:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;email-&gt;set_header(&#39;Header1&#39;, &#39;Value1&#39;);
+$this-&gt;email-&gt;set_header(&#39;Header2&#39;, &#39;Value2&#39;);
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="CI_Email::clear">
+<code class="descname">clear</code><span class="sig-paren">(</span><span class="optional">[</span><em>$clear_attachments = FALSE</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Email::clear" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$clear_attachments</strong> (<em>bool</em>) &#8211; 添付ファイルをクリアするかどうか</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">CI_Email インスタンス（メソッドチェイン）</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">CI_Email</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>メールの設定を空状態にします。 このメソッドは、ループの
+各サイクルでデータをリセットしながらメール送信機能を使う
+場合を意図しています。</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>foreach ($list as $name =&gt; $address)
+{
+        $this-&gt;email-&gt;clear();
+
+        $this-&gt;email-&gt;to($address);
+        $this-&gt;email-&gt;from(&#39;your@example.com&#39;);
+        $this-&gt;email-&gt;subject(&#39;あなたの情報 &#39;.$name);
+        $this-&gt;email-&gt;message(&#39;こんにちは  &#39;.$name.&#39;さん ご要望の情報です。&#39;);
+        $this-&gt;email-&gt;send();
+}
+</pre></div>
+</div>
+<p>次のように引数に TRUE をセットした場合は、すべての添付も
+解除されます:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;email-&gt;clear(TRUE);
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="CI_Email::send">
+<code class="descname">send</code><span class="sig-paren">(</span><span class="optional">[</span><em>$auto_clear = TRUE</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Email::send" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$auto_clear</strong> (<em>bool</em>) &#8211; 自動的にメッセージデータをクリアするかどうか</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">成功時TRUE、失敗した場合FALSE</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">bool</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>メール送信メソッド。 条件判断が利用できるよう、送信が成功したか失敗したかに
+基づいてブール値の TRUE か FALSE が返ります:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>if ( ! $this-&gt;email-&gt;send())
+{
+        // エラーを生成します
+}
+</pre></div>
+</div>
+<p>要求が成功した場合、このメソッドは自動的にすべてのパラメータをクリアします。
+この動作を停止するにはFALSEを渡します:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>if ($this-&gt;email-&gt;send(FALSE))
+{
+        // パラメータはクリアされません
+}
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">「print_debugger」を使用するためには、電子メールのパラメータ
+をクリアしないようにする必要があります。</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="CI_Email::attach">
+<code class="descname">attach</code><span class="sig-paren">(</span><em>$filename</em><span class="optional">[</span>, <em>$disposition = ''</em><span class="optional">[</span>, <em>$newname = NULL</em><span class="optional">[</span>, <em>$mime = ''</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Email::attach" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$filename</strong> (<em>string</em>) &#8211; ファイル名</li>
+<li><strong>$disposition</strong> (<em>string</em>) &#8211; 添付ファイルを「配置」します。ほとんどの電子メールクライアント
+にかかわらず、ここで使用されるMIME仕様の独自の判断を下します。
+<a class="reference external" href="https://www.iana.org/assignments/cont-disp/cont-disp.xhtml">https://www.iana.org/assignments/cont-disp/cont-disp.xhtml</a></li>
+<li><strong>$newname</strong> (<em>string</em>) &#8211; 電子メールで使用するカスタムファイル名</li>
+<li><strong>$mime</strong> (<em>string</em>) &#8211; MIMEタイプを使用する（バッファリングされたデータに利用）</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">CI_Email インスタンス（メソッドチェイン）</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">CI_Email</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>添付ファイルを送信できます。第1引数にファイルのパスとファイル名を指定してください。
+複数ファイルを添付する場合は、複数回メソッドを呼んでください。例えば以下のように
+します:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;email-&gt;attach(&#39;/path/to/photo1.jpg&#39;);
+$this-&gt;email-&gt;attach(&#39;/path/to/photo2.jpg&#39;);
+$this-&gt;email-&gt;attach(&#39;/path/to/photo3.jpg&#39;);
+</pre></div>
+</div>
+<p>デフォルトの設定（添付ファイル）を使用します。それ以外の場合はカスタム配置を使用し、
+二番目のパラメータを空白のままにします:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;email-&gt;attach(&#39;image.jpg&#39;, &#39;inline&#39;);
+</pre></div>
+</div>
+<p>また、URLを使用することができます:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;email-&gt;attach(&#39;http://example.com/filename.pdf&#39;);
+</pre></div>
+</div>
+<p>カスタムファイル名を使用したい場合は、第三のパラメータを使用することができます:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;email-&gt;attach(&#39;filename.pdf&#39;, &#39;attachment&#39;, &#39;report.pdf&#39;);
+</pre></div>
+</div>
+<p>本当の物理的なファイルの代わりに、バッファ文字列を使用する必要がある場合、
+バッファとしての最初のパラメータ、ファイル名としての第3のパラメータとMIME
+タイプとしての第4のパラメータを使うことができます:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;email-&gt;attach($buffer, &#39;attachment&#39;, &#39;report.pdf&#39;, &#39;application/pdf&#39;);
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="CI_Email::attachment_cid">
+<code class="descname">attachment_cid</code><span class="sig-paren">(</span><em>$filename</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_Email::attachment_cid" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$filename</strong> (<em>string</em>) &#8211; 既存の添付ファイル名</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">添付ファイルのContent-ID、見つからない場合はFALSE</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">string</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>添付ファイルのセットとContent-IDを返し、添付ファイルをHTMLにインライン（写真）埋め込むため有効にします。
+最初のパラメータは、すでに添付されたファイル名でなければなりません。</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$filename = &#39;/img/photo1.jpg&#39;;
+$this-&gt;email-&gt;attach($filename);
+foreach ($list as $address)
+{
+        $this-&gt;email-&gt;to($address);
+        $cid = $this-&gt;email-&gt;attachment_cid($filename);
+        $this-&gt;email-&gt;message(&#39;&lt;img src=&quot;cid:&#39;. $cid .&#39;&quot; alt=&quot;photo1&quot; /&gt;&#39;);
+        $this-&gt;email-&gt;send();
+}
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">一意にするため、それぞれ電子メール用のContent-IDは、再作成する必要があります。</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="CI_Email::print_debugger">
+<code class="descname">print_debugger</code><span class="sig-paren">(</span><span class="optional">[</span><em>$include = array('headers'</em>, <em>'subject'</em>, <em>'body')</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Email::print_debugger" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$include</strong> (<em>array</em>) &#8211; メッセージのどの部分を印刷するか</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">フォーマットされたデバッグデータ</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">string</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>すべてのサーバメッセージ、メールヘッダ、メールメッセージを文字列として返します。
+デバッグに役立ちます。</p>
+<p>オプションで、メッセージの一部を印刷するかを指定することができます。
+有効なオプションは以下のとおりです。「ヘッダ」「件名」「本文」</p>
+<p>例:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>// クリアされないように電子メールデータのための順序で送信しているときには、
+// FALSEを渡す必要があります。その場合、print_debugger（）の出力には何も
+// ないでしょう。
+$this-&gt;email-&gt;send(FALSE);
+
+// 唯一のメッセージの件名と本文を除く、電子メールのヘッダを出力します
+$this-&gt;email-&gt;print_debugger(array(&#39;headers&#39;));
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">デフォルトでは、すべての生データが印刷されます。</p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="encrypt.html" class="btn btn-neutral float-right" title="Encrypt クラス">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="config.html" class="btn btn-neutral" title="設定クラス"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
+      最終更新: 9月 06, 2016
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'3.2.0-dev',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  false
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

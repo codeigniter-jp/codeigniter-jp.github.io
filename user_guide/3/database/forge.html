@@ -1,0 +1,1032 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>データベースフォージクラス &mdash; CodeIgniter 3.2.0-dev ドキュメント</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/ci-icon.ico"/>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="CodeIgniter 3.2.0-dev ドキュメント" href="../index.html"/>
+        <link rel="up" title="データベースリファレンス" href="index.html"/>
+        <link rel="next" title="データベースユーティリティクラス" href="utilities.html"/>
+        <link rel="prev" title="データベースキャッシュクラス" href="caching.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div id="nav">
+  <div id="nav_inner">
+    
+    
+    
+      <div id="pulldown-menu" class="ciNav">
+        <ul>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../installation/downloads.html">CodeIgniter のダウンロード</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/index.html">インストール方法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">以前のバージョンからのアップグレード</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/troubleshooting.html">トラブルシューティング</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview/index.html">CodeIgniter 概要</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../overview/getting_started.html">CodeIgniter をはじめよう</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/at_a_glance.html">CodeIgniter の簡単な紹介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/features.html">CodeIgniter の機能</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/appflow.html">アプリケーションフローチャート</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/mvc.html">Model-View-Controller</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/goals.html">設計とアーキテクチャのゴール</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">チュートリアル</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/static_pages.html">静的なページ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/news_section.html">ニュースセクション</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/create_news_items.html">ニュース記事を作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/conclusion.html">おわりに</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contributing/index.html">CodeIgniter への貢献</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/index.html">CodeIgniter のドキュメントを書く</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DCO.html">Developer&#8217;s Certificate of Origin 1.1</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../general/index.html">一般的なトピック</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../general/urls.html">CodeIgniter の URL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/controllers.html">コントローラ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/reserved_names.html">予約語</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/views.html">ビュー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/models.html">モデル</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/helpers.html">ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/libraries.html">CodeIgniter のライブラリの利用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/creating_libraries.html">ライブラリの作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/drivers.html">CodeIgniter のドライバを使う</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/creating_drivers.html">ドライバの作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/core_classes.html">コアシステムクラスの作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/ancillary_classes.html">補助的なクラス作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/hooks.html">フック――フレームワークコアの拡張</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/autoloader.html">リソースのオートロード</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/common_functions.html">共通関数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/compatibility_functions.html">互換関数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/routing.html">URI ルーティング</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/errors.html">エラー処理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/caching.html">キャッシュ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/profiling.html">アプリケーションのプロファイリング</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/cli.html">CLI で実行する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/managing_apps.html">アプリケーションの管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/environments.html">複数環境への対応</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/alternative_php.html">ビューファイルでの PHP の代替構文</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/security.html">セキュリティ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/styleguide.html">PHP スタイルガイド</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../libraries/index.html">ライブラリ</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/benchmark.html">ベンチマーククラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/caching.html">キャッシングドライバ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/calendar.html">カレンダークラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/cart.html">ショッピングカートクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/config.html">設定クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/email.html">Email クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/encrypt.html">Encrypt クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/encryption.html">Encryption ライブラリ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/file_uploading.html">ファイルアップロードクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/form_validation.html">フォームバリデーション（検証）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/ftp.html">FTP クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/image_lib.html">画像操作クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/input.html">入力クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/javascript.html">JavaScript クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/language.html">言語クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/loader.html">ローダ（読み込み処理）クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/migration.html">マイグレーションクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/output.html">出力クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/pagination.html">ページネーションクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/parser.html">テンプレートパーサクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/security.html">セキュリティクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションライブラリ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/table.html">HTML テーブルクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/trackback.html">トラックバッククラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/typography.html">タイポグラフィークラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/unit_testing.html">ユニットテストクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/uri.html">URI クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/user_agent.html">ユーザエージェントクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/xmlrpc.html">XML-RPC および XML-RPC サーバクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/zip.html">Zip 圧縮クラス</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">データベースリファレンス</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="examples.html">クイックスタート: 使用例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html">データベース設定</a></li>
+<li class="toctree-l2"><a class="reference internal" href="connecting.html">データベースへの接続</a></li>
+<li class="toctree-l2"><a class="reference internal" href="queries.html">クエリの実行</a></li>
+<li class="toctree-l2"><a class="reference internal" href="results.html">クエリ結果の生成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="helpers.html">クエリヘルパー関数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="query_builder.html">クエリビルダクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transactions.html">トランザクション</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metadata.html">メタデータの取得</a></li>
+<li class="toctree-l2"><a class="reference internal" href="call_function.html">カスタム関数呼び出し</a></li>
+<li class="toctree-l2"><a class="reference internal" href="caching.html">クエリキャッシュ</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">データベースフォージを使用したデータベース操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utilities.html">データベースユーティリティクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="db_driver_reference.html">データベースドライバリファレンス</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../helpers/index.html">ヘルパー</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/array_helper.html">配列ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/captcha_helper.html">キャプチャ ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/cookie_helper.html">Cookie ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/date_helper.html">日付ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/directory_helper.html">ディレクトリヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/download_helper.html">ダウンロードヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/email_helper.html">Email ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/file_helper.html">ファイルヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/form_helper.html">フォームヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/html_helper.html">HTML ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/inflector_helper.html">語形変換ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/language_helper.html">言語ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/number_helper.html">数字ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/path_helper.html">パスヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/security_helper.html">セキュリティヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/smiley_helper.html">スマイリーヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/string_helper.html">文字列ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/text_helper.html">テキストヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/typography_helper.html">タイポグラフィーヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/url_helper.html">URL ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/xml_helper.html">XML ヘルパー</a></li>
+</ul>
+</li>
+</ul>
+
+      </div>
+    
+      
+  </div>
+</div>
+<div id="nav2">
+  <a href="#" id="openToc">
+    <img src="data:image/jpeg;base64,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" title="Toggle Table of Contents" alt="Toggle Table of Contents" />
+  </a>
+</div>
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+          <a href="../index.html" class="fa fa-home"> CodeIgniter</a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../installation/downloads.html">CodeIgniter のダウンロード</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/index.html">インストール方法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">以前のバージョンからのアップグレード</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/troubleshooting.html">トラブルシューティング</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview/index.html">CodeIgniter 概要</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../overview/getting_started.html">CodeIgniter をはじめよう</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/at_a_glance.html">CodeIgniter の簡単な紹介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/features.html">CodeIgniter の機能</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/appflow.html">アプリケーションフローチャート</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/mvc.html">Model-View-Controller</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/goals.html">設計とアーキテクチャのゴール</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">チュートリアル</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/static_pages.html">静的なページ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/news_section.html">ニュースセクション</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/create_news_items.html">ニュース記事を作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/conclusion.html">おわりに</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contributing/index.html">CodeIgniter への貢献</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/index.html">CodeIgniter のドキュメントを書く</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DCO.html">Developer&#8217;s Certificate of Origin 1.1</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../general/index.html">一般的なトピック</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../general/urls.html">CodeIgniter の URL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/controllers.html">コントローラ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/reserved_names.html">予約語</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/views.html">ビュー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/models.html">モデル</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/helpers.html">ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/libraries.html">CodeIgniter のライブラリの利用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/creating_libraries.html">ライブラリの作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/drivers.html">CodeIgniter のドライバを使う</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/creating_drivers.html">ドライバの作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/core_classes.html">コアシステムクラスの作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/ancillary_classes.html">補助的なクラス作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/hooks.html">フック――フレームワークコアの拡張</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/autoloader.html">リソースのオートロード</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/common_functions.html">共通関数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/compatibility_functions.html">互換関数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/routing.html">URI ルーティング</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/errors.html">エラー処理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/caching.html">キャッシュ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/profiling.html">アプリケーションのプロファイリング</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/cli.html">CLI で実行する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/managing_apps.html">アプリケーションの管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/environments.html">複数環境への対応</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/alternative_php.html">ビューファイルでの PHP の代替構文</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/security.html">セキュリティ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/styleguide.html">PHP スタイルガイド</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../libraries/index.html">ライブラリ</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/benchmark.html">ベンチマーククラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/caching.html">キャッシングドライバ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/calendar.html">カレンダークラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/cart.html">ショッピングカートクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/config.html">設定クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/email.html">Email クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/encrypt.html">Encrypt クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/encryption.html">Encryption ライブラリ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/file_uploading.html">ファイルアップロードクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/form_validation.html">フォームバリデーション（検証）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/ftp.html">FTP クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/image_lib.html">画像操作クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/input.html">入力クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/javascript.html">JavaScript クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/language.html">言語クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/loader.html">ローダ（読み込み処理）クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/migration.html">マイグレーションクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/output.html">出力クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/pagination.html">ページネーションクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/parser.html">テンプレートパーサクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/security.html">セキュリティクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションライブラリ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/table.html">HTML テーブルクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/trackback.html">トラックバッククラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/typography.html">タイポグラフィークラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/unit_testing.html">ユニットテストクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/uri.html">URI クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/user_agent.html">ユーザエージェントクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/xmlrpc.html">XML-RPC および XML-RPC サーバクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/zip.html">Zip 圧縮クラス</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">データベースリファレンス</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="examples.html">クイックスタート: 使用例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html">データベース設定</a></li>
+<li class="toctree-l2"><a class="reference internal" href="connecting.html">データベースへの接続</a></li>
+<li class="toctree-l2"><a class="reference internal" href="queries.html">クエリの実行</a></li>
+<li class="toctree-l2"><a class="reference internal" href="results.html">クエリ結果の生成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="helpers.html">クエリヘルパー関数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="query_builder.html">クエリビルダクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transactions.html">トランザクション</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metadata.html">メタデータの取得</a></li>
+<li class="toctree-l2"><a class="reference internal" href="call_function.html">カスタム関数呼び出し</a></li>
+<li class="toctree-l2"><a class="reference internal" href="caching.html">クエリキャッシュ</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">データベースフォージを使用したデータベース操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utilities.html">データベースユーティリティクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="db_driver_reference.html">データベースドライバリファレンス</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../helpers/index.html">ヘルパー</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/array_helper.html">配列ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/captcha_helper.html">キャプチャ ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/cookie_helper.html">Cookie ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/date_helper.html">日付ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/directory_helper.html">ディレクトリヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/download_helper.html">ダウンロードヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/email_helper.html">Email ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/file_helper.html">ファイルヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/form_helper.html">フォームヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/html_helper.html">HTML ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/inflector_helper.html">語形変換ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/language_helper.html">言語ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/number_helper.html">数字ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/path_helper.html">パスヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/security_helper.html">セキュリティヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/smiley_helper.html">スマイリーヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/string_helper.html">文字列ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/text_helper.html">テキストヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/typography_helper.html">タイポグラフィーヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/url_helper.html">URL ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/xml_helper.html">XML ヘルパー</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">CodeIgniter</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+        <li><a href="index.html">データベースリファレンス</a> &raquo;</li>
+      
+    <li>データベースフォージクラス</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+    <div style="float:right;margin-left:5px;" id="closeMe">
+      <img title="Classic Layout" alt="classic layout" src="data:image/gif;base64,R0lGODlhFAAUAJEAAAAAADMzM////wAAACH5BAUUAAIALAAAAAAUABQAAAImlI+py+0PU5gRBRDM3DxbWoXis42X13USOLauUIqnlsaH/eY6UwAAOw==" />
+    </div>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="id1">
+<h1><a class="toc-backref" href="#id17">データベースフォージクラス</a><a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>データベースフォージクラスは、データベースを管理するメソッドを
+搭載しています。</p>
+<div class="contents topic" id="id2">
+<p class="topic-title first">目次</p>
+<ul class="simple">
+<li><a class="reference internal" href="#id1" id="id17">データベースフォージクラス</a><ul>
+<li><a class="reference internal" href="#id3" id="id18">フォージクラスの初期化</a></li>
+<li><a class="reference internal" href="#id4" id="id19">データベースの作成と削除</a></li>
+<li><a class="reference internal" href="#id5" id="id20">テーブルの作成と削除</a><ul>
+<li><a class="reference internal" href="#id6" id="id21">フィールドの追加</a></li>
+<li><a class="reference internal" href="#id8" id="id22">キーの追加</a></li>
+<li><a class="reference internal" href="#id9" id="id23">テーブルの作成</a></li>
+<li><a class="reference internal" href="#id10" id="id24">テーブルの削除</a></li>
+<li><a class="reference internal" href="#id11" id="id25">テーブル名の変更</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id12" id="id26">テーブルの変更</a><ul>
+<li><a class="reference internal" href="#id13" id="id27">テーブルにカラムを追加</a></li>
+<li><a class="reference internal" href="#id14" id="id28">テーブルのカラムを削除</a></li>
+<li><a class="reference internal" href="#id15" id="id29">テーブルのカラムを変更</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id16" id="id30">クラスリファレンス</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h2><a class="toc-backref" href="#id18">フォージクラスの初期化</a><a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="admonition important">
+<p class="first admonition-title">重要</p>
+<p class="last">フォージクラスはデータベースドライバを必要とするので、
+フォージクラスを初期化するには、あらかじめデータベースドライバが動いている必要があります。</p>
+</div>
+<p>フォージクラスは次のようにロードします:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;load-&gt;dbforge()
+</pre></div>
+</div>
+<p>デフォルト以外のデータベースを管理したい場合は、 DB フォージのローダに
+別のデータベースオブジェクトを渡すこともできます:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;myforge = $this-&gt;load-&gt;dbforge($this-&gt;other_db, TRUE);
+</pre></div>
+</div>
+<p>上記の例では、我々はカスタムデータベースオブジェクトを第一引数に渡しており、
+<code class="docutils literal"><span class="pre">$this-&gt;dbforge</span></code> に割り当てるかわりに dbforge オブジェクトを返すように命令
+しています。</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">両方の引数は別々に使うことができます。第一引数をスキップするには
+空の値を渡してください。</p>
+</div>
+<p>いったん初期化されれば、フォージのメソッドは、 <code class="docutils literal"><span class="pre">$this-&gt;dbforge</span></code>
+オブジェクトを利用してアクセスできます:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;dbforge-&gt;some_method();
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2><a class="toc-backref" href="#id19">データベースの作成と削除</a><a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p><strong>$this-&gt;dbforge-&gt;create_database(&#8216;db_name&#8217;)</strong></p>
+<p>最初の引数で渡した名前でデータベースを作成します。戻り値は TRUE/FALSE
+で成功したか失敗したかを示します:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>if ($this-&gt;dbforge-&gt;create_database(&#39;my_db&#39;))
+{
+        echo &#39;Database が作成されました！&#39;;
+}
+</pre></div>
+</div>
+<p><strong>$this-&gt;dbforge-&gt;drop_database(&#8216;db_name&#8217;)</strong></p>
+<p>最初の引数で示された名前のデータベースを削除します。戻り値は
+TRUE/FALSE で成功か失敗を示します:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>if ($this-&gt;dbforge-&gt;drop_database(&#39;my_db&#39;))
+{
+        echo &#39;Database が削除されました！&#39;;
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h2><a class="toc-backref" href="#id20">テーブルの作成と削除</a><a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>テーブルを作成するためには、やらなければならないことがいくつかあります。
+フィールドを追加したり、キーをテーブルに追加したり、カラムを変更したりです。
+CodeIgniter はこのようなことに関してのメカニズムを提供しています。</p>
+<div class="section" id="id6">
+<h3><a class="toc-backref" href="#id21">フィールドの追加</a><a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>フィールドは連想配列を通して作成されます。配列の中には、フィールドのデ
+ータタイプを指定する &#8216;type&#8217; キーが必要となります。たとえば、
+INT 、 VARCHAR 、 TEXT などです。多くのデータタイプ（たとえば VARCHAR
+など）は &#8216;constraint&#8217; キーも必要です。</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$fields = array(
+        &#39;users&#39; =&gt; array(
+                &#39;type&#39; =&gt; &#39;VARCHAR&#39;,
+                &#39;constraint&#39; =&gt; &#39;100&#39;,
+        ),
+);
+// &quot;users VARCHAR(100)&quot; と解釈され、フィールドが追加されます。
+</pre></div>
+</div>
+<p>さらに、以下のキー/値が使えます:</p>
+<ul class="simple">
+<li>unsigned/true : フィールド定義として &#8220;UNSIGNED&#8221; を生成します。</li>
+<li>default/値 : フィールド定義としてデフォルト値を生成します。</li>
+<li>null/true : フィールド定義として &#8220;NULL&#8221;
+を生成します。この指定がないと、フィールドは &#8220;NOT NULL&#8221; となります。</li>
+<li>auto_increment/true : フィールドのフラグとして、auto_increment を立
+てます。フィールドタイプは整数の様なタイプをサポートするものでないとい
+けません。</li>
+<li>unique/true : to generate a unique key for the field definition.</li>
+</ul>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$fields = array(
+        &#39;blog_id&#39; =&gt; array(
+                &#39;type&#39; =&gt; &#39;INT&#39;,
+                &#39;constraint&#39; =&gt; 5,
+                &#39;unsigned&#39; =&gt; TRUE,
+                &#39;auto_increment&#39; =&gt; TRUE
+        ),
+        &#39;blog_title&#39; =&gt; array(
+                &#39;type&#39; =&gt; &#39;VARCHAR&#39;,
+                &#39;constraint&#39; =&gt; &#39;100&#39;,
+                &#39;unique&#39; =&gt; TRUE,
+        ),
+        &#39;blog_author&#39; =&gt; array(
+                &#39;type&#39; =&gt;&#39;VARCHAR&#39;,
+                &#39;constraint&#39; =&gt; &#39;100&#39;,
+                &#39;default&#39; =&gt; &#39;King of Town&#39;,
+        ),
+        &#39;blog_description&#39; =&gt; array(
+                &#39;type&#39; =&gt; &#39;TEXT&#39;,
+                &#39;null&#39; =&gt; TRUE,
+        ),
+);
+</pre></div>
+</div>
+<p>フィールドが定義された後で、 <code class="docutils literal"><span class="pre">$this-&gt;dbforge-&gt;add_field($fields);</span></code>
+の後に呼ばれる <code class="docutils literal"><span class="pre">create_table()</span></code> メソッドでフィールドが追加
+されます。</p>
+<p><strong>$this-&gt;dbforge-&gt;add_field()</strong></p>
+<p>add_fields メソッドは上のような配列を受け入れます。</p>
+<div class="section" id="id7">
+<h4>フィールド定義を文字列として渡す<a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>フィールド作成をどのようにしたらよいか正確にわかっている場合、
+add_field() メソッドを使って、フィールド定義を文字列として渡すこともできます。</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;dbforge-&gt;add_field(&quot;label varchar(100) NOT NULL DEFAULT &#39;default label&#39;&quot;);
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">生の文字列をフィールドとして渡してからそれらのフィールドに <code class="docutils literal"><span class="pre">add_key()</span></code> を呼ぶことはできません。</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">add_field() を複数回呼ぶと、複数回の処理が累積されていきます。</p>
+</div>
+</div>
+<div class="section" id="id">
+<h4>id フィールドの作成<a class="headerlink" href="#id" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>ひとつの特別な例外として、id フィールドの作成があります。type が id
+のフィールドは、自動的に INT(9) の auto_increment な主キーに
+なります。</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;dbforge-&gt;add_field(&#39;id&#39;);
+// これで id は INT(9) NOT NULL AUTO_INCREMENT になります。
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id8">
+<h3><a class="toc-backref" href="#id22">キーの追加</a><a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>一般的にテーブルにはキーがあります。キーは
+$this-&gt;dbforge-&gt;add_key(&#8216;field&#8217;) で設定できます。オプションの2つ目の引数は、
+TRUE を指定すると主キーになります。 add_key() の後に create_table()
+を呼ぶ必要があることに注意してください。</p>
+<p>複数のカラムの主ではないキーは配列で送る必要があります。以下は MySQL
+用のサンプルです。</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;dbforge-&gt;add_key(&#39;blog_id&#39;, TRUE);
+// PRIMARY KEY は `blog_id`(`blog_id`) になります。
+
+$this-&gt;dbforge-&gt;add_key(&#39;blog_id&#39;, TRUE);
+$this-&gt;dbforge-&gt;add_key(&#39;site_id&#39;, TRUE);
+// PRIMARY KEY は `blog_id_site_id` (`blog_id`, `site_id`) になります。
+
+$this-&gt;dbforge-&gt;add_key(&#39;blog_name&#39;);
+// KEY は `blog_name` (`blog_name`) になります。
+
+$this-&gt;dbforge-&gt;add_key(array(&#39;blog_name&#39;, &#39;blog_label&#39;));
+// KEY は `blog_name_blog_label` (`blog_name`, `blog_label`) になります。
+</pre></div>
+</div>
+</div>
+<div class="section" id="id9">
+<h3><a class="toc-backref" href="#id23">テーブルの作成</a><a class="headerlink" href="#id9" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>フィールドとキーが宣言された後、新しいテーブルを次に紹介するメソッドを
+呼ぶことで作成することができます。</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;dbforge-&gt;create_table(&#39;table_name&#39;);
+// CREATE TABLE table_name になります
+</pre></div>
+</div>
+<p>オプションの 2つ目の引数が TRUE のとき、&#8221;IF NOT EXISTS&#8221;
+を定義に追加します。</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;dbforge-&gt;create_table(&#39;table_name&#39;, TRUE);
+// CREATE TABLE IF NOT EXISTS table_name になります
+</pre></div>
+</div>
+<p>さらに、MySQLの <code class="docutils literal"><span class="pre">ENGINE</span></code> のような任意のテーブル属性を渡すこともできます:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$attributes = array(&#39;ENGINE&#39; =&gt; &#39;InnoDB&#39;);
+$this-&gt;dbforge-&gt;create_table(&#39;table_name&#39;, FALSE, $attributes);
+// produces: CREATE TABLE `table_name` (...) ENGINE = InnoDB DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last"><code class="docutils literal"><span class="pre">CHARACTER</span> <span class="pre">SET</span></code> と <code class="docutils literal"><span class="pre">COLLATE</span></code> 属性の両方またはどちらか指定しない限り、
+<code class="docutils literal"><span class="pre">create_table()</span></code> は設定済みの <em>char_set</em> と <em>dbcollat</em> 値で追加されます
+（MySQLのみ）。</p>
+</div>
+</div>
+<div class="section" id="id10">
+<h3><a class="toc-backref" href="#id24">テーブルの削除</a><a class="headerlink" href="#id10" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>DROP TABLE sql を実行し、任意で IF EXISTS 文を追加します。</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>// DROP TABLE table_name になります
+$this-&gt;dbforge-&gt;drop_table(&#39;table_name&#39;);
+
+// DROP TABLE IF EXISTS  table_name になります
+$this-&gt;dbforge-&gt;drop_table(&#39;table_name&#39;,TRUE);
+</pre></div>
+</div>
+</div>
+<div class="section" id="id11">
+<h3><a class="toc-backref" href="#id25">テーブル名の変更</a><a class="headerlink" href="#id11" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>TABLE rename を実行します。</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;dbforge-&gt;rename_table(&#39;old_table_name&#39;, &#39;new_table_name&#39;);
+// ALTER TABLE old_table_name RENAME TO new_table_name になります
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id12">
+<h2><a class="toc-backref" href="#id26">テーブルの変更</a><a class="headerlink" href="#id12" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="id13">
+<h3><a class="toc-backref" href="#id27">テーブルにカラムを追加</a><a class="headerlink" href="#id13" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p><strong>$this-&gt;dbforge-&gt;add_column()</strong></p>
+<p><code class="docutils literal"><span class="pre">add_column()</span></code> メソッドは既存のテーブルを変更するときに使います。上記と
+同じフィールド定義の配列を採り、いくつでもフィールドを追加することがで
+きます。</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$fields = array(
+        &#39;preferences&#39; =&gt; array(&#39;type&#39; =&gt; &#39;TEXT&#39;)
+);
+$this-&gt;dbforge-&gt;add_column(&#39;table_name&#39;, $fields);
+// ALTER TABLE table_name ADD preferences TEXT となります
+</pre></div>
+</div>
+<p>MySQL か CUBIRD をお使いの場合、 AFTER と FIRST 文を活用してカラム位置を
+指定することができます。</p>
+<p>例:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>// 新しいカラムを `another_field` カラムの後ろに配置:
+$fields = array(
+        &#39;preferences&#39; =&gt; array(&#39;type&#39; =&gt; &#39;TEXT&#39;, &#39;after&#39; =&gt; &#39;another_field&#39;)
+);
+
+// 新しいカラムを `another_field` テーブル定義の先頭に配置:
+$fields = array(
+        &#39;preferences&#39; =&gt; array(&#39;type&#39; =&gt; &#39;TEXT&#39;, &#39;first&#39; =&gt; TRUE)
+);
+</pre></div>
+</div>
+</div>
+<div class="section" id="id14">
+<h3><a class="toc-backref" href="#id28">テーブルのカラムを削除</a><a class="headerlink" href="#id14" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p><strong>$this-&gt;dbforge-&gt;drop_column()</strong></p>
+<p>テーブルのカラムを削除します。</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;dbforge-&gt;drop_column(&#39;table_name&#39;, &#39;column_to_drop&#39;);
+</pre></div>
+</div>
+</div>
+<div class="section" id="id15">
+<h3><a class="toc-backref" href="#id29">テーブルのカラムを変更</a><a class="headerlink" href="#id15" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p><strong>$this-&gt;dbforge-&gt;modify_column()</strong></p>
+<p>このメソッドの使用法は、<code class="docutils literal"><span class="pre">add_column()</span></code> と同じです。ただし、新しいカラム
+を追加するのではなく、既存のカラムを変更します。カラム名を変更するには
+配列の &#8220;name&#8221; キーで指定します。</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$fields = array(
+        &#39;old_name&#39; =&gt; array(
+                &#39;name&#39; =&gt; &#39;new_name&#39;,
+                &#39;type&#39; =&gt; &#39;TEXT&#39;,
+        ),
+);
+$this-&gt;dbforge-&gt;modify_column(&#39;table_name&#39;, $fields);
+// ALTER TABLE table_name CHANGE old_name new_name TEXT になります
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id16">
+<h2><a class="toc-backref" href="#id30">クラスリファレンス</a><a class="headerlink" href="#id16" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<dl class="class">
+<dt id="CI_DB_forge">
+<em class="property">class </em><code class="descname">CI_DB_forge</code><a class="headerlink" href="#CI_DB_forge" title="この定義へのパーマリンク">¶</a></dt>
+<dd><dl class="method">
+<dt id="CI_DB_forge::add_column">
+<code class="descname">add_column</code><span class="sig-paren">(</span><em>$table</em><span class="optional">[</span>, <em>$field = array()</em><span class="optional">[</span>, <em>$_after = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_DB_forge::add_column" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$table</strong> (<em>string</em>) &#8211; カラムを追加するテーブル名</li>
+<li><strong>$field</strong> (<em>array</em>) &#8211; カラム定義（複数可）</li>
+<li><strong>$_after</strong> (<em>string</em>) &#8211; AFTER 文のためのカラム（非推奨）</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">成功時 TRUE、失敗時 FALSE</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">bool</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>テーブルにカラムを追加します。使い方は <a class="reference internal" href="#id13">テーブルにカラムを追加</a> を参照。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="CI_DB_forge::add_field">
+<code class="descname">add_field</code><span class="sig-paren">(</span><em>$field</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_DB_forge::add_field" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$field</strong> (<em>array</em>) &#8211; 追加するフィールド定義</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">CI_DB_forge インスタンス（メソッドチェイン用）</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">CI_DB_forge</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>テーブル作成用セットにフィールドを追加します。使い方は <a class="reference internal" href="#id6">フィールドの追加</a> を参照。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="CI_DB_forge::add_key">
+<code class="descname">add_key</code><span class="sig-paren">(</span><em>$key</em><span class="optional">[</span>, <em>$primary = FALSE</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_DB_forge::add_key" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$key</strong> (<em>array</em>) &#8211; キーのフィールド名</li>
+<li><strong>$primary</strong> (<em>bool</em>) &#8211; 主キーの場合はTRUEに設定</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">CI_DB_forge インスタンス（メソッドチェイン用）</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">CI_DB_forge</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>テーブル作成用セットにキーを追加します。使い方は <a class="reference internal" href="#id8">キーの追加</a> を参照。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="CI_DB_forge::create_database">
+<code class="descname">create_database</code><span class="sig-paren">(</span><em>$db_name</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_DB_forge::create_database" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$db_name</strong> (<em>string</em>) &#8211; 作成するデータベース名</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">成功時 TRUE、失敗時 FALSE</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">bool</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>新しいデータベースを作成します。使い方は <a class="reference internal" href="#id4">データベースの作成と削除</a> を参照。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="CI_DB_forge::create_table">
+<code class="descname">create_table</code><span class="sig-paren">(</span><em>$table</em><span class="optional">[</span>, <em>$if_not_exists = FALSE</em><span class="optional">[</span>, <em>array $attributes = array()</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_DB_forge::create_table" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$table</strong> (<em>string</em>) &#8211; 作成するテーブル名</li>
+<li><strong>$if_not_exists</strong> (<em>string</em>) &#8211; TRUE にすると &#8216;IF NOT EXISTS&#8217; 文を追加</li>
+<li><strong>$attributes</strong> (<em>string</em>) &#8211; テーブル属性の連想配列</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">成功時 TRUE、失敗時 FALSE</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">bool</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>新しいテーブルを作成。使い方は <a class="reference internal" href="#id9">テーブルの作成</a> を参照。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="CI_DB_forge::drop_column">
+<code class="descname">drop_column</code><span class="sig-paren">(</span><em>$table</em>, <em>$column_name</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_DB_forge::drop_column" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$table</strong> (<em>string</em>) &#8211; テーブル名</li>
+<li><strong>$column_name</strong> (<em>array</em>) &#8211; 削除するカラム名</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">成功時 TRUE、失敗時 FALSE</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">bool</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>テーブルのカラムを削除。使い方は <a class="reference internal" href="#id14">テーブルのカラムを削除</a> を参照。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="CI_DB_forge::drop_database">
+<code class="descname">drop_database</code><span class="sig-paren">(</span><em>$db_name</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_DB_forge::drop_database" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$db_name</strong> (<em>string</em>) &#8211; 削除するデータベース名</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">成功時 TRUE、失敗時 FALSE</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">bool</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>データベースを削除。使い方は <a class="reference internal" href="#id4">データベースの作成と削除</a> を参照。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="CI_DB_forge::drop_table">
+<code class="descname">drop_table</code><span class="sig-paren">(</span><em>$table_name</em><span class="optional">[</span>, <em>$if_exists = FALSE</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_DB_forge::drop_table" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$table</strong> (<em>string</em>) &#8211; 削除するテーブル名</li>
+<li><strong>$if_exists</strong> (<em>string</em>) &#8211; TRUE にすると &#8216;IF EXISTS&#8217; 文を追加</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">成功時 TRUE、失敗時 FALSE</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">bool</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>テーブルを削除。使い方は <a class="reference internal" href="#id10">テーブルの削除</a> を参照。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="CI_DB_forge::modify_column">
+<code class="descname">modify_column</code><span class="sig-paren">(</span><em>$table</em>, <em>$field</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_DB_forge::modify_column" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$table</strong> (<em>string</em>) &#8211; テーブル名</li>
+<li><strong>$field</strong> (<em>array</em>) &#8211; フィールド定義（複数可）</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">成功時 TRUE、失敗時 FALSE</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">bool</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>テーブルのカラムを変更。使い方は <a class="reference internal" href="#id15">テーブルのカラムを変更</a> を参照。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="CI_DB_forge::rename_table">
+<code class="descname">rename_table</code><span class="sig-paren">(</span><em>$table_name</em>, <em>$new_table_name</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_DB_forge::rename_table" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$table</strong> (<em>string</em>) &#8211; 現在のテーブル名</li>
+<li><strong>$new_table_name</strong> (<em>string</em>) &#8211; 新しいテーブル名</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">成功時 TRUE、失敗時 FALSE</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">bool</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>テーブル名を変更。使い方は <a class="reference internal" href="#id11">テーブル名の変更</a> を参照。</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="utilities.html" class="btn btn-neutral float-right" title="データベースユーティリティクラス">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="caching.html" class="btn btn-neutral" title="データベースキャッシュクラス"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
+      最終更新: 9月 06, 2016
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'3.2.0-dev',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  false
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

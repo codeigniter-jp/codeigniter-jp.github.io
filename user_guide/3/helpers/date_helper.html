@@ -1,0 +1,1250 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>日付ヘルパー &mdash; CodeIgniter 3.2.0-dev ドキュメント</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/ci-icon.ico"/>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="CodeIgniter 3.2.0-dev ドキュメント" href="../index.html"/>
+        <link rel="up" title="ヘルパー" href="index.html"/>
+        <link rel="next" title="ディレクトリヘルパー" href="directory_helper.html"/>
+        <link rel="prev" title="Cookie ヘルパー" href="cookie_helper.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div id="nav">
+  <div id="nav_inner">
+    
+    
+    
+      <div id="pulldown-menu" class="ciNav">
+        <ul>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../installation/downloads.html">CodeIgniter のダウンロード</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/index.html">インストール方法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">以前のバージョンからのアップグレード</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/troubleshooting.html">トラブルシューティング</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview/index.html">CodeIgniter 概要</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../overview/getting_started.html">CodeIgniter をはじめよう</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/at_a_glance.html">CodeIgniter の簡単な紹介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/features.html">CodeIgniter の機能</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/appflow.html">アプリケーションフローチャート</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/mvc.html">Model-View-Controller</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/goals.html">設計とアーキテクチャのゴール</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">チュートリアル</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/static_pages.html">静的なページ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/news_section.html">ニュースセクション</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/create_news_items.html">ニュース記事を作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/conclusion.html">おわりに</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contributing/index.html">CodeIgniter への貢献</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/index.html">CodeIgniter のドキュメントを書く</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DCO.html">Developer&#8217;s Certificate of Origin 1.1</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../general/index.html">一般的なトピック</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../general/urls.html">CodeIgniter の URL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/controllers.html">コントローラ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/reserved_names.html">予約語</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/views.html">ビュー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/models.html">モデル</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/helpers.html">ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/libraries.html">CodeIgniter のライブラリの利用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/creating_libraries.html">ライブラリの作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/drivers.html">CodeIgniter のドライバを使う</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/creating_drivers.html">ドライバの作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/core_classes.html">コアシステムクラスの作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/ancillary_classes.html">補助的なクラス作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/hooks.html">フック――フレームワークコアの拡張</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/autoloader.html">リソースのオートロード</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/common_functions.html">共通関数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/compatibility_functions.html">互換関数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/routing.html">URI ルーティング</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/errors.html">エラー処理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/caching.html">キャッシュ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/profiling.html">アプリケーションのプロファイリング</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/cli.html">CLI で実行する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/managing_apps.html">アプリケーションの管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/environments.html">複数環境への対応</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/alternative_php.html">ビューファイルでの PHP の代替構文</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/security.html">セキュリティ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/styleguide.html">PHP スタイルガイド</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../libraries/index.html">ライブラリ</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/benchmark.html">ベンチマーククラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/caching.html">キャッシングドライバ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/calendar.html">カレンダークラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/cart.html">ショッピングカートクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/config.html">設定クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/email.html">Email クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/encrypt.html">Encrypt クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/encryption.html">Encryption ライブラリ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/file_uploading.html">ファイルアップロードクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/form_validation.html">フォームバリデーション（検証）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/ftp.html">FTP クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/image_lib.html">画像操作クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/input.html">入力クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/javascript.html">JavaScript クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/language.html">言語クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/loader.html">ローダ（読み込み処理）クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/migration.html">マイグレーションクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/output.html">出力クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/pagination.html">ページネーションクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/parser.html">テンプレートパーサクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/security.html">セキュリティクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションライブラリ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/table.html">HTML テーブルクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/trackback.html">トラックバッククラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/typography.html">タイポグラフィークラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/unit_testing.html">ユニットテストクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/uri.html">URI クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/user_agent.html">ユーザエージェントクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/xmlrpc.html">XML-RPC および XML-RPC サーバクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/zip.html">Zip 圧縮クラス</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../database/index.html">データベースリファレンス</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../database/examples.html">クイックスタート: 使用例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/configuration.html">データベース設定</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/connecting.html">データベースへの接続</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/queries.html">クエリの実行</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/results.html">クエリ結果の生成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/helpers.html">クエリヘルパー関数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/query_builder.html">クエリビルダクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/transactions.html">トランザクション</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/metadata.html">メタデータの取得</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/call_function.html">カスタム関数呼び出し</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/caching.html">クエリキャッシュ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/forge.html">データベースフォージを使用したデータベース操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/utilities.html">データベースユーティリティクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/db_driver_reference.html">データベースドライバリファレンス</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">ヘルパー</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="array_helper.html">配列ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="captcha_helper.html">キャプチャ ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cookie_helper.html">Cookie ヘルパー</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">日付ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="directory_helper.html">ディレクトリヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="download_helper.html">ダウンロードヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="email_helper.html">Email ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_helper.html">ファイルヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="form_helper.html">フォームヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="html_helper.html">HTML ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inflector_helper.html">語形変換ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="language_helper.html">言語ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="number_helper.html">数字ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="path_helper.html">パスヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_helper.html">セキュリティヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="smiley_helper.html">スマイリーヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="string_helper.html">文字列ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text_helper.html">テキストヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="typography_helper.html">タイポグラフィーヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="url_helper.html">URL ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xml_helper.html">XML ヘルパー</a></li>
+</ul>
+</li>
+</ul>
+
+      </div>
+    
+      
+  </div>
+</div>
+<div id="nav2">
+  <a href="#" id="openToc">
+    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAgAAZABkAAD/7AARRHVja3kAAQAEAAAARgAA/+4ADkFkb2JlAGTAAAAAAf/bAIQABAMDAwMDBAMDBAYEAwQGBwUEBAUHCAYGBwYGCAoICQkJCQgKCgwMDAwMCgwMDQ0MDBERERERFBQUFBQUFBQUFAEEBQUIBwgPCgoPFA4ODhQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQU/8AAEQgAKwCaAwERAAIRAQMRAf/EAHsAAQAABwEBAAAAAAAAAAAAAAABAwQFBgcIAgkBAQAAAAAAAAAAAAAAAAAAAAAQAAEDAwICBwYEAgsAAAAAAAIBAwQAEQUSBiEHkROTVNQWGDFBUVIUCHEiMtOUFWGBobHRQlMkZIRVEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDSC+ygkOOaUoKigUCgUCgUCgUCgUCgUCgUCgkuGguIP9FBMFb0Hqg7We+3jlmIqqYFf4ub+/QYlnOR/LqIBKGFUbf8qWv971BytQXXE7Y3Lnm3HsFhp2TaZJAdchRXpIgSpdEJWxJEW3xoKV7F5OMy7JkQn2o7D6w33XGjEAkoiqrJEqIiOIiKuhePCgqp22dyYyS3CyWHnQ5joG61HkRnmnTbaFSMhExRVQRRVJU9iUHjE7ez+fJ0MFipmUNhBV8YUd2SoIV9KkjQla9ltegttBdPLW4/qocL+UTfrMiHW4+P9M71shuyrqaHTcxsl7jegpsji8nh5ZwMvDfgTm0RTjSmjYdFCS6KoOIipdFunCgmNYTMv457MMY6U7iI6oMieDDhRm1VbIhuoOkbqtuK0Hpzb+eZcYZexUxt6UyUqK2cd0SdjtgrhOgijcgERUlJOCIl6CpgbP3blRI8XgMjNARAyKNDfeRBdFDBVUAXgQrqH4pxoJTu2NysY97LP4ac1io5q1InHFeGO24LnVKJuKOkSQ/yKir+rh7aCLG1dzypZQI2FnvTgccYOM3FeN0XWERXAUEFVQgQkUktdLpegm+Td3/Xli/L+S/mYNJIOF9G/wBeLKrZHFb0akG6W1WtQWSg3Dyg5e7V3fipE3O4/wCrktyzYA+ufas2LbZIlmnAT2kvuoN1wft95augilglX/tzP3qCu9O3LL/wV/i5v79BvmTADq14UGu91467Z6U9y0HzH/ncj/U/sT/CgynZG7I2NezpZGUjIycJkYkZSG+uQ81pbBNKLxJfjwoMqZ3/ALYHl35AJ7/cuwHcu5k7r1Q5pHetBjquqVVJWGxj9Zrtcl/Ggy3dHMvauR3HFZj5nHNxSyW5JISYDMoIwx8tFIGHZhPNaykGapr6rUAiicEoMG21lMRj8buPAz8xhJrr7uOeiPTCyAwXUaGR1mgozbTusOsFLEiJ7fbQa/h7gcjy2H3V6xppwDNtUSxCJIqp7valBuWVzJ22xuCROXNNZiJkMtms0DbjUkAZjzoDrTMd9dDRI44ZC2YsrYdKWP2WDT2S3N9dNdlRYrGMYc06IURXSYb0igrpWS485xVNS6nF4rwslkoMwnbpgZLB7bmt5uMweAhDEl4B5uSLzzqTnnyVpW2jaJHRMSIjdDiiotvy3DOE5rYTEbkl5yFn28k7JyG4c7AU2HtLH1uKfaiMPI40CdYbpNtmLdwTSn5rewLNld+7TLdeal4WarWBkbVKBjgdElMJJwAAY5fl4kB3b1fp4XvagsGS3FjJfLzDNtS8aeXx7LzT7TyzByQE5PccRGRC0ZRUDRV6y62vbjagzLmJzS2vuPK43JY6aP1TW6Jz+RIWyFtyC06y3EkiiinAo7YCqfq1AqqnGgsOH3lhZO8d1pmcpB8j5XIm9OYlBJSQ/FSS4427DKO0RC8AlcEMhFdViRR1WDWR5t3WXVuL1d106kG9vdeye2g60+1FDyW0shIcXVpyroXt8I8dfd+NB1vioAdWnD3UF1+gD4UFc6CEKpagxXN43rwJLUHz7yX2c8zokt9uHlsPIhA4aRnnHJTLptIS6CNsY7iASpxUUMkReGpfbQW0vtN5pitvrsN28rwtBD0nc0+/Yft5XhaB6TuaXfsP28rwtA9J3NPv2H7eV4Wgek7mn37D9vK8LQPSdzT79h+3leFoHpO5pd+w/byvC0D0nc0u/Yft5XhaB6TuaXfsP28rwtA9J3NLv2H7eV4Wgek7ml37D9vK8LQPSdzS79h+3leFoHpO5p9+w/byvC0E9r7Reazy2HIYVPxkS/CUHVn26cosxyv2g7h89LYmZSXOenvLEQ1YaQ222RATcQCP8rSGqqA8S02W2pQ6FhMoAIlqCtsnwoCpdKClejI4i3Sgtb+GBxVuNBSFt1pV/RQefLjPyUDy4z8lA8uM/JQPLjPyUDy4z8lA8uM/JQPLjPyUDy4z8lA8uM/JQPLjPyUDy4z8lA8utJ/koJ7WCbBU/LQXOPAFq1koK8B0pag90CggtBBf6qB0UDooHRQOigdFA6KB0UDooHRQOigdFA6KB0UDooI0EaBQf//Z" title="Toggle Table of Contents" alt="Toggle Table of Contents" />
+  </a>
+</div>
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+          <a href="../index.html" class="fa fa-home"> CodeIgniter</a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../installation/downloads.html">CodeIgniter のダウンロード</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/index.html">インストール方法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">以前のバージョンからのアップグレード</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/troubleshooting.html">トラブルシューティング</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview/index.html">CodeIgniter 概要</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../overview/getting_started.html">CodeIgniter をはじめよう</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/at_a_glance.html">CodeIgniter の簡単な紹介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/features.html">CodeIgniter の機能</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/appflow.html">アプリケーションフローチャート</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/mvc.html">Model-View-Controller</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/goals.html">設計とアーキテクチャのゴール</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">チュートリアル</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/static_pages.html">静的なページ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/news_section.html">ニュースセクション</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/create_news_items.html">ニュース記事を作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/conclusion.html">おわりに</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contributing/index.html">CodeIgniter への貢献</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/index.html">CodeIgniter のドキュメントを書く</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DCO.html">Developer&#8217;s Certificate of Origin 1.1</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../general/index.html">一般的なトピック</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../general/urls.html">CodeIgniter の URL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/controllers.html">コントローラ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/reserved_names.html">予約語</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/views.html">ビュー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/models.html">モデル</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/helpers.html">ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/libraries.html">CodeIgniter のライブラリの利用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/creating_libraries.html">ライブラリの作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/drivers.html">CodeIgniter のドライバを使う</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/creating_drivers.html">ドライバの作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/core_classes.html">コアシステムクラスの作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/ancillary_classes.html">補助的なクラス作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/hooks.html">フック――フレームワークコアの拡張</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/autoloader.html">リソースのオートロード</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/common_functions.html">共通関数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/compatibility_functions.html">互換関数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/routing.html">URI ルーティング</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/errors.html">エラー処理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/caching.html">キャッシュ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/profiling.html">アプリケーションのプロファイリング</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/cli.html">CLI で実行する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/managing_apps.html">アプリケーションの管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/environments.html">複数環境への対応</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/alternative_php.html">ビューファイルでの PHP の代替構文</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/security.html">セキュリティ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/styleguide.html">PHP スタイルガイド</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../libraries/index.html">ライブラリ</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/benchmark.html">ベンチマーククラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/caching.html">キャッシングドライバ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/calendar.html">カレンダークラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/cart.html">ショッピングカートクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/config.html">設定クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/email.html">Email クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/encrypt.html">Encrypt クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/encryption.html">Encryption ライブラリ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/file_uploading.html">ファイルアップロードクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/form_validation.html">フォームバリデーション（検証）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/ftp.html">FTP クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/image_lib.html">画像操作クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/input.html">入力クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/javascript.html">JavaScript クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/language.html">言語クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/loader.html">ローダ（読み込み処理）クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/migration.html">マイグレーションクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/output.html">出力クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/pagination.html">ページネーションクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/parser.html">テンプレートパーサクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/security.html">セキュリティクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションライブラリ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/table.html">HTML テーブルクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/trackback.html">トラックバッククラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/typography.html">タイポグラフィークラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/unit_testing.html">ユニットテストクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/uri.html">URI クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/user_agent.html">ユーザエージェントクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/xmlrpc.html">XML-RPC および XML-RPC サーバクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/zip.html">Zip 圧縮クラス</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../database/index.html">データベースリファレンス</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../database/examples.html">クイックスタート: 使用例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/configuration.html">データベース設定</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/connecting.html">データベースへの接続</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/queries.html">クエリの実行</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/results.html">クエリ結果の生成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/helpers.html">クエリヘルパー関数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/query_builder.html">クエリビルダクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/transactions.html">トランザクション</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/metadata.html">メタデータの取得</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/call_function.html">カスタム関数呼び出し</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/caching.html">クエリキャッシュ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/forge.html">データベースフォージを使用したデータベース操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/utilities.html">データベースユーティリティクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/db_driver_reference.html">データベースドライバリファレンス</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">ヘルパー</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="array_helper.html">配列ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="captcha_helper.html">キャプチャ ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cookie_helper.html">Cookie ヘルパー</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">日付ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="directory_helper.html">ディレクトリヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="download_helper.html">ダウンロードヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="email_helper.html">Email ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_helper.html">ファイルヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="form_helper.html">フォームヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="html_helper.html">HTML ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inflector_helper.html">語形変換ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="language_helper.html">言語ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="number_helper.html">数字ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="path_helper.html">パスヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_helper.html">セキュリティヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="smiley_helper.html">スマイリーヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="string_helper.html">文字列ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text_helper.html">テキストヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="typography_helper.html">タイポグラフィーヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="url_helper.html">URL ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xml_helper.html">XML ヘルパー</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">CodeIgniter</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+        <li><a href="index.html">ヘルパー</a> &raquo;</li>
+      
+    <li>日付ヘルパー</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+    <div style="float:right;margin-left:5px;" id="closeMe">
+      <img title="Classic Layout" alt="classic layout" src="data:image/gif;base64,R0lGODlhFAAUAJEAAAAAADMzM////wAAACH5BAUUAAIALAAAAAAUABQAAAImlI+py+0PU5gRBRDM3DxbWoXis42X13USOLauUIqnlsaH/eY6UwAAOw==" />
+    </div>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="id1">
+<h1>日付ヘルパー<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>日付ヘルパーのファイルは、日付を処理するのに役立つ関数で構成されています。</p>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#id2" id="id5">ヘルパーのロード</a></li>
+<li><a class="reference internal" href="#id3" id="id6">利用できる機能</a></li>
+<li><a class="reference internal" href="#id4" id="id7">タイムゾーンリファレンス</a></li>
+</ul>
+</div>
+<div class="custom-index container"></div><div class="section" id="id2">
+<h2><a class="toc-backref" href="#id5">ヘルパーのロード</a><a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>このヘルパーは次のコードを使ってロードします:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;load-&gt;helper(&#39;date&#39;);
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2><a class="toc-backref" href="#id6">利用できる機能</a><a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>次の関数が利用できます:</p>
+<dl class="function">
+<dt id="now">
+<code class="descname">now</code><span class="sig-paren">(</span><span class="optional">[</span><em>$timezone = NULL</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#now" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$timezone</strong> (<em>string</em>) &#8211; Timezone</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">UNIX timestamp</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">int</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>現在時刻をUNIXタイムスタンプで返します。設定ファイルの &#8220;time reference&#8221; の
+設定により、サーバのローカル時間または PHP でサポートされるタイムゾーンを
+指す時刻になります。
+マスターの時間を PHP でサポートされるタイムゾーンに設定しないつもりなら、
+(各ユーザが各々のタイムゾーンを設定することができるサイトであれば通常そうすると
+思います) PHP の <code class="docutils literal"><span class="pre">time()</span></code> 関数を使わずに、この関数を利用する利点はありません。</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>echo now(&#39;Australia/Victoria&#39;);
+</pre></div>
+</div>
+<p>タイムゾーンを指定しない場合、 戻り値として <strong>time_reference</strong> の設定に基づく
+<code class="docutils literal"><span class="pre">time()</span></code> の値を返却します。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="mdate">
+<code class="descname">mdate</code><span class="sig-paren">(</span><span class="optional">[</span><em>$datestr = ''</em><span class="optional">[</span>, <em>$time = ''</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#mdate" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$datestr</strong> (<em>string</em>) &#8211; 日付文字列</li>
+<li><strong>$time</strong> (<em>int</em>) &#8211; UNIX タイムスタンプ</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">MySQL フォーマットされた日付</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">string</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>この関数は、%Y %m %d のように各コードの前に % がついている MySQLスタイルの
+日付コードを利用可能なこと以外は、 PHP の <a class="reference external" href="http://www.php.net/date">date()</a> 関数と
+同じです。</p>
+<p>日付をこの方法で扱う利点は、date()
+関数を使った時には通常しなければならない、 日付コードでない文字列の
+エスケープ処理について考慮する必要がないという点です。</p>
+<p>例:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$datestring = &#39;Year: %Y Month: %m Day: %d - %h:%i %a&#39;;
+$time = time();
+echo mdate($datestring, $time);
+</pre></div>
+</div>
+<p>第2引数にタイムスタンプを指定しない場合は、
+現在時刻が使われます。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="standard_date">
+<code class="descname">standard_date</code><span class="sig-paren">(</span><span class="optional">[</span><em>$fmt = 'DATE_RFC822'</em><span class="optional">[</span>, <em>$time = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#standard_date" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$fmt</strong> (<em>string</em>) &#8211; 日付文字列</li>
+<li><strong>$time</strong> (<em>int</em>) &#8211; UNIX タイムスタンプ</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">フォーマットされた日付又は不正なフォーマットの場合に FALSE</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">string</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>複数の標準フォーマットのうち、ひとつの形式の日付文字列を生成できます。</p>
+<p>例:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$format = &#39;DATE_RFC822&#39;;
+$time = time();
+echo standard_date($format, $time);
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p>この関数は廃止予定です。 代わりにPHP 標準の <code class="docutils literal"><span class="pre">date()</span></code> と
+<a class="reference external" href="http://php.net/manual/ja/class.datetime.php#datetime.constants.types">DateTime&#8217;s format constants</a>
+を使用してください。:</p>
+<div class="last highlight-ci"><div class="highlight"><pre><span></span>echo date(DATE_RFC822, time());
+</pre></div>
+</div>
+</div>
+<p><strong>Supported formats:</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="30%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Constant</th>
+<th class="head">Description</th>
+<th class="head">Example</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>DATE_ATOM</td>
+<td>Atom</td>
+<td>2005-08-15T16:13:03+0000</td>
+</tr>
+<tr class="row-odd"><td>DATE_COOKIE</td>
+<td>HTTP Cookies</td>
+<td>Sun, 14 Aug 2005 16:13:03 UTC</td>
+</tr>
+<tr class="row-even"><td>DATE_ISO8601</td>
+<td>ISO-8601</td>
+<td>2005-08-14T16:13:03+00:00</td>
+</tr>
+<tr class="row-odd"><td>DATE_RFC822</td>
+<td>RFC 822</td>
+<td>Sun, 14 Aug 05 16:13:03 UTC</td>
+</tr>
+<tr class="row-even"><td>DATE_RFC850</td>
+<td>RFC 850</td>
+<td>Sunday, 14-Aug-05 16:13:03 UTC</td>
+</tr>
+<tr class="row-odd"><td>DATE_RFC1036</td>
+<td>RFC 1036</td>
+<td>Sunday, 14-Aug-05 16:13:03 UTC</td>
+</tr>
+<tr class="row-even"><td>DATE_RFC1123</td>
+<td>RFC 1123</td>
+<td>Sun, 14 Aug 2005 16:13:03 UTC</td>
+</tr>
+<tr class="row-odd"><td>DATE_RFC2822</td>
+<td>RFC 2822</td>
+<td>Sun, 14 Aug 2005 16:13:03 +0000</td>
+</tr>
+<tr class="row-even"><td>DATE_RSS</td>
+<td>RSS</td>
+<td>Sun, 14 Aug 2005 16:13:03 UTC</td>
+</tr>
+<tr class="row-odd"><td>DATE_W3C</td>
+<td>W3C</td>
+<td>2005-08-14T16:13:03+0000</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="local_to_gmt">
+<code class="descname">local_to_gmt</code><span class="sig-paren">(</span><span class="optional">[</span><em>$time = ''</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#local_to_gmt" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$time</strong> (<em>int</em>) &#8211; UNIX タイムスタンプ</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">UNIX タイムスタンプ</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">int</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>UNIX タイムスタンプを入力として、その時刻をGMT(グリニッジ標準時)として返します。</p>
+<p>例:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$gmt = local_to_gmt(time());
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="gmt_to_local">
+<code class="descname">gmt_to_local</code><span class="sig-paren">(</span><span class="optional">[</span><em>$time = ''</em><span class="optional">[</span>, <em>$timezone = 'UTC'</em><span class="optional">[</span>, <em>$dst = FALSE</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#gmt_to_local" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$time</strong> (<em>int</em>) &#8211; UNIX タイムスタンプ</li>
+<li><strong>$timezone</strong> (<em>string</em>) &#8211; タイムゾーン</li>
+<li><strong>$dst</strong> (<em>bool</em>) &#8211; サマータイムが有効かどうか</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">UNIX タイムスタンプ</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">int</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>UNIX タイムスタンプ（グリニッジ標準時を指します）を入力として、
+渡されたタイムゾーンとサマータイム適用区分にもとづいて、その地域の時刻に
+変換します。</p>
+<p>例:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$timestamp = 1140153693;
+$timezone  = &#39;UM8&#39;;
+$daylight_saving = TRUE;
+echo gmt_to_local($timestamp, $timezone, $daylight_saving);
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">タイムゾーンのリストは、このページの一番下のリファレンスをご覧ください。</p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="mysql_to_unix">
+<code class="descname">mysql_to_unix</code><span class="sig-paren">(</span><span class="optional">[</span><em>$time = ''</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#mysql_to_unix" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$time</strong> (<em>string</em>) &#8211; MySQL タイムスタンプ</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">UNIX タイムスタンプ</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">int</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>MySQL タイムスタンプを入力として、その時刻を UNIX タイムスタンプとして返します。</p>
+<p>例:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$unix = mysql_to_unix(&#39;20061124092345&#39;);
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="unix_to_human">
+<code class="descname">unix_to_human</code><span class="sig-paren">(</span><span class="optional">[</span><em>$time = ''</em><span class="optional">[</span>, <em>$seconds = FALSE</em><span class="optional">[</span>, <em>$fmt = 'us'</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#unix_to_human" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$time</strong> (<em>int</em>) &#8211; UNIX タイムスタンプ</li>
+<li><strong>$seconds</strong> (<em>bool</em>) &#8211; 秒を表示するかどうか</li>
+<li><strong>$fmt</strong> (<em>string</em>) &#8211; フォーマット（us 又は euro）</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">フォーマットされた日付</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">string</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>UNIXタイムスタンプを入力として、次の例のように、人間が読める形式で
+返します:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>YYYY-MM-DD HH:MM:SS AM/PM
+</pre></div>
+</div>
+<p>これは、フォームの送信のために、フォームフィールドに表示したい場合に
+役立ちます。</p>
+<p>時間は、秒の部分をつける形式とつけない形式にフォーマットでき、
+ヨーロッパ形式またはアメリカ形式にセットできます。 タイムスタンプだけが
+渡された時は、秒の部分がない形式で、アメリカ形式にフォーマットされます。</p>
+<p>例:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$now = time();
+echo unix_to_human($now); // 秒なしのアメリカ形式
+echo unix_to_human($now, TRUE, &#39;us&#39;); // 秒ありのアメリカ形式
+echo unix_to_human($now, TRUE, &#39;eu&#39;); // 秒ありのヨーロッパ形式
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="human_to_unix">
+<code class="descname">human_to_unix</code><span class="sig-paren">(</span><span class="optional">[</span><em>$datestr = ''</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#human_to_unix" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$datestr</strong> (<em>int</em>) &#8211; 日付文字列</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">UNIX タイムスタンプ又は失敗した場合は FALSE</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">int</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><code class="xref php php-func docutils literal"><span class="pre">unix_to_time()</span></code> 関数の反対です。&#8221;人&#8221; の時間を入力として、
+UNIXタイムスタンプを返します。 これは、フォームから &#8220;人&#8221;が読める形式に
+フォーマットされた日付を受け取る時に役立ちます。渡された文字列が、
+上で示したようなフォーマットでない場合、ブール値の FALSE を返します。</p>
+<p>Example:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$now = time();
+$human = unix_to_human($now);
+$unix = human_to_unix($human);
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="nice_date">
+<code class="descname">nice_date</code><span class="sig-paren">(</span><span class="optional">[</span><em>$bad_date = ''</em><span class="optional">[</span>, <em>$format = FALSE</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#nice_date" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$bad_date</strong> (<em>int</em>) &#8211; 不完全な日付フォーマット</li>
+<li><strong>$format</strong> (<em>string</em>) &#8211; 返却される日付フォーマット（PHP の <code class="docutils literal"><span class="pre">date()</span></code> 関数と同様）</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">フォーマットされた日付</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">string</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>この関数は不完全な日付フォーマットの数字を引数に取り、有用な形式に変換
+します。正しい日付フォーマットを引数に取ることもできます。</p>
+<p>デフォルトでは UNIX タイムスタンプを返します。オプションとして、
+第2引数にフォーマット文字列（PHP の date 関数が引き受けるものと同じ）
+を渡すことができます。</p>
+<p>例:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$bad_date = &#39;199605&#39;;
+// 次の日付を生成: 1996-05-01
+$better_date = nice_date($bad_date, &#39;Y-m-d&#39;);
+
+$bad_date = &#39;9-11-2001&#39;;
+// 次の日付を生成: 2001-09-11
+$better_date = nice_date($bad_date, &#39;Y-m-d&#39;);
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="timespan">
+<code class="descname">timespan</code><span class="sig-paren">(</span><span class="optional">[</span><em>$seconds = 1</em><span class="optional">[</span>, <em>$time = ''</em><span class="optional">[</span>, <em>$units = ''</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#timespan" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$seconds</strong> (<em>int</em>) &#8211; 秒数</li>
+<li><strong>$time</strong> (<em>string</em>) &#8211; UNIX タイムスタンプ</li>
+<li><strong>$units</strong> (<em>int</em>) &#8211; 表示する時間の単位</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">フォーマットされた時刻の差</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">string</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>UNIX タイムスタンプを次の例で示したようにフォーマットします:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>1 Year, 10 Months, 2 Weeks, 5 Days, 10 Hours, 16 Minutes
+</pre></div>
+</div>
+<p>第1引数には、 UNIX タイムスタンプを指定する必要があります。
+第2引数には、第1引数で渡したタイムスタンプよりも大きい（後の時間の）
+UNIX タイムスタンプを指定する必要があります。
+第3引数は、オプションです。表示する時間の単位を数値で制限します。</p>
+<p>もし第2引数が空だった場合は現在時刻が使用されます。</p>
+<p>この関数の主要な目的は、過去のある時点から現在までの経過時間を
+表示するというものです。</p>
+<p>例:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$post_date = &#39;1079621429&#39;;
+$now = time();
+$units = 2;
+echo timespan($post_date, $now, $units);
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">この関数が生成するテキストは、次の言語ファイルの中にあります
+file: language/&lt;あなたの言語&gt;/date_lang.php</p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="days_in_month">
+<code class="descname">days_in_month</code><span class="sig-paren">(</span><span class="optional">[</span><em>$month = 0</em><span class="optional">[</span>, <em>$year = ''</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#days_in_month" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$month</strong> (<em>int</em>) &#8211; 月数</li>
+<li><strong>$year</strong> (<em>int</em>) &#8211; 年数</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">指定された月の日数</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">int</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>指定された年月の日数を返します。
+うるう年が考慮されます。</p>
+<p>例:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>echo days_in_month(06, 2005);
+</pre></div>
+</div>
+<p>第2引数が空の時、現在の年が使われます。</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">この関数は <code class="docutils literal"><span class="pre">cal_days_in_month()</span></code> が利用できる場合は
+エイリアスになります。</p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="date_range">
+<code class="descname">date_range</code><span class="sig-paren">(</span><span class="optional">[</span><em>$unix_start = ''</em><span class="optional">[</span>, <em>$mixed = ''</em><span class="optional">[</span>, <em>$is_unix = TRUE</em><span class="optional">[</span>, <em>$format = 'Y-m-d'</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#date_range" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$unix_start</strong> (<em>int</em>) &#8211; 開始日の UNIX タイムスタンプ</li>
+<li><strong>$mixed</strong> (<em>int</em>) &#8211; 終了日の UNIX タイムスタンプ又は日数</li>
+<li><strong>$is_unix</strong> (<em>bool</em>) &#8211; 第2引数がタイムスタンプでない場合は FALSE を設定する</li>
+<li><strong>$format</strong> (<em>string</em>) &#8211; 出力する日付フォーマット。 <code class="docutils literal"><span class="pre">date()</span></code> 関数と同様。</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">日付の配列</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">array</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>指定した期間で日付のリストが返却されます。</p>
+<p>例:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>$range = date_range(&#39;2012-01-01&#39;, &#39;2012-01-15&#39;);
+echo &quot;First 15 days of 2012:&quot;;
+foreach ($range as $date)
+{
+        echo $date.&quot;\n&quot;;
+}
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="timezones">
+<code class="descname">timezones</code><span class="sig-paren">(</span><span class="optional">[</span><em>$tz = ''</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#timezones" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$tz</strong> (<em>string</em>) &#8211; 数値のタイムゾーン</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">UTCからの時差</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">int</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>タイムゾーンリファレンス（有効なタイムゾーンのリストは、下の
+&#8220;タイムゾーンリファレンス&#8221; を参照してください）を引数にとり、UTC
+からの時差を数字で返します。</p>
+<p>例:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>echo timezones(&#39;UM5&#39;);
+</pre></div>
+</div>
+<p>このメソッドは、<a class="reference internal" href="#timezone_menu" title="timezone_menu"><code class="xref php php-func docutils literal"><span class="pre">timezone_menu()</span></code></a> とともに使うと役立ちます。</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="timezone_menu">
+<code class="descname">timezone_menu</code><span class="sig-paren">(</span><span class="optional">[</span><em>$default = 'UTC'</em><span class="optional">[</span>, <em>$class = ''</em><span class="optional">[</span>, <em>$name = 'timezones'</em><span class="optional">[</span>, <em>$attributes = ''</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#timezone_menu" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$default</strong> (<em>string</em>) &#8211; タイムゾーン</li>
+<li><strong>$class</strong> (<em>string</em>) &#8211; クラス名</li>
+<li><strong>$name</strong> (<em>string</em>) &#8211; メニュー名</li>
+<li><strong>$attributes</strong> (<em>mixed</em>) &#8211; HTML 属性</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">タイムゾーンの HTML プルダウンメニュー</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">string</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>次のようなタイムゾーンのプルダウンメニューを生成します:</p>
+<form action="#">
+        <select name="timezones">
+                <option value='UM12'>(UTC -12:00) Baker/Howland Island</option>
+                <option value='UM11'>(UTC -11:00) Samoa Time Zone, Niue</option>
+                <option value='UM10'>(UTC -10:00) Hawaii-Aleutian Standard Time, Cook Islands, Tahiti</option>
+                <option value='UM95'>(UTC -9:30) Marquesas Islands</option>
+                <option value='UM9'>(UTC -9:00) Alaska Standard Time, Gambier Islands</option>
+                <option value='UM8'>(UTC -8:00) Pacific Standard Time, Clipperton Island</option>
+                <option value='UM7'>(UTC -7:00) Mountain Standard Time</option>
+                <option value='UM6'>(UTC -6:00) Central Standard Time</option>
+                <option value='UM5'>(UTC -5:00) Eastern Standard Time, Western Caribbean Standard Time</option>
+                <option value='UM45'>(UTC -4:30) Venezuelan Standard Time</option>
+                <option value='UM4'>(UTC -4:00) Atlantic Standard Time, Eastern Caribbean Standard Time</option>
+                <option value='UM35'>(UTC -3:30) Newfoundland Standard Time</option>
+                <option value='UM3'>(UTC -3:00) Argentina, Brazil, French Guiana, Uruguay</option>
+                <option value='UM2'>(UTC -2:00) South Georgia/South Sandwich Islands</option>
+                <option value='UM1'>(UTC -1:00) Azores, Cape Verde Islands</option>
+                <option value='UTC' selected='selected'>(UTC) Greenwich Mean Time, Western European Time</option>
+                <option value='UP1'>(UTC +1:00) Central European Time, West Africa Time</option>
+                <option value='UP2'>(UTC +2:00) Central Africa Time, Eastern European Time, Kaliningrad Time</option>
+                <option value='UP3'>(UTC +3:00) Moscow Time, East Africa Time</option>
+                <option value='UP35'>(UTC +3:30) Iran Standard Time</option>
+                <option value='UP4'>(UTC +4:00) Azerbaijan Standard Time, Samara Time</option>
+                <option value='UP45'>(UTC +4:30) Afghanistan</option>
+                <option value='UP5'>(UTC +5:00) Pakistan Standard Time, Yekaterinburg Time</option>
+                <option value='UP55'>(UTC +5:30) Indian Standard Time, Sri Lanka Time</option>
+                <option value='UP575'>(UTC +5:45) Nepal Time</option>
+                <option value='UP6'>(UTC +6:00) Bangladesh Standard Time, Bhutan Time, Omsk Time</option>
+                <option value='UP65'>(UTC +6:30) Cocos Islands, Myanmar</option>
+                <option value='UP7'>(UTC +7:00) Krasnoyarsk Time, Cambodia, Laos, Thailand, Vietnam</option>
+                <option value='UP8'>(UTC +8:00) Australian Western Standard Time, Beijing Time, Irkutsk Time</option>
+                <option value='UP875'>(UTC +8:45) Australian Central Western Standard Time</option>
+                <option value='UP9'>(UTC +9:00) Japan Standard Time, Korea Standard Time, Yakutsk Time</option>
+                <option value='UP95'>(UTC +9:30) Australian Central Standard Time</option>
+                <option value='UP10'>(UTC +10:00) Australian Eastern Standard Time, Vladivostok Time</option>
+                <option value='UP105'>(UTC +10:30) Lord Howe Island</option>
+                <option value='UP11'>(UTC +11:00) Srednekolymsk Time, Solomon Islands, Vanuatu</option>
+                <option value='UP115'>(UTC +11:30) Norfolk Island</option>
+                <option value='UP12'>(UTC +12:00) Fiji, Gilbert Islands, Kamchatka Time, New Zealand Standard Time</option>
+                <option value='UP1275'>(UTC +12:45) Chatham Islands Standard Time</option>
+                <option value='UP13'>(UTC +13:00) Phoenix Islands Time, Tonga</option>
+                <option value='UP14'>(UTC +14:00) Line Islands</option>
+        </select>
+</form><p>このメニューは、ユーザごとのローカル時間ををセットできる会員制サイトの
+場合に使えます。</p>
+<p>第1引数で、メニューの &#8220;選択（selected）&#8221; 状態 を指定します。たとえば、
+太平洋標準時をデフォルト値にセットしたい場合は、次のようにします:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span>echo timezone_menu(&#39;UM8&#39;);
+</pre></div>
+</div>
+<p>メニューに指定する値を調べるには、下記のタイムゾーンリファレンスをご覧ください</p>
+<p>第2引数では、メニューの CSS クラスの名前を指定できます。</p>
+<p>第4引数は生成されるプルダウンメニューに一つ以上の HTML 属性を設定できます。</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">このメニューに含まれるテキストは、次の言語ファイルの中にあります:
+language/&lt;あなたの言語&gt;/date_lang.php</p>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="id4">
+<h2><a class="toc-backref" href="#id7">タイムゾーンリファレンス</a><a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>次の表は、地域ごとの各タイムゾーンを示したものです。</p>
+<p>いくつかの地域のリストは見易さとフォーマットの都合で要約されていることにご注意ください。</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="14%" />
+<col width="86%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Time Zone</th>
+<th class="head">Location</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>UM12</td>
+<td>(UTC - 12:00) Baker/Howland Island</td>
+</tr>
+<tr class="row-odd"><td>UM11</td>
+<td>(UTC - 11:00) Samoa Time Zone, Niue</td>
+</tr>
+<tr class="row-even"><td>UM10</td>
+<td>(UTC - 10:00) Hawaii-Aleutian Standard Time, Cook Islands</td>
+</tr>
+<tr class="row-odd"><td>UM95</td>
+<td>(UTC - 09:30) Marquesas Islands</td>
+</tr>
+<tr class="row-even"><td>UM9</td>
+<td>(UTC - 09:00) Alaska Standard Time, Gambier Islands</td>
+</tr>
+<tr class="row-odd"><td>UM8</td>
+<td>(UTC - 08:00) Pacific Standard Time, Clipperton Island</td>
+</tr>
+<tr class="row-even"><td>UM7</td>
+<td>(UTC - 07:00) Mountain Standard Time</td>
+</tr>
+<tr class="row-odd"><td>UM6</td>
+<td>(UTC - 06:00) Central Standard Time</td>
+</tr>
+<tr class="row-even"><td>UM5</td>
+<td>(UTC - 05:00) Eastern Standard Time, Western Caribbean</td>
+</tr>
+<tr class="row-odd"><td>UM45</td>
+<td>(UTC - 04:30) Venezuelan Standard Time</td>
+</tr>
+<tr class="row-even"><td>UM4</td>
+<td>(UTC - 04:00) Atlantic Standard Time, Eastern Caribbean</td>
+</tr>
+<tr class="row-odd"><td>UM35</td>
+<td>(UTC - 03:30) Newfoundland Standard Time</td>
+</tr>
+<tr class="row-even"><td>UM3</td>
+<td>(UTC - 03:00) Argentina, Brazil, French Guiana, Uruguay</td>
+</tr>
+<tr class="row-odd"><td>UM2</td>
+<td>(UTC - 02:00) South Georgia/South Sandwich Islands</td>
+</tr>
+<tr class="row-even"><td>UM1</td>
+<td>(UTC -1:00) Azores, Cape Verde Islands</td>
+</tr>
+<tr class="row-odd"><td>UTC</td>
+<td>(UTC) Greenwich Mean Time, Western European Time</td>
+</tr>
+<tr class="row-even"><td>UP1</td>
+<td>(UTC +1:00) Central European Time, West Africa Time</td>
+</tr>
+<tr class="row-odd"><td>UP2</td>
+<td>(UTC +2:00) Central Africa Time, Eastern European Time</td>
+</tr>
+<tr class="row-even"><td>UP3</td>
+<td>(UTC +3:00) Moscow Time, East Africa Time</td>
+</tr>
+<tr class="row-odd"><td>UP35</td>
+<td>(UTC +3:30) Iran Standard Time</td>
+</tr>
+<tr class="row-even"><td>UP4</td>
+<td>(UTC +4:00) Azerbaijan Standard Time, Samara Time</td>
+</tr>
+<tr class="row-odd"><td>UP45</td>
+<td>(UTC +4:30) Afghanistan</td>
+</tr>
+<tr class="row-even"><td>UP5</td>
+<td>(UTC +5:00) Pakistan Standard Time, Yekaterinburg Time</td>
+</tr>
+<tr class="row-odd"><td>UP55</td>
+<td>(UTC +5:30) Indian Standard Time, Sri Lanka Time</td>
+</tr>
+<tr class="row-even"><td>UP575</td>
+<td>(UTC +5:45) Nepal Time</td>
+</tr>
+<tr class="row-odd"><td>UP6</td>
+<td>(UTC +6:00) Bangladesh Standard Time, Bhutan Time, Omsk Time</td>
+</tr>
+<tr class="row-even"><td>UP65</td>
+<td>(UTC +6:30) Cocos Islands, Myanmar</td>
+</tr>
+<tr class="row-odd"><td>UP7</td>
+<td>(UTC +7:00) Krasnoyarsk Time, Cambodia, Laos, Thailand, Vietnam</td>
+</tr>
+<tr class="row-even"><td>UP8</td>
+<td>(UTC +8:00) Australian Western Standard Time, Beijing Time</td>
+</tr>
+<tr class="row-odd"><td>UP875</td>
+<td>(UTC +8:45) Australian Central Western Standard Time</td>
+</tr>
+<tr class="row-even"><td>UP9</td>
+<td>(UTC +9:00) Japan Standard Time, Korea Standard Time, Yakutsk</td>
+</tr>
+<tr class="row-odd"><td>UP95</td>
+<td>(UTC +9:30) Australian Central Standard Time</td>
+</tr>
+<tr class="row-even"><td>UP10</td>
+<td>(UTC +10:00) Australian Eastern Standard Time, Vladivostok Time</td>
+</tr>
+<tr class="row-odd"><td>UP105</td>
+<td>(UTC +10:30) Lord Howe Island</td>
+</tr>
+<tr class="row-even"><td>UP11</td>
+<td>(UTC +11:00) Srednekolymsk Time, Solomon Islands, Vanuatu</td>
+</tr>
+<tr class="row-odd"><td>UP115</td>
+<td>(UTC +11:30) Norfolk Island</td>
+</tr>
+<tr class="row-even"><td>UP12</td>
+<td>(UTC +12:00) Fiji, Gilbert Islands, Kamchatka, New Zealand</td>
+</tr>
+<tr class="row-odd"><td>UP1275</td>
+<td>(UTC +12:45) Chatham Islands Standard Time</td>
+</tr>
+<tr class="row-even"><td>UP13</td>
+<td>(UTC +13:00) Phoenix Islands Time, Tonga</td>
+</tr>
+<tr class="row-odd"><td>UP14</td>
+<td>(UTC +14:00) Line Islands</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="directory_helper.html" class="btn btn-neutral float-right" title="ディレクトリヘルパー">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="cookie_helper.html" class="btn btn-neutral" title="Cookie ヘルパー"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
+      最終更新: 9月 06, 2016
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'3.2.0-dev',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  false
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
