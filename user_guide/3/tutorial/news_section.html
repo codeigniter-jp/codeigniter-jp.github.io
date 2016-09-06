@@ -415,6 +415,7 @@
       <img title="Classic Layout" alt="classic layout" src="data:image/gif;base64,R0lGODlhFAAUAJEAAAAAADMzM////wAAACH5BAUUAAIALAAAAAAUABQAAAImlI+py+0PU5gRBRDM3DxbWoXis42X13USOLauUIqnlsaH/eY6UwAAOw==" />
     </div>
   </ul>
+<div style="float:right;margin-left:5px;">[ <a href="https://github.com/codeigniter-jp/ci-ja/blob/develop/user_guide_ja_src/source/tutorial/news_section.rst">旧版翻訳途中</a> | <a href="https://github.com/bcit-ci/CodeIgniter/commits/develop/user_guide_src/source/tutorial/news_section.rst">原文履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/commits/develop_japanese/source/tutorial/news_section.rst">翻訳履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/source/tutorial/news_section.rst">GitHubで修正</a> ]</div><br /><div style="float:right;margin-left:5px;">[ <b class="highlighted">翻訳者募集中</b> → <a href="https://docs.google.com/spreadsheets/d/1ZWD5XqwH-Uo9X7MR644jbL6O8p5LxIngLT8M547H8wc/edit?pref=2&pli=1#gid=0">翻訳状況</a> ]</div>
   <hr/>
 </div>
           <div role="main" class="document">
@@ -434,14 +435,14 @@
 <p><em>application/models/</em> ディレクトリを開き、新しく <em>News_model.php</em> という
 ファイルを作成して、次のコードを記述してください。データベースの設定が <a class="reference internal" href="../database/configuration.html"><span class="doc">ここ</span></a> で記述されているように適切であることも
 確認してください。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>&lt;?php
-class News_model extends CI_Model {
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+<span class="k">class</span> <span class="nc">News_model</span> <span class="k">extends</span> <span class="nx">CI_Model</span> <span class="p">{</span>
 
-        public function __construct()
-        {
-                $this-&gt;load-&gt;database();
-        }
-}
+        <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">()</span>
+        <span class="p">{</span>
+                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">database</span><span class="p">();</span>
+        <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>このコードは以前使ったコントローラのコードに似ています。ここでは <code class="docutils literal"><span class="pre">CI_Model</span></code>
@@ -451,14 +452,14 @@ class News_model extends CI_Model {
 <p>データベースにクエリを投げる前に、データベースのスキーマを作らなければいけません。
 自分のデータベースに接続し、下記の SQL コマンド（MySQL）を実行してください。
 それに加えてレコードもいくつか挿入してみてください。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>CREATE TABLE news (
-        id int(11) NOT NULL AUTO_INCREMENT,
-        title varchar(128) NOT NULL,
-        slug varchar(128) NOT NULL,
-        text text NOT NULL,
-        PRIMARY KEY (id),
-        KEY slug (slug)
-);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">CREATE</span> <span class="nx">TABLE</span> <span class="nx">news</span> <span class="p">(</span>
+        <span class="nx">id</span> <span class="nx">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="nx">AUTO_INCREMENT</span><span class="p">,</span>
+        <span class="nx">title</span> <span class="nx">varchar</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+        <span class="nx">slug</span> <span class="nx">varchar</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+        <span class="nx">text</span> <span class="nx">text</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+        <span class="nx">PRIMARY</span> <span class="nx">KEY</span> <span class="p">(</span><span class="nx">id</span><span class="p">),</span>
+        <span class="nx">KEY</span> <span class="nx">slug</span> <span class="p">(</span><span class="nx">slug</span><span class="p">)</span>
+<span class="p">);</span>
 </pre></div>
 </div>
 <p>データベースとモデルの準備ができたら、次に必要なのはデータベースから全ての記事を
@@ -468,17 +469,17 @@ class News_model extends CI_Model {
 <a class="reference internal" href="../general/requirements.html"><span class="doc">サポート済みの全データベースシステム</span></a> 上で
 動かすことが出来ます。
 次のコードをモデルに追加してください。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>public function get_news($slug = FALSE)
-{
-        if ($slug === FALSE)
-        {
-                $query = $this-&gt;db-&gt;get(&#39;news&#39;);
-                return $query-&gt;result_array();
-        }
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="k">function</span> <span class="nf">get_news</span><span class="p">(</span><span class="nv">$slug</span> <span class="o">=</span> <span class="k">FALSE</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$slug</span> <span class="o">===</span> <span class="k">FALSE</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;news&#39;</span><span class="p">);</span>
+                <span class="k">return</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">result_array</span><span class="p">();</span>
+        <span class="p">}</span>
 
-        $query = $this-&gt;db-&gt;get_where(&#39;news&#39;, array(&#39;slug&#39; =&gt; $slug));
-        return $query-&gt;row_array();
-}
+        <span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">get_where</span><span class="p">(</span><span class="s1">&#39;news&#39;</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;slug&#39;</span> <span class="o">=&gt;</span> <span class="nv">$slug</span><span class="p">));</span>
+        <span class="k">return</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">row_array</span><span class="p">();</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>このコードにより二種類のクエリを実行することが出来ます。全ての news レコードを
@@ -493,26 +494,26 @@ class News_model extends CI_Model {
 コントローラを使う事も出来ますが、わかりやすくするために新たに <code class="docutils literal"><span class="pre">News</span></code>
 コントローラを定義しましょう。
 <em>application/controllers/News.php</em> に新しいコントローラを作成してください。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>&lt;?php
-class News extends CI_Controller {
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+<span class="k">class</span> <span class="nc">News</span> <span class="k">extends</span> <span class="nx">CI_Controller</span> <span class="p">{</span>
 
-        public function __construct()
-        {
-                parent::__construct();
-                $this-&gt;load-&gt;model(&#39;news_model&#39;);
-                $this-&gt;load-&gt;helper(&#39;url_helper&#39;);
-        }
+        <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">()</span>
+        <span class="p">{</span>
+                <span class="k">parent</span><span class="o">::</span><span class="na">__construct</span><span class="p">();</span>
+                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">model</span><span class="p">(</span><span class="s1">&#39;news_model&#39;</span><span class="p">);</span>
+                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">helper</span><span class="p">(</span><span class="s1">&#39;url_helper&#39;</span><span class="p">);</span>
+        <span class="p">}</span>
 
-        public function index()
-        {
-                $data[&#39;news&#39;] = $this-&gt;news_model-&gt;get_news();
-        }
+        <span class="k">public</span> <span class="k">function</span> <span class="nf">index</span><span class="p">()</span>
+        <span class="p">{</span>
+                <span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;news&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">news_model</span><span class="o">-&gt;</span><span class="na">get_news</span><span class="p">();</span>
+        <span class="p">}</span>
 
-        public function view($slug = NULL)
-        {
-                $data[&#39;news_item&#39;] = $this-&gt;news_model-&gt;get_news($slug);
-        }
-}
+        <span class="k">public</span> <span class="k">function</span> <span class="nf">view</span><span class="p">(</span><span class="nv">$slug</span> <span class="o">=</span> <span class="k">NULL</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;news_item&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">news_model</span><span class="o">-&gt;</span><span class="na">get_news</span><span class="p">(</span><span class="nv">$slug</span><span class="p">);</span>
+        <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>コードを見てみると、以前作られたファイルといくつか共通点があるのに気づくかも
@@ -527,15 +528,15 @@ class News extends CI_Controller {
 <p>これでコントローラはモデル経由でデータを取得できますが、
 まだ何も表示されていません。
 次にするべきは、このデータをビューに渡すことです。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>public function index()
-{
-        $data[&#39;news&#39;] = $this-&gt;news_model-&gt;get_news();
-        $data[&#39;title&#39;] = &#39;News archive&#39;;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="k">function</span> <span class="nf">index</span><span class="p">()</span>
+<span class="p">{</span>
+        <span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;news&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">news_model</span><span class="o">-&gt;</span><span class="na">get_news</span><span class="p">();</span>
+        <span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;News archive&#39;</span><span class="p">;</span>
 
-        $this-&gt;load-&gt;view(&#39;templates/header&#39;, $data);
-        $this-&gt;load-&gt;view(&#39;news/index&#39;, $data);
-        $this-&gt;load-&gt;view(&#39;templates/footer&#39;);
-}
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;templates/header&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;news/index&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;templates/footer&#39;</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>上記のコードは全 news レコードを取得し、変数に代入します。タイトルの値も
@@ -543,17 +544,17 @@ class News extends CI_Controller {
 今度はニュース記事を描画するためのビューを作成する必要があります。
 <em>application/views/news/index.php</em> を作成し、
 次のコードを追加してください。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>&lt;h2&gt;&lt;?php echo $title; ?&gt;&lt;/h2&gt;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nx">h2</span><span class="o">&gt;&lt;?</span><span class="nx">php</span> <span class="k">echo</span> <span class="nv">$title</span><span class="p">;</span> <span class="cp">?&gt;</span><span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
 
-&lt;?php foreach ($news as $news_item): ?&gt;
+<span class="cp">&lt;?php</span> <span class="k">foreach</span> <span class="p">(</span><span class="nv">$news</span> <span class="k">as</span> <span class="nv">$news_item</span><span class="p">)</span><span class="o">:</span> <span class="cp">?&gt;</span>
 
-        &lt;h3&gt;&lt;?php echo $news_item[&#39;title&#39;]; ?&gt;&lt;/h3&gt;
-        &lt;div class=&quot;main&quot;&gt;
-                &lt;?php echo $news_item[&#39;text&#39;]; ?&gt;
-        &lt;/div&gt;
-        &lt;p&gt;&lt;a href=&quot;&lt;?php echo site_url(&#39;news/&#39;.$news_item[&#39;slug&#39;]); ?&gt;&quot;&gt;View article&lt;/a&gt;&lt;/p&gt;
+        <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$news_item</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">];</span> <span class="cp">?&gt;</span><span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;main&quot;</span><span class="p">&gt;</span>
+                <span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$news_item</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">];</span> <span class="cp">?&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nx">site_url</span><span class="p">(</span><span class="s1">&#39;news/&#39;</span><span class="o">.</span><span class="nv">$news_item</span><span class="p">[</span><span class="s1">&#39;slug&#39;</span><span class="p">]);</span> <span class="cp">?&gt;</span><span class="s">&quot;</span><span class="p">&gt;</span>View article<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 
-&lt;?php endforeach; ?&gt;
+<span class="cp">&lt;?php</span> <span class="k">endforeach</span><span class="p">;</span> <span class="cp">?&gt;</span>
 </pre></div>
 </div>
 <p>ここでは、1 つ 1 つのニュース記事がループされながらユーザに表示されます。
@@ -566,30 +567,30 @@ class News extends CI_Controller {
 います。あなたがやらなければいけないのはコントローラに多少のコードを追記するのと、
 新規のビューを作成する事だけです。
 <code class="docutils literal"><span class="pre">News</span></code> コントローラに戻り、<code class="docutils literal"><span class="pre">view()</span></code> を次のように更新してください:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>public function view($slug = NULL)
-{
-        $data[&#39;news_item&#39;] = $this-&gt;news_model-&gt;get_news($slug);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="k">function</span> <span class="nf">view</span><span class="p">(</span><span class="nv">$slug</span> <span class="o">=</span> <span class="k">NULL</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;news_item&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">news_model</span><span class="o">-&gt;</span><span class="na">get_news</span><span class="p">(</span><span class="nv">$slug</span><span class="p">);</span>
 
-        if (empty($data[&#39;news_item&#39;]))
-        {
-                show_404();
-        }
+        <span class="k">if</span> <span class="p">(</span><span class="k">empty</span><span class="p">(</span><span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;news_item&#39;</span><span class="p">]))</span>
+        <span class="p">{</span>
+                <span class="nx">show_404</span><span class="p">();</span>
+        <span class="p">}</span>
 
-        $data[&#39;title&#39;] = $data[&#39;news_item&#39;][&#39;title&#39;];
+        <span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;news_item&#39;</span><span class="p">][</span><span class="s1">&#39;title&#39;</span><span class="p">];</span>
 
-        $this-&gt;load-&gt;view(&#39;templates/header&#39;, $data);
-        $this-&gt;load-&gt;view(&#39;news/view&#39;, $data);
-        $this-&gt;load-&gt;view(&#39;templates/footer&#39;);
-}
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;templates/header&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;news/view&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;templates/footer&#39;</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p><code class="docutils literal"><span class="pre">get_news()</span></code> メソッドをパラメータなしで呼び出す代わりに、<code class="docutils literal"><span class="pre">$slug</span></code> 変数が
 渡され、特定のニュース記事が返ってくるようになります。あとは、これに対応した
 ビューを <em>application/views/news/view.php</em> に作成するだけです。
 次のコードをこのファイルに記述してください。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>&lt;?php
-echo &#39;&lt;h2&gt;&#39;.$news_item[&#39;title&#39;].&#39;&lt;/h2&gt;&#39;;
-echo $news_item[&#39;text&#39;];
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+<span class="k">echo</span> <span class="s1">&#39;&lt;h2&gt;&#39;</span><span class="o">.</span><span class="nv">$news_item</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span><span class="o">.</span><span class="s1">&#39;&lt;/h2&gt;&#39;</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nv">$news_item</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">];</span>
 </pre></div>
 </div>
 </div>
@@ -601,10 +602,10 @@ echo $news_item[&#39;text&#39;];
 これによりリクエストが <code class="docutils literal"><span class="pre">Pages</span></code> コントローラではなく、正しく <code class="docutils literal"><span class="pre">News</span></code>
 コントローラに到達することが保証されます。最初の行は slug 付きの URI を
 <code class="docutils literal"><span class="pre">News</span></code> コントローラの <code class="docutils literal"><span class="pre">view()</span></code> メソッドにルーティングしてくれます。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$route[&#39;news/(:any)&#39;] = &#39;news/view/$1&#39;;
-$route[&#39;news&#39;] = &#39;news&#39;;
-$route[&#39;(:any)&#39;] = &#39;pages/view/$1&#39;;
-$route[&#39;default_controller&#39;] = &#39;pages/view&#39;;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;news/(:any)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;news/view/$1&#39;</span><span class="p">;</span>
+<span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;news&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;news&#39;</span><span class="p">;</span>
+<span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;(:any)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;pages/view/$1&#39;</span><span class="p">;</span>
+<span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;default_controller&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;pages/view&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>ブラウザであなたのドキュメントルートに行き、
@@ -631,7 +632,7 @@ $route[&#39;default_controller&#39;] = &#39;pages/view&#39;;
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 9月 06, 2016
+      最終更新: 9月 04, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

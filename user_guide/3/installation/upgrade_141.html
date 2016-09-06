@@ -417,6 +417,7 @@
       <img title="Classic Layout" alt="classic layout" src="data:image/gif;base64,R0lGODlhFAAUAJEAAAAAADMzM////wAAACH5BAUUAAIALAAAAAAUABQAAAImlI+py+0PU5gRBRDM3DxbWoXis42X13USOLauUIqnlsaH/eY6UwAAOw==" />
     </div>
   </ul>
+<div style="float:right;margin-left:5px;">[ <a href="https://github.com/codeigniter-jp/ci-ja/blob/develop/user_guide_ja_src/source/installation/upgrade_141.rst">旧版翻訳途中</a> | <a href="https://github.com/bcit-ci/CodeIgniter/commits/develop/user_guide_src/source/installation/upgrade_141.rst">原文履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/commits/develop_japanese/source/installation/upgrade_141.rst">翻訳履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/source/installation/upgrade_141.rst">GitHubで修正</a> ]</div><br /><div style="float:right;margin-left:5px;">[ <b class="highlighted">翻訳者募集中</b> → <a href="https://docs.google.com/spreadsheets/d/1ZWD5XqwH-Uo9X7MR644jbL6O8p5LxIngLT8M547H8wc/edit?pref=2&pli=1#gid=0">翻訳状況</a> ]</div>
   <hr/>
 </div>
           <div role="main" class="document">
@@ -449,24 +450,24 @@ index.phpファイルを静的ページに置き換えて、オフラインに�
 <div class="section" id="step-2-config-php">
 <h2>Step 2: config.php ファイルのアップグレード<a class="headerlink" href="#step-2-config-php" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>application/config/config.php ファイルを開き、下記要素を追加してください。:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>/*
-|--------------------------------------------------------------------------
-| Output Compression
-|--------------------------------------------------------------------------
-|
-| Enables Gzip output compression for faster page loads.  When enabled,
-| the output class will test whether your server supports Gzip.
-| Even if it does, however, not all browsers support compression
-| so enable only if you are reasonably sure your visitors can handle it.
-|
-| VERY IMPORTANT:  If you are getting a blank page when compression is enabled it
-| means you are prematurely outputting something to your browser. It could
-| even be a line of whitespace at the end of one of your scripts.  For
-| compression to work, nothing can be sent before the output buffer is called
-| by the output class.  Do not &quot;echo&quot; any values with compression enabled.
-|
-*/
-$config[&#39;compress_output&#39;] = FALSE;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">|--------------------------------------------------------------------------</span>
+<span class="cm">| Output Compression</span>
+<span class="cm">|--------------------------------------------------------------------------</span>
+<span class="cm">|</span>
+<span class="cm">| Enables Gzip output compression for faster page loads.  When enabled,</span>
+<span class="cm">| the output class will test whether your server supports Gzip.</span>
+<span class="cm">| Even if it does, however, not all browsers support compression</span>
+<span class="cm">| so enable only if you are reasonably sure your visitors can handle it.</span>
+<span class="cm">|</span>
+<span class="cm">| VERY IMPORTANT:  If you are getting a blank page when compression is enabled it</span>
+<span class="cm">| means you are prematurely outputting something to your browser. It could</span>
+<span class="cm">| even be a line of whitespace at the end of one of your scripts.  For</span>
+<span class="cm">| compression to work, nothing can be sent before the output buffer is called</span>
+<span class="cm">| by the output class.  Do not &quot;echo&quot; any values with compression enabled.</span>
+<span class="cm">|</span>
+<span class="cm">*/</span>
+<span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;compress_output&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">FALSE</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -474,11 +475,11 @@ $config[&#39;compress_output&#39;] = FALSE;
 <h2>Step 3: Autoload 項目の名前変更<a class="headerlink" href="#step-3-autoload" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>次のファイルを開いてください: application/config/autoload.php</p>
 <p>以下の配列要素を探します:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$autoload[&#39;core&#39;] = array();
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$autoload</span><span class="p">[</span><span class="s1">&#39;core&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
 </pre></div>
 </div>
 <p>上記を以下のように変更します:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$autoload[&#39;libraries&#39;] = array();
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$autoload</span><span class="p">[</span><span class="s1">&#39;libraries&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
 </pre></div>
 </div>
 <p>この変更は、ユーザ独自のライブラリを
@@ -510,7 +511,7 @@ $config[&#39;compress_output&#39;] = FALSE;
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 9月 06, 2016
+      最終更新: 9月 04, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

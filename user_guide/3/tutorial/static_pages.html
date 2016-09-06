@@ -415,6 +415,7 @@
       <img title="Classic Layout" alt="classic layout" src="data:image/gif;base64,R0lGODlhFAAUAJEAAAAAADMzM////wAAACH5BAUUAAIALAAAAAAUABQAAAImlI+py+0PU5gRBRDM3DxbWoXis42X13USOLauUIqnlsaH/eY6UwAAOw==" />
     </div>
   </ul>
+<div style="float:right;margin-left:5px;">[ <a href="https://github.com/codeigniter-jp/ci-ja/blob/develop/user_guide_ja_src/source/tutorial/static_pages.rst">旧版翻訳途中</a> | <a href="https://github.com/bcit-ci/CodeIgniter/commits/develop/user_guide_src/source/tutorial/static_pages.rst">原文履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/commits/develop_japanese/source/tutorial/static_pages.rst">翻訳履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/source/tutorial/static_pages.rst">GitHubで修正</a> ]</div><br /><div style="float:right;margin-left:5px;">[ <b class="highlighted">翻訳者募集中</b> → <a href="https://docs.google.com/spreadsheets/d/1ZWD5XqwH-Uo9X7MR644jbL6O8p5LxIngLT8M547H8wc/edit?pref=2&pli=1#gid=0">翻訳状況</a> ]</div>
   <hr/>
 </div>
           <div role="main" class="document">
@@ -440,13 +441,13 @@ MVC では非常に頻繁にこのような URL のパターンが見られま�
 しかし、一旦はこれを知っていれば十分です。</p>
 <p><em>application/controllers/Pages.php</em> に、下記のコードを記述したファイルを作成
 してください。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>&lt;?php
-class Pages extends CI_Controller {
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+<span class="k">class</span> <span class="nc">Pages</span> <span class="k">extends</span> <span class="nx">CI_Controller</span> <span class="p">{</span>
 
-        public function view($page = &#39;home&#39;)
-        {
-        }
-}
+        <span class="k">public</span> <span class="k">function</span> <span class="nf">view</span><span class="p">(</span><span class="nv">$page</span> <span class="o">=</span> <span class="s1">&#39;home&#39;</span><span class="p">)</span>
+        <span class="p">{</span>
+        <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>あなたは <code class="docutils literal"><span class="pre">Pages</span></code> という名のクラスを作り、そこに 1 つの <code class="docutils literal"><span class="pre">$page</span></code> という引数を
@@ -464,13 +465,13 @@ CodeIgniter の非常に専門的な議論において、これは <em>スーパ
 それらをページのフッタとヘッダとします。</p>
 <p><em>application/views/templates/header.php</em> にヘッダーを作成し、
 下記のコードを記述してください。:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>&lt;html&gt;
-        &lt;head&gt;
-                &lt;title&gt;CodeIgniter Tutorial&lt;/title&gt;
-        &lt;/head&gt;
-        &lt;body&gt;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nx">html</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">head</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">title</span><span class="o">&gt;</span><span class="nx">CodeIgniter</span> <span class="nx">Tutorial</span><span class="o">&lt;/</span><span class="nx">title</span><span class="o">&gt;</span>
+        <span class="o">&lt;/</span><span class="nx">head</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">body</span><span class="o">&gt;</span>
 
-                &lt;h1&gt;&lt;?php echo $title; ?&gt;&lt;/h1&gt;
+                <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;&lt;?</span><span class="nx">php</span> <span class="k">echo</span> <span class="nv">$title</span><span class="p">;</span> <span class="cp">?&gt;</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 <p>ヘッダにはメインのビューをロードする前に表示させたい単純な HTML コードが
@@ -478,9 +479,9 @@ CodeIgniter の非常に専門的な議論において、これは <em>スーパ
 変数を出力させる事にもなります。では次は
 <em>application/views/templates/footer.php</em> にフッタを作成し、
 下記のコードを記述してください:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>                &lt;em&gt;&amp;copy; 2015&lt;/em&gt;
-        &lt;/body&gt;
-&lt;/html&gt;
+<div class="highlight-ci"><div class="highlight"><pre><span></span>                <span class="o">&lt;</span><span class="nx">em</span><span class="o">&gt;&amp;</span><span class="nb">copy</span><span class="p">;</span> <span class="mi">2015</span><span class="o">&lt;/</span><span class="nx">em</span><span class="o">&gt;</span>
+        <span class="o">&lt;/</span><span class="nx">body</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="nx">html</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 <div class="section" id="id2">
@@ -494,20 +495,20 @@ CodeIgniter の非常に専門的な議論において、これは <em>スーパ
 を入力し保存します。もし特に思い浮かばなければ、&#8221;Hello World!&#8221; と入れてみてください。</p>
 <p>これらのページをロードするためには、まずそのページが存在するかどうかを
 チェックしなければなりません：</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>public function view($page = &#39;home&#39;)
-{
-        if ( ! file_exists(APPPATH.&#39;views/pages/&#39;.$page.&#39;.php&#39;))
-        {
-                // おっと、そのページはありません！
-                show_404();
-        }
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="k">function</span> <span class="nf">view</span><span class="p">(</span><span class="nv">$page</span> <span class="o">=</span> <span class="s1">&#39;home&#39;</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span> <span class="o">!</span> <span class="nb">file_exists</span><span class="p">(</span><span class="nx">APPPATH</span><span class="o">.</span><span class="s1">&#39;views/pages/&#39;</span><span class="o">.</span><span class="nv">$page</span><span class="o">.</span><span class="s1">&#39;.php&#39;</span><span class="p">))</span>
+        <span class="p">{</span>
+                <span class="c1">// おっと、そのページはありません！</span>
+                <span class="nx">show_404</span><span class="p">();</span>
+        <span class="p">}</span>
 
-        $data[&#39;title&#39;] = ucfirst($page); // 頭文字を大文字に
+        <span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">ucfirst</span><span class="p">(</span><span class="nv">$page</span><span class="p">);</span> <span class="c1">// 頭文字を大文字に</span>
 
-        $this-&gt;load-&gt;view(&#39;templates/header&#39;, $data);
-        $this-&gt;load-&gt;view(&#39;pages/&#39;.$page, $data);
-        $this-&gt;load-&gt;view(&#39;templates/footer&#39;, $data);
-}
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;templates/header&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;pages/&#39;</span><span class="o">.</span><span class="nv">$page</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;templates/footer&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>ページが存在する場合、それはヘッダとフッタと共にロードされユーザに
@@ -540,8 +541,8 @@ about ページが見えるはずです。</p>
 <p>実際にやってみましょう。<em>application/config/routes.php</em> に配置されている
 ルーティングファイルを開き、次の 2 行を追記してください。
 そして <code class="docutils literal"><span class="pre">$route</span></code> 配列に要素を追加している他のすべてのコードを削除してください。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$route[&#39;default_controller&#39;] = &#39;pages/view&#39;;
-$route[&#39;(:any)&#39;] = &#39;pages/view/$1&#39;;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;default_controller&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;pages/view&#39;</span><span class="p">;</span>
+<span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;(:any)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;pages/view/$1&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>CodeIgniter はルーティング規則を上から下に解析していき、マッチした最初の規則に
@@ -579,7 +580,7 @@ $route[&#39;(:any)&#39;] = &#39;pages/view/$1&#39;;
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 9月 06, 2016
+      最終更新: 9月 04, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

@@ -417,6 +417,7 @@
       <img title="Classic Layout" alt="classic layout" src="data:image/gif;base64,R0lGODlhFAAUAJEAAAAAADMzM////wAAACH5BAUUAAIALAAAAAAUABQAAAImlI+py+0PU5gRBRDM3DxbWoXis42X13USOLauUIqnlsaH/eY6UwAAOw==" />
     </div>
   </ul>
+<div style="float:right;margin-left:5px;">[ <a href="https://github.com/codeigniter-jp/ci-ja/blob/develop/user_guide_ja_src/source/installation/upgrade_200.rst">旧版翻訳途中</a> | <a href="https://github.com/bcit-ci/CodeIgniter/commits/develop/user_guide_src/source/installation/upgrade_200.rst">原文履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/commits/develop_japanese/source/installation/upgrade_200.rst">翻訳履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/source/installation/upgrade_200.rst">GitHubで修正</a> ]</div><br /><div style="float:right;margin-left:5px;">[ <b class="highlighted">翻訳者募集中</b> → <a href="https://docs.google.com/spreadsheets/d/1ZWD5XqwH-Uo9X7MR644jbL6O8p5LxIngLT8M547H8wc/edit?pref=2&pli=1#gid=0">翻訳状況</a> ]</div>
   <hr/>
 </div>
           <div role="main" class="document">
@@ -447,7 +448,7 @@ due to how easy it was to create serious server performance issues. If
 you <em>need</em> recursiveness where you are using this helper function,
 change such instances, setting the second parameter, $top_level_only
 to FALSE:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>get_dir_file_info(&#39;/path/to/directory&#39;, FALSE);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">get_dir_file_info</span><span class="p">(</span><span class="s1">&#39;/path/to/directory&#39;</span><span class="p">,</span> <span class="k">FALSE</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -457,11 +458,11 @@ to FALSE:</p>
 identical to Helpers, but non-extensible. You will need to rename your
 plugin files from filename_pi.php to filename_helper.php, move them to
 your helpers folder, and change all instances of:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;load-&gt;plugin(&#39;foo&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">plugin</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>to</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;load-&gt;helper(&#39;foo&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">helper</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -578,7 +579,7 @@ has been renamed to <code class="docutils literal"><span class="pre">do_hash()</
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 9月 06, 2016
+      最終更新: 9月 04, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

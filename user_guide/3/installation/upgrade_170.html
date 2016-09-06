@@ -417,6 +417,7 @@
       <img title="Classic Layout" alt="classic layout" src="data:image/gif;base64,R0lGODlhFAAUAJEAAAAAADMzM////wAAACH5BAUUAAIALAAAAAAUABQAAAImlI+py+0PU5gRBRDM3DxbWoXis42X13USOLauUIqnlsaH/eY6UwAAOw==" />
     </div>
   </ul>
+<div style="float:right;margin-left:5px;">[ <a href="https://github.com/codeigniter-jp/ci-ja/blob/develop/user_guide_ja_src/source/installation/upgrade_170.rst">旧版翻訳途中</a> | <a href="https://github.com/bcit-ci/CodeIgniter/commits/develop/user_guide_src/source/installation/upgrade_170.rst">原文履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/commits/develop_japanese/source/installation/upgrade_170.rst">翻訳履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/source/installation/upgrade_170.rst">GitHubで修正</a> ]</div><br /><div style="float:right;margin-left:5px;">[ <b class="highlighted">翻訳者募集中</b> → <a href="https://docs.google.com/spreadsheets/d/1ZWD5XqwH-Uo9X7MR644jbL6O8p5LxIngLT8M547H8wc/edit?pref=2&pli=1#gid=0">翻訳状況</a> ]</div>
   <hr/>
 </div>
           <div role="main" class="document">
@@ -448,11 +449,11 @@ make copies of them first.</p>
 storing session data to a database, you must add a new column named
 user_data to your session table. Here is an example of what this column
 might look like for MySQL:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>user_data text NOT NULL
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">user_data</span> <span class="nx">text</span> <span class="k">NOT</span> <span class="k">NULL</span>
 </pre></div>
 </div>
 <p>To add this column you will run a query similar to this:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>ALTER TABLE `ci_sessions` ADD `user_data` text NOT NULL
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">ALTER</span> <span class="nx">TABLE</span> <span class="sb">`ci_sessions`</span> <span class="nx">ADD</span> <span class="sb">`user_data`</span> <span class="nx">text</span> <span class="k">NOT</span> <span class="k">NULL</span>
 </pre></div>
 </div>
 <p>You&#8217;ll find more information regarding the new Session functionality in
@@ -495,7 +496,7 @@ including the image files.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 9月 06, 2016
+      最終更新: 9月 04, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

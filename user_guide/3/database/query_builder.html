@@ -415,6 +415,7 @@
       <img title="Classic Layout" alt="classic layout" src="data:image/gif;base64,R0lGODlhFAAUAJEAAAAAADMzM////wAAACH5BAUUAAIALAAAAAAUABQAAAImlI+py+0PU5gRBRDM3DxbWoXis42X13USOLauUIqnlsaH/eY6UwAAOw==" />
     </div>
   </ul>
+<div style="float:right;margin-left:5px;">[ <a href="https://github.com/codeigniter-jp/ci-ja/blob/develop/user_guide_ja_src/source/database/query_builder.rst">旧版翻訳途中</a> | <a href="https://github.com/bcit-ci/CodeIgniter/commits/develop/user_guide_src/source/database/query_builder.rst">原文履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/commits/develop_japanese/source/database/query_builder.rst">翻訳履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/source/database/query_builder.rst">GitHubで修正</a> ]</div><br /><div style="float:right;margin-left:5px;">[ <b class="highlighted">翻訳者募集中</b> → <a href="https://docs.google.com/spreadsheets/d/1ZWD5XqwH-Uo9X7MR644jbL6O8p5LxIngLT8M547H8wc/edit?pref=2&pli=1#gid=0">翻訳状況</a> ]</div>
   <hr/>
 </div>
           <div role="main" class="document">
@@ -461,25 +462,25 @@
 <p><strong>$this-&gt;db-&gt;get()</strong></p>
 <p>SELECT クエリを実行し、結果を返します。次のように、単独で使うと、
 テーブルの全レコードを取得するのに使えます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$query = $this-&gt;db-&gt;get(&#39;mytable&#39;);  // 次の文を生成します: SELECT * FROM mytable
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;mytable&#39;</span><span class="p">);</span>  <span class="c1">// 次の文を生成します: SELECT * FROM mytable</span>
 </pre></div>
 </div>
 <p>第2、第3引数で、limit 句と offset 句を
 セットできます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$query = $this-&gt;db-&gt;get(&#39;mytable&#39;, 10, 20);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;mytable&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
 
-// Executes: SELECT * FROM mytable LIMIT 20, 10
-// 生成する文: SELECT * FROM mytable LIMIT 20, 10（MySQL での例。他のデータベースでは、若干違う構文になります）
+<span class="c1">// Executes: SELECT * FROM mytable LIMIT 20, 10</span>
+<span class="c1">// 生成する文: SELECT * FROM mytable LIMIT 20, 10（MySQL での例。他のデータベースでは、若干違う構文になります）</span>
 </pre></div>
 </div>
 <p>上の例ではメソッドは $query という名前の変数にアサインされていますが、
 この変数は、結果を表示させるのに使用できます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$query = $this-&gt;db-&gt;get(&#39;mytable&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;mytable&#39;</span><span class="p">);</span>
 
-foreach ($query-&gt;result() as $row)
-{
-        echo $row-&gt;title;
-}
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$query</span><span class="o">-&gt;</span><span class="na">result</span><span class="p">()</span> <span class="k">as</span> <span class="nv">$row</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="k">echo</span> <span class="nv">$row</span><span class="o">-&gt;</span><span class="na">title</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>結果の生成について完全に論じている <a class="reference internal" href="results.html"><span class="doc">結果メソッド</span></a>
@@ -488,22 +489,22 @@ foreach ($query-&gt;result() as $row)
 <p>SELECT クエリを <strong>$this-&gt;db-&gt;get()</strong> のようにコンパイルしますが、クエリの
 <em>実行</em> はしません。単に SQL クエリの文字列を返すだけです。</p>
 <p>例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$sql = $this-&gt;db-&gt;get_compiled_select(&#39;mytable&#39;);
-echo $sql;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$sql</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">get_compiled_select</span><span class="p">(</span><span class="s1">&#39;mytable&#39;</span><span class="p">);</span>
+<span class="k">echo</span> <span class="nv">$sql</span><span class="p">;</span>
 
-// 次の文を出力します: SELECT * FROM mytable
+<span class="c1">// 次の文を出力します: SELECT * FROM mytable</span>
 </pre></div>
 </div>
 <p>第2引数でクエリビルダのクエリをリセットするかを指定できます（デフォルトでは
 <cite>$this-&gt;db-&gt;get()</cite> を使用時のようにリセットされます）:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>echo $this-&gt;db-&gt;limit(10,20)-&gt;get_compiled_select(&#39;mytable&#39;, FALSE);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">limit</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">get_compiled_select</span><span class="p">(</span><span class="s1">&#39;mytable&#39;</span><span class="p">,</span> <span class="k">FALSE</span><span class="p">);</span>
 
-// 次の文を出力します: SELECT * FROM mytable LIMIT 20, 10
-// (in MySQL. Other databases have slightly different syntax)
+<span class="c1">// 次の文を出力します: SELECT * FROM mytable LIMIT 20, 10</span>
+<span class="c1">// (in MySQL. Other databases have slightly different syntax)</span>
 
-echo $this-&gt;db-&gt;select(&#39;title, content, date&#39;)-&gt;get_compiled_select();
+<span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">select</span><span class="p">(</span><span class="s1">&#39;title, content, date&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">get_compiled_select</span><span class="p">();</span>
 
-// 次の文を出力します: SELECT title, content, date FROM mytable LIMIT 20, 10
+<span class="c1">// 次の文を出力します: SELECT title, content, date FROM mytable LIMIT 20, 10</span>
 </pre></div>
 </div>
 <p>上記例で特筆すべき点として、
@@ -515,7 +516,7 @@ echo $this-&gt;db-&gt;select(&#39;title, content, date&#39;)-&gt;get_compiled_se
 <p>db-&gt;where() メソッドを使用する代わりに、 &#8220;where&#8221; 句を
 第2引数で追加できること以外は上のメソッドと
 同じです:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$query = $this-&gt;db-&gt;get_where(&#39;mytable&#39;, array(&#39;id&#39; =&gt; $id), $limit, $offset);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">get_where</span><span class="p">(</span><span class="s1">&#39;mytable&#39;</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="nv">$id</span><span class="p">),</span> <span class="nv">$limit</span><span class="p">,</span> <span class="nv">$offset</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>where メソッドについては、詳しくは下をご覧ください。</p>
@@ -525,10 +526,10 @@ echo $this-&gt;db-&gt;select(&#39;title, content, date&#39;)-&gt;get_compiled_se
 </div>
 <p><strong>$this-&gt;db-&gt;select()</strong></p>
 <p>次のようにすると、クエリの SELECT の部分を指定できます [ 訳注: 選択したい列を指定できるということ ]:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;db-&gt;select(&#39;title, content, date&#39;);
-$query = $this-&gt;db-&gt;get(&#39;mytable&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">select</span><span class="p">(</span><span class="s1">&#39;title, content, date&#39;</span><span class="p">);</span>
+<span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;mytable&#39;</span><span class="p">);</span>
 
-// 生成される SQL 文: SELECT title, content, date FROM mytable
+<span class="c1">// 生成される SQL 文: SELECT title, content, date FROM mytable</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -541,49 +542,49 @@ CodeIgniter はすべての列を選択する（SELECT * ... ）ものとしま�
 名やテーブル名を保護しないようになります [ 訳注: 識別子（テーブル名や列名など）が予約語の場合や、特殊文字が含まれる場合、たとえば MySQL では、バッククォート「`」でそれらを囲む必要があります。第2引数に FALSE
 をセットするとこれを自動では行いません ]。
 これは、複合的な SELECT 文が必要な場合に有用です。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;db-&gt;select(&#39;(SELECT SUM(payments.amount) FROM payments WHERE payments.invoice_id=4) AS amount_paid&#39;, FALSE);
-$query = $this-&gt;db-&gt;get(&#39;mytable&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">select</span><span class="p">(</span><span class="s1">&#39;(SELECT SUM(payments.amount) FROM payments WHERE payments.invoice_id=4) AS amount_paid&#39;</span><span class="p">,</span> <span class="k">FALSE</span><span class="p">);</span>
+<span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;mytable&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p><strong>$this-&gt;db-&gt;select_max()</strong></p>
 <p>クエリの &#8220;SELECT MAX(field)&#8221; の部分を書き出します。
 結果フィールドをリネームするために、追加で第2引数を指定できます。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;db-&gt;select_max(&#39;age&#39;);
-$query = $this-&gt;db-&gt;get(&#39;members&#39;);  // 次を生成: SELECT MAX(age) as age FROM members
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">select_max</span><span class="p">(</span><span class="s1">&#39;age&#39;</span><span class="p">);</span>
+<span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;members&#39;</span><span class="p">);</span>  <span class="c1">// 次を生成: SELECT MAX(age) as age FROM members</span>
 
-$this-&gt;db-&gt;select_max(&#39;age&#39;, &#39;member_age&#39;);
-$query = $this-&gt;db-&gt;get(&#39;members&#39;); // 次を生成: SELECT MAX(age) as member_age FROM members
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">select_max</span><span class="p">(</span><span class="s1">&#39;age&#39;</span><span class="p">,</span> <span class="s1">&#39;member_age&#39;</span><span class="p">);</span>
+<span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;members&#39;</span><span class="p">);</span> <span class="c1">// 次を生成: SELECT MAX(age) as member_age FROM members</span>
 </pre></div>
 </div>
 <p><strong>$this-&gt;db-&gt;select_min()</strong></p>
 <p>クエリの &#8220;SELECT MIN(field)&#8221; の部分を書き出します。
 select_max() と同様に、結果フィールドをリネームするために、
 追加で第2引数を指定できます。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;db-&gt;select_min(&#39;age&#39;);
-$query = $this-&gt;db-&gt;get(&#39;members&#39;); // 次を生成: SELECT MIN(age) as age FROM members
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">select_min</span><span class="p">(</span><span class="s1">&#39;age&#39;</span><span class="p">);</span>
+<span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;members&#39;</span><span class="p">);</span> <span class="c1">// 次を生成: SELECT MIN(age) as age FROM members</span>
 </pre></div>
 </div>
 <p><strong>$this-&gt;db-&gt;select_avg()</strong></p>
 <p>クエリの &#8220;SELECT AVG(field)&#8221; の部分を書き出します。
 select_max() と同様に、結果フィールドをリネームするために、
 追加で第2引数を指定できます。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;db-&gt;select_avg(&#39;age&#39;);
-$query = $this-&gt;db-&gt;get(&#39;members&#39;); // 次を生成: SELECT AVG(age) as age FROM members
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">select_avg</span><span class="p">(</span><span class="s1">&#39;age&#39;</span><span class="p">);</span>
+<span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;members&#39;</span><span class="p">);</span> <span class="c1">// 次を生成: SELECT AVG(age) as age FROM members</span>
 </pre></div>
 </div>
 <p><strong>$this-&gt;db-&gt;select_sum()</strong></p>
 <p>クエリの &#8220;SELECT SUM(field)&#8221; の部分を書き出します。 select_max() と同様
 に、結果フィールドをリネームするために、
 追加で第2引数を指定できます。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;db-&gt;select_sum(&#39;age&#39;);
-$query = $this-&gt;db-&gt;get(&#39;members&#39;); // 次を生成: SELECT SUM(age) as age FROM members
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">select_sum</span><span class="p">(</span><span class="s1">&#39;age&#39;</span><span class="p">);</span>
+<span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;members&#39;</span><span class="p">);</span> <span class="c1">// 次を生成: SELECT SUM(age) as age FROM members</span>
 </pre></div>
 </div>
 <p><strong>$this-&gt;db-&gt;from()</strong></p>
 <p>次のようにすると、クエリの FROM の部分を指定できます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;db-&gt;select(&#39;title, content, date&#39;);
-$this-&gt;db-&gt;from(&#39;mytable&#39;);
-$query = $this-&gt;db-&gt;get();  // 次を生成: SELECT title, content, date FROM mytable
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">select</span><span class="p">(</span><span class="s1">&#39;title, content, date&#39;</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">from</span><span class="p">(</span><span class="s1">&#39;mytable&#39;</span><span class="p">);</span>
+<span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">();</span>  <span class="c1">// 次を生成: SELECT title, content, date FROM mytable</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -593,13 +594,13 @@ $query = $this-&gt;db-&gt;get();  // 次を生成: SELECT title, content, date F
 </div>
 <p><strong>$this-&gt;db-&gt;join()</strong></p>
 <p>次のようにすると、クエリの JOIN の部分を指定できます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;db-&gt;select(&#39;*&#39;);
-$this-&gt;db-&gt;from(&#39;blogs&#39;);
-$this-&gt;db-&gt;join(&#39;comments&#39;, &#39;comments.id = blogs.id&#39;);
-$query = $this-&gt;db-&gt;get();
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">select</span><span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">from</span><span class="p">(</span><span class="s1">&#39;blogs&#39;</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">join</span><span class="p">(</span><span class="s1">&#39;comments&#39;</span><span class="p">,</span> <span class="s1">&#39;comments.id = blogs.id&#39;</span><span class="p">);</span>
+<span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">();</span>
 
-// 次を生成:
-// SELECT * FROM blogs JOIN comments ON comments.id = blogs.id
+<span class="c1">// 次を生成:</span>
+<span class="c1">// SELECT * FROM blogs JOIN comments ON comments.id = blogs.id</span>
 </pre></div>
 </div>
 <p>1回のクエリで複数の JOIN が必要な場合は、メソッドを複数回
@@ -607,8 +608,8 @@ $query = $this-&gt;db-&gt;get();
 <p>特定の種類の結合が必要な場合は、第3引数でその種類を指定できます。
 指定可能なのは: left、right、outer、inner、left outer および right
 outer。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;db-&gt;join(&#39;comments&#39;, &#39;comments.id = blogs.id&#39;, &#39;left&#39;);
-// 次を生成: LEFT JOIN comments ON comments.id = blogs.id
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">join</span><span class="p">(</span><span class="s1">&#39;comments&#39;</span><span class="p">,</span> <span class="s1">&#39;comments.id = blogs.id&#39;</span><span class="p">,</span> <span class="s1">&#39;left&#39;</span><span class="p">);</span>
+<span class="c1">// 次を生成: LEFT JOIN comments ON comments.id = blogs.id</span>
 </pre></div>
 </div>
 </div>
@@ -625,16 +626,16 @@ outer。</p>
 <ol class="arabic">
 <li><p class="first"><strong>単に キー/値 を指定する方法:</strong></p>
 <blockquote>
-<div><div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;db-&gt;where(&#39;name&#39;, $name); // 次を生成: WHERE name = &#39;Joe&#39;
+<div><div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="nv">$name</span><span class="p">);</span> <span class="c1">// 次を生成: WHERE name = &#39;Joe&#39;</span>
 </pre></div>
 </div>
 <p>等号（=）が付加されることに注意してください。</p>
 <p>複数回このメソッドを呼ぶと、
 それらは AND で連結されます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;db-&gt;where(&#39;name&#39;, $name);
-$this-&gt;db-&gt;where(&#39;title&#39;, $title);
-$this-&gt;db-&gt;where(&#39;status&#39;, $status);
-// WHERE name = &#39;Joe&#39; AND title = &#39;boss&#39; AND status = &#39;active&#39;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="nv">$name</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="nv">$title</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;status&#39;</span><span class="p">,</span> <span class="nv">$status</span><span class="p">);</span>
+<span class="c1">// WHERE name = &#39;Joe&#39; AND title = &#39;boss&#39; AND status = &#39;active&#39;</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -643,44 +644,44 @@ $this-&gt;db-&gt;where(&#39;status&#39;, $status);
 <blockquote>
 <div><p>比較方法を指定するために、
 第1引数に演算子を含めることができます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;db-&gt;where(&#39;name !=&#39;, $name);
-$this-&gt;db-&gt;where(&#39;id &lt;&#39;, $id); // 次を生成: WHERE name != &#39;Joe&#39; AND id &lt; 45
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;name !=&#39;</span><span class="p">,</span> <span class="nv">$name</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;id &lt;&#39;</span><span class="p">,</span> <span class="nv">$id</span><span class="p">);</span> <span class="c1">// 次を生成: WHERE name != &#39;Joe&#39; AND id &lt; 45</span>
 </pre></div>
 </div>
 </div></blockquote>
 </li>
 <li><p class="first"><strong>連想配列を使用する方法:</strong></p>
 <blockquote>
-<div><div class="highlight-ci"><div class="highlight"><pre><span></span>$array = array(&#39;name&#39; =&gt; $name, &#39;title&#39; =&gt; $title, &#39;status&#39; =&gt; $status);
-$this-&gt;db-&gt;where($array);
-// 次を生成: WHERE name = &#39;Joe&#39; AND title = &#39;boss&#39; AND status = &#39;active&#39;
+<div><div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$array</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="nv">$name</span><span class="p">,</span> <span class="s1">&#39;title&#39;</span> <span class="o">=&gt;</span> <span class="nv">$title</span><span class="p">,</span> <span class="s1">&#39;status&#39;</span> <span class="o">=&gt;</span> <span class="nv">$status</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="nv">$array</span><span class="p">);</span>
+<span class="c1">// 次を生成: WHERE name = &#39;Joe&#39; AND title = &#39;boss&#39; AND status = &#39;active&#39;</span>
 </pre></div>
 </div>
 <p>またこの方法を使う場合も、次のように、演算子を含めて指定することができます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$array = array(&#39;name !=&#39; =&gt; $name, &#39;id &lt;&#39; =&gt; $id, &#39;date &gt;&#39; =&gt; $date);
-$this-&gt;db-&gt;where($array);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$array</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;name !=&#39;</span> <span class="o">=&gt;</span> <span class="nv">$name</span><span class="p">,</span> <span class="s1">&#39;id &lt;&#39;</span> <span class="o">=&gt;</span> <span class="nv">$id</span><span class="p">,</span> <span class="s1">&#39;date &gt;&#39;</span> <span class="o">=&gt;</span> <span class="nv">$date</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="nv">$array</span><span class="p">);</span>
 </pre></div>
 </div>
 </div></blockquote>
 </li>
 <li><p class="first"><strong>自由に指定できる文字列を使用する方法:</strong>
 WHERE 句の中身を自分で書くこともできます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$where = &quot;name=&#39;Joe&#39; AND status=&#39;boss&#39; OR status=&#39;active&#39;&quot;;
-$this-&gt;db-&gt;where($where);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$where</span> <span class="o">=</span> <span class="s2">&quot;name=&#39;Joe&#39; AND status=&#39;boss&#39; OR status=&#39;active&#39;&quot;</span><span class="p">;</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="nv">$where</span><span class="p">);</span>
 </pre></div>
 </div>
 </li>
 </ol>
 <p><code class="docutils literal"><span class="pre">$this-&gt;db-&gt;where()</span></code> にはオプションで第3の引数を渡すこともできます。FALSE
 を渡した場合、CodeIgniter はフィールド名やテーブル名を守りません。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;db-&gt;where(&#39;MATCH (field) AGAINST (&quot;value&quot;)&#39;, NULL, FALSE);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;MATCH (field) AGAINST (&quot;value&quot;)&#39;</span><span class="p">,</span> <span class="k">NULL</span><span class="p">,</span> <span class="k">FALSE</span><span class="p">);</span>
 </pre></div>
 </div>
 <p><strong>$this-&gt;db-&gt;or_where()</strong></p>
 <p>他の句と OR で連結される以外は、
 上のメソッドと同じものです:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;db-&gt;where(&#39;name !=&#39;, $name);
-$this-&gt;db-&gt;or_where(&#39;id &gt;&#39;, $id);  // 次を生成: WHERE name != &#39;Joe&#39; OR id &gt; 50
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;name !=&#39;</span><span class="p">,</span> <span class="nv">$name</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">or_where</span><span class="p">(</span><span class="s1">&#39;id &gt;&#39;</span><span class="p">,</span> <span class="nv">$id</span><span class="p">);</span>  <span class="c1">// 次を生成: WHERE name != &#39;Joe&#39; OR id &gt; 50</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -691,33 +692,33 @@ $this-&gt;db-&gt;or_where(&#39;id &gt;&#39;, $id);  // 次を生成: WHERE name 
 <p><strong>$this-&gt;db-&gt;where_in()</strong></p>
 <p>適切な場合には、AND で連結して、「WHERE field IN (&#8216;item&#8217;, &#8216;item&#8217;) 」
 SQLクエリを生成します</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$names = array(&#39;Frank&#39;, &#39;Todd&#39;, &#39;James&#39;);
-$this-&gt;db-&gt;where_in(&#39;username&#39;, $names);
-// 次を生成: WHERE username IN (&#39;Frank&#39;, &#39;Todd&#39;, &#39;James&#39;)
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$names</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;Frank&#39;</span><span class="p">,</span> <span class="s1">&#39;Todd&#39;</span><span class="p">,</span> <span class="s1">&#39;James&#39;</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">where_in</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="nv">$names</span><span class="p">);</span>
+<span class="c1">// 次を生成: WHERE username IN (&#39;Frank&#39;, &#39;Todd&#39;, &#39;James&#39;)</span>
 </pre></div>
 </div>
 <p><strong>$this-&gt;db-&gt;or_where_in()</strong></p>
 <p>適切な場合には、OR で連結して、「WHERE field IN (&#8216;item&#8217;, &#8216;item&#8217;)」
 SQLクエリを生成します</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$names = array(&#39;Frank&#39;, &#39;Todd&#39;, &#39;James&#39;);
-$this-&gt;db-&gt;or_where_in(&#39;username&#39;, $names);
-// 次を生成: OR username IN (&#39;Frank&#39;, &#39;Todd&#39;, &#39;James&#39;)
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$names</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;Frank&#39;</span><span class="p">,</span> <span class="s1">&#39;Todd&#39;</span><span class="p">,</span> <span class="s1">&#39;James&#39;</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">or_where_in</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="nv">$names</span><span class="p">);</span>
+<span class="c1">// 次を生成: OR username IN (&#39;Frank&#39;, &#39;Todd&#39;, &#39;James&#39;)</span>
 </pre></div>
 </div>
 <p><strong>$this-&gt;db-&gt;where_not_in()</strong></p>
 <p>適切な場合には、AND で連結して、 「WHERE field NOT IN (&#8216;item&#8217;, &#8216;item&#8217;)」
 SQLクエリを生成します</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$names = array(&#39;Frank&#39;, &#39;Todd&#39;, &#39;James&#39;);
-$this-&gt;db-&gt;where_not_in(&#39;username&#39;, $names);
-// 次を生成: WHERE username NOT IN (&#39;Frank&#39;, &#39;Todd&#39;, &#39;James&#39;)
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$names</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;Frank&#39;</span><span class="p">,</span> <span class="s1">&#39;Todd&#39;</span><span class="p">,</span> <span class="s1">&#39;James&#39;</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">where_not_in</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="nv">$names</span><span class="p">);</span>
+<span class="c1">// 次を生成: WHERE username NOT IN (&#39;Frank&#39;, &#39;Todd&#39;, &#39;James&#39;)</span>
 </pre></div>
 </div>
 <p><strong>$this-&gt;db-&gt;or_where_not_in()</strong></p>
 <p>適切な場合には、NOT で連結して、「WHERE field NOT IN (&#8216;item&#8217;,
 &#8216;item&#8217;)」 SQLクエリを生成します</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$names = array(&#39;Frank&#39;, &#39;Todd&#39;, &#39;James&#39;);
-$this-&gt;db-&gt;or_where_not_in(&#39;username&#39;, $names);
-// 次を生成: OR username NOT IN (&#39;Frank&#39;, &#39;Todd&#39;, &#39;James&#39;)
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$names</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;Frank&#39;</span><span class="p">,</span> <span class="s1">&#39;Todd&#39;</span><span class="p">,</span> <span class="s1">&#39;James&#39;</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">or_where_not_in</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="nv">$names</span><span class="p">);</span>
+<span class="c1">// 次を生成: OR username NOT IN (&#39;Frank&#39;, &#39;Todd&#39;, &#39;James&#39;)</span>
 </pre></div>
 </div>
 </div>
@@ -733,32 +734,32 @@ $this-&gt;db-&gt;or_where_not_in(&#39;username&#39;, $names);
 <ol class="arabic">
 <li><p class="first"><strong>単に キー/値 を指定する方法:</strong></p>
 <blockquote>
-<div><div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;db-&gt;like(&#39;title&#39;, &#39;match&#39;);
-// 次を生成: WHERE `title` LIKE &#39;%match%&#39; ESCAPE &#39;!&#39;
+<div><div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">like</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;match&#39;</span><span class="p">);</span>
+<span class="c1">// 次を生成: WHERE `title` LIKE &#39;%match%&#39; ESCAPE &#39;!&#39;</span>
 </pre></div>
 </div>
 <p>複数回このメソッドを呼ぶと、それらは AND で
 連結されます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;db-&gt;like(&#39;title&#39;, &#39;match&#39;);
-$this-&gt;db-&gt;like(&#39;body&#39;, &#39;match&#39;);
-// WHERE `title` LIKE &#39;%match%&#39; ESCAPE &#39;!&#39; AND  `body` LIKE &#39;%match% ESCAPE &#39;!&#39;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">like</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;match&#39;</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">like</span><span class="p">(</span><span class="s1">&#39;body&#39;</span><span class="p">,</span> <span class="s1">&#39;match&#39;</span><span class="p">);</span>
+<span class="c1">// WHERE `title` LIKE &#39;%match%&#39; ESCAPE &#39;!&#39; AND  `body` LIKE &#39;%match% ESCAPE &#39;!&#39;</span>
 </pre></div>
 </div>
 <p>ワイルドカード（%）が付加される場所を制御したい場合は、追加の第3引数を
 利用できます。&#8217;before&#8217;、&#8217;after&#8217; そして &#8216;both&#8217;（規定値）
 が指定できる選択肢になります。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;db-&gt;like(&#39;title&#39;, &#39;match&#39;, &#39;before&#39;);    // 次を生成: WHERE `title` LIKE &#39;%match&#39; ESCAPE &#39;!&#39;
-$this-&gt;db-&gt;like(&#39;title&#39;, &#39;match&#39;, &#39;after&#39;);     // 次を生成: WHERE `title` LIKE &#39;match%&#39; ESCAPE &#39;!&#39;
-$this-&gt;db-&gt;like(&#39;title&#39;, &#39;match&#39;, &#39;both&#39;);      // 次を生成: WHERE `title` LIKE &#39;%match%&#39; ESCAPE &#39;!&#39;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">like</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;match&#39;</span><span class="p">,</span> <span class="s1">&#39;before&#39;</span><span class="p">);</span>    <span class="c1">// 次を生成: WHERE `title` LIKE &#39;%match&#39; ESCAPE &#39;!&#39;</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">like</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;match&#39;</span><span class="p">,</span> <span class="s1">&#39;after&#39;</span><span class="p">);</span>     <span class="c1">// 次を生成: WHERE `title` LIKE &#39;match%&#39; ESCAPE &#39;!&#39;</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">like</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;match&#39;</span><span class="p">,</span> <span class="s1">&#39;both&#39;</span><span class="p">);</span>      <span class="c1">// 次を生成: WHERE `title` LIKE &#39;%match%&#39; ESCAPE &#39;!&#39;</span>
 </pre></div>
 </div>
 </div></blockquote>
 </li>
 <li><p class="first"><strong>連想配列を使用する方法:</strong></p>
 <blockquote>
-<div><div class="highlight-ci"><div class="highlight"><pre><span></span>$array = array(&#39;title&#39; =&gt; $match, &#39;page1&#39; =&gt; $match, &#39;page2&#39; =&gt; $match);
-$this-&gt;db-&gt;like($array);
-// WHERE `title` LIKE &#39;%match%&#39; ESCAPE &#39;!&#39; AND  `page1` LIKE &#39;%match%&#39; ESCAPE &#39;!&#39; AND  `page2` LIKE &#39;%match%&#39; ESCAPE &#39;!&#39;
+<div><div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$array</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;title&#39;</span> <span class="o">=&gt;</span> <span class="nv">$match</span><span class="p">,</span> <span class="s1">&#39;page1&#39;</span> <span class="o">=&gt;</span> <span class="nv">$match</span><span class="p">,</span> <span class="s1">&#39;page2&#39;</span> <span class="o">=&gt;</span> <span class="nv">$match</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">like</span><span class="p">(</span><span class="nv">$array</span><span class="p">);</span>
+<span class="c1">// WHERE `title` LIKE &#39;%match%&#39; ESCAPE &#39;!&#39; AND  `page1` LIKE &#39;%match%&#39; ESCAPE &#39;!&#39; AND  `page2` LIKE &#39;%match%&#39; ESCAPE &#39;!&#39;</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -767,8 +768,8 @@ $this-&gt;db-&gt;like($array);
 <p><strong>$this-&gt;db-&gt;or_like()</strong></p>
 <p>他の句と OR で連結される以外は、
 上のメソッドと同じものです:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;db-&gt;like(&#39;title&#39;, &#39;match&#39;); $this-&gt;db-&gt;or_like(&#39;body&#39;, $match);
-// WHERE `title` LIKE &#39;%match%&#39; ESCAPE &#39;!&#39; OR  `body` LIKE &#39;%match%&#39; ESCAPE &#39;!&#39;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">like</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;match&#39;</span><span class="p">);</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">or_like</span><span class="p">(</span><span class="s1">&#39;body&#39;</span><span class="p">,</span> <span class="nv">$match</span><span class="p">);</span>
+<span class="c1">// WHERE `title` LIKE &#39;%match%&#39; ESCAPE &#39;!&#39; OR  `body` LIKE &#39;%match%&#39; ESCAPE &#39;!&#39;</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -778,24 +779,24 @@ $this-&gt;db-&gt;like($array);
 <p><strong>$this-&gt;db-&gt;not_like()</strong></p>
 <p>この関数は、NOT LIKE 文を生成する事を除き、 <code class="docutils literal"><span class="pre">like()</span></code> と
 同じです:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;db-&gt;not_like(&#39;title&#39;, &#39;match&#39;);  // WHERE `title` NOT LIKE &#39;%match% ESCAPE &#39;!&#39;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">not_like</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;match&#39;</span><span class="p">);</span>  <span class="c1">// WHERE `title` NOT LIKE &#39;%match% ESCAPE &#39;!&#39;</span>
 </pre></div>
 </div>
 <p><strong>$this-&gt;db-&gt;or_not_like()</strong></p>
 <p>この関数は、複数のものが、OR で連結されるということ以外は、 <code class="docutils literal"><span class="pre">not_like()</span></code>
 と同じです:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;db-&gt;like(&#39;title&#39;, &#39;match&#39;);
-$this-&gt;db-&gt;or_not_like(&#39;body&#39;, &#39;match&#39;);
-// WHERE `title` LIKE &#39;%match% OR  `body` NOT LIKE &#39;%match%&#39; ESCAPE &#39;!&#39;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">like</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;match&#39;</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">or_not_like</span><span class="p">(</span><span class="s1">&#39;body&#39;</span><span class="p">,</span> <span class="s1">&#39;match&#39;</span><span class="p">);</span>
+<span class="c1">// WHERE `title` LIKE &#39;%match% OR  `body` NOT LIKE &#39;%match%&#39; ESCAPE &#39;!&#39;</span>
 </pre></div>
 </div>
 <p><strong>$this-&gt;db-&gt;group_by()</strong></p>
 <p>クエリの GROUP BY の部分を指定できます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;db-&gt;group_by(&quot;title&quot;); // 次を生成: GROUP BY title
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">group_by</span><span class="p">(</span><span class="s2">&quot;title&quot;</span><span class="p">);</span> <span class="c1">// 次を生成: GROUP BY title</span>
 </pre></div>
 </div>
 <p>また、次のように、複数の値を配列で渡すこともできます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;db-&gt;group_by(array(&quot;title&quot;, &quot;date&quot;));  // 次を生成: GROUP BY title, date
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">group_by</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s2">&quot;title&quot;</span><span class="p">,</span> <span class="s2">&quot;date&quot;</span><span class="p">));</span>  <span class="c1">// 次を生成: GROUP BY title, date</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -805,27 +806,27 @@ $this-&gt;db-&gt;or_not_like(&#39;body&#39;, &#39;match&#39;);
 </div>
 <p><strong>$this-&gt;db-&gt;distinct()</strong></p>
 <p>&#8220;DISTINCT&#8221; キーワードをクエリに追加します</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;db-&gt;distinct();
-$this-&gt;db-&gt;get(&#39;table&#39;); // 次を生成: SELECT DISTINCT * FROM table
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">distinct</span><span class="p">();</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;table&#39;</span><span class="p">);</span> <span class="c1">// 次を生成: SELECT DISTINCT * FROM table</span>
 </pre></div>
 </div>
 <p><strong>$this-&gt;db-&gt;having()</strong></p>
 <p>クエリの HAVING の部分を指定できます。1つまたは2つ引数を渡す
 2種類の文法があります。:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;db-&gt;having(&#39;user_id = 45&#39;);  // 次を生成: HAVING user_id = 45
-$this-&gt;db-&gt;having(&#39;user_id&#39;,  45);  // 次を生成: HAVING user_id = 45
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">having</span><span class="p">(</span><span class="s1">&#39;user_id = 45&#39;</span><span class="p">);</span>  <span class="c1">// 次を生成: HAVING user_id = 45</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">having</span><span class="p">(</span><span class="s1">&#39;user_id&#39;</span><span class="p">,</span>  <span class="mi">45</span><span class="p">);</span>  <span class="c1">// 次を生成: HAVING user_id = 45</span>
 </pre></div>
 </div>
 <p>また、次のように、複数の値を配列で渡すこともできます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;db-&gt;having(array(&#39;title =&#39; =&gt; &#39;My Title&#39;, &#39;id &lt;&#39; =&gt; $id));
-// 次を生成: HAVING title = &#39;My Title&#39;, id &lt; 45
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">having</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;title =&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;My Title&#39;</span><span class="p">,</span> <span class="s1">&#39;id &lt;&#39;</span> <span class="o">=&gt;</span> <span class="nv">$id</span><span class="p">));</span>
+<span class="c1">// 次を生成: HAVING title = &#39;My Title&#39;, id &lt; 45</span>
 </pre></div>
 </div>
 <p>CodeIgniter がクエリをエスケープすることのできるデータベースを使ってい
 る場合は、第3引数を FALSE
 にして、エスケープを無効にすることができます。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;db-&gt;having(&#39;user_id&#39;,  45);  // 次を生成: HAVING `user_id` = 45 in some databases such as MySQL
-$this-&gt;db-&gt;having(&#39;user_id&#39;,  45, FALSE);  // 次を生成: HAVING user_id = 45
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">having</span><span class="p">(</span><span class="s1">&#39;user_id&#39;</span><span class="p">,</span>  <span class="mi">45</span><span class="p">);</span>  <span class="c1">// 次を生成: HAVING `user_id` = 45 in some databases such as MySQL</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">having</span><span class="p">(</span><span class="s1">&#39;user_id&#39;</span><span class="p">,</span>  <span class="mi">45</span><span class="p">,</span> <span class="k">FALSE</span><span class="p">);</span>  <span class="c1">// 次を生成: HAVING user_id = 45</span>
 </pre></div>
 </div>
 <p><strong>$this-&gt;db-&gt;or_having()</strong></p>
@@ -838,28 +839,28 @@ $this-&gt;db-&gt;having(&#39;user_id&#39;,  45, FALSE);  // 次を生成: HAVING
 <p>第1引数は、並べ替えたい列の名前を指定します。</p>
 <p>第2引数は、並べ替え結果の順序を指定します。選択肢は <strong>ASC</strong> または <strong>DESC</strong>
 または <strong>RANDOM</strong> です。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;db-&gt;order_by(&#39;title&#39;, &#39;DESC&#39;);
-// 次を生成: ORDER BY `title` DESC
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">order_by</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;DESC&#39;</span><span class="p">);</span>
+<span class="c1">// 次を生成: ORDER BY `title` DESC</span>
 </pre></div>
 </div>
 <p>第1引数で、自由に文字列で指定することもできます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;db-&gt;order_by(&#39;title DESC, name ASC&#39;);
-// 次を生成: ORDER BY `title` DESC, `name` ASC
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">order_by</span><span class="p">(</span><span class="s1">&#39;title DESC, name ASC&#39;</span><span class="p">);</span>
+<span class="c1">// 次を生成: ORDER BY `title` DESC, `name` ASC</span>
 </pre></div>
 </div>
 <p>あるいは、複数のフィールドが必要な場合は、複数回のメソッド呼び出しもできます。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;db-&gt;order_by(&#39;title&#39;, &#39;DESC&#39;);
-$this-&gt;db-&gt;order_by(&#39;name&#39;, &#39;ASC&#39;);
-// 次を生成: ORDER BY `title` DESC, `name` ASC
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">order_by</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;DESC&#39;</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">order_by</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;ASC&#39;</span><span class="p">);</span>
+<span class="c1">// 次を生成: ORDER BY `title` DESC, `name` ASC</span>
 </pre></div>
 </div>
 <p><strong>RANDOM</strong> 順序オプションを選択した場合、第1引数はシード値を指定しない限り
 無視されます。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;db-&gt;order_by(&#39;title&#39;, &#39;RANDOM&#39;);
-// 次を生成: ORDER BY RAND()
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">order_by</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;RANDOM&#39;</span><span class="p">);</span>
+<span class="c1">// 次を生成: ORDER BY RAND()</span>
 
-$this-&gt;db-&gt;order_by(42, &#39;RANDOM&#39;);
-// 次を生成: ORDER BY RAND(42)
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">order_by</span><span class="p">(</span><span class="mi">42</span><span class="p">,</span> <span class="s1">&#39;RANDOM&#39;</span><span class="p">);</span>
+<span class="c1">// 次を生成: ORDER BY RAND(42)</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -877,33 +878,33 @@ $this-&gt;db-&gt;order_by(42, &#39;RANDOM&#39;);
 <h2><a class="toc-backref" href="#id20">結果を制限するか、数える</a><a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p><strong>$this-&gt;db-&gt;limit()</strong></p>
 <p>クエリで返す結果の行数の上限を指定できます。:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;db-&gt;limit(10);  // 次を生成: LIMIT 10
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">limit</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>  <span class="c1">// 次を生成: LIMIT 10</span>
 </pre></div>
 </div>
 <p>第2引数でオフセットを指定できます。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;db-&gt;limit(10, 20);  // 次を生成: LIMIT 20, 10 (in MySQL.  Other databases have slightly different syntax)
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">limit</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>  <span class="c1">// 次を生成: LIMIT 20, 10 (in MySQL.  Other databases have slightly different syntax)</span>
 </pre></div>
 </div>
 <p><strong>$this-&gt;db-&gt;count_all_results()</strong></p>
 <p>特定の クエリビルダ クエリの行数を調べることができます。
 クエリは、<code class="docutils literal"><span class="pre">where()</span></code>, <code class="docutils literal"><span class="pre">or_where()</span></code>, <code class="docutils literal"><span class="pre">like()</span></code>, <code class="docutils literal"><span class="pre">or_like()</span></code> などの クエリビルダ
 の絞り込みが利用できます。例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>echo $this-&gt;db-&gt;count_all_results(&#39;my_table&#39;);  // 25 のような整数を生成
-$this-&gt;db-&gt;like(&#39;title&#39;, &#39;match&#39;);
-$this-&gt;db-&gt;from(&#39;my_table&#39;);
-echo $this-&gt;db-&gt;count_all_results(); // 17 のような整数を生成
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">count_all_results</span><span class="p">(</span><span class="s1">&#39;my_table&#39;</span><span class="p">);</span>  <span class="c1">// 25 のような整数を生成</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">like</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;match&#39;</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">from</span><span class="p">(</span><span class="s1">&#39;my_table&#39;</span><span class="p">);</span>
+<span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">count_all_results</span><span class="p">();</span> <span class="c1">// 17 のような整数を生成</span>
 </pre></div>
 </div>
 <p>ただし、このメソッドは <code class="docutils literal"><span class="pre">select()</span></code> に渡したフィールド値をすべて
 リセットします。もしこれらを保持したい場合は、第2引数に <code class="docutils literal"><span class="pre">FALSE</span></code> を
 渡してください:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>echo $this-&gt;db-&gt;count_all_results(&#39;my_table&#39;, FALSE);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">count_all_results</span><span class="p">(</span><span class="s1">&#39;my_table&#39;</span><span class="p">,</span> <span class="k">FALSE</span><span class="p">);</span>
 </pre></div>
 </div>
 <p><strong>$this-&gt;db-&gt;count_all()</strong></p>
 <p>特定のテーブルのデータ件数(行数)をカウントします。
 第1引数にテーブル名を指定します。例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>echo $this-&gt;db-&gt;count_all(&#39;my_table&#39;);  // 25 のような整数を生成
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">count_all</span><span class="p">(</span><span class="s1">&#39;my_table&#39;</span><span class="p">);</span>  <span class="c1">// 25 のような整数を生成</span>
 </pre></div>
 </div>
 </div>
@@ -911,19 +912,19 @@ echo $this-&gt;db-&gt;count_all_results(); // 17 のような整数を生成
 <h2><a class="toc-backref" href="#id21">クエリのグルーピング</a><a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>クエリのグルーピングでは、 WHERE 句を括弧で囲むことでグループを作ることができます。
 これにより複雑な WHERE 句のクエリを作ることが可能です。例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;db-&gt;select(&#39;*&#39;)-&gt;from(&#39;my_table&#39;)
-        -&gt;group_start()
-                -&gt;where(&#39;a&#39;, &#39;a&#39;)
-                -&gt;or_group_start()
-                        -&gt;where(&#39;b&#39;, &#39;b&#39;)
-                        -&gt;where(&#39;c&#39;, &#39;c&#39;)
-                -&gt;group_end()
-        -&gt;group_end()
-        -&gt;where(&#39;d&#39;, &#39;d&#39;)
--&gt;get();
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">select</span><span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">from</span><span class="p">(</span><span class="s1">&#39;my_table&#39;</span><span class="p">)</span>
+        <span class="o">-&gt;</span><span class="na">group_start</span><span class="p">()</span>
+                <span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span>
+                <span class="o">-&gt;</span><span class="na">or_group_start</span><span class="p">()</span>
+                        <span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">)</span>
+                        <span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">)</span>
+                <span class="o">-&gt;</span><span class="na">group_end</span><span class="p">()</span>
+        <span class="o">-&gt;</span><span class="na">group_end</span><span class="p">()</span>
+        <span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">)</span>
+<span class="o">-&gt;</span><span class="na">get</span><span class="p">();</span>
 
-// 次のようになります:
-// SELECT * FROM (`my_table`) WHERE ( `a` = &#39;a&#39; OR ( `b` = &#39;b&#39; AND `c` = &#39;c&#39; ) ) AND `d` = &#39;d&#39;
+<span class="c1">// 次のようになります:</span>
+<span class="c1">// SELECT * FROM (`my_table`) WHERE ( `a` = &#39;a&#39; OR ( `b` = &#39;b&#39; AND `c` = &#39;c&#39; ) ) AND `d` = &#39;d&#39;</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -947,30 +948,30 @@ echo $this-&gt;db-&gt;count_all_results(); // 17 のような整数を生成
 <p>与えられたデータをもとに INSERT 文を生成し実行します。
 <strong>配列</strong> または <strong>オブジェクト</strong> のどちらかでメソッドにデータを渡せます。
 配列を使った例は次の通りです:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$data = array(
-        &#39;title&#39; =&gt; &#39;My title&#39;,
-        &#39;name&#39; =&gt; &#39;My Name&#39;,
-        &#39;date&#39; =&gt; &#39;My date&#39;
-);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;title&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;My title&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;My Name&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;date&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;My date&#39;</span>
+<span class="p">);</span>
 
-$this-&gt;db-&gt;insert(&#39;mytable&#39;, $data);
-// 次を生成: INSERT INTO mytable (title, name, date) VALUES (&#39;My title&#39;, &#39;My name&#39;, &#39;My date&#39;)
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">insert</span><span class="p">(</span><span class="s1">&#39;mytable&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
+<span class="c1">// 次を生成: INSERT INTO mytable (title, name, date) VALUES (&#39;My title&#39;, &#39;My name&#39;, &#39;My date&#39;)</span>
 </pre></div>
 </div>
 <p>第1引数はテーブル名で、第2引数は、値の連想配列で
 指定します。</p>
 <p>オブジェクトを使った例は次の通りです:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>/*
-class Myclass {
-        public $title = &#39;My Title&#39;;
-        public $content = &#39;My Content&#39;;
-        public $date = &#39;My Date&#39;;
-}
-*/
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">class Myclass {</span>
+<span class="cm">        public $title = &#39;My Title&#39;;</span>
+<span class="cm">        public $content = &#39;My Content&#39;;</span>
+<span class="cm">        public $date = &#39;My Date&#39;;</span>
+<span class="cm">}</span>
+<span class="cm">*/</span>
 
-$object = new Myclass;
-$this-&gt;db-&gt;insert(&#39;mytable&#39;, $object);
-// 次を生成: INSERT INTO mytable (title, content, date) VALUES (&#39;My Title&#39;, &#39;My Content&#39;, &#39;My Date&#39;)
+<span class="nv">$object</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Myclass</span><span class="p">;</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">insert</span><span class="p">(</span><span class="s1">&#39;mytable&#39;</span><span class="p">,</span> <span class="nv">$object</span><span class="p">);</span>
+<span class="c1">// 次を生成: INSERT INTO mytable (title, content, date) VALUES (&#39;My Title&#39;, &#39;My Content&#39;, &#39;My Date&#39;)</span>
 </pre></div>
 </div>
 <p>第1引数はテーブル名で、第2引数はオブジェクトに
@@ -983,27 +984,27 @@ $this-&gt;db-&gt;insert(&#39;mytable&#39;, $object);
 <p>INSERT クエリを <strong>$this-&gt;db-&gt;insert()</strong> のようにコンパイルしますが、クエリの
 <em>実行</em> はしません。単に SQL クエリの文字列を返すだけです。</p>
 <p>Example:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$data = array(
-        &#39;title&#39; =&gt; &#39;My title&#39;,
-        &#39;name&#39;  =&gt; &#39;My Name&#39;,
-        &#39;date&#39;  =&gt; &#39;My date&#39;
-);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;title&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;My title&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;name&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;My Name&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;date&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;My date&#39;</span>
+<span class="p">);</span>
 
-$sql = $this-&gt;db-&gt;set($data)-&gt;get_compiled_insert(&#39;mytable&#39;);
-echo $sql;
+<span class="nv">$sql</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="nv">$data</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">get_compiled_insert</span><span class="p">(</span><span class="s1">&#39;mytable&#39;</span><span class="p">);</span>
+<span class="k">echo</span> <span class="nv">$sql</span><span class="p">;</span>
 
-// SQL 文字列を生成: INSERT INTO mytable (`title`, `name`, `date`) VALUES (&#39;My title&#39;, &#39;My name&#39;, &#39;My date&#39;)
+<span class="c1">// SQL 文字列を生成: INSERT INTO mytable (`title`, `name`, `date`) VALUES (&#39;My title&#39;, &#39;My name&#39;, &#39;My date&#39;)</span>
 </pre></div>
 </div>
 <p>第2引数でクエリビルダのクエリをリセットするかを指定できます（デフォルトでは
 <cite>$this-&gt;db-&gt;insert()</cite> を使用時のようにリセットされます）:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>echo $this-&gt;db-&gt;set(&#39;title&#39;, &#39;My Title&#39;)-&gt;get_compiled_insert(&#39;mytable&#39;, FALSE);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;My Title&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">get_compiled_insert</span><span class="p">(</span><span class="s1">&#39;mytable&#39;</span><span class="p">,</span> <span class="k">FALSE</span><span class="p">);</span>
 
-// SQL 文字列を生成: INSERT INTO mytable (`title`) VALUES (&#39;My Title&#39;)
+<span class="c1">// SQL 文字列を生成: INSERT INTO mytable (`title`) VALUES (&#39;My Title&#39;)</span>
 
-echo $this-&gt;db-&gt;set(&#39;content&#39;, &#39;My Content&#39;)-&gt;get_compiled_insert();
+<span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="s1">&#39;content&#39;</span><span class="p">,</span> <span class="s1">&#39;My Content&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">get_compiled_insert</span><span class="p">();</span>
 
-// SQL 文字列を生成: INSERT INTO mytable (`title`, `content`) VALUES (&#39;My Title&#39;, &#39;My Content&#39;)
+<span class="c1">// SQL 文字列を生成: INSERT INTO mytable (`title`, `content`) VALUES (&#39;My Title&#39;, &#39;My Content&#39;)</span>
 </pre></div>
 </div>
 <p>上記例で特筆すべき点として、
@@ -1019,21 +1020,21 @@ echo $this-&gt;db-&gt;set(&#39;content&#39;, &#39;My Content&#39;)-&gt;get_compi
 <p>与えられたデータをもとに INSERT 文を生成し実行します。
 <strong>配列</strong> または <strong>オブジェクト</strong> のどちらかでメソッドにデータを渡せます。
 配列を使った例は次の通りです:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$data = array(
-        array(
-                &#39;title&#39; =&gt; &#39;My title&#39;,
-                &#39;name&#39; =&gt; &#39;My Name&#39;,
-                &#39;date&#39; =&gt; &#39;My date&#39;
-        ),
-        array(
-                &#39;title&#39; =&gt; &#39;Another title&#39;,
-                &#39;name&#39; =&gt; &#39;Another Name&#39;,
-                &#39;date&#39; =&gt; &#39;Another date&#39;
-        )
-);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="k">array</span><span class="p">(</span>
+                <span class="s1">&#39;title&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;My title&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;My Name&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;date&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;My date&#39;</span>
+        <span class="p">),</span>
+        <span class="k">array</span><span class="p">(</span>
+                <span class="s1">&#39;title&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Another title&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Another Name&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;date&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Another date&#39;</span>
+        <span class="p">)</span>
+<span class="p">);</span>
 
-$this-&gt;db-&gt;insert_batch(&#39;mytable&#39;, $data);
-// 次を生成: INSERT INTO mytable (title, name, date) VALUES (&#39;My title&#39;, &#39;My name&#39;, &#39;My date&#39;),  (&#39;Another title&#39;, &#39;Another name&#39;, &#39;Another date&#39;)
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">insert_batch</span><span class="p">(</span><span class="s1">&#39;mytable&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
+<span class="c1">// 次を生成: INSERT INTO mytable (title, name, date) VALUES (&#39;My title&#39;, &#39;My name&#39;, &#39;My date&#39;),  (&#39;Another title&#39;, &#39;Another name&#39;, &#39;Another date&#39;)</span>
 </pre></div>
 </div>
 <p>第1引数はテーブル名で、第2引数は、
@@ -1053,15 +1054,15 @@ $this-&gt;db-&gt;insert_batch(&#39;mytable&#39;, $data);
 これがないと  <code class="docutils literal"><span class="pre">select()</span></code> 、 <code class="docutils literal"><span class="pre">update()</span></code> 、
 <code class="docutils literal"><span class="pre">delete()</span></code> と <code class="docutils literal"><span class="pre">insert()</span></code> の呼び出しを組み合わせることになります。</p>
 <p>Example:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$data = array(
-        &#39;title&#39; =&gt; &#39;My title&#39;,
-        &#39;name&#39;  =&gt; &#39;My Name&#39;,
-        &#39;date&#39;  =&gt; &#39;My date&#39;
-);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;title&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;My title&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;name&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;My Name&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;date&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;My date&#39;</span>
+<span class="p">);</span>
 
-$this-&gt;db-&gt;replace(&#39;table&#39;, $data);
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">replace</span><span class="p">(</span><span class="s1">&#39;table&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
 
-// 次を生成: REPLACE INTO mytable (title, name, date) VALUES (&#39;My title&#39;, &#39;My name&#39;, &#39;My date&#39;)
+<span class="c1">// 次を生成: REPLACE INTO mytable (title, name, date) VALUES (&#39;My title&#39;, &#39;My name&#39;, &#39;My date&#39;)</span>
 </pre></div>
 </div>
 <p>上記の例では、もし <em>title</em> フィールドを主キーと決めつけるならば、
@@ -1073,92 +1074,92 @@ $this-&gt;db-&gt;replace(&#39;table&#39;, $data);
 <p>inserts または updates で値をセットするのに使います。</p>
 <p><strong>これは次のように、 insert または update メソッドに直接データの
 配列を渡す代わりに使用できます:</strong></p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;db-&gt;set(&#39;name&#39;, $name);
-$this-&gt;db-&gt;insert(&#39;mytable&#39;);  // 次を生成: INSERT INTO mytable (`name`) VALUES (&#39;{$name}&#39;)
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="nv">$name</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">insert</span><span class="p">(</span><span class="s1">&#39;mytable&#39;</span><span class="p">);</span>  <span class="c1">// 次を生成: INSERT INTO mytable (`name`) VALUES (&#39;{$name}&#39;)</span>
 </pre></div>
 </div>
 <p>もし複数のメソッドをコールした場合、それらは insert か update
 かに基づき適切に組み立てられます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;db-&gt;set(&#39;name&#39;, $name);
-$this-&gt;db-&gt;set(&#39;title&#39;, $title);
-$this-&gt;db-&gt;set(&#39;status&#39;, $status);
-$this-&gt;db-&gt;insert(&#39;mytable&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="nv">$name</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="nv">$title</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="s1">&#39;status&#39;</span><span class="p">,</span> <span class="nv">$status</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">insert</span><span class="p">(</span><span class="s1">&#39;mytable&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>また、 <strong>set()</strong> は、FALSE をセットするとデータをエスケープするのを回避する、
 第3引数（<code class="docutils literal"><span class="pre">$escape</span></code>）をセットできます。違いを示すため、escape パラメータを
 利用する場合と利用しない場合、両方の <code class="docutils literal"><span class="pre">set()</span></code> の使用の
 説明を挙げます。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;db-&gt;set(&#39;field&#39;, &#39;field+1&#39;, FALSE);
-$this-&gt;db-&gt;where(&#39;id&#39;, 2);
-$this-&gt;db-&gt;update(&#39;mytable&#39;); // gives UPDATE mytable SET field = field+1 WHERE id = 2
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="s1">&#39;field&#39;</span><span class="p">,</span> <span class="s1">&#39;field+1&#39;</span><span class="p">,</span> <span class="k">FALSE</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">update</span><span class="p">(</span><span class="s1">&#39;mytable&#39;</span><span class="p">);</span> <span class="c1">// gives UPDATE mytable SET field = field+1 WHERE id = 2</span>
 
-$this-&gt;db-&gt;set(&#39;field&#39;, &#39;field+1&#39;);
-$this-&gt;db-&gt;where(&#39;id&#39;, 2);
-$this-&gt;db-&gt;update(&#39;mytable&#39;); // gives UPDATE `mytable` SET `field` = &#39;field+1&#39; WHERE `id` = 2
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="s1">&#39;field&#39;</span><span class="p">,</span> <span class="s1">&#39;field+1&#39;</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">update</span><span class="p">(</span><span class="s1">&#39;mytable&#39;</span><span class="p">);</span> <span class="c1">// gives UPDATE `mytable` SET `field` = &#39;field+1&#39; WHERE `id` = 2</span>
 </pre></div>
 </div>
 <p>このメソッドに連想配列を渡すこともできます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$array = array(
-        &#39;name&#39; =&gt; $name,
-        &#39;title&#39; =&gt; $title,
-        &#39;status&#39; =&gt; $status
-);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$array</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="nv">$name</span><span class="p">,</span>
+        <span class="s1">&#39;title&#39;</span> <span class="o">=&gt;</span> <span class="nv">$title</span><span class="p">,</span>
+        <span class="s1">&#39;status&#39;</span> <span class="o">=&gt;</span> <span class="nv">$status</span>
+<span class="p">);</span>
 
-$this-&gt;db-&gt;set($array);
-$this-&gt;db-&gt;insert(&#39;mytable&#39;);
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="nv">$array</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">insert</span><span class="p">(</span><span class="s1">&#39;mytable&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>あるいはオブジェクトを渡すこともできます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>/*
-class Myclass {
-        public $title = &#39;My Title&#39;;
-        public $content = &#39;My Content&#39;;
-        public $date = &#39;My Date&#39;;
-}
-*/
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">class Myclass {</span>
+<span class="cm">        public $title = &#39;My Title&#39;;</span>
+<span class="cm">        public $content = &#39;My Content&#39;;</span>
+<span class="cm">        public $date = &#39;My Date&#39;;</span>
+<span class="cm">}</span>
+<span class="cm">*/</span>
 
-$object = new Myclass;
-$this-&gt;db-&gt;set($object);
-$this-&gt;db-&gt;insert(&#39;mytable&#39;);
+<span class="nv">$object</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Myclass</span><span class="p">;</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="nv">$object</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">insert</span><span class="p">(</span><span class="s1">&#39;mytable&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p><strong>$this-&gt;db-&gt;update()</strong></p>
 <p>指定されたデータをもとに UPDATE 文を生成してクエリを実行します。
 <strong>配列</strong> または <strong>オブジェクト</strong> をメソッドに渡すことができます。
 配列を使った例は次の通りです:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$data = array(
-        &#39;title&#39; =&gt; $title,
-        &#39;name&#39; =&gt; $name,
-        &#39;date&#39; =&gt; $date
-);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;title&#39;</span> <span class="o">=&gt;</span> <span class="nv">$title</span><span class="p">,</span>
+        <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="nv">$name</span><span class="p">,</span>
+        <span class="s1">&#39;date&#39;</span> <span class="o">=&gt;</span> <span class="nv">$date</span>
+<span class="p">);</span>
 
-$this-&gt;db-&gt;where(&#39;id&#39;, $id);
-$this-&gt;db-&gt;update(&#39;mytable&#39;, $data);
-// 次を生成:
-//
-//      UPDATE mytable
-//      SET title = &#39;{$title}&#39;, name = &#39;{$name}&#39;, date = &#39;{$date}&#39;
-//      WHERE id = $id
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="nv">$id</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">update</span><span class="p">(</span><span class="s1">&#39;mytable&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
+<span class="c1">// 次を生成:</span>
+<span class="c1">//</span>
+<span class="c1">//      UPDATE mytable</span>
+<span class="c1">//      SET title = &#39;{$title}&#39;, name = &#39;{$name}&#39;, date = &#39;{$date}&#39;</span>
+<span class="c1">//      WHERE id = $id</span>
 </pre></div>
 </div>
 <p>あるいは、次のようにオブジェクトを渡すこともできます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>/*
-class Myclass {
-        public $title = &#39;My Title&#39;;
-        public $content = &#39;My Content&#39;;
-        public $date = &#39;My Date&#39;;
-}
-*/
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">class Myclass {</span>
+<span class="cm">        public $title = &#39;My Title&#39;;</span>
+<span class="cm">        public $content = &#39;My Content&#39;;</span>
+<span class="cm">        public $date = &#39;My Date&#39;;</span>
+<span class="cm">}</span>
+<span class="cm">*/</span>
 
-$object = new Myclass;
-$this-&gt;db-&gt;where(&#39;id&#39;, $id);
-$this-&gt;db-&gt;update(&#39;mytable&#39;, $object);
-// 次を生成:
-//
-// UPDATE `mytable`
-// SET `title` = &#39;{$title}&#39;, `name` = &#39;{$name}&#39;, `date` = &#39;{$date}&#39;
-// WHERE id = `$id`
+<span class="nv">$object</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Myclass</span><span class="p">;</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="nv">$id</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">update</span><span class="p">(</span><span class="s1">&#39;mytable&#39;</span><span class="p">,</span> <span class="nv">$object</span><span class="p">);</span>
+<span class="c1">// 次を生成:</span>
+<span class="c1">//</span>
+<span class="c1">// UPDATE `mytable`</span>
+<span class="c1">// SET `title` = &#39;{$title}&#39;, `name` = &#39;{$name}&#39;, `date` = &#39;{$date}&#39;</span>
+<span class="c1">// WHERE id = `$id`</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -1168,11 +1169,11 @@ $this-&gt;db-&gt;update(&#39;mytable&#39;, $object);
 <p>$this-&gt;db-&gt;where() メソッドを使えば WHERE 句をセットできます。
 次のように、オプションで、更新メソッドに直接文字列で情報を渡すことも
 できます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;db-&gt;update(&#39;mytable&#39;, $data, &quot;id = 4&quot;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">update</span><span class="p">(</span><span class="s1">&#39;mytable&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">,</span> <span class="s2">&quot;id = 4&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>あるいは、配列でも渡せます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;db-&gt;update(&#39;mytable&#39;, $data, array(&#39;id&#39; =&gt; $id));
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">update</span><span class="p">(</span><span class="s1">&#39;mytable&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="nv">$id</span><span class="p">));</span>
 </pre></div>
 </div>
 <p>先に述べた、 $this-&gt;db-&gt;set() メソッドを更新に利用することも
@@ -1181,31 +1182,31 @@ $this-&gt;db-&gt;update(&#39;mytable&#39;, $object);
 <p>与えられたデータをもとに UPDATE 文を生成し実行します。
 <strong>配列</strong> または <strong>オブジェクト</strong> のどちらかでメソッドにデータを渡せます。
 配列を使った例は次の通りです:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$data = array(
-   array(
-      &#39;title&#39; =&gt; &#39;My title&#39; ,
-      &#39;name&#39; =&gt; &#39;My Name 2&#39; ,
-      &#39;date&#39; =&gt; &#39;My date 2&#39;
-   ),
-   array(
-      &#39;title&#39; =&gt; &#39;Another title&#39; ,
-      &#39;name&#39; =&gt; &#39;Another Name 2&#39; ,
-      &#39;date&#39; =&gt; &#39;Another date 2&#39;
-   )
-);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+   <span class="k">array</span><span class="p">(</span>
+      <span class="s1">&#39;title&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;My title&#39;</span> <span class="p">,</span>
+      <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;My Name 2&#39;</span> <span class="p">,</span>
+      <span class="s1">&#39;date&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;My date 2&#39;</span>
+   <span class="p">),</span>
+   <span class="k">array</span><span class="p">(</span>
+      <span class="s1">&#39;title&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Another title&#39;</span> <span class="p">,</span>
+      <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Another Name 2&#39;</span> <span class="p">,</span>
+      <span class="s1">&#39;date&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Another date 2&#39;</span>
+   <span class="p">)</span>
+<span class="p">);</span>
 
-$this-&gt;db-&gt;update_batch(&#39;mytable&#39;, $data, &#39;title&#39;);
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">update_batch</span><span class="p">(</span><span class="s1">&#39;mytable&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">,</span> <span class="s1">&#39;title&#39;</span><span class="p">);</span>
 
-// 次を生成:
-// UPDATE `mytable` SET `name` = CASE
-// WHEN `title` = &#39;My title&#39; THEN &#39;My Name 2&#39;
-// WHEN `title` = &#39;Another title&#39; THEN &#39;Another Name 2&#39;
-// ELSE `name` END,
-// `date` = CASE
-// WHEN `title` = &#39;My title&#39; THEN &#39;My date 2&#39;
-// WHEN `title` = &#39;Another title&#39; THEN &#39;Another date 2&#39;
-// ELSE `date` END
-// WHERE `title` IN (&#39;My title&#39;,&#39;Another title&#39;)
+<span class="c1">// 次を生成:</span>
+<span class="c1">// UPDATE `mytable` SET `name` = CASE</span>
+<span class="c1">// WHEN `title` = &#39;My title&#39; THEN &#39;My Name 2&#39;</span>
+<span class="c1">// WHEN `title` = &#39;Another title&#39; THEN &#39;Another Name 2&#39;</span>
+<span class="c1">// ELSE `name` END,</span>
+<span class="c1">// `date` = CASE</span>
+<span class="c1">// WHEN `title` = &#39;My title&#39; THEN &#39;My date 2&#39;</span>
+<span class="c1">// WHEN `title` = &#39;Another title&#39; THEN &#39;Another date 2&#39;</span>
+<span class="c1">// ELSE `date` END</span>
+<span class="c1">// WHERE `title` IN (&#39;My title&#39;,&#39;Another title&#39;)</span>
 </pre></div>
 </div>
 <p>第1引数はテーブル名、第2引数は値の連想配列、第3引数は where
@@ -1233,25 +1234,25 @@ INSERT SQL 文字列のかわりに UPDATE SQL 文字列を生成することで
 <h2><a class="toc-backref" href="#id24">データの削除</a><a class="headerlink" href="#id10" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p><strong>$this-&gt;db-&gt;delete()</strong></p>
 <p>SQL の DELETE 文を生成して実行します。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;db-&gt;delete(&#39;mytable&#39;, array(&#39;id&#39; =&gt; $id));  // 次を生成: // DELETE FROM mytable  // WHERE id = $id
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">delete</span><span class="p">(</span><span class="s1">&#39;mytable&#39;</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="nv">$id</span><span class="p">));</span>  <span class="c1">// 次を生成: // DELETE FROM mytable  // WHERE id = $id</span>
 </pre></div>
 </div>
 <p>第1引数はテーブル名で、第2引数は、WHERE
 句です。次のように、メソッドの第2引数にデータを渡す代わりに、 where()
 または or_where() メソッドを使うこともできます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;db-&gt;where(&#39;id&#39;, $id);
-$this-&gt;db-&gt;delete(&#39;mytable&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="nv">$id</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">delete</span><span class="p">(</span><span class="s1">&#39;mytable&#39;</span><span class="p">);</span>
 
-// 次を生成:
-// DELETE FROM mytable
-// WHERE id = $id
+<span class="c1">// 次を生成:</span>
+<span class="c1">// DELETE FROM mytable</span>
+<span class="c1">// WHERE id = $id</span>
 </pre></div>
 </div>
 <p>1つよりも多いテーブルを削除したい場合は、delete()
 にテーブル名の配列を渡すことができます</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$tables = array(&#39;table1&#39;, &#39;table2&#39;, &#39;table3&#39;);
-$this-&gt;db-&gt;where(&#39;id&#39;, &#39;5&#39;);
-$this-&gt;db-&gt;delete($tables);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$tables</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;table1&#39;</span><span class="p">,</span> <span class="s1">&#39;table2&#39;</span><span class="p">,</span> <span class="s1">&#39;table3&#39;</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;5&#39;</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">delete</span><span class="p">(</span><span class="nv">$tables</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>テーブルの全データを削除したい場合は、 truncate() メソッドか
@@ -1259,20 +1260,20 @@ empty_table() が利用できます。</p>
 <p><strong>$this-&gt;db-&gt;empty_table()</strong></p>
 <p>「delete」 SQL 文字列 を生成し、クエリを
 実行します。:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;db-&gt;empty_table(&#39;mytable&#39;); // 次を生成: DELETE FROM mytable
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">empty_table</span><span class="p">(</span><span class="s1">&#39;mytable&#39;</span><span class="p">);</span> <span class="c1">// 次を生成: DELETE FROM mytable</span>
 </pre></div>
 </div>
 <p><strong>$this-&gt;db-&gt;truncate()</strong></p>
 <p>「truncate」 SQL 文字列を生成し、クエリを実行します。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;db-&gt;from(&#39;mytable&#39;);
-$this-&gt;db-&gt;truncate();
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">from</span><span class="p">(</span><span class="s1">&#39;mytable&#39;</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">truncate</span><span class="p">();</span>
 
-// または
+<span class="c1">// または</span>
 
-$this-&gt;db-&gt;truncate(&#39;mytable&#39;);
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">truncate</span><span class="p">(</span><span class="s1">&#39;mytable&#39;</span><span class="p">);</span>
 
-// Produce:
-// TRUNCATE mytable
+<span class="c1">// Produce:</span>
+<span class="c1">// TRUNCATE mytable</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -1289,10 +1290,10 @@ INSERT SQL 文字列のかわりに DELETE SQL 文字列を生成します。</p
 <h2><a class="toc-backref" href="#id25">メソッドの連結</a><a class="headerlink" href="#id11" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>メソッドの連結を使えば、複数のメソッドをつなぐのがシンプルになります。
 次のような例が挙げられます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$query = $this-&gt;db-&gt;select(&#39;title&#39;)
-                -&gt;where(&#39;id&#39;, $id)
-                -&gt;limit(10, 20)
-                -&gt;get(&#39;mytable&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">select</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">)</span>
+                <span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="nv">$id</span><span class="p">)</span>
+                <span class="o">-&gt;</span><span class="na">limit</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+                <span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;mytable&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -1317,20 +1318,20 @@ select() を呼び出し、その後に 2回キャッシュされていないsel
 <div class="section" id="id13">
 <h3>キャッシングの例<a class="headerlink" href="#id13" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>次は使用例です:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;db-&gt;start_cache();
-$this-&gt;db-&gt;select(&#39;field1&#39;);
-$this-&gt;db-&gt;stop_cache();
-$this-&gt;db-&gt;get(&#39;tablename&#39;);
-//次のようになります: SELECT `field1` FROM (`tablename`)
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">start_cache</span><span class="p">();</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">select</span><span class="p">(</span><span class="s1">&#39;field1&#39;</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">stop_cache</span><span class="p">();</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;tablename&#39;</span><span class="p">);</span>
+<span class="c1">//次のようになります: SELECT `field1` FROM (`tablename`)</span>
 
-$this-&gt;db-&gt;select(&#39;field2&#39;);
-$this-&gt;db-&gt;get(&#39;tablename&#39;);
-//次のようになります:  SELECT `field1`, `field2` FROM (`tablename`)
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">select</span><span class="p">(</span><span class="s1">&#39;field2&#39;</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;tablename&#39;</span><span class="p">);</span>
+<span class="c1">//次のようになります:  SELECT `field1`, `field2` FROM (`tablename`)</span>
 
-$this-&gt;db-&gt;flush_cache();
-$this-&gt;db-&gt;select(&#39;field2&#39;);
-$this-&gt;db-&gt;get(&#39;tablename&#39;);
-//次のようになります:  SELECT `field2` FROM (`tablename`)
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">flush_cache</span><span class="p">();</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">select</span><span class="p">(</span><span class="s1">&#39;field2&#39;</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;tablename&#39;</span><span class="p">);</span>
+<span class="c1">//次のようになります:  SELECT `field2` FROM (`tablename`)</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -1350,20 +1351,20 @@ where、like、group_by、having、order_by</p>
 <p>これが有用な場面は、たとえば、クエリビルダでSQLを生成して
 (例: <code class="docutils literal"><span class="pre">$this-&gt;db-&gt;get_compiled_select()</span></code>) 、そのあとにクエリを実行すると判断した
 場合などです:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>// get_compiled_select メソッドの第二引数が FALSE なのに注意してください
-$sql = $this-&gt;db-&gt;select(array(&#39;field1&#39;,&#39;field2&#39;))
-                                -&gt;where(&#39;field3&#39;,5)
-                                -&gt;get_compiled_select(&#39;mytable&#39;, FALSE);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// get_compiled_select メソッドの第二引数が FALSE なのに注意してください</span>
+<span class="nv">$sql</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">select</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;field1&#39;</span><span class="p">,</span><span class="s1">&#39;field2&#39;</span><span class="p">))</span>
+                                <span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;field3&#39;</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+                                <span class="o">-&gt;</span><span class="na">get_compiled_select</span><span class="p">(</span><span class="s1">&#39;mytable&#39;</span><span class="p">,</span> <span class="k">FALSE</span><span class="p">);</span>
 
-// ...
-// SQL コードで何かすごく複雑なことをするとします... たとえば後で実行するため
-// cron スクリプトに追加するなど...
-// ...
+<span class="c1">// ...</span>
+<span class="c1">// SQL コードで何かすごく複雑なことをするとします... たとえば後で実行するため</span>
+<span class="c1">// cron スクリプトに追加するなど...</span>
+<span class="c1">// ...</span>
 
-$data = $this-&gt;db-&gt;get()-&gt;result_array();
+<span class="nv">$data</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">result_array</span><span class="p">();</span>
 
-// 次のクエリを実行し、結果の配列を返します:
-// SELECT field1, field1 from mytable where field3 = 5;
+<span class="c1">// 次のクエリを実行し、結果の配列を返します:</span>
+<span class="c1">// SELECT field1, field1 from mytable where field3 = 5;</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -2655,7 +2656,7 @@ $data = $this-&gt;db-&gt;get()-&gt;result_array();
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 9月 06, 2016
+      最終更新: 9月 04, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

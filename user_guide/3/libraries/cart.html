@@ -415,6 +415,7 @@
       <img title="Classic Layout" alt="classic layout" src="data:image/gif;base64,R0lGODlhFAAUAJEAAAAAADMzM////wAAACH5BAUUAAIALAAAAAAUABQAAAImlI+py+0PU5gRBRDM3DxbWoXis42X13USOLauUIqnlsaH/eY6UwAAOw==" />
     </div>
   </ul>
+<div style="float:right;margin-left:5px;">[ <a href="https://github.com/codeigniter-jp/ci-ja/blob/develop/user_guide_ja_src/source/libraries/cart.rst">旧版翻訳途中</a> | <a href="https://github.com/bcit-ci/CodeIgniter/commits/develop/user_guide_src/source/libraries/cart.rst">原文履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/commits/develop_japanese/source/libraries/cart.rst">翻訳履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/source/libraries/cart.rst">GitHubで修正</a> ]</div><br /><div style="float:right;margin-left:5px;">[ <b class="highlighted">翻訳者募集中</b> → <a href="https://docs.google.com/spreadsheets/d/1ZWD5XqwH-Uo9X7MR644jbL6O8p5LxIngLT8M547H8wc/edit?pref=2&pli=1#gid=0">翻訳状況</a> ]</div>
   <hr/>
 </div>
           <div role="main" class="document">
@@ -464,11 +465,11 @@ CodeIgniter の <a class="reference internal" href="sessions.html"><span class="
 </div>
 <p>ショッピングカートクラスをコントローラのコンストラクタ
 で初期化するには、$this-&gt;load-&gt;library メソッドを利用します:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;load-&gt;library(&#39;cart&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;cart&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>ロードされると、カートオブジェクトが利用可能になります:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;cart
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">cart</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -483,15 +484,15 @@ CodeIgniter の <a class="reference internal" href="sessions.html"><span class="
 <p>ショッピングカートに商品を追加するには、
 下記のように <code class="docutils literal"><span class="pre">$this-&gt;cart-&gt;insert()</span></code> メソッドに、商品情報の配列を
 渡すだけです:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$data = array(
-        &#39;id&#39;      =&gt; &#39;sku_123ABC&#39;,
-        &#39;qty&#39;     =&gt; 1,
-        &#39;price&#39;   =&gt; 39.95,
-        &#39;name&#39;    =&gt; &#39;T-Shirt&#39;,
-        &#39;options&#39; =&gt; array(&#39;Size&#39; =&gt; &#39;L&#39;, &#39;Color&#39; =&gt; &#39;Red&#39;)
-);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;id&#39;</span>      <span class="o">=&gt;</span> <span class="s1">&#39;sku_123ABC&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;qty&#39;</span>     <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s1">&#39;price&#39;</span>   <span class="o">=&gt;</span> <span class="mf">39.95</span><span class="p">,</span>
+        <span class="s1">&#39;name&#39;</span>    <span class="o">=&gt;</span> <span class="s1">&#39;T-Shirt&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;options&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;Size&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="s1">&#39;Color&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Red&#39;</span><span class="p">)</span>
+<span class="p">);</span>
 
-$this-&gt;cart-&gt;insert($data);
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">cart</span><span class="o">-&gt;</span><span class="na">insert</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
 </pre></div>
 </div>
 <div class="admonition important">
@@ -520,15 +521,15 @@ $this-&gt;cart-&gt;insert($data);
 んなデータも、セッションに保存されます。とはいえ、 表にした
 ときに情報を表示しやすいよう、すべての商品で使われるデータを
 標準化するのが、一番良い方法です。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$data = array(
-        &#39;id&#39;      =&gt; &#39;sku_123ABC&#39;,
-        &#39;qty&#39;     =&gt; 1,
-        &#39;price&#39;   =&gt; 39.95,
-        &#39;name&#39;    =&gt; &#39;T-Shirt&#39;,
-        &#39;coupon&#39;         =&gt; &#39;XMAS-50OFF&#39;
-);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;id&#39;</span>      <span class="o">=&gt;</span> <span class="s1">&#39;sku_123ABC&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;qty&#39;</span>     <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s1">&#39;price&#39;</span>   <span class="o">=&gt;</span> <span class="mf">39.95</span><span class="p">,</span>
+        <span class="s1">&#39;name&#39;</span>    <span class="o">=&gt;</span> <span class="s1">&#39;T-Shirt&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;coupon&#39;</span>         <span class="o">=&gt;</span> <span class="s1">&#39;XMAS-50OFF&#39;</span>
+<span class="p">);</span>
 
-$this-&gt;cart-&gt;insert($data);
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">cart</span><span class="o">-&gt;</span><span class="na">insert</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>あなたが正常に挿入した場合、 <code class="docutils literal"><span class="pre">insert()</span></code> メソッドは、
@@ -540,29 +541,29 @@ $this-&gt;cart-&gt;insert($data);
 アクションで複数の商品をカートに追加することができます。
 これは、同じページの中で、複数の商品を選ばせたいときな
 どに有用です。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$data = array(
-        array(
-                &#39;id&#39;      =&gt; &#39;sku_123ABC&#39;,
-                &#39;qty&#39;     =&gt; 1,
-                &#39;price&#39;   =&gt; 39.95,
-                &#39;name&#39;    =&gt; &#39;T-Shirt&#39;,
-                &#39;options&#39; =&gt; array(&#39;Size&#39; =&gt; &#39;L&#39;, &#39;Color&#39; =&gt; &#39;Red&#39;)
-        ),
-        array(
-                &#39;id&#39;      =&gt; &#39;sku_567ZYX&#39;,
-                &#39;qty&#39;     =&gt; 1,
-                &#39;price&#39;   =&gt; 9.95,
-                &#39;name&#39;    =&gt; &#39;Coffee Mug&#39;
-        ),
-        array(
-                &#39;id&#39;      =&gt; &#39;sku_965QRS&#39;,
-                &#39;qty&#39;     =&gt; 1,
-                &#39;price&#39;   =&gt; 29.95,
-                &#39;name&#39;    =&gt; &#39;Shot Glass&#39;
-        )
-);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="k">array</span><span class="p">(</span>
+                <span class="s1">&#39;id&#39;</span>      <span class="o">=&gt;</span> <span class="s1">&#39;sku_123ABC&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;qty&#39;</span>     <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;price&#39;</span>   <span class="o">=&gt;</span> <span class="mf">39.95</span><span class="p">,</span>
+                <span class="s1">&#39;name&#39;</span>    <span class="o">=&gt;</span> <span class="s1">&#39;T-Shirt&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;options&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;Size&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="s1">&#39;Color&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Red&#39;</span><span class="p">)</span>
+        <span class="p">),</span>
+        <span class="k">array</span><span class="p">(</span>
+                <span class="s1">&#39;id&#39;</span>      <span class="o">=&gt;</span> <span class="s1">&#39;sku_567ZYX&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;qty&#39;</span>     <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;price&#39;</span>   <span class="o">=&gt;</span> <span class="mf">9.95</span><span class="p">,</span>
+                <span class="s1">&#39;name&#39;</span>    <span class="o">=&gt;</span> <span class="s1">&#39;Coffee Mug&#39;</span>
+        <span class="p">),</span>
+        <span class="k">array</span><span class="p">(</span>
+                <span class="s1">&#39;id&#39;</span>      <span class="o">=&gt;</span> <span class="s1">&#39;sku_965QRS&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;qty&#39;</span>     <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+                <span class="s1">&#39;price&#39;</span>   <span class="o">=&gt;</span> <span class="mf">29.95</span><span class="p">,</span>
+                <span class="s1">&#39;name&#39;</span>    <span class="o">=&gt;</span> <span class="s1">&#39;Shot Glass&#39;</span>
+        <span class="p">)</span>
+<span class="p">);</span>
 
-$this-&gt;cart-&gt;insert($data);
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">cart</span><span class="o">-&gt;</span><span class="na">insert</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -571,58 +572,58 @@ $this-&gt;cart-&gt;insert($data);
 <p>カートを表示するには、下のようなコードの <a class="reference internal" href="../general/views.html"><span class="doc">ビューファイル</span></a> を作成します。</p>
 <p>この例では、<a class="reference internal" href="../helpers/form_helper.html"><span class="doc">フォームヘルパー</span></a> を
 利用しているのを注意してください。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>&lt;?php echo form_open(&#39;path/to/controller/update/method&#39;); ?&gt;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span> <span class="k">echo</span> <span class="nx">form_open</span><span class="p">(</span><span class="s1">&#39;path/to/controller/update/method&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span>
 
-&lt;table cellpadding=&quot;6&quot; cellspacing=&quot;1&quot; style=&quot;width:100%&quot; border=&quot;0&quot;&gt;
+<span class="p">&lt;</span><span class="nt">table</span> <span class="na">cellpadding</span><span class="o">=</span><span class="s">&quot;6&quot;</span> <span class="na">cellspacing</span><span class="o">=</span><span class="s">&quot;1&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;width:100%&quot;</span> <span class="na">border</span><span class="o">=</span><span class="s">&quot;0&quot;</span><span class="p">&gt;</span>
 
-&lt;tr&gt;
-        &lt;th&gt;数量&lt;/th&gt;
-        &lt;th&gt;商品説明&lt;/th&gt;
-        &lt;th style=&quot;text-align:right&quot;&gt;価格&lt;/th&gt;
-        &lt;th style=&quot;text-align:right&quot;&gt;小計&lt;/th&gt;
-&lt;/tr&gt;
+<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>数量<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>商品説明<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">th</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;text-align:right&quot;</span><span class="p">&gt;</span>価格<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">th</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;text-align:right&quot;</span><span class="p">&gt;</span>小計<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
 
-&lt;?php $i = 1; ?&gt;
+<span class="cp">&lt;?php</span> <span class="nv">$i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="cp">?&gt;</span>
 
-&lt;?php foreach ($this-&gt;cart-&gt;contents() as $items): ?&gt;
+<span class="cp">&lt;?php</span> <span class="k">foreach</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">cart</span><span class="o">-&gt;</span><span class="na">contents</span><span class="p">()</span> <span class="k">as</span> <span class="nv">$items</span><span class="p">)</span><span class="o">:</span> <span class="cp">?&gt;</span>
 
-        &lt;?php echo form_hidden($i.&#39;[rowid]&#39;, $items[&#39;rowid&#39;]); ?&gt;
+        <span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nx">form_hidden</span><span class="p">(</span><span class="nv">$i</span><span class="o">.</span><span class="s1">&#39;[rowid]&#39;</span><span class="p">,</span> <span class="nv">$items</span><span class="p">[</span><span class="s1">&#39;rowid&#39;</span><span class="p">]);</span> <span class="cp">?&gt;</span>
 
-        &lt;tr&gt;
-                &lt;td&gt;&lt;?php echo form_input(array(&#39;name&#39; =&gt; $i.&#39;[qty]&#39;, &#39;value&#39; =&gt; $items[&#39;qty&#39;], &#39;maxlength&#39; =&gt; &#39;3&#39;, &#39;size&#39; =&gt; &#39;5&#39;)); ?&gt;&lt;/td&gt;
-                &lt;td&gt;
-                        &lt;?php echo $items[&#39;name&#39;]; ?&gt;
+        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nx">form_input</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="nv">$i</span><span class="o">.</span><span class="s1">&#39;[qty]&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span> <span class="o">=&gt;</span> <span class="nv">$items</span><span class="p">[</span><span class="s1">&#39;qty&#39;</span><span class="p">],</span> <span class="s1">&#39;maxlength&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="s1">&#39;size&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;5&#39;</span><span class="p">));</span> <span class="cp">?&gt;</span><span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>
+                        <span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$items</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">];</span> <span class="cp">?&gt;</span>
 
-                        &lt;?php if ($this-&gt;cart-&gt;has_options($items[&#39;rowid&#39;]) == TRUE): ?&gt;
+                        <span class="cp">&lt;?php</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">cart</span><span class="o">-&gt;</span><span class="na">has_options</span><span class="p">(</span><span class="nv">$items</span><span class="p">[</span><span class="s1">&#39;rowid&#39;</span><span class="p">])</span> <span class="o">==</span> <span class="k">TRUE</span><span class="p">)</span><span class="o">:</span> <span class="cp">?&gt;</span>
 
-                                &lt;p&gt;
-                                        &lt;?php foreach ($this-&gt;cart-&gt;product_options($items[&#39;rowid&#39;]) as $option_name =&gt; $option_value): ?&gt;
+                                <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+                                        <span class="cp">&lt;?php</span> <span class="k">foreach</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">cart</span><span class="o">-&gt;</span><span class="na">product_options</span><span class="p">(</span><span class="nv">$items</span><span class="p">[</span><span class="s1">&#39;rowid&#39;</span><span class="p">])</span> <span class="k">as</span> <span class="nv">$option_name</span> <span class="o">=&gt;</span> <span class="nv">$option_value</span><span class="p">)</span><span class="o">:</span> <span class="cp">?&gt;</span>
 
-                                                &lt;strong&gt;&lt;?php echo $option_name; ?&gt;:&lt;/strong&gt; &lt;?php echo $option_value; ?&gt;&lt;br /&gt;
+                                                <span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$option_name</span><span class="p">;</span> <span class="cp">?&gt;</span>:<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span> <span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$option_value</span><span class="p">;</span> <span class="cp">?&gt;</span><span class="p">&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span>
 
-                                        &lt;?php endforeach; ?&gt;
-                                &lt;/p&gt;
+                                        <span class="cp">&lt;?php</span> <span class="k">endforeach</span><span class="p">;</span> <span class="cp">?&gt;</span>
+                                <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 
-                        &lt;?php endif; ?&gt;
+                        <span class="cp">&lt;?php</span> <span class="k">endif</span><span class="p">;</span> <span class="cp">?&gt;</span>
 
-                &lt;/td&gt;
-                &lt;td style=&quot;text-align:right&quot;&gt;&lt;?php echo $this-&gt;cart-&gt;format_number($items[&#39;price&#39;]); ?&gt;&lt;/td&gt;
-                &lt;td style=&quot;text-align:right&quot;&gt;$&lt;?php echo $this-&gt;cart-&gt;format_number($items[&#39;subtotal&#39;]); ?&gt;&lt;/td&gt;
-        &lt;/tr&gt;
+                <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">td</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;text-align:right&quot;</span><span class="p">&gt;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">cart</span><span class="o">-&gt;</span><span class="na">format_number</span><span class="p">(</span><span class="nv">$items</span><span class="p">[</span><span class="s1">&#39;price&#39;</span><span class="p">]);</span> <span class="cp">?&gt;</span><span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">td</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;text-align:right&quot;</span><span class="p">&gt;</span>$<span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">cart</span><span class="o">-&gt;</span><span class="na">format_number</span><span class="p">(</span><span class="nv">$items</span><span class="p">[</span><span class="s1">&#39;subtotal&#39;</span><span class="p">]);</span> <span class="cp">?&gt;</span><span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
 
-&lt;?php $i++; ?&gt;
+<span class="cp">&lt;?php</span> <span class="nv">$i</span><span class="o">++</span><span class="p">;</span> <span class="cp">?&gt;</span>
 
-&lt;?php endforeach; ?&gt;
+<span class="cp">&lt;?php</span> <span class="k">endforeach</span><span class="p">;</span> <span class="cp">?&gt;</span>
 
-&lt;tr&gt;
-        &lt;td colspan=&quot;2&quot;&gt; &lt;/td&gt;
-        &lt;td class=&quot;right&quot;&gt;&lt;strong&gt;Total&lt;/strong&gt;&lt;/td&gt;
-        &lt;td class=&quot;right&quot;&gt;$&lt;?php echo $this-&gt;cart-&gt;format_number($this-&gt;cart-&gt;total()); ?&gt;&lt;/td&gt;
-&lt;/tr&gt;
+<span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span> <span class="na">colspan</span><span class="o">=</span><span class="s">&quot;2&quot;</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;right&quot;</span><span class="p">&gt;&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>Total<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;right&quot;</span><span class="p">&gt;</span>$<span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">cart</span><span class="o">-&gt;</span><span class="na">format_number</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">cart</span><span class="o">-&gt;</span><span class="na">total</span><span class="p">());</span> <span class="cp">?&gt;</span><span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
 
-&lt;/table&gt;
+<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
 
-&lt;p&gt;&lt;?php echo form_submit(&#39;&#39;, &#39;カートを更新する&#39;); ?&gt;&lt;/p&gt;
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nx">form_submit</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;カートを更新する&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 </div>
@@ -636,43 +637,43 @@ $this-&gt;cart-&gt;insert($data);
 <p class="last">数量をゼロにセットした場合、その商品は、カートから
 削除されます。</p>
 </div>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$data = array(
-        &#39;rowid&#39; =&gt; &#39;b99ccdf16028f015540f341130b6d8ec&#39;,
-        &#39;qty&#39;   =&gt; 3
-);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;rowid&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;b99ccdf16028f015540f341130b6d8ec&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;qty&#39;</span>   <span class="o">=&gt;</span> <span class="mi">3</span>
+<span class="p">);</span>
 
-$this-&gt;cart-&gt;update($data);
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">cart</span><span class="o">-&gt;</span><span class="na">update</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
 
-//  または、多次元配列
+<span class="c1">//  または、多次元配列</span>
 
-$data = array(
-        array(
-                &#39;rowid&#39;   =&gt; &#39;b99ccdf16028f015540f341130b6d8ec&#39;,
-                &#39;qty&#39;     =&gt; 3
-        ),
-        array(
-                &#39;rowid&#39;   =&gt; &#39;xw82g9q3r495893iajdh473990rikw23&#39;,
-                &#39;qty&#39;     =&gt; 4
-        ),
-        array(
-                &#39;rowid&#39;   =&gt; &#39;fh4kdkkkaoe30njgoe92rkdkkobec333&#39;,
-                &#39;qty&#39;     =&gt; 2
-        )
-);
+<span class="nv">$data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="k">array</span><span class="p">(</span>
+                <span class="s1">&#39;rowid&#39;</span>   <span class="o">=&gt;</span> <span class="s1">&#39;b99ccdf16028f015540f341130b6d8ec&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;qty&#39;</span>     <span class="o">=&gt;</span> <span class="mi">3</span>
+        <span class="p">),</span>
+        <span class="k">array</span><span class="p">(</span>
+                <span class="s1">&#39;rowid&#39;</span>   <span class="o">=&gt;</span> <span class="s1">&#39;xw82g9q3r495893iajdh473990rikw23&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;qty&#39;</span>     <span class="o">=&gt;</span> <span class="mi">4</span>
+        <span class="p">),</span>
+        <span class="k">array</span><span class="p">(</span>
+                <span class="s1">&#39;rowid&#39;</span>   <span class="o">=&gt;</span> <span class="s1">&#39;fh4kdkkkaoe30njgoe92rkdkkobec333&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;qty&#39;</span>     <span class="o">=&gt;</span> <span class="mi">2</span>
+        <span class="p">)</span>
+<span class="p">);</span>
 
-$this-&gt;cart-&gt;update($data);
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">cart</span><span class="o">-&gt;</span><span class="na">update</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>また、以前に定義した任意のプロパティ、オプションとして価格やその他の
 カスタムフィールドとしてのアイテムを挿入し更新することができます。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$data = array(
-        &#39;rowid&#39;  =&gt; &#39;b99ccdf16028f015540f341130b6d8ec&#39;,
-        &#39;qty&#39;    =&gt; 1,
-        &#39;price&#39;  =&gt; 49.95,
-        &#39;coupon&#39; =&gt; NULL
-);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;rowid&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;b99ccdf16028f015540f341130b6d8ec&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;qty&#39;</span>    <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s1">&#39;price&#39;</span>  <span class="o">=&gt;</span> <span class="mf">49.95</span><span class="p">,</span>
+        <span class="s1">&#39;coupon&#39;</span> <span class="o">=&gt;</span> <span class="k">NULL</span>
+<span class="p">);</span>
 
-$this-&gt;cart-&gt;update($data);
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">cart</span><span class="o">-&gt;</span><span class="na">update</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
 </pre></div>
 </div>
 <div class="section" id="row-id">
@@ -970,7 +971,7 @@ owid を渡す必要があるので、カートを表示する の例で示す�
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 9月 06, 2016
+      最終更新: 9月 04, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

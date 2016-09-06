@@ -415,6 +415,7 @@
       <img title="Classic Layout" alt="classic layout" src="data:image/gif;base64,R0lGODlhFAAUAJEAAAAAADMzM////wAAACH5BAUUAAIALAAAAAAUABQAAAImlI+py+0PU5gRBRDM3DxbWoXis42X13USOLauUIqnlsaH/eY6UwAAOw==" />
     </div>
   </ul>
+<div style="float:right;margin-left:5px;">[ <a href="https://github.com/codeigniter-jp/ci-ja/blob/develop/user_guide_ja_src/source/database/results.rst">旧版翻訳途中</a> | <a href="https://github.com/bcit-ci/CodeIgniter/commits/develop/user_guide_src/source/database/results.rst">原文履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/commits/develop_japanese/source/database/results.rst">翻訳履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/source/database/results.rst">GitHubで修正</a> ]</div><br /><div style="float:right;margin-left:5px;">[ <b class="highlighted">翻訳者募集中</b> → <a href="https://docs.google.com/spreadsheets/d/1ZWD5XqwH-Uo9X7MR644jbL6O8p5LxIngLT8M547H8wc/edit?pref=2&pli=1#gid=0">翻訳状況</a> ]</div>
   <hr/>
 </div>
           <div role="main" class="document">
@@ -437,40 +438,40 @@
 <p>このメソッドは、結果を <strong>オブジェクト</strong> の配列として、
 または失敗した場合には <strong>空の配列</strong> を返します。
 典型的には、次のように、これをforeach ループで使用します:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$query = $this-&gt;db-&gt;query(&quot;YOUR QUERY&quot;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s2">&quot;YOUR QUERY&quot;</span><span class="p">);</span>
 
-foreach ($query-&gt;result() as $row)
-{
-        echo $row-&gt;title;
-        echo $row-&gt;name;
-        echo $row-&gt;body;
-}
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$query</span><span class="o">-&gt;</span><span class="na">result</span><span class="p">()</span> <span class="k">as</span> <span class="nv">$row</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="k">echo</span> <span class="nv">$row</span><span class="o">-&gt;</span><span class="na">title</span><span class="p">;</span>
+        <span class="k">echo</span> <span class="nv">$row</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">;</span>
+        <span class="k">echo</span> <span class="nv">$row</span><span class="o">-&gt;</span><span class="na">body</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>上の メソッド は <code class="docutils literal"><span class="pre">result_object()</span></code> の別名です。</p>
 <p><code class="docutils literal"><span class="pre">result()</span></code> には各結果オブジェクトをインスタンス化したいクラス名の
 文字列を渡すこともできます（note: クラスはロードされていなければいけません）。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$query = $this-&gt;db-&gt;query(&quot;SELECT * FROM users;&quot;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM users;&quot;</span><span class="p">);</span>
 
-foreach ($query-&gt;result(&#39;User&#39;) as $user)
-{
-        echo $user-&gt;name; // 属性を呼び出す
-        echo $user-&gt;reverse_name(); // または &#39;User&#39; クラスに定義されているメソッド
-}
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$query</span><span class="o">-&gt;</span><span class="na">result</span><span class="p">(</span><span class="s1">&#39;User&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="nv">$user</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="k">echo</span> <span class="nv">$user</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">;</span> <span class="c1">// 属性を呼び出す</span>
+        <span class="k">echo</span> <span class="nv">$user</span><span class="o">-&gt;</span><span class="na">reverse_name</span><span class="p">();</span> <span class="c1">// または &#39;User&#39; クラスに定義されているメソッド</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p><strong>result_array()</strong></p>
 <p>このメソッドは、結果を純粋な配列として、あるいは結果が生成されなかった
 ときには空の配列を返します。典型的には、次のように、foreach
 ループで使用されます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$query = $this-&gt;db-&gt;query(&quot;YOUR QUERY&quot;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s2">&quot;YOUR QUERY&quot;</span><span class="p">);</span>
 
-foreach ($query-&gt;result_array() as $row)
-{
-        echo $row[&#39;title&#39;];
-        echo $row[&#39;name&#39;];
-        echo $row[&#39;body&#39;];
-}
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$query</span><span class="o">-&gt;</span><span class="na">result_array</span><span class="p">()</span> <span class="k">as</span> <span class="nv">$row</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="k">echo</span> <span class="nv">$row</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">];</span>
+        <span class="k">echo</span> <span class="nv">$row</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">];</span>
+        <span class="k">echo</span> <span class="nv">$row</span><span class="p">[</span><span class="s1">&#39;body&#39;</span><span class="p">];</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -480,50 +481,50 @@ foreach ($query-&gt;result_array() as $row)
 <p>このメソッドは単一行を返します。クエリの応答が一つ以上の行になる場合は
 、最初の行だけが返ります。 結果は <strong>オブジェクト</strong> で返ります。
 使用方法の例です:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$query = $this-&gt;db-&gt;query(&quot;YOUR QUERY&quot;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s2">&quot;YOUR QUERY&quot;</span><span class="p">);</span>
 
-$row = $query-&gt;row();
+<span class="nv">$row</span> <span class="o">=</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">row</span><span class="p">();</span>
 
-if (isset($row))
-{
-        echo $row-&gt;title;
-        echo $row-&gt;name;
-        echo $row-&gt;body;
-}
+<span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$row</span><span class="p">))</span>
+<span class="p">{</span>
+        <span class="k">echo</span> <span class="nv">$row</span><span class="o">-&gt;</span><span class="na">title</span><span class="p">;</span>
+        <span class="k">echo</span> <span class="nv">$row</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">;</span>
+        <span class="k">echo</span> <span class="nv">$row</span><span class="o">-&gt;</span><span class="na">body</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>特定の行を返したいときは、第１引数に、行番号を数値として渡すことができ
 ます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$row = $query-&gt;row(5);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$row</span> <span class="o">=</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">row</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>第2引数に文字列を渡すこともでき、その列をインスタンス化するためのクラ
 ス名を指定します:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$query = $this-&gt;db-&gt;query(&quot;SELECT * FROM users LIMIT 1;&quot;);
-$row = $query-&gt;row(0, &#39;User&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM users LIMIT 1;&quot;</span><span class="p">);</span>
+<span class="nv">$row</span> <span class="o">=</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">row</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;User&#39;</span><span class="p">);</span>
 
-echo $row-&gt;name; // 属性を呼び出す
-echo $row-&gt;reverse_name(); // または &#39;User&#39; クラスに定義されているメソッド
+<span class="k">echo</span> <span class="nv">$row</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">;</span> <span class="c1">// 属性を呼び出す</span>
+<span class="k">echo</span> <span class="nv">$row</span><span class="o">-&gt;</span><span class="na">reverse_name</span><span class="p">();</span> <span class="c1">// または &#39;User&#39; クラスに定義されているメソッド</span>
 </pre></div>
 </div>
 <p><strong>row_array()</strong></p>
 <p>配列を返すこと以外は、上の <code class="docutils literal"><span class="pre">row()</span></code> メソッドと同じです。
 例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$query = $this-&gt;db-&gt;query(&quot;YOUR QUERY&quot;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s2">&quot;YOUR QUERY&quot;</span><span class="p">);</span>
 
-$row = $query-&gt;row_array();
+<span class="nv">$row</span> <span class="o">=</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">row_array</span><span class="p">();</span>
 
-if (isset($row))
-{
-        echo $row[&#39;title&#39;];
-        echo $row[&#39;name&#39;];
-        echo $row[&#39;body&#39;];
-}
+<span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$row</span><span class="p">))</span>
+<span class="p">{</span>
+        <span class="k">echo</span> <span class="nv">$row</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">];</span>
+        <span class="k">echo</span> <span class="nv">$row</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">];</span>
+        <span class="k">echo</span> <span class="nv">$row</span><span class="p">[</span><span class="s1">&#39;body&#39;</span><span class="p">];</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>特定の行を返したいときは、第１引数に、行番号を数値として渡すことができ
 ます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$row = $query-&gt;row_array(5);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$row</span> <span class="o">=</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">row_array</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>さらに、次のようなバリエーションで、結果を
@@ -556,21 +557,21 @@ result sets.</p>
 <p>このメソッドは、<code class="docutils literal"><span class="pre">row()</span></code> のように結果をすべてメモリにプリフェッチせずに
 単一行を返します。もしクエリに1行以上ある場合は、現在の行を返し、
 内部データポインタを移動します。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$query = $this-&gt;db-&gt;query(&quot;YOUR QUERY&quot;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s2">&quot;YOUR QUERY&quot;</span><span class="p">);</span>
 
-while ($row = $query-&gt;unbuffered_row())
-{
-        echo $row-&gt;title;
-        echo $row-&gt;name;
-        echo $row-&gt;body;
-}
+<span class="k">while</span> <span class="p">(</span><span class="nv">$row</span> <span class="o">=</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">unbuffered_row</span><span class="p">())</span>
+<span class="p">{</span>
+        <span class="k">echo</span> <span class="nv">$row</span><span class="o">-&gt;</span><span class="na">title</span><span class="p">;</span>
+        <span class="k">echo</span> <span class="nv">$row</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">;</span>
+        <span class="k">echo</span> <span class="nv">$row</span><span class="o">-&gt;</span><span class="na">body</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>オプションで &#8216;object&#8217;（デフォルト）か &#8216;array&#8217; を渡し、返り値の
 型を指定することができます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$query-&gt;unbuffered_row();               // object
-$query-&gt;unbuffered_row(&#39;object&#39;);       // object
-$query-&gt;unbuffered_row(&#39;array&#39;);        // associative array
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$query</span><span class="o">-&gt;</span><span class="na">unbuffered_row</span><span class="p">();</span>               <span class="c1">// object</span>
+<span class="nv">$query</span><span class="o">-&gt;</span><span class="na">unbuffered_row</span><span class="p">(</span><span class="s1">&#39;object&#39;</span><span class="p">);</span>       <span class="c1">// object</span>
+<span class="nv">$query</span><span class="o">-&gt;</span><span class="na">unbuffered_row</span><span class="p">(</span><span class="s1">&#39;array&#39;</span><span class="p">);</span>        <span class="c1">// associative array</span>
 </pre></div>
 </div>
 </div>
@@ -583,35 +584,35 @@ $query-&gt;unbuffered_row(&#39;array&#39;);        // associative array
 もし非 public のプロパティとして宣言されている場合は、 <code class="docutils literal"><span class="pre">__set()</span></code> メソッド
 を提供しセットされるようにしてください。</p>
 <p>例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>class User {
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">User</span> <span class="p">{</span>
 
-        public $id;
-        public $email;
-        public $username;
+        <span class="k">public</span> <span class="nv">$id</span><span class="p">;</span>
+        <span class="k">public</span> <span class="nv">$email</span><span class="p">;</span>
+        <span class="k">public</span> <span class="nv">$username</span><span class="p">;</span>
 
-        protected $last_login;
+        <span class="k">protected</span> <span class="nv">$last_login</span><span class="p">;</span>
 
-        public function last_login($format)
-        {
-                return $this-&gt;last_login-&gt;format($format);
-        }
+        <span class="k">public</span> <span class="k">function</span> <span class="nf">last_login</span><span class="p">(</span><span class="nv">$format</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">last_login</span><span class="o">-&gt;</span><span class="na">format</span><span class="p">(</span><span class="nv">$format</span><span class="p">);</span>
+        <span class="p">}</span>
 
-        public function __set($name, $value)
-        {
-                if ($name === &#39;last_login&#39;)
-                {
-                        $this-&gt;last_login = DateTime::createFromFormat(&#39;U&#39;, $value);
-                }
-        }
+        <span class="k">public</span> <span class="k">function</span> <span class="nf">__set</span><span class="p">(</span><span class="nv">$name</span><span class="p">,</span> <span class="nv">$value</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nv">$name</span> <span class="o">===</span> <span class="s1">&#39;last_login&#39;</span><span class="p">)</span>
+                <span class="p">{</span>
+                        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">last_login</span> <span class="o">=</span> <span class="nx">DateTime</span><span class="o">::</span><span class="na">createFromFormat</span><span class="p">(</span><span class="s1">&#39;U&#39;</span><span class="p">,</span> <span class="nv">$value</span><span class="p">);</span>
+                <span class="p">}</span>
+        <span class="p">}</span>
 
-        public function __get($name)
-        {
-                if (isset($this-&gt;$name))
-                {
-                        return $this-&gt;$name;
-                }
-        }
-}
+        <span class="k">public</span> <span class="k">function</span> <span class="nf">__get</span><span class="p">(</span><span class="nv">$name</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="nv">$name</span><span class="p">))</span>
+                <span class="p">{</span>
+                        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="nv">$name</span><span class="p">;</span>
+                <span class="p">}</span>
+        <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>下記2つのメソッド以外にも、次のメソッドも結果を返すクラス名を指定する
@@ -621,36 +622,36 @@ $query-&gt;unbuffered_row(&#39;array&#39;);        // associative array
 <p>結果セットすべてを指定されたクラスのインスタンスの配列として返します。
 唯一のパラメータはインスタンス化したいクラス名です。</p>
 <p>例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$query = $this-&gt;db-&gt;query(&quot;YOUR QUERY&quot;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s2">&quot;YOUR QUERY&quot;</span><span class="p">);</span>
 
-$rows = $query-&gt;custom_result_object(&#39;User&#39;);
+<span class="nv">$rows</span> <span class="o">=</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">custom_result_object</span><span class="p">(</span><span class="s1">&#39;User&#39;</span><span class="p">);</span>
 
-foreach ($rows as $row)
-{
-        echo $row-&gt;id;
-        echo $row-&gt;email;
-        echo $row-&gt;last_login(&#39;Y-m-d&#39;);
-}
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$rows</span> <span class="k">as</span> <span class="nv">$row</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="k">echo</span> <span class="nv">$row</span><span class="o">-&gt;</span><span class="na">id</span><span class="p">;</span>
+        <span class="k">echo</span> <span class="nv">$row</span><span class="o">-&gt;</span><span class="na">email</span><span class="p">;</span>
+        <span class="k">echo</span> <span class="nv">$row</span><span class="o">-&gt;</span><span class="na">last_login</span><span class="p">(</span><span class="s1">&#39;Y-m-d&#39;</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p><strong>custom_row_object()</strong></p>
 <p>クエリ結果から1行返します。第1引数は結果の行数です。第2引数はインスタンス化
 したいクラス名です。</p>
 <p>例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$query = $this-&gt;db-&gt;query(&quot;YOUR QUERY&quot;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s2">&quot;YOUR QUERY&quot;</span><span class="p">);</span>
 
-$row = $query-&gt;custom_row_object(0, &#39;User&#39;);
+<span class="nv">$row</span> <span class="o">=</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">custom_row_object</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;User&#39;</span><span class="p">);</span>
 
-if (isset($row))
-{
-        echo $row-&gt;email;   // access attributes
-        echo $row-&gt;last_login(&#39;Y-m-d&#39;);   // access class methods
-}
+<span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$row</span><span class="p">))</span>
+<span class="p">{</span>
+        <span class="k">echo</span> <span class="nv">$row</span><span class="o">-&gt;</span><span class="na">email</span><span class="p">;</span>   <span class="c1">// access attributes</span>
+        <span class="k">echo</span> <span class="nv">$row</span><span class="o">-&gt;</span><span class="na">last_login</span><span class="p">(</span><span class="s1">&#39;Y-m-d&#39;</span><span class="p">);</span>   <span class="c1">// access class methods</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>さらに、 <code class="docutils literal"><span class="pre">row()</span></code> メソッドもまったく同じ方法で使うことができます。</p>
 <p>例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$row = $query-&gt;custom_row_object(0, &#39;User&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$row</span> <span class="o">=</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">custom_row_object</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;User&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -659,9 +660,9 @@ if (isset($row))
 <p><strong>num_rows()</strong></p>
 <p>クエリで返された行数を取得します。Note: 下記の例では $query
 は、クエリの結果オブジェクトを代入した変数です:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$query = $this-&gt;db-&gt;query(&#39;SELECT * FROM my_table&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s1">&#39;SELECT * FROM my_table&#39;</span><span class="p">);</span>
 
-echo $query-&gt;num_rows();
+<span class="k">echo</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">num_rows</span><span class="p">();</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -674,9 +675,9 @@ echo $query-&gt;num_rows();
 <p><strong>num_fields()</strong></p>
 <p>問い合わせ結果のフィールド数（列数）を返します。このメソッドは、クエリ
 結果オブジェクトを使っていることを確かめてから呼び出してください:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$query = $this-&gt;db-&gt;query(&#39;SELECT * FROM my_table&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s1">&#39;SELECT * FROM my_table&#39;</span><span class="p">);</span>
 
-echo $query-&gt;num_fields();
+<span class="k">echo</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">num_fields</span><span class="p">();</span>
 </pre></div>
 </div>
 <p><strong>free_result()</strong></p>
@@ -686,20 +687,20 @@ echo $query-&gt;num_fields();
 用量を削減するために、各クエリの結果が生成されたあとにメモリを開放した
 い場合があります。</p>
 <p>例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$query = $this-&gt;db-&gt;query(&#39;SELECT title FROM my_table&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s1">&#39;SELECT title FROM my_table&#39;</span><span class="p">);</span>
 
-foreach ($query-&gt;result() as $row)
-{
-        echo $row-&gt;title;
-}
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$query</span><span class="o">-&gt;</span><span class="na">result</span><span class="p">()</span> <span class="k">as</span> <span class="nv">$row</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="k">echo</span> <span class="nv">$row</span><span class="o">-&gt;</span><span class="na">title</span><span class="p">;</span>
+<span class="p">}</span>
 
-$query-&gt;free_result();  // The $query result object will no longer be available
+<span class="nv">$query</span><span class="o">-&gt;</span><span class="na">free_result</span><span class="p">();</span>  <span class="c1">// The $query result object will no longer be available</span>
 
-$query2 = $this-&gt;db-&gt;query(&#39;SELECT name FROM some_table&#39;);
+<span class="nv">$query2</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s1">&#39;SELECT name FROM some_table&#39;</span><span class="p">);</span>
 
-$row = $query2-&gt;row();
-echo $row-&gt;name;
-$query2-&gt;free_result(); // The $query2 result object will no longer be available
+<span class="nv">$row</span> <span class="o">=</span> <span class="nv">$query2</span><span class="o">-&gt;</span><span class="na">row</span><span class="p">();</span>
+<span class="k">echo</span> <span class="nv">$row</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">;</span>
+<span class="nv">$query2</span><span class="o">-&gt;</span><span class="na">free_result</span><span class="p">();</span> <span class="c1">// The $query2 result object will no longer be available</span>
 </pre></div>
 </div>
 <p><strong>data_seek()</strong></p>
@@ -707,9 +708,9 @@ $query2-&gt;free_result(); // The $query2 result object will no longer be availa
 <code class="docutils literal"><span class="pre">unbuffered_row()</span></code> との組み合わせてのみ有効です。</p>
 <p>メソッドは正の整数を受け付け（初期値は 0 ）、成功時は TRUE 、
 失敗時は FALSE を返します。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$query = $this-&gt;db-&gt;query(&#39;SELECT `field_name` FROM `table_name`&#39;);
-$query-&gt;data_seek(5); // Skip the first 5 rows
-$row = $query-&gt;unbuffered_row();
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s1">&#39;SELECT `field_name` FROM `table_name`&#39;</span><span class="p">);</span>
+<span class="nv">$query</span><span class="o">-&gt;</span><span class="na">data_seek</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span> <span class="c1">// Skip the first 5 rows</span>
+<span class="nv">$row</span> <span class="o">=</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">unbuffered_row</span><span class="p">();</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -1175,7 +1176,7 @@ FALSE を返します。特筆すべきは PDO で使えないという点です
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 9月 06, 2016
+      最終更新: 9月 04, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

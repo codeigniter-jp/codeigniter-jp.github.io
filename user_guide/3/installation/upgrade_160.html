@@ -417,6 +417,7 @@
       <img title="Classic Layout" alt="classic layout" src="data:image/gif;base64,R0lGODlhFAAUAJEAAAAAADMzM////wAAACH5BAUUAAIALAAAAAAUABQAAAImlI+py+0PU5gRBRDM3DxbWoXis42X13USOLauUIqnlsaH/eY6UwAAOw==" />
     </div>
   </ul>
+<div style="float:right;margin-left:5px;">[ <a href="https://github.com/codeigniter-jp/ci-ja/blob/develop/user_guide_ja_src/source/installation/upgrade_160.rst">旧版翻訳途中</a> | <a href="https://github.com/bcit-ci/CodeIgniter/commits/develop/user_guide_src/source/installation/upgrade_160.rst">原文履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/commits/develop_japanese/source/installation/upgrade_160.rst">翻訳履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/source/installation/upgrade_160.rst">GitHubで修正</a> ]</div><br /><div style="float:right;margin-left:5px;">[ <b class="highlighted">翻訳者募集中</b> → <a href="https://docs.google.com/spreadsheets/d/1ZWD5XqwH-Uo9X7MR644jbL6O8p5LxIngLT8M547H8wc/edit?pref=2&pli=1#gid=0">翻訳状況</a> ]</div>
   <hr/>
 </div>
           <div role="main" class="document">
@@ -447,24 +448,24 @@ make copies of them first.</p>
 <h2>Step 2: Add time_to_update to your config.php<a class="headerlink" href="#step-2-add-time-to-update-to-your-config-php" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>Add the following to application/config/config.php with the other
 session configuration options</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$config[&#39;sess_time_to_update&#39;]         = 300;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;sess_time_to_update&#39;</span><span class="p">]</span>         <span class="o">=</span> <span class="mi">300</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="step-3-add-autoload-model">
 <h2>Step 3: Add $autoload[&#8216;model&#8217;]<a class="headerlink" href="#step-3-add-autoload-model" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>Add the following to application/config/autoload.php</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>/*
-| -------------------------------------------------------------------
-| Auto-load Model files
-| -------------------------------------------------------------------
-| Prototype:
-|
-| $autoload[&#39;model&#39;] = array(&#39;my_model&#39;);
-|
-*/
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">| -------------------------------------------------------------------</span>
+<span class="cm">| Auto-load Model files</span>
+<span class="cm">| -------------------------------------------------------------------</span>
+<span class="cm">| Prototype:</span>
+<span class="cm">|</span>
+<span class="cm">| $autoload[&#39;model&#39;] = array(&#39;my_model&#39;);</span>
+<span class="cm">|</span>
+<span class="cm">*/</span>
 
-$autoload[&#39;model&#39;] = array();
+<span class="nv">$autoload</span><span class="p">[</span><span class="s1">&#39;model&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
@@ -473,16 +474,16 @@ $autoload[&#39;model&#39;] = array();
 <p>Make the following changes to your application/config/database.php file:</p>
 <p>Add the following variable above the database configuration options,
 with $active_group</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$active_record = TRUE;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$active_record</span> <span class="o">=</span> <span class="k">TRUE</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Remove the following from your database configuration options</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$db[&#39;default&#39;][&#39;active_r&#39;] = TRUE;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$db</span><span class="p">[</span><span class="s1">&#39;default&#39;</span><span class="p">][</span><span class="s1">&#39;active_r&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">TRUE</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Add the following to your database configuration options</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$db[&#39;default&#39;][&#39;char_set&#39;] = &quot;utf8&quot;;
-$db[&#39;default&#39;][&#39;dbcollat&#39;] = &quot;utf8_general_ci&quot;;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$db</span><span class="p">[</span><span class="s1">&#39;default&#39;</span><span class="p">][</span><span class="s1">&#39;char_set&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;utf8&quot;</span><span class="p">;</span>
+<span class="nv">$db</span><span class="p">[</span><span class="s1">&#39;default&#39;</span><span class="p">][</span><span class="s1">&#39;dbcollat&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;utf8_general_ci&quot;</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -512,7 +513,7 @@ version.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 9月 06, 2016
+      最終更新: 9月 04, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

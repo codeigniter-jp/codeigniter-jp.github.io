@@ -415,6 +415,7 @@
       <img title="Classic Layout" alt="classic layout" src="data:image/gif;base64,R0lGODlhFAAUAJEAAAAAADMzM////wAAACH5BAUUAAIALAAAAAAUABQAAAImlI+py+0PU5gRBRDM3DxbWoXis42X13USOLauUIqnlsaH/eY6UwAAOw==" />
     </div>
   </ul>
+<div style="float:right;margin-left:5px;">[ <a href="https://github.com/codeigniter-jp/ci-ja/blob/develop/user_guide_ja_src/source/general/urls.rst">旧版翻訳途中</a> | <a href="https://github.com/bcit-ci/CodeIgniter/commits/develop/user_guide_src/source/general/urls.rst">原文履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/commits/develop_japanese/source/general/urls.rst">翻訳履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/source/general/urls.rst">GitHubで修正</a> ]</div><br /><div style="float:right;margin-left:5px;">[ <b class="highlighted">翻訳者募集中</b> → <a href="https://docs.google.com/spreadsheets/d/1ZWD5XqwH-Uo9X7MR644jbL6O8p5LxIngLT8M547H8wc/edit?pref=2&pli=1#gid=0">翻訳状況</a> ]</div>
   <hr/>
 </div>
           <div role="main" class="document">
@@ -425,7 +426,7 @@
 URL には、動的システムの代名詞である標準的な「クエリ文字列」アプローチではなく、
 CodeIgniter は
 <strong>セグメントベース</strong> のアプローチを使用しています:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>example.com/news/article/my_article
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">example</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">news</span><span class="o">/</span><span class="nx">article</span><span class="o">/</span><span class="nx">my_article</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -437,7 +438,7 @@ CodeIgniter は
 <h2>URI セグメント<a class="headerlink" href="#uri" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>URL セグメントは Model-View-Controller アプローチに従い、
 通常次のような特徴を持ちます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>example.com/class/function/ID
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">example</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">class</span><span class="o">/</span><span class="nx">function</span><span class="o">/</span><span class="nx">ID</span>
 </pre></div>
 </div>
 <ol class="arabic simple">
@@ -455,7 +456,7 @@ CodeIgniter は
 <div class="section" id="index-php">
 <h2>index.phpファイルを外す<a class="headerlink" href="#index-php" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>デフォルトでは <strong>index.php</strong> ファイルは URL に含まれます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>example.com/index.php/news/article/my_article
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">example</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">index</span><span class="o">.</span><span class="nx">php</span><span class="o">/</span><span class="nx">news</span><span class="o">/</span><span class="nx">article</span><span class="o">/</span><span class="nx">my_article</span>
 </pre></div>
 </div>
 <p>Apache サーバで <em>mod_rewrite</em> を有効にしている場合、
@@ -485,33 +486,33 @@ assets が対象外となっていることを確認してください。</p>
 <p><strong>config/config.php</strong> ファイルでは CodeIgniter で生成されるすべての
 URL に追加されるサフィックスを指定することができます。たとえば、
 URL はつぎのものであれば:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>example.com/index.php/products/view/shoes
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">example</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">index</span><span class="o">.</span><span class="nx">php</span><span class="o">/</span><span class="nx">products</span><span class="o">/</span><span class="nx">view</span><span class="o">/</span><span class="nx">shoes</span>
 </pre></div>
 </div>
 <p>必要に応じて <strong>.html</strong> のように、ページを特定のタイプのように見える
 サフィックスを追加することができます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>example.com/index.php/products/view/shoes.html
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">example</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">index</span><span class="o">.</span><span class="nx">php</span><span class="o">/</span><span class="nx">products</span><span class="o">/</span><span class="nx">view</span><span class="o">/</span><span class="nx">shoes</span><span class="o">.</span><span class="nx">html</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="id1">
 <h2>クエリ文字列を有効にする<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>いくつかのケースでは、クエリ文字列のURLを使用するほうがふさわしいかもしれません:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>index.php?c=products&amp;m=view&amp;id=345
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">index</span><span class="o">.</span><span class="nx">php</span><span class="o">?</span><span class="nx">c</span><span class="o">=</span><span class="nx">products</span><span class="o">&amp;</span><span class="nx">m</span><span class="o">=</span><span class="nx">view</span><span class="o">&amp;</span><span class="nx">id</span><span class="o">=</span><span class="mi">345</span>
 </pre></div>
 </div>
 <p>CodeIgniter ではこの機能をサポートしており、必要に応じて
 <strong>application/config.php</strong> ファイルで有効にすることができます。設定ファイルを開くと、
 次の項目が見つかるでしょう:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$config[&#39;enable_query_strings&#39;] = FALSE;
-$config[&#39;controller_trigger&#39;] = &#39;c&#39;;
-$config[&#39;function_trigger&#39;] = &#39;m&#39;;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;enable_query_strings&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">FALSE</span><span class="p">;</span>
+<span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;controller_trigger&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;c&#39;</span><span class="p">;</span>
+<span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;function_trigger&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;m&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>「enable_query_strings」を TRUE に変更した場合、この機能が有効になります。
 コントローラおよび機能は、コントローラとメソッドを呼び出すために設定した
 「トリガー」の文字を使用してアクセスできるようになります:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>index.php?c=controller&amp;m=method
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">index</span><span class="o">.</span><span class="nx">php</span><span class="o">?</span><span class="nx">c</span><span class="o">=</span><span class="nx">controller</span><span class="o">&amp;</span><span class="nx">m</span><span class="o">=</span><span class="nx">method</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -543,7 +544,7 @@ URL を生成する他のヘルパーもです）。</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 9月 06, 2016
+      最終更新: 9月 04, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

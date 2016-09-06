@@ -417,6 +417,7 @@
       <img title="Classic Layout" alt="classic layout" src="data:image/gif;base64,R0lGODlhFAAUAJEAAAAAADMzM////wAAACH5BAUUAAIALAAAAAAUABQAAAImlI+py+0PU5gRBRDM3DxbWoXis42X13USOLauUIqnlsaH/eY6UwAAOw==" />
     </div>
   </ul>
+<div style="float:right;margin-left:5px;">[ <a href="https://github.com/codeigniter-jp/ci-ja/blob/develop/user_guide_ja_src/source/installation/upgrade_150.rst">旧版翻訳途中</a> | <a href="https://github.com/bcit-ci/CodeIgniter/commits/develop/user_guide_src/source/installation/upgrade_150.rst">原文履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/commits/develop_japanese/source/installation/upgrade_150.rst">翻訳履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/source/installation/upgrade_150.rst">GitHubで修正</a> ]</div><br /><div style="float:right;margin-left:5px;">[ <b class="highlighted">翻訳者募集中</b> → <a href="https://docs.google.com/spreadsheets/d/1ZWD5XqwH-Uo9X7MR644jbL6O8p5LxIngLT8M547H8wc/edit?pref=2&pli=1#gid=0">翻訳状況</a> ]</div>
   <hr/>
 </div>
           <div role="main" class="document">
@@ -453,53 +454,53 @@ make copies of them first.</p>
 <div class="section" id="step-2-update-your-database-php-file">
 <h2>Step 2: Update your database.php file<a class="headerlink" href="#step-2-update-your-database-php-file" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>Open your application/config/database.php file and add these new items:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$db[&#39;default&#39;][&#39;cache_on&#39;] = FALSE;
-$db[&#39;default&#39;][&#39;cachedir&#39;] = &#39;&#39;;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$db</span><span class="p">[</span><span class="s1">&#39;default&#39;</span><span class="p">][</span><span class="s1">&#39;cache_on&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">FALSE</span><span class="p">;</span>
+<span class="nv">$db</span><span class="p">[</span><span class="s1">&#39;default&#39;</span><span class="p">][</span><span class="s1">&#39;cachedir&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="step-3-update-your-config-php-file">
 <h2>Step 3: Update your config.php file<a class="headerlink" href="#step-3-update-your-config-php-file" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>Open your application/config/config.php file and ADD these new items:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>/*
-|--------------------------------------------------------------------------
-| Class Extension Prefix
-|--------------------------------------------------------------------------
-|
-| This item allows you to set the filename/classname prefix when extending
-| native libraries.  For more information please see the user guide:
-|
-| https://codeigniter.com/user_guide/general/core_classes.html
-| https://codeigniter.com/user_guide/general/creating_libraries.html
-|
-*/
-$config[&#39;subclass_prefix&#39;] = &#39;MY_&#39;;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">|--------------------------------------------------------------------------</span>
+<span class="cm">| Class Extension Prefix</span>
+<span class="cm">|--------------------------------------------------------------------------</span>
+<span class="cm">|</span>
+<span class="cm">| This item allows you to set the filename/classname prefix when extending</span>
+<span class="cm">| native libraries.  For more information please see the user guide:</span>
+<span class="cm">|</span>
+<span class="cm">| https://codeigniter.com/user_guide/general/core_classes.html</span>
+<span class="cm">| https://codeigniter.com/user_guide/general/creating_libraries.html</span>
+<span class="cm">|</span>
+<span class="cm">*/</span>
+<span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;subclass_prefix&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;MY_&#39;</span><span class="p">;</span>
 
-/*
-|--------------------------------------------------------------------------
-| Rewrite PHP Short Tags
-|--------------------------------------------------------------------------
-|
-| If your PHP installation does not have short tag support enabled CI
-| can rewrite the tags on-the-fly, enabling you to utilize that syntax
-| in your view files.  Options are TRUE or FALSE (boolean)
-|
-*/
-$config[&#39;rewrite_short_tags&#39;] = FALSE;
+<span class="cm">/*</span>
+<span class="cm">|--------------------------------------------------------------------------</span>
+<span class="cm">| Rewrite PHP Short Tags</span>
+<span class="cm">|--------------------------------------------------------------------------</span>
+<span class="cm">|</span>
+<span class="cm">| If your PHP installation does not have short tag support enabled CI</span>
+<span class="cm">| can rewrite the tags on-the-fly, enabling you to utilize that syntax</span>
+<span class="cm">| in your view files.  Options are TRUE or FALSE (boolean)</span>
+<span class="cm">|</span>
+<span class="cm">*/</span>
+<span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;rewrite_short_tags&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">FALSE</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>In that same file REMOVE this item:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>/*
-|--------------------------------------------------------------------------
-| Enable/Disable Error Logging
-|--------------------------------------------------------------------------
-|
-| If you would like errors or debug messages logged set this variable to
-| TRUE (boolean).  Note: You must set the file permissions on the &quot;logs&quot; folder
-| such that it is writable.
-|
-*/
-$config[&#39;log_errors&#39;] = FALSE;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">|--------------------------------------------------------------------------</span>
+<span class="cm">| Enable/Disable Error Logging</span>
+<span class="cm">|--------------------------------------------------------------------------</span>
+<span class="cm">|</span>
+<span class="cm">| If you would like errors or debug messages logged set this variable to</span>
+<span class="cm">| TRUE (boolean).  Note: You must set the file permissions on the &quot;logs&quot; folder</span>
+<span class="cm">| such that it is writable.</span>
+<span class="cm">|</span>
+<span class="cm">*/</span>
+<span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;log_errors&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">FALSE</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Error logging is now disabled simply by setting the threshold to zero.</p>
@@ -537,7 +538,7 @@ version.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 9月 06, 2016
+      最終更新: 9月 04, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

@@ -415,6 +415,7 @@
       <img title="Classic Layout" alt="classic layout" src="data:image/gif;base64,R0lGODlhFAAUAJEAAAAAADMzM////wAAACH5BAUUAAIALAAAAAAUABQAAAImlI+py+0PU5gRBRDM3DxbWoXis42X13USOLauUIqnlsaH/eY6UwAAOw==" />
     </div>
   </ul>
+<div style="float:right;margin-left:5px;">[ <a href="https://github.com/codeigniter-jp/ci-ja/blob/develop/user_guide_ja_src/source/general/cli.rst">旧版翻訳途中</a> | <a href="https://github.com/bcit-ci/CodeIgniter/commits/develop/user_guide_src/source/general/cli.rst">原文履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/commits/develop_japanese/source/general/cli.rst">翻訳履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/source/general/cli.rst">GitHubで修正</a> ]</div><br /><div style="float:right;margin-left:5px;">[ <b class="highlighted">翻訳者募集中</b> → <a href="https://docs.google.com/spreadsheets/d/1ZWD5XqwH-Uo9X7MR644jbL6O8p5LxIngLT8M547H8wc/edit?pref=2&pli=1#gid=0">翻訳状況</a> ]</div>
   <hr/>
 </div>
           <div role="main" class="document">
@@ -461,19 +462,19 @@ C++ スクリプトは 1 つのコマンドを呼び出してモデルのコー�
 <p>簡単なコントローラを作成してみて、その動きを見てみましょう。
 テキストエディタを使って Tools.php というファイルを作成し、
 その中に次のコードを配置します:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>&lt;?php
-class Tools extends CI_Controller {
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+<span class="k">class</span> <span class="nc">Tools</span> <span class="k">extends</span> <span class="nx">CI_Controller</span> <span class="p">{</span>
 
-        public function message($to = &#39;World&#39;)
-        {
-                echo &quot;Hello {$to}!&quot;.PHP_EOL;
-        }
-}
+        <span class="k">public</span> <span class="k">function</span> <span class="nf">message</span><span class="p">(</span><span class="nv">$to</span> <span class="o">=</span> <span class="s1">&#39;World&#39;</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="k">echo</span> <span class="s2">&quot;Hello </span><span class="si">{</span><span class="nv">$to</span><span class="si">}</span><span class="s2">!&quot;</span><span class="o">.</span><span class="nx">PHP_EOL</span><span class="p">;</span>
+        <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>次に、そのファイルを <em>application/controllers/</em> フォルダに保存します。</p>
 <p>さて、通常次のような URL を使ってサイトを開きます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>example.com/index.php/tools/message/to
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">example</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">index</span><span class="o">.</span><span class="nx">php</span><span class="o">/</span><span class="nx">tools</span><span class="o">/</span><span class="nx">message</span><span class="o">/</span><span class="nx">to</span>
 </pre></div>
 </div>
 <p>そのかわりに、 Mac/Linux でのターミナルを開くか、 Windowsで &gt;「 cmd 」を実行し、
@@ -488,7 +489,7 @@ $ php index.php tools message
 </div>
 <p>ここでは URL パラメータが動くのと同様の方法で引数を渡しています。
 「 John Smith 」は、引数として渡され、出力されます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>Hello John Smith!
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">Hello</span> <span class="nx">John</span> <span class="nx">Smith</span><span class="o">!</span>
 </pre></div>
 </div>
 </div>
@@ -519,7 +520,7 @@ $ php index.php tools message
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 9月 06, 2016
+      最終更新: 9月 04, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

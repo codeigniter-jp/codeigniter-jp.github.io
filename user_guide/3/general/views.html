@@ -415,6 +415,7 @@
       <img title="Classic Layout" alt="classic layout" src="data:image/gif;base64,R0lGODlhFAAUAJEAAAAAADMzM////wAAACH5BAUUAAIALAAAAAAUABQAAAImlI+py+0PU5gRBRDM3DxbWoXis42X13USOLauUIqnlsaH/eY6UwAAOw==" />
     </div>
   </ul>
+<div style="float:right;margin-left:5px;">[ <a href="https://github.com/codeigniter-jp/ci-ja/blob/develop/user_guide_ja_src/source/general/views.rst">旧版翻訳途中</a> | <a href="https://github.com/bcit-ci/CodeIgniter/commits/develop/user_guide_src/source/general/views.rst">原文履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/commits/develop_japanese/source/general/views.rst">翻訳履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/source/general/views.rst">GitHubで修正</a> ]</div><br /><div style="float:right;margin-left:5px;">[ <b class="highlighted">翻訳者募集中</b> → <a href="https://docs.google.com/spreadsheets/d/1ZWD5XqwH-Uo9X7MR644jbL6O8p5LxIngLT8M547H8wc/edit?pref=2&pli=1#gid=0">翻訳状況</a> ]</div>
   <hr/>
 </div>
           <div role="main" class="document">
@@ -436,14 +437,14 @@ MVC フレームワークを使っていることを忘れないでください�
 <h2>ビューの作成<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>テキストエディタを使って blogview.php というファイルを作り、
 それに次の内容を書きます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>&lt;html&gt;
-&lt;head&gt;
-        &lt;title&gt;わたしのブログ&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-        &lt;h1&gt;わたしのブログにようこそ！&lt;/h1&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nx">html</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nx">head</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">title</span><span class="o">&gt;</span><span class="nx">わたしのブログ</span><span class="o">&lt;/</span><span class="nx">title</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="nx">head</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nx">body</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">わたしのブログにようこそ！</span><span class="o">&lt;/</span><span class="nx">h1</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="nx">body</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="nx">html</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 <p>このファイルは <em>application/views/</em> ディレクトリに保存します。</p>
@@ -451,7 +452,7 @@ MVC フレームワークを使っていることを忘れないでください�
 <div class="section" id="id3">
 <h2>ビューの読み込み<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>特定のビューファイルをロードするには、次のメソッドを使用します:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;load-&gt;view(&#39;name&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>name の箇所は、ビューファイルの名前です。</p>
@@ -462,19 +463,19 @@ MVC フレームワークを使っていることを忘れないでください�
 </div>
 <p>さて、前章で作ったコントローラ Blog.php を開き、
 echo 文をビュー読み込みメソッドで置き換えます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>&lt;?php
-class Blog extends CI_Controller {
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+<span class="k">class</span> <span class="nc">Blog</span> <span class="k">extends</span> <span class="nx">CI_Controller</span> <span class="p">{</span>
 
-        public function index()
-        {
-                $this-&gt;load-&gt;view(&#39;blogview&#39;);
-        }
-}
+        <span class="k">public</span> <span class="k">function</span> <span class="nf">index</span><span class="p">()</span>
+        <span class="p">{</span>
+                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;blogview&#39;</span><span class="p">);</span>
+        <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>前章で使った URL を使用してサイトを開けば、新しいビューが表示されるはずです。
 URL は次のようなものです:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>example.com/index.php/blog/
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">example</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">index</span><span class="o">.</span><span class="nx">php</span><span class="o">/</span><span class="nx">blog</span><span class="o">/</span>
 </pre></div>
 </div>
 </div>
@@ -485,20 +486,20 @@ URL は次のようなものです:</p>
 それらはまとめて追加されます。たとえば、
 ヘッダビュー、メニュービュー、内容ビュー、およびフッタビューを使いたいとします。
 次のようになります:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>&lt;?php
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
-class Page extends CI_Controller {
+<span class="k">class</span> <span class="nc">Page</span> <span class="k">extends</span> <span class="nx">CI_Controller</span> <span class="p">{</span>
 
-        public function index()
-        {
-                $data[&#39;page_title&#39;] = &#39;あなたのタイトル&#39;;
-                $this-&gt;load-&gt;view(&#39;header&#39;);
-                $this-&gt;load-&gt;view(&#39;menu&#39;);
-                $this-&gt;load-&gt;view(&#39;content&#39;, $data);
-                $this-&gt;load-&gt;view(&#39;footer&#39;);
-        }
+        <span class="k">public</span> <span class="k">function</span> <span class="nf">index</span><span class="p">()</span>
+        <span class="p">{</span>
+                <span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;page_title&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;あなたのタイトル&#39;</span><span class="p">;</span>
+                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;header&#39;</span><span class="p">);</span>
+                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;menu&#39;</span><span class="p">);</span>
+                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;content&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
+                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;footer&#39;</span><span class="p">);</span>
+        <span class="p">}</span>
 
-}
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>上記の例では、後述の「動的データをビューに追加する」
@@ -509,7 +510,7 @@ class Page extends CI_Controller {
 <p>お好みに応じて、ビューファイルはサブディレクトリ内に格納することができます。
 その場合、ビューをロードする際にディレクトリ名を含める必要があります。
 例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;load-&gt;view(&#39;directory_name/file_name&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;directory_name/file_name&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -518,18 +519,18 @@ class Page extends CI_Controller {
 <p>データは、ビュー読み込みメソッドの第 2 引数に <strong>配列</strong> や
 <strong>オブジェクト</strong> として、コントローラからビューに渡されます。
 つぎのものは配列を使用した例です:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$data = array(
-        &#39;title&#39; =&gt; &#39;わたしのタイトル&#39;,
-        &#39;heading&#39; =&gt; &#39;わたしのヘッダ&#39;,
-        &#39;message&#39; =&gt; &#39;わたしのメッセージ&#39;
-);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;title&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;わたしのタイトル&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;heading&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;わたしのヘッダ&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;message&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;わたしのメッセージ&#39;</span>
+<span class="p">);</span>
 
-$this-&gt;load-&gt;view(&#39;blogview&#39;, $data);
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;blogview&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>そして、つぎはオブジェクトを使用した例です:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$data = new Someclass();
-$this-&gt;load-&gt;view(&#39;blogview&#39;, $data);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$data</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Someclass</span><span class="p">();</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;blogview&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -538,29 +539,29 @@ $this-&gt;load-&gt;view(&#39;blogview&#39;, $data);
 クラス変数は配列に型変換されます。</p>
 </div>
 <p>それでは、コントローラファイルで試してみましょう。ファイルを開いてこのコードを追加します:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>&lt;?php
-class Blog extends CI_Controller {
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+<span class="k">class</span> <span class="nc">Blog</span> <span class="k">extends</span> <span class="nx">CI_Controller</span> <span class="p">{</span>
 
-        public function index()
-        {
-                $data[&#39;title&#39;] = &quot;My Real Title&quot;;
-                $data[&#39;heading&#39;] = &quot;My Real Heading&quot;;
+        <span class="k">public</span> <span class="k">function</span> <span class="nf">index</span><span class="p">()</span>
+        <span class="p">{</span>
+                <span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;My Real Title&quot;</span><span class="p">;</span>
+                <span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;heading&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;My Real Heading&quot;</span><span class="p">;</span>
 
-                $this-&gt;load-&gt;view(&#39;blogview&#39;, $data);
-        }
-}
+                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;blogview&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
+        <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>さて、ビューファイルを開いて、
 配列のキーに対応する変数にテキストを変更します:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>&lt;html&gt;
-&lt;head&gt;
-        &lt;title&gt;&lt;?php echo $title;?&gt;&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-        &lt;h1&gt;&lt;?php echo $heading;?&gt;&lt;/h1&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nx">html</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nx">head</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">title</span><span class="o">&gt;&lt;?</span><span class="nx">php</span> <span class="k">echo</span> <span class="nv">$title</span><span class="p">;</span><span class="cp">?&gt;</span><span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$heading</span><span class="p">;</span><span class="cp">?&gt;</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 <p>これで、いままでの URL のページを読み込めば、
@@ -573,41 +574,41 @@ class Blog extends CI_Controller {
 たとえば、データベースからデータを取り出す場合、
 たいてい多次元配列の形を取るでしょう。</p>
 <p>つぎのものは簡単な例です。コントローラにこれを追加します:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>&lt;?php
-class Blog extends CI_Controller {
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+<span class="k">class</span> <span class="nc">Blog</span> <span class="k">extends</span> <span class="nx">CI_Controller</span> <span class="p">{</span>
 
-        public function index()
-        {
-                $data[&#39;todo_list&#39;] = array(&#39;掃除する&#39;, &#39;ママに電話&#39;, &#39;お使いに行く&#39;);
+        <span class="k">public</span> <span class="k">function</span> <span class="nf">index</span><span class="p">()</span>
+        <span class="p">{</span>
+                <span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;todo_list&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;掃除する&#39;</span><span class="p">,</span> <span class="s1">&#39;ママに電話&#39;</span><span class="p">,</span> <span class="s1">&#39;お使いに行く&#39;</span><span class="p">);</span>
 
-                $data[&#39;title&#39;] = &quot;わたしの本当のタイトル&quot;;
-                $data[&#39;heading&#39;] = &quot;わたしの本当のヘッダ&quot;;
+                <span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;わたしの本当のタイトル&quot;</span><span class="p">;</span>
+                <span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;heading&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;わたしの本当のヘッダ&quot;</span><span class="p">;</span>
 
-                $this-&gt;load-&gt;view(&#39;blogview&#39;, $data);
-        }
-}
+                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;blogview&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
+        <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>では、ビューを開き、ループを作成します:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>&lt;html&gt;
-&lt;head&gt;
-        &lt;title&gt;&lt;?php echo $title;?&gt;&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-        &lt;h1&gt;&lt;?php echo $heading;?&gt;&lt;/h1&gt;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nx">html</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nx">head</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">title</span><span class="o">&gt;&lt;?</span><span class="nx">php</span> <span class="k">echo</span> <span class="nv">$title</span><span class="p">;</span><span class="cp">?&gt;</span><span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$heading</span><span class="p">;</span><span class="cp">?&gt;</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
 
-        &lt;h3&gt;わたしのTodoリスト&lt;/h3&gt;
+        <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>わたしのTodoリスト<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
 
-        &lt;ul&gt;
-        &lt;?php foreach ($todo_list as $item):?&gt;
+        <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+        <span class="cp">&lt;?php</span> <span class="k">foreach</span> <span class="p">(</span><span class="nv">$todo_list</span> <span class="k">as</span> <span class="nv">$item</span><span class="p">)</span><span class="o">:</span><span class="cp">?&gt;</span>
 
-                &lt;li&gt;&lt;?php echo $item;?&gt;&lt;/li&gt;
+                <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$item</span><span class="p">;</span><span class="cp">?&gt;</span><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
 
-        &lt;?php endforeach;?&gt;
-        &lt;/ul&gt;
+        <span class="cp">&lt;?php</span> <span class="k">endforeach</span><span class="p">;</span><span class="cp">?&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
 
-&lt;/body&gt;
-&lt;/html&gt;
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -625,7 +626,7 @@ class Blog extends CI_Controller {
 このパラメータを TRUE（真偽値）に設定すると、データが返されます。
 デフォルトの動作は false で、これはブラウザにデータを送信します。
 データを返すようにしたときは変数に代入するのを忘れないでください:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$string = $this-&gt;load-&gt;view(&#39;myfile&#39;, &#39;&#39;, TRUE);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$string</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;myfile&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -650,7 +651,7 @@ class Blog extends CI_Controller {
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 9月 06, 2016
+      最終更新: 9月 04, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

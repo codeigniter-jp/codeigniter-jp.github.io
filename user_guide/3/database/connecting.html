@@ -415,6 +415,7 @@
       <img title="Classic Layout" alt="classic layout" src="data:image/gif;base64,R0lGODlhFAAUAJEAAAAAADMzM////wAAACH5BAUUAAIALAAAAAAUABQAAAImlI+py+0PU5gRBRDM3DxbWoXis42X13USOLauUIqnlsaH/eY6UwAAOw==" />
     </div>
   </ul>
+<div style="float:right;margin-left:5px;">[ <a href="https://github.com/codeigniter-jp/ci-ja/blob/develop/user_guide_ja_src/source/database/connecting.rst">旧版翻訳途中</a> | <a href="https://github.com/bcit-ci/CodeIgniter/commits/develop/user_guide_src/source/database/connecting.rst">原文履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/commits/develop_japanese/source/database/connecting.rst">翻訳履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/source/database/connecting.rst">GitHubで修正</a> ]</div><br /><div style="float:right;margin-left:5px;">[ <b class="highlighted">翻訳者募集中</b> → <a href="https://docs.google.com/spreadsheets/d/1ZWD5XqwH-Uo9X7MR644jbL6O8p5LxIngLT8M547H8wc/edit?pref=2&pli=1#gid=0">翻訳状況</a> ]</div>
   <hr/>
 </div>
           <div role="main" class="document">
@@ -435,7 +436,7 @@
 ータベースに接続することができます。 手動でデータベースに接続するには
 、必要とするメソッド内で随時下記のコードを追加するか、 そのクラスでグ
 ローバルに使用したい場合はコンストラクタに下記のコードを追加します。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;load-&gt;database();
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">database</span><span class="p">();</span>
 </pre></div>
 </div>
 <p>上のメソッドの第1引数に 何も指定しない場合は、設定ファイルで指定されている
@@ -459,26 +460,26 @@
 されていない接続用のデータを渡すこともできます。
 例としては:</p>
 <p>設定ファイルで定義したグループを選択するには次のようにします:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;load-&gt;database(&#39;group_name&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">database</span><span class="p">(</span><span class="s1">&#39;group_name&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>ここでの group_name が設定ファイルで定義した接続グループの名前に
 なります。</p>
 <p>手動で任意のデータベースに接続するには、次のように配列でデータを渡しま
 す:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$config[&#39;hostname&#39;] = &#39;localhost&#39;;
-$config[&#39;username&#39;] = &#39;myusername&#39;;
-$config[&#39;password&#39;] = &#39;mypassword&#39;;
-$config[&#39;database&#39;] = &#39;mydatabase&#39;;
-$config[&#39;dbdriver&#39;] = &#39;mysqli&#39;;
-$config[&#39;dbprefix&#39;] = &#39;&#39;;
-$config[&#39;pconnect&#39;] = FALSE;
-$config[&#39;db_debug&#39;] = TRUE;
-$config[&#39;cache_on&#39;] = FALSE;
-$config[&#39;cachedir&#39;] = &#39;&#39;;
-$config[&#39;char_set&#39;] = &#39;utf8&#39;;
-$config[&#39;dbcollat&#39;] = &#39;utf8_general_ci&#39;;
-$this-&gt;load-&gt;database($config);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;hostname&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;localhost&#39;</span><span class="p">;</span>
+<span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;username&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;myusername&#39;</span><span class="p">;</span>
+<span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;password&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;mypassword&#39;</span><span class="p">;</span>
+<span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;database&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;mydatabase&#39;</span><span class="p">;</span>
+<span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;dbdriver&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;mysqli&#39;</span><span class="p">;</span>
+<span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;dbprefix&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+<span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;pconnect&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">FALSE</span><span class="p">;</span>
+<span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;db_debug&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">TRUE</span><span class="p">;</span>
+<span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;cache_on&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">FALSE</span><span class="p">;</span>
+<span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;cachedir&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+<span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;char_set&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;utf8&#39;</span><span class="p">;</span>
+<span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;dbcollat&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;utf8_general_ci&#39;</span><span class="p">;</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">database</span><span class="p">(</span><span class="nv">$config</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>接続用の各データについての情報は、 <a class="reference internal" href="configuration.html"><span class="doc">設定について</span></a>
@@ -494,14 +495,14 @@ $config[&#8216;dsn&#8217;] 設定をお使いください。</p>
 </div>
 <p>あるいは、データベースの接続データをデータソースネーム（DSN）を使って渡
 すこともできます。DSN は次のような形になっている必要があります:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$dsn = &#39;dbdriver://username:password@hostname/database&#39;;
-$this-&gt;load-&gt;database($dsn);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$dsn</span> <span class="o">=</span> <span class="s1">&#39;dbdriver://username:password@hostname/database&#39;</span><span class="p">;</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">database</span><span class="p">(</span><span class="nv">$dsn</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>データソースネーム（DSN）で設定ファイルのデフォルト値を上書きする場合に
 は、接続データをクエリで追加します。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$dsn = &#39;dbdriver://username:password@hostname/database?char_set=utf8&amp;dbcollat=utf8_general_ci&amp;cache_on=true&amp;cachedir=/path/to/cache&#39;;
-$this-&gt;load-&gt;database($dsn);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$dsn</span> <span class="o">=</span> <span class="s1">&#39;dbdriver://username:password@hostname/database?char_set=utf8&amp;dbcollat=utf8_general_ci&amp;cache_on=true&amp;cachedir=/path/to/cache&#39;</span><span class="p">;</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">database</span><span class="p">(</span><span class="nv">$dsn</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -510,8 +511,8 @@ $this-&gt;load-&gt;database($dsn);
 <h2>複数のデータベースへの接続<a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>同時に 2つ以上のデータベースに接続する必要がある場合は次のようにするこ
 とで可能になります:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$DB1 = $this-&gt;load-&gt;database(&#39;group_one&#39;, TRUE);
-$DB2 = $this-&gt;load-&gt;database(&#39;group_two&#39;, TRUE);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$DB1</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">database</span><span class="p">(</span><span class="s1">&#39;group_one&#39;</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span>
+<span class="nv">$DB2</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">database</span><span class="p">(</span><span class="s1">&#39;group_two&#39;</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Note: &#8220;group_one&#8221; と &#8220;group_two&#8221;の部分は接続したい
@@ -554,7 +555,7 @@ $DB2 = $this-&gt;load-&gt;database(&#39;group_two&#39;, TRUE);
 送信する前に reconnect() メソッドを使ってサーバーの応答確認（pinging）するのを検討すべきです。
 このメソッドは、適切に接続状態を維持したり、
 再接続したりできます。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;db-&gt;reconnect();
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">reconnect</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
@@ -562,7 +563,7 @@ $DB2 = $this-&gt;load-&gt;database(&#39;group_two&#39;, TRUE);
 <h2>手動切断<a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>CodeIgniter はデータベースの切断を賢く行なってくれますが、
 明示的に接続を閉じることもできます。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;db-&gt;close();
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">close</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
@@ -587,7 +588,7 @@ $DB2 = $this-&gt;load-&gt;database(&#39;group_two&#39;, TRUE);
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 9月 06, 2016
+      最終更新: 9月 04, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

@@ -415,6 +415,7 @@
       <img title="Classic Layout" alt="classic layout" src="data:image/gif;base64,R0lGODlhFAAUAJEAAAAAADMzM////wAAACH5BAUUAAIALAAAAAAUABQAAAImlI+py+0PU5gRBRDM3DxbWoXis42X13USOLauUIqnlsaH/eY6UwAAOw==" />
     </div>
   </ul>
+<div style="float:right;margin-left:5px;">[ <a href="https://github.com/codeigniter-jp/ci-ja/blob/develop/user_guide_ja_src/source/helpers/html_helper.rst">旧版翻訳途中</a> | <a href="https://github.com/bcit-ci/CodeIgniter/commits/develop/user_guide_src/source/helpers/html_helper.rst">原文履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/commits/develop_japanese/source/helpers/html_helper.rst">翻訳履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/source/helpers/html_helper.rst">GitHubで修正</a> ]</div><br /><div style="float:right;margin-left:5px;">[ <b class="highlighted">翻訳者募集中</b> → <a href="https://docs.google.com/spreadsheets/d/1ZWD5XqwH-Uo9X7MR644jbL6O8p5LxIngLT8M547H8wc/edit?pref=2&pli=1#gid=0">翻訳状況</a> ]</div>
   <hr/>
 </div>
           <div role="main" class="document">
@@ -432,7 +433,7 @@
 <div class="custom-index container"></div><div class="section" id="id1">
 <h2><a class="toc-backref" href="#id3">ヘルパーのロード</a><a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>このヘルパーは次のコードを使ってロードします:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;load-&gt;helper(&#39;html&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">helper</span><span class="p">(</span><span class="s1">&#39;html&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -463,7 +464,7 @@
 </table>
 <p>HTML 見出しタグを生成できます。第1引数にデータを、
 第2引数には見出しレベルを指定します。例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>echo heading(&#39;Welcome!&#39;, 3);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nx">heading</span><span class="p">(</span><span class="s1">&#39;Welcome!&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>上記は次のように生成されます: &lt;h3&gt;Welcome!&lt;/h3&gt;</p>
@@ -504,32 +505,32 @@ echo heading(&#8216;How are you?&#8217;, 4, array(&#8216;id&#8217; =&gt; &#8216;
 </table>
 <p>&lt;img /&gt; タグを生成できます。第1引数には
 画像のソースを指定します。 例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>echo img(&#39;images/picture.jpg&#39;); // 結果 &lt;img src=&quot;http://site.com/images/picture.jpg&quot; /&gt;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nx">img</span><span class="p">(</span><span class="s1">&#39;images/picture.jpg&#39;</span><span class="p">);</span> <span class="c1">// 結果 &lt;img src=&quot;http://site.com/images/picture.jpg&quot; /&gt;</span>
 </pre></div>
 </div>
 <p><em>src</em> が <code class="docutils literal"><span class="pre">$config['index_page']</span></code>  に指定されたページを
 アドレスに追加するかどうかという、TRUE/FALSE で指定する
 オプションの第2引数があります。
 おそらく、メディアコントローラを使用していた場合は、次のようになります:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>echo img(&#39;images/picture.jpg&#39;, TRUE); // 結果 &lt;img src=&quot;http://site.com/index.php/images/picture.jpg&quot; alt=&quot;&quot; /&gt;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nx">img</span><span class="p">(</span><span class="s1">&#39;images/picture.jpg&#39;</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span> <span class="c1">// 結果 &lt;img src=&quot;http://site.com/index.php/images/picture.jpg&quot; alt=&quot;&quot; /&gt;</span>
 </pre></div>
 </div>
 <p>また、すべての属性と値を完全に制御するために
 連想配列を <code class="docutils literal"><span class="pre">img()</span></code> 関数に渡すことができます。もし、<em>alt</em> 属性が
 与えられない場合、 CodeIgniter は空の文字列を出力します。</p>
 <p>例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$image_properties = array(
-        &#39;src&#39;   =&gt; &#39;images/picture.jpg&#39;,
-        &#39;alt&#39;   =&gt; &#39;Me, demonstrating how to eat 4 slices of pizza at one time&#39;,
-        &#39;class&#39; =&gt; &#39;post_images&#39;,
-        &#39;width&#39; =&gt; &#39;200&#39;,
-        &#39;height&#39;=&gt; &#39;200&#39;,
-        &#39;title&#39; =&gt; &#39;That was quite a night&#39;,
-        &#39;rel&#39;   =&gt; &#39;lightbox&#39;
-);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$image_properties</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;src&#39;</span>   <span class="o">=&gt;</span> <span class="s1">&#39;images/picture.jpg&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;alt&#39;</span>   <span class="o">=&gt;</span> <span class="s1">&#39;Me, demonstrating how to eat 4 slices of pizza at one time&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;class&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;post_images&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;width&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;200&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;height&#39;</span><span class="o">=&gt;</span> <span class="s1">&#39;200&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;title&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;That was quite a night&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;rel&#39;</span>   <span class="o">=&gt;</span> <span class="s1">&#39;lightbox&#39;</span>
+<span class="p">);</span>
 
-img($image_properties);
-// &lt;img src=&quot;http://site.com/index.php/images/picture.jpg&quot; alt=&quot;Me, demonstrating how to eat 4 slices of pizza at one time&quot; class=&quot;post_images&quot; width=&quot;200&quot; height=&quot;200&quot; title=&quot;That was quite a night&quot; rel=&quot;lightbox&quot; /&gt;
+<span class="nx">img</span><span class="p">(</span><span class="nv">$image_properties</span><span class="p">);</span>
+<span class="c1">// &lt;img src=&quot;http://site.com/index.php/images/picture.jpg&quot; alt=&quot;Me, demonstrating how to eat 4 slices of pizza at one time&quot; class=&quot;post_images&quot; width=&quot;200&quot; height=&quot;200&quot; title=&quot;That was quite a night&quot; rel=&quot;lightbox&quot; /&gt;</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -565,29 +566,29 @@ img($image_properties);
 <p><em>index_page</em> は、 <em>href</em> が <code class="docutils literal"><span class="pre">$config['index_page']</span></code>
 に指定されたページをアドレスに追加するかどうかという真偽値です。</p>
 <p>例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>echo link_tag(&#39;css/mystyles.css&#39;);
-// 結果 &lt;link href=&quot;http://site.com/css/mystyles.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nx">link_tag</span><span class="p">(</span><span class="s1">&#39;css/mystyles.css&#39;</span><span class="p">);</span>
+<span class="c1">// 結果 &lt;link href=&quot;http://site.com/css/mystyles.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;</span>
 </pre></div>
 </div>
 <p>その他の例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>echo link_tag(&#39;favicon.ico&#39;, &#39;shortcut icon&#39;, &#39;image/ico&#39;);
-// &lt;link href=&quot;http://site.com/favicon.ico&quot; rel=&quot;shortcut icon&quot; type=&quot;image/ico&quot; /&gt;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nx">link_tag</span><span class="p">(</span><span class="s1">&#39;favicon.ico&#39;</span><span class="p">,</span> <span class="s1">&#39;shortcut icon&#39;</span><span class="p">,</span> <span class="s1">&#39;image/ico&#39;</span><span class="p">);</span>
+<span class="c1">// &lt;link href=&quot;http://site.com/favicon.ico&quot; rel=&quot;shortcut icon&quot; type=&quot;image/ico&quot; /&gt;</span>
 
-echo link_tag(&#39;feed&#39;, &#39;alternate&#39;, &#39;application/rss+xml&#39;, &#39;My RSS Feed&#39;);
-// &lt;link href=&quot;http://site.com/feed&quot; rel=&quot;alternate&quot; type=&quot;application/rss+xml&quot; title=&quot;My RSS Feed&quot; /&gt;
+<span class="k">echo</span> <span class="nx">link_tag</span><span class="p">(</span><span class="s1">&#39;feed&#39;</span><span class="p">,</span> <span class="s1">&#39;alternate&#39;</span><span class="p">,</span> <span class="s1">&#39;application/rss+xml&#39;</span><span class="p">,</span> <span class="s1">&#39;My RSS Feed&#39;</span><span class="p">);</span>
+<span class="c1">// &lt;link href=&quot;http://site.com/feed&quot; rel=&quot;alternate&quot; type=&quot;application/rss+xml&quot; title=&quot;My RSS Feed&quot; /&gt;</span>
 </pre></div>
 </div>
 <p>また、すべての属性と値を完全に制御するために
 連想配列を <code class="docutils literal"><span class="pre">link()</span></code> 関数に渡すことができます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$link = array(
-        &#39;href&#39;  =&gt; &#39;css/printer.css&#39;,
-        &#39;rel&#39;   =&gt; &#39;stylesheet&#39;,
-        &#39;type&#39;  =&gt; &#39;text/css&#39;,
-        &#39;media&#39; =&gt; &#39;print&#39;
-);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$link</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;href&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;css/printer.css&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;rel&#39;</span>   <span class="o">=&gt;</span> <span class="s1">&#39;stylesheet&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;type&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;text/css&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;media&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;print&#39;</span>
+<span class="p">);</span>
 
-echo link_tag($link);
-// &lt;link href=&quot;http://site.com/css/printer.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; media=&quot;print&quot; /&gt;
+<span class="k">echo</span> <span class="nx">link_tag</span><span class="p">(</span><span class="nv">$link</span><span class="p">);</span>
+<span class="c1">// &lt;link href=&quot;http://site.com/css/printer.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; media=&quot;print&quot; /&gt;</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -615,19 +616,19 @@ echo link_tag($link);
 </table>
 <p>順番なし HTML リストを単純な配列または
 多次元配列から生成できます。例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$list = array(
-        &#39;red&#39;,
-        &#39;blue&#39;,
-        &#39;green&#39;,
-        &#39;yellow&#39;
-);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$list</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;red&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;blue&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;green&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;yellow&#39;</span>
+<span class="p">);</span>
 
-$attributes = array(
-        &#39;class&#39; =&gt; &#39;boldlist&#39;,
-        &#39;id&#39;    =&gt; &#39;mylist&#39;
-);
+<span class="nv">$attributes</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;class&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;boldlist&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;id&#39;</span>    <span class="o">=&gt;</span> <span class="s1">&#39;mylist&#39;</span>
+<span class="p">);</span>
 
-echo ul($list, $attributes);
+<span class="k">echo</span> <span class="nx">ul</span><span class="p">(</span><span class="nv">$list</span><span class="p">,</span> <span class="nv">$attributes</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>上記のコードは以下を生成します:</p>
@@ -640,42 +641,42 @@ echo ul($list, $attributes);
 </pre></div>
 </div>
 <p>多次元配列を使ったもう少し複雑な例です:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$attributes = array(
-        &#39;class&#39; =&gt; &#39;boldlist&#39;,
-        &#39;id&#39;    =&gt; &#39;mylist&#39;
-);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$attributes</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;class&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;boldlist&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;id&#39;</span>    <span class="o">=&gt;</span> <span class="s1">&#39;mylist&#39;</span>
+<span class="p">);</span>
 
-$list = array(
-        &#39;colors&#39;  =&gt; array(
-                &#39;red&#39;,
-                &#39;blue&#39;,
-                &#39;green&#39;
-        ),
-        &#39;shapes&#39;  =&gt; array(
-                &#39;round&#39;,
-                &#39;square&#39;,
-                &#39;circles&#39; =&gt; array(
-                        &#39;ellipse&#39;,
-                        &#39;oval&#39;,
-                        &#39;sphere&#39;
-                )
-        ),
-        &#39;moods&#39;  =&gt; array(
-                &#39;happy&#39;,
-                &#39;upset&#39; =&gt; array(
-                        &#39;defeated&#39; =&gt; array(
-                                &#39;dejected&#39;,
-                                &#39;disheartened&#39;,
-                                &#39;depressed&#39;
-                        ),
-                        &#39;annoyed&#39;,
-                        &#39;cross&#39;,
-                        &#39;angry&#39;
-                )
-        )
-);
+<span class="nv">$list</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;colors&#39;</span>  <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+                <span class="s1">&#39;red&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;blue&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;green&#39;</span>
+        <span class="p">),</span>
+        <span class="s1">&#39;shapes&#39;</span>  <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+                <span class="s1">&#39;round&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;square&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;circles&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+                        <span class="s1">&#39;ellipse&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;oval&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;sphere&#39;</span>
+                <span class="p">)</span>
+        <span class="p">),</span>
+        <span class="s1">&#39;moods&#39;</span>  <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+                <span class="s1">&#39;happy&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;upset&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+                        <span class="s1">&#39;defeated&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+                                <span class="s1">&#39;dejected&#39;</span><span class="p">,</span>
+                                <span class="s1">&#39;disheartened&#39;</span><span class="p">,</span>
+                                <span class="s1">&#39;depressed&#39;</span>
+                        <span class="p">),</span>
+                        <span class="s1">&#39;annoyed&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;cross&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;angry&#39;</span>
+                <span class="p">)</span>
+        <span class="p">)</span>
+<span class="p">);</span>
 
-echo ul($list, $attributes);
+<span class="k">echo</span> <span class="nx">ul</span><span class="p">(</span><span class="nv">$list</span><span class="p">,</span> <span class="nv">$attributes</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>上記のコードは以下を生成します:</p>
@@ -775,52 +776,52 @@ echo ul($list, $attributes);
 <p>メタタグの生成を手伝います。この関数には、文字列、または
 単純な配列、または多次元配列を渡す事が出来ます。</p>
 <p>例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>echo meta(&#39;description&#39;, &#39;My Great site&#39;);
-// 生成するメタタグ:  &lt;meta name=&quot;description&quot; content=&quot;My Great Site&quot; /&gt;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nx">meta</span><span class="p">(</span><span class="s1">&#39;description&#39;</span><span class="p">,</span> <span class="s1">&#39;My Great site&#39;</span><span class="p">);</span>
+<span class="c1">// 生成するメタタグ:  &lt;meta name=&quot;description&quot; content=&quot;My Great Site&quot; /&gt;</span>
 
-echo meta(&#39;Content-type&#39;, &#39;text/html; charset=utf-8&#39;, &#39;equiv&#39;);
-// Note the third parameter.  Can be &quot;charset&quot;, &quot;http-equiv&quot;, &quot;name&quot; or &quot;property&quot;
-// 生成するメタタグ:  &lt;meta http-equiv=&quot;Content-type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;
+<span class="k">echo</span> <span class="nx">meta</span><span class="p">(</span><span class="s1">&#39;Content-type&#39;</span><span class="p">,</span> <span class="s1">&#39;text/html; charset=utf-8&#39;</span><span class="p">,</span> <span class="s1">&#39;equiv&#39;</span><span class="p">);</span>
+<span class="c1">// Note the third parameter.  Can be &quot;charset&quot;, &quot;http-equiv&quot;, &quot;name&quot; or &quot;property&quot;</span>
+<span class="c1">// 生成するメタタグ:  &lt;meta http-equiv=&quot;Content-type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;</span>
 
-echo meta(array(&#39;name&#39; =&gt; &#39;robots&#39;, &#39;content&#39; =&gt; &#39;no-cache&#39;));
-// 生成するメタタグ:  &lt;meta name=&quot;robots&quot; content=&quot;no-cache&quot; /&gt;
+<span class="k">echo</span> <span class="nx">meta</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;robots&#39;</span><span class="p">,</span> <span class="s1">&#39;content&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;no-cache&#39;</span><span class="p">));</span>
+<span class="c1">// 生成するメタタグ:  &lt;meta name=&quot;robots&quot; content=&quot;no-cache&quot; /&gt;</span>
 
-$meta = array(
-        array(
-                &#39;name&#39; =&gt; &#39;robots&#39;,
-                &#39;content&#39; =&gt; &#39;no-cache&#39;
-        ),
-        array(
-                &#39;name&#39; =&gt; &#39;description&#39;,
-                &#39;content&#39; =&gt; &#39;My Great Site&#39;
-        ),
-        array(
-                &#39;name&#39; =&gt; &#39;keywords&#39;,
-                &#39;content&#39; =&gt; &#39;love, passion, intrigue, deception&#39;
-        ),
-        array(
-                &#39;name&#39; =&gt; &#39;robots&#39;,
-                &#39;content&#39; =&gt; &#39;no-cache&#39;
-        ),
-        array(
-                &#39;name&#39; =&gt; &#39;Content-Type&#39;,
-                &#39;type&#39; =&gt; &#39;http-equiv&#39;,
-                &#39;content&#39; =&gt; &#39;text/html; charset=utf-8&#39;
-        ),
-        array(
-                &#39;name&#39; =&gt; &#39;UTF-8&#39;,
-                &#39;type&#39; =&gt; &#39;charset&#39;
-        )
-);
+<span class="nv">$meta</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="k">array</span><span class="p">(</span>
+                <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;robots&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;content&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;no-cache&#39;</span>
+        <span class="p">),</span>
+        <span class="k">array</span><span class="p">(</span>
+                <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;description&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;content&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;My Great Site&#39;</span>
+        <span class="p">),</span>
+        <span class="k">array</span><span class="p">(</span>
+                <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;keywords&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;content&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;love, passion, intrigue, deception&#39;</span>
+        <span class="p">),</span>
+        <span class="k">array</span><span class="p">(</span>
+                <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;robots&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;content&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;no-cache&#39;</span>
+        <span class="p">),</span>
+        <span class="k">array</span><span class="p">(</span>
+                <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Content-Type&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;type&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;http-equiv&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;content&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;text/html; charset=utf-8&#39;</span>
+        <span class="p">),</span>
+        <span class="k">array</span><span class="p">(</span>
+                <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;UTF-8&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;type&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;charset&#39;</span>
+        <span class="p">)</span>
+<span class="p">);</span>
 
-echo meta($meta);
-// 生成するメタタグ:
-// &lt;meta name=&quot;robots&quot; content=&quot;no-cache&quot; /&gt;
-// &lt;meta name=&quot;description&quot; content=&quot;My Great Site&quot; /&gt;
-// &lt;meta name=&quot;keywords&quot; content=&quot;love, passion, intrigue, deception&quot; /&gt;
-// &lt;meta name=&quot;robots&quot; content=&quot;no-cache&quot; /&gt;
-// &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;
-// &lt;meta charset=&quot;UTF-8&quot; /&gt;
+<span class="k">echo</span> <span class="nx">meta</span><span class="p">(</span><span class="nv">$meta</span><span class="p">);</span>
+<span class="c1">// 生成するメタタグ:</span>
+<span class="c1">// &lt;meta name=&quot;robots&quot; content=&quot;no-cache&quot; /&gt;</span>
+<span class="c1">// &lt;meta name=&quot;description&quot; content=&quot;My Great Site&quot; /&gt;</span>
+<span class="c1">// &lt;meta name=&quot;keywords&quot; content=&quot;love, passion, intrigue, deception&quot; /&gt;</span>
+<span class="c1">// &lt;meta name=&quot;robots&quot; content=&quot;no-cache&quot; /&gt;</span>
+<span class="c1">// &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;</span>
+<span class="c1">// &lt;meta charset=&quot;UTF-8&quot; /&gt;</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -848,9 +849,9 @@ echo meta($meta);
 <p>DOCTYPE 宣言、または DTD 生成を手伝います。HTML 5 が
 デフォルトで使用されますが、多くの DOCTYPE が利用可能です。</p>
 <p>例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>echo doctype(); // &lt;!DOCTYPE html&gt;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nx">doctype</span><span class="p">();</span> <span class="c1">// &lt;!DOCTYPE html&gt;</span>
 
-echo doctype(&#39;html4-trans&#39;); // &lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01//EN&quot; &quot;http://www.w3.org/TR/html4/strict.dtd&quot;&gt;
+<span class="k">echo</span> <span class="nx">doctype</span><span class="p">(</span><span class="s1">&#39;html4-trans&#39;</span><span class="p">);</span> <span class="c1">// &lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01//EN&quot; &quot;http://www.w3.org/TR/html4/strict.dtd&quot;&gt;</span>
 </pre></div>
 </div>
 <p>以下は、DOCTYPE 選択肢の一覧です。これらは、
@@ -970,7 +971,7 @@ application/config/doctypes.php で指定可能です。</p>
 </table>
 <p>改行タグ（&lt;br /&gt;）を指定した回数だけ生成します。
 例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>echo br(3);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nx">br</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>上記は次のように生成されます:</p>
@@ -1006,7 +1007,7 @@ PHP標準の <code class="docutils literal"><span class="pre">str_repeat()</span
 </table>
 <p>改行なしスペース（&amp;nbsp;）を指定した数だけ生成します。
 例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>echo nbs(3);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nx">nbs</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>上記は次のように生成されます:</p>
@@ -1042,7 +1043,7 @@ PHP標準の <code class="docutils literal"><span class="pre">str_repeat()</span
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 9月 06, 2016
+      最終更新: 9月 04, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

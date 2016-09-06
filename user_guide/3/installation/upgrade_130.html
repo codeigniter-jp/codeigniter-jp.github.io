@@ -417,6 +417,7 @@
       <img title="Classic Layout" alt="classic layout" src="data:image/gif;base64,R0lGODlhFAAUAJEAAAAAADMzM////wAAACH5BAUUAAIALAAAAAAUABQAAAImlI+py+0PU5gRBRDM3DxbWoXis42X13USOLauUIqnlsaH/eY6UwAAOw==" />
     </div>
   </ul>
+<div style="float:right;margin-left:5px;">[ <a href="https://github.com/codeigniter-jp/ci-ja/blob/develop/user_guide_ja_src/source/installation/upgrade_130.rst">旧版翻訳途中</a> | <a href="https://github.com/bcit-ci/CodeIgniter/commits/develop/user_guide_src/source/installation/upgrade_130.rst">原文履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/commits/develop_japanese/source/installation/upgrade_130.rst">翻訳履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/source/installation/upgrade_130.rst">GitHubで修正</a> ]</div><br /><div style="float:right;margin-left:5px;">[ <b class="highlighted">翻訳者募集中</b> → <a href="https://docs.google.com/spreadsheets/d/1ZWD5XqwH-Uo9X7MR644jbL6O8p5LxIngLT8M547H8wc/edit?pref=2&pli=1#gid=0">翻訳状況</a> ]</div>
   <hr/>
 </div>
           <div role="main" class="document">
@@ -473,69 +474,69 @@
 <h2>Step 3: index.php ファイルのアップデート<a class="headerlink" href="#step-3-index-php" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>index.php ファイル(アプリケーションのルートディレクトリにあります)を開いてください。
 そのファイルの最下部にある、以下の箇所を変更します:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>require_once BASEPATH.&#39;libraries/Front_controller&#39;.EXT;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">require_once</span> <span class="nx">BASEPATH</span><span class="o">.</span><span class="s1">&#39;libraries/Front_controller&#39;</span><span class="o">.</span><span class="nx">EXT</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>このように変更してください:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>require_once BASEPATH.&#39;codeigniter/CodeIgniter&#39;.EXT;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">require_once</span> <span class="nx">BASEPATH</span><span class="o">.</span><span class="s1">&#39;codeigniter/CodeIgniter&#39;</span><span class="o">.</span><span class="nx">EXT</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="step-4-config-php">
 <h2>Step 4: config.php ファイルのアップデート<a class="headerlink" href="#step-4-config-php" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>application/config/config.php ファイルを開いて、以下の要素を追加してください:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>/*
-|------------------------------------------------
-| URL suffix
-|------------------------------------------------
-|
-| This option allows you to add a suffix to all URLs.
-| For example, if a URL is this:
-|
-| example.com/index.php/products/view/shoes
-|
-| You can optionally add a suffix, like &quot;.html&quot;,
-| making the page appear to be of a certain type:
-|
-| example.com/index.php/products/view/shoes.html
-|
-*/
-$config[&#39;url_suffix&#39;] = &quot;&quot;;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">|------------------------------------------------</span>
+<span class="cm">| URL suffix</span>
+<span class="cm">|------------------------------------------------</span>
+<span class="cm">|</span>
+<span class="cm">| This option allows you to add a suffix to all URLs.</span>
+<span class="cm">| For example, if a URL is this:</span>
+<span class="cm">|</span>
+<span class="cm">| example.com/index.php/products/view/shoes</span>
+<span class="cm">|</span>
+<span class="cm">| You can optionally add a suffix, like &quot;.html&quot;,</span>
+<span class="cm">| making the page appear to be of a certain type:</span>
+<span class="cm">|</span>
+<span class="cm">| example.com/index.php/products/view/shoes.html</span>
+<span class="cm">|</span>
+<span class="cm">*/</span>
+<span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;url_suffix&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
 
 
-/*
-|------------------------------------------------
-| Enable Query Strings
-|------------------------------------------------
-|
-| By default CodeIgniter uses search-engine and
-| human-friendly segment based URLs:
-|
-| example.com/who/what/where/
-|
-| You can optionally enable standard query string
-| based URLs:
-|
-| example.com?who=me&amp;what=something&amp;where=here
-|
-| Options are: TRUE or FALSE (boolean)
-|
-| The two other items let you set the query string &quot;words&quot;
-| that will invoke your controllers and functions:
-| example.com/index.php?c=controller&amp;m=function
-|
-*/
-$config[&#39;enable_query_strings&#39;] = FALSE;
-$config[&#39;controller_trigger&#39;] = &#39;c&#39;;
-$config[&#39;function_trigger&#39;] = &#39;m&#39;;
+<span class="cm">/*</span>
+<span class="cm">|------------------------------------------------</span>
+<span class="cm">| Enable Query Strings</span>
+<span class="cm">|------------------------------------------------</span>
+<span class="cm">|</span>
+<span class="cm">| By default CodeIgniter uses search-engine and</span>
+<span class="cm">| human-friendly segment based URLs:</span>
+<span class="cm">|</span>
+<span class="cm">| example.com/who/what/where/</span>
+<span class="cm">|</span>
+<span class="cm">| You can optionally enable standard query string</span>
+<span class="cm">| based URLs:</span>
+<span class="cm">|</span>
+<span class="cm">| example.com?who=me&amp;what=something&amp;where=here</span>
+<span class="cm">|</span>
+<span class="cm">| Options are: TRUE or FALSE (boolean)</span>
+<span class="cm">|</span>
+<span class="cm">| The two other items let you set the query string &quot;words&quot;</span>
+<span class="cm">| that will invoke your controllers and functions:</span>
+<span class="cm">| example.com/index.php?c=controller&amp;m=function</span>
+<span class="cm">|</span>
+<span class="cm">*/</span>
+<span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;enable_query_strings&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">FALSE</span><span class="p">;</span>
+<span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;controller_trigger&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;c&#39;</span><span class="p">;</span>
+<span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;function_trigger&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;m&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="step-5-database-php">
 <h2>Step 5: database.php ファイルのアップデート<a class="headerlink" href="#step-5-database-php" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>application/config/database.php ファイルを開いて、以下の要素を追加してください:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$db[&#39;default&#39;][&#39;dbprefix&#39;] = &quot;&quot;;
-$db[&#39;default&#39;][&#39;active_r&#39;] = TRUE;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$db</span><span class="p">[</span><span class="s1">&#39;default&#39;</span><span class="p">][</span><span class="s1">&#39;dbprefix&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+<span class="nv">$db</span><span class="p">[</span><span class="s1">&#39;default&#39;</span><span class="p">][</span><span class="s1">&#39;active_r&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">TRUE</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -565,7 +566,7 @@ $db[&#39;default&#39;][&#39;active_r&#39;] = TRUE;
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 9月 06, 2016
+      最終更新: 9月 04, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

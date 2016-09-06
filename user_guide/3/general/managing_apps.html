@@ -415,6 +415,7 @@
       <img title="Classic Layout" alt="classic layout" src="data:image/gif;base64,R0lGODlhFAAUAJEAAAAAADMzM////wAAACH5BAUUAAIALAAAAAAUABQAAAImlI+py+0PU5gRBRDM3DxbWoXis42X13USOLauUIqnlsaH/eY6UwAAOw==" />
     </div>
   </ul>
+<div style="float:right;margin-left:5px;">[ <a href="https://github.com/codeigniter-jp/ci-ja/blob/develop/user_guide_ja_src/source/general/managing_apps.rst">旧版翻訳途中</a> | <a href="https://github.com/bcit-ci/CodeIgniter/commits/develop/user_guide_src/source/general/managing_apps.rst">原文履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/commits/develop_japanese/source/general/managing_apps.rst">翻訳履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/source/general/managing_apps.rst">GitHubで修正</a> ]</div><br /><div style="float:right;margin-left:5px;">[ <b class="highlighted">翻訳者募集中</b> → <a href="https://docs.google.com/spreadsheets/d/1ZWD5XqwH-Uo9X7MR644jbL6O8p5LxIngLT8M547H8wc/edit?pref=2&pli=1#gid=0">翻訳状況</a> ]</div>
   <hr/>
 </div>
           <div role="main" class="document">
@@ -431,7 +432,7 @@
 <p>アプリケーションディレクトリの名前を変更したい場合、実際に変更をして、
 メインの index.php ファイルを開いて
 <code class="docutils literal"><span class="pre">$application_folder</span></code> 変数にその名前を設定します:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$application_folder = &#39;application&#39;;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$application_folder</span> <span class="o">=</span> <span class="s1">&#39;application&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -441,7 +442,7 @@
 ドキュメントルートから外すことが可能です。
 これを行うため、メインの index.php を開き、 <em>サーバのフルパス</em> を
 <code class="docutils literal"><span class="pre">$application_folder</span></code> 変数に設定します:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$application_folder = &#39;/path/to/your/application&#39;;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$application_folder</span> <span class="o">=</span> <span class="s1">&#39;/path/to/your/application&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -452,24 +453,24 @@
 それそのものをサブディレクトリとしてすべて並べます。</p>
 <p>たとえば、「 foo 」と
 「 bar 」という名前の 2 つのアプリケーションを作成するとしましょう。つぎのようにアプリケーションのディレクトリを構築できます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>applications/foo/
-applications/foo/config/
-applications/foo/controllers/
-applications/foo/libraries/
-applications/foo/models/
-applications/foo/views/
-applications/bar/
-applications/bar/config/
-applications/bar/controllers/
-applications/bar/libraries/
-applications/bar/models/
-applications/bar/views/
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">applications</span><span class="o">/</span><span class="nx">foo</span><span class="o">/</span>
+<span class="nx">applications</span><span class="o">/</span><span class="nx">foo</span><span class="o">/</span><span class="nx">config</span><span class="o">/</span>
+<span class="nx">applications</span><span class="o">/</span><span class="nx">foo</span><span class="o">/</span><span class="nx">controllers</span><span class="o">/</span>
+<span class="nx">applications</span><span class="o">/</span><span class="nx">foo</span><span class="o">/</span><span class="nx">libraries</span><span class="o">/</span>
+<span class="nx">applications</span><span class="o">/</span><span class="nx">foo</span><span class="o">/</span><span class="nx">models</span><span class="o">/</span>
+<span class="nx">applications</span><span class="o">/</span><span class="nx">foo</span><span class="o">/</span><span class="nx">views</span><span class="o">/</span>
+<span class="nx">applications</span><span class="o">/</span><span class="nx">bar</span><span class="o">/</span>
+<span class="nx">applications</span><span class="o">/</span><span class="nx">bar</span><span class="o">/</span><span class="nx">config</span><span class="o">/</span>
+<span class="nx">applications</span><span class="o">/</span><span class="nx">bar</span><span class="o">/</span><span class="nx">controllers</span><span class="o">/</span>
+<span class="nx">applications</span><span class="o">/</span><span class="nx">bar</span><span class="o">/</span><span class="nx">libraries</span><span class="o">/</span>
+<span class="nx">applications</span><span class="o">/</span><span class="nx">bar</span><span class="o">/</span><span class="nx">models</span><span class="o">/</span>
+<span class="nx">applications</span><span class="o">/</span><span class="nx">bar</span><span class="o">/</span><span class="nx">views</span><span class="o">/</span>
 </pre></div>
 </div>
 <p>どのアプリケーションを使うかを選択するために、メインの
 index.php ファイルを開き <code class="docutils literal"><span class="pre">$application_folder</span></code> 変数を設定する必要があります。
 たとえば、「 foo 」というアプリケーションを使うためには:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$application_folder = &#39;applications/foo&#39;;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$application_folder</span> <span class="o">=</span> <span class="s1">&#39;applications/foo&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -500,7 +501,7 @@ index.php ファイルを開き <code class="docutils literal"><span class="pre"
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 9月 06, 2016
+      最終更新: 9月 04, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

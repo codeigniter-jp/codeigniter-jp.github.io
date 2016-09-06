@@ -415,6 +415,7 @@
       <img title="Classic Layout" alt="classic layout" src="data:image/gif;base64,R0lGODlhFAAUAJEAAAAAADMzM////wAAACH5BAUUAAIALAAAAAAUABQAAAImlI+py+0PU5gRBRDM3DxbWoXis42X13USOLauUIqnlsaH/eY6UwAAOw==" />
     </div>
   </ul>
+<div style="float:right;margin-left:5px;">[ <a href="https://github.com/codeigniter-jp/ci-ja/blob/develop/user_guide_ja_src/source/database/caching.rst">旧版翻訳途中</a> | <a href="https://github.com/bcit-ci/CodeIgniter/commits/develop/user_guide_src/source/database/caching.rst">原文履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/commits/develop_japanese/source/database/caching.rst">翻訳履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/source/database/caching.rst">GitHubで修正</a> ]</div><br /><div style="float:right;margin-left:5px;">[ <b class="highlighted">翻訳者募集中</b> → <a href="https://docs.google.com/spreadsheets/d/1ZWD5XqwH-Uo9X7MR644jbL6O8p5LxIngLT8M547H8wc/edit?pref=2&pli=1#gid=0">翻訳状況</a> ]</div>
   <hr/>
 </div>
           <div role="main" class="document">
@@ -531,17 +532,17 @@ URIの最初の2セグメントと同じ名前のサブフォルダ
 <h2>$this-&gt;db-&gt;cache_on() / $this-&gt;db-&gt;cache_off()<a class="headerlink" href="#this-db-cache-on-this-db-cache-off" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>手動でキャッシュ機能を有効化/無効化します。特定のクエリを
 キャッシュさせないようにするときに役立ちます。例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>// キャッシュ機能を ON
-$this-&gt;db-&gt;cache_on();
-$query = $this-&gt;db-&gt;query(&quot;SELECT * FROM mytable&quot;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// キャッシュ機能を ON</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">cache_on</span><span class="p">();</span>
+<span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM mytable&quot;</span><span class="p">);</span>
 
-// このクエリは、キャッシュ機能を OFF
-$this-&gt;db-&gt;cache_off();
-$query = $this-&gt;db-&gt;query(&quot;SELECT * FROM members WHERE member_id = &#39;$current_user&#39;&quot;);
+<span class="c1">// このクエリは、キャッシュ機能を OFF</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">cache_off</span><span class="p">();</span>
+<span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM members WHERE member_id = &#39;</span><span class="si">$current_user</span><span class="s2">&#39;&quot;</span><span class="p">);</span>
 
-// キャッシュ機能を ON に戻す
-$this-&gt;db-&gt;cache_on();
-$query = $this-&gt;db-&gt;query(&quot;SELECT * FROM another_table&quot;);
+<span class="c1">// キャッシュ機能を ON に戻す</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">cache_on</span><span class="p">();</span>
+<span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM another_table&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -554,7 +555,7 @@ $query = $this-&gt;db-&gt;query(&quot;SELECT * FROM another_table&quot;);
 キャッシュシステムは、その URI に関連するすべてのキャッシュファイルを blog+comments
 という名前のフォルダに保存します。それらの特定のキャッシュファイルを
 削除するには次のようなコードを使います:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;db-&gt;cache_delete(&#39;blog&#39;, &#39;comments&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">cache_delete</span><span class="p">(</span><span class="s1">&#39;blog&#39;</span><span class="p">,</span> <span class="s1">&#39;comments&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>パラメータを指定していないときは、現在の URI をもとにどのキャッシュ
@@ -563,7 +564,7 @@ $query = $this-&gt;db-&gt;query(&quot;SELECT * FROM another_table&quot;);
 <div class="section" id="this-db-cache-delete-all">
 <h2>$this-&gt;db-&gt;cache_delete_all()<a class="headerlink" href="#this-db-cache-delete-all" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>すべてのキャッシュファイルを削除します。例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;db-&gt;cache_delete_all();
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">cache_delete_all</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
@@ -588,7 +589,7 @@ $query = $this-&gt;db-&gt;query(&quot;SELECT * FROM another_table&quot;);
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 9月 06, 2016
+      最終更新: 9月 04, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

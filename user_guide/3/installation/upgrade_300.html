@@ -417,6 +417,7 @@
       <img title="Classic Layout" alt="classic layout" src="data:image/gif;base64,R0lGODlhFAAUAJEAAAAAADMzM////wAAACH5BAUUAAIALAAAAAAUABQAAAImlI+py+0PU5gRBRDM3DxbWoXis42X13USOLauUIqnlsaH/eY6UwAAOw==" />
     </div>
   </ul>
+<div style="float:right;margin-left:5px;">[ <a href="https://github.com/codeigniter-jp/ci-ja/blob/develop/user_guide_ja_src/source/installation/upgrade_300.rst">旧版翻訳途中</a> | <a href="https://github.com/bcit-ci/CodeIgniter/commits/develop/user_guide_src/source/installation/upgrade_300.rst">原文履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/commits/develop_japanese/source/installation/upgrade_300.rst">翻訳履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/source/installation/upgrade_300.rst">GitHubで修正</a> ]</div><br /><div style="float:right;margin-left:5px;">[ <b class="highlighted">翻訳者募集中</b> → <a href="https://docs.google.com/spreadsheets/d/1ZWD5XqwH-Uo9X7MR644jbL6O8p5LxIngLT8M547H8wc/edit?pref=2&pli=1#gid=0">翻訳状況</a> ]</div>
   <hr/>
 </div>
           <div role="main" class="document">
@@ -572,11 +573,11 @@ application/libraries/MY_Log.php -&gt; application/core/MY_Log.php</div></blockq
 一度に複数のキーを削除することができました。
 しかし、この方法は無意味なので、
 今後はキー <em>だけ</em> を配列の要素として渡さなければなりません。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>// 以前
-$this-&gt;session-&gt;unset_userdata(array(&#39;item&#39; =&gt; &#39;&#39;, &#39;item2&#39; =&gt; &#39;&#39;));
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// 以前</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">unset_userdata</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;item&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;item2&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">));</span>
 
-// 今後
-$this-&gt;session-&gt;unset_userdata(array(&#39;item&#39;, &#39;item2&#39;));
+<span class="c1">// 今後</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">unset_userdata</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;item&#39;</span><span class="p">,</span> <span class="s1">&#39;item2&#39;</span><span class="p">));</span>
 </pre></div>
 </div>
 </li>
@@ -591,9 +592,9 @@ $this-&gt;session-&gt;unset_userdata(array(&#39;item&#39;, &#39;item2&#39;));
 <p>3.0.0 で Active Record から Query Builder に名前が変更されたので、
 <strong>config/database.php</strong> の <code class="docutils literal"><span class="pre">$active_record</span></code> 変数も
 <code class="docutils literal"><span class="pre">$query_builder</span></code> に変更する必要があります:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$active_group = &#39;default&#39;;
-// $active_record = TRUE;
-$query_builder = TRUE;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$active_group</span> <span class="o">=</span> <span class="s1">&#39;default&#39;</span><span class="p">;</span>
+<span class="c1">// $active_record = TRUE;</span>
+<span class="nv">$query_builder</span> <span class="o">=</span> <span class="k">TRUE</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -622,8 +623,8 @@ $query_builder = TRUE;
 <p>一方でこのバグを活用していた開発者もたくさんいることでしょう。
 もしあなたがその一人で、引き続きスラッシュにマッチさせたいなら、
 正規表現 <strong>.+</strong> を使ってください:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>(.+)    // 全ての文字にマッチする
-(:any)  // &#39;/&#39; 以外、全ての文字にマッチする
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">.+</span><span class="p">)</span>    <span class="c1">// 全ての文字にマッチする</span>
+<span class="p">(</span><span class="o">:</span><span class="nx">any</span><span class="p">)</span>  <span class="c1">// &#39;/&#39; 以外、全ての文字にマッチする</span>
 </pre></div>
 </div>
 </div>
@@ -640,7 +641,7 @@ $query_builder = TRUE;
 <p>バージョン 3 における他の言及すべき変更は、&#8217;default_controller&#8217; と
 &#8216;404_override&#8217; が <em>ディレクトリ毎に</em> 適用されることです。説明のために、
 以下の例を用います:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$route[&#39;default_controller&#39;] = &#39;main&#39;;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;default_controller&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;main&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>あなたの Web サイトが <em>example.com</em> にあるとすると、ユーザが
@@ -775,11 +776,11 @@ CodeIgniter 3.0 で削除されました。</p>
 CodeIgniter 3.0 では、IF EXISTS 条件はデフォルトでは追加されず、
 オプションの第 2 引数が追加され、デフォルトは FALSE です。</p>
 <p>もし、アプリケーションが IF EXISTS を使っているなら、使い方を変更する必要があります。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>// 今は DROP TABLE `table_name` だけを生成します
-$this-&gt;dbforge-&gt;drop_table(&#39;table_name&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// 今は DROP TABLE `table_name` だけを生成します</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">dbforge</span><span class="o">-&gt;</span><span class="na">drop_table</span><span class="p">(</span><span class="s1">&#39;table_name&#39;</span><span class="p">);</span>
 
-// DROP TABLE IF EXISTS `table_name` を生成します
-$this-&gt;dbforge-&gt;drop_table(&#39;table_name&#39;, TRUE);
+<span class="c1">// DROP TABLE IF EXISTS `table_name` を生成します</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">dbforge</span><span class="o">-&gt;</span><span class="na">drop_table</span><span class="p">(</span><span class="s1">&#39;table_name&#39;</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -794,10 +795,10 @@ $this-&gt;dbforge-&gt;drop_table(&#39;table_name&#39;, TRUE);
 自動的に設定されたパラメータをクリアします。
 この振る舞いを上書きしたい場合は、<code class="docutils literal"><span class="pre">send()</span></code> メソッドの第 1 引数に FALSE
 を渡します:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>if ($this-&gt;email-&gt;send(FALSE))
-{
-        // パラメータはクリアされません
-}
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">email</span><span class="o">-&gt;</span><span class="na">send</span><span class="p">(</span><span class="k">FALSE</span><span class="p">))</span>
+<span class="p">{</span>
+        <span class="c1">// パラメータはクリアされません</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -810,21 +811,21 @@ $this-&gt;dbforge-&gt;drop_table(&#39;table_name&#39;, TRUE);
 <div><ul>
 <li><p class="first"><a class="reference internal" href="../libraries/language.html"><span class="doc">Language ライブラリ</span></a> の行のキーは、衝突を
 避けるために、接頭辞 <strong>form_validation_</strong> を付けなければなりません:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>// 以前
-$lang[&#39;rule&#39;] = ...
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// 以前</span>
+<span class="nv">$lang</span><span class="p">[</span><span class="s1">&#39;rule&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="o">...</span>
 
-// 今後
-$lang[&#39;form_validation_rule&#39;] = ...
+<span class="c1">// 今後</span>
+<span class="nv">$lang</span><span class="p">[</span><span class="s1">&#39;form_validation_rule&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="o">...</span>
 </pre></div>
 </div>
 </li>
 <li><p class="first">エラーメッセージのフォーマットが名前付きパラメータを使うように変更されました。
 <cite>sprintf()</cite> よりも柔軟にするためです:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>// 以前
-&#39;The %s field does not match the %s field.&#39;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// 以前</span>
+<span class="s1">&#39;The %s field does not match the %s field.&#39;</span>
 
-// 今後
-&#39;The {field} field does not match the {param} field.&#39;
+<span class="c1">// 今後</span>
+<span class="s1">&#39;The {field} field does not match the {param} field.&#39;</span>
 </pre></div>
 </div>
 </li>
@@ -852,26 +853,26 @@ $lang[&#39;form_validation_rule&#39;] = ...
 をリクエストに応じて動的に使っている場合、
 <em>application/config/config.php</em> は PHP スクリプトであることを思い出してください。
 例えば、次のような数行のコードでロジックを記述できます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$allowed_domains = array(&#39;domain1.tld&#39;, &#39;domain2.tld&#39;);
-$default_domain  = &#39;domain1.tld&#39;;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$allowed_domains</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;domain1.tld&#39;</span><span class="p">,</span> <span class="s1">&#39;domain2.tld&#39;</span><span class="p">);</span>
+<span class="nv">$default_domain</span>  <span class="o">=</span> <span class="s1">&#39;domain1.tld&#39;</span><span class="p">;</span>
 
-if (in_array($_SERVER[&#39;HTTP_HOST&#39;], $allowed_domains, TRUE))
-{
-        $domain = $_SERVER[&#39;HTTP_HOST&#39;];
-}
-else
-{
-        $domain = $default_domain;
-}
+<span class="k">if</span> <span class="p">(</span><span class="nb">in_array</span><span class="p">(</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">&#39;HTTP_HOST&#39;</span><span class="p">],</span> <span class="nv">$allowed_domains</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">))</span>
+<span class="p">{</span>
+        <span class="nv">$domain</span> <span class="o">=</span> <span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">&#39;HTTP_HOST&#39;</span><span class="p">];</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+        <span class="nv">$domain</span> <span class="o">=</span> <span class="nv">$default_domain</span><span class="p">;</span>
+<span class="p">}</span>
 
-if ( ! empty($_SERVER[&#39;HTTPS&#39;]))
-{
-        $config[&#39;base_url&#39;] = &#39;https://&#39;.$domain;
-}
-else
-{
-        $config[&#39;base_url&#39;] = &#39;http://&#39;.$domain;
-}
+<span class="k">if</span> <span class="p">(</span> <span class="o">!</span> <span class="k">empty</span><span class="p">(</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">&#39;HTTPS&#39;</span><span class="p">]))</span>
+<span class="p">{</span>
+        <span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;base_url&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;https://&#39;</span><span class="o">.</span><span class="nv">$domain</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+        <span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;base_url&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;http://&#39;</span><span class="o">.</span><span class="nv">$domain</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -1040,17 +1041,17 @@ CodeIgniter 3.1+ で削除される予定です。</p>
 同じ機能を提供できるため、廃止予定とされました。
 さらに、<cite>standard_date()`</cite> でサポートされているものと全く同じ名前を使えます。
 置き換えの例は次のようになります:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>// 以前の方法
-standard_date(); // デフォルトは standard_date(&#39;DATE_RFC822&#39;, now());
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// 以前の方法</span>
+<span class="nx">standard_date</span><span class="p">();</span> <span class="c1">// デフォルトは standard_date(&#39;DATE_RFC822&#39;, now());</span>
 
-// 置き換え
-date(DATE_RFC822, now());
+<span class="c1">// 置き換え</span>
+<span class="nb">date</span><span class="p">(</span><span class="nx">DATE_RFC822</span><span class="p">,</span> <span class="nx">now</span><span class="p">());</span>
 
-// 以前の方法
-standard_date(&#39;DATE_ATOM&#39;, $time);
+<span class="c1">// 以前の方法</span>
+<span class="nx">standard_date</span><span class="p">(</span><span class="s1">&#39;DATE_ATOM&#39;</span><span class="p">,</span> <span class="nv">$time</span><span class="p">);</span>
 
-// 置き換え
-date(DATE_ATOM, $time);
+<span class="c1">// 置き換え</span>
+<span class="nb">date</span><span class="p">(</span><span class="nx">DATE_ATOM</span><span class="p">,</span> <span class="nv">$time</span><span class="p">);</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -1114,7 +1115,7 @@ CodeIgniter 3.1+ で削除される予定です。</p>
 <h3>Session ライブラリの all_userdata() メソッド<a class="headerlink" href="#session-all-userdata" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p><a class="reference internal" href="../changelog.html"><span class="doc">変更履歴</span></a> で見たように、 <a class="reference internal" href="../libraries/sessions.html"><span class="doc">Session ライブラリ</span></a>
 の <code class="docutils literal"><span class="pre">userdata()</span></code> メソッドは、パラメータなしの場合、すべてのユーザデータを返します:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;session-&gt;userdata();
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">userdata</span><span class="p">();</span>
 </pre></div>
 </div>
 <p>これにより、<code class="docutils literal"><span class="pre">all_userdata()</span></code> メソッドは冗長となり、現在、上記の
@@ -1132,19 +1133,19 @@ CodeIgniter 3.1+ で削除される予定です。</p>
 <code class="docutils literal"><span class="pre">add_column()</span></code> メソッドの <strong>第 3 引数</strong> を、AFTER 句にフィールドを追加するために使っていたなら、使い方を変更する必要があります。</p>
 <p>その第 3 引数は廃止予定であり、CodeIgniter 3.1+ で削除される予定です。</p>
 <p>代わりに AFTER 句のフィールド名は、フィールド定義の配列に記述します:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>// 以前の使い方:
-$field = array(
-        &#39;new_field&#39; =&gt; array(&#39;type&#39; =&gt; &#39;TEXT&#39;)
-);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// 以前の使い方:</span>
+<span class="nv">$field</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;new_field&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;type&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;TEXT&#39;</span><span class="p">)</span>
+<span class="p">);</span>
 
-$this-&gt;dbforge-&gt;add_column(&#39;table_name&#39;, $field, &#39;another_field&#39;);
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">dbforge</span><span class="o">-&gt;</span><span class="na">add_column</span><span class="p">(</span><span class="s1">&#39;table_name&#39;</span><span class="p">,</span> <span class="nv">$field</span><span class="p">,</span> <span class="s1">&#39;another_field&#39;</span><span class="p">);</span>
 
-// 新しい使い方:
-$field = array(
-        &#39;new_field&#39; =&gt; array(&#39;type&#39; =&gt; &#39;TEXT&#39;, &#39;after&#39; =&gt; &#39;another_field&#39;)
-);
+<span class="c1">// 新しい使い方:</span>
+<span class="nv">$field</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;new_field&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;type&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;TEXT&#39;</span><span class="p">,</span> <span class="s1">&#39;after&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;another_field&#39;</span><span class="p">)</span>
+<span class="p">);</span>
 
-$this-&gt;dbforge-&gt;add_column(&#39;table_name&#39;, $field);
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">dbforge</span><span class="o">-&gt;</span><span class="na">add_column</span><span class="p">(</span><span class="s1">&#39;table_name&#39;</span><span class="p">,</span> <span class="nv">$field</span><span class="p">);</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -1166,9 +1167,9 @@ $this-&gt;dbforge-&gt;add_column(&#39;table_name&#39;, $field);
 <p>これらはすべて内部的な文書化されていないメソッドですが、もしもの
 後方互換性を維持するため、廃止予定とします。
 もし、これらのメソッドを使っている人は、代わりにプロパティにアクセスしてください:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;router-&gt;directory;
-$this-&gt;router-&gt;class;
-$this-&gt;router-&gt;method;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">router</span><span class="o">-&gt;</span><span class="na">directory</span><span class="p">;</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">router</span><span class="o">-&gt;</span><span class="na">class</span><span class="p">;</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">router</span><span class="o">-&gt;</span><span class="na">method</span><span class="p">;</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -1183,11 +1184,11 @@ $this-&gt;router-&gt;method;
 たくさんの場所で必要であり、しばしば、<a class="reference internal" href="../libraries/input.html"><span class="doc">Input Library</span></a> がロードされる前に起こります。そのため、共通関数の
 <a class="reference internal" href="../general/common_functions.html#is_cli" title="is_cli"><code class="xref php php-func docutils literal"><span class="pre">is_cli()</span></code></a> 関数に置き換えられ、このメソッドは現在単なるエイリアスです。</p>
 <p>新しい関数はいつでも利用可能であり、タイプする文字も少なくて済みます。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>// 以前
-$this-&gt;input-&gt;is_cli_request();
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// 以前</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">is_cli_request</span><span class="p">();</span>
 
-// 以後
-is_cli();
+<span class="c1">// 以後</span>
+<span class="nx">is_cli</span><span class="p">();</span>
 </pre></div>
 </div>
 <p><code class="docutils literal"><span class="pre">CI_Input::is_cli_request()</span></code> は現在廃止予定であり、
@@ -1250,10 +1251,10 @@ remove its usage sooner rather than later.</p>
 より古い Web ブラウザを使っているユーザにトラブルを起こすかも知れません。
 そこで、古いブラウザでの後方互換のために、以下のコードを CSS ファイルに
 追加することを提案します:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>mark {
-        background: #ff0;
-        color: #000;
-};
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">mark</span> <span class="p">{</span>
+        <span class="nx">background</span><span class="o">:</span> <span class="c1">#ff0;</span>
+        <span class="nx">color</span><span class="o">:</span> <span class="c1">#000;</span>
+<span class="p">};</span>
 </pre></div>
 </div>
 </div>
@@ -1278,7 +1279,7 @@ remove its usage sooner rather than later.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 9月 06, 2016
+      最終更新: 9月 04, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

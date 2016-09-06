@@ -415,6 +415,7 @@
       <img title="Classic Layout" alt="classic layout" src="data:image/gif;base64,R0lGODlhFAAUAJEAAAAAADMzM////wAAACH5BAUUAAIALAAAAAAUABQAAAImlI+py+0PU5gRBRDM3DxbWoXis42X13USOLauUIqnlsaH/eY6UwAAOw==" />
     </div>
   </ul>
+<div style="float:right;margin-left:5px;">[ <a href="https://github.com/codeigniter-jp/ci-ja/blob/develop/user_guide_ja_src/source/helpers/file_helper.rst">旧版翻訳途中</a> | <a href="https://github.com/bcit-ci/CodeIgniter/commits/develop/user_guide_src/source/helpers/file_helper.rst">原文履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/commits/develop_japanese/source/helpers/file_helper.rst">翻訳履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/source/helpers/file_helper.rst">GitHubで修正</a> ]</div><br /><div style="float:right;margin-left:5px;">[ <b class="highlighted">翻訳者募集中</b> → <a href="https://docs.google.com/spreadsheets/d/1ZWD5XqwH-Uo9X7MR644jbL6O8p5LxIngLT8M547H8wc/edit?pref=2&pli=1#gid=0">翻訳状況</a> ]</div>
   <hr/>
 </div>
           <div role="main" class="document">
@@ -431,7 +432,7 @@
 <div class="custom-index container"></div><div class="section" id="id2">
 <h2><a class="toc-backref" href="#id4">ヘルパーのロード</a><a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>このヘルパーは次のコードを使ってロードします:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;load-&gt;helper(&#39;file&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">helper</span><span class="p">(</span><span class="s1">&#39;file&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -460,7 +461,7 @@
 </table>
 <p>パスで特定されたファイルのデータを返します。</p>
 <p>例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$string = read_file(&#39;./path/to/file.php&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$string</span> <span class="o">=</span> <span class="nx">read_file</span><span class="p">(</span><span class="s1">&#39;./path/to/file.php&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>パスは、サーバの相対パスかフルパスで指定します。読み込みに失敗した場合は FALSE（ブール値）を返します。</p>
@@ -508,19 +509,19 @@ instead.</p>
 <p>パスで指定されたファイルにデータを書き込みます。 ファイルが存在しない場合には、
 このメソッドによってファイルが作成されます。</p>
 <p>例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$data = &#39;Some file data&#39;;
-if ( ! write_file(&#39;./path/to/file.php&#39;, $data))
-{
-        echo &#39;ファイルに書き込めません&#39;;
-}
-else
-{
-        echo &#39;ファイルが書き込まれました！&#39;;
-}
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$data</span> <span class="o">=</span> <span class="s1">&#39;Some file data&#39;</span><span class="p">;</span>
+<span class="k">if</span> <span class="p">(</span> <span class="o">!</span> <span class="nx">write_file</span><span class="p">(</span><span class="s1">&#39;./path/to/file.php&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">))</span>
+<span class="p">{</span>
+        <span class="k">echo</span> <span class="s1">&#39;ファイルに書き込めません&#39;</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+        <span class="k">echo</span> <span class="s1">&#39;ファイルが書き込まれました！&#39;</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>第3引数に書き込みモードをオプションで指定できます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>write_file(&#39;./path/to/file.php&#39;, $data, &#39;r+&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">write_file</span><span class="p">(</span><span class="s1">&#39;./path/to/file.php&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">,</span> <span class="s1">&#39;r+&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>デフォルトのモードは、 wb です。指定できるモードについては、 <a class="reference external" href="http://www.php.net/manual/ja/function.fopen.php">PHP
@@ -561,13 +562,13 @@ else
 </table>
 <p>パスに含まれるすべてのファイルを削除します。</p>
 <p>例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>delete_files(&#39;./path/to/directory/&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">delete_files</span><span class="p">(</span><span class="s1">&#39;./path/to/directory/&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>第2引数を true にセットすると、指定したパスに含まれるいずれの
 ディレクトリも削除されます。</p>
 <p>例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>delete_files(&#39;./path/to/directory/&#39;, TRUE);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">delete_files</span><span class="p">(</span><span class="s1">&#39;./path/to/directory/&#39;</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -601,7 +602,7 @@ else
 オプションで、第2引数を TRUE に設定すると、
 ファイルのパスがファイル名に付加されます。</p>
 <p>例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$controllers = get_filenames(APPPATH.&#39;controllers/&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$controllers</span> <span class="o">=</span> <span class="nx">get_filenames</span><span class="p">(</span><span class="nx">APPPATH</span><span class="o">.</span><span class="s1">&#39;controllers/&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -632,7 +633,7 @@ else
 に指定した場合のみすべて同様に
 読まれます。</p>
 <p>例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$models_info = get_dir_file_info(APPPATH.&#39;models/&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$models_info</span> <span class="o">=</span> <span class="nx">get_dir_file_info</span><span class="p">(</span><span class="nx">APPPATH</span><span class="o">.</span><span class="s1">&#39;models/&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -687,8 +688,8 @@ information you want returned.</p>
 </table>
 <p><em>config/mimes.php</em> にある設定を元にファイル拡張子を  MIMEタイプに変換します。
 タイプが分からないときや MIME 設定ファイルが開けなかったときは FALSE を返します。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$file = &#39;somefile.png&#39;;
-echo $file.&#39; には以下のmimeタイプがついています &#39;.get_mime_by_extension($file);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$file</span> <span class="o">=</span> <span class="s1">&#39;somefile.png&#39;</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nv">$file</span><span class="o">.</span><span class="s1">&#39; には以下のmimeタイプがついています &#39;</span><span class="o">.</span><span class="nx">get_mime_by_extension</span><span class="p">(</span><span class="nv">$file</span><span class="p">);</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -721,7 +722,7 @@ echo $file.&#39; には以下のmimeタイプがついています &#39;.get_mim
 </table>
 <p>( <code class="docutils literal"><span class="pre">fileperms()</span></code> で返ってくるような) 数字のパーミッションを引数として渡すと、
 文字列のファイルパーミッションを返します。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>echo symbolic_permissions(fileperms(&#39;./index.php&#39;));  // -rw-r--r--
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nx">symbolic_permissions</span><span class="p">(</span><span class="nb">fileperms</span><span class="p">(</span><span class="s1">&#39;./index.php&#39;</span><span class="p">));</span>  <span class="c1">// -rw-r--r--</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -748,7 +749,7 @@ echo $file.&#39; には以下のmimeタイプがついています &#39;.get_mim
 </table>
 <p>( <code class="docutils literal"><span class="pre">fileperms()</span></code> で返ってくるような) 数字のパーミッションを引数として渡すと、
 8進数3文字のファイルパーミッションを返します。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>echo octal_permissions(fileperms(&#39;./index.php&#39;)); // 644
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nx">octal_permissions</span><span class="p">(</span><span class="nb">fileperms</span><span class="p">(</span><span class="s1">&#39;./index.php&#39;</span><span class="p">));</span> <span class="c1">// 644</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -775,7 +776,7 @@ echo $file.&#39; には以下のmimeタイプがついています &#39;.get_mim
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 9月 06, 2016
+      最終更新: 9月 04, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

@@ -415,6 +415,7 @@
       <img title="Classic Layout" alt="classic layout" src="data:image/gif;base64,R0lGODlhFAAUAJEAAAAAADMzM////wAAACH5BAUUAAIALAAAAAAUABQAAAImlI+py+0PU5gRBRDM3DxbWoXis42X13USOLauUIqnlsaH/eY6UwAAOw==" />
     </div>
   </ul>
+<div style="float:right;margin-left:5px;">[ <a href="https://github.com/codeigniter-jp/ci-ja/blob/develop/user_guide_ja_src/source/general/styleguide.rst">旧版翻訳途中</a> | <a href="https://github.com/bcit-ci/CodeIgniter/commits/develop/user_guide_src/source/general/styleguide.rst">原文履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/commits/develop_japanese/source/general/styleguide.rst">翻訳履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/source/general/styleguide.rst">GitHubで修正</a> ]</div><br /><div style="float:right;margin-left:5px;">[ <b class="highlighted">翻訳者募集中</b> → <a href="https://docs.google.com/spreadsheets/d/1ZWD5XqwH-Uo9X7MR644jbL6O8p5LxIngLT8M547H8wc/edit?pref=2&pli=1#gid=0">翻訳状況</a> ]</div>
   <hr/>
 </div>
           <div role="main" class="document">
@@ -512,22 +513,22 @@ no BOM) 」を選択してください</li>
 <p>クラスファイルは Ucfirst のように命名しなければならず、その他のファイル名
 (設定、ビュー、一般的なスクリプトなど) はすべて小文字にするべきです。</p>
 <p><strong>誤</strong>:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>somelibrary.php
-someLibrary.php
-SOMELIBRARY.php
-Some_Library.php
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">somelibrary</span><span class="o">.</span><span class="nx">php</span>
+<span class="nx">someLibrary</span><span class="o">.</span><span class="nx">php</span>
+<span class="nx">SOMELIBRARY</span><span class="o">.</span><span class="nx">php</span>
+<span class="nx">Some_Library</span><span class="o">.</span><span class="nx">php</span>
 
-Application_config.php
-Application_Config.php
-applicationConfig.php
+<span class="nx">Application_config</span><span class="o">.</span><span class="nx">php</span>
+<span class="nx">Application_Config</span><span class="o">.</span><span class="nx">php</span>
+<span class="nx">applicationConfig</span><span class="o">.</span><span class="nx">php</span>
 </pre></div>
 </div>
 <p><strong>正</strong>:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>Somelibrary.php
-Some_library.php
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">Somelibrary</span><span class="o">.</span><span class="nx">php</span>
+<span class="nx">Some_library</span><span class="o">.</span><span class="nx">php</span>
 
-applicationconfig.php
-application_config.php
+<span class="nx">applicationconfig</span><span class="o">.</span><span class="nx">php</span>
+<span class="nx">application_config</span><span class="o">.</span><span class="nx">php</span>
 </pre></div>
 </div>
 <p>また、クラスファイル名はクラス自体の名前と一致させるべきです。
@@ -539,21 +540,21 @@ application_config.php
 <p>クラス名は常に大文字で開始するべきです。複数単語は
 アンダースコアで区切られるべきで、キャメル記法ではありません。</p>
 <p><strong>誤</strong>:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>class superclass
-class SuperClass
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">superclass</span>
+<span class="k">class</span> <span class="nc">SuperClass</span>
 </pre></div>
 </div>
 <p><strong>正</strong>:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>class Super_class
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Super_class</span>
 </pre></div>
 </div>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>class Super_class {
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Super_class</span> <span class="p">{</span>
 
-        public function __construct()
-        {
+        <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">()</span>
+        <span class="p">{</span>
 
-        }
-}
+        <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>クラスメソッドは完全に小文字であるべきで、
@@ -561,15 +562,15 @@ class SuperClass
 過度に長く冗長な名前は避けるようにしてください。
 複数単語はアンダースコアで区切るべきです。</p>
 <p><strong>誤</strong>:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>function fileproperties()               // 言い表せておらず、アンダースコアで区切ることが求められます
-function fileProperties()               // 言い表せておらず、 キャメルケースを使用しています
-function getfileproperties()            // 良くなりました！　でもまだアンダースコア区切りが抜けています
-function getFileProperties()            // キャメルケースを使っています
-function get_the_file_properties_from_the_file()        // くどいです
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nf">fileproperties</span><span class="p">()</span>               <span class="c1">// 言い表せておらず、アンダースコアで区切ることが求められます</span>
+<span class="k">function</span> <span class="nf">fileProperties</span><span class="p">()</span>               <span class="c1">// 言い表せておらず、 キャメルケースを使用しています</span>
+<span class="k">function</span> <span class="nf">getfileproperties</span><span class="p">()</span>            <span class="c1">// 良くなりました！　でもまだアンダースコア区切りが抜けています</span>
+<span class="k">function</span> <span class="nf">getFileProperties</span><span class="p">()</span>            <span class="c1">// キャメルケースを使っています</span>
+<span class="k">function</span> <span class="nf">get_the_file_properties_from_the_file</span><span class="p">()</span>        <span class="c1">// くどいです</span>
 </pre></div>
 </div>
 <p><strong>正</strong>:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>function get_file_properties()  // よく言い表せており、アンダースコア区切りで、すべて小文字です
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nf">get_file_properties</span><span class="p">()</span>  <span class="c1">// よく言い表せており、アンダースコア区切りで、すべて小文字です</span>
 </pre></div>
 </div>
 </div>
@@ -581,19 +582,19 @@ function get_the_file_properties_from_the_file()        // くどいです
 非常に短い、単語になっていない変数は
 for() ループの中でイテレータとしてのみを使用されるべきです。</p>
 <p><strong>誤</strong>:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$j = &#39;foo&#39;;             // 1 文字変数は for() ループの中でだけ使用されるべきです
-$Str                    // 大文字を含んでいます
-$bufferedText           // キャメルケースを使っています。また、意味の欠落なく短くできます。
-$groupid                // 複数単語です、アンダースコア区切りが求められます
-$name_of_last_city_used // 長いです
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$j</span> <span class="o">=</span> <span class="s1">&#39;foo&#39;</span><span class="p">;</span>             <span class="c1">// 1 文字変数は for() ループの中でだけ使用されるべきです</span>
+<span class="nv">$Str</span>                    <span class="c1">// 大文字を含んでいます</span>
+<span class="nv">$bufferedText</span>           <span class="c1">// キャメルケースを使っています。また、意味の欠落なく短くできます。</span>
+<span class="nv">$groupid</span>                <span class="c1">// 複数単語です、アンダースコア区切りが求められます</span>
+<span class="nv">$name_of_last_city_used</span> <span class="c1">// 長いです</span>
 </pre></div>
 </div>
 <p><strong>正</strong>:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>for ($j = 0; $j &lt; 10; $j++)
-$str
-$buffer
-$group_id
-$last_city
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="nv">$j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nv">$j</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="nv">$j</span><span class="o">++</span><span class="p">)</span>
+<span class="nv">$str</span>
+<span class="nv">$buffer</span>
+<span class="nv">$group_id</span>
+<span class="nv">$last_city</span>
 </pre></div>
 </div>
 </div>
@@ -607,49 +608,49 @@ $last_city
 <p><a class="reference external" href="http://manual.phpdoc.org/HTMLSmartyConverter/HandS/phpDocumentor/tutorial_phpDocumentor.howto.pkg.html#basics.docblock">DocBlock</a>
 形式はクラス、メソッド、およびプロパティの宣言の前にコメントします。それにより
 IDE によってピックアップできるようなります:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>/**
- * スーパークラス
- *
- * @package     パッケージ名
- * @subpackage  サブパッケージ
- * @category    カテゴリ
- * @author      作者
- * @link        http://example.com
- */
-class Super_class {
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="sd">/**</span>
+<span class="sd"> * スーパークラス</span>
+<span class="sd"> *</span>
+<span class="sd"> * @package     パッケージ名</span>
+<span class="sd"> * @subpackage  サブパッケージ</span>
+<span class="sd"> * @category    カテゴリ</span>
+<span class="sd"> * @author      作者</span>
+<span class="sd"> * @link        http://example.com</span>
+<span class="sd"> */</span>
+<span class="k">class</span> <span class="nc">Super_class</span> <span class="p">{</span>
 </pre></div>
 </div>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>/**
- * XML 向けに文字列をエンコードする
- *
- * @param       string  $str    入力文字列
- * @return      string
- */
-function xml_encode($str)
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="sd">/**</span>
+<span class="sd"> * XML 向けに文字列をエンコードする</span>
+<span class="sd"> *</span>
+<span class="sd"> * @param       string  $str    入力文字列</span>
+<span class="sd"> * @return      string</span>
+<span class="sd"> */</span>
+<span class="k">function</span> <span class="nf">xml_encode</span><span class="p">(</span><span class="nv">$str</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>/**
- * クラス操作のデータ
- *
- * @var array
- */
-public $data = array();
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="sd">/**</span>
+<span class="sd"> * クラス操作のデータ</span>
+<span class="sd"> *</span>
+<span class="sd"> * @var array</span>
+<span class="sd"> */</span>
+<span class="k">public</span> <span class="nv">$data</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
 </pre></div>
 </div>
 <p>コード内では一行コメントを使用し、
 大きなコメントブロックとコードの間には空白行を残してください。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>// 改行ごとに分割する
-$parts = explode(&quot;\n&quot;, $str);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// 改行ごとに分割する</span>
+<span class="nv">$parts</span> <span class="o">=</span> <span class="nb">explode</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nv">$str</span><span class="p">);</span>
 
-// 何が起きるか、なぜなのかについてとても詳細に説明する必要のある
-// 長いコメントは複数の一行コメントを使用できます。
-// 幅は意味のあるものとし、一番読みやすい 70 文字前後になるよう
-// 努めてください。永続的な外部リソースへリンクするのを躊躇しないでください。
-// それはより優れた説明をしてくれるでしょう。
-//
-// http://example.com/information_about_something/in_particular/
+<span class="c1">// 何が起きるか、なぜなのかについてとても詳細に説明する必要のある</span>
+<span class="c1">// 長いコメントは複数の一行コメントを使用できます。</span>
+<span class="c1">// 幅は意味のあるものとし、一番読みやすい 70 文字前後になるよう</span>
+<span class="c1">// 努めてください。永続的な外部リソースへリンクするのを躊躇しないでください。</span>
+<span class="c1">// それはより優れた説明をしてくれるでしょう。</span>
+<span class="c1">//</span>
+<span class="c1">// http://example.com/information_about_something/in_particular/</span>
 
-$parts = $this-&gt;foo($parts);
+<span class="nv">$parts</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">foo</span><span class="p">(</span><span class="nv">$parts</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -659,17 +660,17 @@ $parts = $this-&gt;foo($parts);
 ただし定数は常にすべて大文字にすべきです。 <em>CodeIgniter の定数、すなわち
 SLASH 、 LD 、 RD 、 PATH_CACHE などが割り当てられている場合は常に使用してください。</em></p>
 <p><strong>誤</strong>:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>myConstant      // アンダースコア区切りがなく、すべてを大文字にはしていません
-N               // 1 文字定数はだめです
-S_C_VER         // 意味が伝わりません
-$str = str_replace(&#39;{foo}&#39;, &#39;bar&#39;, $str);       // LD 定数と RD 定数を使うべきです
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">myConstant</span>      <span class="c1">// アンダースコア区切りがなく、すべてを大文字にはしていません</span>
+<span class="nx">N</span>               <span class="c1">// 1 文字定数はだめです</span>
+<span class="nx">S_C_VER</span>         <span class="c1">// 意味が伝わりません</span>
+<span class="nv">$str</span> <span class="o">=</span> <span class="nb">str_replace</span><span class="p">(</span><span class="s1">&#39;{foo}&#39;</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="nv">$str</span><span class="p">);</span>       <span class="c1">// LD 定数と RD 定数を使うべきです</span>
 </pre></div>
 </div>
 <p><strong>正</strong>:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>MY_CONSTANT
-NEWLINE
-SUPER_CLASS_VERSION
-$str = str_replace(LD.&#39;foo&#39;.RD, &#39;bar&#39;, $str);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">MY_CONSTANT</span>
+<span class="nx">NEWLINE</span>
+<span class="nx">SUPER_CLASS_VERSION</span>
+<span class="nv">$str</span> <span class="o">=</span> <span class="nb">str_replace</span><span class="p">(</span><span class="nx">LD</span><span class="o">.</span><span class="s1">&#39;foo&#39;</span><span class="o">.</span><span class="nx">RD</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="nv">$str</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -678,15 +679,15 @@ $str = str_replace(LD.&#39;foo&#39;.RD, &#39;bar&#39;, $str);
 <p><strong>TRUE</strong> 、 <strong>FALSE</strong> および <strong>NULL</strong> キーワードは常にすべて
 大文字にすべきです。</p>
 <p><strong>誤</strong>:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>if ($foo == true)
-$bar = false;
-function foo($bar = null)
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nv">$foo</span> <span class="o">==</span> <span class="k">true</span><span class="p">)</span>
+<span class="nv">$bar</span> <span class="o">=</span> <span class="k">false</span><span class="p">;</span>
+<span class="k">function</span> <span class="nf">foo</span><span class="p">(</span><span class="nv">$bar</span> <span class="o">=</span> <span class="k">null</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>正</strong>:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>if ($foo == TRUE)
-$bar = FALSE;
-function foo($bar = NULL)
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nv">$foo</span> <span class="o">==</span> <span class="k">TRUE</span><span class="p">)</span>
+<span class="nv">$bar</span> <span class="o">=</span> <span class="k">FALSE</span><span class="p">;</span>
+<span class="k">function</span> <span class="nf">foo</span><span class="p">(</span><span class="nv">$bar</span> <span class="o">=</span> <span class="k">NULL</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -697,17 +698,17 @@ function foo($bar = NULL)
 <code class="docutils literal"><span class="pre">&amp;&amp;</span></code> は <code class="docutils literal"><span class="pre">AND</span></code> よりも好ましいですが、どちらとも許容されます。
 <code class="docutils literal"><span class="pre">!</span></code> の前後には空白文字をいれるべきです。</p>
 <p><strong>誤</strong>:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>if ($foo || $bar)
-if ($foo AND $bar)  // 問題ありませんが推奨されません、一般的なシンタックスハイライトアプリのためです
-if (!$foo)
-if (! is_array($foo))
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nv">$foo</span> <span class="o">||</span> <span class="nv">$bar</span><span class="p">)</span>
+<span class="k">if</span> <span class="p">(</span><span class="nv">$foo</span> <span class="k">AND</span> <span class="nv">$bar</span><span class="p">)</span>  <span class="c1">// 問題ありませんが推奨されません、一般的なシンタックスハイライトアプリのためです</span>
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$foo</span><span class="p">)</span>
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span> <span class="nb">is_array</span><span class="p">(</span><span class="nv">$foo</span><span class="p">))</span>
 </pre></div>
 </div>
 <p><strong>正</strong>:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>if ($foo OR $bar)
-if ($foo &amp;&amp; $bar) // 推奨です
-if ( ! $foo)
-if ( ! is_array($foo))
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nv">$foo</span> <span class="k">OR</span> <span class="nv">$bar</span><span class="p">)</span>
+<span class="k">if</span> <span class="p">(</span><span class="nv">$foo</span> <span class="o">&amp;&amp;</span> <span class="nv">$bar</span><span class="p">)</span> <span class="c1">// 推奨です</span>
+<span class="k">if</span> <span class="p">(</span> <span class="o">!</span> <span class="nv">$foo</span><span class="p">)</span>
+<span class="k">if</span> <span class="p">(</span> <span class="o">!</span> <span class="nb">is_array</span><span class="p">(</span><span class="nv">$foo</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -722,33 +723,33 @@ if ( ! is_array($foo))
 <p>あなた独自の変数を返す際と確認する際には、同じ厳格さを用いてください。
 必要に応じて <strong>===</strong> と <strong>!==</strong> を使用してください。</p>
 <p><strong>誤</strong>:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>// もし &#39;foo&#39; が文字列の先頭にあれば、 strpos は 0 を返します。
-// この条件式の評価結果は TRUE となります。
-if (strpos($str, &#39;foo&#39;) == FALSE)
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// もし &#39;foo&#39; が文字列の先頭にあれば、 strpos は 0 を返します。</span>
+<span class="c1">// この条件式の評価結果は TRUE となります。</span>
+<span class="k">if</span> <span class="p">(</span><span class="nb">strpos</span><span class="p">(</span><span class="nv">$str</span><span class="p">,</span> <span class="s1">&#39;foo&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="k">FALSE</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>正</strong>:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>if (strpos($str, &#39;foo&#39;) === FALSE)
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nb">strpos</span><span class="p">(</span><span class="nv">$str</span><span class="p">,</span> <span class="s1">&#39;foo&#39;</span><span class="p">)</span> <span class="o">===</span> <span class="k">FALSE</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>誤</strong>:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>function build_string($str = &quot;&quot;)
-{
-        if ($str == &quot;&quot;) // おおっと！　引数に FALSE や 整数値 0 が渡されたらどうなりますか？
-        {
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nf">build_string</span><span class="p">(</span><span class="nv">$str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$str</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="c1">// おおっと！　引数に FALSE や 整数値 0 が渡されたらどうなりますか？</span>
+        <span class="p">{</span>
 
-        }
-}
+        <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p><strong>正</strong>:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>function build_string($str = &quot;&quot;)
-{
-        if ($str === &quot;&quot;)
-        {
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nf">build_string</span><span class="p">(</span><span class="nv">$str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$str</span> <span class="o">===</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+        <span class="p">{</span>
 
-        }
-}
+        <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p><a class="reference external" href="http://php.net/manual/ja/language.types.type-juggling.php#language.types.typecasting">型キャスト</a> に関する情報も参照してください。
@@ -756,7 +757,7 @@ if (strpos($str, &#39;foo&#39;) == FALSE)
 それは望ましいものでしょう。文字列として変数をキャストすると、例として、
 NULL と真偽値 FALSE は空文字列となり、 0（および
 他の数値）は 10 進数の文字列となり、真偽値 TRUE は「 1 」になります:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$str = (string) $str; // $str を文字列としてキャストします
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$str</span> <span class="o">=</span> <span class="p">(</span><span class="nx">string</span><span class="p">)</span> <span class="nv">$str</span><span class="p">;</span> <span class="c1">// $str を文字列としてキャストします</span>
 </pre></div>
 </div>
 </div>
@@ -810,72 +811,72 @@ Unix の改行でファイルを保存するように設定されていること
 クラス宣言を除き波括弧は常にそれ用の行に配置され、
 それらを「所有」する制御文と同じレベルにインデントされます。</p>
 <p><strong>誤</strong>:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>function foo($bar) {
-        // ...
-}
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nf">foo</span><span class="p">(</span><span class="nv">$bar</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// ...</span>
+<span class="p">}</span>
 
-foreach ($arr as $key =&gt; $val) {
-        // ...
-}
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$arr</span> <span class="k">as</span> <span class="nv">$key</span> <span class="o">=&gt;</span> <span class="nv">$val</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// ...</span>
+<span class="p">}</span>
 
-if ($foo == $bar) {
-        // ...
-} else {
-        // ...
-}
+<span class="k">if</span> <span class="p">(</span><span class="nv">$foo</span> <span class="o">==</span> <span class="nv">$bar</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// ...</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="c1">// ...</span>
+<span class="p">}</span>
 
-for ($i = 0; $i &lt; 10; $i++)
-        {
-        for ($j = 0; $j &lt; 10; $j++)
-                {
-                // ...
-                }
-        }
+<span class="k">for</span> <span class="p">(</span><span class="nv">$i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="nv">$i</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="nv">$j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nv">$j</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="nv">$j</span><span class="o">++</span><span class="p">)</span>
+                <span class="p">{</span>
+                <span class="c1">// ...</span>
+                <span class="p">}</span>
+        <span class="p">}</span>
 
-try {
-        // ...
-}
-catch() {
-        // ...
-}
+<span class="k">try</span> <span class="p">{</span>
+        <span class="c1">// ...</span>
+<span class="p">}</span>
+<span class="k">catch</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// ...</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p><strong>正</strong>:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>function foo($bar)
-{
-        // ...
-}
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nf">foo</span><span class="p">(</span><span class="nv">$bar</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="c1">// ...</span>
+<span class="p">}</span>
 
-foreach ($arr as $key =&gt; $val)
-{
-        // ...
-}
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$arr</span> <span class="k">as</span> <span class="nv">$key</span> <span class="o">=&gt;</span> <span class="nv">$val</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="c1">// ...</span>
+<span class="p">}</span>
 
-if ($foo == $bar)
-{
-        // ...
-}
-else
-{
-        // ...
-}
+<span class="k">if</span> <span class="p">(</span><span class="nv">$foo</span> <span class="o">==</span> <span class="nv">$bar</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="c1">// ...</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+        <span class="c1">// ...</span>
+<span class="p">}</span>
 
-for ($i = 0; $i &lt; 10; $i++)
-{
-        for ($j = 0; $j &lt; 10; $j++)
-        {
-                // ...
-        }
-}
+<span class="k">for</span> <span class="p">(</span><span class="nv">$i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="nv">$i</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="nv">$j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nv">$j</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="nv">$j</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="c1">// ...</span>
+        <span class="p">}</span>
+<span class="p">}</span>
 
-try
-{
-        // ...
-}
-catch()
-{
-        // ...
-}
+<span class="k">try</span>
+<span class="p">{</span>
+        <span class="c1">// ...</span>
+<span class="p">}</span>
+<span class="k">catch</span><span class="p">()</span>
+<span class="p">{</span>
+        <span class="c1">// ...</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -887,33 +888,33 @@ catch()
 elseif 、 for 、 foreach 、 if 、 switch 、 while) のうしろにはスペースを入れるべきです。
 それらと関数を区別する補助とし、読みやすさを向上させるためです。</p>
 <p><strong>誤</strong>:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$arr[ $foo ] = &#39;foo&#39;;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$arr</span><span class="p">[</span> <span class="nv">$foo</span> <span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;foo&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 <p><strong>正</strong>:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$arr[$foo] = &#39;foo&#39;; // 配列のキーの周囲にはスペースを入れません
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$arr</span><span class="p">[</span><span class="nv">$foo</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;foo&#39;</span><span class="p">;</span> <span class="c1">// 配列のキーの周囲にはスペースを入れません</span>
 </pre></div>
 </div>
 <p><strong>誤</strong>:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>function foo ( $bar )
-{
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nf">foo</span> <span class="p">(</span> <span class="nv">$bar</span> <span class="p">)</span>
+<span class="p">{</span>
 
-}
+<span class="p">}</span>
 </pre></div>
 </div>
 <p><strong>正</strong>:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>function foo($bar) // 関数宣言の丸括弧の周囲にはスペースを入れません
-{
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nf">foo</span><span class="p">(</span><span class="nv">$bar</span><span class="p">)</span> <span class="c1">// 関数宣言の丸括弧の周囲にはスペースを入れません</span>
+<span class="p">{</span>
 
-}
+<span class="p">}</span>
 </pre></div>
 </div>
 <p><strong>誤</strong>:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>foreach( $query-&gt;result() as $row )
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">foreach</span><span class="p">(</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">result</span><span class="p">()</span> <span class="k">as</span> <span class="nv">$row</span> <span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>正</strong>:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>foreach ($query-&gt;result() as $row) // PHP 制御構造のうしろにはスペース 1 つを入れます、しかし丸括弧の内側には入れません
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">foreach</span> <span class="p">(</span><span class="nv">$query</span><span class="o">-&gt;</span><span class="na">result</span><span class="p">()</span> <span class="k">as</span> <span class="nv">$row</span><span class="p">)</span> <span class="c1">// PHP 制御構造のうしろにはスペース 1 つを入れます、しかし丸括弧の内側には入れません</span>
 </pre></div>
 </div>
 </div>
@@ -922,11 +923,11 @@ elseif 、 for 、 foreach 、 if 、 switch 、 while) のうしろにはスペ
 <p>CodeIgniter のライブラリは可能な限り、
 対応する言語ファイルを利用するべきです。</p>
 <p><strong>誤</strong>:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>return &quot;Invalid Selection&quot;;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">return</span> <span class="s2">&quot;Invalid Selection&quot;</span><span class="p">;</span>
 </pre></div>
 </div>
 <p><strong>正</strong>:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>return $this-&gt;lang-&gt;line(&#39;invalid_selection&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">lang</span><span class="o">-&gt;</span><span class="na">line</span><span class="p">(</span><span class="s1">&#39;invalid_selection&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -935,8 +936,8 @@ elseif 、 for 、 foreach 、 if 、 switch 、 while) のうしろにはスペ
 <p>内部からのみアクセスできるメソッドと変数、
 コードの抽象化のためにパブリックメソッドが使用するユーティリティやヘルパー関数などは、
 アンダースコアをプレフィックスにつけるべきです。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>public function convert_text()
-private function _convert_text()
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="k">function</span> <span class="nf">convert_text</span><span class="p">()</span>
+<span class="k">private</span> <span class="k">function</span> <span class="nf">_convert_text</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -949,15 +950,15 @@ private function _convert_text()
 <p>あなたの dev 環境で　す　べ　て　のユーザーに対してエラー報告が有効になっていることを確認してください。
 また PHP 環境で display_errors が有効になっていることを確認してください。
 この設定は次のもので確認することができます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>if (ini_get(&#39;display_errors&#39;) == 1)
-{
-        exit &quot;Enabled&quot;;
-}
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nb">ini_get</span><span class="p">(</span><span class="s1">&#39;display_errors&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="k">exit</span> <span class="s2">&quot;Enabled&quot;</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>いくつかのサーバでは <em>display_errors</em> は無効になっており、あなたが
 php.ini でこれを変更することができない場合は、だいたいの場合次の方法で有効にすることができます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>ini_set(&#39;display_errors&#39;, 1);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nb">ini_set</span><span class="p">(</span><span class="s1">&#39;display_errors&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -973,13 +974,13 @@ fatal error がある場合には何の意味もありません。</p>
 <p>PHP の開始タグには常に完全なものを使用します。
 <em>short_open_tag</em> が有効になっていない場合に備えるためです。</p>
 <p><strong>誤</strong>:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>&lt;? echo $foo; ?&gt;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span> <span class="k">echo</span> <span class="nv">$foo</span><span class="p">;</span> <span class="cp">?&gt;</span>
 
-&lt;?=$foo?&gt;
+<span class="cp">&lt;?</span><span class="o">=</span><span class="nv">$foo</span><span class="cp">?&gt;</span>
 </pre></div>
 </div>
 <p><strong>正</strong>:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>&lt;?php echo $foo; ?&gt;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span> <span class="k">echo</span> <span class="nv">$foo</span><span class="p">;</span> <span class="cp">?&gt;</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -991,13 +992,13 @@ fatal error がある場合には何の意味もありません。</p>
 <h2><a class="toc-backref" href="#id51">1 行につき 1 つのステートメント</a><a class="headerlink" href="#id23" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>1 行の中に複数のステートメントは入れません。</p>
 <p><strong>誤</strong>:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$foo = &#39;this&#39;; $bar = &#39;that&#39;; $bat = str_replace($foo, $bar, $bag);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$foo</span> <span class="o">=</span> <span class="s1">&#39;this&#39;</span><span class="p">;</span> <span class="nv">$bar</span> <span class="o">=</span> <span class="s1">&#39;that&#39;</span><span class="p">;</span> <span class="nv">$bat</span> <span class="o">=</span> <span class="nb">str_replace</span><span class="p">(</span><span class="nv">$foo</span><span class="p">,</span> <span class="nv">$bar</span><span class="p">,</span> <span class="nv">$bag</span><span class="p">);</span>
 </pre></div>
 </div>
 <p><strong>正</strong>:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$foo = &#39;this&#39;;
-$bar = &#39;that&#39;;
-$bat = str_replace($foo, $bar, $bag);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$foo</span> <span class="o">=</span> <span class="s1">&#39;this&#39;</span><span class="p">;</span>
+<span class="nv">$bar</span> <span class="o">=</span> <span class="s1">&#39;that&#39;</span><span class="p">;</span>
+<span class="nv">$bat</span> <span class="o">=</span> <span class="nb">str_replace</span><span class="p">(</span><span class="nv">$foo</span><span class="p">,</span> <span class="nv">$bar</span><span class="p">,</span> <span class="nv">$bag</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -1009,15 +1010,15 @@ $bat = str_replace($foo, $bar, $bag);
 また、文字列にシングルクォートが含まれている場合はダブルクォート文字列を使ってもよく、
 エスケープ文字を使用する必要はありません。</p>
 <p><strong>誤</strong>:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>&quot;My String&quot;                                     // 変数展開はありませんので、ダブルクォートは使わないでください
-&quot;My string $foo&quot;                                // 波括弧が必要です
-&#39;SELECT foo FROM bar WHERE baz = \&#39;bag\&#39;&#39;       // 読みにくいです
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="s2">&quot;My String&quot;</span>                                     <span class="c1">// 変数展開はありませんので、ダブルクォートは使わないでください</span>
+<span class="s2">&quot;My string </span><span class="si">$foo</span><span class="s2">&quot;</span>                                <span class="c1">// 波括弧が必要です</span>
+<span class="s1">&#39;SELECT foo FROM bar WHERE baz = \&#39;bag\&#39;&#39;</span>       <span class="c1">// 読みにくいです</span>
 </pre></div>
 </div>
 <p><strong>正</strong>:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>&#39;My String&#39;
-&quot;My string {$foo}&quot;
-&quot;SELECT foo FROM bar WHERE baz = &#39;bag&#39;&quot;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="s1">&#39;My String&#39;</span>
+<span class="s2">&quot;My string </span><span class="si">{</span><span class="nv">$foo</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="s2">&quot;SELECT foo FROM bar WHERE baz = &#39;bag&#39;&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -1028,19 +1029,19 @@ AS 、 JOIN 、 ON 、 IN 、 など。</p>
 <p>長いクエリは複数行に分割してください、読みやすくするためです。
 文節ごとに分割するのが好ましいです。</p>
 <p><strong>誤</strong>:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>// キーワードが小文字になっており、 1 行に納めるにはクエリが長すぎます
-// (... は行が続くことを表しています)
-$query = $this-&gt;db-&gt;query(&quot;select foo, bar, baz, foofoo, foobar as raboof, foobaz from exp_pre_email_addresses
-...where foo != &#39;oof&#39; and baz != &#39;zab&#39; order by foobaz limit 5, 100&quot;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// キーワードが小文字になっており、 1 行に納めるにはクエリが長すぎます</span>
+<span class="c1">// (... は行が続くことを表しています)</span>
+<span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s2">&quot;select foo, bar, baz, foofoo, foobar as raboof, foobaz from exp_pre_email_addresses</span>
+<span class="s2">...where foo != &#39;oof&#39; and baz != &#39;zab&#39; order by foobaz limit 5, 100&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p><strong>正</strong>:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$query = $this-&gt;db-&gt;query(&quot;SELECT foo, bar, baz, foofoo, foobar AS raboof, foobaz
-                                FROM exp_pre_email_addresses
-                                WHERE foo != &#39;oof&#39;
-                                AND baz != &#39;zab&#39;
-                                ORDER BY foobaz
-                                LIMIT 5, 100&quot;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s2">&quot;SELECT foo, bar, baz, foofoo, foobar AS raboof, foobaz</span>
+<span class="s2">                                FROM exp_pre_email_addresses</span>
+<span class="s2">                                WHERE foo != &#39;oof&#39;</span>
+<span class="s2">                                AND baz != &#39;zab&#39;</span>
+<span class="s2">                                ORDER BY foobaz</span>
+<span class="s2">                                LIMIT 5, 100&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -1049,7 +1050,7 @@ $query = $this-&gt;db-&gt;query(&quot;select foo, bar, baz, foofoo, foobar as ra
 <p>適切な場合はいつでも、関数の引数にはデフォルト値を提供してください。
 呼び出し間違えでの PHP エラーを防ぐことができますし、
 数行のコードを省力化するための共通のフォールバック値を提供できます。例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>function foo($bar = &#39;&#39;, $baz = FALSE)
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nf">foo</span><span class="p">(</span><span class="nv">$bar</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="nv">$baz</span> <span class="o">=</span> <span class="k">FALSE</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1074,7 +1075,7 @@ $query = $this-&gt;db-&gt;query(&quot;select foo, bar, baz, foofoo, foobar as ra
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 9月 06, 2016
+      最終更新: 9月 04, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

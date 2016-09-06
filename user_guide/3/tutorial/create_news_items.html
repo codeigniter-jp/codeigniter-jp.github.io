@@ -415,6 +415,7 @@
       <img title="Classic Layout" alt="classic layout" src="data:image/gif;base64,R0lGODlhFAAUAJEAAAAAADMzM////wAAACH5BAUUAAIALAAAAAAUABQAAAImlI+py+0PU5gRBRDM3DxbWoXis42X13USOLauUIqnlsaH/eY6UwAAOw==" />
     </div>
   </ul>
+<div style="float:right;margin-left:5px;">[ <a href="https://github.com/codeigniter-jp/ci-ja/blob/develop/user_guide_ja_src/source/tutorial/create_news_items.rst">旧版翻訳途中</a> | <a href="https://github.com/bcit-ci/CodeIgniter/commits/develop/user_guide_src/source/tutorial/create_news_items.rst">原文履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/commits/develop_japanese/source/tutorial/create_news_items.rst">翻訳履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/source/tutorial/create_news_items.rst">GitHubで修正</a> ]</div><br /><div style="float:right;margin-left:5px;">[ <b class="highlighted">翻訳者募集中</b> → <a href="https://docs.google.com/spreadsheets/d/1ZWD5XqwH-Uo9X7MR644jbL6O8p5LxIngLT8M547H8wc/edit?pref=2&pli=1#gid=0">翻訳状況</a> ]</div>
   <hr/>
 </div>
           <div role="main" class="document">
@@ -432,21 +433,21 @@
 ２つのフィールドが必要です。slug は題名を元にモデル内で生成します。
 <em>application/views/news/create.php</em>
 に新しいビューを作成してください。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>&lt;h2&gt;&lt;?php echo $title; ?&gt;&lt;/h2&gt;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nx">h2</span><span class="o">&gt;&lt;?</span><span class="nx">php</span> <span class="k">echo</span> <span class="nv">$title</span><span class="p">;</span> <span class="cp">?&gt;</span><span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
 
-&lt;?php echo validation_errors(); ?&gt;
+<span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nx">validation_errors</span><span class="p">();</span> <span class="cp">?&gt;</span>
 
-&lt;?php echo form_open(&#39;news/create&#39;); ?&gt;
+<span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nx">form_open</span><span class="p">(</span><span class="s1">&#39;news/create&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span>
 
-    &lt;label for=&quot;title&quot;&gt;Title&lt;/label&gt;
-    &lt;input type=&quot;input&quot; name=&quot;title&quot; /&gt;&lt;br /&gt;
+    <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;title&quot;</span><span class="p">&gt;</span>Title<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;input&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;title&quot;</span> <span class="p">/&gt;&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span>
 
-    &lt;label for=&quot;text&quot;&gt;Text&lt;/label&gt;
-    &lt;textarea name=&quot;text&quot;&gt;&lt;/textarea&gt;&lt;br /&gt;
+    <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;text&quot;</span><span class="p">&gt;</span>Text<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">textarea</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;text&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">textarea</span><span class="p">&gt;&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span>
 
-    &lt;input type=&quot;submit&quot; name=&quot;submit&quot; value=&quot;Create news item&quot; /&gt;
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Create news item&quot;</span> <span class="p">/&gt;</span>
 
-&lt;/form&gt;
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 <p>この中で見慣れないものが２つあると思います：
@@ -460,29 +461,29 @@
 フォームが送信されたのかを確認する事と、送信されたデータがバリデーション
 のルールを満たすかどうか確認する事です。 これをするには
 <a class="reference internal" href="../libraries/form_validation.html"><span class="doc">form validation</span></a> ライブラリを使用します。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>public function create()
-{
-    $this-&gt;load-&gt;helper(&#39;form&#39;);
-    $this-&gt;load-&gt;library(&#39;form_validation&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="k">function</span> <span class="nf">create</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">helper</span><span class="p">(</span><span class="s1">&#39;form&#39;</span><span class="p">);</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;form_validation&#39;</span><span class="p">);</span>
 
-    $data[&#39;title&#39;] = &#39;Create a news item&#39;;
+    <span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Create a news item&#39;</span><span class="p">;</span>
 
-    $this-&gt;form_validation-&gt;set_rules(&#39;title&#39;, &#39;Title&#39;, &#39;required&#39;);
-    $this-&gt;form_validation-&gt;set_rules(&#39;text&#39;, &#39;Text&#39;, &#39;required&#39;);
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;Title&#39;</span><span class="p">,</span> <span class="s1">&#39;required&#39;</span><span class="p">);</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span><span class="s1">&#39;text&#39;</span><span class="p">,</span> <span class="s1">&#39;Text&#39;</span><span class="p">,</span> <span class="s1">&#39;required&#39;</span><span class="p">);</span>
 
-    if ($this-&gt;form_validation-&gt;run() === FALSE)
-    {
-        $this-&gt;load-&gt;view(&#39;templates/header&#39;, $data);
-        $this-&gt;load-&gt;view(&#39;news/create&#39;);
-        $this-&gt;load-&gt;view(&#39;templates/footer&#39;);
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">run</span><span class="p">()</span> <span class="o">===</span> <span class="k">FALSE</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;templates/header&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;news/create&#39;</span><span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;templates/footer&#39;</span><span class="p">);</span>
 
-    }
-    else
-    {
-        $this-&gt;news_model-&gt;set_news();
-        $this-&gt;load-&gt;view(&#39;news/success&#39;);
-    }
-}
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">news_model</span><span class="o">-&gt;</span><span class="na">set_news</span><span class="p">();</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;news/success&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>上記のコードは様々な処理を追加しています。まず最初の数行でformヘルパー
@@ -505,20 +506,20 @@
 クラスを使用してデータを挿入し、input ライブラリを使用して post されてきたデータ
 を取得します。以前作成したモデルを開き、
 次のコードを追記してください：</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>public function set_news()
-{
-    $this-&gt;load-&gt;helper(&#39;url&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="k">function</span> <span class="nf">set_news</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">helper</span><span class="p">(</span><span class="s1">&#39;url&#39;</span><span class="p">);</span>
 
-    $slug = url_title($this-&gt;input-&gt;post(&#39;title&#39;), &#39;dash&#39;, TRUE);
+    <span class="nv">$slug</span> <span class="o">=</span> <span class="nx">url_title</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">post</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">),</span> <span class="s1">&#39;dash&#39;</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span>
 
-    $data = array(
-        &#39;title&#39; =&gt; $this-&gt;input-&gt;post(&#39;title&#39;),
-        &#39;slug&#39; =&gt; $slug,
-        &#39;text&#39; =&gt; $this-&gt;input-&gt;post(&#39;text&#39;)
-    );
+    <span class="nv">$data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;title&#39;</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">post</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">),</span>
+        <span class="s1">&#39;slug&#39;</span> <span class="o">=&gt;</span> <span class="nv">$slug</span><span class="p">,</span>
+        <span class="s1">&#39;text&#39;</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">post</span><span class="p">(</span><span class="s1">&#39;text&#39;</span><span class="p">)</span>
+    <span class="p">);</span>
 
-    return $this-&gt;db-&gt;insert(&#39;news&#39;, $data);
-}
+    <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">insert</span><span class="p">(</span><span class="s1">&#39;news&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>このメソッドはデータベースにニュース記事を挿入してくれます。
@@ -542,11 +543,11 @@
 <em>config/routes.php</em> に新しいルールを追加しなければいけません。
 あなたのファイルに下記が追加されている事を確認してください。
 これによりCodeIgniterがcreateメソッドをニュース記事の slug ではなく、独自のメソッドである事を保証します。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$route[&#39;news/create&#39;] = &#39;news/create&#39;;
-$route[&#39;news/(:any)&#39;] = &#39;news/view/$1&#39;;
-$route[&#39;news&#39;] = &#39;news&#39;;
-$route[&#39;(:any)&#39;] = &#39;pages/view/$1&#39;;
-$route[&#39;default_controller&#39;] = &#39;pages/view&#39;;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;news/create&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;news/create&#39;</span><span class="p">;</span>
+<span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;news/(:any)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;news/view/$1&#39;</span><span class="p">;</span>
+<span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;news&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;news&#39;</span><span class="p">;</span>
+<span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;(:any)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;pages/view/$1&#39;</span><span class="p">;</span>
+<span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;default_controller&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;pages/view&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>ではブラウザ上であなたの CodeIgniter の開発環境を開き、
@@ -575,7 +576,7 @@ URLに index.php/news/create を入れてみてください。
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 9月 06, 2016
+      最終更新: 9月 04, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

@@ -415,6 +415,7 @@
       <img title="Classic Layout" alt="classic layout" src="data:image/gif;base64,R0lGODlhFAAUAJEAAAAAADMzM////wAAACH5BAUUAAIALAAAAAAUABQAAAImlI+py+0PU5gRBRDM3DxbWoXis42X13USOLauUIqnlsaH/eY6UwAAOw==" />
     </div>
   </ul>
+<div style="float:right;margin-left:5px;">[ <a href="https://github.com/codeigniter-jp/ci-ja/blob/develop/user_guide_ja_src/source/general/routing.rst">旧版翻訳途中</a> | <a href="https://github.com/bcit-ci/CodeIgniter/commits/develop/user_guide_src/source/general/routing.rst">原文履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/commits/develop_japanese/source/general/routing.rst">翻訳履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/source/general/routing.rst">GitHubで修正</a> ]</div><br /><div style="float:right;margin-left:5px;">[ <b class="highlighted">翻訳者募集中</b> → <a href="https://docs.google.com/spreadsheets/d/1ZWD5XqwH-Uo9X7MR644jbL6O8p5LxIngLT8M547H8wc/edit?pref=2&pli=1#gid=0">翻訳状況</a> ]</div>
   <hr/>
 </div>
           <div role="main" class="document">
@@ -424,17 +425,17 @@
 <p>一般的に、 URL 文字列とそれに対応する
 コントローラクラス/メソッドは 1 対 1 の関係にあります。URI
 のセグメントは通常、つぎのパターンに従います:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>example.com/class/function/id/
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">example</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">class</span><span class="o">/</span><span class="nx">function</span><span class="o">/</span><span class="nx">id</span><span class="o">/</span>
 </pre></div>
 </div>
 <p>しかしながらいくつかのケースでは、この関係を再マッピングしてたいことでしょう、
 そのため
 URL に対応するものではなく別のクラス/メソッドが呼び出されるようにすることができます。</p>
 <p>たとえば、 URL がつぎのプロトタイプを持つようにしたいとしましょう:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>example.com/product/1/
-example.com/product/2/
-example.com/product/3/
-example.com/product/4/
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">example</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">product</span><span class="o">/</span><span class="mi">1</span><span class="o">/</span>
+<span class="nx">example</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">product</span><span class="o">/</span><span class="mi">2</span><span class="o">/</span>
+<span class="nx">example</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">product</span><span class="o">/</span><span class="mi">3</span><span class="o">/</span>
+<span class="nx">example</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">product</span><span class="o">/</span><span class="mi">4</span><span class="o">/</span>
 </pre></div>
 </div>
 <p>通常、 URL の第 2 セグメントはメソッド名となっていますが、
@@ -450,7 +451,7 @@ example.com/product/4/
 <div class="section" id="id2">
 <h2>ワイルドカード<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>典型的なワイルドカードのルートは次のようになります:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$route[&#39;product/:num&#39;] = &#39;catalog/product_lookup&#39;;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;product/:num&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;catalog/product_lookup&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>ルートには、配列のキーには URI が一致するもの、
@@ -483,23 +484,23 @@ example.com/product/4/
 <div class="section" id="id3">
 <h2>例<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>ここではいくつかのルーティング例を示します:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$route[&#39;journals&#39;] = &#39;blogs&#39;;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;journals&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;blogs&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>最初のセグメントで単語「 journals 」を含む URL は
 「 blogs 」クラスに再マッピングされます。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$route[&#39;blog/joe&#39;] = &#39;blogs/users/34&#39;;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;blog/joe&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;blogs/users/34&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>blog/joe セグメントを含むURLは、「 blogs 」
 クラスと「 users 」メソッドに再マッピングされます。 ID は「 34 」に設定されます。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$route[&#39;product/(:any)&#39;] = &#39;catalog/product_lookup&#39;;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;product/(:any)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;catalog/product_lookup&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>最初のセグメントに「 product 」と第 2 セグメントに何かがある URL は、
 「 catalog 」クラスと「 product_lookup 」メソッドに
 再マッピングされます。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$route[&#39;product/(:num)&#39;] = &#39;catalog/product_lookup_by_id/$1&#39;;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;product/(:num)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;catalog/product_lookup_by_id/$1&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>最初のセグメントに「 product 」と第 2 セグメントに数字がある URL は
@@ -521,7 +522,7 @@ example.com/product/4/
 ドルの構文を使用する必要があります。</p>
 </div>
 <p>典型的なルートの正規表現は次のようになります:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$route[&#39;products/([a-z]+)/(\d+)&#39;] = &#39;$1/id_$2&#39;;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;products/([a-z]+)/(\d+)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;$1/id_$2&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>上記の例では、 product/shirts/123 の URI は
@@ -530,7 +531,7 @@ example.com/product/4/
 たとえば、ユーザがウェブアプリケーションのパスワード保護された領域にアクセスし、
 彼らがログインした後に同じページに戻るようリダイレクトしたい場合、
 この例が役に立つでしょう:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$route[&#39;login/(.+)&#39;] = &#39;auth/login/$1&#39;;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;login/(.+)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;auth/login/$1&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -551,10 +552,10 @@ example.com/product/4/
 <h2>コールバック<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>PHP 5.3 以上を使用している場合、後方参照を処理するために、
 通常のルーティングルールの代わりにコールバックを使用することができます。例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$route[&#39;products/([a-zA-Z]+)/edit/(\d+)&#39;] = function ($product_type, $id)
-{
-        return &#39;catalog/product_edit/&#39; . strtolower($product_type) . &#39;/&#39; . $id;
-};
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;products/([a-zA-Z]+)/edit/(\d+)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">function</span> <span class="p">(</span><span class="nv">$product_type</span><span class="p">,</span> <span class="nv">$id</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="k">return</span> <span class="s1">&#39;catalog/product_edit/&#39;</span> <span class="o">.</span> <span class="nb">strtolower</span><span class="p">(</span><span class="nv">$product_type</span><span class="p">)</span> <span class="o">.</span> <span class="s1">&#39;/&#39;</span> <span class="o">.</span> <span class="nv">$id</span><span class="p">;</span>
+<span class="p">};</span>
 </pre></div>
 </div>
 </div>
@@ -565,12 +566,12 @@ RESTful なアプリケーションを構築する際に特に便利です。標
 動詞（GET 、 PUT 、 POST 、 DELETE 、 PATCH）またはカスタムしたもの（例えば PURGE）を使用することができます。 HTTP 動詞のルールは
 大文字小文字を区別しません。必要なことは、ルート配列のキーとして動詞を追加することです。
 例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$route[&#39;products&#39;][&#39;put&#39;] = &#39;product/insert&#39;;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;products&#39;</span><span class="p">][</span><span class="s1">&#39;put&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;product/insert&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>上記の例では、 URI 「 products 」への PUT リクエストは <code class="docutils literal"><span class="pre">Product::insert()</span></code>
 コントローラメソッドを呼び出します。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$route[&#39;products/(:num)&#39;][&#39;DELETE&#39;] = &#39;product/delete/$1&#39;;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;products/(:num)&#39;</span><span class="p">][</span><span class="s1">&#39;DELETE&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;product/delete/$1&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>最初のセグメントとして「 product 」と第 2 セグメントに数値を持つ URL への DELETE リクエストは
@@ -580,7 +581,7 @@ RESTful なアプリケーションを構築する際に特に便利です。標
 <div class="section" id="id6">
 <h2>予約済みルート<a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>予約済みのルートが 3 つあります:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$route[&#39;default_controller&#39;] = &#39;welcome&#39;;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;default_controller&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;welcome&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>このルートポイントは URI になにもデータがない場合に呼び出されるべきアクションです、
@@ -594,7 +595,7 @@ RESTful なアプリケーションを構築する際に特に便利です。標
 </div>
 <p>常にデフォルトルートを持つことが推奨されます、さもなくば 404
 ページがデフォルトになります。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$route[&#39;404_override&#39;] = &#39;&#39;;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;404_override&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>このルートには、要求されたコントローラが見つからない場合にロードされるべき
@@ -604,7 +605,7 @@ RESTful なアプリケーションを構築する際に特に便利です。標
 <p>これは <code class="docutils literal"><span class="pre">show_404()</span></code> 関数には影響しません。
 それは引き続き <em>application/views/errors/error_404.php</em> にあるデフォルトの <em>error_404.php</em>
 ファイルをロードします。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$route[&#39;translate_uri_dashes&#39;] = FALSE;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;translate_uri_dashes&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">FALSE</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>真偽値なので明らかですが、これは正確にルートではありません。
@@ -640,7 +641,7 @@ RESTful なアプリケーションを構築する際に特に便利です。標
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 9月 06, 2016
+      最終更新: 9月 04, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

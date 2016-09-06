@@ -415,6 +415,7 @@
       <img title="Classic Layout" alt="classic layout" src="data:image/gif;base64,R0lGODlhFAAUAJEAAAAAADMzM////wAAACH5BAUUAAIALAAAAAAUABQAAAImlI+py+0PU5gRBRDM3DxbWoXis42X13USOLauUIqnlsaH/eY6UwAAOw==" />
     </div>
   </ul>
+<div style="float:right;margin-left:5px;">[ <a href="https://github.com/codeigniter-jp/ci-ja/blob/develop/user_guide_ja_src/source/general/profiling.rst">旧版翻訳途中</a> | <a href="https://github.com/bcit-ci/CodeIgniter/commits/develop/user_guide_src/source/general/profiling.rst">原文履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/commits/develop_japanese/source/general/profiling.rst">翻訳履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/source/general/profiling.rst">GitHubで修正</a> ]</div><br /><div style="float:right;margin-left:5px;">[ <b class="highlighted">翻訳者募集中</b> → <a href="https://docs.google.com/spreadsheets/d/1ZWD5XqwH-Uo9X7MR644jbL6O8p5LxIngLT8M547H8wc/edit?pref=2&pli=1#gid=0">翻訳状況</a> ]</div>
   <hr/>
 </div>
           <div role="main" class="document">
@@ -438,13 +439,13 @@
 <h2>プロファイラを有効にする<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>プロファイラを有効にするには、
 <a class="reference internal" href="controllers.html"><span class="doc">コントローラ</span></a> メソッド内の任意の場所につぎの行を追加します:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;output-&gt;enable_profiler(TRUE);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">output</span><span class="o">-&gt;</span><span class="na">enable_profiler</span><span class="p">(</span><span class="k">TRUE</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>有効にするとレポートが生成され、
 ページの下部に挿入されます。</p>
 <p>プロファイラを無効にするには:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;output-&gt;enable_profiler(FALSE);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">output</span><span class="o">-&gt;</span><span class="na">enable_profiler</span><span class="p">(</span><span class="k">FALSE</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -462,19 +463,19 @@ TRUE または FALSE に設定することで有効または無効にするこ�
 これは、 2 つの方法のいずれかで行うことができます。まず、アプリケーション全体のデフォルトを
 <em>application/config/profiler.php</em> ファイルで設定することができます。</p>
 <p>例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$config[&#39;config&#39;]          = FALSE;
-$config[&#39;queries&#39;]         = FALSE;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;config&#39;</span><span class="p">]</span>          <span class="o">=</span> <span class="k">FALSE</span><span class="p">;</span>
+<span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;queries&#39;</span><span class="p">]</span>         <span class="o">=</span> <span class="k">FALSE</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>コントローラではデフォルトと
 設定ファイル値を上書きすることができます、
 <a class="reference internal" href="../libraries/output.html"><span class="doc">出力ライブラリ</span></a> の <code class="docutils literal"><span class="pre">set_profiler_sections()</span></code> メソッドの呼び出しです:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$sections = array(
-        &#39;config&#39;  =&gt; TRUE,
-        &#39;queries&#39; =&gt; TRUE
-);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$sections</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;config&#39;</span>  <span class="o">=&gt;</span> <span class="k">TRUE</span><span class="p">,</span>
+        <span class="s1">&#39;queries&#39;</span> <span class="o">=&gt;</span> <span class="k">TRUE</span>
+<span class="p">);</span>
 
-$this-&gt;output-&gt;set_profiler_sections($sections);
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">output</span><span class="o">-&gt;</span><span class="na">set_profiler_sections</span><span class="p">(</span><span class="nv">$sections</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>使用可能なセクションと、それらにアクセスするために使用される配列のキーは、
@@ -570,7 +571,7 @@ $this-&gt;output-&gt;set_profiler_sections($sections);
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 9月 06, 2016
+      最終更新: 9月 04, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

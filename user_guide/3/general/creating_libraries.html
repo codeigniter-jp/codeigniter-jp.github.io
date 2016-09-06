@@ -415,6 +415,7 @@
       <img title="Classic Layout" alt="classic layout" src="data:image/gif;base64,R0lGODlhFAAUAJEAAAAAADMzM////wAAACH5BAUUAAIALAAAAAAUABQAAAImlI+py+0PU5gRBRDM3DxbWoXis42X13USOLauUIqnlsaH/eY6UwAAOw==" />
     </div>
   </ul>
+<div style="float:right;margin-left:5px;">[ <a href="https://github.com/codeigniter-jp/ci-ja/blob/develop/user_guide_ja_src/source/general/creating_libraries.rst">旧版翻訳途中</a> | <a href="https://github.com/bcit-ci/CodeIgniter/commits/develop/user_guide_src/source/general/creating_libraries.rst">原文履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/commits/develop_japanese/source/general/creating_libraries.rst">翻訳履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/source/general/creating_libraries.rst">GitHubで修正</a> ]</div><br /><div style="float:right;margin-left:5px;">[ <b class="highlighted">翻訳者募集中</b> → <a href="https://docs.google.com/spreadsheets/d/1ZWD5XqwH-Uo9X7MR644jbL6O8p5LxIngLT8M547H8wc/edit?pref=2&pli=1#gid=0">翻訳状況</a> ]</div>
   <hr/>
 </div>
           <div role="main" class="document">
@@ -460,15 +461,15 @@ application/libraries ディレクトリ内に独自のライブラリを作成�
 <div class="section" id="id4">
 <h2>クラスファイル<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>クラスにはこの基本的なプロトタイプが必要です:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>&lt;?php
-defined(&#39;BASEPATH&#39;) OR exit(&#39;No direct script access allowed&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+<span class="nb">defined</span><span class="p">(</span><span class="s1">&#39;BASEPATH&#39;</span><span class="p">)</span> <span class="k">OR</span> <span class="k">exit</span><span class="p">(</span><span class="s1">&#39;No direct script access allowed&#39;</span><span class="p">);</span>
 
-class Someclass {
+<span class="k">class</span> <span class="nc">Someclass</span> <span class="p">{</span>
 
-        public function some_method()
-        {
-        }
-}
+        <span class="k">public</span> <span class="k">function</span> <span class="nf">some_method</span><span class="p">()</span>
+        <span class="p">{</span>
+        <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -480,14 +481,14 @@ class Someclass {
 <h2>あなたのクラスの利用<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p><a class="reference internal" href="controllers.html"><span class="doc">コントローラ</span></a> メソッドのどこででも、
 標準の方法を使用してクラスを初期化することができます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;load-&gt;library(&#39;someclass&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;someclass&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p><em>someclass</em> の箇所はファイル名で、「 .php 」のファイル拡張子は不要です。
 ファイル名の 1 文字目は大文字でも小文字でも使えます。CodeIgniter
 は気にしません。</p>
 <p>一度ロードすれば、1文字目を小文字にしたものであなたのクラスにアクセスすることができます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;someclass-&gt;some_method();  // Object インスタンスは常に小文字になります
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">someclass</span><span class="o">-&gt;</span><span class="na">some_method</span><span class="p">();</span><span class="nx"> </span> <span class="c1">// Object インスタンスは常に小文字になります</span>
 </pre></div>
 </div>
 </div>
@@ -496,22 +497,22 @@ class Someclass {
 <p>ライブラリのロードメソッドでは動的にデータを配列として
 第 2 引数で渡すことができ、
 それはクラスのコンストラクタで渡されます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$params = array(&#39;type&#39; =&gt; &#39;large&#39;, &#39;color&#39; =&gt; &#39;red&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$params</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;type&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;large&#39;</span><span class="p">,</span> <span class="s1">&#39;color&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;red&#39;</span><span class="p">);</span>
 
-$this-&gt;load-&gt;library(&#39;someclass&#39;, $params);
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;someclass&#39;</span><span class="p">,</span> <span class="nv">$params</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>この機能を使用する場合は、クラスのコンストラクタでデータを要求するよう
 セットアップする必要があります:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>&lt;?php defined(&#39;BASEPATH&#39;) OR exit(&#39;No direct script access allowed&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span> <span class="nb">defined</span><span class="p">(</span><span class="s1">&#39;BASEPATH&#39;</span><span class="p">)</span> <span class="k">OR</span> <span class="k">exit</span><span class="p">(</span><span class="s1">&#39;No direct script access allowed&#39;</span><span class="p">);</span>
 
-class Someclass {
+<span class="k">class</span> <span class="nc">Someclass</span> <span class="p">{</span>
 
-        public function __construct($params)
-        {
-                // $params で何かをする
-        }
-}
+        <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nv">$params</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="c1">// $params で何かをする</span>
+        <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>また、設定ファイルに保存されたパラメータを渡すこともできます。
@@ -527,34 +528,34 @@ class Someclass {
 のスーパーオブジェクトを返します。</p>
 <p>通常、コントローラメソッド内では
 <code class="docutils literal"><span class="pre">$this</span></code> 構造を使用して、 CodeIgniter メソッドの利用可能なうちのいずれかを呼び出しています:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;load-&gt;helper(&#39;url&#39;);
-$this-&gt;load-&gt;library(&#39;session&#39;);
-$this-&gt;config-&gt;item(&#39;base_url&#39;);
-// など。
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">helper</span><span class="p">(</span><span class="s1">&#39;url&#39;</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;session&#39;</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">config</span><span class="o">-&gt;</span><span class="na">item</span><span class="p">(</span><span class="s1">&#39;base_url&#39;</span><span class="p">);</span>
+<span class="c1">// など。</span>
 </pre></div>
 </div>
 <p>しかしながら <code class="docutils literal"><span class="pre">$this</span></code> はこれはコントローラ内、
 モデル内、ビュー内で直接使用する場合にだけ動作します。独自のカスタムクラス内から CodeIgniter
 のクラスを使用したい場合は、以下のようにできます:</p>
 <p>まず、変数に CodeIgniter のオブジェクトを割り当てます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$CI =&amp; get_instance();
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$CI</span> <span class="o">=&amp;</span> <span class="nx">get_instance</span><span class="p">();</span>
 </pre></div>
 </div>
 <p>オブジェクトを変数に割り当てたなら、
 <code class="docutils literal"><span class="pre">$this</span></code> の <em>かわりに</em> その変数を使用します:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$CI =&amp; get_instance();
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$CI</span> <span class="o">=&amp;</span> <span class="nx">get_instance</span><span class="p">();</span>
 
-$CI-&gt;load-&gt;helper(&#39;url&#39;);
-$CI-&gt;load-&gt;library(&#39;session&#39;);
-$CI-&gt;config-&gt;item(&#39;base_url&#39;);
-// など。
+<span class="nv">$CI</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">helper</span><span class="p">(</span><span class="s1">&#39;url&#39;</span><span class="p">);</span>
+<span class="nv">$CI</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;session&#39;</span><span class="p">);</span>
+<span class="nv">$CI</span><span class="o">-&gt;</span><span class="na">config</span><span class="o">-&gt;</span><span class="na">item</span><span class="p">(</span><span class="s1">&#39;base_url&#39;</span><span class="p">);</span>
+<span class="c1">// など。</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
 <p>上記 <code class="docutils literal"><span class="pre">get_instance()</span></code> 関数は、
 参照によって渡されていることがわかるでしょう:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$CI =&amp; get_instance();
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$CI</span> <span class="o">=&amp;</span> <span class="nx">get_instance</span><span class="p">();</span>
 </pre></div>
 </div>
 <p class="last">これは非常に重要です。参照による割り当てにより、そのコピーを作成するのではなく、
@@ -564,30 +565,30 @@ $CI-&gt;config-&gt;item(&#39;base_url&#39;);
 そうするのが良いでしょう。つまり、クラスメソッドのすべてで
 CodeIgniter のスーパーオブジェクトを使用できるようにするために、
 上記例のかわりにプロパティに割り当てることをおすすめします:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>class Example_library {
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Example_library</span> <span class="p">{</span>
 
-        protected $CI;
+        <span class="k">protected</span> <span class="nv">$CI</span><span class="p">;</span>
 
-// コンストラクタを使いましょう、プロパティの定義部では
-// 直接関数を呼ぶことはできませんので。
-        public function __construct()
-        {
-                // CodeIgniter のスーパーオブジェクトを割り当てる
-                $this-&gt;CI =&amp; get_instance();
-        }
+<span class="c1">// コンストラクタを使いましょう、プロパティの定義部では</span>
+<span class="c1">// 直接関数を呼ぶことはできませんので。</span>
+        <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">()</span>
+        <span class="p">{</span>
+                <span class="c1">// CodeIgniter のスーパーオブジェクトを割り当てる</span>
+                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">CI</span> <span class="o">=&amp;</span> <span class="nx">get_instance</span><span class="p">();</span>
+        <span class="p">}</span>
 
-        public function foo()
-        {
-                $this-&gt;CI-&gt;load-&gt;helper(&#39;url&#39;);
-                redirect();
-        }
+        <span class="k">public</span> <span class="k">function</span> <span class="nf">foo</span><span class="p">()</span>
+        <span class="p">{</span>
+                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">CI</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">helper</span><span class="p">(</span><span class="s1">&#39;url&#39;</span><span class="p">);</span>
+                <span class="nx">redirect</span><span class="p">();</span>
+        <span class="p">}</span>
 
-        public function bar()
-        {
-                echo $this-&gt;CI-&gt;config-&gt;item(&#39;base_url&#39;);
-        }
+        <span class="k">public</span> <span class="k">function</span> <span class="nf">bar</span><span class="p">()</span>
+        <span class="p">{</span>
+                <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">CI</span><span class="o">-&gt;</span><span class="na">config</span><span class="o">-&gt;</span><span class="na">item</span><span class="p">(</span><span class="s1">&#39;base_url&#39;</span><span class="p">);</span>
+        <span class="p">}</span>
 
-}
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -599,14 +600,14 @@ CodeIgniter はネイティブライブラリのかわりにそれを使用す�
 ネイティブライブラリのものと正確に同じにする必要があります。たとえば、ネイティブのメール Email
 ライブラリを置き換えるためには、 <em>application/libraries/Email.php</em> という名前のファイルを作成し、
 つぎのようにクラスを宣言します:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>class CI_Email {
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">CI_Email</span> <span class="p">{</span>
 
-}
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>ほとんどのネイティブクラスはプレフィックス CI_ がついていることに注意してください。</p>
 <p>独自のライブラリをロードするには、標準の読み込み方法でできます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;load-&gt;library(&#39;email&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -629,21 +630,21 @@ CodeIgniter はネイティブライブラリのかわりにそれを使用す�
 </ul>
 <p>たとえば、ネイティブのEmailクラスを拡張するためには、
 <em>application/libraries/MY_Email.php</em> という名前のファイルを作成し、つぎのようにクラスを宣言します:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>class MY_Email extends CI_Email {
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MY_Email</span> <span class="k">extends</span> <span class="nx">CI_Email</span> <span class="p">{</span>
 
-}
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>クラスのコンストラクタを使用する必要がある場合、
 親クラスのコンストラクタを呼び出していることを確認してください:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>class MY_Email extends CI_Email {
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MY_Email</span> <span class="k">extends</span> <span class="nx">CI_Email</span> <span class="p">{</span>
 
-        public function __construct($config = array())
-        {
-                parent::__construct($config);
-        }
+        <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nv">$config</span> <span class="o">=</span> <span class="k">array</span><span class="p">())</span>
+        <span class="p">{</span>
+                <span class="k">parent</span><span class="o">::</span><span class="na">__construct</span><span class="p">(</span><span class="nv">$config</span><span class="p">);</span>
+        <span class="p">}</span>
 
-}
+<span class="p">}</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -657,13 +658,13 @@ CodeIgniter はネイティブライブラリのかわりにそれを使用す�
 <p>サブクラスをロードするには、通常使用されている標準的な構文を使用します。
 プレフィックスを　つ　け　な　い　で　ください。たとえば、上記の例、
 Email クラスを拡張継承したものをロードするには次のようにします:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;load-&gt;library(&#39;email&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>一度ロードすれば、継承元クラスを普通に使う場合と同じように、
 クラス変数を使用します。Emailクラスの場合、
 すべての呼び出しが次のようになります:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;email-&gt;some_method();
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">email</span><span class="o">-&gt;</span><span class="na">some_method</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
@@ -671,7 +672,7 @@ Email クラスを拡張継承したものをロードするには次のよう�
 <h3>独自のプレフィックスを設定する<a class="headerlink" href="#id10" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>サブクラスに独自のプレフィックスを設定するには
 <em>application/config/config.php</em> ファイルを開いて、次の項目を探してください:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$config[&#39;subclass_prefix&#39;] = &#39;MY_&#39;;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;subclass_prefix&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;MY_&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>すべての標準の CodeIgniter のライブラリはプレフィックスに CI_
@@ -699,7 +700,7 @@ Email クラスを拡張継承したものをロードするには次のよう�
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 9月 06, 2016
+      最終更新: 9月 04, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

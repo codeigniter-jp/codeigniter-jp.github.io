@@ -415,6 +415,7 @@
       <img title="Classic Layout" alt="classic layout" src="data:image/gif;base64,R0lGODlhFAAUAJEAAAAAADMzM////wAAACH5BAUUAAIALAAAAAAUABQAAAImlI+py+0PU5gRBRDM3DxbWoXis42X13USOLauUIqnlsaH/eY6UwAAOw==" />
     </div>
   </ul>
+<div style="float:right;margin-left:5px;">[ <a href="https://github.com/codeigniter-jp/ci-ja/blob/develop/user_guide_ja_src/source/helpers/captcha_helper.rst">旧版翻訳途中</a> | <a href="https://github.com/bcit-ci/CodeIgniter/commits/develop/user_guide_src/source/helpers/captcha_helper.rst">原文履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/commits/develop_japanese/source/helpers/captcha_helper.rst">翻訳履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/source/helpers/captcha_helper.rst">GitHubで修正</a> ]</div><br /><div style="float:right;margin-left:5px;">[ <b class="highlighted">翻訳者募集中</b> → <a href="https://docs.google.com/spreadsheets/d/1ZWD5XqwH-Uo9X7MR644jbL6O8p5LxIngLT8M547H8wc/edit?pref=2&pli=1#gid=0">翻訳状況</a> ]</div>
   <hr/>
 </div>
           <div role="main" class="document">
@@ -436,37 +437,37 @@
 <div class="custom-index container"></div><div class="section" id="id2">
 <h2><a class="toc-backref" href="#id6">このヘルパーをロードする</a><a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>このヘルパーは次のコードを使ってロードします:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;load-&gt;helper(&#39;captcha&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">helper</span><span class="p">(</span><span class="s1">&#39;captcha&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="id3">
 <h2><a class="toc-backref" href="#id7">キャプチャ ヘルパーを使う</a><a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>一旦ロードすれば、このようなキャプチャを生成できます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$vals = array(
-        &#39;word&#39;          =&gt; &#39;Random word&#39;,
-        &#39;img_path&#39;      =&gt; &#39;./captcha/&#39;,
-        &#39;img_url&#39;       =&gt; &#39;http://example.com/captcha/&#39;,
-        &#39;font_path&#39;     =&gt; &#39;./path/to/fonts/texb.ttf&#39;,
-        &#39;img_width&#39;     =&gt; &#39;150&#39;,
-        &#39;img_height&#39;    =&gt; 30,
-        &#39;expiration&#39;    =&gt; 7200,
-        &#39;word_length&#39;   =&gt; 8,
-        &#39;font_size&#39;     =&gt; 16,
-        &#39;img_id&#39;        =&gt; &#39;Imageid&#39;,
-        &#39;pool&#39;          =&gt; &#39;0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ&#39;,
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$vals</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;word&#39;</span>          <span class="o">=&gt;</span> <span class="s1">&#39;Random word&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;img_path&#39;</span>      <span class="o">=&gt;</span> <span class="s1">&#39;./captcha/&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;img_url&#39;</span>       <span class="o">=&gt;</span> <span class="s1">&#39;http://example.com/captcha/&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;font_path&#39;</span>     <span class="o">=&gt;</span> <span class="s1">&#39;./path/to/fonts/texb.ttf&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;img_width&#39;</span>     <span class="o">=&gt;</span> <span class="s1">&#39;150&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;img_height&#39;</span>    <span class="o">=&gt;</span> <span class="mi">30</span><span class="p">,</span>
+        <span class="s1">&#39;expiration&#39;</span>    <span class="o">=&gt;</span> <span class="mi">7200</span><span class="p">,</span>
+        <span class="s1">&#39;word_length&#39;</span>   <span class="o">=&gt;</span> <span class="mi">8</span><span class="p">,</span>
+        <span class="s1">&#39;font_size&#39;</span>     <span class="o">=&gt;</span> <span class="mi">16</span><span class="p">,</span>
+        <span class="s1">&#39;img_id&#39;</span>        <span class="o">=&gt;</span> <span class="s1">&#39;Imageid&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;pool&#39;</span>          <span class="o">=&gt;</span> <span class="s1">&#39;0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ&#39;</span><span class="p">,</span>
 
-        // White background and border, black text and red grid
-        &#39;colors&#39;        =&gt; array(
-                &#39;background&#39; =&gt; array(255, 255, 255),
-                &#39;border&#39; =&gt; array(255, 255, 255),
-                &#39;text&#39; =&gt; array(0, 0, 0),
-                &#39;grid&#39; =&gt; array(255, 40, 40)
-        )
-);
+        <span class="c1">// White background and border, black text and red grid</span>
+        <span class="s1">&#39;colors&#39;</span>        <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+                <span class="s1">&#39;background&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">),</span>
+                <span class="s1">&#39;border&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">),</span>
+                <span class="s1">&#39;text&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+                <span class="s1">&#39;grid&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
+        <span class="p">)</span>
+<span class="p">);</span>
 
-$cap = create_captcha($vals);
-echo $cap[&#39;image&#39;];
+<span class="nv">$cap</span> <span class="o">=</span> <span class="nx">create_captcha</span><span class="p">(</span><span class="nv">$vals</span><span class="p">);</span>
+<span class="k">echo</span> <span class="nv">$cap</span><span class="p">[</span><span class="s1">&#39;image&#39;</span><span class="p">];</span>
 </pre></div>
 </div>
 <ul class="simple">
@@ -495,57 +496,57 @@ echo $cap[&#39;image&#39;];
 期限が切れていないことを検証します。</p>
 <blockquote>
 <div><p>テーブルの定義:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>CREATE TABLE captcha (
-        captcha_id bigint(13) unsigned NOT NULL auto_increment,
-        captcha_time int(10) unsigned NOT NULL,
-        ip_address varchar(45) NOT NULL,
-        word varchar(20) NOT NULL,
-        PRIMARY KEY `captcha_id` (`captcha_id`),
-        KEY `word` (`word`)
-);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">CREATE</span> <span class="nx">TABLE</span> <span class="nx">captcha</span> <span class="p">(</span>
+        <span class="nx">captcha_id</span> <span class="nx">bigint</span><span class="p">(</span><span class="mi">13</span><span class="p">)</span> <span class="nx">unsigned</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="nx">auto_increment</span><span class="p">,</span>
+        <span class="nx">captcha_time</span> <span class="nx">int</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="nx">unsigned</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+        <span class="nx">ip_address</span> <span class="nx">varchar</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+        <span class="nx">word</span> <span class="nx">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+        <span class="nx">PRIMARY</span> <span class="nx">KEY</span> <span class="sb">`captcha_id`</span> <span class="p">(</span><span class="sb">`captcha_id`</span><span class="p">),</span>
+        <span class="nx">KEY</span> <span class="sb">`word`</span> <span class="p">(</span><span class="sb">`word`</span><span class="p">)</span>
+<span class="p">);</span>
 </pre></div>
 </div>
 </div></blockquote>
 <p>データベースと組み合わせた際の例です。
 キャプチャを表示するページの例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;load-&gt;helper(&#39;captcha&#39;);
-$vals = array(
-        &#39;img_path&#39;      =&gt; &#39;./captcha/&#39;,
-        &#39;img_url&#39;       =&gt; &#39;http://example.com/captcha/&#39;
-);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">helper</span><span class="p">(</span><span class="s1">&#39;captcha&#39;</span><span class="p">);</span>
+<span class="nv">$vals</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;img_path&#39;</span>      <span class="o">=&gt;</span> <span class="s1">&#39;./captcha/&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;img_url&#39;</span>       <span class="o">=&gt;</span> <span class="s1">&#39;http://example.com/captcha/&#39;</span>
+<span class="p">);</span>
 
-$cap = create_captcha($vals);
-$data = array(
-        &#39;captcha_time&#39;  =&gt; $cap[&#39;time&#39;],
-        &#39;ip_address&#39;    =&gt; $this-&gt;input-&gt;ip_address(),
-        &#39;word&#39;          =&gt; $cap[&#39;word&#39;]
-);
+<span class="nv">$cap</span> <span class="o">=</span> <span class="nx">create_captcha</span><span class="p">(</span><span class="nv">$vals</span><span class="p">);</span>
+<span class="nv">$data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;captcha_time&#39;</span>  <span class="o">=&gt;</span> <span class="nv">$cap</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;ip_address&#39;</span>    <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">ip_address</span><span class="p">(),</span>
+        <span class="s1">&#39;word&#39;</span>          <span class="o">=&gt;</span> <span class="nv">$cap</span><span class="p">[</span><span class="s1">&#39;word&#39;</span><span class="p">]</span>
+<span class="p">);</span>
 
-$query = $this-&gt;db-&gt;insert_string(&#39;captcha&#39;, $data);
-$this-&gt;db-&gt;query($query);
+<span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">insert_string</span><span class="p">(</span><span class="s1">&#39;captcha&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="nv">$query</span><span class="p">);</span>
 
-echo &#39;Submit the word you see below:&#39;;
-echo $cap[&#39;image&#39;];
-echo &#39;&lt;input type=&quot;text&quot; name=&quot;captcha&quot; value=&quot;&quot; /&gt;&#39;;
+<span class="k">echo</span> <span class="s1">&#39;Submit the word you see below:&#39;</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nv">$cap</span><span class="p">[</span><span class="s1">&#39;image&#39;</span><span class="p">];</span>
+<span class="k">echo</span> <span class="s1">&#39;&lt;input type=&quot;text&quot; name=&quot;captcha&quot; value=&quot;&quot; /&gt;&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>送信を受け付けるページの
 例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>// 期限切れのキャプチャを削除
-$expiration = time() - 7200; // 有効期間は2時間です
-$this-&gt;db-&gt;where(&#39;captcha_time &lt; &#39;, $expiration)
-        -&gt;delete(&#39;captcha&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// 期限切れのキャプチャを削除</span>
+<span class="nv">$expiration</span> <span class="o">=</span> <span class="nb">time</span><span class="p">()</span> <span class="o">-</span> <span class="mi">7200</span><span class="p">;</span> <span class="c1">// 有効期間は2時間です</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;captcha_time &lt; &#39;</span><span class="p">,</span> <span class="nv">$expiration</span><span class="p">)</span>
+        <span class="o">-&gt;</span><span class="na">delete</span><span class="p">(</span><span class="s1">&#39;captcha&#39;</span><span class="p">);</span>
 
-// キャプチャが存在するか確認:
-$sql = &#39;SELECT COUNT(*) AS count FROM captcha WHERE word = ? AND ip_address = ? AND captcha_time &gt; ?&#39;;
-$binds = array($_POST[&#39;captcha&#39;], $this-&gt;input-&gt;ip_address(), $expiration);
-$query = $this-&gt;db-&gt;query($sql, $binds);
-$row = $query-&gt;row();
+<span class="c1">// キャプチャが存在するか確認:</span>
+<span class="nv">$sql</span> <span class="o">=</span> <span class="s1">&#39;SELECT COUNT(*) AS count FROM captcha WHERE word = ? AND ip_address = ? AND captcha_time &gt; ?&#39;</span><span class="p">;</span>
+<span class="nv">$binds</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;captcha&#39;</span><span class="p">],</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">ip_address</span><span class="p">(),</span> <span class="nv">$expiration</span><span class="p">);</span>
+<span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="nv">$sql</span><span class="p">,</span> <span class="nv">$binds</span><span class="p">);</span>
+<span class="nv">$row</span> <span class="o">=</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">row</span><span class="p">();</span>
 
-if ($row-&gt;count == 0)
-{
-        echo &#39;You must submit the word that appears in the image.&#39;;
-}
+<span class="k">if</span> <span class="p">(</span><span class="nv">$row</span><span class="o">-&gt;</span><span class="na">count</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="k">echo</span> <span class="s1">&#39;You must submit the word that appears in the image.&#39;</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -579,15 +580,15 @@ if ($row-&gt;count == 0)
 <p>入力として引数に CAPTCHA 生成のための情報を配列で受け取り、
 指定された画像を生成し、生成された画像に関するデータの
 連想配列を返します。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>array(
-        &#39;image&#39; =&gt; IMAGE TAG
-        &#39;time&#39;  =&gt; TIMESTAMP（マイクロ秒まで含む）
-        &#39;word&#39;  =&gt; CAPTCHA WORD
-)
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;image&#39;</span> <span class="o">=&gt;</span> <span class="nx">IMAGE</span> <span class="nx">TAG</span>
+        <span class="s1">&#39;time&#39;</span>  <span class="o">=&gt;</span> <span class="nx">TIMESTAMP（マイクロ秒まで含む）</span>
+        <span class="s1">&#39;word&#39;</span>  <span class="o">=&gt;</span> <span class="nx">CAPTCHA</span> <span class="nx">WORD</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>image</strong> は実際の image タグです:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>&lt;img src=&quot;http://example.com/captcha/12345.jpg&quot; width=&quot;140&quot; height=&quot;50&quot; /&gt;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nx">img</span> <span class="nx">src</span><span class="o">=</span><span class="s2">&quot;http://example.com/captcha/12345.jpg&quot;</span> <span class="nx">width</span><span class="o">=</span><span class="s2">&quot;140&quot;</span> <span class="nx">height</span><span class="o">=</span><span class="s2">&quot;50&quot;</span> <span class="o">/&gt;</span>
 </pre></div>
 </div>
 <p><strong>time</strong> はマイクロ秒でのタイプスタンプで、拡張子を除いた部分の画像の
@@ -618,7 +619,7 @@ if ($row-&gt;count == 0)
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 9月 06, 2016
+      最終更新: 9月 04, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

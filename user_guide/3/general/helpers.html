@@ -415,6 +415,7 @@
       <img title="Classic Layout" alt="classic layout" src="data:image/gif;base64,R0lGODlhFAAUAJEAAAAAADMzM////wAAACH5BAUUAAIALAAAAAAUABQAAAImlI+py+0PU5gRBRDM3DxbWoXis42X13USOLauUIqnlsaH/eY6UwAAOw==" />
     </div>
   </ul>
+<div style="float:right;margin-left:5px;">[ <a href="https://github.com/codeigniter-jp/ci-ja/blob/develop/user_guide_ja_src/source/general/helpers.rst">旧版翻訳途中</a> | <a href="https://github.com/bcit-ci/CodeIgniter/commits/develop/user_guide_src/source/general/helpers.rst">原文履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/commits/develop_japanese/source/general/helpers.rst">翻訳履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/source/general/helpers.rst">GitHubで修正</a> ]</div><br /><div style="float:right;margin-left:5px;">[ <b class="highlighted">翻訳者募集中</b> → <a href="https://docs.google.com/spreadsheets/d/1ZWD5XqwH-Uo9X7MR644jbL6O8p5LxIngLT8M547H8wc/edit?pref=2&pli=1#gid=0">翻訳状況</a> ]</div>
   <hr/>
 </div>
           <div role="main" class="document">
@@ -443,14 +444,14 @@
 <div class="section" id="id2">
 <h2>ヘルパーのロード<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>ヘルパーファイルのロードはつぎの方法を使用すると非常に簡単です:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;load-&gt;helper(&#39;name&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">helper</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p><strong>name</strong> の箇所はヘルパーのファイル名で、 .php のファイル拡張子も
 「 helper 」の名前もありません。</p>
 <p>たとえば、 <strong>url_helper.php</strong> という名前の <strong>URL ヘルパー</strong> ファイルをロードするには、
 この操作を行います:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;load-&gt;helper(&#39;url&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">helper</span><span class="p">(</span><span class="s1">&#39;url&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>使用する前にロードすれば、ヘルパーはコントローラのメソッド内の任意の場所でロードされた状態になっています
@@ -469,9 +470,9 @@
 <h2>複数のヘルパーのロード<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>2 つ以上のヘルパーをロードする必要がある場合、配列で指定することができます。
 次のように:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;load-&gt;helper(
-        array(&#39;helper1&#39;, &#39;helper2&#39;, &#39;helper3&#39;)
-);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">helper</span><span class="p">(</span>
+        <span class="k">array</span><span class="p">(</span><span class="s1">&#39;helper1&#39;</span><span class="p">,</span> <span class="s1">&#39;helper2&#39;</span><span class="p">,</span> <span class="s1">&#39;helper3&#39;</span><span class="p">)</span>
+<span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -488,7 +489,7 @@
 標準の PHP 関数のような方法でそれを呼び出せます。</p>
 <p>たとえば、ビューファイルのいずれかで <code class="docutils literal"><span class="pre">anchor()</span></code> 関数を使用してリンクを作成するには、
 次のようにします:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>&lt;?php echo anchor(&#39;blog/comments&#39;, &#39;Click Here&#39;);?&gt;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span> <span class="k">echo</span> <span class="nx">anchor</span><span class="p">(</span><span class="s1">&#39;blog/comments&#39;</span><span class="p">,</span> <span class="s1">&#39;Click Here&#39;</span><span class="p">);</span><span class="cp">?&gt;</span>
 </pre></div>
 </div>
 <p>「 Click Here 」の箇所はリンクの名前で、「 blog/comments 」は
@@ -513,28 +514,28 @@
 <p>たとえば、標準の <strong>配列ヘルパー</strong> を継承するためには、
 <strong>application/helpers/MY_array_helper.php</strong> という名前のファイルを作成し、
 機能を追加または上書きします:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>// any_in_array() は配列ヘルパーにはありません、なのでこれは新しい関数を定義します
-function any_in_array($needle, $haystack)
-{
-        $needle = is_array($needle) ? $needle : array($needle);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// any_in_array() は配列ヘルパーにはありません、なのでこれは新しい関数を定義します</span>
+<span class="k">function</span> <span class="nf">any_in_array</span><span class="p">(</span><span class="nv">$needle</span><span class="p">,</span> <span class="nv">$haystack</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="nv">$needle</span> <span class="o">=</span> <span class="nb">is_array</span><span class="p">(</span><span class="nv">$needle</span><span class="p">)</span> <span class="o">?</span> <span class="nv">$needle</span> <span class="o">:</span> <span class="k">array</span><span class="p">(</span><span class="nv">$needle</span><span class="p">);</span>
 
-        foreach ($needle as $item)
-        {
-                if (in_array($item, $haystack))
-                {
-                        return TRUE;
-                }
-        }
+        <span class="k">foreach</span> <span class="p">(</span><span class="nv">$needle</span> <span class="k">as</span> <span class="nv">$item</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nb">in_array</span><span class="p">(</span><span class="nv">$item</span><span class="p">,</span> <span class="nv">$haystack</span><span class="p">))</span>
+                <span class="p">{</span>
+                        <span class="k">return</span> <span class="k">TRUE</span><span class="p">;</span>
+                <span class="p">}</span>
+        <span class="p">}</span>
 
-        return FALSE;
-}
+        <span class="k">return</span> <span class="k">FALSE</span><span class="p">;</span>
+<span class="p">}</span>
 
-// random_element() は配列ヘルパーに含まれます、なのでこれは標準関数をオーバーライドします
-function random_element($array)
-{
-        shuffle($array);
-        return array_pop($array);
-}
+<span class="c1">// random_element() は配列ヘルパーに含まれます、なのでこれは標準関数をオーバーライドします</span>
+<span class="k">function</span> <span class="nf">random_element</span><span class="p">(</span><span class="nv">$array</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="nb">shuffle</span><span class="p">(</span><span class="nv">$array</span><span class="p">);</span>
+        <span class="k">return</span> <span class="nb">array_pop</span><span class="p">(</span><span class="nv">$array</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <div class="section" id="id7">
@@ -542,7 +543,7 @@ function random_element($array)
 <p>「継承」するヘルパーのファイル名のプレフィックスは、
 ライブラリやコアクラスを継承するために使用されるものと同じです。独自のプレフィックスを設定するには
 <strong>application/config/config.php</strong> ファイルを開いて、次の項目を探してください:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$config[&#39;subclass_prefix&#39;] = &#39;MY_&#39;;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;subclass_prefix&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;MY_&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>すべての標準の CodeIgniter のライブラリはプレフィックスに <strong>CI_</strong> がついていますので、
@@ -575,7 +576,7 @@ function random_element($array)
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 9月 06, 2016
+      最終更新: 9月 04, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

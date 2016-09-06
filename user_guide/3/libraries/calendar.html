@@ -415,6 +415,7 @@
       <img title="Classic Layout" alt="classic layout" src="data:image/gif;base64,R0lGODlhFAAUAJEAAAAAADMzM////wAAACH5BAUUAAIALAAAAAAUABQAAAImlI+py+0PU5gRBRDM3DxbWoXis42X13USOLauUIqnlsaH/eY6UwAAOw==" />
     </div>
   </ul>
+<div style="float:right;margin-left:5px;">[ <a href="https://github.com/codeigniter-jp/ci-ja/blob/develop/user_guide_ja_src/source/libraries/calendar.rst">旧版翻訳途中</a> | <a href="https://github.com/bcit-ci/CodeIgniter/commits/develop/user_guide_src/source/libraries/calendar.rst">原文履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/commits/develop_japanese/source/libraries/calendar.rst">翻訳履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/source/libraries/calendar.rst">GitHubで修正</a> ]</div><br /><div style="float:right;margin-left:5px;">[ <b class="highlighted">翻訳者募集中</b> → <a href="https://docs.google.com/spreadsheets/d/1ZWD5XqwH-Uo9X7MR644jbL6O8p5LxIngLT8M547H8wc/edit?pref=2&pli=1#gid=0">翻訳状況</a> ]</div>
   <hr/>
 </div>
           <div role="main" class="document">
@@ -445,26 +446,26 @@
 <h3><a class="toc-backref" href="#id11">クラスの初期化</a><a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>CodeIgniter の大半のクラスと同様に、カレンダークラスはコントローラの中で、
 $this-&gt;load-&gt;library メソッドを使って初期化します:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;load-&gt;library(&#39;calendar&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;calendar&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>一旦呼び出せば、カレンダーオブジェクトは $this-&gt;calendar を使用することで利用できます。:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;calendar
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">calendar</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="id4">
 <h3><a class="toc-backref" href="#id12">カレンダーの表示</a><a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>カレンダーの表示方法の非常に簡単な例です:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;load-&gt;library(&#39;calendar&#39;);
-echo $this-&gt;calendar-&gt;generate();
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;calendar&#39;</span><span class="p">);</span>
+<span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">calendar</span><span class="o">-&gt;</span><span class="na">generate</span><span class="p">();</span>
 </pre></div>
 </div>
 <p>上のコードは、サーバ時間の年月のカレンダーを生成します。
 特定の年月のカレンダーを表示させるには、カレンダー生成
 関数に次のように情報を渡します:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;load-&gt;library(&#39;calendar&#39;);
-echo $this-&gt;calendar-&gt;generate(2006, 6);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;calendar&#39;</span><span class="p">);</span>
+<span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">calendar</span><span class="o">-&gt;</span><span class="na">generate</span><span class="p">(</span><span class="mi">2006</span><span class="p">,</span> <span class="mi">6</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>上のコードは、2006年6月を表示するカレンダ
@@ -477,16 +478,16 @@ echo $this-&gt;calendar-&gt;generate(2006, 6);
 それに対応する値に埋め込むデータを入れた連想配列を作成します。
 作成した配列は、カレンダー生成関数の第3引数に渡します。
 次のような例が考えられます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;load-&gt;library(&#39;calendar&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;calendar&#39;</span><span class="p">);</span>
 
-$data = array(
-        3  =&gt; &#39;http://example.com/news/article/2006/06/03/&#39;,
-        7  =&gt; &#39;http://example.com/news/article/2006/06/07/&#39;,
-        13 =&gt; &#39;http://example.com/news/article/2006/06/13/&#39;,
-        26 =&gt; &#39;http://example.com/news/article/2006/06/26/&#39;
-);
+<span class="nv">$data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="mi">3</span>  <span class="o">=&gt;</span> <span class="s1">&#39;http://example.com/news/article/2006/06/03/&#39;</span><span class="p">,</span>
+        <span class="mi">7</span>  <span class="o">=&gt;</span> <span class="s1">&#39;http://example.com/news/article/2006/06/07/&#39;</span><span class="p">,</span>
+        <span class="mi">13</span> <span class="o">=&gt;</span> <span class="s1">&#39;http://example.com/news/article/2006/06/13/&#39;</span><span class="p">,</span>
+        <span class="mi">26</span> <span class="o">=&gt;</span> <span class="s1">&#39;http://example.com/news/article/2006/06/26/&#39;</span>
+<span class="p">);</span>
 
-echo $this-&gt;calendar-&gt;generate(2006, 6, $data);
+<span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">calendar</span><span class="o">-&gt;</span><span class="na">generate</span><span class="p">(</span><span class="mi">2006</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>上の例を使用すると、3,7,13および26日が渡された
@@ -504,15 +505,15 @@ URL を指すリンクになります。</p>
 <p>7つの設定項目でカレンダーの様々な面をコントロールできます。
 設定項目は呼び出し関数の第2引数に配列として渡して設定します。
 例です:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$prefs = array(
-        &#39;start_day&#39;    =&gt; &#39;saturday&#39;,
-        &#39;month_type&#39;   =&gt; &#39;long&#39;,
-        &#39;day_type&#39;     =&gt; &#39;short&#39;
-);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$prefs</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;start_day&#39;</span>    <span class="o">=&gt;</span> <span class="s1">&#39;saturday&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;month_type&#39;</span>   <span class="o">=&gt;</span> <span class="s1">&#39;long&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;day_type&#39;</span>     <span class="o">=&gt;</span> <span class="s1">&#39;short&#39;</span>
+<span class="p">);</span>
 
-$this-&gt;load-&gt;library(&#39;calendar&#39;, $prefs);
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;calendar&#39;</span><span class="p">,</span> <span class="nv">$prefs</span><span class="p">);</span>
 
-echo $this-&gt;calendar-&gt;generate();
+<span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">calendar</span><span class="o">-&gt;</span><span class="na">generate</span><span class="p">();</span>
 </pre></div>
 </div>
 <p>上のコードは、土曜日から始まり、「長い」形式の月名と「短い」
@@ -589,14 +590,14 @@ long = Sunday, short = Sun, abr = Su.</td>
 <p>次へ / 前へ のリンクを経由してカレンダーを動的に進める / 戻る
 ようにするには、次の例のようなコードをカレンダーのコードに設定
 する必要があります:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$prefs = array(
-        &#39;show_next_prev&#39;  =&gt; TRUE,
-        &#39;next_prev_url&#39;   =&gt; &#39;http://example.com/index.php/calendar/show/&#39;
-);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$prefs</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;show_next_prev&#39;</span>  <span class="o">=&gt;</span> <span class="k">TRUE</span><span class="p">,</span>
+        <span class="s1">&#39;next_prev_url&#39;</span>   <span class="o">=&gt;</span> <span class="s1">&#39;http://example.com/index.php/calendar/show/&#39;</span>
+<span class="p">);</span>
 
-$this-&gt;load-&gt;library(&#39;calendar&#39;, $prefs);
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;calendar&#39;</span><span class="p">,</span> <span class="nv">$prefs</span><span class="p">);</span>
 
-echo $this-&gt;calendar-&gt;generate($this-&gt;uri-&gt;segment(3), $this-&gt;uri-&gt;segment(4));
+<span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">calendar</span><span class="o">-&gt;</span><span class="na">generate</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">uri</span><span class="o">-&gt;</span><span class="na">segment</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">uri</span><span class="o">-&gt;</span><span class="na">segment</span><span class="p">(</span><span class="mi">4</span><span class="p">));</span>
 </pre></div>
 </div>
 <p>上のサンプルで、何点か気づいた点があるはずです:</p>
@@ -616,63 +617,63 @@ URI セグメントに出現するものを指定します
 <p>カレンダーテンプレートを作成することで、カレンダーのデザイン
 を100%コントロールできます。 カレンダーの各部品は次に示す
 擬似変数のペアの間に配置されます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$prefs[&#39;template&#39;] = &#39;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$prefs</span><span class="p">[</span><span class="s1">&#39;template&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;</span>
 
-        {table_open}&lt;table border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot;&gt;{/table_open}
+<span class="s1">        {table_open}&lt;table border=&quot;0&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot;&gt;{/table_open}</span>
 
-        {heading_row_start}&lt;tr&gt;{/heading_row_start}
+<span class="s1">        {heading_row_start}&lt;tr&gt;{/heading_row_start}</span>
 
-        {heading_previous_cell}&lt;th&gt;&lt;a href=&quot;{previous_url}&quot;&gt;&amp;lt;&amp;lt;&lt;/a&gt;&lt;/th&gt;{/heading_previous_cell}
-        {heading_title_cell}&lt;th colspan=&quot;{colspan}&quot;&gt;{heading}&lt;/th&gt;{/heading_title_cell}
-        {heading_next_cell}&lt;th&gt;&lt;a href=&quot;{next_url}&quot;&gt;&amp;gt;&amp;gt;&lt;/a&gt;&lt;/th&gt;{/heading_next_cell}
+<span class="s1">        {heading_previous_cell}&lt;th&gt;&lt;a href=&quot;{previous_url}&quot;&gt;&amp;lt;&amp;lt;&lt;/a&gt;&lt;/th&gt;{/heading_previous_cell}</span>
+<span class="s1">        {heading_title_cell}&lt;th colspan=&quot;{colspan}&quot;&gt;{heading}&lt;/th&gt;{/heading_title_cell}</span>
+<span class="s1">        {heading_next_cell}&lt;th&gt;&lt;a href=&quot;{next_url}&quot;&gt;&amp;gt;&amp;gt;&lt;/a&gt;&lt;/th&gt;{/heading_next_cell}</span>
 
-        {heading_row_end}&lt;/tr&gt;{/heading_row_end}
+<span class="s1">        {heading_row_end}&lt;/tr&gt;{/heading_row_end}</span>
 
-        {week_row_start}&lt;tr&gt;{/week_row_start}
-        {week_day_cell}&lt;td&gt;{week_day}&lt;/td&gt;{/week_day_cell}
-        {week_row_end}&lt;/tr&gt;{/week_row_end}
+<span class="s1">        {week_row_start}&lt;tr&gt;{/week_row_start}</span>
+<span class="s1">        {week_day_cell}&lt;td&gt;{week_day}&lt;/td&gt;{/week_day_cell}</span>
+<span class="s1">        {week_row_end}&lt;/tr&gt;{/week_row_end}</span>
 
-        {cal_row_start}&lt;tr&gt;{/cal_row_start}
-        {cal_cell_start}&lt;td&gt;{/cal_cell_start}
-        {cal_cell_start_today}&lt;td&gt;{/cal_cell_start_today}
-        {cal_cell_start_other}&lt;td class=&quot;other-month&quot;&gt;{/cal_cell_start_other}
+<span class="s1">        {cal_row_start}&lt;tr&gt;{/cal_row_start}</span>
+<span class="s1">        {cal_cell_start}&lt;td&gt;{/cal_cell_start}</span>
+<span class="s1">        {cal_cell_start_today}&lt;td&gt;{/cal_cell_start_today}</span>
+<span class="s1">        {cal_cell_start_other}&lt;td class=&quot;other-month&quot;&gt;{/cal_cell_start_other}</span>
 
-        {cal_cell_content}&lt;a href=&quot;{content}&quot;&gt;{day}&lt;/a&gt;{/cal_cell_content}
-        {cal_cell_content_today}&lt;div class=&quot;highlight&quot;&gt;&lt;a href=&quot;{content}&quot;&gt;{day}&lt;/a&gt;&lt;/div&gt;{/cal_cell_content_today}
+<span class="s1">        {cal_cell_content}&lt;a href=&quot;{content}&quot;&gt;{day}&lt;/a&gt;{/cal_cell_content}</span>
+<span class="s1">        {cal_cell_content_today}&lt;div class=&quot;highlight&quot;&gt;&lt;a href=&quot;{content}&quot;&gt;{day}&lt;/a&gt;&lt;/div&gt;{/cal_cell_content_today}</span>
 
-        {cal_cell_no_content}{day}{/cal_cell_no_content}
-        {cal_cell_no_content_today}&lt;div class=&quot;highlight&quot;&gt;{day}&lt;/div&gt;{/cal_cell_no_content_today}
+<span class="s1">        {cal_cell_no_content}{day}{/cal_cell_no_content}</span>
+<span class="s1">        {cal_cell_no_content_today}&lt;div class=&quot;highlight&quot;&gt;{day}&lt;/div&gt;{/cal_cell_no_content_today}</span>
 
-        {cal_cell_blank}&amp;nbsp;{/cal_cell_blank}
+<span class="s1">        {cal_cell_blank}&amp;nbsp;{/cal_cell_blank}</span>
 
-        {cal_cell_other}{day}{/cal_cel_other}
+<span class="s1">        {cal_cell_other}{day}{/cal_cel_other}</span>
 
-        {cal_cell_end}&lt;/td&gt;{/cal_cell_end}
-        {cal_cell_end_today}&lt;/td&gt;{/cal_cell_end_today}
-        {cal_cell_end_other}&lt;/td&gt;{/cal_cell_end_other}
-        {cal_row_end}&lt;/tr&gt;{/cal_row_end}
+<span class="s1">        {cal_cell_end}&lt;/td&gt;{/cal_cell_end}</span>
+<span class="s1">        {cal_cell_end_today}&lt;/td&gt;{/cal_cell_end_today}</span>
+<span class="s1">        {cal_cell_end_other}&lt;/td&gt;{/cal_cell_end_other}</span>
+<span class="s1">        {cal_row_end}&lt;/tr&gt;{/cal_row_end}</span>
 
-        {table_close}&lt;/table&gt;{/table_close}
-&#39;;
+<span class="s1">        {table_close}&lt;/table&gt;{/table_close}</span>
+<span class="s1">&#39;</span><span class="p">;</span>
 
-$this-&gt;load-&gt;library(&#39;calendar&#39;, $prefs);
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;calendar&#39;</span><span class="p">,</span> <span class="nv">$prefs</span><span class="p">);</span>
 
-echo $this-&gt;calendar-&gt;generate();
+<span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">calendar</span><span class="o">-&gt;</span><span class="na">generate</span><span class="p">();</span>
 </pre></div>
 </div>
 <p>配列を使用して、 <cite>key=&gt;value</cite> ペアを渡すことで多くの
 望む値を渡すことができます。省略するとCalendarクラス
 で継承されたデフォルト値を使用します</p>
 <p>使用例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$prefs[&#39;template&#39;] = array(
-        &#39;table_open&#39;           =&gt; &#39;&lt;table class=&quot;calendar&quot;&gt;&#39;,
-        &#39;cal_cell_start&#39;       =&gt; &#39;&lt;td class=&quot;day&quot;&gt;&#39;,
-        &#39;cal_cell_start_today&#39; =&gt; &#39;&lt;td class=&quot;today&quot;&gt;&#39;
-);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$prefs</span><span class="p">[</span><span class="s1">&#39;template&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;table_open&#39;</span>           <span class="o">=&gt;</span> <span class="s1">&#39;&lt;table class=&quot;calendar&quot;&gt;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;cal_cell_start&#39;</span>       <span class="o">=&gt;</span> <span class="s1">&#39;&lt;td class=&quot;day&quot;&gt;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;cal_cell_start_today&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&lt;td class=&quot;today&quot;&gt;&#39;</span>
+<span class="p">);</span>
 
-$this-&gt;load-&gt;library(&#39;calendar&#39;, $prefs);
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;calendar&#39;</span><span class="p">,</span> <span class="nv">$prefs</span><span class="p">);</span>
 
-echo $this-&gt;calendar-&gt;generate();
+<span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">calendar</span><span class="o">-&gt;</span><span class="na">generate</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
@@ -803,15 +804,15 @@ echo $this-&gt;calendar-&gt;generate();
 <p>この方法では、有効な月/年保持していることを確認します。
 例えば月に13を提出した場合、年が増加すると月が1月
 になります:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>print_r($this-&gt;calendar-&gt;adjust_date(13, 2014));
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nb">print_r</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">calendar</span><span class="o">-&gt;</span><span class="na">adjust_date</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="mi">2014</span><span class="p">));</span>
 </pre></div>
 </div>
 <p>outputs:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>Array
-(
-        [month] =&gt; &#39;01&#39;
-        [year] =&gt; &#39;2015&#39;
-)
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">Array</span>
+<span class="p">(</span>
+        <span class="p">[</span><span class="nx">month</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="s1">&#39;01&#39;</span>
+        <span class="p">[</span><span class="nx">year</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="s1">&#39;2015&#39;</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -838,8 +839,8 @@ echo $this-&gt;calendar-&gt;generate();
 </tbody>
 </table>
 <p>指定された月の総日数:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>echo $this-&gt;calendar-&gt;get_total_days(2, 2012);
-// 29
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">calendar</span><span class="o">-&gt;</span><span class="na">get_total_days</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2012</span><span class="p">);</span>
+<span class="c1">// 29</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -906,7 +907,7 @@ echo $this-&gt;calendar-&gt;generate();
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 9月 06, 2016
+      最終更新: 9月 04, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

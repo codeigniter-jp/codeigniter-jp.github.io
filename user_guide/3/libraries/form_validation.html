@@ -415,6 +415,7 @@
       <img title="Classic Layout" alt="classic layout" src="data:image/gif;base64,R0lGODlhFAAUAJEAAAAAADMzM////wAAACH5BAUUAAIALAAAAAAUABQAAAImlI+py+0PU5gRBRDM3DxbWoXis42X13USOLauUIqnlsaH/eY6UwAAOw==" />
     </div>
   </ul>
+<div style="float:right;margin-left:5px;">[ <a href="https://github.com/codeigniter-jp/ci-ja/blob/develop/user_guide_ja_src/source/libraries/form_validation.rst">旧版翻訳途中</a> | <a href="https://github.com/bcit-ci/CodeIgniter/commits/develop/user_guide_src/source/libraries/form_validation.rst">原文履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/commits/develop_japanese/source/libraries/form_validation.rst">翻訳履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/source/libraries/form_validation.rst">GitHubで修正</a> ]</div><br /><div style="float:right;margin-left:5px;">[ <b class="highlighted">翻訳者募集中</b> → <a href="https://docs.google.com/spreadsheets/d/1ZWD5XqwH-Uo9X7MR644jbL6O8p5LxIngLT8M547H8wc/edit?pref=2&pli=1#gid=0">翻訳状況</a> ]</div>
   <hr/>
 </div>
           <div role="main" class="document">
@@ -514,34 +515,34 @@ example.</p>
 <h3><a class="toc-backref" href="#id33">入力フォーム</a><a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>Using a text editor, create a form called myform.php. In it, place this
 code and save it to your application/views/ folder:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>&lt;html&gt;
-&lt;head&gt;
-&lt;title&gt;My Form&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nx">html</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nx">head</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nx">title</span><span class="o">&gt;</span><span class="nx">My</span> <span class="nx">Form</span><span class="o">&lt;/</span><span class="nx">title</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="nx">head</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nx">body</span><span class="o">&gt;</span>
 
-&lt;?php echo validation_errors(); ?&gt;
+<span class="o">&lt;?</span><span class="nx">php</span> <span class="k">echo</span> <span class="nx">validation_errors</span><span class="p">();</span> <span class="cp">?&gt;</span>
 
-&lt;?php echo form_open(&#39;form&#39;); ?&gt;
+<span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nx">form_open</span><span class="p">(</span><span class="s1">&#39;form&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span>
 
-&lt;h5&gt;Username&lt;/h5&gt;
-&lt;input type=&quot;text&quot; name=&quot;username&quot; value=&quot;&quot; size=&quot;50&quot; /&gt;
+<span class="p">&lt;</span><span class="nt">h5</span><span class="p">&gt;</span>Username<span class="p">&lt;/</span><span class="nt">h5</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;username&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;&quot;</span> <span class="na">size</span><span class="o">=</span><span class="s">&quot;50&quot;</span> <span class="p">/&gt;</span>
 
-&lt;h5&gt;Password&lt;/h5&gt;
-&lt;input type=&quot;text&quot; name=&quot;password&quot; value=&quot;&quot; size=&quot;50&quot; /&gt;
+<span class="p">&lt;</span><span class="nt">h5</span><span class="p">&gt;</span>Password<span class="p">&lt;/</span><span class="nt">h5</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;password&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;&quot;</span> <span class="na">size</span><span class="o">=</span><span class="s">&quot;50&quot;</span> <span class="p">/&gt;</span>
 
-&lt;h5&gt;Password Confirm&lt;/h5&gt;
-&lt;input type=&quot;text&quot; name=&quot;passconf&quot; value=&quot;&quot; size=&quot;50&quot; /&gt;
+<span class="p">&lt;</span><span class="nt">h5</span><span class="p">&gt;</span>Password Confirm<span class="p">&lt;/</span><span class="nt">h5</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;passconf&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;&quot;</span> <span class="na">size</span><span class="o">=</span><span class="s">&quot;50&quot;</span> <span class="p">/&gt;</span>
 
-&lt;h5&gt;Email Address&lt;/h5&gt;
-&lt;input type=&quot;text&quot; name=&quot;email&quot; value=&quot;&quot; size=&quot;50&quot; /&gt;
+<span class="p">&lt;</span><span class="nt">h5</span><span class="p">&gt;</span>Email Address<span class="p">&lt;/</span><span class="nt">h5</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;email&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;&quot;</span> <span class="na">size</span><span class="o">=</span><span class="s">&quot;50&quot;</span> <span class="p">/&gt;</span>
 
-&lt;div&gt;&lt;input type=&quot;submit&quot; value=&quot;Submit&quot; /&gt;&lt;/div&gt;
+<span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Submit&quot;</span> <span class="p">/&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 
-&lt;/form&gt;
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
 
-&lt;/body&gt;
-&lt;/html&gt;
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 </div>
@@ -549,18 +550,18 @@ code and save it to your application/views/ folder:</p>
 <h3><a class="toc-backref" href="#id34">成功ページ</a><a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>Using a text editor, create a form called formsuccess.php. In it, place
 this code and save it to your application/views/ folder:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>&lt;html&gt;
-&lt;head&gt;
-&lt;title&gt;My Form&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nx">html</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nx">head</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nx">title</span><span class="o">&gt;</span><span class="nx">My</span> <span class="nx">Form</span><span class="o">&lt;/</span><span class="nx">title</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="nx">head</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nx">body</span><span class="o">&gt;</span>
 
-&lt;h3&gt;Your form was successfully submitted!&lt;/h3&gt;
+<span class="o">&lt;</span><span class="nx">h3</span><span class="o">&gt;</span><span class="nx">Your</span> <span class="nx">form</span> <span class="nx">was</span> <span class="nx">successfully</span> <span class="nx">submitted</span><span class="o">!&lt;/</span><span class="nx">h3</span><span class="o">&gt;</span>
 
-&lt;p&gt;&lt;?php echo anchor(&#39;form&#39;, &#39;Try it again!&#39;); ?&gt;&lt;/p&gt;
+<span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;&lt;?</span><span class="nx">php</span> <span class="k">echo</span> <span class="nx">anchor</span><span class="p">(</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="s1">&#39;Try it again!&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 
-&lt;/body&gt;
-&lt;/html&gt;
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 </div>
@@ -568,33 +569,33 @@ this code and save it to your application/views/ folder:</p>
 <h3><a class="toc-backref" href="#id35">コントローラ</a><a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>Using a text editor, create a controller called Form.php. In it, place
 this code and save it to your application/controllers/ folder:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>&lt;?php
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
-class Form extends CI_Controller {
+<span class="k">class</span> <span class="nc">Form</span> <span class="k">extends</span> <span class="nx">CI_Controller</span> <span class="p">{</span>
 
-        public function index()
-        {
-                $this-&gt;load-&gt;helper(array(&#39;form&#39;, &#39;url&#39;));
+        <span class="k">public</span> <span class="k">function</span> <span class="nf">index</span><span class="p">()</span>
+        <span class="p">{</span>
+                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">helper</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="s1">&#39;url&#39;</span><span class="p">));</span>
 
-                $this-&gt;load-&gt;library(&#39;form_validation&#39;);
+                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;form_validation&#39;</span><span class="p">);</span>
 
-                if ($this-&gt;form_validation-&gt;run() == FALSE)
-                {
-                        $this-&gt;load-&gt;view(&#39;myform&#39;);
-                }
-                else
-                {
-                        $this-&gt;load-&gt;view(&#39;formsuccess&#39;);
-                }
-        }
-}
+                <span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">run</span><span class="p">()</span> <span class="o">==</span> <span class="k">FALSE</span><span class="p">)</span>
+                <span class="p">{</span>
+                        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;myform&#39;</span><span class="p">);</span>
+                <span class="p">}</span>
+                <span class="k">else</span>
+                <span class="p">{</span>
+                        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;formsuccess&#39;</span><span class="p">);</span>
+                <span class="p">}</span>
+        <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="id7">
 <h3><a class="toc-backref" href="#id36">動かしてみよう！</a><a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>To try your form, visit your site using a URL similar to this one:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>example.com/index.php/form/
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">example</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">index</span><span class="o">.</span><span class="nx">php</span><span class="o">/</span><span class="nx">form</span><span class="o">/</span>
 </pre></div>
 </div>
 <p>If you submit the form you should simply see the form reload. That&#8217;s
@@ -616,7 +617,7 @@ action URL for you, based on the URL in your config file. This makes
 your application more portable in the event your URLs change.</p>
 </li>
 <li><p class="first">At the top of the form you&#8217;ll notice the following function call:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>&lt;?php echo validation_errors(); ?&gt;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span> <span class="k">echo</span> <span class="nx">validation_errors</span><span class="p">();</span> <span class="cp">?&gt;</span>
 </pre></div>
 </div>
 <p>This function will return any error messages sent back by the
@@ -635,7 +636,7 @@ form or the success page.</p>
 given field, cascading them in order, and it even lets you prep and
 pre-process the field data at the same time. To set validation rules you
 will use the <code class="docutils literal"><span class="pre">set_rules()</span></code> method:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;form_validation-&gt;set_rules();
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">();</span>
 </pre></div>
 </div>
 <p>The above method takes <strong>three</strong> parameters as input:</p>
@@ -654,40 +655,40 @@ file, please see <a class="reference internal" href="#translating-field-names"><
 </div>
 <p>Here is an example. In your controller (Form.php), add this code just
 below the validation initialization method:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;form_validation-&gt;set_rules(&#39;username&#39;, &#39;Username&#39;, &#39;required&#39;);
-$this-&gt;form_validation-&gt;set_rules(&#39;password&#39;, &#39;Password&#39;, &#39;required&#39;);
-$this-&gt;form_validation-&gt;set_rules(&#39;passconf&#39;, &#39;Password Confirmation&#39;, &#39;required&#39;);
-$this-&gt;form_validation-&gt;set_rules(&#39;email&#39;, &#39;Email&#39;, &#39;required&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;Username&#39;</span><span class="p">,</span> <span class="s1">&#39;required&#39;</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span><span class="s1">&#39;password&#39;</span><span class="p">,</span> <span class="s1">&#39;Password&#39;</span><span class="p">,</span> <span class="s1">&#39;required&#39;</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span><span class="s1">&#39;passconf&#39;</span><span class="p">,</span> <span class="s1">&#39;Password Confirmation&#39;</span><span class="p">,</span> <span class="s1">&#39;required&#39;</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">,</span> <span class="s1">&#39;Email&#39;</span><span class="p">,</span> <span class="s1">&#39;required&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Your controller should now look like this:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>&lt;?php
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
-class Form extends CI_Controller {
+<span class="k">class</span> <span class="nc">Form</span> <span class="k">extends</span> <span class="nx">CI_Controller</span> <span class="p">{</span>
 
-        public function index()
-        {
-                $this-&gt;load-&gt;helper(array(&#39;form&#39;, &#39;url&#39;));
+        <span class="k">public</span> <span class="k">function</span> <span class="nf">index</span><span class="p">()</span>
+        <span class="p">{</span>
+                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">helper</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="s1">&#39;url&#39;</span><span class="p">));</span>
 
-                $this-&gt;load-&gt;library(&#39;form_validation&#39;);
+                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;form_validation&#39;</span><span class="p">);</span>
 
-                $this-&gt;form_validation-&gt;set_rules(&#39;username&#39;, &#39;Username&#39;, &#39;required&#39;);
-                $this-&gt;form_validation-&gt;set_rules(&#39;password&#39;, &#39;Password&#39;, &#39;required&#39;,
-                        array(&#39;required&#39; =&gt; &#39;You must provide a %s.&#39;)
-                );
-                $this-&gt;form_validation-&gt;set_rules(&#39;passconf&#39;, &#39;Password Confirmation&#39;, &#39;required&#39;);
-                $this-&gt;form_validation-&gt;set_rules(&#39;email&#39;, &#39;Email&#39;, &#39;required&#39;);
+                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;Username&#39;</span><span class="p">,</span> <span class="s1">&#39;required&#39;</span><span class="p">);</span>
+                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span><span class="s1">&#39;password&#39;</span><span class="p">,</span> <span class="s1">&#39;Password&#39;</span><span class="p">,</span> <span class="s1">&#39;required&#39;</span><span class="p">,</span>
+                        <span class="k">array</span><span class="p">(</span><span class="s1">&#39;required&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;You must provide a %s.&#39;</span><span class="p">)</span>
+                <span class="p">);</span>
+                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span><span class="s1">&#39;passconf&#39;</span><span class="p">,</span> <span class="s1">&#39;Password Confirmation&#39;</span><span class="p">,</span> <span class="s1">&#39;required&#39;</span><span class="p">);</span>
+                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">,</span> <span class="s1">&#39;Email&#39;</span><span class="p">,</span> <span class="s1">&#39;required&#39;</span><span class="p">);</span>
 
-                if ($this-&gt;form_validation-&gt;run() == FALSE)
-                {
-                        $this-&gt;load-&gt;view(&#39;myform&#39;);
-                }
-                else
-                {
-                        $this-&gt;load-&gt;view(&#39;formsuccess&#39;);
-                }
-        }
-}
+                <span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">run</span><span class="p">()</span> <span class="o">==</span> <span class="k">FALSE</span><span class="p">)</span>
+                <span class="p">{</span>
+                        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;myform&#39;</span><span class="p">);</span>
+                <span class="p">}</span>
+                <span class="k">else</span>
+                <span class="p">{</span>
+                        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;formsuccess&#39;</span><span class="p">);</span>
+                <span class="p">}</span>
+        <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Now submit the form with the fields blank and you should see the error
@@ -704,33 +705,33 @@ when there is an error. We&#8217;ll get to that shortly.</p>
 <p>Before moving on it should be noted that the rule setting method can
 be passed an array if you prefer to set all your rules in one action. If
 you use this approach, you must name your array keys as indicated:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$config = array(
-        array(
-                &#39;field&#39; =&gt; &#39;username&#39;,
-                &#39;label&#39; =&gt; &#39;ユーザ名&#39;,
-                &#39;rules&#39; =&gt; &#39;required&#39;
-        ),
-        array(
-                &#39;field&#39; =&gt; &#39;password&#39;,
-                &#39;label&#39; =&gt; &#39;パスワード&#39;,
-                &#39;rules&#39; =&gt; &#39;required&#39;,
-                &#39;errors&#39; =&gt; array(
-                        &#39;required&#39; =&gt; &#39;%s は必須です。&#39;,
-                ),
-        ),
-        array(
-                &#39;field&#39; =&gt; &#39;passconf&#39;,
-                &#39;label&#39; =&gt; &#39;パスワードの確認&#39;,
-                &#39;rules&#39; =&gt; &#39;required&#39;
-        ),
-        array(
-                &#39;field&#39; =&gt; &#39;email&#39;,
-                &#39;label&#39; =&gt; &#39;メールアドレス&#39;,
-                &#39;rules&#39; =&gt; &#39;required&#39;
-        )
-);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$config</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="k">array</span><span class="p">(</span>
+                <span class="s1">&#39;field&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;username&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;ユーザ名&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;rules&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required&#39;</span>
+        <span class="p">),</span>
+        <span class="k">array</span><span class="p">(</span>
+                <span class="s1">&#39;field&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;password&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;パスワード&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;rules&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;errors&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+                        <span class="s1">&#39;required&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;%s は必須です。&#39;</span><span class="p">,</span>
+                <span class="p">),</span>
+        <span class="p">),</span>
+        <span class="k">array</span><span class="p">(</span>
+                <span class="s1">&#39;field&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;passconf&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;パスワードの確認&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;rules&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required&#39;</span>
+        <span class="p">),</span>
+        <span class="k">array</span><span class="p">(</span>
+                <span class="s1">&#39;field&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;email&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;メールアドレス&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;rules&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required&#39;</span>
+        <span class="p">)</span>
+<span class="p">);</span>
 
-$this-&gt;form_validation-&gt;set_rules($config);
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span><span class="nv">$config</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -738,17 +739,17 @@ $this-&gt;form_validation-&gt;set_rules($config);
 <h3><a class="toc-backref" href="#id40">ルールの連結（カスケード）</a><a class="headerlink" href="#id11" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>CodeIgniter lets you pipe multiple rules together. Let&#8217;s try it. Change
 your rules in the third parameter of rule setting method, like this:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;form_validation-&gt;set_rules(
-        &#39;username&#39;, &#39;Username&#39;,
-        &#39;required|min_length[5]|max_length[12]|is_unique[users.username]&#39;,
-        array(
-                &#39;required&#39;      =&gt; &#39;You have not provided %s.&#39;,
-                &#39;is_unique&#39;     =&gt; &#39;This %s already exists.&#39;
-        )
-);
-$this-&gt;form_validation-&gt;set_rules(&#39;password&#39;, &#39;Password&#39;, &#39;required&#39;);
-$this-&gt;form_validation-&gt;set_rules(&#39;passconf&#39;, &#39;Password Confirmation&#39;, &#39;required|matches[password]&#39;);
-$this-&gt;form_validation-&gt;set_rules(&#39;email&#39;, &#39;Email&#39;, &#39;required|valid_email|is_unique[users.email]&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span>
+        <span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;Username&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;required|min_length[5]|max_length[12]|is_unique[users.username]&#39;</span><span class="p">,</span>
+        <span class="k">array</span><span class="p">(</span>
+                <span class="s1">&#39;required&#39;</span>      <span class="o">=&gt;</span> <span class="s1">&#39;You have not provided %s.&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;is_unique&#39;</span>     <span class="o">=&gt;</span> <span class="s1">&#39;This %s already exists.&#39;</span>
+        <span class="p">)</span>
+<span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span><span class="s1">&#39;password&#39;</span><span class="p">,</span> <span class="s1">&#39;Password&#39;</span><span class="p">,</span> <span class="s1">&#39;required&#39;</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span><span class="s1">&#39;passconf&#39;</span><span class="p">,</span> <span class="s1">&#39;Password Confirmation&#39;</span><span class="p">,</span> <span class="s1">&#39;required|matches[password]&#39;</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">,</span> <span class="s1">&#39;Email&#39;</span><span class="p">,</span> <span class="s1">&#39;required|valid_email|is_unique[users.email]&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>The above code sets the following rules:</p>
@@ -765,7 +766,7 @@ rules available which you can read about in the validation reference.</p>
 <p class="first admonition-title">注釈</p>
 <p>You can also pass an array of rules to <code class="docutils literal"><span class="pre">set_rules()</span></code>,
 instead of a string. Example:</p>
-<div class="last highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;form_validation-&gt;set_rules(&#39;username&#39;, &#39;Username&#39;, array(&#39;required&#39;, &#39;min_length[5]&#39;));
+<div class="last highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;Username&#39;</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;required&#39;</span><span class="p">,</span> <span class="s1">&#39;min_length[5]&#39;</span><span class="p">));</span>
 </pre></div>
 </div>
 </div>
@@ -775,10 +776,10 @@ instead of a string. Example:</p>
 <p>In addition to the validation method like the ones we used above, you
 can also prep your data in various ways. For example, you can set up
 rules like this:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;form_validation-&gt;set_rules(&#39;username&#39;, &#39;Username&#39;, &#39;trim|required|min_length[5]|max_length[12]&#39;);
-$this-&gt;form_validation-&gt;set_rules(&#39;password&#39;, &#39;Password&#39;, &#39;trim|required|min_length[8]&#39;);
-$this-&gt;form_validation-&gt;set_rules(&#39;passconf&#39;, &#39;Password Confirmation&#39;, &#39;trim|required|matches[password]&#39;);
-$this-&gt;form_validation-&gt;set_rules(&#39;email&#39;, &#39;Email&#39;, &#39;trim|required|valid_email&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;Username&#39;</span><span class="p">,</span> <span class="s1">&#39;trim|required|min_length[5]|max_length[12]&#39;</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span><span class="s1">&#39;password&#39;</span><span class="p">,</span> <span class="s1">&#39;Password&#39;</span><span class="p">,</span> <span class="s1">&#39;trim|required|min_length[8]&#39;</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span><span class="s1">&#39;passconf&#39;</span><span class="p">,</span> <span class="s1">&#39;Password Confirmation&#39;</span><span class="p">,</span> <span class="s1">&#39;trim|required|matches[password]&#39;</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">,</span> <span class="s1">&#39;Email&#39;</span><span class="p">,</span> <span class="s1">&#39;trim|required|valid_email&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>In the above example, we are &#8220;trimming&#8221; the fields, checking for length
@@ -798,41 +799,41 @@ original data will be shown in the form.</p>
 the form field with the submitted data. CodeIgniter offers several
 helper functions that permit you to do this. The one you will use most
 commonly is:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>set_value(&#39;field name&#39;)
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">set_value</span><span class="p">(</span><span class="s1">&#39;field name&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Open your myform.php view file and update the <strong>value</strong> in each field
 using the <a class="reference internal" href="../helpers/form_helper.html#set_value" title="set_value"><code class="xref php php-func docutils literal"><span class="pre">set_value()</span></code></a> function:</p>
 <p><strong>Don&#8217;t forget to include each field name in the :php:func:`set_value()`
 function calls!</strong></p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>&lt;html&gt;
-&lt;head&gt;
-&lt;title&gt;My Form&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nx">html</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nx">head</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nx">title</span><span class="o">&gt;</span><span class="nx">My</span> <span class="nx">Form</span><span class="o">&lt;/</span><span class="nx">title</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="nx">head</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nx">body</span><span class="o">&gt;</span>
 
-&lt;?php echo validation_errors(); ?&gt;
+<span class="o">&lt;?</span><span class="nx">php</span> <span class="k">echo</span> <span class="nx">validation_errors</span><span class="p">();</span> <span class="cp">?&gt;</span>
 
-&lt;?php echo form_open(&#39;form&#39;); ?&gt;
+<span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nx">form_open</span><span class="p">(</span><span class="s1">&#39;form&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span>
 
-&lt;h5&gt;Username&lt;/h5&gt;
-&lt;input type=&quot;text&quot; name=&quot;username&quot; value=&quot;&lt;?php echo set_value(&#39;username&#39;); ?&gt;&quot; size=&quot;50&quot; /&gt;
+<span class="p">&lt;</span><span class="nt">h5</span><span class="p">&gt;</span>Username<span class="p">&lt;/</span><span class="nt">h5</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;username&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nx">set_value</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="s">&quot;</span> <span class="na">size</span><span class="o">=</span><span class="s">&quot;50&quot;</span> <span class="p">/&gt;</span>
 
-&lt;h5&gt;Password&lt;/h5&gt;
-&lt;input type=&quot;text&quot; name=&quot;password&quot; value=&quot;&lt;?php echo set_value(&#39;password&#39;); ?&gt;&quot; size=&quot;50&quot; /&gt;
+<span class="p">&lt;</span><span class="nt">h5</span><span class="p">&gt;</span>Password<span class="p">&lt;/</span><span class="nt">h5</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;password&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nx">set_value</span><span class="p">(</span><span class="s1">&#39;password&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="s">&quot;</span> <span class="na">size</span><span class="o">=</span><span class="s">&quot;50&quot;</span> <span class="p">/&gt;</span>
 
-&lt;h5&gt;Password Confirm&lt;/h5&gt;
-&lt;input type=&quot;text&quot; name=&quot;passconf&quot; value=&quot;&lt;?php echo set_value(&#39;passconf&#39;); ?&gt;&quot; size=&quot;50&quot; /&gt;
+<span class="p">&lt;</span><span class="nt">h5</span><span class="p">&gt;</span>Password Confirm<span class="p">&lt;/</span><span class="nt">h5</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;passconf&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nx">set_value</span><span class="p">(</span><span class="s1">&#39;passconf&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="s">&quot;</span> <span class="na">size</span><span class="o">=</span><span class="s">&quot;50&quot;</span> <span class="p">/&gt;</span>
 
-&lt;h5&gt;Email Address&lt;/h5&gt;
-&lt;input type=&quot;text&quot; name=&quot;email&quot; value=&quot;&lt;?php echo set_value(&#39;email&#39;); ?&gt;&quot; size=&quot;50&quot; /&gt;
+<span class="p">&lt;</span><span class="nt">h5</span><span class="p">&gt;</span>Email Address<span class="p">&lt;/</span><span class="nt">h5</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;email&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nx">set_value</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="s">&quot;</span> <span class="na">size</span><span class="o">=</span><span class="s">&quot;50&quot;</span> <span class="p">/&gt;</span>
 
-&lt;div&gt;&lt;input type=&quot;submit&quot; value=&quot;Submit&quot; /&gt;&lt;/div&gt;
+<span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Submit&quot;</span> <span class="p">/&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 
-&lt;/form&gt;
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
 
-&lt;/body&gt;
-&lt;/html&gt;
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 <p>Now reload your page and submit the form so that it triggers an error.
@@ -847,7 +848,7 @@ radio buttons, and checkboxes.</p>
 <p class="first admonition-title">重要</p>
 <p>If you use an array as the name of a form field, you
 must supply it as an array to the function. Example:</p>
-<div class="last highlight-ci"><div class="highlight"><pre><span></span>&lt;input type=&quot;text&quot; name=&quot;colors[]&quot; value=&quot;&lt;?php echo set_value(&#39;colors[]&#39;); ?&gt;&quot; size=&quot;50&quot; /&gt;
+<div class="last highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;colors[]&quot;</span> <span class="nx">value</span><span class="o">=</span><span class="s2">&quot;&lt;?php echo set_value(&#39;colors[]&#39;); ?&gt;&quot;</span> <span class="nx">size</span><span class="o">=</span><span class="s2">&quot;50&quot;</span> <span class="o">/&gt;</span>
 </pre></div>
 </div>
 </div>
@@ -861,50 +862,50 @@ must supply it as an array to the function. Example:</p>
 めデータベースクエリを実行する必要があるとき、それを行うコールバックメ
 ソッドを作成できます。 次に示す例のように作ってみましょう。</p>
 <p>コントローラで、&#8221;username&#8221; ルールを次のように変更します:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;form_validation-&gt;set_rules(&#39;username&#39;, &#39;ユーザ名&#39;, &#39;callback_username_check&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;ユーザ名&#39;</span><span class="p">,</span> <span class="s1">&#39;callback_username_check&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>次に <code class="docutils literal"><span class="pre">username_check()</span></code> という名前のメソッドをコントローラに追加します。
 コントローラは以下のようになっているはずです:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>&lt;?php
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
-class Form extends CI_Controller {
+<span class="k">class</span> <span class="nc">Form</span> <span class="k">extends</span> <span class="nx">CI_Controller</span> <span class="p">{</span>
 
-        public function index()
-        {
-                $this-&gt;load-&gt;helper(array(&#39;form&#39;, &#39;url&#39;));
+        <span class="k">public</span> <span class="k">function</span> <span class="nf">index</span><span class="p">()</span>
+        <span class="p">{</span>
+                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">helper</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="s1">&#39;url&#39;</span><span class="p">));</span>
 
-                $this-&gt;load-&gt;library(&#39;form_validation&#39;);
+                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;form_validation&#39;</span><span class="p">);</span>
 
-                $this-&gt;form_validation-&gt;set_rules(&#39;username&#39;, &#39;ユーザ名&#39;, &#39;callback_username_check&#39;);
-                $this-&gt;form_validation-&gt;set_rules(&#39;password&#39;, &#39;パスワード&#39;, &#39;required&#39;);
-                $this-&gt;form_validation-&gt;set_rules(&#39;passconf&#39;, &#39;パスワードの確認&#39;, &#39;required&#39;);
-                $this-&gt;form_validation-&gt;set_rules(&#39;email&#39;, &#39;メールアドレス&#39;, &#39;required|is_unique[users.email]&#39;);
+                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;ユーザ名&#39;</span><span class="p">,</span> <span class="s1">&#39;callback_username_check&#39;</span><span class="p">);</span>
+                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span><span class="s1">&#39;password&#39;</span><span class="p">,</span> <span class="s1">&#39;パスワード&#39;</span><span class="p">,</span> <span class="s1">&#39;required&#39;</span><span class="p">);</span>
+                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span><span class="s1">&#39;passconf&#39;</span><span class="p">,</span> <span class="s1">&#39;パスワードの確認&#39;</span><span class="p">,</span> <span class="s1">&#39;required&#39;</span><span class="p">);</span>
+                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">,</span> <span class="s1">&#39;メールアドレス&#39;</span><span class="p">,</span> <span class="s1">&#39;required|is_unique[users.email]&#39;</span><span class="p">);</span>
 
-                if ($this-&gt;form_validation-&gt;run() == FALSE)
-                {
-                        $this-&gt;load-&gt;view(&#39;myform&#39;);
-                }
-                else
-                {
-                        $this-&gt;load-&gt;view(&#39;formsuccess&#39;);
-                }
-        }
+                <span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">run</span><span class="p">()</span> <span class="o">==</span> <span class="k">FALSE</span><span class="p">)</span>
+                <span class="p">{</span>
+                        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;myform&#39;</span><span class="p">);</span>
+                <span class="p">}</span>
+                <span class="k">else</span>
+                <span class="p">{</span>
+                        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;formsuccess&#39;</span><span class="p">);</span>
+                <span class="p">}</span>
+        <span class="p">}</span>
 
-        public function username_check($str)
-        {
-                if ($str == &#39;test&#39;)
-                {
-                        $this-&gt;form_validation-&gt;set_message(&#39;username_check&#39;, &#39;{field} 欄に &quot;test&quot; は使えません&#39;);
-                        return FALSE;
-                }
-                else
-                {
-                        return TRUE;
-                }
-        }
+        <span class="k">public</span> <span class="k">function</span> <span class="nf">username_check</span><span class="p">(</span><span class="nv">$str</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nv">$str</span> <span class="o">==</span> <span class="s1">&#39;test&#39;</span><span class="p">)</span>
+                <span class="p">{</span>
+                        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_message</span><span class="p">(</span><span class="s1">&#39;username_check&#39;</span><span class="p">,</span> <span class="s1">&#39;{field} 欄に &quot;test&quot; は使えません&#39;</span><span class="p">);</span>
+                        <span class="k">return</span> <span class="k">FALSE</span><span class="p">;</span>
+                <span class="p">}</span>
+                <span class="k">else</span>
+                <span class="p">{</span>
+                        <span class="k">return</span> <span class="k">TRUE</span><span class="p">;</span>
+                <span class="p">}</span>
+        <span class="p">}</span>
 
-}
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>フォームを再読み込みして、ユーザ名に &#8220;test&#8221; と入力して送信します。
@@ -929,13 +930,13 @@ class Form extends CI_Controller {
 制限されます）、がっかりしないでください。
 もう 1 つ独自ルールを作成する方法があります。<code class="docutils literal"><span class="pre">is_callable()</span></code> が TRUE を返すものをルールとする方法です。</p>
 <p>次の例を検討してみましょう:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;form_validation-&gt;set_rules(
-        &#39;username&#39;, &#39;ユーザ名&#39;,
-        array(
-                &#39;required&#39;,
-                array($this-&gt;users_model, &#39;valid_username&#39;)
-        )
-);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span>
+        <span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;ユーザ名&#39;</span><span class="p">,</span>
+        <span class="k">array</span><span class="p">(</span>
+                <span class="s1">&#39;required&#39;</span><span class="p">,</span>
+                <span class="k">array</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">users_model</span><span class="p">,</span> <span class="s1">&#39;valid_username&#39;</span><span class="p">)</span>
+        <span class="p">)</span>
+<span class="p">);</span>
 </pre></div>
 </div>
 <p>上のコードは <code class="docutils literal"><span class="pre">Users_model</span></code> オブジェクトの <code class="docutils literal"><span class="pre">valid_username()</span></code> メソッド
@@ -943,45 +944,45 @@ class Form extends CI_Controller {
 <p>もちろんこれは 1 つの例であり、コールバック関数はモデルに限定されません。
 第 1 引数にフィールドの値を受け取るあらゆるオブジェクト/メソッドを使うことが
 できます。匿名関数を使うこともできます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;form_validation-&gt;set_rules(
-        &#39;username&#39;, &#39;ユーザ名&#39;,
-        array(
-                &#39;required&#39;,
-                function($value)
-                {
-                        // $value をチェックする
-                }
-        )
-);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span>
+        <span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;ユーザ名&#39;</span><span class="p">,</span>
+        <span class="k">array</span><span class="p">(</span>
+                <span class="s1">&#39;required&#39;</span><span class="p">,</span>
+                <span class="k">function</span><span class="p">(</span><span class="nv">$value</span><span class="p">)</span>
+                <span class="p">{</span>
+                        <span class="c1">// $value をチェックする</span>
+                <span class="p">}</span>
+        <span class="p">)</span>
+<span class="p">);</span>
 </pre></div>
 </div>
 <p>もちろん、コーラブルルールは文字列ではなく、ルール名でもありません。
 これは、エラーメッセージを設定したい場合、問題になります。
 そのため、それらのルールの配列の第 1 要素にルール名、
 第 2 要素にルールを記述できます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;form_validation-&gt;set_rules(
-        &#39;username&#39;, &#39;ユーザ名&#39;,
-        array(
-                &#39;required&#39;,
-                array(&#39;username_callable&#39;, array($this-&gt;users_model, &#39;valid_username&#39;))
-        )
-);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span>
+        <span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;ユーザ名&#39;</span><span class="p">,</span>
+        <span class="k">array</span><span class="p">(</span>
+                <span class="s1">&#39;required&#39;</span><span class="p">,</span>
+                <span class="k">array</span><span class="p">(</span><span class="s1">&#39;username_callable&#39;</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">users_model</span><span class="p">,</span> <span class="s1">&#39;valid_username&#39;</span><span class="p">))</span>
+        <span class="p">)</span>
+<span class="p">);</span>
 </pre></div>
 </div>
 <p>匿名関数版:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;form_validation-&gt;set_rules(
-        &#39;username&#39;, &#39;ユーザ名&#39;,
-        array(
-                &#39;required&#39;,
-                array(
-                        &#39;username_callable&#39;,
-                        function($str)
-                        {
-                                // $str を検証し TRUE または FALSE を返す
-                        }
-                )
-        )
-);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span>
+        <span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;ユーザ名&#39;</span><span class="p">,</span>
+        <span class="k">array</span><span class="p">(</span>
+                <span class="s1">&#39;required&#39;</span><span class="p">,</span>
+                <span class="k">array</span><span class="p">(</span>
+                        <span class="s1">&#39;username_callable&#39;</span><span class="p">,</span>
+                        <span class="k">function</span><span class="p">(</span><span class="nv">$str</span><span class="p">)</span>
+                        <span class="p">{</span>
+                                <span class="c1">// $str を検証し TRUE または FALSE を返す</span>
+                        <span class="p">}</span>
+                <span class="p">)</span>
+        <span class="p">)</span>
+<span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -994,14 +995,14 @@ extend/override the language file by creating your own in
 <strong>application/language/english/form_validation_lang.php</strong> (read more
 about this in the <a class="reference internal" href="language.html"><span class="doc">Language Class</span></a> documentation),
 or use the following method:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;form_validation-&gt;set_message(&#39;rule&#39;, &#39;Error Message&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_message</span><span class="p">(</span><span class="s1">&#39;rule&#39;</span><span class="p">,</span> <span class="s1">&#39;Error Message&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>If you need to set a custom error message for a particular field on
 some particular rule, use the set_rules() method:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;form_validation-&gt;set_rules(&#39;field_name&#39;, &#39;Field Label&#39;, &#39;rule1|rule2|rule3&#39;,
-        array(&#39;rule2&#39; =&gt; &#39;Error Message on rule2 for this field_name&#39;)
-);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span><span class="s1">&#39;field_name&#39;</span><span class="p">,</span> <span class="s1">&#39;Field Label&#39;</span><span class="p">,</span> <span class="s1">&#39;rule1|rule2|rule3&#39;</span><span class="p">,</span>
+        <span class="k">array</span><span class="p">(</span><span class="s1">&#39;rule2&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Error Message on rule2 for this field_name&#39;</span><span class="p">)</span>
+<span class="p">);</span>
 </pre></div>
 </div>
 <p>Where rule corresponds to the name of a particular rule, and Error
@@ -1009,7 +1010,7 @@ Message is the text you would like displayed.</p>
 <p>If you&#8217;d like to include a field&#8217;s &#8220;human&#8221; name, or the optional
 parameter some rules allow for (such as max_length), you can add the
 <strong>{field}</strong> and <strong>{param}</strong> tags to your message, respectively:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;form_validation-&gt;set_message(&#39;min_length&#39;, &#39;{field} must have at least {param} characters.&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_message</span><span class="p">(</span><span class="s1">&#39;min_length&#39;</span><span class="p">,</span> <span class="s1">&#39;{field} must have at least {param} characters.&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>On a field with the human name Username and a rule of min_length[5], an
@@ -1022,7 +1023,7 @@ use one or the other.</p>
 </div>
 <p>In the callback rule example above, the error message was set by passing
 the name of the method (without the &#8220;callback_&#8221; prefix):</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;form_validation-&gt;set_message(&#39;username_check&#39;)
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_message</span><span class="p">(</span><span class="s1">&#39;username_check&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1032,12 +1033,12 @@ the name of the method (without the &#8220;callback_&#8221; prefix):</p>
 <code class="docutils literal"><span class="pre">set_rules()</span></code> method in a language file, and therefore make the name
 able to be translated, here&#8217;s how:</p>
 <p>First, prefix your &#8220;human&#8221; name with <strong>lang:</strong>, as in this example:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;form_validation-&gt;set_rules(&#39;first_name&#39;, &#39;lang:first_name&#39;, &#39;required&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span><span class="s1">&#39;first_name&#39;</span><span class="p">,</span> <span class="s1">&#39;lang:first_name&#39;</span><span class="p">,</span> <span class="s1">&#39;required&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Then, store the name in one of your language file arrays (without the
 prefix):</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$lang[&#39;first_name&#39;] = &#39;First Name&#39;;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$lang</span><span class="p">[</span><span class="s1">&#39;first_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;First Name&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -1045,7 +1046,7 @@ prefix):</p>
 <p>If you store your array item in a language file that is not
 loaded automatically by CI, you&#8217;ll need to remember to load it in your
 controller using:</p>
-<div class="last highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;lang-&gt;load(&#39;file_name&#39;);
+<div class="last highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">lang</span><span class="o">-&gt;</span><span class="na">load</span><span class="p">(</span><span class="s1">&#39;file_name&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -1061,7 +1062,7 @@ globally, individually, or change the defaults in a config file.</p>
 <li><p class="first"><strong>Changing delimiters Globally</strong>
 To globally change the error delimiters, in your controller method,
 just after loading the Form Validation class, add this:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;form_validation-&gt;set_error_delimiters(&#39;&lt;div class=&quot;error&quot;&gt;&#39;, &#39;&lt;/div&gt;&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_error_delimiters</span><span class="p">(</span><span class="s1">&#39;&lt;div class=&quot;error&quot;&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;/div&gt;&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>In this example, we&#8217;ve switched to using div tags.</p>
@@ -1069,18 +1070,18 @@ just after loading the Form Validation class, add this:</p>
 <li><p class="first"><strong>Changing delimiters Individually</strong>
 Each of the two error generating functions shown in this tutorial can
 be supplied their own delimiters as follows:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>&lt;?php echo form_error(&#39;field name&#39;, &#39;&lt;div class=&quot;error&quot;&gt;&#39;, &#39;&lt;/div&gt;&#39;); ?&gt;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span> <span class="k">echo</span> <span class="nx">form_error</span><span class="p">(</span><span class="s1">&#39;field name&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;div class=&quot;error&quot;&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;/div&gt;&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span>
 </pre></div>
 </div>
 <p>Or:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>&lt;?php echo validation_errors(&#39;&lt;div class=&quot;error&quot;&gt;&#39;, &#39;&lt;/div&gt;&#39;); ?&gt;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span> <span class="k">echo</span> <span class="nx">validation_errors</span><span class="p">(</span><span class="s1">&#39;&lt;div class=&quot;error&quot;&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;/div&gt;&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span>
 </pre></div>
 </div>
 </li>
 <li><p class="first"><strong>Set delimiters in a config file</strong>
 You can add your error delimiters in application/config/form_validation.php as follows:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$config[&#39;error_prefix&#39;] = &#39;&lt;div class=&quot;error_prefix&quot;&gt;&#39;;
-$config[&#39;error_suffix&#39;] = &#39;&lt;/div&gt;&#39;;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;error_prefix&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;&lt;div class=&quot;error_prefix&quot;&gt;&#39;</span><span class="p">;</span>
+<span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;error_suffix&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;&lt;/div&gt;&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 </li>
@@ -1091,21 +1092,21 @@ $config[&#39;error_suffix&#39;] = &#39;&lt;/div&gt;&#39;;
 <p>If you prefer to show an error message next to each form field, rather
 than as a list, you can use the <a class="reference internal" href="../helpers/form_helper.html#form_error" title="form_error"><code class="xref php php-func docutils literal"><span class="pre">form_error()</span></code></a> function.</p>
 <p>Try it! Change your form so that it looks like this:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>&lt;h5&gt;Username&lt;/h5&gt;
-&lt;?php echo form_error(&#39;username&#39;); ?&gt;
-&lt;input type=&quot;text&quot; name=&quot;username&quot; value=&quot;&lt;?php echo set_value(&#39;username&#39;); ?&gt;&quot; size=&quot;50&quot; /&gt;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nx">h5</span><span class="o">&gt;</span><span class="nx">Username</span><span class="o">&lt;/</span><span class="nx">h5</span><span class="o">&gt;</span>
+<span class="o">&lt;?</span><span class="nx">php</span> <span class="k">echo</span> <span class="nx">form_error</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;username&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nx">set_value</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="s">&quot;</span> <span class="na">size</span><span class="o">=</span><span class="s">&quot;50&quot;</span> <span class="p">/&gt;</span>
 
-&lt;h5&gt;Password&lt;/h5&gt;
-&lt;?php echo form_error(&#39;password&#39;); ?&gt;
-&lt;input type=&quot;text&quot; name=&quot;password&quot; value=&quot;&lt;?php echo set_value(&#39;password&#39;); ?&gt;&quot; size=&quot;50&quot; /&gt;
+<span class="p">&lt;</span><span class="nt">h5</span><span class="p">&gt;</span>Password<span class="p">&lt;/</span><span class="nt">h5</span><span class="p">&gt;</span>
+<span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nx">form_error</span><span class="p">(</span><span class="s1">&#39;password&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;password&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nx">set_value</span><span class="p">(</span><span class="s1">&#39;password&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="s">&quot;</span> <span class="na">size</span><span class="o">=</span><span class="s">&quot;50&quot;</span> <span class="p">/&gt;</span>
 
-&lt;h5&gt;Password Confirm&lt;/h5&gt;
-&lt;?php echo form_error(&#39;passconf&#39;); ?&gt;
-&lt;input type=&quot;text&quot; name=&quot;passconf&quot; value=&quot;&lt;?php echo set_value(&#39;passconf&#39;); ?&gt;&quot; size=&quot;50&quot; /&gt;
+<span class="p">&lt;</span><span class="nt">h5</span><span class="p">&gt;</span>Password Confirm<span class="p">&lt;/</span><span class="nt">h5</span><span class="p">&gt;</span>
+<span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nx">form_error</span><span class="p">(</span><span class="s1">&#39;passconf&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;passconf&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nx">set_value</span><span class="p">(</span><span class="s1">&#39;passconf&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="s">&quot;</span> <span class="na">size</span><span class="o">=</span><span class="s">&quot;50&quot;</span> <span class="p">/&gt;</span>
 
-&lt;h5&gt;Email Address&lt;/h5&gt;
-&lt;?php echo form_error(&#39;email&#39;); ?&gt;
-&lt;input type=&quot;text&quot; name=&quot;email&quot; value=&quot;&lt;?php echo set_value(&#39;email&#39;); ?&gt;&quot; size=&quot;50&quot; /&gt;
+<span class="p">&lt;</span><span class="nt">h5</span><span class="p">&gt;</span>Email Address<span class="p">&lt;/</span><span class="nt">h5</span><span class="p">&gt;</span>
+<span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nx">form_error</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;email&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nx">set_value</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="s">&quot;</span> <span class="na">size</span><span class="o">=</span><span class="s">&quot;50&quot;</span> <span class="p">/&gt;</span>
 </pre></div>
 </div>
 <p>If there are no errors, nothing will be shown. If there is an error, the
@@ -1114,8 +1115,8 @@ message will appear.</p>
 <p class="first admonition-title">重要</p>
 <p>If you use an array as the name of a form field, you
 must supply it as an array to the function. Example:</p>
-<div class="last highlight-ci"><div class="highlight"><pre><span></span>&lt;?php echo form_error(&#39;options[size]&#39;); ?&gt;
-&lt;input type=&quot;text&quot; name=&quot;options[size]&quot; value=&quot;&lt;?php echo set_value(&quot;options[size]&quot;); ?&gt;&quot; size=&quot;50&quot; /&gt;
+<div class="last highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span> <span class="k">echo</span> <span class="nx">form_error</span><span class="p">(</span><span class="s1">&#39;options[size]&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;options[size]&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nx">set_value</span><span class="p">(</span><span class="s2">&quot;options[size]&quot;</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="s">&quot;</span> <span class="na">size</span><span class="o">=</span><span class="s">&quot;50&quot;</span> <span class="p">/&gt;</span>
 </pre></div>
 </div>
 </div>
@@ -1125,13 +1126,13 @@ must supply it as an array to the function. Example:</p>
 <h3><a class="toc-backref" href="#id49">配列（$_POST 以外）のバリデーション</a><a class="headerlink" href="#post" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>Sometimes you may want to validate an array that does not originate from <code class="docutils literal"><span class="pre">$_POST</span></code> data.</p>
 <p>In this case, you can specify the array to be validated:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$data = array(
-        &#39;username&#39; =&gt; &#39;johndoe&#39;,
-        &#39;password&#39; =&gt; &#39;mypassword&#39;,
-        &#39;passconf&#39; =&gt; &#39;mypassword&#39;
-);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;username&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;johndoe&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;password&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;mypassword&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;passconf&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;mypassword&#39;</span>
+<span class="p">);</span>
 
-$this-&gt;form_validation-&gt;set_data($data);
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_data</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Creating validation rules, running the validation, and retrieving error
@@ -1164,28 +1165,28 @@ called, or you can manually call each set as needed.</p>
 form_validation.php in your application/config/ folder. In that file
 you will place an array named $config with your rules. As shown earlier,
 the validation array will have this prototype:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$config = array(
-        array(
-                &#39;field&#39; =&gt; &#39;username&#39;,
-                &#39;label&#39; =&gt; &#39;Username&#39;,
-                &#39;rules&#39; =&gt; &#39;required&#39;
-        ),
-        array(
-                &#39;field&#39; =&gt; &#39;password&#39;,
-                &#39;label&#39; =&gt; &#39;Password&#39;,
-                &#39;rules&#39; =&gt; &#39;required&#39;
-        ),
-        array(
-                &#39;field&#39; =&gt; &#39;passconf&#39;,
-                &#39;label&#39; =&gt; &#39;Password Confirmation&#39;,
-                &#39;rules&#39; =&gt; &#39;required&#39;
-        ),
-        array(
-                &#39;field&#39; =&gt; &#39;email&#39;,
-                &#39;label&#39; =&gt; &#39;Email&#39;,
-                &#39;rules&#39; =&gt; &#39;required&#39;
-        )
-);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$config</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="k">array</span><span class="p">(</span>
+                <span class="s1">&#39;field&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;username&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Username&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;rules&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required&#39;</span>
+        <span class="p">),</span>
+        <span class="k">array</span><span class="p">(</span>
+                <span class="s1">&#39;field&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;password&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Password&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;rules&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required&#39;</span>
+        <span class="p">),</span>
+        <span class="k">array</span><span class="p">(</span>
+                <span class="s1">&#39;field&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;passconf&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Password Confirmation&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;rules&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required&#39;</span>
+        <span class="p">),</span>
+        <span class="k">array</span><span class="p">(</span>
+                <span class="s1">&#39;field&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;email&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Email&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;rules&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required&#39;</span>
+        <span class="p">)</span>
+<span class="p">);</span>
 </pre></div>
 </div>
 <p>Your validation rule file will be loaded automatically and used when you
@@ -1198,52 +1199,52 @@ call the <code class="docutils literal"><span class="pre">run()</span></code> me
 into &#8220;sub arrays&#8221;. Consider the following example, showing two sets of
 rules. We&#8217;ve arbitrarily called these two rules &#8220;signup&#8221; and &#8220;email&#8221;.
 You can name your rules anything you want:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$config = array(
-        &#39;signup&#39; =&gt; array(
-                array(
-                        &#39;field&#39; =&gt; &#39;username&#39;,
-                        &#39;label&#39; =&gt; &#39;Username&#39;,
-                        &#39;rules&#39; =&gt; &#39;required&#39;
-                ),
-                array(
-                        &#39;field&#39; =&gt; &#39;password&#39;,
-                        &#39;label&#39; =&gt; &#39;Password&#39;,
-                        &#39;rules&#39; =&gt; &#39;required&#39;
-                ),
-                array(
-                        &#39;field&#39; =&gt; &#39;passconf&#39;,
-                        &#39;label&#39; =&gt; &#39;Password Confirmation&#39;,
-                        &#39;rules&#39; =&gt; &#39;required&#39;
-                ),
-                array(
-                        &#39;field&#39; =&gt; &#39;email&#39;,
-                        &#39;label&#39; =&gt; &#39;Email&#39;,
-                        &#39;rules&#39; =&gt; &#39;required&#39;
-                )
-        ),
-        &#39;email&#39; =&gt; array(
-                array(
-                        &#39;field&#39; =&gt; &#39;emailaddress&#39;,
-                        &#39;label&#39; =&gt; &#39;EmailAddress&#39;,
-                        &#39;rules&#39; =&gt; &#39;required|valid_email&#39;
-                ),
-                array(
-                        &#39;field&#39; =&gt; &#39;name&#39;,
-                        &#39;label&#39; =&gt; &#39;Name&#39;,
-                        &#39;rules&#39; =&gt; &#39;required|alpha&#39;
-                ),
-                array(
-                        &#39;field&#39; =&gt; &#39;title&#39;,
-                        &#39;label&#39; =&gt; &#39;Title&#39;,
-                        &#39;rules&#39; =&gt; &#39;required&#39;
-                ),
-                array(
-                        &#39;field&#39; =&gt; &#39;message&#39;,
-                        &#39;label&#39; =&gt; &#39;MessageBody&#39;,
-                        &#39;rules&#39; =&gt; &#39;required&#39;
-                )
-        )
-);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$config</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;signup&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+                <span class="k">array</span><span class="p">(</span>
+                        <span class="s1">&#39;field&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;username&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Username&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;rules&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required&#39;</span>
+                <span class="p">),</span>
+                <span class="k">array</span><span class="p">(</span>
+                        <span class="s1">&#39;field&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;password&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Password&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;rules&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required&#39;</span>
+                <span class="p">),</span>
+                <span class="k">array</span><span class="p">(</span>
+                        <span class="s1">&#39;field&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;passconf&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Password Confirmation&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;rules&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required&#39;</span>
+                <span class="p">),</span>
+                <span class="k">array</span><span class="p">(</span>
+                        <span class="s1">&#39;field&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;email&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Email&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;rules&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required&#39;</span>
+                <span class="p">)</span>
+        <span class="p">),</span>
+        <span class="s1">&#39;email&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+                <span class="k">array</span><span class="p">(</span>
+                        <span class="s1">&#39;field&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;emailaddress&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;EmailAddress&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;rules&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required|valid_email&#39;</span>
+                <span class="p">),</span>
+                <span class="k">array</span><span class="p">(</span>
+                        <span class="s1">&#39;field&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Name&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;rules&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required|alpha&#39;</span>
+                <span class="p">),</span>
+                <span class="k">array</span><span class="p">(</span>
+                        <span class="s1">&#39;field&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;title&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Title&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;rules&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required&#39;</span>
+                <span class="p">),</span>
+                <span class="k">array</span><span class="p">(</span>
+                        <span class="s1">&#39;field&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;message&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;MessageBody&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;rules&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required&#39;</span>
+                <span class="p">)</span>
+        <span class="p">)</span>
+<span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -1251,14 +1252,14 @@ You can name your rules anything you want:</p>
 <h3><a class="toc-backref" href="#id53">特定のルールグループを呼び出す</a><a class="headerlink" href="#id23" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>In order to call a specific group, you will pass its name to the <code class="docutils literal"><span class="pre">run()</span></code>
 method. For example, to call the signup rule you will do this:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>if ($this-&gt;form_validation-&gt;run(&#39;signup&#39;) == FALSE)
-{
-        $this-&gt;load-&gt;view(&#39;myform&#39;);
-}
-else
-{
-        $this-&gt;load-&gt;view(&#39;formsuccess&#39;);
-}
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">run</span><span class="p">(</span><span class="s1">&#39;signup&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="k">FALSE</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;myform&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;formsuccess&#39;</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -1268,52 +1269,52 @@ else
 name it according to the controller class/method you intend to use it
 with. For example, let&#8217;s say you have a controller named Member and a
 method named signup. Here&#8217;s what your class might look like:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>&lt;?php
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
-class Member extends CI_Controller {
+<span class="k">class</span> <span class="nc">Member</span> <span class="k">extends</span> <span class="nx">CI_Controller</span> <span class="p">{</span>
 
-        public function signup()
-        {
-                $this-&gt;load-&gt;library(&#39;form_validation&#39;);
+        <span class="k">public</span> <span class="k">function</span> <span class="nf">signup</span><span class="p">()</span>
+        <span class="p">{</span>
+                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;form_validation&#39;</span><span class="p">);</span>
 
-                if ($this-&gt;form_validation-&gt;run() == FALSE)
-                {
-                        $this-&gt;load-&gt;view(&#39;myform&#39;);
-                }
-                else
-                {
-                        $this-&gt;load-&gt;view(&#39;formsuccess&#39;);
-                }
-        }
-}
+                <span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">run</span><span class="p">()</span> <span class="o">==</span> <span class="k">FALSE</span><span class="p">)</span>
+                <span class="p">{</span>
+                        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;myform&#39;</span><span class="p">);</span>
+                <span class="p">}</span>
+                <span class="k">else</span>
+                <span class="p">{</span>
+                        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;formsuccess&#39;</span><span class="p">);</span>
+                <span class="p">}</span>
+        <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>In your validation config file, you will name your rule group
 member/signup:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$config = array(
-        &#39;member/signup&#39; =&gt; array(
-                array(
-                        &#39;field&#39; =&gt; &#39;username&#39;,
-                        &#39;label&#39; =&gt; &#39;Username&#39;,
-                        &#39;rules&#39; =&gt; &#39;required&#39;
-                ),
-                array(
-                        &#39;field&#39; =&gt; &#39;password&#39;,
-                        &#39;label&#39; =&gt; &#39;Password&#39;,
-                        &#39;rules&#39; =&gt; &#39;required&#39;
-                ),
-                array(
-                        &#39;field&#39; =&gt; &#39;passconf&#39;,
-                        &#39;label&#39; =&gt; &#39;PasswordConfirmation&#39;,
-                        &#39;rules&#39; =&gt; &#39;required&#39;
-                ),
-                array(
-                        &#39;field&#39; =&gt; &#39;email&#39;,
-                        &#39;label&#39; =&gt; &#39;Email&#39;,
-                        &#39;rules&#39; =&gt; &#39;required&#39;
-                )
-        )
-);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$config</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;member/signup&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+                <span class="k">array</span><span class="p">(</span>
+                        <span class="s1">&#39;field&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;username&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Username&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;rules&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required&#39;</span>
+                <span class="p">),</span>
+                <span class="k">array</span><span class="p">(</span>
+                        <span class="s1">&#39;field&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;password&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Password&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;rules&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required&#39;</span>
+                <span class="p">),</span>
+                <span class="k">array</span><span class="p">(</span>
+                        <span class="s1">&#39;field&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;passconf&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;PasswordConfirmation&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;rules&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required&#39;</span>
+                <span class="p">),</span>
+                <span class="k">array</span><span class="p">(</span>
+                        <span class="s1">&#39;field&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;email&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Email&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;rules&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required&#39;</span>
+                <span class="p">)</span>
+        <span class="p">)</span>
+<span class="p">);</span>
 </pre></div>
 </div>
 <p>When a rule group is named identically to a controller class/method it
@@ -1325,53 +1326,53 @@ class/method.</p>
 <span id="id25"></span><h2><a class="toc-backref" href="#id55">フィールド名の指定に配列を使う</a><a class="headerlink" href="#using-arrays-as-field-names" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>The Form Validation class supports the use of arrays as field names.
 Consider this example:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>&lt;input type=&quot;text&quot; name=&quot;options[]&quot; value=&quot;&quot; size=&quot;50&quot; /&gt;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;options[]&quot;</span> <span class="nx">value</span><span class="o">=</span><span class="s2">&quot;&quot;</span> <span class="nx">size</span><span class="o">=</span><span class="s2">&quot;50&quot;</span> <span class="o">/&gt;</span>
 </pre></div>
 </div>
 <p>If you do use an array as a field name, you must use the EXACT array
 name in the <a class="reference internal" href="#helper-functions"><span class="std std-ref">Helper Functions</span></a> that require the
 field name, and as your Validation Rule field name.</p>
 <p>For example, to set a rule for the above field you would use:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;form_validation-&gt;set_rules(&#39;options[]&#39;, &#39;Options&#39;, &#39;required&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span><span class="s1">&#39;options[]&#39;</span><span class="p">,</span> <span class="s1">&#39;Options&#39;</span><span class="p">,</span> <span class="s1">&#39;required&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Or, to show an error for the above field you would use:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>&lt;?php echo form_error(&#39;options[]&#39;); ?&gt;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span> <span class="k">echo</span> <span class="nx">form_error</span><span class="p">(</span><span class="s1">&#39;options[]&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span>
 </pre></div>
 </div>
 <p>Or to re-populate the field you would use:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>&lt;input type=&quot;text&quot; name=&quot;options[]&quot; value=&quot;&lt;?php echo set_value(&#39;options[]&#39;); ?&gt;&quot; size=&quot;50&quot; /&gt;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;options[]&quot;</span> <span class="nx">value</span><span class="o">=</span><span class="s2">&quot;&lt;?php echo set_value(&#39;options[]&#39;); ?&gt;&quot;</span> <span class="nx">size</span><span class="o">=</span><span class="s2">&quot;50&quot;</span> <span class="o">/&gt;</span>
 </pre></div>
 </div>
 <p>You can use multidimensional arrays as field names as well. For example:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>&lt;input type=&quot;text&quot; name=&quot;options[size]&quot; value=&quot;&quot; size=&quot;50&quot; /&gt;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;options[size]&quot;</span> <span class="nx">value</span><span class="o">=</span><span class="s2">&quot;&quot;</span> <span class="nx">size</span><span class="o">=</span><span class="s2">&quot;50&quot;</span> <span class="o">/&gt;</span>
 </pre></div>
 </div>
 <p>Or even:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>&lt;input type=&quot;text&quot; name=&quot;sports[nba][basketball]&quot; value=&quot;&quot; size=&quot;50&quot; /&gt;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;sports[nba][basketball]&quot;</span> <span class="nx">value</span><span class="o">=</span><span class="s2">&quot;&quot;</span> <span class="nx">size</span><span class="o">=</span><span class="s2">&quot;50&quot;</span> <span class="o">/&gt;</span>
 </pre></div>
 </div>
 <p>As with our first example, you must use the exact array name in the
 helper functions:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>&lt;?php echo form_error(&#39;sports[nba][basketball]&#39;); ?&gt;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span> <span class="k">echo</span> <span class="nx">form_error</span><span class="p">(</span><span class="s1">&#39;sports[nba][basketball]&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span>
 </pre></div>
 </div>
 <p>If you are using checkboxes (or other fields) that have multiple
 options, don&#8217;t forget to leave an empty bracket after each option, so
 that all selections will be added to the POST array:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>&lt;input type=&quot;checkbox&quot; name=&quot;options[]&quot; value=&quot;red&quot; /&gt;
-&lt;input type=&quot;checkbox&quot; name=&quot;options[]&quot; value=&quot;blue&quot; /&gt;
-&lt;input type=&quot;checkbox&quot; name=&quot;options[]&quot; value=&quot;green&quot; /&gt;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;checkbox&quot;</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;options[]&quot;</span> <span class="nx">value</span><span class="o">=</span><span class="s2">&quot;red&quot;</span> <span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;checkbox&quot;</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;options[]&quot;</span> <span class="nx">value</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span> <span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;checkbox&quot;</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;options[]&quot;</span> <span class="nx">value</span><span class="o">=</span><span class="s2">&quot;green&quot;</span> <span class="o">/&gt;</span>
 </pre></div>
 </div>
 <p>Or if you use a multidimensional array:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>&lt;input type=&quot;checkbox&quot; name=&quot;options[color][]&quot; value=&quot;red&quot; /&gt;
-&lt;input type=&quot;checkbox&quot; name=&quot;options[color][]&quot; value=&quot;blue&quot; /&gt;
-&lt;input type=&quot;checkbox&quot; name=&quot;options[color][]&quot; value=&quot;green&quot; /&gt;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;checkbox&quot;</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;options[color][]&quot;</span> <span class="nx">value</span><span class="o">=</span><span class="s2">&quot;red&quot;</span> <span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;checkbox&quot;</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;options[color][]&quot;</span> <span class="nx">value</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span> <span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;checkbox&quot;</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;options[color][]&quot;</span> <span class="nx">value</span><span class="o">=</span><span class="s2">&quot;green&quot;</span> <span class="o">/&gt;</span>
 </pre></div>
 </div>
 <p>When you use a helper function you&#8217;ll include the bracket as well:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>&lt;?php echo form_error(&#39;options[color][]&#39;); ?&gt;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span> <span class="k">echo</span> <span class="nx">form_error</span><span class="p">(</span><span class="s1">&#39;options[color][]&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span>
 </pre></div>
 </div>
 </div>
@@ -1546,7 +1547,7 @@ number, but not zero: 1, 2, 3, etc.</td>
 <p class="first admonition-title">注釈</p>
 <p>These rules can also be called as discrete methods. For
 example:</p>
-<div class="last highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;form_validation-&gt;required($string);
+<div class="last highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">required</span><span class="p">(</span><span class="nv">$string</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -1877,7 +1878,7 @@ to prepend them with <code class="docutils literal"><span class="pre">$this-&gt;
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 9月 06, 2016
+      最終更新: 9月 04, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

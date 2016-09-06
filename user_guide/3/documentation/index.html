@@ -415,6 +415,7 @@
       <img title="Classic Layout" alt="classic layout" src="data:image/gif;base64,R0lGODlhFAAUAJEAAAAAADMzM////wAAACH5BAUUAAIALAAAAAAUABQAAAImlI+py+0PU5gRBRDM3DxbWoXis42X13USOLauUIqnlsaH/eY6UwAAOw==" />
     </div>
   </ul>
+<div style="float:right;margin-left:5px;">[ <a href="https://github.com/codeigniter-jp/ci-ja/blob/develop/user_guide_ja_src/source/documentation/index.rst">旧版翻訳途中</a> | <a href="https://github.com/bcit-ci/CodeIgniter/commits/develop/user_guide_src/source/documentation/index.rst">原文履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/commits/develop_japanese/source/documentation/index.rst">翻訳履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/source/documentation/index.rst">GitHubで修正</a> ]</div><br /><div style="float:right;margin-left:5px;">[ <b class="highlighted">翻訳者募集中</b> → <a href="https://docs.google.com/spreadsheets/d/1ZWD5XqwH-Uo9X7MR644jbL6O8p5LxIngLT8M547H8wc/edit?pref=2&pli=1#gid=0">翻訳状況</a> ]</div>
   <hr/>
 </div>
           <div role="main" class="document">
@@ -428,12 +429,12 @@
 それらは、とても技術的である一方、常に人にとって読み易いものを書くことがきます。</p>
 <p>以下のもののように、目次は常に含まれます。
 以下を挿入することで自動的に作成されます。:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>.. contents::
-        :local:
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="nx">contents</span><span class="o">::</span>
+        <span class="o">:</span><span class="nx">local</span><span class="o">:</span>
 
-.. raw:: html
+<span class="o">..</span> <span class="nx">raw</span><span class="o">::</span> <span class="na">html</span>
 
-&lt;div class=&quot;custom-index container&quot;&gt;&lt;/div&gt;
+<span class="o">&lt;</span><span class="nx">div</span> <span class="nx">class</span><span class="o">=</span><span class="s2">&quot;custom-index container&quot;</span><span class="o">&gt;&lt;/</span><span class="nx">div</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 <div class="contents local topic" id="contents">
@@ -466,47 +467,47 @@ easy_install sphinxcontrib-phpdomain
 見出しは、ちょっとしたテキストに特定の文字をアンダーラインすることによって
 形成されています。ページタイトルやセクションの見出しのような主な見出しは
 オーバーラインも使用します。その他の見出しは、次のような階層でアンダーラインのみ使用します。:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span># ページタイトルでは、オーバーラインとともに使用します
-* 主なセクションでは、オーバーラインとともに使用します
-= サブセクション
-- サブセクション2階層目
-^ サブセクション3階層目
-&quot; サブセクション4階層目（！）
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1"># ページタイトルでは、オーバーラインとともに使用します</span>
+<span class="o">*</span> <span class="nx">主なセクションでは、オーバーラインとともに使用します</span>
+<span class="o">=</span> <span class="nx">サブセクション</span>
+<span class="o">-</span> <span class="nx">サブセクション2階層目</span>
+<span class="o">^</span> <span class="nx">サブセクション3階層目</span>
+<span class="s2">&quot; サブセクション4階層目（！）</span>
 </pre></div>
 </div>
 <p><a class="reference download internal" href="../_downloads/ELDocs.tmbundle.zip" download=""><code class="xref download docutils literal"><span class="pre">TextMate</span> <span class="pre">ELDocs</span> <span class="pre">バンドル</span></code></a> は、
 以下のタブトリガーでこれらを作成することができます。:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>title-&gt;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">title</span><span class="o">-&gt;</span>
 
-        ##########
-        Page Title
-        ##########
+        <span class="c1">##########</span>
+        <span class="nx">Page</span> <span class="nx">Title</span>
+        <span class="c1">##########</span>
 
-sec-&gt;
+<span class="nx">sec</span><span class="o">-&gt;</span>
 
-        *************
-        Major Section
-        *************
+        <span class="o">*************</span>
+        <span class="nx">Major</span> <span class="nx">Section</span>
+        <span class="o">*************</span>
 
-sub-&gt;
+<span class="nx">sub</span><span class="o">-&gt;</span>
 
-        Subsection
-        ==========
+        <span class="na">Subsection</span>
+        <span class="o">==========</span>
 
-sss-&gt;
+<span class="nx">sss</span><span class="o">-&gt;</span>
 
-        SubSubSection
-        -------------
+        <span class="na">SubSubSection</span>
+        <span class="o">-------------</span>
 
-ssss-&gt;
+<span class="nx">ssss</span><span class="o">-&gt;</span>
 
-        SubSubSubSection
-        ^^^^^^^^^^^^^^^^
+        <span class="na">SubSubSubSection</span>
+        <span class="o">^^^^^^^^^^^^^^^^</span>
 
-sssss-&gt;
+<span class="nx">sssss</span><span class="o">-&gt;</span>
 
-        SubSubSubSubSection (!)
-        &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;
+        <span class="na">SubSubSubSubSection</span> <span class="p">(</span><span class="o">!</span><span class="p">)</span>
+        <span class="s2">&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -586,19 +587,19 @@ Sphinx は物事をシンプルに保ち手助けするためのディレクテ�
 </tr>
 </tbody>
 </table>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;load-&gt;library(&#39;some_class&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;some_class&#39;</span><span class="p">);</span>
 
-$bar = array(
-        &#39;something&#39;             =&gt; &#39;Here is this parameter!&#39;,
-        &#39;something_else&#39;        =&gt; 42
-);
+<span class="nv">$bar</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;something&#39;</span>             <span class="o">=&gt;</span> <span class="s1">&#39;Here is this parameter!&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;something_else&#39;</span>        <span class="o">=&gt;</span> <span class="mi">42</span>
+<span class="p">);</span>
 
-$bat = $this-&gt;some_class-&gt;should_do_something();
+<span class="nv">$bat</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">some_class</span><span class="o">-&gt;</span><span class="na">should_do_something</span><span class="p">();</span>
 
-if ($this-&gt;some_class-&gt;some_method(4, $bar, $bat) === FALSE)
-{
-        show_error(&#39;An Error Occurred Doing Some Method&#39;);
-}
+<span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">some_class</span><span class="o">-&gt;</span><span class="na">some_method</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="nv">$bar</span><span class="p">,</span> <span class="nv">$bat</span><span class="p">)</span> <span class="o">===</span> <span class="k">FALSE</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="nx">show_error</span><span class="p">(</span><span class="s1">&#39;An Error Occurred Doing Some Method&#39;</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -648,7 +649,7 @@ if ($this-&gt;some_class-&gt;some_method(4, $bar, $bat) === FALSE)
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 9月 06, 2016
+      最終更新: 9月 04, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

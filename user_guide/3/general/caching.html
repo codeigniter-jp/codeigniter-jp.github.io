@@ -415,6 +415,7 @@
       <img title="Classic Layout" alt="classic layout" src="data:image/gif;base64,R0lGODlhFAAUAJEAAAAAADMzM////wAAACH5BAUUAAIALAAAAAAUABQAAAImlI+py+0PU5gRBRDM3DxbWoXis42X13USOLauUIqnlsaH/eY6UwAAOw==" />
     </div>
   </ul>
+<div style="float:right;margin-left:5px;">[ <a href="https://github.com/codeigniter-jp/ci-ja/blob/develop/user_guide_ja_src/source/general/caching.rst">旧版翻訳途中</a> | <a href="https://github.com/bcit-ci/CodeIgniter/commits/develop/user_guide_src/source/general/caching.rst">原文履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/commits/develop_japanese/source/general/caching.rst">翻訳履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/source/general/caching.rst">GitHubで修正</a> ]</div><br /><div style="float:right;margin-left:5px;">[ <b class="highlighted">翻訳者募集中</b> → <a href="https://docs.google.com/spreadsheets/d/1ZWD5XqwH-Uo9X7MR644jbL6O8p5LxIngLT8M547H8wc/edit?pref=2&pli=1#gid=0">翻訳状況</a> ]</div>
   <hr/>
 </div>
           <div role="main" class="document">
@@ -443,7 +444,7 @@ application/cache フォルダに書き込まれます。
 <h2>キャッシュを有効にする<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>キャッシュを有効にするには、コントローラメソッドのどこかに
 次のタグを書きます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;output-&gt;cache($n);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">output</span><span class="o">-&gt;</span><span class="na">cache</span><span class="p">(</span><span class="nv">$n</span><span class="p">);</span>
 </pre></div>
 </div>
 <p><code class="docutils literal"><span class="pre">$n</span></code> の箇所は 、リフレッシュされる間隔、ページのキャッシュを残したい <strong>分</strong> 数
@@ -480,11 +481,11 @@ application/cache フォルダに書き込まれます。
 </div>
 <p>手動でキャッシュを削除する必要がある場合、 <code class="docutils literal"><span class="pre">delete_cache()</span></code>
 メソッドを使用することができます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>// 現在リクエストされている URI のキャッシュを削除する
-$this-&gt;output-&gt;delete_cache();
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// 現在リクエストされている URI のキャッシュを削除する</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">output</span><span class="o">-&gt;</span><span class="na">delete_cache</span><span class="p">();</span>
 
-// /foo/bar のキャッシュを削除する
-$this-&gt;output-&gt;delete_cache(&#39;/foo/bar&#39;);
+<span class="c1">// /foo/bar のキャッシュを削除する</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">output</span><span class="o">-&gt;</span><span class="na">delete_cache</span><span class="p">(</span><span class="s1">&#39;/foo/bar&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -509,7 +510,7 @@ $this-&gt;output-&gt;delete_cache(&#39;/foo/bar&#39;);
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 9月 06, 2016
+      最終更新: 9月 04, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

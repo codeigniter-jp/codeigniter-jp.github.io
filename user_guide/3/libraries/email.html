@@ -415,6 +415,7 @@
       <img title="Classic Layout" alt="classic layout" src="data:image/gif;base64,R0lGODlhFAAUAJEAAAAAADMzM////wAAACH5BAUUAAIALAAAAAAUABQAAAImlI+py+0PU5gRBRDM3DxbWoXis42X13USOLauUIqnlsaH/eY6UwAAOw==" />
     </div>
   </ul>
+<div style="float:right;margin-left:5px;">[ <a href="https://github.com/codeigniter-jp/ci-ja/blob/develop/user_guide_ja_src/source/libraries/email.rst">旧版翻訳途中</a> | <a href="https://github.com/bcit-ci/CodeIgniter/commits/develop/user_guide_src/source/libraries/email.rst">原文履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/commits/develop_japanese/source/libraries/email.rst">翻訳履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/source/libraries/email.rst">GitHubで修正</a> ]</div><br /><div style="float:right;margin-left:5px;">[ <b class="highlighted">翻訳者募集中</b> → <a href="https://docs.google.com/spreadsheets/d/1ZWD5XqwH-Uo9X7MR644jbL6O8p5LxIngLT8M547H8wc/edit?pref=2&pli=1#gid=0">翻訳状況</a> ]</div>
   <hr/>
 </div>
           <div role="main" class="document">
@@ -459,17 +460,17 @@ BCC バッチに分割します。</li>
 <p>以下は、どうやってメールを送信できるかを示した基本的な例です。
 .. note:: この例では、<a class="reference internal" href="../general/controllers.html"><span class="doc">コントローラ</span></a>
 でメールを送信すると仮定しています。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;load-&gt;library(&#39;email&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">);</span>
 
-$this-&gt;email-&gt;from(&#39;your@example.com&#39;, &#39;Your Name&#39;);
-$this-&gt;email-&gt;to(&#39;someone@example.com&#39;);
-$this-&gt;email-&gt;cc(&#39;another@another-example.com&#39;);
-$this-&gt;email-&gt;bcc(&#39;them@their-example.com&#39;);
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">email</span><span class="o">-&gt;</span><span class="na">from</span><span class="p">(</span><span class="s1">&#39;your@example.com&#39;</span><span class="p">,</span> <span class="s1">&#39;Your Name&#39;</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">email</span><span class="o">-&gt;</span><span class="na">to</span><span class="p">(</span><span class="s1">&#39;someone@example.com&#39;</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">email</span><span class="o">-&gt;</span><span class="na">cc</span><span class="p">(</span><span class="s1">&#39;another@another-example.com&#39;</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">email</span><span class="o">-&gt;</span><span class="na">bcc</span><span class="p">(</span><span class="s1">&#39;them@their-example.com&#39;</span><span class="p">);</span>
 
-$this-&gt;email-&gt;subject(&#39;Email Test&#39;);
-$this-&gt;email-&gt;message(&#39;Testing the email class.&#39;);
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">email</span><span class="o">-&gt;</span><span class="na">subject</span><span class="p">(</span><span class="s1">&#39;Email Test&#39;</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">email</span><span class="o">-&gt;</span><span class="na">message</span><span class="p">(</span><span class="s1">&#39;Testing the email class.&#39;</span><span class="p">);</span>
 
-$this-&gt;email-&gt;send();
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">email</span><span class="o">-&gt;</span><span class="na">send</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
@@ -482,12 +483,12 @@ $this-&gt;email-&gt;send();
 <p>設定項目は、email クラスの initialize メソッドに設定項目の配列を渡す
 ことでセットすることができます。以下は、設定項目をどのようにセット
 できるかの例です:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$config[&#39;protocol&#39;] = &#39;sendmail&#39;;
-$config[&#39;mailpath&#39;] = &#39;/usr/sbin/sendmail&#39;;
-$config[&#39;charset&#39;] = &#39;iso-8859-1&#39;;
-$config[&#39;wordwrap&#39;] = TRUE;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;protocol&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;sendmail&#39;</span><span class="p">;</span>
+<span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;mailpath&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;/usr/sbin/sendmail&#39;</span><span class="p">;</span>
+<span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;charset&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;iso-8859-1&#39;</span><span class="p">;</span>
+<span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;wordwrap&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">TRUE</span><span class="p">;</span>
 
-$this-&gt;email-&gt;initialize($config);
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">email</span><span class="o">-&gt;</span><span class="na">initialize</span><span class="p">(</span><span class="nv">$config</span><span class="p">);</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -680,11 +681,11 @@ $this-&gt;email-&gt;initialize() メソッドを使う必要は「ありませ�
 </tbody>
 </table>
 <p>電子メール送信者の電子メールアドレスと氏名をセットします:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;email-&gt;from(&#39;you@example.com&#39;, &#39;あなたの名前&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">email</span><span class="o">-&gt;</span><span class="na">from</span><span class="p">(</span><span class="s1">&#39;you@example.com&#39;</span><span class="p">,</span> <span class="s1">&#39;あなたの名前&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>送信したメールのリターンパスを決めることもできます。未配達のメールを転送するのを支援します。:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;email-&gt;from(&#39;you@example.com&#39;, &#39;あなたの名前&#39;, &#39;returned_emails@example.com&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">email</span><span class="o">-&gt;</span><span class="na">from</span><span class="p">(</span><span class="s1">&#39;you@example.com&#39;</span><span class="p">,</span> <span class="s1">&#39;あなたの名前&#39;</span><span class="p">,</span> <span class="s1">&#39;returned_emails@example.com&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -745,12 +746,12 @@ $this-&gt;email-&gt;initialize() メソッドを使う必要は「ありませ�
 カンマ区切りのリスト、あるいは配列で指定可能です:</p>
 <blockquote>
 <div>$this-&gt;email-&gt;to(<a class="reference external" href="mailto:'someone&#37;&#52;&#48;example&#46;com">'someone<span>&#64;</span>example<span>&#46;</span>com</a>&#8216;);</div></blockquote>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;email-&gt;to(&#39;one@example.com, two@example.com, three@example.com&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">email</span><span class="o">-&gt;</span><span class="na">to</span><span class="p">(</span><span class="s1">&#39;one@example.com, two@example.com, three@example.com&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;email-&gt;to(
-        array(&#39;one@example.com&#39;, &#39;two@example.com&#39;, &#39;three@example.com&#39;)
-);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">email</span><span class="o">-&gt;</span><span class="na">to</span><span class="p">(</span>
+        <span class="k">array</span><span class="p">(</span><span class="s1">&#39;one@example.com&#39;</span><span class="p">,</span> <span class="s1">&#39;two@example.com&#39;</span><span class="p">,</span> <span class="s1">&#39;three@example.com&#39;</span><span class="p">)</span>
+<span class="p">);</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -828,7 +829,7 @@ $this-&gt;email-&gt;initialize() メソッドを使う必要は「ありませ�
 </tbody>
 </table>
 <p>電子メールの件名をセットします:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;email-&gt;subject(&#39;This is my subject&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">email</span><span class="o">-&gt;</span><span class="na">subject</span><span class="p">(</span><span class="s1">&#39;This is my subject&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -854,7 +855,7 @@ $this-&gt;email-&gt;initialize() メソッドを使う必要は「ありませ�
 </tbody>
 </table>
 <p>電子メールの本文をセットします:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;email-&gt;message(&#39;This is my message&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">email</span><span class="o">-&gt;</span><span class="na">message</span><span class="p">(</span><span class="s1">&#39;This is my message&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -880,7 +881,7 @@ $this-&gt;email-&gt;initialize() メソッドを使う必要は「ありませ�
 </tbody>
 </table>
 <p>代替のメール本文をセットします:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;email-&gt;set_alt_message(&#39;This is the alternative message&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">email</span><span class="o">-&gt;</span><span class="na">set_alt_message</span><span class="p">(</span><span class="s1">&#39;This is the alternative message&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>これは、HTML形式にフォーマットされた電子メールを送信する場合に使用
@@ -913,8 +914,8 @@ $this-&gt;email-&gt;initialize() メソッドを使う必要は「ありませ�
 </tbody>
 </table>
 <p>電子メールの追加のヘッダーを付加:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;email-&gt;set_header(&#39;Header1&#39;, &#39;Value1&#39;);
-$this-&gt;email-&gt;set_header(&#39;Header2&#39;, &#39;Value2&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">email</span><span class="o">-&gt;</span><span class="na">set_header</span><span class="p">(</span><span class="s1">&#39;Header1&#39;</span><span class="p">,</span> <span class="s1">&#39;Value1&#39;</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">email</span><span class="o">-&gt;</span><span class="na">set_header</span><span class="p">(</span><span class="s1">&#39;Header2&#39;</span><span class="p">,</span> <span class="s1">&#39;Value2&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -942,21 +943,21 @@ $this-&gt;email-&gt;set_header(&#39;Header2&#39;, &#39;Value2&#39;);
 <p>メールの設定を空状態にします。 このメソッドは、ループの
 各サイクルでデータをリセットしながらメール送信機能を使う
 場合を意図しています。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>foreach ($list as $name =&gt; $address)
-{
-        $this-&gt;email-&gt;clear();
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">foreach</span> <span class="p">(</span><span class="nv">$list</span> <span class="k">as</span> <span class="nv">$name</span> <span class="o">=&gt;</span> <span class="nv">$address</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">email</span><span class="o">-&gt;</span><span class="na">clear</span><span class="p">();</span>
 
-        $this-&gt;email-&gt;to($address);
-        $this-&gt;email-&gt;from(&#39;your@example.com&#39;);
-        $this-&gt;email-&gt;subject(&#39;あなたの情報 &#39;.$name);
-        $this-&gt;email-&gt;message(&#39;こんにちは  &#39;.$name.&#39;さん ご要望の情報です。&#39;);
-        $this-&gt;email-&gt;send();
-}
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">email</span><span class="o">-&gt;</span><span class="na">to</span><span class="p">(</span><span class="nv">$address</span><span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">email</span><span class="o">-&gt;</span><span class="na">from</span><span class="p">(</span><span class="s1">&#39;your@example.com&#39;</span><span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">email</span><span class="o">-&gt;</span><span class="na">subject</span><span class="p">(</span><span class="s1">&#39;あなたの情報 &#39;</span><span class="o">.</span><span class="nv">$name</span><span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">email</span><span class="o">-&gt;</span><span class="na">message</span><span class="p">(</span><span class="s1">&#39;こんにちは  &#39;</span><span class="o">.</span><span class="nv">$name</span><span class="o">.</span><span class="s1">&#39;さん ご要望の情報です。&#39;</span><span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">email</span><span class="o">-&gt;</span><span class="na">send</span><span class="p">();</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>次のように引数に TRUE をセットした場合は、すべての添付も
 解除されます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;email-&gt;clear(TRUE);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">email</span><span class="o">-&gt;</span><span class="na">clear</span><span class="p">(</span><span class="k">TRUE</span><span class="p">);</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -983,18 +984,18 @@ $this-&gt;email-&gt;set_header(&#39;Header2&#39;, &#39;Value2&#39;);
 </table>
 <p>メール送信メソッド。 条件判断が利用できるよう、送信が成功したか失敗したかに
 基づいてブール値の TRUE か FALSE が返ります:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>if ( ! $this-&gt;email-&gt;send())
-{
-        // エラーを生成します
-}
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span> <span class="o">!</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">email</span><span class="o">-&gt;</span><span class="na">send</span><span class="p">())</span>
+<span class="p">{</span>
+        <span class="c1">// エラーを生成します</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>要求が成功した場合、このメソッドは自動的にすべてのパラメータをクリアします。
 この動作を停止するにはFALSEを渡します:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>if ($this-&gt;email-&gt;send(FALSE))
-{
-        // パラメータはクリアされません
-}
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">email</span><span class="o">-&gt;</span><span class="na">send</span><span class="p">(</span><span class="k">FALSE</span><span class="p">))</span>
+<span class="p">{</span>
+        <span class="c1">// パラメータはクリアされません</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -1032,28 +1033,28 @@ $this-&gt;email-&gt;set_header(&#39;Header2&#39;, &#39;Value2&#39;);
 <p>添付ファイルを送信できます。第1引数にファイルのパスとファイル名を指定してください。
 複数ファイルを添付する場合は、複数回メソッドを呼んでください。例えば以下のように
 します:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;email-&gt;attach(&#39;/path/to/photo1.jpg&#39;);
-$this-&gt;email-&gt;attach(&#39;/path/to/photo2.jpg&#39;);
-$this-&gt;email-&gt;attach(&#39;/path/to/photo3.jpg&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">email</span><span class="o">-&gt;</span><span class="na">attach</span><span class="p">(</span><span class="s1">&#39;/path/to/photo1.jpg&#39;</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">email</span><span class="o">-&gt;</span><span class="na">attach</span><span class="p">(</span><span class="s1">&#39;/path/to/photo2.jpg&#39;</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">email</span><span class="o">-&gt;</span><span class="na">attach</span><span class="p">(</span><span class="s1">&#39;/path/to/photo3.jpg&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>デフォルトの設定（添付ファイル）を使用します。それ以外の場合はカスタム配置を使用し、
 二番目のパラメータを空白のままにします:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;email-&gt;attach(&#39;image.jpg&#39;, &#39;inline&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">email</span><span class="o">-&gt;</span><span class="na">attach</span><span class="p">(</span><span class="s1">&#39;image.jpg&#39;</span><span class="p">,</span> <span class="s1">&#39;inline&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>また、URLを使用することができます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;email-&gt;attach(&#39;http://example.com/filename.pdf&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">email</span><span class="o">-&gt;</span><span class="na">attach</span><span class="p">(</span><span class="s1">&#39;http://example.com/filename.pdf&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>カスタムファイル名を使用したい場合は、第三のパラメータを使用することができます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;email-&gt;attach(&#39;filename.pdf&#39;, &#39;attachment&#39;, &#39;report.pdf&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">email</span><span class="o">-&gt;</span><span class="na">attach</span><span class="p">(</span><span class="s1">&#39;filename.pdf&#39;</span><span class="p">,</span> <span class="s1">&#39;attachment&#39;</span><span class="p">,</span> <span class="s1">&#39;report.pdf&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>本当の物理的なファイルの代わりに、バッファ文字列を使用する必要がある場合、
 バッファとしての最初のパラメータ、ファイル名としての第3のパラメータとMIME
 タイプとしての第4のパラメータを使うことができます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;email-&gt;attach($buffer, &#39;attachment&#39;, &#39;report.pdf&#39;, &#39;application/pdf&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">email</span><span class="o">-&gt;</span><span class="na">attach</span><span class="p">(</span><span class="nv">$buffer</span><span class="p">,</span> <span class="s1">&#39;attachment&#39;</span><span class="p">,</span> <span class="s1">&#39;report.pdf&#39;</span><span class="p">,</span> <span class="s1">&#39;application/pdf&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -1080,15 +1081,15 @@ $this-&gt;email-&gt;attach(&#39;/path/to/photo3.jpg&#39;);
 </table>
 <p>添付ファイルのセットとContent-IDを返し、添付ファイルをHTMLにインライン（写真）埋め込むため有効にします。
 最初のパラメータは、すでに添付されたファイル名でなければなりません。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$filename = &#39;/img/photo1.jpg&#39;;
-$this-&gt;email-&gt;attach($filename);
-foreach ($list as $address)
-{
-        $this-&gt;email-&gt;to($address);
-        $cid = $this-&gt;email-&gt;attachment_cid($filename);
-        $this-&gt;email-&gt;message(&#39;&lt;img src=&quot;cid:&#39;. $cid .&#39;&quot; alt=&quot;photo1&quot; /&gt;&#39;);
-        $this-&gt;email-&gt;send();
-}
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$filename</span> <span class="o">=</span> <span class="s1">&#39;/img/photo1.jpg&#39;</span><span class="p">;</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">email</span><span class="o">-&gt;</span><span class="na">attach</span><span class="p">(</span><span class="nv">$filename</span><span class="p">);</span>
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$list</span> <span class="k">as</span> <span class="nv">$address</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">email</span><span class="o">-&gt;</span><span class="na">to</span><span class="p">(</span><span class="nv">$address</span><span class="p">);</span>
+        <span class="nv">$cid</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">email</span><span class="o">-&gt;</span><span class="na">attachment_cid</span><span class="p">(</span><span class="nv">$filename</span><span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">email</span><span class="o">-&gt;</span><span class="na">message</span><span class="p">(</span><span class="s1">&#39;&lt;img src=&quot;cid:&#39;</span><span class="o">.</span> <span class="nv">$cid</span> <span class="o">.</span><span class="s1">&#39;&quot; alt=&quot;photo1&quot; /&gt;&#39;</span><span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">email</span><span class="o">-&gt;</span><span class="na">send</span><span class="p">();</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -1122,13 +1123,13 @@ foreach ($list as $address)
 <p>オプションで、メッセージの一部を印刷するかを指定することができます。
 有効なオプションは以下のとおりです。「ヘッダ」「件名」「本文」</p>
 <p>例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>// クリアされないように電子メールデータのための順序で送信しているときには、
-// FALSEを渡す必要があります。その場合、print_debugger（）の出力には何も
-// ないでしょう。
-$this-&gt;email-&gt;send(FALSE);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// クリアされないように電子メールデータのための順序で送信しているときには、</span>
+<span class="c1">// FALSEを渡す必要があります。その場合、print_debugger（）の出力には何も</span>
+<span class="c1">// ないでしょう。</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">email</span><span class="o">-&gt;</span><span class="na">send</span><span class="p">(</span><span class="k">FALSE</span><span class="p">);</span>
 
-// 唯一のメッセージの件名と本文を除く、電子メールのヘッダを出力します
-$this-&gt;email-&gt;print_debugger(array(&#39;headers&#39;));
+<span class="c1">// 唯一のメッセージの件名と本文を除く、電子メールのヘッダを出力します</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">email</span><span class="o">-&gt;</span><span class="na">print_debugger</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;headers&#39;</span><span class="p">));</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -1161,7 +1162,7 @@ $this-&gt;email-&gt;print_debugger(array(&#39;headers&#39;));
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 9月 06, 2016
+      最終更新: 9月 04, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

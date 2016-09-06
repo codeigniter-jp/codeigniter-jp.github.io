@@ -415,6 +415,7 @@
       <img title="Classic Layout" alt="classic layout" src="data:image/gif;base64,R0lGODlhFAAUAJEAAAAAADMzM////wAAACH5BAUUAAIALAAAAAAUABQAAAImlI+py+0PU5gRBRDM3DxbWoXis42X13USOLauUIqnlsaH/eY6UwAAOw==" />
     </div>
   </ul>
+<div style="float:right;margin-left:5px;">[ <a href="https://github.com/codeigniter-jp/ci-ja/blob/develop/user_guide_ja_src/source/helpers/inflector_helper.rst">旧版翻訳途中</a> | <a href="https://github.com/bcit-ci/CodeIgniter/commits/develop/user_guide_src/source/helpers/inflector_helper.rst">原文履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/commits/develop_japanese/source/helpers/inflector_helper.rst">翻訳履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/source/helpers/inflector_helper.rst">GitHubで修正</a> ]</div><br /><div style="float:right;margin-left:5px;">[ <b class="highlighted">翻訳者募集中</b> → <a href="https://docs.google.com/spreadsheets/d/1ZWD5XqwH-Uo9X7MR644jbL6O8p5LxIngLT8M547H8wc/edit?pref=2&pli=1#gid=0">翻訳状況</a> ]</div>
   <hr/>
 </div>
           <div role="main" class="document">
@@ -432,7 +433,7 @@
 <div class="custom-index container"></div><div class="section" id="id2">
 <h2><a class="toc-backref" href="#id4">ヘルパーのロード</a><a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>このヘルパーは次のコードを使ってロードします:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;load-&gt;helper(&#39;inflector&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">helper</span><span class="p">(</span><span class="s1">&#39;inflector&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -460,7 +461,7 @@
 </tbody>
 </table>
 <p>複数形の単語を単数形に変換します。例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>echo singular(&#39;dogs&#39;); // &#39;dog&#39; を返します
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nx">singular</span><span class="p">(</span><span class="s1">&#39;dogs&#39;</span><span class="p">);</span> <span class="c1">// &#39;dog&#39; を返します</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -486,7 +487,7 @@
 </tbody>
 </table>
 <p>単数形の単語を複数形に変換します。例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>echo plural(&#39;dog&#39;); // &#39;dogs&#39; を返します
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nx">plural</span><span class="p">(</span><span class="s1">&#39;dog&#39;</span><span class="p">);</span> <span class="c1">// &#39;dogs&#39; を返します</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -513,7 +514,7 @@
 </table>
 <p>スペースまたはアンダースコアで区切られた語句をキャメル記法に変換します。
 例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>echo camelize(&#39;my_dog_spot&#39;); // &#39;myDogSpot&#39; を返します
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nx">camelize</span><span class="p">(</span><span class="s1">&#39;my_dog_spot&#39;</span><span class="p">);</span> <span class="c1">// &#39;myDogSpot&#39; を返します</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -540,7 +541,7 @@
 </table>
 <p>スペースで区切られた複数の単語を取り出して、アンダースコアでつなぎます。
 例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>echo underscore(&#39;my dog spot&#39;); // &#39;my_dog_spot&#39; を返します
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nx">underscore</span><span class="p">(</span><span class="s1">&#39;my dog spot&#39;</span><span class="p">);</span> <span class="c1">// &#39;my_dog_spot&#39; を返します</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -569,11 +570,11 @@
 <p>アンダースコアで区切られた複数の単語を取り出して、スペースでつなぎます。
 各単語は大文字ではじめられます。</p>
 <p>例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>echo humanize(&#39;my_dog_spot&#39;); // &#39;My Dog Spot&#39;を返します
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nx">humanize</span><span class="p">(</span><span class="s1">&#39;my_dog_spot&#39;</span><span class="p">);</span> <span class="c1">// &#39;My Dog Spot&#39;を返します</span>
 </pre></div>
 </div>
 <p>To use dashes instead of underscores:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>echo humanize(&#39;my-dog-spot&#39;, &#39;-&#39;); // Prints &#39;My Dog Spot&#39;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nx">humanize</span><span class="p">(</span><span class="s1">&#39;my-dog-spot&#39;</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">);</span> <span class="c1">// Prints &#39;My Dog Spot&#39;</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -599,7 +600,7 @@
 </tbody>
 </table>
 <p>Checks if the given word has a plural version. Example:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>is_countable(&#39;equipment&#39;); // Returns FALSE
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">is_countable</span><span class="p">(</span><span class="s1">&#39;equipment&#39;</span><span class="p">);</span> <span class="c1">// Returns FALSE</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -626,7 +627,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 9月 06, 2016
+      最終更新: 9月 04, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

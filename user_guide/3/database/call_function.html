@@ -415,6 +415,7 @@
       <img title="Classic Layout" alt="classic layout" src="data:image/gif;base64,R0lGODlhFAAUAJEAAAAAADMzM////wAAACH5BAUUAAIALAAAAAAUABQAAAImlI+py+0PU5gRBRDM3DxbWoXis42X13USOLauUIqnlsaH/eY6UwAAOw==" />
     </div>
   </ul>
+<div style="float:right;margin-left:5px;">[ <a href="https://github.com/codeigniter-jp/ci-ja/blob/develop/user_guide_ja_src/source/database/call_function.rst">旧版翻訳途中</a> | <a href="https://github.com/bcit-ci/CodeIgniter/commits/develop/user_guide_src/source/database/call_function.rst">原文履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/commits/develop_japanese/source/database/call_function.rst">翻訳履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/source/database/call_function.rst">GitHubで修正</a> ]</div><br /><div style="float:right;margin-left:5px;">[ <b class="highlighted">翻訳者募集中</b> → <a href="https://docs.google.com/spreadsheets/d/1ZWD5XqwH-Uo9X7MR644jbL6O8p5LxIngLT8M547H8wc/edit?pref=2&pli=1#gid=0">翻訳状況</a> ]</div>
   <hr/>
 </div>
           <div role="main" class="document">
@@ -428,7 +429,7 @@
 のデータベース関数を呼び出すのが可能になります。 たとえば、CodeIgniter
 でネイティブに サポート**されていない** mysql_get_client_info()
 関数を呼び出したいとしたら、次のようにして呼び出すことができます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;db-&gt;call_function(&#39;get_client_info&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">call_function</span><span class="p">(</span><span class="s1">&#39;get_client_info&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>第1引数で、プリフィックスの mysql¥_ を <strong>付けずに</strong>
@@ -439,18 +440,18 @@
 りませんので、このメソッドが移植性にどれほど役立つかは限られています。</p>
 <p>呼び出そうとする関数において必要なパラメータは、第2引数で指定すること
 ができます。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;db-&gt;call_function(&#39;some_function&#39;, $param1, $param2, etc..);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">call_function</span><span class="p">(</span><span class="s1">&#39;some_function&#39;</span><span class="p">,</span> <span class="nv">$param1</span><span class="p">,</span> <span class="nv">$param2</span><span class="p">,</span> <span class="nx">etc</span><span class="o">..</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>データベースの接続ID や データベースの結果IDを渡すのが必要になる時がよ
 くあります。接続IDは次のようにしてアクセスできます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;db-&gt;conn_id;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">conn_id</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>次のようにして、結果オブジェクトで、結果IDにアクセスできます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$query = $this-&gt;db-&gt;query(&quot;SOME QUERY&quot;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s2">&quot;SOME QUERY&quot;</span><span class="p">);</span>
 
-$query-&gt;result_id;
+<span class="nv">$query</span><span class="o">-&gt;</span><span class="na">result_id</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -475,7 +476,7 @@ $query-&gt;result_id;
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 9月 06, 2016
+      最終更新: 9月 04, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

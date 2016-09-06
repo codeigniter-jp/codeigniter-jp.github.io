@@ -417,6 +417,7 @@
       <img title="Classic Layout" alt="classic layout" src="data:image/gif;base64,R0lGODlhFAAUAJEAAAAAADMzM////wAAACH5BAUUAAIALAAAAAAUABQAAAImlI+py+0PU5gRBRDM3DxbWoXis42X13USOLauUIqnlsaH/eY6UwAAOw==" />
     </div>
   </ul>
+<div style="float:right;margin-left:5px;">[ <a href="https://github.com/codeigniter-jp/ci-ja/blob/develop/user_guide_ja_src/source/installation/upgrade_b11.rst">旧版翻訳途中</a> | <a href="https://github.com/bcit-ci/CodeIgniter/commits/develop/user_guide_src/source/installation/upgrade_b11.rst">原文履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/commits/develop_japanese/source/installation/upgrade_b11.rst">翻訳履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/source/installation/upgrade_b11.rst">GitHubで修正</a> ]</div><br /><div style="float:right;margin-left:5px;">[ <b class="highlighted">翻訳者募集中</b> → <a href="https://docs.google.com/spreadsheets/d/1ZWD5XqwH-Uo9X7MR644jbL6O8p5LxIngLT8M547H8wc/edit?pref=2&pli=1#gid=0">翻訳状況</a> ]</div>
   <hr/>
 </div>
           <div role="main" class="document">
@@ -459,36 +460,36 @@ Note: &#8220;system&#8221;フォルダの名前を変更している場合は、
 <h2>Step 5: config ファイルの編集<a class="headerlink" href="#step-5-config" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>オリジナルの application/config/config.php には記述ミスがありますので、
 ファイル内のcookieに関連する項目を探してください:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$conf[&#39;cookie_prefix&#39;]  = &quot;&quot;;
-$conf[&#39;cookie_domain&#39;]  = &quot;&quot;;
-$conf[&#39;cookie_path&#39;]    = &quot;/&quot;;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$conf</span><span class="p">[</span><span class="s1">&#39;cookie_prefix&#39;</span><span class="p">]</span>  <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+<span class="nv">$conf</span><span class="p">[</span><span class="s1">&#39;cookie_domain&#39;</span><span class="p">]</span>  <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+<span class="nv">$conf</span><span class="p">[</span><span class="s1">&#39;cookie_path&#39;</span><span class="p">]</span>    <span class="o">=</span> <span class="s2">&quot;/&quot;</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>以下のように、配列の変数名を $conf から $config に変更してください:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$config[&#39;cookie_prefix&#39;]        = &quot;&quot;;
-$config[&#39;cookie_domain&#39;]        = &quot;&quot;;
-$config[&#39;cookie_path&#39;]  = &quot;/&quot;;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;cookie_prefix&#39;</span><span class="p">]</span>        <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+<span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;cookie_domain&#39;</span><span class="p">]</span>        <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+<span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;cookie_path&#39;</span><span class="p">]</span>  <span class="o">=</span> <span class="s2">&quot;/&quot;</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>最後に、 config ファイルに以下の新しい要素を追加してください
 （必要であればオプションを編集してください）:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>/*
-|------------------------------------------------
-| URI PROTOCOL
-|------------------------------------------------
-|
-| This item determines which server global
-| should be used to retrieve the URI string. The
-| default setting of &quot;auto&quot; works for most servers.
-| If your links do not seem to work, try one of
-| the other delicious flavors:
-|
-| &#39;auto&#39;         Default - auto detects
-| &#39;path_info&#39;    Uses the PATH_INFO
-| &#39;query_string&#39;        Uses the QUERY_STRING
-*/
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">|------------------------------------------------</span>
+<span class="cm">| URI PROTOCOL</span>
+<span class="cm">|------------------------------------------------</span>
+<span class="cm">|</span>
+<span class="cm">| This item determines which server global</span>
+<span class="cm">| should be used to retrieve the URI string. The</span>
+<span class="cm">| default setting of &quot;auto&quot; works for most servers.</span>
+<span class="cm">| If your links do not seem to work, try one of</span>
+<span class="cm">| the other delicious flavors:</span>
+<span class="cm">|</span>
+<span class="cm">| &#39;auto&#39;         Default - auto detects</span>
+<span class="cm">| &#39;path_info&#39;    Uses the PATH_INFO</span>
+<span class="cm">| &#39;query_string&#39;        Uses the QUERY_STRING</span>
+<span class="cm">*/</span>
 
-$config[&#39;uri_protocol&#39;] = &quot;auto&quot;;
+<span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;uri_protocol&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;auto&quot;</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -513,7 +514,7 @@ $config[&#39;uri_protocol&#39;] = &quot;auto&quot;;
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 9月 06, 2016
+      最終更新: 9月 04, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

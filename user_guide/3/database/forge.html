@@ -415,6 +415,7 @@
       <img title="Classic Layout" alt="classic layout" src="data:image/gif;base64,R0lGODlhFAAUAJEAAAAAADMzM////wAAACH5BAUUAAIALAAAAAAUABQAAAImlI+py+0PU5gRBRDM3DxbWoXis42X13USOLauUIqnlsaH/eY6UwAAOw==" />
     </div>
   </ul>
+<div style="float:right;margin-left:5px;">[ <a href="https://github.com/codeigniter-jp/ci-ja/blob/develop/user_guide_ja_src/source/database/forge.rst">旧版翻訳途中</a> | <a href="https://github.com/bcit-ci/CodeIgniter/commits/develop/user_guide_src/source/database/forge.rst">原文履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/commits/develop_japanese/source/database/forge.rst">翻訳履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/source/database/forge.rst">GitHubで修正</a> ]</div><br /><div style="float:right;margin-left:5px;">[ <b class="highlighted">翻訳者募集中</b> → <a href="https://docs.google.com/spreadsheets/d/1ZWD5XqwH-Uo9X7MR644jbL6O8p5LxIngLT8M547H8wc/edit?pref=2&pli=1#gid=0">翻訳状況</a> ]</div>
   <hr/>
 </div>
           <div role="main" class="document">
@@ -456,12 +457,12 @@
 フォージクラスを初期化するには、あらかじめデータベースドライバが動いている必要があります。</p>
 </div>
 <p>フォージクラスは次のようにロードします:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;load-&gt;dbforge()
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">dbforge</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>デフォルト以外のデータベースを管理したい場合は、 DB フォージのローダに
 別のデータベースオブジェクトを渡すこともできます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;myforge = $this-&gt;load-&gt;dbforge($this-&gt;other_db, TRUE);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">myforge</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">dbforge</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">other_db</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>上記の例では、我々はカスタムデータベースオブジェクトを第一引数に渡しており、
@@ -474,7 +475,7 @@
 </div>
 <p>いったん初期化されれば、フォージのメソッドは、 <code class="docutils literal"><span class="pre">$this-&gt;dbforge</span></code>
 オブジェクトを利用してアクセスできます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;dbforge-&gt;some_method();
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">dbforge</span><span class="o">-&gt;</span><span class="na">some_method</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
@@ -483,19 +484,19 @@
 <p><strong>$this-&gt;dbforge-&gt;create_database(&#8216;db_name&#8217;)</strong></p>
 <p>最初の引数で渡した名前でデータベースを作成します。戻り値は TRUE/FALSE
 で成功したか失敗したかを示します:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>if ($this-&gt;dbforge-&gt;create_database(&#39;my_db&#39;))
-{
-        echo &#39;Database が作成されました！&#39;;
-}
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">dbforge</span><span class="o">-&gt;</span><span class="na">create_database</span><span class="p">(</span><span class="s1">&#39;my_db&#39;</span><span class="p">))</span>
+<span class="p">{</span>
+        <span class="k">echo</span> <span class="s1">&#39;Database が作成されました！&#39;</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p><strong>$this-&gt;dbforge-&gt;drop_database(&#8216;db_name&#8217;)</strong></p>
 <p>最初の引数で示された名前のデータベースを削除します。戻り値は
 TRUE/FALSE で成功か失敗を示します:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>if ($this-&gt;dbforge-&gt;drop_database(&#39;my_db&#39;))
-{
-        echo &#39;Database が削除されました！&#39;;
-}
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">dbforge</span><span class="o">-&gt;</span><span class="na">drop_database</span><span class="p">(</span><span class="s1">&#39;my_db&#39;</span><span class="p">))</span>
+<span class="p">{</span>
+        <span class="k">echo</span> <span class="s1">&#39;Database が削除されました！&#39;</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -510,13 +511,13 @@ CodeIgniter はこのようなことに関してのメカニズムを提供し�
 ータタイプを指定する &#8216;type&#8217; キーが必要となります。たとえば、
 INT 、 VARCHAR 、 TEXT などです。多くのデータタイプ（たとえば VARCHAR
 など）は &#8216;constraint&#8217; キーも必要です。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$fields = array(
-        &#39;users&#39; =&gt; array(
-                &#39;type&#39; =&gt; &#39;VARCHAR&#39;,
-                &#39;constraint&#39; =&gt; &#39;100&#39;,
-        ),
-);
-// &quot;users VARCHAR(100)&quot; と解釈され、フィールドが追加されます。
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$fields</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;users&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+                <span class="s1">&#39;type&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;VARCHAR&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;constraint&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;100&#39;</span><span class="p">,</span>
+        <span class="p">),</span>
+<span class="p">);</span>
+<span class="c1">// &quot;users VARCHAR(100)&quot; と解釈され、フィールドが追加されます。</span>
 </pre></div>
 </div>
 <p>さらに、以下のキー/値が使えます:</p>
@@ -530,28 +531,28 @@ INT 、 VARCHAR 、 TEXT などです。多くのデータタイプ（たとえ�
 けません。</li>
 <li>unique/true : to generate a unique key for the field definition.</li>
 </ul>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$fields = array(
-        &#39;blog_id&#39; =&gt; array(
-                &#39;type&#39; =&gt; &#39;INT&#39;,
-                &#39;constraint&#39; =&gt; 5,
-                &#39;unsigned&#39; =&gt; TRUE,
-                &#39;auto_increment&#39; =&gt; TRUE
-        ),
-        &#39;blog_title&#39; =&gt; array(
-                &#39;type&#39; =&gt; &#39;VARCHAR&#39;,
-                &#39;constraint&#39; =&gt; &#39;100&#39;,
-                &#39;unique&#39; =&gt; TRUE,
-        ),
-        &#39;blog_author&#39; =&gt; array(
-                &#39;type&#39; =&gt;&#39;VARCHAR&#39;,
-                &#39;constraint&#39; =&gt; &#39;100&#39;,
-                &#39;default&#39; =&gt; &#39;King of Town&#39;,
-        ),
-        &#39;blog_description&#39; =&gt; array(
-                &#39;type&#39; =&gt; &#39;TEXT&#39;,
-                &#39;null&#39; =&gt; TRUE,
-        ),
-);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$fields</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;blog_id&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+                <span class="s1">&#39;type&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;INT&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;constraint&#39;</span> <span class="o">=&gt;</span> <span class="mi">5</span><span class="p">,</span>
+                <span class="s1">&#39;unsigned&#39;</span> <span class="o">=&gt;</span> <span class="k">TRUE</span><span class="p">,</span>
+                <span class="s1">&#39;auto_increment&#39;</span> <span class="o">=&gt;</span> <span class="k">TRUE</span>
+        <span class="p">),</span>
+        <span class="s1">&#39;blog_title&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+                <span class="s1">&#39;type&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;VARCHAR&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;constraint&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;100&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;unique&#39;</span> <span class="o">=&gt;</span> <span class="k">TRUE</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="s1">&#39;blog_author&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+                <span class="s1">&#39;type&#39;</span> <span class="o">=&gt;</span><span class="s1">&#39;VARCHAR&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;constraint&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;100&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;default&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;King of Town&#39;</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="s1">&#39;blog_description&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+                <span class="s1">&#39;type&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;TEXT&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;null&#39;</span> <span class="o">=&gt;</span> <span class="k">TRUE</span><span class="p">,</span>
+        <span class="p">),</span>
+<span class="p">);</span>
 </pre></div>
 </div>
 <p>フィールドが定義された後で、 <code class="docutils literal"><span class="pre">$this-&gt;dbforge-&gt;add_field($fields);</span></code>
@@ -563,7 +564,7 @@ INT 、 VARCHAR 、 TEXT などです。多くのデータタイプ（たとえ�
 <h4>フィールド定義を文字列として渡す<a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">¶</a></h4>
 <p>フィールド作成をどのようにしたらよいか正確にわかっている場合、
 add_field() メソッドを使って、フィールド定義を文字列として渡すこともできます。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;dbforge-&gt;add_field(&quot;label varchar(100) NOT NULL DEFAULT &#39;default label&#39;&quot;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">dbforge</span><span class="o">-&gt;</span><span class="na">add_field</span><span class="p">(</span><span class="s2">&quot;label varchar(100) NOT NULL DEFAULT &#39;default label&#39;&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -580,8 +581,8 @@ add_field() メソッドを使って、フィールド定義を文字列とし�
 <p>ひとつの特別な例外として、id フィールドの作成があります。type が id
 のフィールドは、自動的に INT(9) の auto_increment な主キーに
 なります。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;dbforge-&gt;add_field(&#39;id&#39;);
-// これで id は INT(9) NOT NULL AUTO_INCREMENT になります。
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">dbforge</span><span class="o">-&gt;</span><span class="na">add_field</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">);</span>
+<span class="c1">// これで id は INT(9) NOT NULL AUTO_INCREMENT になります。</span>
 </pre></div>
 </div>
 </div>
@@ -594,18 +595,18 @@ TRUE を指定すると主キーになります。 add_key() の後に create_ta
 を呼ぶ必要があることに注意してください。</p>
 <p>複数のカラムの主ではないキーは配列で送る必要があります。以下は MySQL
 用のサンプルです。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;dbforge-&gt;add_key(&#39;blog_id&#39;, TRUE);
-// PRIMARY KEY は `blog_id`(`blog_id`) になります。
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">dbforge</span><span class="o">-&gt;</span><span class="na">add_key</span><span class="p">(</span><span class="s1">&#39;blog_id&#39;</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span>
+<span class="c1">// PRIMARY KEY は `blog_id`(`blog_id`) になります。</span>
 
-$this-&gt;dbforge-&gt;add_key(&#39;blog_id&#39;, TRUE);
-$this-&gt;dbforge-&gt;add_key(&#39;site_id&#39;, TRUE);
-// PRIMARY KEY は `blog_id_site_id` (`blog_id`, `site_id`) になります。
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">dbforge</span><span class="o">-&gt;</span><span class="na">add_key</span><span class="p">(</span><span class="s1">&#39;blog_id&#39;</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">dbforge</span><span class="o">-&gt;</span><span class="na">add_key</span><span class="p">(</span><span class="s1">&#39;site_id&#39;</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span>
+<span class="c1">// PRIMARY KEY は `blog_id_site_id` (`blog_id`, `site_id`) になります。</span>
 
-$this-&gt;dbforge-&gt;add_key(&#39;blog_name&#39;);
-// KEY は `blog_name` (`blog_name`) になります。
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">dbforge</span><span class="o">-&gt;</span><span class="na">add_key</span><span class="p">(</span><span class="s1">&#39;blog_name&#39;</span><span class="p">);</span>
+<span class="c1">// KEY は `blog_name` (`blog_name`) になります。</span>
 
-$this-&gt;dbforge-&gt;add_key(array(&#39;blog_name&#39;, &#39;blog_label&#39;));
-// KEY は `blog_name_blog_label` (`blog_name`, `blog_label`) になります。
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">dbforge</span><span class="o">-&gt;</span><span class="na">add_key</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;blog_name&#39;</span><span class="p">,</span> <span class="s1">&#39;blog_label&#39;</span><span class="p">));</span>
+<span class="c1">// KEY は `blog_name_blog_label` (`blog_name`, `blog_label`) になります。</span>
 </pre></div>
 </div>
 </div>
@@ -613,20 +614,20 @@ $this-&gt;dbforge-&gt;add_key(array(&#39;blog_name&#39;, &#39;blog_label&#39;));
 <h3><a class="toc-backref" href="#id23">テーブルの作成</a><a class="headerlink" href="#id9" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>フィールドとキーが宣言された後、新しいテーブルを次に紹介するメソッドを
 呼ぶことで作成することができます。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;dbforge-&gt;create_table(&#39;table_name&#39;);
-// CREATE TABLE table_name になります
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">dbforge</span><span class="o">-&gt;</span><span class="na">create_table</span><span class="p">(</span><span class="s1">&#39;table_name&#39;</span><span class="p">);</span>
+<span class="c1">// CREATE TABLE table_name になります</span>
 </pre></div>
 </div>
 <p>オプションの 2つ目の引数が TRUE のとき、&#8221;IF NOT EXISTS&#8221;
 を定義に追加します。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;dbforge-&gt;create_table(&#39;table_name&#39;, TRUE);
-// CREATE TABLE IF NOT EXISTS table_name になります
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">dbforge</span><span class="o">-&gt;</span><span class="na">create_table</span><span class="p">(</span><span class="s1">&#39;table_name&#39;</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span>
+<span class="c1">// CREATE TABLE IF NOT EXISTS table_name になります</span>
 </pre></div>
 </div>
 <p>さらに、MySQLの <code class="docutils literal"><span class="pre">ENGINE</span></code> のような任意のテーブル属性を渡すこともできます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$attributes = array(&#39;ENGINE&#39; =&gt; &#39;InnoDB&#39;);
-$this-&gt;dbforge-&gt;create_table(&#39;table_name&#39;, FALSE, $attributes);
-// produces: CREATE TABLE `table_name` (...) ENGINE = InnoDB DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$attributes</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;ENGINE&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;InnoDB&#39;</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">dbforge</span><span class="o">-&gt;</span><span class="na">create_table</span><span class="p">(</span><span class="s1">&#39;table_name&#39;</span><span class="p">,</span> <span class="k">FALSE</span><span class="p">,</span> <span class="nv">$attributes</span><span class="p">);</span>
+<span class="c1">// produces: CREATE TABLE `table_name` (...) ENGINE = InnoDB DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -639,19 +640,19 @@ $this-&gt;dbforge-&gt;create_table(&#39;table_name&#39;, FALSE, $attributes);
 <div class="section" id="id10">
 <h3><a class="toc-backref" href="#id24">テーブルの削除</a><a class="headerlink" href="#id10" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>DROP TABLE sql を実行し、任意で IF EXISTS 文を追加します。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>// DROP TABLE table_name になります
-$this-&gt;dbforge-&gt;drop_table(&#39;table_name&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// DROP TABLE table_name になります</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">dbforge</span><span class="o">-&gt;</span><span class="na">drop_table</span><span class="p">(</span><span class="s1">&#39;table_name&#39;</span><span class="p">);</span>
 
-// DROP TABLE IF EXISTS  table_name になります
-$this-&gt;dbforge-&gt;drop_table(&#39;table_name&#39;,TRUE);
+<span class="c1">// DROP TABLE IF EXISTS  table_name になります</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">dbforge</span><span class="o">-&gt;</span><span class="na">drop_table</span><span class="p">(</span><span class="s1">&#39;table_name&#39;</span><span class="p">,</span><span class="k">TRUE</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="id11">
 <h3><a class="toc-backref" href="#id25">テーブル名の変更</a><a class="headerlink" href="#id11" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>TABLE rename を実行します。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;dbforge-&gt;rename_table(&#39;old_table_name&#39;, &#39;new_table_name&#39;);
-// ALTER TABLE old_table_name RENAME TO new_table_name になります
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">dbforge</span><span class="o">-&gt;</span><span class="na">rename_table</span><span class="p">(</span><span class="s1">&#39;old_table_name&#39;</span><span class="p">,</span> <span class="s1">&#39;new_table_name&#39;</span><span class="p">);</span>
+<span class="c1">// ALTER TABLE old_table_name RENAME TO new_table_name になります</span>
 </pre></div>
 </div>
 </div>
@@ -664,25 +665,25 @@ $this-&gt;dbforge-&gt;drop_table(&#39;table_name&#39;,TRUE);
 <p><code class="docutils literal"><span class="pre">add_column()</span></code> メソッドは既存のテーブルを変更するときに使います。上記と
 同じフィールド定義の配列を採り、いくつでもフィールドを追加することがで
 きます。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$fields = array(
-        &#39;preferences&#39; =&gt; array(&#39;type&#39; =&gt; &#39;TEXT&#39;)
-);
-$this-&gt;dbforge-&gt;add_column(&#39;table_name&#39;, $fields);
-// ALTER TABLE table_name ADD preferences TEXT となります
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$fields</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;preferences&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;type&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;TEXT&#39;</span><span class="p">)</span>
+<span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">dbforge</span><span class="o">-&gt;</span><span class="na">add_column</span><span class="p">(</span><span class="s1">&#39;table_name&#39;</span><span class="p">,</span> <span class="nv">$fields</span><span class="p">);</span>
+<span class="c1">// ALTER TABLE table_name ADD preferences TEXT となります</span>
 </pre></div>
 </div>
 <p>MySQL か CUBIRD をお使いの場合、 AFTER と FIRST 文を活用してカラム位置を
 指定することができます。</p>
 <p>例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>// 新しいカラムを `another_field` カラムの後ろに配置:
-$fields = array(
-        &#39;preferences&#39; =&gt; array(&#39;type&#39; =&gt; &#39;TEXT&#39;, &#39;after&#39; =&gt; &#39;another_field&#39;)
-);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// 新しいカラムを `another_field` カラムの後ろに配置:</span>
+<span class="nv">$fields</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;preferences&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;type&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;TEXT&#39;</span><span class="p">,</span> <span class="s1">&#39;after&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;another_field&#39;</span><span class="p">)</span>
+<span class="p">);</span>
 
-// 新しいカラムを `another_field` テーブル定義の先頭に配置:
-$fields = array(
-        &#39;preferences&#39; =&gt; array(&#39;type&#39; =&gt; &#39;TEXT&#39;, &#39;first&#39; =&gt; TRUE)
-);
+<span class="c1">// 新しいカラムを `another_field` テーブル定義の先頭に配置:</span>
+<span class="nv">$fields</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;preferences&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;type&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;TEXT&#39;</span><span class="p">,</span> <span class="s1">&#39;first&#39;</span> <span class="o">=&gt;</span> <span class="k">TRUE</span><span class="p">)</span>
+<span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -690,7 +691,7 @@ $fields = array(
 <h3><a class="toc-backref" href="#id28">テーブルのカラムを削除</a><a class="headerlink" href="#id14" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p><strong>$this-&gt;dbforge-&gt;drop_column()</strong></p>
 <p>テーブルのカラムを削除します。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;dbforge-&gt;drop_column(&#39;table_name&#39;, &#39;column_to_drop&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">dbforge</span><span class="o">-&gt;</span><span class="na">drop_column</span><span class="p">(</span><span class="s1">&#39;table_name&#39;</span><span class="p">,</span> <span class="s1">&#39;column_to_drop&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -700,14 +701,14 @@ $fields = array(
 <p>このメソッドの使用法は、<code class="docutils literal"><span class="pre">add_column()</span></code> と同じです。ただし、新しいカラム
 を追加するのではなく、既存のカラムを変更します。カラム名を変更するには
 配列の &#8220;name&#8221; キーで指定します。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$fields = array(
-        &#39;old_name&#39; =&gt; array(
-                &#39;name&#39; =&gt; &#39;new_name&#39;,
-                &#39;type&#39; =&gt; &#39;TEXT&#39;,
-        ),
-);
-$this-&gt;dbforge-&gt;modify_column(&#39;table_name&#39;, $fields);
-// ALTER TABLE table_name CHANGE old_name new_name TEXT になります
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$fields</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;old_name&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+                <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;new_name&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;type&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;TEXT&#39;</span><span class="p">,</span>
+        <span class="p">),</span>
+<span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">dbforge</span><span class="o">-&gt;</span><span class="na">modify_column</span><span class="p">(</span><span class="s1">&#39;table_name&#39;</span><span class="p">,</span> <span class="nv">$fields</span><span class="p">);</span>
+<span class="c1">// ALTER TABLE table_name CHANGE old_name new_name TEXT になります</span>
 </pre></div>
 </div>
 </div>
@@ -980,7 +981,7 @@ $this-&gt;dbforge-&gt;modify_column(&#39;table_name&#39;, $fields);
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 9月 06, 2016
+      最終更新: 9月 04, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

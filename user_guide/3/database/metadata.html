@@ -415,6 +415,7 @@
       <img title="Classic Layout" alt="classic layout" src="data:image/gif;base64,R0lGODlhFAAUAJEAAAAAADMzM////wAAACH5BAUUAAIALAAAAAAUABQAAAImlI+py+0PU5gRBRDM3DxbWoXis42X13USOLauUIqnlsaH/eY6UwAAOw==" />
     </div>
   </ul>
+<div style="float:right;margin-left:5px;">[ <a href="https://github.com/codeigniter-jp/ci-ja/blob/develop/user_guide_ja_src/source/database/metadata.rst">旧版翻訳途中</a> | <a href="https://github.com/bcit-ci/CodeIgniter/commits/develop/user_guide_src/source/database/metadata.rst">原文履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/commits/develop_japanese/source/database/metadata.rst">翻訳履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/source/database/metadata.rst">GitHubで修正</a> ]</div><br /><div style="float:right;margin-left:5px;">[ <b class="highlighted">翻訳者募集中</b> → <a href="https://docs.google.com/spreadsheets/d/1ZWD5XqwH-Uo9X7MR644jbL6O8p5LxIngLT8M547H8wc/edit?pref=2&pli=1#gid=0">翻訳状況</a> ]</div>
   <hr/>
 </div>
           <div role="main" class="document">
@@ -429,12 +430,12 @@
 <p><strong>$this-&gt;db-&gt;list_tables();</strong></p>
 <p>現在接続しているデータベース内のすべてのテーブル名の
 配列を返します。例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$tables = $this-&gt;db-&gt;list_tables();
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$tables</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">list_tables</span><span class="p">();</span>
 
-foreach ($tables as $table)
-{
-        echo $table;
-}
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$tables</span> <span class="k">as</span> <span class="nv">$table</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="k">echo</span> <span class="nv">$table</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -443,10 +444,10 @@ foreach ($tables as $table)
 <p><strong>$this-&gt;db-&gt;table_exists();</strong></p>
 <p>テーブルに対して操作をする前に、テーブルが存在するかを確認した方が役立つ
 ことがあります。 TRUE/FALSE boolean を返します。使用例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>if ($this-&gt;db-&gt;table_exists(&#39;table_name&#39;))
-{
-        // some code...
-}
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">table_exists</span><span class="p">(</span><span class="s1">&#39;table_name&#39;</span><span class="p">))</span>
+<span class="p">{</span>
+        <span class="c1">// some code...</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -464,22 +465,22 @@ foreach ($tables as $table)
 呼び出すことができます:</p>
 <p>1. $this-&gt;db-&gt; オブジェクトにテーブル名を渡して呼び出す
 ことができます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$fields = $this-&gt;db-&gt;list_fields(&#39;table_name&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$fields</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">list_fields</span><span class="p">(</span><span class="s1">&#39;table_name&#39;</span><span class="p">);</span>
 
-foreach ($fields as $field)
-{
-        echo $field;
-}
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$fields</span> <span class="k">as</span> <span class="nv">$field</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="k">echo</span> <span class="nv">$field</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>2. クエリ結果オブジェクトから呼び出すことで、
 クエリに関連付けられたフィールド名を集めることができます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$query = $this-&gt;db-&gt;query(&#39;SELECT * FROM some_table&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s1">&#39;SELECT * FROM some_table&#39;</span><span class="p">);</span>
 
-foreach ($query-&gt;list_fields() as $field)
-{
-        echo $field;
-}
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$query</span><span class="o">-&gt;</span><span class="na">list_fields</span><span class="p">()</span> <span class="k">as</span> <span class="nv">$field</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="k">echo</span> <span class="nv">$field</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -488,10 +489,10 @@ foreach ($query-&gt;list_fields() as $field)
 <p><strong>$this-&gt;db-&gt;field_exists()</strong></p>
 <p>何かの操作をする前に、フィールドが存在するか確認した方が役立つ
 ことがあります。 TRUE/FALSE boolean を返します。使用例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>if ($this-&gt;db-&gt;field_exists(&#39;field_name&#39;, &#39;table_name&#39;))
-{
-        // some code...
-}
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">field_exists</span><span class="p">(</span><span class="s1">&#39;field_name&#39;</span><span class="p">,</span> <span class="s1">&#39;table_name&#39;</span><span class="p">))</span>
+<span class="p">{</span>
+        <span class="c1">// some code...</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -512,21 +513,21 @@ foreach ($query-&gt;list_fields() as $field)
 <p class="last">メタデータを提供していないデータベースもあります。</p>
 </div>
 <p>使用例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$fields = $this-&gt;db-&gt;field_data(&#39;table_name&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$fields</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">field_data</span><span class="p">(</span><span class="s1">&#39;table_name&#39;</span><span class="p">);</span>
 
-foreach ($fields as $field)
-{
-        echo $field-&gt;name;
-        echo $field-&gt;type;
-        echo $field-&gt;max_length;
-        echo $field-&gt;primary_key;
-}
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$fields</span> <span class="k">as</span> <span class="nv">$field</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="k">echo</span> <span class="nv">$field</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">;</span>
+        <span class="k">echo</span> <span class="nv">$field</span><span class="o">-&gt;</span><span class="na">type</span><span class="p">;</span>
+        <span class="k">echo</span> <span class="nv">$field</span><span class="o">-&gt;</span><span class="na">max_length</span><span class="p">;</span>
+        <span class="k">echo</span> <span class="nv">$field</span><span class="o">-&gt;</span><span class="na">primary_key</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>すでにクエリを実行させた場合は、テーブル名のかわりにクエリの
 結果オブジェクトを使うことができます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$query = $this-&gt;db-&gt;query(&quot;YOUR QUERY&quot;);
-$fields = $query-&gt;field_data();
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s2">&quot;YOUR QUERY&quot;</span><span class="p">);</span>
+<span class="nv">$fields</span> <span class="o">=</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">field_data</span><span class="p">();</span>
 </pre></div>
 </div>
 <p>次のデータがメソッドから得ることができます（データベースで
@@ -560,7 +561,7 @@ $fields = $query-&gt;field_data();
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 9月 06, 2016
+      最終更新: 9月 04, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

@@ -415,6 +415,7 @@
       <img title="Classic Layout" alt="classic layout" src="data:image/gif;base64,R0lGODlhFAAUAJEAAAAAADMzM////wAAACH5BAUUAAIALAAAAAAUABQAAAImlI+py+0PU5gRBRDM3DxbWoXis42X13USOLauUIqnlsaH/eY6UwAAOw==" />
     </div>
   </ul>
+<div style="float:right;margin-left:5px;">[ <a href="https://github.com/codeigniter-jp/ci-ja/blob/develop/user_guide_ja_src/source/database/utilities.rst">旧版翻訳途中</a> | <a href="https://github.com/bcit-ci/CodeIgniter/commits/develop/user_guide_src/source/database/utilities.rst">原文履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/commits/develop_japanese/source/database/utilities.rst">翻訳履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/source/database/utilities.rst">GitHubで修正</a> ]</div><br /><div style="float:right;margin-left:5px;">[ <b class="highlighted">翻訳者募集中</b> → <a href="https://docs.google.com/spreadsheets/d/1ZWD5XqwH-Uo9X7MR644jbL6O8p5LxIngLT8M547H8wc/edit?pref=2&pli=1#gid=0">翻訳状況</a> ]</div>
   <hr/>
 </div>
           <div role="main" class="document">
@@ -454,12 +455,12 @@
 初期化するには、あらかじめデータベースドライバが実行されている必要があります。</p>
 </div>
 <p>ユーティリティクラスは次のようにロードします:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;load-&gt;dbutil();
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">dbutil</span><span class="p">();</span>
 </pre></div>
 </div>
 <p>デフォルト以外のDBユーティリティローダを使いたい場合、別のデータベースオブジェクト
 を渡すこともできます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;myutil = $this-&gt;load-&gt;dbutil($this-&gt;other_db, TRUE);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">myutil</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">dbutil</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">other_db</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>上記の例では、第1引数にカスタムデータベースオブジェクトを渡して、
@@ -472,7 +473,7 @@
 </div>
 <p>いったん初期化されれば、ユーティリティのメソッドは、 <code class="docutils literal"><span class="pre">$this-&gt;dbutil</span></code>
 オブジェクトを利用してアクセスできます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;dbutil-&gt;some_method();
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">dbutil</span><span class="o">-&gt;</span><span class="na">some_method</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
@@ -481,12 +482,12 @@
 <div class="section" id="id4">
 <h3><a class="toc-backref" href="#id17">データベース名の配列を取得</a><a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>データベース名の配列を返します:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$dbs = $this-&gt;dbutil-&gt;list_databases();
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$dbs</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">dbutil</span><span class="o">-&gt;</span><span class="na">list_databases</span><span class="p">();</span>
 
-foreach ($dbs as $db)
-{
-        echo $db;
-}
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$dbs</span> <span class="k">as</span> <span class="nv">$db</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="k">echo</span> <span class="nv">$db</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -494,10 +495,10 @@ foreach ($dbs as $db)
 <h3><a class="toc-backref" href="#id18">データベースが存在するか確認</a><a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>特定のデータベースが存在するかどうかを確認するのが役立つことがあります。
 ブール値の TRUE/FALSE を返します。使用例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>if ($this-&gt;dbutil-&gt;database_exists(&#39;database_name&#39;))
-{
-        // some code...
-}
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">dbutil</span><span class="o">-&gt;</span><span class="na">database_exists</span><span class="p">(</span><span class="s1">&#39;database_name&#39;</span><span class="p">))</span>
+<span class="p">{</span>
+        <span class="c1">// some code...</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -510,10 +511,10 @@ foreach ($dbs as $db)
 <h3><a class="toc-backref" href="#id19">テーブルの最適化</a><a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>第1引数に渡したテーブルを最適化してくれます。
 成功か失敗かに応じて TRUE/FALSE を返します:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>if ($this-&gt;dbutil-&gt;optimize_table(&#39;table_name&#39;))
-{
-        echo &#39;Success!&#39;;
-}
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">dbutil</span><span class="o">-&gt;</span><span class="na">optimize_table</span><span class="p">(</span><span class="s1">&#39;table_name&#39;</span><span class="p">))</span>
+<span class="p">{</span>
+        <span class="k">echo</span> <span class="s1">&#39;Success!&#39;</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -526,10 +527,10 @@ foreach ($dbs as $db)
 <h3><a class="toc-backref" href="#id20">テーブルの修復</a><a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>第1引数に渡したテーブルを修復してくれます。
 成功か失敗かに応じて TRUE/FALSE を返します:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>if ($this-&gt;dbutil-&gt;repair_table(&#39;table_name&#39;))
-{
-        echo &#39;Success!&#39;;
-}
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">dbutil</span><span class="o">-&gt;</span><span class="na">repair_table</span><span class="p">(</span><span class="s1">&#39;table_name&#39;</span><span class="p">))</span>
+<span class="p">{</span>
+        <span class="k">echo</span> <span class="s1">&#39;Success!&#39;</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -542,12 +543,12 @@ foreach ($dbs as $db)
 <p>DBクラスが現在接続しているデータベースを最適化してくれます。
 DBステータスメッセージの配列または、失敗した場合に
 FALSE を返します。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$result = $this-&gt;dbutil-&gt;optimize_database();
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$result</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">dbutil</span><span class="o">-&gt;</span><span class="na">optimize_database</span><span class="p">();</span>
 
-if ($result !== FALSE)
-{
-        print_r($result);
-}
+<span class="k">if</span> <span class="p">(</span><span class="nv">$result</span> <span class="o">!==</span> <span class="k">FALSE</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="nb">print_r</span><span class="p">(</span><span class="nv">$result</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -561,22 +562,22 @@ if ($result !== FALSE)
 <p>クエリ結果から CSV ファイルを生成してくれます。
 メソッドの第1引数にはクエリの結果オブジェクトを
 含む必要があります。例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;load-&gt;dbutil();
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">dbutil</span><span class="p">();</span>
 
-$query = $this-&gt;db-&gt;query(&quot;SELECT * FROM mytable&quot;);
+<span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM mytable&quot;</span><span class="p">);</span>
 
-echo $this-&gt;dbutil-&gt;csv_from_result($query);
+<span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">dbutil</span><span class="o">-&gt;</span><span class="na">csv_from_result</span><span class="p">(</span><span class="nv">$query</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>第2、第３、第4引数はそれぞれ区切り文字、改行文字、囲み文字
 をセットするためのものです。デフォルトでは区切り文字はカンマ、
 改行文字&#8221;n&#8221;、囲み文字にはダブルクオートが使用されます。
 例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$delimiter = &quot;,&quot;;
-$newline = &quot;\r\n&quot;;
-$enclosure = &#39;&quot;&#39;;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$delimiter</span> <span class="o">=</span> <span class="s2">&quot;,&quot;</span><span class="p">;</span>
+<span class="nv">$newline</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\r\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<span class="nv">$enclosure</span> <span class="o">=</span> <span class="s1">&#39;&quot;&#39;</span><span class="p">;</span>
 
-echo $this-&gt;dbutil-&gt;csv_from_result($query, $delimiter, $newline, $enclosure);
+<span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">dbutil</span><span class="o">-&gt;</span><span class="na">csv_from_result</span><span class="p">(</span><span class="nv">$query</span><span class="p">,</span> <span class="nv">$delimiter</span><span class="p">,</span> <span class="nv">$newline</span><span class="p">,</span> <span class="nv">$enclosure</span><span class="p">);</span>
 </pre></div>
 </div>
 <div class="admonition important">
@@ -591,18 +592,18 @@ echo $this-&gt;dbutil-&gt;csv_from_result($query, $delimiter, $newline, $enclosu
 <p>クエリの結果からXMLを生成します。第1引数には、結果オブジェクトが入り、
 第2引数には、オプションで設定パラメータの配列が入ります。
 例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;load-&gt;dbutil();
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">dbutil</span><span class="p">();</span>
 
-$query = $this-&gt;db-&gt;query(&quot;SELECT * FROM mytable&quot;);
+<span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM mytable&quot;</span><span class="p">);</span>
 
-$config = array (
-        &#39;root&#39;          =&gt; &#39;root&#39;,
-        &#39;element&#39;       =&gt; &#39;element&#39;,
-        &#39;newline&#39;       =&gt; &quot;\n&quot;,
-        &#39;tab&#39;           =&gt; &quot;\t&quot;
-);
+<span class="nv">$config</span> <span class="o">=</span> <span class="k">array</span> <span class="p">(</span>
+        <span class="s1">&#39;root&#39;</span>          <span class="o">=&gt;</span> <span class="s1">&#39;root&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;element&#39;</span>       <span class="o">=&gt;</span> <span class="s1">&#39;element&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;newline&#39;</span>       <span class="o">=&gt;</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="s1">&#39;tab&#39;</span>           <span class="o">=&gt;</span> <span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span>
+<span class="p">);</span>
 
-echo $this-&gt;dbutil-&gt;xml_from_result($query, $config);
+<span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">dbutil</span><span class="o">-&gt;</span><span class="na">xml_from_result</span><span class="p">(</span><span class="nv">$query</span><span class="p">,</span> <span class="nv">$config</span><span class="p">);</span>
 </pre></div>
 </div>
 <div class="admonition important">
@@ -639,19 +640,19 @@ echo $this-&gt;dbutil-&gt;xml_from_result($query, $config);
 </div>
 <div class="section" id="id11">
 <h3><a class="toc-backref" href="#id26">使用例</a><a class="headerlink" href="#id11" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>// DB ユーティリティクラスをロード
-$this-&gt;load-&gt;dbutil();
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// DB ユーティリティクラスをロード</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">dbutil</span><span class="p">();</span>
 
-// データベース全体をバックアップしその結果を変数に代入
-$backup = $this-&gt;dbutil-&gt;backup();
+<span class="c1">// データベース全体をバックアップしその結果を変数に代入</span>
+<span class="nv">$backup</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">dbutil</span><span class="o">-&gt;</span><span class="na">backup</span><span class="p">();</span>
 
-// ファイルヘルパーをロードし、サーバにファイルを書き出す
-$this-&gt;load-&gt;helper(&#39;file&#39;);
-write_file(&#39;/path/to/mybackup.gz&#39;, $backup);
+<span class="c1">// ファイルヘルパーをロードし、サーバにファイルを書き出す</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">helper</span><span class="p">(</span><span class="s1">&#39;file&#39;</span><span class="p">);</span>
+<span class="nx">write_file</span><span class="p">(</span><span class="s1">&#39;/path/to/mybackup.gz&#39;</span><span class="p">,</span> <span class="nv">$backup</span><span class="p">);</span>
 
-// ダウンロードヘルパーをロードし、ファイルをデスクトップに送信する
-$this-&gt;load-&gt;helper(&#39;download&#39;);
-force_download(&#39;mybackup.gz&#39;, $backup);
+<span class="c1">// ダウンロードヘルパーをロードし、ファイルをデスクトップに送信する</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">helper</span><span class="p">(</span><span class="s1">&#39;download&#39;</span><span class="p">);</span>
+<span class="nx">force_download</span><span class="p">(</span><span class="s1">&#39;mybackup.gz&#39;</span><span class="p">,</span> <span class="nv">$backup</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -659,17 +660,17 @@ force_download(&#39;mybackup.gz&#39;, $backup);
 <h3><a class="toc-backref" href="#id27">バックアップオプションの設定</a><a class="headerlink" href="#id12" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>バックアップのオプションは、 <code class="docutils literal"><span class="pre">backup()</span></code> メソッドの第1引数で配列で渡す
 ことができます。例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$prefs = array(
-        &#39;tables&#39;        =&gt; array(&#39;table1&#39;, &#39;table2&#39;),   // バックアップするテーブルの配列。
-        &#39;ignore&#39;        =&gt; array(),                     // バックアップしないテーブルのリスト。
-        &#39;format&#39;        =&gt; &#39;txt&#39;,                       // gzip, zip, txt
-        &#39;filename&#39;      =&gt; &#39;mybackup.sql&#39;,              // ファイル名 - ZIP ファイルのときだけ必要
-        &#39;add_drop&#39;      =&gt; TRUE,                        // バックアップファイルにDROP TABLE 文を追加するかどうか
-        &#39;add_insert&#39;    =&gt; TRUE,                        // バックアップファイルにINSERT 文を追加するかどうか
-        &#39;newline&#39;       =&gt; &quot;\n&quot;                         // バックアップファイルで使う改行文字
-);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$prefs</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;tables&#39;</span>        <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;table1&#39;</span><span class="p">,</span> <span class="s1">&#39;table2&#39;</span><span class="p">),</span>   <span class="c1">// バックアップするテーブルの配列。</span>
+        <span class="s1">&#39;ignore&#39;</span>        <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(),</span>                     <span class="c1">// バックアップしないテーブルのリスト。</span>
+        <span class="s1">&#39;format&#39;</span>        <span class="o">=&gt;</span> <span class="s1">&#39;txt&#39;</span><span class="p">,</span>                       <span class="c1">// gzip, zip, txt</span>
+        <span class="s1">&#39;filename&#39;</span>      <span class="o">=&gt;</span> <span class="s1">&#39;mybackup.sql&#39;</span><span class="p">,</span>              <span class="c1">// ファイル名 - ZIP ファイルのときだけ必要</span>
+        <span class="s1">&#39;add_drop&#39;</span>      <span class="o">=&gt;</span> <span class="k">TRUE</span><span class="p">,</span>                        <span class="c1">// バックアップファイルにDROP TABLE 文を追加するかどうか</span>
+        <span class="s1">&#39;add_insert&#39;</span>    <span class="o">=&gt;</span> <span class="k">TRUE</span><span class="p">,</span>                        <span class="c1">// バックアップファイルにINSERT 文を追加するかどうか</span>
+        <span class="s1">&#39;newline&#39;</span>       <span class="o">=&gt;</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>                         <span class="c1">// バックアップファイルで使う改行文字</span>
+<span class="p">);</span>
 
-$this-&gt;dbutil-&gt;backup($prefs);
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">dbutil</span><span class="o">-&gt;</span><span class="na">backup</span><span class="p">(</span><span class="nv">$prefs</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -939,7 +940,7 @@ $this-&gt;dbutil-&gt;backup($prefs);
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 9月 06, 2016
+      最終更新: 9月 04, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

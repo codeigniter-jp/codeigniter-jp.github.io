@@ -415,6 +415,7 @@
       <img title="Classic Layout" alt="classic layout" src="data:image/gif;base64,R0lGODlhFAAUAJEAAAAAADMzM////wAAACH5BAUUAAIALAAAAAAUABQAAAImlI+py+0PU5gRBRDM3DxbWoXis42X13USOLauUIqnlsaH/eY6UwAAOw==" />
     </div>
   </ul>
+<div style="float:right;margin-left:5px;">[ <a href="https://github.com/codeigniter-jp/ci-ja/blob/develop/user_guide_ja_src/source/database/queries.rst">旧版翻訳途中</a> | <a href="https://github.com/bcit-ci/CodeIgniter/commits/develop/user_guide_src/source/database/queries.rst">原文履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/commits/develop_japanese/source/database/queries.rst">翻訳履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/source/database/queries.rst">GitHubで修正</a> ]</div><br /><div style="float:right;margin-left:5px;">[ <b class="highlighted">翻訳者募集中</b> → <a href="https://docs.google.com/spreadsheets/d/1ZWD5XqwH-Uo9X7MR644jbL6O8p5LxIngLT8M547H8wc/edit?pref=2&pli=1#gid=0">翻訳状況</a> ]</div>
   <hr/>
 </div>
           <div role="main" class="document">
@@ -426,7 +427,7 @@
 <div class="section" id="id3">
 <h3>標準的なクエリ<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>クエリを実行するには、<strong>query</strong> メソッドを使います:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;db-&gt;query(&#39;ここにクエリを記述&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s1">&#39;ここにクエリを記述&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>query() メソッドは、「読み取り」タイプのクエリが実行されたときには、
@@ -436,7 +437,7 @@
 が返ります。データを取得するときには、通常は query
 メソッドの結果を受け取る変数を次のように用意
 します::</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$query = $this-&gt;db-&gt;query(&#39;YOUR QUERY HERE&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s1">&#39;YOUR QUERY HERE&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -451,14 +452,14 @@
 大抵は、 INSERT, DELETE, UPDATE などの書き込みクエリに関しては
 成功時か失敗時に TRUE/FALSE （本来はこれらのために使われるべきです）、
 フェッチ結果があるクエリに関してはリソースかオブジェクトです。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>if ($this-&gt;db-&gt;simple_query(&#39;YOUR QUERY&#39;))
-{
-        echo &quot;Success!&quot;;
-}
-else
-{
-        echo &quot;Query failed!&quot;;
-}
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">simple_query</span><span class="p">(</span><span class="s1">&#39;YOUR QUERY&#39;</span><span class="p">))</span>
+<span class="p">{</span>
+        <span class="k">echo</span> <span class="s2">&quot;Success!&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+        <span class="k">echo</span> <span class="s2">&quot;Query failed!&quot;</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -474,13 +475,13 @@ else
 <p>データベースプリフィックス（接頭辞）が設定済みの場合で、ネイティブな SQL
 文の使用でテーブル名にプリフィックスを追加したいときは、以下のようにし
 ます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;db-&gt;dbprefix(&#39;tablename&#39;); // outputs prefix_tablename
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">dbprefix</span><span class="p">(</span><span class="s1">&#39;tablename&#39;</span><span class="p">);</span> <span class="c1">// outputs prefix_tablename</span>
 </pre></div>
 </div>
 <p>何らかの理由で、新しく接続することなしにプログラムでプリフィックスを変
 更したい場合は、以下のメソッドを使います:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;db-&gt;set_dbprefix(&#39;newprefix&#39;);
-$this-&gt;db-&gt;dbprefix(&#39;tablename&#39;); // outputs newprefix_tablename
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">set_dbprefix</span><span class="p">(</span><span class="s1">&#39;newprefix&#39;</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">dbprefix</span><span class="p">(</span><span class="s1">&#39;tablename&#39;</span><span class="p">);</span> <span class="c1">// outputs newprefix_tablename</span>
 </pre></div>
 </div>
 </div>
@@ -490,7 +491,7 @@ $this-&gt;db-&gt;dbprefix(&#39;tablename&#39;); // outputs newprefix_tablename
 MySQL では、バッククォート（バックチック）を使います - が推奨されます。
 <strong>Query Builder のクエリは自動的に保護されます</strong> が、
 識別子を手動で保護する必要がある場合は、次を利用できます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;db-&gt;protect_identifiers(&#39;table_name&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">protect_identifiers</span><span class="p">(</span><span class="s1">&#39;table_name&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <div class="admonition important">
@@ -503,7 +504,7 @@ MySQL では、バッククォート（バックチック）を使います - �
 <p>このメソッドは、データベース設定ファイルで指定したデータベースプリフィックス（接頭辞）
 をテーブル名に追加できます。これを利用するには、第2引数に
 TRUE（ブール値）を指定します:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;db-&gt;protect_identifiers(&#39;table_name&#39;, TRUE);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">protect_identifiers</span><span class="p">(</span><span class="s1">&#39;table_name&#39;</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -516,14 +517,14 @@ TRUE（ブール値）を指定します:</p>
 <li><p class="first"><strong>$this-&gt;db-&gt;escape()</strong> このメソッドは、データの型を決定し、 文字列デー
 タだけをエスケープ処理します。また、自分でやらなくて済むように
 自動でデータをシングルクォーテーションで囲んでくれます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$sql = &quot;INSERT INTO table (title) VALUES(&quot;.$this-&gt;db-&gt;escape($title).&quot;)&quot;;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$sql</span> <span class="o">=</span> <span class="s2">&quot;INSERT INTO table (title) VALUES(&quot;</span><span class="o">.</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">escape</span><span class="p">(</span><span class="nv">$title</span><span class="p">)</span><span class="o">.</span><span class="s2">&quot;)&quot;</span><span class="p">;</span>
 </pre></div>
 </div>
 </li>
 <li><p class="first"><strong>$this-&gt;db-&gt;escape_str()</strong> このメソッドは、型を無視して渡されたデータを
 エスケープします。 ほとんどの場合はこれを使わず、上のメソッドを利用することに
 なると思います。このメソッドは、次のように使用します:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$sql = &quot;INSERT INTO table (title) VALUES(&#39;&quot;.$this-&gt;db-&gt;escape_str($title).&quot;&#39;)&quot;;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$sql</span> <span class="o">=</span> <span class="s2">&quot;INSERT INTO table (title) VALUES(&#39;&quot;</span><span class="o">.</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">escape_str</span><span class="p">(</span><span class="nv">$title</span><span class="p">)</span><span class="o">.</span><span class="s2">&quot;&#39;)&quot;</span><span class="p">;</span>
 </pre></div>
 </div>
 </li>
@@ -532,9 +533,9 @@ TRUE（ブール値）を指定します:</p>
 文字列が LIKE条件で使用されるときには、このメソッドを使用するべきです。</p>
 </li>
 </ol>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$search = &#39;20% raise&#39;;
-$sql = &quot;SELECT id FROM table WHERE column LIKE &#39;%&quot; .
-    $this-&gt;db-&gt;escape_like_str($search).&quot;%&#39; ESCAPE &#39;!&#39;&quot;;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$search</span> <span class="o">=</span> <span class="s1">&#39;20% raise&#39;</span><span class="p">;</span>
+<span class="nv">$sql</span> <span class="o">=</span> <span class="s2">&quot;SELECT id FROM table WHERE column LIKE &#39;%&quot;</span> <span class="o">.</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">escape_like_str</span><span class="p">(</span><span class="nv">$search</span><span class="p">)</span><span class="o">.</span><span class="s2">&quot;%&#39; ESCAPE &#39;!&#39;&quot;</span><span class="p">;</span>
 </pre></div>
 </div>
 <div class="admonition important">
@@ -550,19 +551,19 @@ condition for you, and so you&#8217;ll have to manually do that.</p>
 <h2>クエリのバインディング<a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>バインディングを使うと、システムにクエリを組み立てさせることで、クエリ
 の構文を単純化することができます。次のような例があげられます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$sql = &quot;SELECT * FROM some_table WHERE id = ? AND status = ? AND author = ?&quot;;
-$this-&gt;db-&gt;query($sql, array(3, &#39;live&#39;, &#39;Rick&#39;));
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$sql</span> <span class="o">=</span> <span class="s2">&quot;SELECT * FROM some_table WHERE id = ? AND status = ? AND author = ?&quot;</span><span class="p">;</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="nv">$sql</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;live&#39;</span><span class="p">,</span> <span class="s1">&#39;Rick&#39;</span><span class="p">));</span>
 </pre></div>
 </div>
 <p>クエリの中のクエスチョンマークは、query
 メソッドの第2引数で指定した配列のデータに自動的に置き換わります。</p>
 <p>バインディングは配列でも使用できます。この場合は IN セットに変換されます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$sql = &quot;SELECT * FROM some_table WHERE id IN ? AND status = ? AND author = ?&quot;;
-$this-&gt;db-&gt;query($sql, array(array(3, 6), &#39;live&#39;, &#39;Rick&#39;));
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$sql</span> <span class="o">=</span> <span class="s2">&quot;SELECT * FROM some_table WHERE id IN ? AND status = ? AND author = ?&quot;</span><span class="p">;</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="nv">$sql</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="s1">&#39;live&#39;</span><span class="p">,</span> <span class="s1">&#39;Rick&#39;</span><span class="p">));</span>
 </pre></div>
 </div>
 <p>結果のクエリはこのようになります:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>SELECT * FROM some_table WHERE id IN (3,6) AND status = &#39;live&#39; AND author = &#39;Rick&#39;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">SELECT</span> <span class="o">*</span> <span class="nx">FROM</span> <span class="nx">some_table</span> <span class="nx">WHERE</span> <span class="nx">id</span> <span class="nx">IN</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span> <span class="k">AND</span> <span class="nx">status</span> <span class="o">=</span> <span class="s1">&#39;live&#39;</span> <span class="k">AND</span> <span class="nx">author</span> <span class="o">=</span> <span class="s1">&#39;Rick&#39;</span>
 </pre></div>
 </div>
 <p>バインディングを利用する第2の利点は、値が自動的にエスケープされ、安全
@@ -576,10 +577,10 @@ $this-&gt;db-&gt;query($sql, array(array(3, 6), &#39;live&#39;, &#39;Rick&#39;))
 <p>最後に発生したエラーを取得した場合、error() メソッドが code と message
 を含んだ配列を返してくれます。こちらが簡単な例
 です:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>if ( ! $this-&gt;db-&gt;simple_query(&#39;SELECT `example_field` FROM `example_table`&#39;))
-{
-        $error = $this-&gt;db-&gt;error(); // Has keys &#39;code&#39; and &#39;message&#39;
-}
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span> <span class="o">!</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">simple_query</span><span class="p">(</span><span class="s1">&#39;SELECT `example_field` FROM `example_table`&#39;</span><span class="p">))</span>
+<span class="p">{</span>
+        <span class="nv">$error</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">error</span><span class="p">();</span> <span class="c1">// Has keys &#39;code&#39; and &#39;message&#39;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -604,7 +605,7 @@ $this-&gt;db-&gt;query($sql, array(array(3, 6), &#39;live&#39;, &#39;Rick&#39;))
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 9月 06, 2016
+      最終更新: 9月 04, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

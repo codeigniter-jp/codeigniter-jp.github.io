@@ -415,6 +415,7 @@
       <img title="Classic Layout" alt="classic layout" src="data:image/gif;base64,R0lGODlhFAAUAJEAAAAAADMzM////wAAACH5BAUUAAIALAAAAAAUABQAAAImlI+py+0PU5gRBRDM3DxbWoXis42X13USOLauUIqnlsaH/eY6UwAAOw==" />
     </div>
   </ul>
+<div style="float:right;margin-left:5px;">[ <a href="https://github.com/codeigniter-jp/ci-ja/blob/develop/user_guide_ja_src/source/libraries/sessions.rst">旧版翻訳途中</a> | <a href="https://github.com/bcit-ci/CodeIgniter/commits/develop/user_guide_src/source/libraries/sessions.rst">原文履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/commits/develop_japanese/source/libraries/sessions.rst">翻訳履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/source/libraries/sessions.rst">GitHubで修正</a> ]</div><br /><div style="float:right;margin-left:5px;">[ <b class="highlighted">翻訳者募集中</b> → <a href="https://docs.google.com/spreadsheets/d/1ZWD5XqwH-Uo9X7MR644jbL6O8p5LxIngLT8M547H8wc/edit?pref=2&pli=1#gid=0">翻訳状況</a> ]</div>
   <hr/>
 </div>
           <div role="main" class="document">
@@ -484,11 +485,11 @@
 行えばよいです。</p>
 <p>セッションクラスの初期化をコントローラのコンストラクタで手動で
 行うには、 <code class="docutils literal"><span class="pre">$this-&gt;load-&gt;library()</span></code> メソッドを使用します:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;load-&gt;library(&#39;session&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;session&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>いちどロードされれば、セッションライブラリのオブジェクトは次のように利用することができます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;session
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span>
 </pre></div>
 </div>
 <div class="admonition important">
@@ -569,29 +570,29 @@ PHP の <a class="reference external" href="http://php.net/manual/ja/reserved.va
 <h3><a class="toc-backref" href="#id29">セッションデータの取得</a><a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>セッション配列のどんな情報でも、 <code class="docutils literal"><span class="pre">$</span> <span class="pre">_SESSION</span></code> スーパーグローバル変数を通して
 利用できます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$_SESSION[&#39;item&#39;]
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;item&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>もしくはマジックメソッドを通して:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;session-&gt;item
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">item</span>
 </pre></div>
 </div>
 <p>そして後方互換性のために、 <code class="docutils literal"><span class="pre">userdata()</span></code> メソッドを通して:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;session-&gt;userdata(&#39;item&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">userdata</span><span class="p">(</span><span class="s1">&#39;item&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>item は、取得したい項目に対応する配列のキーです。
 たとえば <code class="docutils literal"><span class="pre">$name</span></code> 変数に以前に格納した「 name 」の項目を割り当てるには、
 こうします:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$name = $_SESSION[&#39;name&#39;];
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$name</span> <span class="o">=</span> <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">];</span>
 
-// または:
+<span class="c1">// または:</span>
 
-$name = $this-&gt;session-&gt;name
+<span class="nv">$name</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">name</span>
 
-// または:
+<span class="c1">// または:</span>
 
-$name = $this-&gt;session-&gt;userdata(&#39;name&#39;);
+<span class="nv">$name</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">userdata</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -601,11 +602,11 @@ $name = $this-&gt;session-&gt;userdata(&#39;name&#39;);
 </div>
 <p>存在するすべてのユーザーデータを取得したい場合は、
 単にキーを省略してください（マジックメソッドはプロパティとしてのみ動きます）:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$_SESSION
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$_SESSION</span>
 
-// または:
+<span class="c1">// または:</span>
 
-$this-&gt;session-&gt;userdata();
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">userdata</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
@@ -620,34 +621,34 @@ $this-&gt;session-&gt;userdata();
 <p>あるいは、古い方法である「 userdata 」も使えます。
 とはいえそれは <code class="docutils literal"><span class="pre">set_userdata()</span></code> メソッドに新しいデータを含む配列を
 渡すだけです:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;session-&gt;set_userdata($array);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">set_userdata</span><span class="p">(</span><span class="nv">$array</span><span class="p">);</span>
 </pre></div>
 </div>
 <p><code class="docutils literal"><span class="pre">$array</span></code> はあなたの新しいデータを含む連想配列です。
 次に例を示します:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$newdata = array(
-        &#39;username&#39;  =&gt; &#39;johndoe&#39;,
-        &#39;email&#39;     =&gt; &#39;johndoe@some-site.com&#39;,
-        &#39;logged_in&#39; =&gt; TRUE
-);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$newdata</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;username&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;johndoe&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;email&#39;</span>     <span class="o">=&gt;</span> <span class="s1">&#39;johndoe@some-site.com&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;logged_in&#39;</span> <span class="o">=&gt;</span> <span class="k">TRUE</span>
+<span class="p">);</span>
 
-$this-&gt;session-&gt;set_userdata($newdata);
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">set_userdata</span><span class="p">(</span><span class="nv">$newdata</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>ユーザデータにひとつひとつ値を追加したい場合、 <code class="docutils literal"><span class="pre">set_userdata()</span></code> は
 次の構文もサポートしています:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;session-&gt;set_userdata(&#39;some_name&#39;, &#39;some_value&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">set_userdata</span><span class="p">(</span><span class="s1">&#39;some_name&#39;</span><span class="p">,</span> <span class="s1">&#39;some_value&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>セッション値が存在することを確認したい場合は、単に <code class="docutils literal"><span class="pre">isset()</span></code> で
 確認してください:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>// &#39;some_name&#39; の値が存在しない場合またはNULLである場合は FALSE を、
-// それ以外の場合は TRUE を返します:
-isset($_SESSION[&#39;some_name&#39;])
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// &#39;some_name&#39; の値が存在しない場合またはNULLである場合は FALSE を、</span>
+<span class="c1">// それ以外の場合は TRUE を返します:</span>
+<span class="nb">isset</span><span class="p">(</span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;some_name&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 <p>もしくは <code class="docutils literal"><span class="pre">has_userdata()</span></code> を呼び出します:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;session-&gt;has_userdata(&#39;some_name&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">has_userdata</span><span class="p">(</span><span class="s1">&#39;some_name&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -655,27 +656,27 @@ isset($_SESSION[&#39;some_name&#39;])
 <h3><a class="toc-backref" href="#id31">セッションデータを削除する</a><a class="headerlink" href="#id9" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>他の変数とまったく同じように、 <code class="docutils literal"><span class="pre">$_SESSION</span></code> の値を
 削除するには <code class="docutils literal"><span class="pre">unset()</span></code> を使えます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>unset($_SESSION[&#39;some_name&#39;]);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nb">unset</span><span class="p">(</span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;some_name&#39;</span><span class="p">]);</span>
 
-// 複数の値を削除したい場合:
+<span class="c1">// 複数の値を削除したい場合:</span>
 
-unset(
-        $_SESSION[&#39;some_name&#39;],
-        $_SESSION[&#39;another_name&#39;]
-);
+<span class="nb">unset</span><span class="p">(</span>
+        <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;some_name&#39;</span><span class="p">],</span>
+        <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;another_name&#39;</span><span class="p">]</span>
+<span class="p">);</span>
 </pre></div>
 </div>
 <p>また、セッションに情報を追加するために <code class="docutils literal"><span class="pre">set_userdata()</span></code> が
 使えるように、 <code class="docutils literal"><span class="pre">unset_userdata()</span></code> にキーを渡すことで削除することができます。
 例として、セッションデータ配列から「 some_name 」を
 削除したい場合は:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;session-&gt;unset_userdata(&#39;some_name&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">unset_userdata</span><span class="p">(</span><span class="s1">&#39;some_name&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>このメソッドは削除したい項目のキーの配列を受けつけます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$array_items = array(&#39;username&#39;, &#39;email&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$array_items</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;email&#39;</span><span class="p">);</span>
 
-$this-&gt;session-&gt;unset_userdata($array_items);
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">unset_userdata</span><span class="p">(</span><span class="nv">$array_items</span><span class="p">);</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -695,28 +696,28 @@ $this-&gt;session-&gt;unset_userdata($array_items);
 マークされただけのものであることに注意してください
 （__ci_vars には触らないでくださいね、忠告しましたよ？）。</p>
 <p>「 flashdata 」としてすでに作ったアイテムをマークするにはこうします:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;session-&gt;mark_as_flash(&#39;item&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">mark_as_flash</span><span class="p">(</span><span class="s1">&#39;item&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>フラッシュデータとして複数の項目をマークしたい場合は、単に配列としてキーを
 渡します:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;session-&gt;mark_as_flash(array(&#39;item&#39;, &#39;item2&#39;));
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">mark_as_flash</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;item&#39;</span><span class="p">,</span> <span class="s1">&#39;item2&#39;</span><span class="p">));</span>
 </pre></div>
 </div>
 <p>フラッシュデータを追加するにはこうします:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$_SESSION[&#39;item&#39;] = &#39;value&#39;;
-$this-&gt;session-&gt;mark_as_flash(&#39;item&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;item&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;value&#39;</span><span class="p">;</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">mark_as_flash</span><span class="p">(</span><span class="s1">&#39;item&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>または別法として、 <code class="docutils literal"><span class="pre">set_flashdata()</span></code> メソッドを使います:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;session-&gt;set_flashdata(&#39;item&#39;, &#39;value&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">set_flashdata</span><span class="p">(</span><span class="s1">&#39;item&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>また、 <code class="docutils literal"><span class="pre">set_userdata()</span></code> と同じ方法で <code class="docutils literal"><span class="pre">set_flashdata()</span></code> に配列を渡すことが
 できます。</p>
 <p>フラッシュデータ変数の読み取りは通常のセッションデータと同じく
 <code class="docutils literal"><span class="pre">$_SESSION</span></code> を使います:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$_SESSION[&#39;item&#39;]
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;item&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 <div class="admonition important">
@@ -725,11 +726,11 @@ $this-&gt;session-&gt;mark_as_flash(&#39;item&#39;);
 </div>
 <p>「 flashdata 」だけを確実に読みたい場合（ほかの種類のセッションを
 読みたくない場合）、 <code class="docutils literal"><span class="pre">flashdata()</span></code> メソッドを使用することができます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;session-&gt;flashdata(&#39;item&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">flashdata</span><span class="p">(</span><span class="s1">&#39;item&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>フラッシュデータを全部取得するには、単にキーパラメータを省略します:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;session-&gt;flashdata();
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">flashdata</span><span class="p">();</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -740,8 +741,8 @@ $this-&gt;session-&gt;mark_as_flash(&#39;item&#39;);
 <p>もし次のリクエストでもフラシュデータ変数を保持する必要があるとわかった場合、
 <code class="docutils literal"><span class="pre">keep_flashdata()</span></code> メソッドを使用して保持することができます。
 単一のフラッシュデータ、またはフラッシュデータの配列を渡せます。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;session-&gt;keep_flashdata(&#39;item&#39;);
-$this-&gt;session-&gt;keep_flashdata(array(&#39;item1&#39;, &#39;item2&#39;, &#39;item3&#39;));
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">keep_flashdata</span><span class="p">(</span><span class="s1">&#39;item&#39;</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">keep_flashdata</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;item1&#39;</span><span class="p">,</span> <span class="s1">&#39;item2&#39;</span><span class="p">,</span> <span class="s1">&#39;item3&#39;</span><span class="p">));</span>
 </pre></div>
 </div>
 </div>
@@ -755,36 +756,36 @@ $this-&gt;session-&gt;keep_flashdata(array(&#39;item1&#39;, &#39;item2&#39;, &#3
 __ci_vars には触らないでください）。</p>
 <p>すでにあるアイテムを「 tempdata 」としてマークするには、シンプルにそのキーと有効期限を
 （単位は秒で！）``mark_as_temp()`` メソッドに渡してください:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>// &#39;item&#39; は 300 秒後に消されます
-$this-&gt;session-&gt;mark_as_temp(&#39;item&#39;, 300);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// &#39;item&#39; は 300 秒後に消されます</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">mark_as_temp</span><span class="p">(</span><span class="s1">&#39;item&#39;</span><span class="p">,</span> <span class="mi">300</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>複数のアイテムを tempdata としてマークできますが、
 有効期限が同じかどうかにより方法がふたつあります:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>// &#39;item&#39; と &#39;item2&#39; の両方が 300 秒後に期限切れします
-$this-&gt;session-&gt;mark_as_temp(array(&#39;item&#39;, &#39;item2&#39;), 300);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// &#39;item&#39; と &#39;item2&#39; の両方が 300 秒後に期限切れします</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">mark_as_temp</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;item&#39;</span><span class="p">,</span> <span class="s1">&#39;item2&#39;</span><span class="p">),</span> <span class="mi">300</span><span class="p">);</span>
 
-// &#39;item&#39;  は 300 秒後に、
-// そのあいだに &#39;item2&#39; は240 秒後に消えます
-$this-&gt;session-&gt;mark_as_temp(array(
-        &#39;item&#39;  =&gt; 300,
-        &#39;item2&#39; =&gt; 240
-));
+<span class="c1">// &#39;item&#39;  は 300 秒後に、</span>
+<span class="c1">// そのあいだに &#39;item2&#39; は240 秒後に消えます</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">mark_as_temp</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;item&#39;</span>  <span class="o">=&gt;</span> <span class="mi">300</span><span class="p">,</span>
+        <span class="s1">&#39;item2&#39;</span> <span class="o">=&gt;</span> <span class="mi">240</span>
+<span class="p">));</span>
 </pre></div>
 </div>
 <p>テンプデータを追加するにはこうします:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$_SESSION[&#39;item&#39;] = &#39;value&#39;;
-$this-&gt;session-&gt;mark_as_temp(&#39;item&#39;, 300); // 5 分で期限切れ
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;item&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;value&#39;</span><span class="p">;</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">mark_as_temp</span><span class="p">(</span><span class="s1">&#39;item&#39;</span><span class="p">,</span> <span class="mi">300</span><span class="p">);</span> <span class="c1">// 5 分で期限切れ</span>
 </pre></div>
 </div>
 <p>または別法として、 set_tempdata() メソッドを使用します:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;session-&gt;set_tempdata(&#39;item&#39;, &#39;value&#39;, 300);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">set_tempdata</span><span class="p">(</span><span class="s1">&#39;item&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="mi">300</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>また、 <code class="docutils literal"><span class="pre">set_tempdata()</span></code> には配列を渡すことができます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$tempdata = array(&#39;newuser&#39; =&gt; TRUE, &#39;message&#39; =&gt; &#39;Thanks for joining!&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$tempdata</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;newuser&#39;</span> <span class="o">=&gt;</span> <span class="k">TRUE</span><span class="p">,</span> <span class="s1">&#39;message&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Thanks for joining!&#39;</span><span class="p">);</span>
 
-$this-&gt;session-&gt;set_tempdata($tempdata, NULL, $expire);
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">set_tempdata</span><span class="p">(</span><span class="nv">$tempdata</span><span class="p">,</span> <span class="k">NULL</span><span class="p">,</span> <span class="nv">$expire</span><span class="p">);</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -794,7 +795,7 @@ $this-&gt;session-&gt;set_tempdata($tempdata, NULL, $expire);
 </div>
 <p>テンプデータ変数を読み取るには、またですが、
 $_SESSION スーパーグローバル配列でアクセスすることができます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$_SESSION[&#39;item&#39;]
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;item&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 <div class="admonition important">
@@ -803,11 +804,11 @@ $_SESSION スーパーグローバル配列でアクセスすることができ�
 </div>
 <p>「 tempdata 」だけを確実に読みたい場合（ほかの種類のセッションを読みたくない場合）、
 <code class="docutils literal"><span class="pre">tempdata()</span></code> メソッドを使用することができます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;session-&gt;tempdata(&#39;item&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">tempdata</span><span class="p">(</span><span class="s1">&#39;item&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>そしてもちろん、すべてのテンプデータを取得する場合はこうします:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;session-&gt;tempdata();
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">tempdata</span><span class="p">();</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -817,14 +818,14 @@ NULL を返します。</p>
 </div>
 <p>有効期限が切れる前にテンプデータ値を削除する必要がある場合は
 <code class="docutils literal"><span class="pre">$_SESSION</span></code> 配列を直接 unset してください:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>unset($_SESSION[&#39;item&#39;]);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nb">unset</span><span class="p">(</span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;item&#39;</span><span class="p">]);</span>
 </pre></div>
 </div>
 <p>しかしながら、この方法はアイテムをテンプデータとするマーカーを削除しません
 (次の HTTP リクエストで不正扱いになります) 。
 そのため同じリクエストで同じキーを再利用したい場合、
 <code class="docutils literal"><span class="pre">unset_tempdata()</span></code> を使用すべきところでしょう:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;session-&gt;unset_tempdata(&#39;item&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">unset_tempdata</span><span class="p">(</span><span class="s1">&#39;item&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -834,11 +835,11 @@ NULL を返します。</p>
 単に PHP の <a class="reference external" href="http://php.net/session_destroy">session_destroy()</a> 関数を使うか、
 <code class="docutils literal"><span class="pre">sess_destroy()</span></code> メソッドを使います。
 どちらもまったく同じです:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>session_destroy();
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nb">session_destroy</span><span class="p">();</span>
 
-// または
+<span class="c1">// または</span>
 
-$this-&gt;session-&gt;sess_destroy();
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">sess_destroy</span><span class="p">();</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -1033,9 +1034,9 @@ PHP の session.save_path
 あなた自身ではなく、かわりに「 www-data 」のようなものが使われるため、
 パーミッションの設定だけではたぶんアプリケーションは動かなくなります。</p>
 <p>かわりに、ご使用の環境に応じて、次のようなものを行う必要があります</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>mkdir /&lt;path to your application directory&gt;/sessions/
-chmod 0700 /&lt;path to your application directory&gt;/sessions/
-chown www-data /&lt;path to your application directory&gt;/sessions/
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nb">mkdir</span> <span class="o">/&lt;</span><span class="nx">path</span> <span class="nx">to</span> <span class="nx">your</span> <span class="nx">application</span> <span class="nx">directory</span><span class="o">&gt;/</span><span class="nx">sessions</span><span class="o">/</span>
+<span class="nb">chmod</span> <span class="mo">0700</span> <span class="o">/&lt;</span><span class="nx">path</span> <span class="nx">to</span> <span class="nx">your</span> <span class="nx">application</span> <span class="nx">directory</span><span class="o">&gt;/</span><span class="nx">sessions</span><span class="o">/</span>
+<span class="nb">chown</span> <span class="nx">www</span><span class="o">-</span><span class="nx">data</span> <span class="o">/&lt;</span><span class="nx">path</span> <span class="nx">to</span> <span class="nx">your</span> <span class="nx">application</span> <span class="nx">directory</span><span class="o">&gt;/</span><span class="nx">sessions</span><span class="o">/</span>
 </pre></div>
 </div>
 <div class="section" id="id17">
@@ -1087,36 +1088,36 @@ $config[&#8216;sess_save_path&#8217;] = &#8216;ci_sessions&#8217;;</div></blockq
 </div>
 <p>そしてもちろん、データベースにテーブルを作成します……</p>
 <p>MySQL の場合:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>CREATE TABLE IF NOT EXISTS `ci_sessions` (
-        `id` varchar(40) NOT NULL,
-        `ip_address` varchar(45) NOT NULL,
-        `timestamp` int(10) unsigned DEFAULT 0 NOT NULL,
-        `data` blob NOT NULL,
-        KEY `ci_sessions_timestamp` (`timestamp`)
-);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">CREATE</span> <span class="nx">TABLE</span> <span class="k">IF</span> <span class="k">NOT</span> <span class="nx">EXISTS</span> <span class="sb">`ci_sessions`</span> <span class="p">(</span>
+        <span class="sb">`id`</span> <span class="nx">varchar</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+        <span class="sb">`ip_address`</span> <span class="nx">varchar</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+        <span class="sb">`timestamp`</span> <span class="nx">int</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="nx">unsigned</span> <span class="k">DEFAULT</span> <span class="mi">0</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+        <span class="sb">`data`</span> <span class="nx">blob</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+        <span class="nx">KEY</span> <span class="sb">`ci_sessions_timestamp`</span> <span class="p">(</span><span class="sb">`timestamp`</span><span class="p">)</span>
+<span class="p">);</span>
 </pre></div>
 </div>
 <p>PostgreSQL の場合:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>CREATE TABLE &quot;ci_sessions&quot; (
-        &quot;id&quot; varchar(40) NOT NULL,
-        &quot;ip_address&quot; varchar(45) NOT NULL,
-        &quot;timestamp&quot; bigint DEFAULT 0 NOT NULL,
-        &quot;data&quot; text DEFAULT &#39;&#39; NOT NULL
-);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">CREATE</span> <span class="nx">TABLE</span> <span class="s2">&quot;ci_sessions&quot;</span> <span class="p">(</span>
+        <span class="s2">&quot;id&quot;</span> <span class="nx">varchar</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+        <span class="s2">&quot;ip_address&quot;</span> <span class="nx">varchar</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+        <span class="s2">&quot;timestamp&quot;</span> <span class="nx">bigint</span> <span class="k">DEFAULT</span> <span class="mi">0</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+        <span class="s2">&quot;data&quot;</span> <span class="nx">text</span> <span class="k">DEFAULT</span> <span class="s1">&#39;&#39;</span> <span class="k">NOT</span> <span class="k">NULL</span>
+<span class="p">);</span>
 
-CREATE INDEX &quot;ci_sessions_timestamp&quot; ON &quot;ci_sessions&quot; (&quot;timestamp&quot;);
+<span class="nx">CREATE</span> <span class="nx">INDEX</span> <span class="s2">&quot;ci_sessions_timestamp&quot;</span> <span class="nx">ON</span> <span class="s2">&quot;ci_sessions&quot;</span> <span class="p">(</span><span class="s2">&quot;timestamp&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>また、<strong>「 sess_match_ip 」の設定に応じて</strong> PRIMARY KEY を追加する必要があります。
 次の例は MySQL と PostgreSQL の両方で動きます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>// sess_match_ip = TRUE のとき
-ALTER TABLE ci_sessions ADD PRIMARY KEY (id, ip_address);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// sess_match_ip = TRUE のとき</span>
+<span class="nx">ALTER</span> <span class="nx">TABLE</span> <span class="nx">ci_sessions</span> <span class="nx">ADD</span> <span class="nx">PRIMARY</span> <span class="nx">KEY</span> <span class="p">(</span><span class="nx">id</span><span class="p">,</span> <span class="nx">ip_address</span><span class="p">);</span>
 
-// sess_match_ip = FALSE のとき
-ALTER TABLE ci_sessions ADD PRIMARY KEY (id);
+<span class="c1">// sess_match_ip = FALSE のとき</span>
+<span class="nx">ALTER</span> <span class="nx">TABLE</span> <span class="nx">ci_sessions</span> <span class="nx">ADD</span> <span class="nx">PRIMARY</span> <span class="nx">KEY</span> <span class="p">(</span><span class="nx">id</span><span class="p">);</span>
 
-// 以前のプライマリキーを削除するとき（設定を変更するときに使います）
-ALTER TABLE ci_sessions DROP PRIMARY KEY;
+<span class="c1">// 以前のプライマリキーを削除するとき（設定を変更するときに使います）</span>
+<span class="nx">ALTER</span> <span class="nx">TABLE</span> <span class="nx">ci_sessions</span> <span class="nx">DROP</span> <span class="nx">PRIMARY</span> <span class="nx">KEY</span><span class="p">;</span>
 </pre></div>
 </div>
 <div class="admonition important">
@@ -1163,8 +1164,8 @@ Redisとその使われ方に詳しくなければ「 Redis 」ドライバは
 </div>
 <p>しかしながら、最も一般的なケースではシンプルな <code class="docutils literal"><span class="pre">host:port</span></code> のペアで
 十分でしょう:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$config[&#39;sess_driver&#39;] = &#39;redis&#39;;
-$config[&#39;sess_save_path&#39;] = &#39;tcp://localhost:6379&#39;;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;sess_driver&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;redis&#39;</span><span class="p">;</span>
+<span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;sess_save_path&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;tcp://localhost:6379&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -1189,8 +1190,8 @@ Y 秒の期限を定められた値 X が Y 秒経過後にそれが削除され
 それによりセッションが失われる可能性があることを考慮するべきです。</p>
 <p><code class="docutils literal"><span class="pre">$config['sess_save_path']</span></code> の形式は非常に簡便で、
 <code class="docutils literal"><span class="pre">host:port</span></code> のペアだけです:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$config[&#39;sess_driver&#39;] = &#39;memcached&#39;;
-$config[&#39;sess_save_path&#39;] = &#39;localhost:11211&#39;;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;sess_driver&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;memcached&#39;</span><span class="p">;</span>
+<span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;sess_save_path&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;localhost:11211&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 <div class="section" id="id20">
@@ -1200,9 +1201,9 @@ $config[&#39;sess_save_path&#39;] = &#39;localhost:11211&#39;;
 私たちはそれを信頼できるほどのテストはしていないことにご注意ください。</p>
 <p>あなたが（あなた自身のリスクで）この機能を試してみたい場合、
 単にカンマ区切りで複数のサーバパスを並べます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>// localhost はより高い優先度（5）を与えられます、
-// 192.0.2.1 の重みづけ 1 と比べ。
-$config[&#39;sess_save_path&#39;] = &#39;localhost:11211:5,192.0.2.1:11211:1&#39;;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// localhost はより高い優先度（5）を与えられます、</span>
+<span class="c1">// 192.0.2.1 の重みづけ 1 と比べ。</span>
+<span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;sess_save_path&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;localhost:11211:5,192.0.2.1:11211:1&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -1254,50 +1255,50 @@ CodeIgniter においても実装しようとすべきではありません。
 </div></blockquote>
 <p>そして、上記「 dummy 」ドライバの例をもとにすると、
 次のようなものでおしまいになります:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>// application/libraries/Session/drivers/Session_dummy_driver.php:
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// application/libraries/Session/drivers/Session_dummy_driver.php:</span>
 
-class CI_Session_dummy_driver extends CI_Session_driver implements SessionHandlerInterface
-{
+<span class="k">class</span> <span class="nc">CI_Session_dummy_driver</span> <span class="k">extends</span> <span class="nx">CI_Session_driver</span> <span class="k">implements</span> <span class="nx">SessionHandlerInterface</span>
+<span class="p">{</span>
 
-        public function __construct(&amp;$params)
-        {
-                // これを忘れては　な　り　ま　せ　ん
-                parent::__construct($params);
+        <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="o">&amp;</span><span class="nv">$params</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="c1">// これを忘れては　な　り　ま　せ　ん</span>
+                <span class="k">parent</span><span class="o">::</span><span class="na">__construct</span><span class="p">(</span><span class="nv">$params</span><span class="p">);</span>
 
-                // 設定その他の初期化をします
-        }
+                <span class="c1">// 設定その他の初期化をします</span>
+        <span class="p">}</span>
 
-        public function open($save_path, $name)
-        {
-                // ストレージ機構（接続）の初期化
-        }
+        <span class="k">public</span> <span class="k">function</span> <span class="nf">open</span><span class="p">(</span><span class="nv">$save_path</span><span class="p">,</span> <span class="nv">$name</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="c1">// ストレージ機構（接続）の初期化</span>
+        <span class="p">}</span>
 
-        public function read($session_id)
-        {
-                // （もしあれば）セッションデータの読み込み、ロックの獲得
-        }
+        <span class="k">public</span> <span class="k">function</span> <span class="nf">read</span><span class="p">(</span><span class="nv">$session_id</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="c1">// （もしあれば）セッションデータの読み込み、ロックの獲得</span>
+        <span class="p">}</span>
 
-        public function write($session_id, $session_data)
-        {
-                // セッションデータの作成、更新（データは存在しないかもしれません！）
-        }
+        <span class="k">public</span> <span class="k">function</span> <span class="nf">write</span><span class="p">(</span><span class="nv">$session_id</span><span class="p">,</span> <span class="nv">$session_data</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="c1">// セッションデータの作成、更新（データは存在しないかもしれません！）</span>
+        <span class="p">}</span>
 
-        public function close()
-        {
-                // ロックの開放、接続の切断など
-        }
+        <span class="k">public</span> <span class="k">function</span> <span class="nf">close</span><span class="p">()</span>
+        <span class="p">{</span>
+                <span class="c1">// ロックの開放、接続の切断など</span>
+        <span class="p">}</span>
 
-        public function destroy($session_id)
-        {
-                // close() メソッドの呼び出しと、現在のセッションデータの破棄（順序は逆かもしれません）
-        }
+        <span class="k">public</span> <span class="k">function</span> <span class="nf">destroy</span><span class="p">(</span><span class="nv">$session_id</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="c1">// close() メソッドの呼び出しと、現在のセッションデータの破棄（順序は逆かもしれません）</span>
+        <span class="p">}</span>
 
-        public function gc($maxlifetime)
-        {
-                // 期限切れセッションの削除
-        }
+        <span class="k">public</span> <span class="k">function</span> <span class="nf">gc</span><span class="p">(</span><span class="nv">$maxlifetime</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="c1">// 期限切れセッションの削除</span>
+        <span class="p">}</span>
 
-}
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>すべてを適切にできたなら、ただいまから <em>sess_driver</em> 設定値に
@@ -1838,10 +1839,10 @@ class CI_Session_dummy_driver extends CI_Session_driver implements SessionHandle
 <p>これはマジックメソッドで、
 <code class="docutils literal"><span class="pre">$this-&gt;session</span></code> プロパティで <code class="docutils literal"><span class="pre">$_SESSION</span></code> に
 アクセスできるようにするものです:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;session-&gt;foo = &#39;bar&#39;;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">foo</span> <span class="o">=</span> <span class="s1">&#39;bar&#39;</span><span class="p">;</span>
 
-// 結果として:
-// $_SESSION[&#39;foo&#39;] = &#39;bar&#39;;
+<span class="c1">// 結果として:</span>
+<span class="c1">// $_SESSION[&#39;foo&#39;] = &#39;bar&#39;;</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -1870,7 +1871,7 @@ class CI_Session_dummy_driver extends CI_Session_driver implements SessionHandle
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 9月 06, 2016
+      最終更新: 9月 04, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

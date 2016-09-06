@@ -415,6 +415,7 @@
       <img title="Classic Layout" alt="classic layout" src="data:image/gif;base64,R0lGODlhFAAUAJEAAAAAADMzM////wAAACH5BAUUAAIALAAAAAAUABQAAAImlI+py+0PU5gRBRDM3DxbWoXis42X13USOLauUIqnlsaH/eY6UwAAOw==" />
     </div>
   </ul>
+<div style="float:right;margin-left:5px;">[ <a href="https://github.com/codeigniter-jp/ci-ja/blob/develop/user_guide_ja_src/source/libraries/loader.rst">旧版翻訳途中</a> | <a href="https://github.com/bcit-ci/CodeIgniter/commits/develop/user_guide_src/source/libraries/loader.rst">原文履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/commits/develop_japanese/source/libraries/loader.rst">翻訳履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/source/libraries/loader.rst">GitHubで修正</a> ]</div><br /><div style="float:right;margin-left:5px;">[ <b class="highlighted">翻訳者募集中</b> → <a href="https://docs.google.com/spreadsheets/d/1ZWD5XqwH-Uo9X7MR644jbL6O8p5LxIngLT8M547H8wc/edit?pref=2&pli=1#gid=0">翻訳状況</a> ]</div>
   <hr/>
 </div>
           <div role="main" class="document">
@@ -449,13 +450,13 @@ application/third_party ディレクトリに配置することをおすすめ�
 後述はパッケージディレクトリのサンプルマップです。</p>
 <p>以下は「 Foo Bar 」という名前のアプリケーションパッケージの
 ディレクトリ例です。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>/application/third_party/foo_bar
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">/</span><span class="nx">application</span><span class="o">/</span><span class="nx">third_party</span><span class="o">/</span><span class="nx">foo_bar</span>
 
-config/
-helpers/
-language/
-libraries/
-models/
+<span class="nx">config</span><span class="o">/</span>
+<span class="nx">helpers</span><span class="o">/</span>
+<span class="nx">language</span><span class="o">/</span>
+<span class="nx">libraries</span><span class="o">/</span>
+<span class="nx">models</span><span class="o">/</span>
 </pre></div>
 </div>
 <p>「 FooBar 」アプリケーションパッケージの目的は何であれ、
@@ -472,17 +473,17 @@ models/
 そしておそらく間違ったパッケージがロードされます。
 これに対処するには <code class="docutils literal"><span class="pre">add_package_path()</span></code> を呼び出すとき、オプションの第 2 引数に FALSE
 を設定します。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;load-&gt;add_package_path(APPPATH.&#39;my_app&#39;, FALSE);
-$this-&gt;load-&gt;view(&#39;my_app_index&#39;); // 読み込まれます
-$this-&gt;load-&gt;view(&#39;welcome_message&#39;); // デフォルトの welcome_message は読み込まれません。なぜなら add_package_path の第 2 引数が FALSE だからです
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">add_package_path</span><span class="p">(</span><span class="nx">APPPATH</span><span class="o">.</span><span class="s1">&#39;my_app&#39;</span><span class="p">,</span> <span class="k">FALSE</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;my_app_index&#39;</span><span class="p">);</span> <span class="c1">// 読み込まれます</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;welcome_message&#39;</span><span class="p">);</span> <span class="c1">// デフォルトの welcome_message は読み込まれません。なぜなら add_package_path の第 2 引数が FALSE だからです</span>
 
-// リセットします
-$this-&gt;load-&gt;remove_package_path(APPPATH.&#39;my_app&#39;);
+<span class="c1">// リセットします</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">remove_package_path</span><span class="p">(</span><span class="nx">APPPATH</span><span class="o">.</span><span class="s1">&#39;my_app&#39;</span><span class="p">);</span>
 
-// 第 2 引数なしでやり直します:
-$this-&gt;load-&gt;add_package_path(APPPATH.&#39;my_app&#39;);
-$this-&gt;load-&gt;view(&#39;my_app_index&#39;); // 読み込まれます
-$this-&gt;load-&gt;view(&#39;welcome_message&#39;); // 読み込まれます
+<span class="c1">// 第 2 引数なしでやり直します:</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">add_package_path</span><span class="p">(</span><span class="nx">APPPATH</span><span class="o">.</span><span class="s1">&#39;my_app&#39;</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;my_app_index&#39;</span><span class="p">);</span> <span class="c1">// 読み込まれます</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;welcome_message&#39;</span><span class="p">);</span> <span class="c1">// 読み込まれます</span>
 </pre></div>
 </div>
 </div>
@@ -521,7 +522,7 @@ $this-&gt;load-&gt;view(&#39;welcome_message&#39;); // 読み込まれます
 </div>
 <p>たとえば CodeIgniter でメールを送信したい場合、
 最初のステップはコントローラ内で Email クラスをロードすることです:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;load-&gt;library(&#39;email&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>いちどロードされれば、ライブラリを使用できる準備が整います。つまり <code class="docutils literal"><span class="pre">$this-&gt;email</span></code> を使用できます。</p>
@@ -530,29 +531,29 @@ $this-&gt;load-&gt;view(&#39;welcome_message&#39;); // 読み込まれます
 内に格納することができます。サブディレクトリにあるファイルをロードするには、
 単純に「 libraries 」ディレクトリからの相対パスを含めます。
 たとえば、次のファイルの場合:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>libraries/flavors/Chocolate.php
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">libraries</span><span class="o">/</span><span class="nx">flavors</span><span class="o">/</span><span class="nx">Chocolate</span><span class="o">.</span><span class="nx">php</span>
 </pre></div>
 </div>
 <p>こうやってロードできます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;load-&gt;library(&#39;flavors/chocolate&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;flavors/chocolate&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>サブディレクトリは好きなだけネストすることができます。</p>
 <p>さらに、ライブラリの配列をロードメソッドに渡すことによって、
 いちどに複数のロードをすることができます。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;load-&gt;library(array(&#39;email&#39;, &#39;table&#39;));
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">,</span> <span class="s1">&#39;table&#39;</span><span class="p">));</span>
 </pre></div>
 </div>
 <p><strong>設定オプション</strong></p>
 <p>第 2 引数（オプション） を使用すると、コンフィグ設定を任意で渡すことができます。
 通常、これらは配列として渡します:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$config = array (
-        &#39;mailtype&#39; =&gt; &#39;html&#39;,
-        &#39;charset&#39;  =&gt; &#39;utf-8&#39;,
-        &#39;priority&#39; =&gt; &#39;1&#39;
-);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$config</span> <span class="o">=</span> <span class="k">array</span> <span class="p">(</span>
+        <span class="s1">&#39;mailtype&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;html&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;charset&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;utf-8&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;priority&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;1&#39;</span>
+<span class="p">);</span>
 
-$this-&gt;load-&gt;library(&#39;email&#39;, $config);
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">,</span> <span class="nv">$config</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>設定オプションは通常、 Config ファイルにより設定することもできます。
@@ -567,10 +568,10 @@ Calendar というライブラリの場合、それは
 <code class="docutils literal"><span class="pre">$this-&gt;calendar</span></code> という名前の変数に代入されます。</p>
 <p>独自のクラス名を設定したい場合、
 第 3 引数にその値を渡すことができます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;load-&gt;library(&#39;calendar&#39;, NULL, &#39;my_calendar&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;calendar&#39;</span><span class="p">,</span> <span class="k">NULL</span><span class="p">,</span> <span class="s1">&#39;my_calendar&#39;</span><span class="p">);</span>
 
-// Calendar クラスはいま、このようにアクセスできます:
-$this-&gt;my_calendar
+<span class="c1">// Calendar クラスはいま、このようにアクセスできます:</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">my_calendar</span>
 </pre></div>
 </div>
 <p>注意すべきこととして、第 1 引数に配列で複数のライブラリを渡されると、
@@ -603,7 +604,7 @@ $this-&gt;my_calendar
 <code class="docutils literal"><span class="pre">library()</span></code> メソッドにとてもよく似た役割を果たします。</p>
 <p>例として、 CodeIgniter のセッションを使用したい場合、
 その最初の一歩はコントローラ内でセッションドライバをロードすることです:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;load-&gt;driver(&#39;session&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">driver</span><span class="p">(</span><span class="s1">&#39;session&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>いちどロードされれば、ライブラリを使用できる準備が整います、つまり <code class="docutils literal"><span class="pre">$this-&gt;session</span></code> を使用できます。</p>
@@ -613,19 +614,19 @@ $this-&gt;my_calendar
 詳しくは <a class="reference internal" href="../general/drivers.html"><span class="doc">ドライバ</span></a> の説明をお読みください。</p>
 <p>さらに、ドライバライブラリの配列をロードメソッドに渡すことによって、
 いちどに複数のロードをすることができます。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;load-&gt;driver(array(&#39;session&#39;, &#39;cache&#39;));
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">driver</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;session&#39;</span><span class="p">,</span> <span class="s1">&#39;cache&#39;</span><span class="p">));</span>
 </pre></div>
 </div>
 <p><strong>設定オプション</strong></p>
 <p>第 2 引数（オプション） を使用すると、コンフィグ設定を任意で渡すことができます。
 通常、これらは配列として渡します:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$config = array(
-        &#39;sess_driver&#39; =&gt; &#39;cookie&#39;,
-        &#39;sess_encrypt_cookie&#39;  =&gt; true,
-        &#39;encryption_key&#39; =&gt; &#39;mysecretkey&#39;
-);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$config</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;sess_driver&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;cookie&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;sess_encrypt_cookie&#39;</span>  <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
+        <span class="s1">&#39;encryption_key&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;mysecretkey&#39;</span>
+<span class="p">);</span>
 
-$this-&gt;load-&gt;driver(&#39;session&#39;, $config);
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">driver</span><span class="p">(</span><span class="s1">&#39;session&#39;</span><span class="p">,</span> <span class="nv">$config</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>設定オプションは通常、 Config ファイルにより設定することもできます。
@@ -638,10 +639,10 @@ $this-&gt;load-&gt;driver(&#39;session&#39;, $config);
 それは <code class="docutils literal"><span class="pre">$this-&gt;session</span></code> という名前の変数に代入されます。</p>
 <p>独自のクラス名を設定したい場合、
 第 3 引数にその値を渡すことができます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;load-&gt;library(&#39;session&#39;, &#39;&#39;, &#39;my_session&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;session&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;my_session&#39;</span><span class="p">);</span>
 
-// Session クラスはいまこのようにアクセスできます:
-$this-&gt;my_session
+<span class="c1">// Session クラスはいまこのようにアクセスできます:</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">my_session</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -690,7 +691,7 @@ $this-&gt;my_session
 このパラメータを TRUE（真偽値）に設定すると、データが返されます。
 デフォルトの動作は FALSE で、これはブラウザにデータを送信します。
 データを返すようにしたときは変数に代入するのを忘れないでください:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$string = $this-&gt;load-&gt;view(&#39;myfile&#39;, &#39;&#39;, TRUE);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$string</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;myfile&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -806,19 +807,19 @@ PHP の <a class="reference external" href="http://php.net/extract">extract()</a
 </tr>
 </tbody>
 </table>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;load-&gt;model(&#39;model_name&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">model</span><span class="p">(</span><span class="s1">&#39;model_name&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>モデルがサブディレクトリに配置されている場合、
 models ディレクトリからの相対パスを含めます。たとえば
 <em>application/models/blog/Queries.php</em> にモデルがある場合、次のようにロードします:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;load-&gt;model(&#39;blog/queries&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">model</span><span class="p">(</span><span class="s1">&#39;blog/queries&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>モデルに別のオブジェクト名を割り当てたい場合は
 ロードメソッドの第 2 引数により指定することができます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;load-&gt;model(&#39;model_name&#39;, &#39;fubar&#39;);
-$this-&gt;fubar-&gt;method();
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">model</span><span class="p">(</span><span class="s1">&#39;model_name&#39;</span><span class="p">,</span> <span class="s1">&#39;fubar&#39;</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">fubar</span><span class="o">-&gt;</span><span class="na">method</span><span class="p">();</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -1030,10 +1031,10 @@ _helper.php 拡張子は不要です。</p>
 </div>
 <p>要求されたクラスがロードされている場合、このメソッドはそのクラスが割り当てられた
 CI スーパーオブジェクト内の名前を返します。そうでない場合は FALSE を返します:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;load-&gt;library(&#39;form_validation&#39;);
-$this-&gt;load-&gt;is_loaded(&#39;Form_validation&#39;);      // &#39;form_validation&#39; を返します
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;form_validation&#39;</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">is_loaded</span><span class="p">(</span><span class="s1">&#39;Form_validation&#39;</span><span class="p">);</span>      <span class="c1">// &#39;form_validation&#39; を返します</span>
 
-$this-&gt;load-&gt;is_loaded(&#39;Nonexistent_library&#39;);  // FALSE を返します
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">is_loaded</span><span class="p">(</span><span class="s1">&#39;Nonexistent_library&#39;</span><span class="p">);</span>  <span class="c1">// FALSE を返します</span>
 </pre></div>
 </div>
 <div class="admonition important">
@@ -1041,10 +1042,10 @@ $this-&gt;load-&gt;is_loaded(&#39;Nonexistent_library&#39;);  // FALSE を返し
 <p class="last">（別のプロパティに割り当てられた）クラスのインスタンスを複数持っている場合、
 最初のものが返されます。</p>
 </div>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;load-&gt;library(&#39;form_validation&#39;, $config, &#39;fv&#39;);
-$this-&gt;load-&gt;library(&#39;form_validation&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;form_validation&#39;</span><span class="p">,</span> <span class="nv">$config</span><span class="p">,</span> <span class="s1">&#39;fv&#39;</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;form_validation&#39;</span><span class="p">);</span>
 
-$this-&gt;load-&gt;is_loaded(&#39;Form_validation&#39;);      // &#39;fv&#39; を返します
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">is_loaded</span><span class="p">(</span><span class="s1">&#39;Form_validation&#39;</span><span class="p">);</span>      <span class="c1">// &#39;fv&#39; を返します</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -1074,8 +1075,8 @@ $this-&gt;load-&gt;is_loaded(&#39;Form_validation&#39;);      // &#39;fv&#39; �
 ローダクラスが与えられたパスを見るようになります。例として、
 上記の「Foo Bar」アプリケーションパッケージは
 Foo_bar.php という名前のライブラリを持っているとします。コントローラで、次のようにしてください:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;load-&gt;add_package_path(APPPATH.&#39;third_party/foo_bar/&#39;)
-        -&gt;library(&#39;foo_bar&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">add_package_path</span><span class="p">(</span><span class="nx">APPPATH</span><span class="o">.</span><span class="s1">&#39;third_party/foo_bar/&#39;</span><span class="p">)</span>
+        <span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;foo_bar&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -1107,7 +1108,7 @@ Foo_bar.php という名前のライブラリを持っているとします。�
 最後に追加されたパスを削除するには、単にパラメータなしでメソッドを呼び出します。</p>
 <p>または特定のパッケージパスを削除するには、前にパッケージを
 <code class="docutils literal"><span class="pre">add_package_path()</span></code> に指定したのとまったく同じパスで指定します:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;load-&gt;remove_package_path(APPPATH.&#39;third_party/foo_bar/&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">remove_package_path</span><span class="p">(</span><span class="nx">APPPATH</span><span class="o">.</span><span class="s1">&#39;third_party/foo_bar/&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -1159,7 +1160,7 @@ Foo_bar.php という名前のライブラリを持っているとします。�
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 9月 06, 2016
+      最終更新: 9月 04, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

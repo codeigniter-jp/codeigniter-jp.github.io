@@ -415,6 +415,7 @@
       <img title="Classic Layout" alt="classic layout" src="data:image/gif;base64,R0lGODlhFAAUAJEAAAAAADMzM////wAAACH5BAUUAAIALAAAAAAUABQAAAImlI+py+0PU5gRBRDM3DxbWoXis42X13USOLauUIqnlsaH/eY6UwAAOw==" />
     </div>
   </ul>
+<div style="float:right;margin-left:5px;">[ <a href="https://github.com/codeigniter-jp/ci-ja/blob/develop/user_guide_ja_src/source/helpers/string_helper.rst">旧版翻訳途中</a> | <a href="https://github.com/bcit-ci/CodeIgniter/commits/develop/user_guide_src/source/helpers/string_helper.rst">原文履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/commits/develop_japanese/source/helpers/string_helper.rst">翻訳履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/source/helpers/string_helper.rst">GitHubで修正</a> ]</div><br /><div style="float:right;margin-left:5px;">[ <b class="highlighted">翻訳者募集中</b> → <a href="https://docs.google.com/spreadsheets/d/1ZWD5XqwH-Uo9X7MR644jbL6O8p5LxIngLT8M547H8wc/edit?pref=2&pli=1#gid=0">翻訳状況</a> ]</div>
   <hr/>
 </div>
           <div role="main" class="document">
@@ -437,7 +438,7 @@
 <div class="custom-index container"></div><div class="section" id="id2">
 <h2><a class="toc-backref" href="#id4">ヘルパーのロード</a><a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>このヘルパーは次のコードを使ってロードします:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$this-&gt;load-&gt;helper(&#39;string&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">helper</span><span class="p">(</span><span class="s1">&#39;string&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -479,7 +480,7 @@
 <li><strong>sha1</strong>: <code class="docutils literal"><span class="pre">sha1()</span></code> に基づいた暗号化された乱数（固定長40文字）。</li>
 </ul>
 <p>使用例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>echo random_string(&#39;alnum&#39;, 16);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nx">random_string</span><span class="p">(</span><span class="s1">&#39;alnum&#39;</span><span class="p">,</span> <span class="mi">16</span><span class="p">);</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -515,9 +516,9 @@
 ファイル、ユニークなタイトルかスラッグを持たせたデータベースの
 コンテンツの複製を作成するのに便利です。</p>
 <p>使用例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>echo increment_string(&#39;file&#39;, &#39;_&#39;); // &quot;file_1&quot;
-echo increment_string(&#39;file&#39;, &#39;-&#39;, 2); // &quot;file-2&quot;
-echo increment_string(&#39;file_4&#39;); // &quot;file_5&quot;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nx">increment_string</span><span class="p">(</span><span class="s1">&#39;file&#39;</span><span class="p">,</span> <span class="s1">&#39;_&#39;</span><span class="p">);</span> <span class="c1">// &quot;file_1&quot;</span>
+<span class="k">echo</span> <span class="nx">increment_string</span><span class="p">(</span><span class="s1">&#39;file&#39;</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span> <span class="c1">// &quot;file-2&quot;</span>
+<span class="k">echo</span> <span class="nx">increment_string</span><span class="p">(</span><span class="s1">&#39;file_4&#39;</span><span class="p">);</span> <span class="c1">// &quot;file_5&quot;</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -544,18 +545,18 @@ echo increment_string(&#39;file_4&#39;); // &quot;file_5&quot;
 </table>
 <p>ループの中でローテーションで使うように、2つ以上の項目を入れ替え可能
 にします。例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>for ($i = 0; $i &lt; 10; $i++)
-{
-        echo alternator(&#39;string one&#39;, &#39;string two&#39;);
-}
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="nv">$i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="nv">$i</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="k">echo</span> <span class="nx">alternator</span><span class="p">(</span><span class="s1">&#39;string one&#39;</span><span class="p">,</span> <span class="s1">&#39;string two&#39;</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>必要な数だけ追加でき、
 各ループで繰り返す度に次の項目が返ります。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>for ($i = 0; $i &lt; 10; $i++)
-{
-        echo alternator(&#39;one&#39;, &#39;two&#39;, &#39;three&#39;, &#39;four&#39;, &#39;five&#39;);
-}
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="nv">$i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="nv">$i</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="k">echo</span> <span class="nx">alternator</span><span class="p">(</span><span class="s1">&#39;one&#39;</span><span class="p">,</span> <span class="s1">&#39;two&#39;</span><span class="p">,</span> <span class="s1">&#39;three&#39;</span><span class="p">,</span> <span class="s1">&#39;four&#39;</span><span class="p">,</span> <span class="s1">&#39;five&#39;</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -587,8 +588,8 @@ echo increment_string(&#39;file_4&#39;); // &quot;file_5&quot;
 </tbody>
 </table>
 <p>渡したデータのコピーを繰り返し生成します。例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$string = &quot;\n&quot;;
-echo repeater($string, 30);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$string</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nx">repeater</span><span class="p">(</span><span class="nv">$string</span><span class="p">,</span> <span class="mi">30</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>上の例では、30の新しい行が生成されます。</p>
@@ -622,8 +623,8 @@ echo repeater($string, 30);
 <p>URL プロトコルのプレフィックス（例 http&amp;#58;//）を除いて、
 文字列中のダブルスラッシュをシングルスラッシュに変換します。</p>
 <p>例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$string = &quot;http://example.com//index.php&quot;;
-echo reduce_double_slashes($string); // &quot;http://example.com/index.php&quot; を返します
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$string</span> <span class="o">=</span> <span class="s2">&quot;http://example.com//index.php&quot;</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nx">reduce_double_slashes</span><span class="p">(</span><span class="nv">$string</span><span class="p">);</span> <span class="c1">// &quot;http://example.com/index.php&quot; を返します</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -650,19 +651,19 @@ echo reduce_double_slashes($string); // &quot;http://example.com/index.php&quot;
 </table>
 <p>文字列の配列からスラッシュを除去します。</p>
 <p>例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$str = array(
-        &#39;question&#39;  =&gt; &#39;Is your name O\&#39;reilly?&#39;,
-        &#39;answer&#39; =&gt; &#39;No, my name is O\&#39;connor.&#39;
-);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$str</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;question&#39;</span><span class="nx">  </span><span class="o">=&gt;</span> <span class="s1">&#39;Is your name O\&#39;reilly?&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;answer&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;No, my name is O\&#39;connor.&#39;</span>
+<span class="p">);</span>
 
-$str = strip_slashes($str);
+<span class="nv">$str</span> <span class="o">=</span> <span class="nx">strip_slashes</span><span class="p">(</span><span class="nv">$str</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>上の例では以下の配列が返ります。:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>array(
-        &#39;question&#39;  =&gt; &quot;Is your name O&#39;reilly?&quot;,
-        &#39;answer&#39; =&gt; &quot;No, my name is O&#39;connor.&quot;
-);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;question&#39;</span><span class="nx">  </span><span class="o">=&gt;</span> <span class="s2">&quot;Is your name O&#39;reilly?&quot;</span><span class="p">,</span>
+        <span class="s1">&#39;answer&#39;</span> <span class="o">=&gt;</span> <span class="s2">&quot;No, my name is O&#39;connor.&quot;</span>
+<span class="p">);</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -694,8 +695,8 @@ $str = strip_slashes($str);
 </tbody>
 </table>
 <p>文字列から、先頭と末尾のスラッシュを除去します。例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$string = &quot;/this/that/theother/&quot;;
-echo trim_slashes($string); // this/that/theother 返します
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$string</span> <span class="o">=</span> <span class="s2">&quot;/this/that/theother/&quot;</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nx">trim_slashes</span><span class="p">(</span><span class="nv">$string</span><span class="p">);</span> <span class="c1">// this/that/theother 返します</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -730,14 +731,14 @@ echo trim_slashes($string); // this/that/theother 返します
 </table>
 <p>連続した文字を縮約します。
 例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$string = &quot;Fred, Bill,, Joe, Jimmy&quot;;
-$string = reduce_multiples($string,&quot;,&quot;); //&quot;Fred, Bill, Joe, Jimmy&quot; を返します
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$string</span> <span class="o">=</span> <span class="s2">&quot;Fred, Bill,, Joe, Jimmy&quot;</span><span class="p">;</span>
+<span class="nv">$string</span> <span class="o">=</span> <span class="nx">reduce_multiples</span><span class="p">(</span><span class="nv">$string</span><span class="p">,</span><span class="s2">&quot;,&quot;</span><span class="p">);</span> <span class="c1">//&quot;Fred, Bill, Joe, Jimmy&quot; を返します</span>
 </pre></div>
 </div>
 <p>第3引数に TRUE を指定した場合は、先頭と末尾にある
 縮約文字が削除されます。例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$string = &quot;,Fred, Bill,, Joe, Jimmy,&quot;;
-$string = reduce_multiples($string, &quot;, &quot;, TRUE); //&quot;Fred, Bill, Joe, Jimmy&quot; を返します
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$string</span> <span class="o">=</span> <span class="s2">&quot;,Fred, Bill,, Joe, Jimmy,&quot;</span><span class="p">;</span>
+<span class="nv">$string</span> <span class="o">=</span> <span class="nx">reduce_multiples</span><span class="p">(</span><span class="nv">$string</span><span class="p">,</span> <span class="s2">&quot;, &quot;</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span> <span class="c1">//&quot;Fred, Bill, Joe, Jimmy&quot; を返します</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -764,8 +765,8 @@ $string = reduce_multiples($string, &quot;, &quot;, TRUE); //&quot;Fred, Bill, J
 </table>
 <p>文字列の中のシングルおよびダブルクオートを対応する HTML 文字参照に変換します。
 例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$string = &quot;Joe&#39;s \&quot;dinner\&quot;&quot;;
-$string = quotes_to_entities($string); //&quot;Joe&amp;#39;s &amp;quot;dinner&amp;quot;&quot; を返します
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$string</span> <span class="o">=</span> <span class="s2">&quot;Joe&#39;s </span><span class="se">\&quot;</span><span class="s2">dinner</span><span class="se">\&quot;</span><span class="s2">&quot;</span><span class="p">;</span>
+<span class="nv">$string</span> <span class="o">=</span> <span class="nx">quotes_to_entities</span><span class="p">(</span><span class="nv">$string</span><span class="p">);</span> <span class="c1">//&quot;Joe&amp;#39;s &amp;quot;dinner&amp;quot;&quot; を返します</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -791,8 +792,8 @@ $string = quotes_to_entities($string); //&quot;Joe&amp;#39;s &amp;quot;dinner&am
 </tbody>
 </table>
 <p>文字列からシングルおよびダブルクオートを除去します。例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$string = &quot;Joe&#39;s \&quot;dinner\&quot;&quot;;
-$string = strip_quotes($string); //&quot;Joes dinner&quot; を返します
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$string</span> <span class="o">=</span> <span class="s2">&quot;Joe&#39;s </span><span class="se">\&quot;</span><span class="s2">dinner</span><span class="se">\&quot;</span><span class="s2">&quot;</span><span class="p">;</span>
+<span class="nv">$string</span> <span class="o">=</span> <span class="nx">strip_quotes</span><span class="p">(</span><span class="nv">$string</span><span class="p">);</span> <span class="c1">//&quot;Joes dinner&quot; を返します</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -819,7 +820,7 @@ $string = strip_quotes($string); //&quot;Joes dinner&quot; を返します
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 9月 06, 2016
+      最終更新: 9月 04, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

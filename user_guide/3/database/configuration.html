@@ -415,6 +415,7 @@
       <img title="Classic Layout" alt="classic layout" src="data:image/gif;base64,R0lGODlhFAAUAJEAAAAAADMzM////wAAACH5BAUUAAIALAAAAAAUABQAAAImlI+py+0PU5gRBRDM3DxbWoXis42X13USOLauUIqnlsaH/eY6UwAAOw==" />
     </div>
   </ul>
+<div style="float:right;margin-left:5px;">[ <a href="https://github.com/codeigniter-jp/ci-ja/blob/develop/user_guide_ja_src/source/database/configuration.rst">旧版翻訳途中</a> | <a href="https://github.com/bcit-ci/CodeIgniter/commits/develop/user_guide_src/source/database/configuration.rst">原文履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/commits/develop_japanese/source/database/configuration.rst">翻訳履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/source/database/configuration.rst">GitHubで修正</a> ]</div><br /><div style="float:right;margin-left:5px;">[ <b class="highlighted">翻訳者募集中</b> → <a href="https://docs.google.com/spreadsheets/d/1ZWD5XqwH-Uo9X7MR644jbL6O8p5LxIngLT8M547H8wc/edit?pref=2&pli=1#gid=0">翻訳状況</a> ]</div>
   <hr/>
 </div>
           <div role="main" class="document">
@@ -428,37 +429,37 @@ application/config/database.php にあります。また、特定の <a class="r
 を置くこともできます。</p>
 <p>設定は、次のひな形で、多次元配列で保存されて
 います:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$db[&#39;default&#39;] = array(
-        &#39;dsn&#39;   =&gt; &#39;&#39;,
-        &#39;hostname&#39; =&gt; &#39;localhost&#39;,
-        &#39;username&#39; =&gt; &#39;root&#39;,
-        &#39;password&#39; =&gt; &#39;&#39;,
-        &#39;database&#39; =&gt; &#39;database_name&#39;,
-        &#39;dbdriver&#39; =&gt; &#39;mysqli&#39;,
-        &#39;dbprefix&#39; =&gt; &#39;&#39;,
-        &#39;pconnect&#39; =&gt; TRUE,
-        &#39;db_debug&#39; =&gt; TRUE,
-        &#39;cache_on&#39; =&gt; FALSE,
-        &#39;cachedir&#39; =&gt; &#39;&#39;,
-        &#39;char_set&#39; =&gt; &#39;utf8&#39;,
-        &#39;dbcollat&#39; =&gt; &#39;utf8_general_ci&#39;,
-        &#39;swap_pre&#39; =&gt; &#39;&#39;,
-        &#39;encrypt&#39; =&gt; FALSE,
-        &#39;compress&#39; =&gt; FALSE,
-        &#39;stricton&#39; =&gt; FALSE,
-        &#39;failover&#39; =&gt; array()
-);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$db</span><span class="p">[</span><span class="s1">&#39;default&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;dsn&#39;</span>   <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;hostname&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;localhost&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;username&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;root&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;password&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;database&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;database_name&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;dbdriver&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;mysqli&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;dbprefix&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;pconnect&#39;</span> <span class="o">=&gt;</span> <span class="k">TRUE</span><span class="p">,</span>
+        <span class="s1">&#39;db_debug&#39;</span> <span class="o">=&gt;</span> <span class="k">TRUE</span><span class="p">,</span>
+        <span class="s1">&#39;cache_on&#39;</span> <span class="o">=&gt;</span> <span class="k">FALSE</span><span class="p">,</span>
+        <span class="s1">&#39;cachedir&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;char_set&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;utf8&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;dbcollat&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;utf8_general_ci&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;swap_pre&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;encrypt&#39;</span> <span class="o">=&gt;</span> <span class="k">FALSE</span><span class="p">,</span>
+        <span class="s1">&#39;compress&#39;</span> <span class="o">=&gt;</span> <span class="k">FALSE</span><span class="p">,</span>
+        <span class="s1">&#39;stricton&#39;</span> <span class="o">=&gt;</span> <span class="k">FALSE</span><span class="p">,</span>
+        <span class="s1">&#39;failover&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">()</span>
+<span class="p">);</span>
 </pre></div>
 </div>
 <p>いくつかのデータベースドライバ（PDO,PostgreSQL, Oracle, ODBCなど）は
 完全なDSN文字列を要求することもあります。その場合は &#8216;dsn&#8217; 設定を、ドライバの
 ネイティブPHP拡張を使うかのように使用してください。
 下記が例になります:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>// PDO
-$db[&#39;default&#39;][&#39;dsn&#39;] = &#39;pgsql:host=localhost;port=5432;dbname=database_name&#39;;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// PDO</span>
+<span class="nv">$db</span><span class="p">[</span><span class="s1">&#39;default&#39;</span><span class="p">][</span><span class="s1">&#39;dsn&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;pgsql:host=localhost;port=5432;dbname=database_name&#39;</span><span class="p">;</span>
 
-// Oracle
-$db[&#39;default&#39;][&#39;dsn&#39;] = &#39;//localhost/XE&#39;;
+<span class="c1">// Oracle</span>
+<span class="nv">$db</span><span class="p">[</span><span class="s1">&#39;default&#39;</span><span class="p">][</span><span class="s1">&#39;dsn&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;//localhost/XE&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -474,44 +475,44 @@ CodeIgniterは自動でそれらを追記します。</p>
 </div>
 <p>加えて、何らかの理由によりメインの接続先に接続できない場合のフェイルオーバー先を指定することも
 できます。これらのフェイルオーバー先は、接続先のフェイルオーバー設定をこのように設定できます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$db[&#39;default&#39;][&#39;failover&#39;] = array(
-                array(
-                        &#39;hostname&#39; =&gt; &#39;localhost1&#39;,
-                        &#39;username&#39; =&gt; &#39;&#39;,
-                        &#39;password&#39; =&gt; &#39;&#39;,
-                        &#39;database&#39; =&gt; &#39;&#39;,
-                        &#39;dbdriver&#39; =&gt; &#39;mysqli&#39;,
-                        &#39;dbprefix&#39; =&gt; &#39;&#39;,
-                        &#39;pconnect&#39; =&gt; TRUE,
-                        &#39;db_debug&#39; =&gt; TRUE,
-                        &#39;cache_on&#39; =&gt; FALSE,
-                        &#39;cachedir&#39; =&gt; &#39;&#39;,
-                        &#39;char_set&#39; =&gt; &#39;utf8&#39;,
-                        &#39;dbcollat&#39; =&gt; &#39;utf8_general_ci&#39;,
-                        &#39;swap_pre&#39; =&gt; &#39;&#39;,
-                        &#39;encrypt&#39; =&gt; FALSE,
-                        &#39;compress&#39; =&gt; FALSE,
-                        &#39;stricton&#39; =&gt; FALSE
-                ),
-                array(
-                        &#39;hostname&#39; =&gt; &#39;localhost2&#39;,
-                        &#39;username&#39; =&gt; &#39;&#39;,
-                        &#39;password&#39; =&gt; &#39;&#39;,
-                        &#39;database&#39; =&gt; &#39;&#39;,
-                        &#39;dbdriver&#39; =&gt; &#39;mysqli&#39;,
-                        &#39;dbprefix&#39; =&gt; &#39;&#39;,
-                        &#39;pconnect&#39; =&gt; TRUE,
-                        &#39;db_debug&#39; =&gt; TRUE,
-                        &#39;cache_on&#39; =&gt; FALSE,
-                        &#39;cachedir&#39; =&gt; &#39;&#39;,
-                        &#39;char_set&#39; =&gt; &#39;utf8&#39;,
-                        &#39;dbcollat&#39; =&gt; &#39;utf8_general_ci&#39;,
-                        &#39;swap_pre&#39; =&gt; &#39;&#39;,
-                        &#39;encrypt&#39; =&gt; FALSE,
-                        &#39;compress&#39; =&gt; FALSE,
-                        &#39;stricton&#39; =&gt; FALSE
-                )
-        );
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$db</span><span class="p">[</span><span class="s1">&#39;default&#39;</span><span class="p">][</span><span class="s1">&#39;failover&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+                <span class="k">array</span><span class="p">(</span>
+                        <span class="s1">&#39;hostname&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;localhost1&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;username&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;password&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;database&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;dbdriver&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;mysqli&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;dbprefix&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;pconnect&#39;</span> <span class="o">=&gt;</span> <span class="k">TRUE</span><span class="p">,</span>
+                        <span class="s1">&#39;db_debug&#39;</span> <span class="o">=&gt;</span> <span class="k">TRUE</span><span class="p">,</span>
+                        <span class="s1">&#39;cache_on&#39;</span> <span class="o">=&gt;</span> <span class="k">FALSE</span><span class="p">,</span>
+                        <span class="s1">&#39;cachedir&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;char_set&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;utf8&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;dbcollat&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;utf8_general_ci&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;swap_pre&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;encrypt&#39;</span> <span class="o">=&gt;</span> <span class="k">FALSE</span><span class="p">,</span>
+                        <span class="s1">&#39;compress&#39;</span> <span class="o">=&gt;</span> <span class="k">FALSE</span><span class="p">,</span>
+                        <span class="s1">&#39;stricton&#39;</span> <span class="o">=&gt;</span> <span class="k">FALSE</span>
+                <span class="p">),</span>
+                <span class="k">array</span><span class="p">(</span>
+                        <span class="s1">&#39;hostname&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;localhost2&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;username&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;password&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;database&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;dbdriver&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;mysqli&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;dbprefix&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;pconnect&#39;</span> <span class="o">=&gt;</span> <span class="k">TRUE</span><span class="p">,</span>
+                        <span class="s1">&#39;db_debug&#39;</span> <span class="o">=&gt;</span> <span class="k">TRUE</span><span class="p">,</span>
+                        <span class="s1">&#39;cache_on&#39;</span> <span class="o">=&gt;</span> <span class="k">FALSE</span><span class="p">,</span>
+                        <span class="s1">&#39;cachedir&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;char_set&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;utf8&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;dbcollat&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;utf8_general_ci&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;swap_pre&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;encrypt&#39;</span> <span class="o">=&gt;</span> <span class="k">FALSE</span><span class="p">,</span>
+                        <span class="s1">&#39;compress&#39;</span> <span class="o">=&gt;</span> <span class="k">FALSE</span><span class="p">,</span>
+                        <span class="s1">&#39;stricton&#39;</span> <span class="o">=&gt;</span> <span class="k">FALSE</span>
+                <span class="p">)</span>
+        <span class="p">);</span>
 </pre></div>
 </div>
 <p>フェイルオーバー先はいくつでも指定できます。</p>
@@ -521,31 +522,31 @@ CodeIgniterは自動でそれらを追記します。</p>
 るような場合に、 各環境ごとに接続設定をグループ化しておき、動かす環境
 に必要なグループに切り替えるといったことが可能です。 たとえば、&#8221;test&#8221;
 用の環境をセットアップするには次のようにします:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$db[&#39;test&#39;] = array(
-        &#39;dsn&#39;   =&gt; &#39;&#39;,
-        &#39;hostname&#39; =&gt; &#39;localhost&#39;,
-        &#39;username&#39; =&gt; &#39;root&#39;,
-        &#39;password&#39; =&gt; &#39;&#39;,
-        &#39;database&#39; =&gt; &#39;database_name&#39;,
-        &#39;dbdriver&#39; =&gt; &#39;mysqli&#39;,
-        &#39;dbprefix&#39; =&gt; &#39;&#39;,
-        &#39;pconnect&#39; =&gt; TRUE,
-        &#39;db_debug&#39; =&gt; TRUE,
-        &#39;cache_on&#39; =&gt; FALSE,
-        &#39;cachedir&#39; =&gt; &#39;&#39;,
-        &#39;char_set&#39; =&gt; &#39;utf8&#39;,
-        &#39;dbcollat&#39; =&gt; &#39;utf8_general_ci&#39;,
-        &#39;swap_pre&#39; =&gt; &#39;&#39;,
-        &#39;compress&#39; =&gt; FALSE,
-        &#39;encrypt&#39; =&gt; FALSE,
-        &#39;stricton&#39; =&gt; FALSE,
-        &#39;failover&#39; =&gt; array()
-);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$db</span><span class="p">[</span><span class="s1">&#39;test&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;dsn&#39;</span>   <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;hostname&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;localhost&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;username&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;root&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;password&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;database&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;database_name&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;dbdriver&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;mysqli&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;dbprefix&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;pconnect&#39;</span> <span class="o">=&gt;</span> <span class="k">TRUE</span><span class="p">,</span>
+        <span class="s1">&#39;db_debug&#39;</span> <span class="o">=&gt;</span> <span class="k">TRUE</span><span class="p">,</span>
+        <span class="s1">&#39;cache_on&#39;</span> <span class="o">=&gt;</span> <span class="k">FALSE</span><span class="p">,</span>
+        <span class="s1">&#39;cachedir&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;char_set&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;utf8&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;dbcollat&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;utf8_general_ci&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;swap_pre&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;compress&#39;</span> <span class="o">=&gt;</span> <span class="k">FALSE</span><span class="p">,</span>
+        <span class="s1">&#39;encrypt&#39;</span> <span class="o">=&gt;</span> <span class="k">FALSE</span><span class="p">,</span>
+        <span class="s1">&#39;stricton&#39;</span> <span class="o">=&gt;</span> <span class="k">FALSE</span><span class="p">,</span>
+        <span class="s1">&#39;failover&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">()</span>
+<span class="p">);</span>
 </pre></div>
 </div>
 <p>次に、システムに対して全体でそのグループを使うことを通知するため、設定
 ファイルにある下記の変数にグループ名をセットします:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$active_group = &#39;test&#39;;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$active_group</span> <span class="o">=</span> <span class="s1">&#39;test&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -562,7 +563,7 @@ CodeIgniterは自動でそれらを追記します。</p>
 query builder クラスを使用しない場合は、
 FALSEをセットするとデータベースクラスを初期化したときに、
 少ないリソースを有効活用できます。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$query_builder = TRUE;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$query_builder</span> <span class="o">=</span> <span class="k">TRUE</span><span class="p">;</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -666,7 +667,7 @@ FALSEをセットするとデータベースクラスを初期化したときに
 <tr class="row-even"><td><strong>port</strong></td>
 <td><p class="first">データベースのポート番号。この値を利用するには、データベース
 設定の配列に以下のような行を追加する必要があります。</p>
-<div class="last highlight-ci"><div class="highlight"><pre><span></span>$db[&#39;default&#39;][&#39;port&#39;] =  5432;
+<div class="last highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$db</span><span class="p">[</span><span class="s1">&#39;default&#39;</span><span class="p">][</span><span class="s1">&#39;port&#39;</span><span class="p">]</span> <span class="o">=</span>  <span class="mi">5432</span><span class="p">;</span>
 </pre></div>
 </div>
 </td>
@@ -702,7 +703,7 @@ FALSEをセットするとデータベースクラスを初期化したときに
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 9月 06, 2016
+      最終更新: 9月 04, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

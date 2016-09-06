@@ -417,6 +417,7 @@
       <img title="Classic Layout" alt="classic layout" src="data:image/gif;base64,R0lGODlhFAAUAJEAAAAAADMzM////wAAACH5BAUUAAIALAAAAAAUABQAAAImlI+py+0PU5gRBRDM3DxbWoXis42X13USOLauUIqnlsaH/eY6UwAAOw==" />
     </div>
   </ul>
+<div style="float:right;margin-left:5px;">[ <a href="https://github.com/codeigniter-jp/ci-ja/blob/develop/user_guide_ja_src/source/installation/upgrade_140.rst">旧版翻訳途中</a> | <a href="https://github.com/bcit-ci/CodeIgniter/commits/develop/user_guide_src/source/installation/upgrade_140.rst">原文履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/commits/develop_japanese/source/installation/upgrade_140.rst">翻訳履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/source/installation/upgrade_140.rst">GitHubで修正</a> ]</div><br /><div style="float:right;margin-left:5px;">[ <b class="highlighted">翻訳者募集中</b> → <a href="https://docs.google.com/spreadsheets/d/1ZWD5XqwH-Uo9X7MR644jbL6O8p5LxIngLT8M547H8wc/edit?pref=2&pli=1#gid=0">翻訳状況</a> ]</div>
   <hr/>
 </div>
           <div role="main" class="document">
@@ -454,36 +455,36 @@ index.phpファイルを静的ページに置き換えて、オフラインに�
 <div class="section" id="step-2-config-php">
 <h2>Step 2: config.php ファイルのアップグレード<a class="headerlink" href="#step-2-config-php" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>application/config/config.php ファイルを開き、下記項目を追加してください。:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>/*
-|--------------------------------------------------------------------------
-| Enable/Disable System Hooks
-|--------------------------------------------------------------------------
-|
-| If you would like to use the &quot;hooks&quot; feature you must enable it by
-| setting this variable to TRUE (boolean).  See the user guide for details.
-|
-*/
-$config[&#39;enable_hooks&#39;] = FALSE;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">|--------------------------------------------------------------------------</span>
+<span class="cm">| Enable/Disable System Hooks</span>
+<span class="cm">|--------------------------------------------------------------------------</span>
+<span class="cm">|</span>
+<span class="cm">| If you would like to use the &quot;hooks&quot; feature you must enable it by</span>
+<span class="cm">| setting this variable to TRUE (boolean).  See the user guide for details.</span>
+<span class="cm">|</span>
+<span class="cm">*/</span>
+<span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;enable_hooks&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">FALSE</span><span class="p">;</span>
 
 
-/*
-|--------------------------------------------------------------------------
-| Allowed URL Characters
-|--------------------------------------------------------------------------
-|
-| This lets you specify which characters are permitted within your URLs.
-| When someone tries to submit a URL with disallowed characters they will
-| get a warning message.
-|
-| As a security measure you are STRONGLY encouraged to restrict URLs to
-| as few characters as possible.  By default only these are allowed: a-z 0-9~%.:_-
-|
-| Leave blank to allow all characters -- but only if you are insane.
-|
-| DO NOT CHANGE THIS UNLESS YOU FULLY UNDERSTAND THE REPERCUSSIONS!!
-|
-*/
-$config[&#39;permitted_uri_chars&#39;] = &#39;a-z 0-9~%.:_-&#39;;
+<span class="cm">/*</span>
+<span class="cm">|--------------------------------------------------------------------------</span>
+<span class="cm">| Allowed URL Characters</span>
+<span class="cm">|--------------------------------------------------------------------------</span>
+<span class="cm">|</span>
+<span class="cm">| This lets you specify which characters are permitted within your URLs.</span>
+<span class="cm">| When someone tries to submit a URL with disallowed characters they will</span>
+<span class="cm">| get a warning message.</span>
+<span class="cm">|</span>
+<span class="cm">| As a security measure you are STRONGLY encouraged to restrict URLs to</span>
+<span class="cm">| as few characters as possible.  By default only these are allowed: a-z 0-9~%.:_-</span>
+<span class="cm">|</span>
+<span class="cm">| Leave blank to allow all characters -- but only if you are insane.</span>
+<span class="cm">|</span>
+<span class="cm">| DO NOT CHANGE THIS UNLESS YOU FULLY UNDERSTAND THE REPERCUSSIONS!!</span>
+<span class="cm">|</span>
+<span class="cm">*/</span>
+<span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;permitted_uri_chars&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;a-z 0-9~%.:_-&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -513,7 +514,7 @@ $config[&#39;permitted_uri_chars&#39;] = &#39;a-z 0-9~%.:_-&#39;;
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 9月 06, 2016
+      最終更新: 9月 04, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

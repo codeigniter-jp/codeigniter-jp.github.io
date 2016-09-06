@@ -415,6 +415,7 @@
       <img title="Classic Layout" alt="classic layout" src="data:image/gif;base64,R0lGODlhFAAUAJEAAAAAADMzM////wAAACH5BAUUAAIALAAAAAAUABQAAAImlI+py+0PU5gRBRDM3DxbWoXis42X13USOLauUIqnlsaH/eY6UwAAOw==" />
     </div>
   </ul>
+<div style="float:right;margin-left:5px;">[ <a href="https://github.com/codeigniter-jp/ci-ja/blob/develop/user_guide_ja_src/source/general/common_functions.rst">旧版翻訳途中</a> | <a href="https://github.com/bcit-ci/CodeIgniter/commits/develop/user_guide_src/source/general/common_functions.rst">原文履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/commits/develop_japanese/source/general/common_functions.rst">翻訳履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/source/general/common_functions.rst">GitHubで修正</a> ]</div><br /><div style="float:right;margin-left:5px;">[ <b class="highlighted">翻訳者募集中</b> → <a href="https://docs.google.com/spreadsheets/d/1ZWD5XqwH-Uo9X7MR644jbL6O8p5LxIngLT8M547H8wc/edit?pref=2&pli=1#gid=0">翻訳状況</a> ]</div>
   <hr/>
 </div>
           <div role="main" class="document">
@@ -447,10 +448,10 @@
 <p>使用している PHP のバージョンが与えられたバージョン番号よりも
 大きいかどうかを判定します。</p>
 <p>Example:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>if (is_php(&#39;5.3&#39;))
-{
-        $str = quoted_printable_encode($str);
-}
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nx">is_php</span><span class="p">(</span><span class="s1">&#39;5.3&#39;</span><span class="p">))</span>
+<span class="p">{</span>
+        <span class="nv">$str</span> <span class="o">=</span> <span class="nb">quoted_printable_encode</span><span class="p">(</span><span class="nv">$str</span><span class="p">);</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>インストールされている PHP のバージョンが与えられたバージョン番号と
@@ -485,14 +486,14 @@ OS のレポートとして PHP に読み取り専用属性がマークされて
 書き込み可能であるかどうかを判定します。一般的に、
 情報を信頼できないプラットフォーム上でのみおすすめします。</p>
 <p>例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>if (is_really_writable(&#39;file.txt&#39;))
-{
-        echo &quot;書き込もうと思えば書き込めます&quot;;
-}
-else
-{
-        echo &quot;ファイルは書き込めません&quot;;
-}
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nx">is_really_writable</span><span class="p">(</span><span class="s1">&#39;file.txt&#39;</span><span class="p">))</span>
+<span class="p">{</span>
+        <span class="k">echo</span> <span class="s2">&quot;書き込もうと思えば書き込めます&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+        <span class="k">echo</span> <span class="s2">&quot;ファイルは書き込めません&quot;</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -546,8 +547,8 @@ else
 </tbody>
 </table>
 <p>サーバステータスヘッダを手動で設定することを可能にします。例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>set_status_header(401);
-// ヘッダを設定します:  Unauthorized
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">set_status_header</span><span class="p">(</span><span class="mi">401</span><span class="p">);</span>
+<span class="c1">// ヘッダを設定します:  Unauthorized</span>
 </pre></div>
 </div>
 <p>ヘッダの完全なリストについては
@@ -578,8 +579,8 @@ else
 <p>この機能は、Java\0scriptのように、 ASCII 文字の間に NULL
 文字を挿入しないようにします。</p>
 <p>例:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>remove_invisible_characters(&#39;Java\\0script&#39;);
-// 返り値: &#39;Javascript&#39;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">remove_invisible_characters</span><span class="p">(</span><span class="s1">&#39;Java\\0script&#39;</span><span class="p">);</span>
+<span class="c1">// 返り値: &#39;Javascript&#39;</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -722,7 +723,7 @@ FALSE を返します。</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 9月 06, 2016
+      最終更新: 9月 04, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

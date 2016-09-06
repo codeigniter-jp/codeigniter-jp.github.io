@@ -415,6 +415,7 @@
       <img title="Classic Layout" alt="classic layout" src="data:image/gif;base64,R0lGODlhFAAUAJEAAAAAADMzM////wAAACH5BAUUAAIALAAAAAAUABQAAAImlI+py+0PU5gRBRDM3DxbWoXis42X13USOLauUIqnlsaH/eY6UwAAOw==" />
     </div>
   </ul>
+<div style="float:right;margin-left:5px;">[ <a href="https://github.com/codeigniter-jp/ci-ja/blob/develop/user_guide_ja_src/source/libraries/security.rst">旧版翻訳途中</a> | <a href="https://github.com/bcit-ci/CodeIgniter/commits/develop/user_guide_src/source/libraries/security.rst">原文履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/commits/develop_japanese/source/libraries/security.rst">翻訳履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/source/libraries/security.rst">GitHubで修正</a> ]</div><br /><div style="float:right;margin-left:5px;">[ <b class="highlighted">翻訳者募集中</b> → <a href="https://docs.google.com/spreadsheets/d/1ZWD5XqwH-Uo9X7MR644jbL6O8p5LxIngLT8M547H8wc/edit?pref=2&pli=1#gid=0">翻訳状況</a> ]</div>
   <hr/>
 </div>
           <div role="main" class="document">
@@ -438,7 +439,7 @@ JavaScript やその他のコードのうち、一般的に使われる技術の
 許可されていないものが検出された場合、
 データを文字エンティティに変換することによって安全にレンダリングされます。</p>
 <p>XSSフィルタを通してデータをフィルタリングするには、 <code class="docutils literal"><span class="pre">xss_clean()</span></code> メソッドを使用します:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$data = $this-&gt;security-&gt;xss_clean($data);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$data</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">security</span><span class="o">-&gt;</span><span class="na">xss_clean</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>オプションの第 2 引数、 <em>is_image</em> は、このメソッドを画像ファイルを
@@ -447,10 +448,10 @@ XSS 攻撃に使っている可能性をテストするのに使えます。
 に設定されている場合、返り値として変換した文字列を返すかわりに、画像が安全な場合に TRUE
 を、ブラウザが実行するかもしれない潜在的に悪意のある情報を含む場合には FALSE
 を返します。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>if ($this-&gt;security-&gt;xss_clean($file, TRUE) === FALSE)
-{
-        // ファイルは XSS テストに不合格でした
-}
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">security</span><span class="o">-&gt;</span><span class="na">xss_clean</span><span class="p">(</span><span class="nv">$file</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">)</span> <span class="o">===</span> <span class="k">FALSE</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="c1">// ファイルは XSS テストに不合格でした</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -458,21 +459,21 @@ XSS 攻撃に使っている可能性をテストするのに使えます。
 <h2><a class="toc-backref" href="#id4">クロスサイトリクエストフォージェリ（CSRF）</a><a class="headerlink" href="#csrf" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>次のように <strong>application/config/config.php</strong>
 ファイルを変更することにより、 CSRF 保護を有効にすることができます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$config[&#39;csrf_protection&#39;] = TRUE;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;csrf_protection&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">TRUE</span><span class="p">;</span>
 </pre></div>
 </div>
 <p><a class="reference internal" href="../helpers/form_helper.html"><span class="doc">フォームヘルパー</span></a> を使用している場合、
 <code class="xref py py-func docutils literal"><span class="pre">form_open()</span></code> は自動的にフォームに CSRF 隠れフィールドを挿入します。
 そうでない場合、 <code class="docutils literal"><span class="pre">get_csrf_token_name()</span></code> と
 <code class="docutils literal"><span class="pre">get_csrf_hash()</span></code> を使用することができます。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$csrf = array(
-        &#39;name&#39; =&gt; $this-&gt;security-&gt;get_csrf_token_name(),
-        &#39;hash&#39; =&gt; $this-&gt;security-&gt;get_csrf_hash()
-);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$csrf</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">security</span><span class="o">-&gt;</span><span class="na">get_csrf_token_name</span><span class="p">(),</span>
+        <span class="s1">&#39;hash&#39;</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">security</span><span class="o">-&gt;</span><span class="na">get_csrf_hash</span><span class="p">()</span>
+<span class="p">);</span>
 
-...
+<span class="o">...</span>
 
-&lt;input type=&quot;hidden&quot; name=&quot;&lt;?=$csrf[&#39;name&#39;];?&gt;&quot; value=&quot;&lt;?=$csrf[&#39;hash&#39;];?&gt;&quot; /&gt;
+<span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;hidden&quot;</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;&lt;?=</span><span class="si">$csrf[&#39;name&#39;]</span><span class="s2">;?&gt;&quot;</span> <span class="nx">value</span><span class="o">=</span><span class="s2">&quot;&lt;?=</span><span class="si">$csrf[&#39;hash&#39;]</span><span class="s2">;?&gt;&quot;</span> <span class="o">/&gt;</span>
 </pre></div>
 </div>
 <p>トークンは、すべてのサブミット時に再生成する（デフォルト）か、
@@ -481,20 +482,20 @@ CSRF クッキーの生存期間は同一の値で維持するかのどちらか
 他のトークンが無効になることでユーザビリティの問題をもたらす可能性があります
 （戻る/進むナビゲーション、複数のタブ/ウィンドウ、非同期アクションなど）。
 次の config パラメータを編集することによって、この動作を変更することができます。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$config[&#39;csrf_regenerate&#39;] = TRUE;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;csrf_regenerate&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">TRUE</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>指定の URI を CSRF 保護からホワイトリストに登録することができます
 （例えば外部からコンテンツを POST されることを期待する API エンドポイント）。
 「 csrf_exclude_uris 」configパラメータを編集することで、これらの URI を追加することができます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$config[&#39;csrf_exclude_uris&#39;] = array(&#39;api/person/add&#39;);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;csrf_exclude_uris&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;api/person/add&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>正規表現もサポートされています（大文字小文字を区別しません）:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$config[&#39;csrf_exclude_uris&#39;] = array(
-        &#39;api/record/[0-9]+&#39;,
-        &#39;api/title/[a-z]+&#39;
-);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;csrf_exclude_uris&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;api/record/[0-9]+&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;api/title/[a-z]+&#39;</span>
+<span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -550,12 +551,12 @@ CSRF クッキーの生存期間は同一の値で維持するかのどちらか
 </table>
 <p>ディレクトリトラバーサルやその他セキュリティの脅威を防止するためにファイル名のサニタイズを実施します。
 ユーザ入力により与えられたファイル名には特に有用です。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$filename = $this-&gt;security-&gt;sanitize_filename($this-&gt;input-&gt;post(&#39;filename&#39;));
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$filename</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">security</span><span class="o">-&gt;</span><span class="na">sanitize_filename</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">post</span><span class="p">(</span><span class="s1">&#39;filename&#39;</span><span class="p">));</span>
 </pre></div>
 </div>
 <p>相対パスを含めてユーザ入力を許可したい場合、たとえば
 <em>file/in/some/approved/folder.txt</em> 、第 2 引数の <code class="docutils literal"><span class="pre">$relative_path</span></code>  を TRUE に設定することでできます</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$filename = $this-&gt;security-&gt;sanitize_filename($this-&gt;input-&gt;post(&#39;filename&#39;), TRUE);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$filename</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">security</span><span class="o">-&gt;</span><span class="na">sanitize_filename</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">post</span><span class="p">(</span><span class="s1">&#39;filename&#39;</span><span class="p">),</span> <span class="k">TRUE</span><span class="p">);</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -674,7 +675,7 @@ CSRF クッキーの生存期間は同一の値で維持するかのどちらか
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 9月 06, 2016
+      最終更新: 9月 04, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

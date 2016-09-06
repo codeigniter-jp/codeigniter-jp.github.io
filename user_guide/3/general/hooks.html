@@ -415,6 +415,7 @@
       <img title="Classic Layout" alt="classic layout" src="data:image/gif;base64,R0lGODlhFAAUAJEAAAAAADMzM////wAAACH5BAUUAAIALAAAAAAUABQAAAImlI+py+0PU5gRBRDM3DxbWoXis42X13USOLauUIqnlsaH/eY6UwAAOw==" />
     </div>
   </ul>
+<div style="float:right;margin-left:5px;">[ <a href="https://github.com/codeigniter-jp/ci-ja/blob/develop/user_guide_ja_src/source/general/hooks.rst">旧版翻訳途中</a> | <a href="https://github.com/bcit-ci/CodeIgniter/commits/develop/user_guide_src/source/general/hooks.rst">原文履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/commits/develop_japanese/source/general/hooks.rst">翻訳履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/source/general/hooks.rst">GitHubで修正</a> ]</div><br /><div style="float:right;margin-left:5px;">[ <b class="highlighted">翻訳者募集中</b> → <a href="https://docs.google.com/spreadsheets/d/1ZWD5XqwH-Uo9X7MR644jbL6O8p5LxIngLT8M547H8wc/edit?pref=2&pli=1#gid=0">翻訳状況</a> ]</div>
   <hr/>
 </div>
           <div role="main" class="document">
@@ -434,7 +435,7 @@ CodeIgniter が実行するとき、つぎの
 <h2>フックの有効化<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>フック機能は
 ** application/config/config.php** ファイルのつぎの項目を設定することでグローバルに有効/無効にできます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$config[&#39;enable_hooks&#39;] = TRUE;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;enable_hooks&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">TRUE</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -442,13 +443,13 @@ CodeIgniter が実行するとき、つぎの
 <h2>フックの定義<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>フックは <strong>application/config/hooks.php</strong> ファイルで定義されています。
 各フックはつぎのプロトタイプを持つ配列として指定されます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$hook[&#39;pre_controller&#39;] = array(
-        &#39;class&#39;    =&gt; &#39;MyClass&#39;,
-        &#39;function&#39; =&gt; &#39;Myfunction&#39;,
-        &#39;filename&#39; =&gt; &#39;Myclass.php&#39;,
-        &#39;filepath&#39; =&gt; &#39;hooks&#39;,
-        &#39;params&#39;   =&gt; array(&#39;beer&#39;, &#39;wine&#39;, &#39;snacks&#39;)
-);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$hook</span><span class="p">[</span><span class="s1">&#39;pre_controller&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;class&#39;</span>    <span class="o">=&gt;</span> <span class="s1">&#39;MyClass&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;function&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Myfunction&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;filename&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Myclass.php&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;filepath&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;hooks&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;params&#39;</span>   <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;beer&#39;</span><span class="p">,</span> <span class="s1">&#39;wine&#39;</span><span class="p">,</span> <span class="s1">&#39;snacks&#39;</span><span class="p">)</span>
+<span class="p">);</span>
 </pre></div>
 </div>
 <p><strong>Notes:</strong></p>
@@ -474,10 +475,10 @@ filepath として使用します。末尾にスラッシュは不要です。</
 </ul>
 <p>PHP 5.3以上で実行している場合は、ラムダ/無名関数
 (またはクロージャ) を使用することができます。簡単な構文です:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$hook[&#39;post_controller&#39;] = function()
-{
-        /* ここで何かします */
-};
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$hook</span><span class="p">[</span><span class="s1">&#39;post_controller&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">function</span><span class="p">()</span>
+<span class="p">{</span>
+        <span class="cm">/* ここで何かします */</span>
+<span class="p">};</span>
 </pre></div>
 </div>
 </div>
@@ -485,25 +486,25 @@ filepath として使用します。末尾にスラッシュは不要です。</
 <h2>同じフックでの複数の呼び出し<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>複数のスクリプトを同じフックポイントで使用したい場合、
 単に多次元配列として宣言します、このように:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$hook[&#39;pre_controller&#39;][] = array(
-        &#39;class&#39;    =&gt; &#39;MyClass&#39;,
-        &#39;function&#39; =&gt; &#39;MyMethod&#39;,
-        &#39;filename&#39; =&gt; &#39;Myclass.php&#39;,
-        &#39;filepath&#39; =&gt; &#39;hooks&#39;,
-        &#39;params&#39;   =&gt; array(&#39;beer&#39;, &#39;wine&#39;, &#39;snacks&#39;)
-);
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$hook</span><span class="p">[</span><span class="s1">&#39;pre_controller&#39;</span><span class="p">][]</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;class&#39;</span>    <span class="o">=&gt;</span> <span class="s1">&#39;MyClass&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;function&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;MyMethod&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;filename&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Myclass.php&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;filepath&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;hooks&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;params&#39;</span>   <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;beer&#39;</span><span class="p">,</span> <span class="s1">&#39;wine&#39;</span><span class="p">,</span> <span class="s1">&#39;snacks&#39;</span><span class="p">)</span>
+<span class="p">);</span>
 
-$hook[&#39;pre_controller&#39;][] = array(
-        &#39;class&#39;    =&gt; &#39;MyOtherClass&#39;,
-        &#39;function&#39; =&gt; &#39;MyOtherMethod&#39;,
-        &#39;filename&#39; =&gt; &#39;Myotherclass.php&#39;,
-        &#39;filepath&#39; =&gt; &#39;hooks&#39;,
-        &#39;params&#39;   =&gt; array(&#39;red&#39;, &#39;yellow&#39;, &#39;blue&#39;)
-);
+<span class="nv">$hook</span><span class="p">[</span><span class="s1">&#39;pre_controller&#39;</span><span class="p">][]</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;class&#39;</span>    <span class="o">=&gt;</span> <span class="s1">&#39;MyOtherClass&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;function&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;MyOtherMethod&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;filename&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Myotherclass.php&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;filepath&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;hooks&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;params&#39;</span>   <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;yellow&#39;</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+<span class="p">);</span>
 </pre></div>
 </div>
 <p>各配列インデックスの後の括弧に注意してください:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$hook[&#39;pre_controller&#39;][]
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$hook</span><span class="p">[</span><span class="s1">&#39;pre_controller&#39;</span><span class="p">][]</span>
 </pre></div>
 </div>
 <p>これにより複数のスクリプトで同じフックポイントを持つことができます。
@@ -563,7 +564,7 @@ CI スーパーオブジェクトへの参照が <code class="docutils literal">
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 9月 06, 2016
+      最終更新: 9月 04, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

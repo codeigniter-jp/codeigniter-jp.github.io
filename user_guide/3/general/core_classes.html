@@ -415,6 +415,7 @@
       <img title="Classic Layout" alt="classic layout" src="data:image/gif;base64,R0lGODlhFAAUAJEAAAAAADMzM////wAAACH5BAUUAAIALAAAAAAUABQAAAImlI+py+0PU5gRBRDM3DxbWoXis42X13USOLauUIqnlsaH/eY6UwAAOw==" />
     </div>
   </ul>
+<div style="float:right;margin-left:5px;">[ <a href="https://github.com/codeigniter-jp/ci-ja/blob/develop/user_guide_ja_src/source/general/core_classes.rst">旧版翻訳途中</a> | <a href="https://github.com/bcit-ci/CodeIgniter/commits/develop/user_guide_src/source/general/core_classes.rst">原文履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/commits/develop_japanese/source/general/core_classes.rst">翻訳履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/source/general/core_classes.rst">GitHubで修正</a> ]</div><br /><div style="float:right;margin-left:5px;">[ <b class="highlighted">翻訳者募集中</b> → <a href="https://docs.google.com/spreadsheets/d/1ZWD5XqwH-Uo9X7MR644jbL6O8p5LxIngLT8M547H8wc/edit?pref=2&pli=1#gid=0">翻訳状況</a> ]</div>
   <hr/>
 </div>
           <div role="main" class="document">
@@ -437,20 +438,20 @@ CodeIgniter のコアを大幅に変更したい人のために存在します�
 <h2>システムクラス一覧<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>以下は
 CodeIgniter が実行されるたびに呼び出されるコアシステムファイルのリストです:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>-  Benchmark
--  Config
--  Controller
--  Exceptions
--  Hooks
--  Input
--  Language
--  Loader
--  Log
--  Output
--  Router
--  Security
--  URI
--  Utf8
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">-</span>  <span class="nx">Benchmark</span>
+<span class="o">-</span>  <span class="nx">Config</span>
+<span class="o">-</span>  <span class="nx">Controller</span>
+<span class="o">-</span>  <span class="nx">Exceptions</span>
+<span class="o">-</span>  <span class="nx">Hooks</span>
+<span class="o">-</span>  <span class="nx">Input</span>
+<span class="o">-</span>  <span class="nx">Language</span>
+<span class="o">-</span>  <span class="nx">Loader</span>
+<span class="o">-</span>  <span class="nx">Log</span>
+<span class="o">-</span>  <span class="nx">Output</span>
+<span class="o">-</span>  <span class="nx">Router</span>
+<span class="o">-</span>  <span class="nx">Security</span>
+<span class="o">-</span>  <span class="nx">URI</span>
+<span class="o">-</span>  <span class="nx">Utf8</span>
 </pre></div>
 </div>
 </div>
@@ -458,7 +459,7 @@ CodeIgniter が実行されるたびに呼び出されるコアシステムフ�
 <h2>コアクラスの置き換え<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>デフォルトのかわりに独自システムクラスを使うには、
 シンプルに手元の <em>application/core/</em> ディレクトリ内にそれを置いてください:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>application/core/some_class.php
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">application</span><span class="o">/</span><span class="nx">core</span><span class="o">/</span><span class="nx">some_class</span><span class="o">.</span><span class="nx">php</span>
 </pre></div>
 </div>
 <p>このディレクトリが存在しない場合は、作ってください。</p>
@@ -466,9 +467,9 @@ CodeIgniter が実行されるたびに呼び出されるコアシステムフ�
 通常使用されるものの代わりに使用されます。</p>
 <p>クラスがプレフィックスとして CI を使用しなければならないことに注意してください。
 たとえば、ファイル Input.php のクラスはつぎのように名付けられます:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>class CI_Input {
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">CI_Input</span> <span class="p">{</span>
 
-}
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -486,22 +487,22 @@ CodeIgniter が実行されるたびに呼び出されるコアシステムフ�
 </ul>
 <p>たとえば、標準の入力クラスを継承するためには、
 application/core/MY_Input.php という名前のファイルを作成し、つぎのようにクラスを宣言します:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>class MY_Input extends CI_Input {
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MY_Input</span> <span class="k">extends</span> <span class="nx">CI_Input</span> <span class="p">{</span>
 
-}
+<span class="p">}</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
 <p>クラスのコンストラクタを使用する必要がある場合、
 親クラスのコンストラクタを呼び出していることを確認してください:</p>
-<div class="last highlight-ci"><div class="highlight"><pre><span></span>class MY_Input extends CI_Input {
+<div class="last highlight-ci"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MY_Input</span> <span class="k">extends</span> <span class="nx">CI_Input</span> <span class="p">{</span>
 
-        public function __construct()
-        {
-                parent::__construct();
-        }
-}
+        <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">()</span>
+        <span class="p">{</span>
+                <span class="k">parent</span><span class="o">::</span><span class="na">__construct</span><span class="p">();</span>
+        <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -511,25 +512,25 @@ application/core/MY_Input.php という名前のファイルを作成し、つ�
 これにより、実質的に CodeIgniter のコアを変更することができます。</p>
 <p>コントローラのコアクラスを継承している場合、
 アプリケーションのコントローラのコンストラクタが使われていることを確かめてください。</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>class Welcome extends MY_Controller {
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Welcome</span> <span class="k">extends</span> <span class="nx">MY_Controller</span> <span class="p">{</span>
 
-        public function __construct()
-        {
-                parent::__construct();
-        }
+        <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">()</span>
+        <span class="p">{</span>
+                <span class="k">parent</span><span class="o">::</span><span class="na">__construct</span><span class="p">();</span>
+        <span class="p">}</span>
 
-        public function index()
-        {
-                $this-&gt;load-&gt;view(&#39;welcome_message&#39;);
-        }
-}
+        <span class="k">public</span> <span class="k">function</span> <span class="nf">index</span><span class="p">()</span>
+        <span class="p">{</span>
+                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;welcome_message&#39;</span><span class="p">);</span>
+        <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <div class="section" id="id5">
 <h3>独自のプレフィックスを設定する<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>独自のプレフィックスを設定するには
 <em>application/config/config.php</em> ファイルを開いて、つぎの項目を探してください:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span>$config[&#39;subclass_prefix&#39;] = &#39;MY_&#39;;
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;subclass_prefix&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;MY_&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>すべての標準の CodeIgniter のライブラリはプレフィックスに
@@ -557,7 +558,7 @@ CI_ がついていますので、これは　使　わ　な　い　よ　う�
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 9月 06, 2016
+      最終更新: 9月 04, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 
