@@ -1,0 +1,17 @@
+{
+  "name": "assets",
+  "description": "",
+  "main": "",
+  "license": "",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "webhostinghub-glyphs": "^0.1.3"
+  }
+}

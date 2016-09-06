@@ -1,0 +1,24 @@
+{
+  "name": "webhostinghub-glyphs",
+  "description": "WebHostingHub Glyphs Bower repository",
+  "version": "0.1.3",
+  "license": "MIT",
+  "ignore": [
+    ".*",
+    "node_modules",
+    "libs",
+    "build",
+    "package.json"
+  ],
+  "homepage": "https://github.com/gustavohenke/webhostinghub-glyphs",
+  "_release": "0.1.3",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.1.3",
+    "commit": "da4030472f00928555a8b54b81cfb59b53f8756e"
+  },
+  "_source": "https://github.com/gustavohenke/webhostinghub-glyphs.git",
+  "_target": "^0.1.3",
+  "_originalSource": "webhostinghub-glyphs",
+  "_direct": true
+}

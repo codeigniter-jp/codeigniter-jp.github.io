@@ -1,0 +1,10 @@
+# editor
+.idea
+*.iml
+
+# mac
+*~
+.DS_Store
+
+#webhostinghub-glyphs
+assets/bower_components/webhostinghub-glyphs/*.html
