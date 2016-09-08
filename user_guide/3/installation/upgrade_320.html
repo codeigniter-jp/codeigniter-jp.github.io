@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Upgrading from 3.1.x to 3.2.x &mdash; CodeIgniter 3.2.0-dev ドキュメント</title>
+  <title>3.1.x から 3.2.x へのアップグレード &mdash; CodeIgniter 3.2.0-dev ドキュメント</title>
   
 
   
@@ -409,7 +409,7 @@
       
         <li><a href="upgrading.html">以前のバージョンからのアップグレード</a> &raquo;</li>
       
-    <li>Upgrading from 3.1.x to 3.2.x</li>
+    <li>3.1.x から 3.2.x へのアップグレード</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -422,38 +422,38 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="upgrading-from-3-1-x-to-3-2-x">
-<h1>Upgrading from 3.1.x to 3.2.x<a class="headerlink" href="#upgrading-from-3-1-x-to-3-2-x" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>Before performing an update you should take your site offline by
-replacing the index.php file with a static one.</p>
-<div class="section" id="step-1-update-your-codeigniter-files">
-<h2>Step 1: Update your CodeIgniter files<a class="headerlink" href="#step-1-update-your-codeigniter-files" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Replace all files and directories in your <em>system/</em> directory.</p>
+  <div class="section" id="x-3-2-x">
+<h1>3.1.x から 3.2.x へのアップグレード<a class="headerlink" href="#x-3-2-x" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>アップグレードを行う前に、
+index.phpファイルを静的ページに置き換えて、オフラインにする必要があります。</p>
+<div class="section" id="step-1-codeigniter">
+<h2>Step 1: CodeIgniter ファイルのアップグレード<a class="headerlink" href="#step-1-codeigniter" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p><em>system/</em> ディレクトリのすべてのファイルとディレクトリを新しいものに置き換えてください。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">If you have any custom developed files in these directories,
-please make copies of them first.</p>
+<p class="last">ユーザバージョンのファイルがディレクトリ内にある場合には、
+最初にそれらのコピーを取っておいてください。</p>
 </div>
 </div>
-<div class="section" id="step-2-change-database-connection-handling">
-<h2>Step 2: Change database connection handling<a class="headerlink" href="#step-2-change-database-connection-handling" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>&#8220;Loading&#8221; a database, whether by using the <em>config/autoload.php</em> settings
-or manually via calling <code class="docutils literal"><span class="pre">$this-&gt;load-&gt;database()</span></code> or the less-known
-<code class="docutils literal"><span class="pre">DB()</span></code> function, will now throw a <code class="docutils literal"><span class="pre">RuntimeException</span></code> in case of a
-failure.</p>
-<p>In addition, being unable to set the configured character set is now also
-considered a connection failure.</p>
+<div class="section" id="step-2">
+<h2>Step 2: データベース接続方法の変更<a class="headerlink" href="#step-2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p><em>config/autoload.php</em> 設定や、手動で <code class="docutils literal"><span class="pre">$this-&gt;load-&gt;database()</span></code> を呼び出すことや
+あまり知られていない <code class="docutils literal"><span class="pre">DB()</span></code> 関数を使うかどうかに関わらず
+データベースの &#8220;ローディング&#8221; に失敗すると、現在は <code class="docutils literal"><span class="pre">RuntimeException</span></code> を
+スローします。</p>
+<p>また、指定された文字コードを設定することができない場合も、
+現在は接続の失敗とみなされます。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">This has been the case for most database drivers in the in the
-past as well (i.e. all but the &#8216;mysql&#8217;, &#8216;mysqli&#8217; and &#8216;postgre&#8217;
-drivers).</p>
+<p class="last">これは今までもほとんどのデータベースドライバ
+（例えば &#8216;mysql&#8217; 、&#8217;mysqli&#8217; 、&#8217;postgre&#8217; 以外）で
+そうでした。</p>
 </div>
-<p>What this means is that if you&#8217;re unable to connect to a database, or
-have an erroneous character set configured, CodeIgniter will no longer
-fail silently, but will throw an exception instead.</p>
-<p>You may choose to explicitly catch it (and for that purpose you can&#8217;t use
-<em>config/autoload.php</em> to load the <a class="reference internal" href="../database/index.html"><span class="doc">Database Class</span></a>)</p>
+<p>これが意味していることは、もしデータベースに接続できない場合や
+誤った文字コードが設定されている場合、CodeIgniter は黙ってエラーにせずに、
+代わりに例外をスローします。</p>
+<p>明示的に例外を捕捉することを選択できます。（その用途では <a class="reference internal" href="../database/index.html"><span class="doc">データベースクラス</span></a>
+をロードするのに <em>config/autoload.php</em> を使うことはできません。）</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">try</span>
 <span class="p">{</span>
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">database</span><span class="p">();</span>
@@ -464,61 +464,61 @@ fail silently, but will throw an exception instead.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Or you may leave it to CodeIgniter&#8217;s default exception handler, which would
-log the error message and display an error screen if you&#8217;re running in
-development mode.</p>
-<div class="section" id="remove-db-set-charset-calls">
-<h3>Remove db_set_charset() calls<a class="headerlink" href="#remove-db-set-charset-calls" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>With the above-mentioned changes, the purpose of the <code class="docutils literal"><span class="pre">db_set_charset()</span></code>
-method would now only be to change the connection character set at runtime.
-That doesn&#8217;t make sense and that&#8217;s the reason why most database drivers
-don&#8217;t support it at all.
-Thus, <code class="docutils literal"><span class="pre">db_set_charset()</span></code> is no longer necessary and is removed.</p>
+<p>または、CodeIgniter のデフォルトの例外ハンドラに残すことができます。
+もし development モードで実行していれば、エラーメッセージがログに出力され
+エラー画面が表示されます。</p>
+<div class="section" id="db-set-charset">
+<h3>db_set_charset() の呼び出しを削除<a class="headerlink" href="#db-set-charset" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>上述の変更により、 <code class="docutils literal"><span class="pre">db_set_charset()</span></code> メソッドの目的は、
+現在は実行時に接続時の文字コードを変更することだけです。
+それは意味がありません。ほとんどのデータベースドライバーが
+それをサポートしていないというのが理由です。
+従って、 <code class="docutils literal"><span class="pre">db_set_charset()</span></code> はもはや必要でなく、削除されました。</p>
 </div>
 </div>
-<div class="section" id="step-3-check-logic-related-to-uri-parsing-of-cli-requests">
-<h2>Step 3: Check logic related to URI parsing of CLI requests<a class="headerlink" href="#step-3-check-logic-related-to-uri-parsing-of-cli-requests" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>When running a CodeIgniter application from the CLI, the
-<a class="reference internal" href="../libraries/uri.html"><span class="doc">URI Library</span></a> will now ignore the
-<code class="docutils literal"><span class="pre">$config['url_suffix']</span></code> and <code class="docutils literal"><span class="pre">$config['permitted_uri_chars']</span></code>
-configuration settings.</p>
-<p>These two options don&#8217;t make sense under the command line (which is why
-this change was made) and therefore you shouldn&#8217;t be affected by this, but
-if you&#8217;ve relied on them for some reason, you&#8217;d probably have to make some
-changes to your code.</p>
+<div class="section" id="step-3-cli-uri">
+<h2>Step 3: CLI リクエストの URI の解析に関連したロジックを確認<a class="headerlink" href="#step-3-cli-uri" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>CLI から CodeIgniter のアプリケーションを実行する時、
+<a class="reference internal" href="../libraries/uri.html"><span class="doc">URI クラス</span></a> は、現在
+<code class="docutils literal"><span class="pre">$config['url_suffix']</span></code> と <code class="docutils literal"><span class="pre">$config['permitted_uri_chars']</span></code> の設定は
+無視されます。</p>
+<p>これらの2つのオプションは、コマンドラインでは意味がありません。
+（この変更が行われた理由です。）そのため、このことによって影響を受けることは
+ありません。しかし、何がしかの理由でそれらを使用してきた場合、コードに
+いくつかの変更を加える必要があります。</p>
 </div>
-<div class="section" id="step-4-check-cache-library-configurations-for-redis-memcache-d">
-<h2>Step 4: Check Cache Library configurations for Redis, Memcache(d)<a class="headerlink" href="#step-4-check-cache-library-configurations-for-redis-memcache-d" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>The new improvements for the &#8216;redis&#8217; and &#8216;memcached&#8217; drivers of the
-<a class="reference internal" href="../libraries/caching.html"><span class="doc">Cache Library</span></a> may require some small
-adjustments to your configuration values ...</p>
+<div class="section" id="step-4-redismemcache-d">
+<h2>Step 4: Redis、Memcache(d) キャッシュライブラリの設定ファイルを確認<a class="headerlink" href="#step-4-redismemcache-d" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p><a class="reference internal" href="../libraries/caching.html"><span class="doc">キャッシングドライバ</span></a> の
+&#8216;redis&#8217; 、&#8217;memcached&#8217; ドライバのための新しい改善は、
+設定値への小さな修正が必要となる場合があります...</p>
 <div class="section" id="redis">
 <h3>Redis<a class="headerlink" href="#redis" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>If you&#8217;re using the &#8216;redis&#8217; driver with a UNIX socket connection, you&#8217;ll
-have to move the socket path from <code class="docutils literal"><span class="pre">$config['socket']</span></code> to
-<code class="docutils literal"><span class="pre">$config['host']</span></code> instead.</p>
-<p>The <code class="docutils literal"><span class="pre">$config['socket_type']</span></code> option is also removed, although that won&#8217;t
-affect your application - it will be ignored and the connection type will
-be determined by the format used for <code class="docutils literal"><span class="pre">$config['host']</span></code> instead.</p>
+<p>UNIX ソケット接続を使って &#8216;redis&#8217; ドライバを利用してる場合、
+ソケットのパスを <code class="docutils literal"><span class="pre">$config['socket']</span></code> から <code class="docutils literal"><span class="pre">$config['host']</span></code> へ
+移行する必要があります。</p>
+<p><code class="docutils literal"><span class="pre">$config['socket_type']</span></code> オプションもまた削除されました。しかしながら
+それはアプリケーションへ影響しません。 - それは無視されます。
+そして接続タイプは <code class="docutils literal"><span class="pre">$config['host']</span></code> のフォーマットによって決定されます。</p>
 </div>
 <div class="section" id="memcache-d">
 <h3>Memcache(d)<a class="headerlink" href="#memcache-d" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>The &#8216;memcached&#8217; will now ignore configurations that don&#8217;t specify a <code class="docutils literal"><span class="pre">host</span></code>
-value (previously, it just set the host to the default &#8216;127.0.0.1&#8217;).</p>
-<p>Therefore, if you&#8217;ve added a configuration that only sets e.g. a <code class="docutils literal"><span class="pre">port</span></code>,
-you will now have to explicitly set the <code class="docutils literal"><span class="pre">host</span></code> to &#8216;127.0.0.1&#8217; as well.</p>
+<p>&#8216;memcached&#8217; は、現在、<code class="docutils literal"><span class="pre">host</span></code> 値を指定しない設定を無視します。
+（以前は、ホストにデフォルトの &#8216;127.0.0.1&#8217; を設定していました）</p>
+<p>従って、例えば <code class="docutils literal"><span class="pre">port</span></code> のみ設定を追加していた場合、
+現在はその上、明示的に <code class="docutils literal"><span class="pre">host</span></code> に &#8216;127.0.0.1&#8217; を設定する必要があります。</p>
 </div>
 </div>
-<div class="section" id="step-5-check-usage-of-doctype-html-helper">
-<h2>Step 5: Check usage of doctype() HTML helper<a class="headerlink" href="#step-5-check-usage-of-doctype-html-helper" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>The <a class="reference internal" href="../helpers/html_helper.html"><span class="doc">HTML Helper</span></a> function
-<a class="reference internal" href="../helpers/html_helper.html#doctype" title="doctype"><code class="xref php php-func docutils literal"><span class="pre">doctype()</span></code></a> used to default to &#8216;xhtml1-strict&#8217; (XHTML 1.0 Strict)
-when no document type was specified. That default value is now changed to
-&#8216;html5&#8217;, which obviously stands for the modern HTML 5 standard.</p>
-<p>Nothing should be really broken by this change, but if your application
-relies on the default value, you should double-check it and either
-explicitly set the desired format, or adapt your front-end to use proper
-HTML 5 formatting.</p>
+<div class="section" id="step-5-doctype-html">
+<h2>Step 5: doctype() HTML ヘルパーの使用を確認<a class="headerlink" href="#step-5-doctype-html" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p><a class="reference internal" href="../helpers/html_helper.html"><span class="doc">HTML ヘルパー</span></a> の 関数である
+<a class="reference internal" href="../helpers/html_helper.html#doctype" title="doctype"><code class="xref php php-func docutils literal"><span class="pre">doctype()</span></code></a> は ドキュメントタイプが指定されていない場合
+&#8216;xhtml1-strict&#8217; (XHTML 1.0 Strict) をデフォルトで使用していました。デフォルト値は現在、
+言うまでもなくモダンな HTML 5 スタンダードを表す &#8216;html5&#8217; に変更されました。</p>
+<p>どんなものもこの変更によって壊れるべきではありません。もし、アプリケーションが
+デフォルト値に依存していた場合、それをダブルチェックし
+望むべきフォーマットをセットするか、HTML 5 のフォーマットを使用するように
+フロントエンドを適用させるべきです。</p>
 </div>
 </div>
 
@@ -541,7 +541,7 @@ HTML 5 formatting.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 9月 04, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
+      最終更新: 9月 09, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 
