@@ -3,184 +3,73 @@ body, html {
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color: #111111;
+    background-color: black;
     display: block;
-    font-family: 'Helvetica Neue', Helvetica, Arial, Verdana, 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
 }
 
-/* header ここから */
-header.wrap {
-    background-color: #FCFCFC;
-    border-bottom:1px solid #000;
+div.wrap {
+    background-color: #FFF;
     margin: 0;
-    padding: 1.5rem 0 2rem 0;
+    padding: 0;
 }
 
-    h1.top-logo {
-        padding: 0 0 2rem;
-        text-align: center;
-    }
+h1.top-logo {
+    padding-top: 30px;
+    text-align: center;
 
-        h1.top-logo span {
-            display:block;
-            margin-top:0.8rem;
-            font-family: 'Noto Sans';
-        }
-
-    /* ユーザガイドのリンク */
-    h3 {
-        font-size:1.2rem;
-    }
-
-    a i.icon-bookthree {
-        position:relative;
-        top:4px;
-        left:-6px;
-    }
-
-    ul.user-guide {
-        margin: 1rem auto;
-        padding:0;
-        display:flex;
-        list-style-type:none;
-        justify-content: center;
-        align-items: center;
-    }
-
-    ul.user-guide li:first-child {
-        margin-right:1rem;
-    }
-
-    .codeigniter-bg {
-        background-color:#dd4814;
-        border-color:#dd4814;
-        color: #FCFCFC;
-        padding: 10px 24px 12px;
-    }
-
-    .codeigniter-bg:hover {
-        background-color:#97310e;
-        border-color:#97310e;
-        color: #FCFCFC;
-    }
-
-/* header ここまで */
-
-/* share ここから */
-ul.share {
-    list-style-type:none;
-    display:flex;
-    justify-content: flex-end;
-    margin:0;
-    margin-right:1rem;
 }
 
-.share_facebook {
-    background-color:#4267b2;
-    display: inline-block;
-    padding: 2px 8px 2px 6px;
-    border-radius: 3px;
-    margin-left: 1rem;
-    color: #fcfcfc;
-    font-weight:500;
-    font-size:11px;
-
-    position: relative;
-    top:-4px;
+h1.top-logo i {
+    color: red;
+    font-size: 200px;
 }
-.share_facebook:hover {
-    text-decoration:none;
-    color: #fcfcfc;
-    background-color:#375796;
-}
-.share_facebook i {
-    position:relative;
-    top:1px;
-}
-
-/* share ここまで */
-
-
-/* nav ここから */
 
 nav.menu {
-    color: #FCFCFC;
-}
-
-h2 {
-    margin-top: 2rem;
-    font-size:1.1rem;
-    text-align:center;
-}
-
-h2 i{
-    font-size:1rem;
-    margin-right: 0.2rem;
+    margin-top: 20px;
+    color: #FFF;
+    font-size: 90%;
 }
 
 nav.menu a {
-    color: #FCFCFC;
+    color: #FFF;
     text-decoration: none;
 }
 
 nav.menu a:hover {
-    color: #cf4413;
+    color: pink;
 }
 
 nav.menu ul {
-    margin-top:1rem;
     padding: 0;
 }
 
-    nav.menu ul li:before {
-        content: '--';
-        margin-right:1rem;
-        font-weight:100;
-    }
+nav.menu ul li {
+    border-bottom: #CCC solid 1px;
+    list-style: none;
+    padding: 4px 8px;
+}
 
-    nav.menu ul li:first-child {
-        border-top:0;
-    }
+.share_facebook {
+    background-color: #005580;
+    display: inline-block;
+    padding-right: 10px;
+    top: -4px;
+    position: relative;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    margin-left: 2px;
+}
 
-    nav.menu ul li {
-        border-top: #222 solid 1px;
-        border-bottom: #000 solid 1px;
-        list-style: none;
-        padding: 0.5rem 1rem;
-        font-size: 0.9rem;
-    }
-
-    nav.menu ul li:last-child {
-        border-bottom:none;
-    }
-
-
-
-footer:before {
-    border-top: 1px solid #000;
-    padding-bottom:5rem;
+.user-guide {
+    text-align: center;
+    margin: 16px auto;
 }
 
 footer {
+    margin-top: 30px;
     color: #FFF;
     font-size: 80%;
     text-align: center;
-    padding-top:2rem;
-    margin-bottom:3rem;
 }
 
-
-/*********************
-    Helper
-*********************/
-
-.text-center {
-    text-align:center;
-}
-
-hr {
-    border:none;
-
-    border-bottom: 1px solid rgba(0,0,0,1);
-    box-shadow: 0 1px 0 rgba(255,255,255,0.1);
-}

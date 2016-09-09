@@ -8,6 +8,3 @@
 
 #webhostinghub-glyphs
 assets/bower_components/webhostinghub-glyphs/*.html
-
-# gulp
-/node_modules/
