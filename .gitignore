@@ -8,3 +8,4 @@
 
 #webhostinghub-glyphs
 assets/bower_components/webhostinghub-glyphs/*.html
+node_modules/

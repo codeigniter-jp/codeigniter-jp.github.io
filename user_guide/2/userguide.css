@@ -1,3 +1,30 @@
+/* error messageの追加 */
+
+#errorMessage {
+ background-color: #e13300;
+ color: #fff;
+ padding: 1rem 2rem;
+ border-radius:2px;
+ margin-bottom:2rem;
+}
+
+#errorMessage a {
+ margin:1rem 0 0.5rem;
+ color : #fff;
+ display:block;
+ text-decoration:underline;
+}
+
+#errorMessage a:hover {
+ color:#c0c0c0;
+}
+
+#errorMessage a:before {
+ content : '-- ';
+}
+
+/* ここまでerror messageの追加 */
+
 body {
  margin: 0;
  padding: 0;
