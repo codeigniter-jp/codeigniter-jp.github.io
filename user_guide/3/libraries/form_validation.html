@@ -422,14 +422,14 @@
             
   <div class="section" id="id1">
 <h1><a class="toc-backref" href="#id30">フォームバリデーション（検証）</a><a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>CodeIgniter は、最小限のコードで総合的なフォームバリデーションとデータ
-の準備をするクラスを提供します。</p>
+<p>CodeIgniter では包括的なフォーム検証とデータ準備のクラスを提供します。
+あなたが書くつもりのコード量を最小限に抑えることができるでしょう。</p>
 <div class="contents topic" id="page-contents">
 <p class="topic-title first">Page Contents</p>
 <ul class="simple">
 <li><a class="reference internal" href="#id1" id="id30">フォームバリデーション（検証）</a><ul>
 <li><a class="reference internal" href="#id2" id="id31">概要</a></li>
-<li><a class="reference internal" href="#id3" id="id32">チュートリアル</a><ul>
+<li><a class="reference internal" href="#id3" id="id32">フォームバリデーションチュートリアル</a><ul>
 <li><a class="reference internal" href="#id4" id="id33">入力フォーム</a></li>
 <li><a class="reference internal" href="#id5" id="id34">成功ページ</a></li>
 <li><a class="reference internal" href="#id6" id="id35">コントローラ</a></li>
@@ -467,57 +467,57 @@
 </div>
 <div class="section" id="id2">
 <h2><a class="toc-backref" href="#id31">概要</a><a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>Before explaining CodeIgniter&#8217;s approach to data validation, let&#8217;s
-describe the ideal scenario:</p>
+<p>CodeIgniter のデータ検証に対するアプローチを説明する前に、
+理想的なシナリオを説明してみましょう:</p>
 <ol class="arabic simple">
-<li>A form is displayed.</li>
-<li>You fill it in and submit it.</li>
-<li>If you submitted something invalid, or perhaps missed a required
-item, the form is redisplayed containing your data along with an
-error message describing the problem.</li>
-<li>This process continues until you have submitted a valid form.</li>
+<li>フォームが表示されます。</li>
+<li>それを記入し、送信します。</li>
+<li>無効なものを送信したなら、つまりもしかしたら必須項目を逃した場合は、
+問題を説明するエラーメッセージとともに
+フォームはあなたのデータを再表示します。</li>
+<li>有効なフォームを送信するまで、このプロセスが継続します。</li>
 </ol>
-<p>On the receiving end, the script must:</p>
+<p>受信側では、スクリプトは次のことを満たす必要があります:</p>
 <ol class="arabic simple">
-<li>Check for required data.</li>
-<li>Verify that the data is of the correct type, and meets the correct
-criteria. For example, if a username is submitted it must be
-validated to contain only permitted characters. It must be of a
-minimum length, and not exceed a maximum length. The username can&#8217;t
-be someone else&#8217;s existing username, or perhaps even a reserved word.
-Etc.</li>
-<li>Sanitize the data for security.</li>
-<li>Pre-format the data if needed (Does the data need to be trimmed? HTML
-encoded? Etc.)</li>
-<li>Prep the data for insertion in the database.</li>
+<li>必須データを確認します。</li>
+<li>データが正しい型であり、正しく基準を満たしていることを確認します。
+例えばユーザ名が送信された場合、
+許可された文字だけを含むように検証する必要があります。
+これは最小長より大きく、最大長を超えてはなりません。
+ユーザ名は他の誰かの既存ユーザ名は使えず、またはおそらく予約語も使えません。
+など。</li>
+<li>セキュリティのためにデータをサニタイズします。</li>
+<li>必要に応じてデータをプリフォーマットします
+（データはトリミングを必要とする？　HTML のエンコードは？　など）。</li>
+<li>データベースに挿入するためのデータを準備します。</li>
 </ol>
-<p>Although there is nothing terribly complex about the above process, it
-usually requires a significant amount of code, and to display error
-messages, various control structures are usually placed within the form
-HTML. Form validation, while simple to create, is generally very messy
-and tedious to implement.</p>
+<p>上記のプロセスはひどく複雑なものではありませんが、
+通常はかなりの量コードを必要とします。エラーメッセージを表示するためには
+通常、様々な制御構造がフォームの HTML 内に配置されます。
+フォームバリデーションは作成は簡単ながら、
+一般的には非常に面倒で退屈な実装作業になります。</p>
 </div>
 <div class="section" id="id3">
-<h2><a class="toc-backref" href="#id32">チュートリアル</a><a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>What follows is a &#8220;hands on&#8221; tutorial for implementing CodeIgniters Form
-Validation.</p>
-<p>In order to implement form validation you&#8217;ll need three things:</p>
+<h2><a class="toc-backref" href="#id32">フォームバリデーションチュートリアル</a><a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>以下は CodeIgniter のフォームバリデーションを実装するための
+「ハンズオン」チュートリアルです。</p>
+<p>フォームバリデーションを実装するためには次の 3 つが必要になります:</p>
 <ol class="arabic simple">
-<li>A <a class="reference internal" href="../general/views.html"><span class="doc">View</span></a> file containing a form.</li>
-<li>A View file containing a &#8220;success&#8221; message to be displayed upon
-successful submission.</li>
-<li>A <a class="reference internal" href="../general/controllers.html"><span class="doc">controller</span></a> method to receive and
-process the submitted data.</li>
+<li>フォームを持つ <a class="reference internal" href="../general/views.html"><span class="doc">ビュー</span></a> ファイル。</li>
+<li>送信成功の時に表示される「成功」メッセージを含む
+ビューファイル。</li>
+<li>送信されたデータを受信および処理する <a class="reference internal" href="../general/controllers.html"><span class="doc">コントローラ</span></a>
+メソッド。</li>
 </ol>
-<p>Let&#8217;s create those three things, using a member sign-up form as the
-example.</p>
+<p>それではサンプルとしてメンバー登録フォームを使い、
+これらの 3 つを作成してみましょう。</p>
 <div class="section" id="id4">
 <h3><a class="toc-backref" href="#id33">入力フォーム</a><a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>Using a text editor, create a form called myform.php. In it, place this
-code and save it to your application/views/ folder:</p>
+<p>テキストエディタを使用して、 myform.php というフォームを作成します。
+それには application/views/ フォルダにこのコードを配置して保存します:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nx">html</span><span class="o">&gt;</span>
 <span class="o">&lt;</span><span class="nx">head</span><span class="o">&gt;</span>
-<span class="o">&lt;</span><span class="nx">title</span><span class="o">&gt;</span><span class="nx">My</span> <span class="nx">Form</span><span class="o">&lt;/</span><span class="nx">title</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nx">title</span><span class="o">&gt;</span><span class="nx">私のフォーム</span><span class="o">&lt;/</span><span class="nx">title</span><span class="o">&gt;</span>
 <span class="o">&lt;/</span><span class="nx">head</span><span class="o">&gt;</span>
 <span class="o">&lt;</span><span class="nx">body</span><span class="o">&gt;</span>
 
@@ -525,16 +525,16 @@ code and save it to your application/views/ folder:</p>
 
 <span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nx">form_open</span><span class="p">(</span><span class="s1">&#39;form&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span>
 
-<span class="p">&lt;</span><span class="nt">h5</span><span class="p">&gt;</span>Username<span class="p">&lt;/</span><span class="nt">h5</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h5</span><span class="p">&gt;</span>ユーザ名<span class="p">&lt;/</span><span class="nt">h5</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;username&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;&quot;</span> <span class="na">size</span><span class="o">=</span><span class="s">&quot;50&quot;</span> <span class="p">/&gt;</span>
 
-<span class="p">&lt;</span><span class="nt">h5</span><span class="p">&gt;</span>Password<span class="p">&lt;/</span><span class="nt">h5</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h5</span><span class="p">&gt;</span>パスワード<span class="p">&lt;/</span><span class="nt">h5</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;password&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;&quot;</span> <span class="na">size</span><span class="o">=</span><span class="s">&quot;50&quot;</span> <span class="p">/&gt;</span>
 
-<span class="p">&lt;</span><span class="nt">h5</span><span class="p">&gt;</span>Password Confirm<span class="p">&lt;/</span><span class="nt">h5</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h5</span><span class="p">&gt;</span>パスワード確認<span class="p">&lt;/</span><span class="nt">h5</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;passconf&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;&quot;</span> <span class="na">size</span><span class="o">=</span><span class="s">&quot;50&quot;</span> <span class="p">/&gt;</span>
 
-<span class="p">&lt;</span><span class="nt">h5</span><span class="p">&gt;</span>Email Address<span class="p">&lt;/</span><span class="nt">h5</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h5</span><span class="p">&gt;</span>メールアドレス<span class="p">&lt;/</span><span class="nt">h5</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;email&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;&quot;</span> <span class="na">size</span><span class="o">=</span><span class="s">&quot;50&quot;</span> <span class="p">/&gt;</span>
 
 <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Submit&quot;</span> <span class="p">/&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
@@ -548,17 +548,17 @@ code and save it to your application/views/ folder:</p>
 </div>
 <div class="section" id="id5">
 <h3><a class="toc-backref" href="#id34">成功ページ</a><a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>Using a text editor, create a form called formsuccess.php. In it, place
-this code and save it to your application/views/ folder:</p>
+<p>テキストエディタを使用して、 formsuccess.php というフォームを作成します。
+それには application/views/ フォルダにこのコードを配置して保存します:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nx">html</span><span class="o">&gt;</span>
 <span class="o">&lt;</span><span class="nx">head</span><span class="o">&gt;</span>
-<span class="o">&lt;</span><span class="nx">title</span><span class="o">&gt;</span><span class="nx">My</span> <span class="nx">Form</span><span class="o">&lt;/</span><span class="nx">title</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nx">title</span><span class="o">&gt;</span><span class="nx">私のフォーム</span><span class="o">&lt;/</span><span class="nx">title</span><span class="o">&gt;</span>
 <span class="o">&lt;/</span><span class="nx">head</span><span class="o">&gt;</span>
 <span class="o">&lt;</span><span class="nx">body</span><span class="o">&gt;</span>
 
-<span class="o">&lt;</span><span class="nx">h3</span><span class="o">&gt;</span><span class="nx">Your</span> <span class="nx">form</span> <span class="nx">was</span> <span class="nx">successfully</span> <span class="nx">submitted</span><span class="o">!&lt;/</span><span class="nx">h3</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nx">h3</span><span class="o">&gt;</span><span class="nx">あなたのフォームは送信成功しました！</span><span class="o">&lt;/</span><span class="nx">h3</span><span class="o">&gt;</span>
 
-<span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;&lt;?</span><span class="nx">php</span> <span class="k">echo</span> <span class="nx">anchor</span><span class="p">(</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="s1">&#39;Try it again!&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;&lt;?</span><span class="nx">php</span> <span class="k">echo</span> <span class="nx">anchor</span><span class="p">(</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="s1">&#39;もういっかい！&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 
 <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
@@ -567,8 +567,8 @@ this code and save it to your application/views/ folder:</p>
 </div>
 <div class="section" id="id6">
 <h3><a class="toc-backref" href="#id35">コントローラ</a><a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>Using a text editor, create a controller called Form.php. In it, place
-this code and save it to your application/controllers/ folder:</p>
+<p>テキストエディタを使用して、 Form.php というコントローラを作成します。
+それには application/controllers フォルダにこのコードを配置して保存します:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
 <span class="k">class</span> <span class="nc">Form</span> <span class="k">extends</span> <span class="nx">CI_Controller</span> <span class="p">{</span>
@@ -594,74 +594,74 @@ this code and save it to your application/controllers/ folder:</p>
 </div>
 <div class="section" id="id7">
 <h3><a class="toc-backref" href="#id36">動かしてみよう！</a><a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>To try your form, visit your site using a URL similar to this one:</p>
+<p>フォームを試すには次のようなURLを使ってサイトを開いてください:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">example</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">index</span><span class="o">.</span><span class="nx">php</span><span class="o">/</span><span class="nx">form</span><span class="o">/</span>
 </pre></div>
 </div>
-<p>If you submit the form you should simply see the form reload. That&#8217;s
-because you haven&#8217;t set up any validation rules yet.</p>
-<p><strong>Since you haven&#8217;t told the Form Validation class to validate anything
-yet, it returns FALSE (boolean false) by default. ``The run()`` method
-only returns TRUE if it has successfully applied your rules without any
-of them failing.</strong></p>
+<p>フォームを送信すると、単にフォームがリロードされるはずです。
+それはまだ検証ルールを設定していないためです。</p>
+<p><strong>フォームバリデーションクラスに何の検証も指示していないので、
+デフォルトの FALSE（ブール偽）を返します。 ``run()`` メソッドはあなたのルールを適用でき、
+1 つも失敗しなかった場合にのみ TRUE
+を返します。</strong></p>
 </div>
 <div class="section" id="id8">
 <h3><a class="toc-backref" href="#id37">解説</a><a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>You&#8217;ll notice several things about the above pages:</p>
-<p>The form (myform.php) is a standard web form with a couple exceptions:</p>
+<p>上記のページについて、いくつかのことに気付いたことでしょう。:</p>
+<p>このフォーム（myform.php）は標準的な Web フォームですが、 2 つの例外があります:</p>
 <ol class="arabic">
-<li><p class="first">It uses a form helper to create the form opening. Technically, this
-isn&#8217;t necessary. You could create the form using standard HTML.
-However, the benefit of using the helper is that it generates the
-action URL for you, based on the URL in your config file. This makes
-your application more portable in the event your URLs change.</p>
+<li><p class="first">フォームの開きタグを作成するために、フォームヘルパーを使用しています。
+技術的には、これは必須ではありません。標準の HTML を使用してフォームを作成することもできます。
+しかしながらヘルパーを使用する利点として、
+config ファイル内の URL に基づいてアクション URL を生成することができます。
+これはあなたのURLを変更する際に、アプリケーションをよりポータブルにしてくれます。</p>
 </li>
-<li><p class="first">At the top of the form you&#8217;ll notice the following function call:</p>
+<li><p class="first">フォームの一番上のところで、次の関数呼び出しに気付くでしょう:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span> <span class="k">echo</span> <span class="nx">validation_errors</span><span class="p">();</span> <span class="cp">?&gt;</span>
 </pre></div>
 </div>
-<p>This function will return any error messages sent back by the
-validator. If there are no messages it returns an empty string.</p>
+<p>この関数は、バリデータによって戻されたすべてのエラーメッセージを返します。
+メッセージがない場合、空の文字列を返します。</p>
 </li>
 </ol>
-<p>The controller (Form.php) has one method: <code class="docutils literal"><span class="pre">index()</span></code>. This method
-initializes the validation class and loads the form helper and URL
-helper used by your view files. It also runs the validation routine.
-Based on whether the validation was successful it either presents the
-form or the success page.</p>
+<p>コントローラ（Form.php）には 1 つのメソッドがあります: <code class="docutils literal"><span class="pre">index()</span></code> です。
+このメソッドはバリデーションクラスを初期化し、ビューファイルで使用されるフォームヘルパーと URL ヘルパーをロードします。
+また、バリデーションルーチンを実行します。
+検証が成功したかどうかに基づいて、
+フォームと成功ページのどちらかを表示します。</p>
 </div>
 <div class="section" id="setting-validation-rules">
 <span id="id9"></span><h3><a class="toc-backref" href="#id38">検証ルールを設定する</a><a class="headerlink" href="#setting-validation-rules" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>CodeIgniter lets you set as many validation rules as you need for a
-given field, cascading them in order, and it even lets you prep and
-pre-process the field data at the same time. To set validation rules you
-will use the <code class="docutils literal"><span class="pre">set_rules()</span></code> method:</p>
+<p>CodeIgniter は、与えられたフィールドに必要なだけの多くの検証ルールを設定することができ、
+その順序でカスケード処理し、
+さらには同時にフィールドデータの準備と前処理をすることができます。
+検証ルールを設定するには <code class="docutils literal"><span class="pre">set_rules()</span></code> メソッドを使用します:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">();</span>
 </pre></div>
 </div>
-<p>The above method takes <strong>three</strong> parameters as input:</p>
+<p>上のメソッドは、入力として <strong>3 つ</strong> のパラメータを取ります:</p>
 <ol class="arabic simple">
-<li>The field name - the exact name you&#8217;ve given the form field.</li>
-<li>A &#8220;human&#8221; name for this field, which will be inserted into the error
-message. For example, if your field is named &#8220;user&#8221; you might give it
-a human name of &#8220;Username&#8221;.</li>
-<li>The validation rules for this form field.</li>
-<li>(optional) Set custom error messages on any rules given for current field. If not provided will use the default one.</li>
+<li>フィールド名 - フォームフィールドを与えた正確な名前。</li>
+<li>このフィールドの「人間向け」の名前。エラーメッセージに挿入されます。
+たとえば、フィールドに「user」と名付けた場合、
+人間向けの名前として「ユーザ名」と名付けるかもしれません。</li>
+<li>このフォームフィールドの検証ルール。</li>
+<li>（オプション）このフィールドに指定された任意のルールにカスタムエラーメッセージを設定します。指定されない場合、デフォルトのエラーメッセージを使用します。</li>
 </ol>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">If you would like the field name to be stored in a language
-file, please see <a class="reference internal" href="#translating-field-names"><span class="std std-ref">フィールド名の変換</span></a>.</p>
+<p class="last">言語ファイルに格納されているフィールド名をご希望の場合、
+<a class="reference internal" href="#translating-field-names"><span class="std std-ref">フィールド名の変換</span></a> を参照してください。</p>
 </div>
-<p>Here is an example. In your controller (Form.php), add this code just
-below the validation initialization method:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;Username&#39;</span><span class="p">,</span> <span class="s1">&#39;required&#39;</span><span class="p">);</span>
-<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span><span class="s1">&#39;password&#39;</span><span class="p">,</span> <span class="s1">&#39;Password&#39;</span><span class="p">,</span> <span class="s1">&#39;required&#39;</span><span class="p">);</span>
-<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span><span class="s1">&#39;passconf&#39;</span><span class="p">,</span> <span class="s1">&#39;Password Confirmation&#39;</span><span class="p">,</span> <span class="s1">&#39;required&#39;</span><span class="p">);</span>
-<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">,</span> <span class="s1">&#39;Email&#39;</span><span class="p">,</span> <span class="s1">&#39;required&#39;</span><span class="p">);</span>
+<p>ここで一例を示しましょう。コントローラ（Form.php）で、
+バリデーション初期化メソッドの直下にこのコードを追加します:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;ユーザ名&#39;</span><span class="p">,</span> <span class="s1">&#39;required&#39;</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span><span class="s1">&#39;password&#39;</span><span class="p">,</span> <span class="s1">&#39;パスワード&#39;</span><span class="p">,</span> <span class="s1">&#39;required&#39;</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span><span class="s1">&#39;passconf&#39;</span><span class="p">,</span> <span class="s1">&#39;パスワード確認&#39;</span><span class="p">,</span> <span class="s1">&#39;required&#39;</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">,</span> <span class="s1">&#39;メールアドレス&#39;</span><span class="p">,</span> <span class="s1">&#39;required&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Your controller should now look like this:</p>
+<p>コントローラは次のようになります:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
 <span class="k">class</span> <span class="nc">Form</span> <span class="k">extends</span> <span class="nx">CI_Controller</span> <span class="p">{</span>
@@ -672,12 +672,12 @@ below the validation initialization method:</p>
 
                 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;form_validation&#39;</span><span class="p">);</span>
 
-                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;Username&#39;</span><span class="p">,</span> <span class="s1">&#39;required&#39;</span><span class="p">);</span>
-                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span><span class="s1">&#39;password&#39;</span><span class="p">,</span> <span class="s1">&#39;Password&#39;</span><span class="p">,</span> <span class="s1">&#39;required&#39;</span><span class="p">,</span>
-                        <span class="k">array</span><span class="p">(</span><span class="s1">&#39;required&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;You must provide a %s.&#39;</span><span class="p">)</span>
+                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;ユーザ名&#39;</span><span class="p">,</span> <span class="s1">&#39;required&#39;</span><span class="p">);</span>
+                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span><span class="s1">&#39;password&#39;</span><span class="p">,</span> <span class="s1">&#39;パスワード&#39;</span><span class="p">,</span> <span class="s1">&#39;required&#39;</span><span class="p">,</span>
+                        <span class="k">array</span><span class="p">(</span><span class="s1">&#39;required&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;%s は必須です。&#39;</span><span class="p">)</span>
                 <span class="p">);</span>
-                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span><span class="s1">&#39;passconf&#39;</span><span class="p">,</span> <span class="s1">&#39;Password Confirmation&#39;</span><span class="p">,</span> <span class="s1">&#39;required&#39;</span><span class="p">);</span>
-                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">,</span> <span class="s1">&#39;Email&#39;</span><span class="p">,</span> <span class="s1">&#39;required&#39;</span><span class="p">);</span>
+                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span><span class="s1">&#39;passconf&#39;</span><span class="p">,</span> <span class="s1">&#39;パスワード確認&#39;</span><span class="p">,</span> <span class="s1">&#39;required&#39;</span><span class="p">);</span>
+                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">,</span> <span class="s1">&#39;メールアドレス&#39;</span><span class="p">,</span> <span class="s1">&#39;required&#39;</span><span class="p">);</span>
 
                 <span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">run</span><span class="p">()</span> <span class="o">==</span> <span class="k">FALSE</span><span class="p">)</span>
                 <span class="p">{</span>
@@ -691,20 +691,20 @@ below the validation initialization method:</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Now submit the form with the fields blank and you should see the error
-messages. If you submit the form with all the fields populated you&#8217;ll
-see your success page.</p>
+<p>いま、フィールドが空欄のままフォームを送信すると、エラーメッセージが表示されるはずです。
+すべてのフィールドを埋めてフォームを送信すると、
+成功ページが表示されるでしょう。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">The form fields are not yet being re-populated with the data
-when there is an error. We&#8217;ll get to that shortly.</p>
+<p class="last">エラーが存在するとき、フォームフィールドはまだ入力データで埋めなおされず空欄のままです。
+すぐあとで説明します。</p>
 </div>
 </div>
 <div class="section" id="id10">
 <h3><a class="toc-backref" href="#id39">配列を使った検証ルールの指定</a><a class="headerlink" href="#id10" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>Before moving on it should be noted that the rule setting method can
-be passed an array if you prefer to set all your rules in one action. If
-you use this approach, you must name your array keys as indicated:</p>
+<p>先に進む前に、次のことに注意すべきです。
+単一の操作ですべてのルールを設定したい場合は、配列を渡すことができます。
+この方法を使う場合、つぎに示されているように、配列のキーに名前を付ける必要があります:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$config</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
         <span class="k">array</span><span class="p">(</span>
                 <span class="s1">&#39;field&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;username&#39;</span><span class="p">,</span>
@@ -721,7 +721,7 @@ you use this approach, you must name your array keys as indicated:</p>
         <span class="p">),</span>
         <span class="k">array</span><span class="p">(</span>
                 <span class="s1">&#39;field&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;passconf&#39;</span><span class="p">,</span>
-                <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;パスワードの確認&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;パスワード確認&#39;</span><span class="p">,</span>
                 <span class="s1">&#39;rules&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required&#39;</span>
         <span class="p">),</span>
         <span class="k">array</span><span class="p">(</span>
@@ -737,36 +737,36 @@ you use this approach, you must name your array keys as indicated:</p>
 </div>
 <div class="section" id="id11">
 <h3><a class="toc-backref" href="#id40">ルールの連結（カスケード）</a><a class="headerlink" href="#id11" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>CodeIgniter lets you pipe multiple rules together. Let&#8217;s try it. Change
-your rules in the third parameter of rule setting method, like this:</p>
+<p>CodeIgniter では複数のルールをパイプで一緒につなげることができます。試してみましょう。
+ルール設定メソッドの第 3 パラメータに指定するルールを変更します。このように:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span>
-        <span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;Username&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;ユーザ名&#39;</span><span class="p">,</span>
         <span class="s1">&#39;required|min_length[5]|max_length[12]|is_unique[users.username]&#39;</span><span class="p">,</span>
         <span class="k">array</span><span class="p">(</span>
-                <span class="s1">&#39;required&#39;</span>      <span class="o">=&gt;</span> <span class="s1">&#39;You have not provided %s.&#39;</span><span class="p">,</span>
-                <span class="s1">&#39;is_unique&#39;</span>     <span class="o">=&gt;</span> <span class="s1">&#39;This %s already exists.&#39;</span>
+                <span class="s1">&#39;required&#39;</span>      <span class="o">=&gt;</span> <span class="s1">&#39;%s を入力していません。&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;is_unique&#39;</span>     <span class="o">=&gt;</span> <span class="s1">&#39;%s はすでに存在します。&#39;</span>
         <span class="p">)</span>
 <span class="p">);</span>
-<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span><span class="s1">&#39;password&#39;</span><span class="p">,</span> <span class="s1">&#39;Password&#39;</span><span class="p">,</span> <span class="s1">&#39;required&#39;</span><span class="p">);</span>
-<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span><span class="s1">&#39;passconf&#39;</span><span class="p">,</span> <span class="s1">&#39;Password Confirmation&#39;</span><span class="p">,</span> <span class="s1">&#39;required|matches[password]&#39;</span><span class="p">);</span>
-<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">,</span> <span class="s1">&#39;Email&#39;</span><span class="p">,</span> <span class="s1">&#39;required|valid_email|is_unique[users.email]&#39;</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span><span class="s1">&#39;password&#39;</span><span class="p">,</span> <span class="s1">&#39;パスワード&#39;</span><span class="p">,</span> <span class="s1">&#39;required&#39;</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span><span class="s1">&#39;passconf&#39;</span><span class="p">,</span> <span class="s1">&#39;パスワード確認&#39;</span><span class="p">,</span> <span class="s1">&#39;required|matches[password]&#39;</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">,</span> <span class="s1">&#39;メールアドレス&#39;</span><span class="p">,</span> <span class="s1">&#39;required|valid_email|is_unique[users.email]&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>The above code sets the following rules:</p>
+<p>上のコードは次のルールを設定します:</p>
 <ol class="arabic simple">
-<li>The username field be no shorter than 5 characters and no longer than
-12.</li>
-<li>The password field must match the password confirmation field.</li>
-<li>The email field must contain a valid email address.</li>
+<li>ユーザ名フィールドは 5 文字未満または
+12 文字を超えることはありません。</li>
+<li>パスワードフィールドは、パスワード確認フィールドと一致する必要があります。</li>
+<li>メールアドレスフィールドは有効なメールアドレスを含める必要があります。</li>
 </ol>
-<p>Give it a try! Submit your form without the proper data and you&#8217;ll see
-new error messages that correspond to your new rules. There are numerous
-rules available which you can read about in the validation reference.</p>
+<p>試してみましょう！　まちがったデータでフォームを送信すると、
+新しいルールに対応する新しいエラーメッセージが表示されます。
+利用可能なルールは多数あり、バリデーションリファレンスでそれらについて読むことができます。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p>You can also pass an array of rules to <code class="docutils literal"><span class="pre">set_rules()</span></code>,
-instead of a string. Example:</p>
-<div class="last highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;Username&#39;</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;required&#39;</span><span class="p">,</span> <span class="s1">&#39;min_length[5]&#39;</span><span class="p">));</span>
+<p>文字列のかわりに配列で <code class="docutils literal"><span class="pre">set_rules()</span></code> にルールを渡すことができます。
+例:</p>
+<div class="last highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;ユーザ名&#39;</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;required&#39;</span><span class="p">,</span> <span class="s1">&#39;min_length[5]&#39;</span><span class="p">));</span>
 </pre></div>
 </div>
 </div>
@@ -1878,7 +1878,7 @@ to prepend them with <code class="docutils literal"><span class="pre">$this-&gt;
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 9月 09, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
+      最終更新: 9月 10, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 
