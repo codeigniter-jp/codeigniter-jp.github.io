@@ -33,7 +33,7 @@
     <link rel="top" title="CodeIgniter 3.2.0-dev ドキュメント" href="../index.html"/>
         <link rel="up" title="ヘルパー" href="index.html"/>
         <link rel="next" title="フォームヘルパー" href="form_helper.html"/>
-        <link rel="prev" title="Email ヘルパー" href="email_helper.html"/> 
+        <link rel="prev" title="eメールヘルパー" href="email_helper.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -180,7 +180,7 @@
 <li class="toctree-l2"><a class="reference internal" href="date_helper.html">日付ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="directory_helper.html">ディレクトリヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="download_helper.html">ダウンロードヘルパー</a></li>
-<li class="toctree-l2"><a class="reference internal" href="email_helper.html">Email ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="email_helper.html">eメールヘルパー</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">ファイルヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="form_helper.html">フォームヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="html_helper.html">HTML ヘルパー</a></li>
@@ -364,7 +364,7 @@
 <li class="toctree-l2"><a class="reference internal" href="date_helper.html">日付ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="directory_helper.html">ディレクトリヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="download_helper.html">ダウンロードヘルパー</a></li>
-<li class="toctree-l2"><a class="reference internal" href="email_helper.html">Email ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="email_helper.html">eメールヘルパー</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">ファイルヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="form_helper.html">フォームヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="html_helper.html">HTML ヘルパー</a></li>
@@ -447,11 +447,11 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$file</strong> (<em>string</em>) &#8211; File path</li>
+<li><strong>$file</strong> (<em>string</em>) &#8211; ファイルパス</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">File contents or FALSE on failure</p>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">ファイルの内容または失敗時は FALSE</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">string</p>
@@ -473,8 +473,8 @@
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">This function is DEPRECATED. Use the native <code class="docutils literal"><span class="pre">file_get_contents()</span></code>
-instead.</p>
+<p class="last">この関数は廃止予定です。
+かわりに <code class="docutils literal"><span class="pre">file_get_contents()</span></code> を使ってください。</p>
 </div>
 <div class="admonition important">
 <p class="first admonition-title">重要</p>
@@ -492,13 +492,13 @@ instead.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$path</strong> (<em>string</em>) &#8211; File path</li>
-<li><strong>$data</strong> (<em>string</em>) &#8211; Data to write to file</li>
-<li><strong>$mode</strong> (<em>string</em>) &#8211; <code class="docutils literal"><span class="pre">fopen()</span></code> mode</li>
+<li><strong>$path</strong> (<em>string</em>) &#8211; ファイルパス</li>
+<li><strong>$data</strong> (<em>string</em>) &#8211; ファイルに書き込むデータ</li>
+<li><strong>$mode</strong> (<em>string</em>) &#8211; <code class="docutils literal"><span class="pre">fopen()</span></code> モード</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">TRUE if the write was successful, FALSE in case of an error</p>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">書き込みに成功した場合は TRUE 、エラーの場合は FALSE</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">bool</p>
@@ -534,7 +534,7 @@ instead.</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">This function acquires an exclusive lock on the file while writing to it.</p>
+<p class="last">この関数はファイルへデータを書き込んでいる間排他ロックを取得します。</p>
 </div>
 </dd></dl>
 
@@ -546,13 +546,13 @@ instead.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$path</strong> (<em>string</em>) &#8211; Directory path</li>
-<li><strong>$del_dir</strong> (<em>bool</em>) &#8211; Whether to also delete directories</li>
-<li><strong>$htdocs</strong> (<em>bool</em>) &#8211; Whether to skip deleting .htaccess and index page files</li>
+<li><strong>$path</strong> (<em>string</em>) &#8211; ディレクトリパス</li>
+<li><strong>$del_dir</strong> (<em>bool</em>) &#8211; ディレクトリも合わせて削除するかどうか</li>
+<li><strong>$htdocs</strong> (<em>bool</em>) &#8211; .htaccess やインデックスファイルの削除をスキップするかどうか</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">TRUE on success, FALSE in case of an error</p>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">成功した場合は TRUE 、失敗した場合は FALSE</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">bool</p>
@@ -585,12 +585,12 @@ instead.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$source_dir</strong> (<em>string</em>) &#8211; Directory path</li>
-<li><strong>$include_path</strong> (<em>bool</em>) &#8211; Whether to include the path as part of the filenames</li>
+<li><strong>$source_dir</strong> (<em>string</em>) &#8211; ディレクトリパス</li>
+<li><strong>$include_path</strong> (<em>bool</em>) &#8211; ファイルまでのパスを含めるかどうか</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">An array of file names</p>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">ファイル名の配列</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">array</p>
@@ -615,12 +615,12 @@ instead.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$source_dir</strong> (<em>string</em>) &#8211; Directory path</li>
-<li><strong>$top_level_only</strong> (<em>bool</em>) &#8211; Whether to look only at the specified directory (excluding sub-directories)</li>
+<li><strong>$source_dir</strong> (<em>string</em>) &#8211; ディレクトリパス</li>
+<li><strong>$top_level_only</strong> (<em>bool</em>) &#8211; 指定されたディレクトリのみを参照するかどうか (サブディレクトリを除外するということ)</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">An array containing info on the supplied directory&#8217;s contents</p>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">指定されたディレクトリの情報が含まれた配列</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">array</p>
@@ -646,12 +646,12 @@ instead.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$file</strong> (<em>string</em>) &#8211; File path</li>
-<li><strong>$returned_values</strong> (<em>array</em>) &#8211; What type of info to return</li>
+<li><strong>$file</strong> (<em>string</em>) &#8211; ファイルパス</li>
+<li><strong>$returned_values</strong> (<em>array</em>) &#8211; 戻り値の情報の形式</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">An array containing info on the specified file or FALSE on failure</p>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">指定されたファイルの情報が含まれた配列または失敗した場合 FALSE</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">array</p>
@@ -659,11 +659,11 @@ instead.</p>
 </tr>
 </tbody>
 </table>
-<p>Given a file and path, returns (optionally) the <em>name</em>, <em>path</em>, <em>size</em> and <em>date modified</em>
-information attributes for a file. Second parameter allows you to explicitly declare what
-information you want returned.</p>
-<p>Valid <code class="docutils literal"><span class="pre">$returned_values</span></code> options are: <cite>name</cite>, <cite>size</cite>, <cite>date</cite>, <cite>readable</cite>, <cite>writeable</cite>,
-<cite>executable</cite> and <cite>fileperms</cite>.</p>
+<p>ファイルとパスを引数に取り、<em>name</em> 、 <em>path</em> 、 <em>size</em> や <em>date modified</em> 等の
+ファイルの属性情報を返却(オプション)します。 第2引数は返却して欲しい情報を明示的に
+指定することが可能です。</p>
+<p>有効な <code class="docutils literal"><span class="pre">$returned_values</span></code> のオプション: <cite>name</cite> 、 <cite>size</cite> 、 <cite>date</cite> 、 <cite>readable</cite> 、 <cite>writeable</cite> 、
+<cite>executable</cite> や <cite>fileperms</cite>.</p>
 </dd></dl>
 
 <dl class="function">
@@ -674,11 +674,11 @@ information you want returned.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$filename</strong> (<em>string</em>) &#8211; File name</li>
+<li><strong>$filename</strong> (<em>string</em>) &#8211; ファイル名</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">MIME type string or FALSE on failure</p>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">MIME タイプまたは失敗した場合 FALSE</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">string</p>
@@ -708,11 +708,11 @@ information you want returned.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$perms</strong> (<em>int</em>) &#8211; Permissions</li>
+<li><strong>$perms</strong> (<em>int</em>) &#8211; パーミッション</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">Symbolic permissions string</p>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">シンボリックモードのパーミッション文字列</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">string</p>
@@ -735,11 +735,11 @@ information you want returned.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$perms</strong> (<em>int</em>) &#8211; Permissions</li>
+<li><strong>$perms</strong> (<em>int</em>) &#8211; パーミッション</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">Octal permissions string</p>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">8進数表記のパーミッション文字列</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">string</p>
@@ -766,7 +766,7 @@ information you want returned.</p>
         <a href="form_helper.html" class="btn btn-neutral float-right" title="フォームヘルパー">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="email_helper.html" class="btn btn-neutral" title="Email ヘルパー"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="email_helper.html" class="btn btn-neutral" title="eメールヘルパー"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -776,7 +776,7 @@ information you want returned.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 9月 20, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
+      最終更新: 9月 25, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

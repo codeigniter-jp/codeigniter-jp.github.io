@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Email ヘルパー &mdash; CodeIgniter 3.2.0-dev ドキュメント</title>
+  <title>eメールヘルパー &mdash; CodeIgniter 3.2.0-dev ドキュメント</title>
   
 
   
@@ -180,7 +180,7 @@
 <li class="toctree-l2"><a class="reference internal" href="date_helper.html">日付ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="directory_helper.html">ディレクトリヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="download_helper.html">ダウンロードヘルパー</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Email ヘルパー</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">eメールヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="file_helper.html">ファイルヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="form_helper.html">フォームヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="html_helper.html">HTML ヘルパー</a></li>
@@ -364,7 +364,7 @@
 <li class="toctree-l2"><a class="reference internal" href="date_helper.html">日付ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="directory_helper.html">ディレクトリヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="download_helper.html">ダウンロードヘルパー</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Email ヘルパー</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">eメールヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="file_helper.html">ファイルヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="form_helper.html">フォームヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="html_helper.html">HTML ヘルパー</a></li>
@@ -407,7 +407,7 @@
       
         <li><a href="index.html">ヘルパー</a> &raquo;</li>
       
-    <li>Email ヘルパー</li>
+    <li>eメールヘルパー</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -420,14 +420,14 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="email">
-<h1>Email ヘルパー<a class="headerlink" href="#email" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>Email ヘルパーは Email 処理を支援する関数を提供します。より堅牢な
-Email の処理方法については CodeIgniter の <a class="reference internal" href="../libraries/email.html"><span class="doc">Email クラス</span></a> を参照してください。</p>
+  <div class="section" id="e">
+<h1>eメールヘルパー<a class="headerlink" href="#e" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>eメールヘルパーはeメールの処理を支援する関数を提供します。より堅牢な
+eメールの処理方法については CodeIgniter の <a class="reference internal" href="../libraries/email.html"><span class="doc">Email クラス</span></a> を参照してください。</p>
 <div class="admonition important">
 <p class="first admonition-title">重要</p>
-<p class="last">The Email helper is DEPRECATED and is currently
-only kept for backwards compatibility.</p>
+<p class="last">eメールヘルパーは非推奨です。
+現在は、後方互換のためのみに維持されているものです。</p>
 </div>
 <div class="contents local topic" id="contents">
 <ul class="simple">
@@ -453,11 +453,11 @@ only kept for backwards compatibility.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$email</strong> (<em>string</em>) &#8211; E-mail address</li>
+<li><strong>$email</strong> (<em>string</em>) &#8211; メールアドレス</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">TRUE if a valid email is supplied, FALSE otherwise</p>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">有効なメールアドレスであれば TRUE そうではない場合は FALSE</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">bool</p>
@@ -465,10 +465,10 @@ only kept for backwards compatibility.</p>
 </tr>
 </tbody>
 </table>
-<p>Checks if the input is a correctly formatted e-mail address. Note that is
-doesn&#8217;t actually prove that the address will be able recieve mail, but
-simply that it is a validly formed address.</p>
-<p>Example:</p>
+<p>入力値が正しくフォーマットされたメールアドレスかどうかを確認します。そのアドレスで
+メールの受信ができることを保障するものではなく、単純に有効なメールアドレスの形式である
+ことを確認します。</p>
+<p>例:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nx">valid_email</span><span class="p">(</span><span class="s1">&#39;email@somesite.com&#39;</span><span class="p">))</span>
 <span class="p">{</span>
         <span class="k">echo</span> <span class="s1">&#39;email is valid&#39;</span><span class="p">;</span>
@@ -481,7 +481,7 @@ simply that it is a validly formed address.</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p>All that this function does is to use PHP&#8217;s native <code class="docutils literal"><span class="pre">filter_var()</span></code>:</p>
+<p>この関数で行うことはPHP標準の <code class="docutils literal"><span class="pre">filter_var()</span></code> でもできます:</p>
 <div class="last highlight-ci"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nx">bool</span><span class="p">)</span> <span class="nb">filter_var</span><span class="p">(</span><span class="nv">$email</span><span class="p">,</span> <span class="nx">FILTER_VALIDATE_EMAIL</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -496,13 +496,13 @@ simply that it is a validly formed address.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$recipient</strong> (<em>string</em>) &#8211; E-mail address</li>
-<li><strong>$subject</strong> (<em>string</em>) &#8211; Mail subject</li>
-<li><strong>$message</strong> (<em>string</em>) &#8211; Message body</li>
+<li><strong>$recipient</strong> (<em>string</em>) &#8211; メールアドレス</li>
+<li><strong>$subject</strong> (<em>string</em>) &#8211; メールの件名</li>
+<li><strong>$message</strong> (<em>string</em>) &#8211; メールの内容</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">TRUE if the mail was successfully sent, FALSE in case of an error</p>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">メールの送信に成功すれば TRUE エラーの場合は FALSE</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">bool</p>
@@ -514,7 +514,7 @@ simply that it is a validly formed address.</p>
 関数を使ってメールを送信します。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p>All that this function does is to use PHP&#8217;s native <code class="docutils literal"><span class="pre">mail</span></code></p>
+<p>この関数で行うことはPHP標準の <code class="docutils literal"><span class="pre">mail</span></code> でもできます</p>
 <div class="last highlight-ci"><div class="highlight"><pre><span></span><span class="nb">mail</span><span class="p">(</span><span class="nv">$recipient</span><span class="p">,</span> <span class="nv">$subject</span><span class="p">,</span> <span class="nv">$message</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -545,7 +545,7 @@ simply that it is a validly formed address.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 9月 20, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
+      最終更新: 9月 25, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 
