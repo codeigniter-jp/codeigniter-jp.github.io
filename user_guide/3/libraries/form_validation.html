@@ -446,7 +446,7 @@
 <li><a class="reference internal" href="#translating-field-names" id="id46">フィールド名の翻訳</a></li>
 <li><a class="reference internal" href="#changing-delimiters" id="id47">エラーメッセージを囲む文字の変更</a></li>
 <li><a class="reference internal" href="#id19" id="id48">個別にエラーを表示する</a></li>
-<li><a class="reference internal" href="#post" id="id49">配列（$_POST 以外）のバリデーション</a></li>
+<li><a class="reference internal" href="#post" id="id49">配列（$_POST以外）のバリデーション</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#saving-groups" id="id50">検証ルールを設定ファイルに保存</a><ul>
@@ -1054,31 +1054,31 @@ set_rules() メソッドを使用します:</p>
 </div>
 <div class="section" id="changing-delimiters">
 <span id="id18"></span><h3><a class="toc-backref" href="#id47">エラーメッセージを囲む文字の変更</a><a class="headerlink" href="#changing-delimiters" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>By default, the Form Validation class adds a paragraph tag (&lt;p&gt;) around
-each error message shown. You can either change these delimiters
-globally, individually, or change the defaults in a config file.</p>
+<p>デフォルトでは、フォームバリデーションクラスは表示する各エラーメッセージの周囲に段落タグ（&lt;p&gt;）を追加します。
+これらの区切り文字はグローバルに、あるいは個別に、
+はたまた設定ファイルでデフォルトを変更することができます。</p>
 <ol class="arabic">
-<li><p class="first"><strong>Changing delimiters Globally</strong>
-To globally change the error delimiters, in your controller method,
-just after loading the Form Validation class, add this:</p>
+<li><p class="first"><strong>グローバルに区切り文字を変更</strong>
+エラーの区切り文字をグローバルに変更するには、
+コントローラメソッドでフォームバリデーションクラスをロードしたすぐあと、これを追加します:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_error_delimiters</span><span class="p">(</span><span class="s1">&#39;&lt;div class=&quot;error&quot;&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;/div&gt;&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>In this example, we&#8217;ve switched to using div tags.</p>
+<p>この例では div タグを使用するように切り替えました。</p>
 </li>
-<li><p class="first"><strong>Changing delimiters Individually</strong>
-Each of the two error generating functions shown in this tutorial can
-be supplied their own delimiters as follows:</p>
+<li><p class="first"><strong>個別に区切り文字を変更</strong>
+このチュートリアルで示している 2 つのエラー文生成機能のそれぞれで、
+次のように独自の区切り文字を指定することができます:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span> <span class="k">echo</span> <span class="nx">form_error</span><span class="p">(</span><span class="s1">&#39;field name&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;div class=&quot;error&quot;&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;/div&gt;&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span>
 </pre></div>
 </div>
-<p>Or:</p>
+<p>または:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span> <span class="k">echo</span> <span class="nx">validation_errors</span><span class="p">(</span><span class="s1">&#39;&lt;div class=&quot;error&quot;&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;/div&gt;&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><strong>Set delimiters in a config file</strong>
-You can add your error delimiters in application/config/form_validation.php as follows:</p>
+<li><p class="first"><strong>configファイルで区切り文字を設定</strong>
+application/config/form_validation.php で次のようにエラー区切り文字を設定することができます:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;error_prefix&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;&lt;div class=&quot;error_prefix&quot;&gt;&#39;</span><span class="p">;</span>
 <span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;error_suffix&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;&lt;/div&gt;&#39;</span><span class="p">;</span>
 </pre></div>
@@ -1088,45 +1088,45 @@ You can add your error delimiters in application/config/form_validation.php as f
 </div>
 <div class="section" id="id19">
 <h3><a class="toc-backref" href="#id48">個別にエラーを表示する</a><a class="headerlink" href="#id19" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>If you prefer to show an error message next to each form field, rather
-than as a list, you can use the <a class="reference internal" href="../helpers/form_helper.html#form_error" title="form_error"><code class="xref php php-func docutils literal"><span class="pre">form_error()</span></code></a> function.</p>
-<p>Try it! Change your form so that it looks like this:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nx">h5</span><span class="o">&gt;</span><span class="nx">Username</span><span class="o">&lt;/</span><span class="nx">h5</span><span class="o">&gt;</span>
+<p>エラーメッセージをリストとしてではなく、
+各フォームフィールドの横に表示したい場合は、<a class="reference internal" href="../helpers/form_helper.html#form_error" title="form_error"><code class="xref php php-func docutils literal"><span class="pre">form_error()</span></code></a> 関数を使用することができます。</p>
+<p>やってみましょう！　次のようにフォームを変更します:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nx">h5</span><span class="o">&gt;</span><span class="nx">ユーザ名</span><span class="o">&lt;/</span><span class="nx">h5</span><span class="o">&gt;</span>
 <span class="o">&lt;?</span><span class="nx">php</span> <span class="k">echo</span> <span class="nx">form_error</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span>
 <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;username&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nx">set_value</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="s">&quot;</span> <span class="na">size</span><span class="o">=</span><span class="s">&quot;50&quot;</span> <span class="p">/&gt;</span>
 
-<span class="p">&lt;</span><span class="nt">h5</span><span class="p">&gt;</span>Password<span class="p">&lt;/</span><span class="nt">h5</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h5</span><span class="p">&gt;</span>パスワード<span class="p">&lt;/</span><span class="nt">h5</span><span class="p">&gt;</span>
 <span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nx">form_error</span><span class="p">(</span><span class="s1">&#39;password&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span>
 <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;password&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nx">set_value</span><span class="p">(</span><span class="s1">&#39;password&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="s">&quot;</span> <span class="na">size</span><span class="o">=</span><span class="s">&quot;50&quot;</span> <span class="p">/&gt;</span>
 
-<span class="p">&lt;</span><span class="nt">h5</span><span class="p">&gt;</span>Password Confirm<span class="p">&lt;/</span><span class="nt">h5</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h5</span><span class="p">&gt;</span>パスワード確認<span class="p">&lt;/</span><span class="nt">h5</span><span class="p">&gt;</span>
 <span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nx">form_error</span><span class="p">(</span><span class="s1">&#39;passconf&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span>
 <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;passconf&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nx">set_value</span><span class="p">(</span><span class="s1">&#39;passconf&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="s">&quot;</span> <span class="na">size</span><span class="o">=</span><span class="s">&quot;50&quot;</span> <span class="p">/&gt;</span>
 
-<span class="p">&lt;</span><span class="nt">h5</span><span class="p">&gt;</span>Email Address<span class="p">&lt;/</span><span class="nt">h5</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h5</span><span class="p">&gt;</span>メールアドレス<span class="p">&lt;/</span><span class="nt">h5</span><span class="p">&gt;</span>
 <span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nx">form_error</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span>
 <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;email&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nx">set_value</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="s">&quot;</span> <span class="na">size</span><span class="o">=</span><span class="s">&quot;50&quot;</span> <span class="p">/&gt;</span>
 </pre></div>
 </div>
-<p>If there are no errors, nothing will be shown. If there is an error, the
-message will appear.</p>
+<p>エラーがない場合は何も表示されません。エラーがある場合、
+メッセージが表示されます。</p>
 <div class="admonition important">
 <p class="first admonition-title">重要</p>
-<p>If you use an array as the name of a form field, you
-must supply it as an array to the function. Example:</p>
+<p>フォームフィールドの名前として配列を使用する場合は、
+関数に配列としてそれを指定する必要があります。例:</p>
 <div class="last highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span> <span class="k">echo</span> <span class="nx">form_error</span><span class="p">(</span><span class="s1">&#39;options[size]&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span>
 <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;options[size]&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nx">set_value</span><span class="p">(</span><span class="s2">&quot;options[size]&quot;</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="s">&quot;</span> <span class="na">size</span><span class="o">=</span><span class="s">&quot;50&quot;</span> <span class="p">/&gt;</span>
 </pre></div>
 </div>
 </div>
-<p>For more info please see the <a class="reference internal" href="#using-arrays-as-field-names"><span class="std std-ref">フィールド名の指定に配列を使う</span></a> section below.</p>
+<p>詳細については下記の <a class="reference internal" href="#using-arrays-as-field-names"><span class="std std-ref">フィールド名の指定に配列を使う</span></a> セクションを参照してください。</p>
 </div>
 <div class="section" id="post">
-<h3><a class="toc-backref" href="#id49">配列（$_POST 以外）のバリデーション</a><a class="headerlink" href="#post" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>Sometimes you may want to validate an array that does not originate from <code class="docutils literal"><span class="pre">$_POST</span></code> data.</p>
-<p>In this case, you can specify the array to be validated:</p>
+<h3><a class="toc-backref" href="#id49">配列（$_POST以外）のバリデーション</a><a class="headerlink" href="#post" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>時には <code class="docutils literal"><span class="pre">$_POST</span></code> データではない配列をバリデーションしたいことでしょう。</p>
+<p>その場合、バリデーションする配列を指定することができます:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-        <span class="s1">&#39;username&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;johndoe&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;username&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;山田太郎&#39;</span><span class="p">,</span>
         <span class="s1">&#39;password&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;mypassword&#39;</span><span class="p">,</span>
         <span class="s1">&#39;passconf&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;mypassword&#39;</span>
 <span class="p">);</span>
@@ -1134,21 +1134,21 @@ must supply it as an array to the function. Example:</p>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_data</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Creating validation rules, running the validation, and retrieving error
-messages works the same whether you are validating <code class="docutils literal"><span class="pre">$_POST</span></code> data or
-another array of your choice.</p>
+<p>バリデーションルールを作成し、バリデーションを実行し、エラーメッセージを取得する一連の動作は
+<code class="docutils literal"><span class="pre">$_POST</span></code> データまたは設定した別の配列をバリデーションしているかどうかにかかわらず、
+同じように動作します。</p>
 <div class="admonition important">
 <p class="first admonition-title">重要</p>
-<p class="last">You have to call the <code class="docutils literal"><span class="pre">set_data()</span></code> method <em>before</em> defining
-any validation rules.</p>
+<p class="last">あらゆるバリデーションルールを定義する <em>前に</em> <code class="docutils literal"><span class="pre">set_data()</span></code> メソッドを
+呼び出す必要があります。</p>
 </div>
 <div class="admonition important">
 <p class="first admonition-title">重要</p>
-<p class="last">If you want to validate more than one array during a single
-execution, then you should call the <code class="docutils literal"><span class="pre">reset_validation()</span></code> method
-before setting up rules and validating the new array.</p>
+<p class="last">1 回のプログラム実行内で複数の配列を検証したい場合は、
+ルールを設定して新しい配列をバリデーションする前に <code class="docutils literal"><span class="pre">reset_validation()</span></code> メソッドを
+呼び出す必要があります。</p>
 </div>
-<p>For more info please see the <a class="reference internal" href="#class-reference"><span class="std std-ref">クラスリファレンス</span></a> section below.</p>
+<p>詳細については下記の <a class="reference internal" href="#class-reference"><span class="std std-ref">クラスリファレンス</span></a> セクションを参照してください。</p>
 </div>
 </div>
 <div class="section" id="saving-groups">
@@ -1877,7 +1877,7 @@ to prepend them with <code class="docutils literal"><span class="pre">$this-&gt;
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 9月 25, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
+      最終更新: 9月 27, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 
