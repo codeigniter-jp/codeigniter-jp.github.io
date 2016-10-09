@@ -453,7 +453,7 @@
 <li><a class="reference internal" href="#id21" id="id51">ルールの保存方法</a></li>
 <li><a class="reference internal" href="#id22" id="id52">検証ルールのセットを作る</a></li>
 <li><a class="reference internal" href="#id23" id="id53">特定のルールグループを呼び出す</a></li>
-<li><a class="reference internal" href="#id24" id="id54">コントローラー内のメソッドにルールグループを関連づける</a></li>
+<li><a class="reference internal" href="#id24" id="id54">コントローラーのメソッドにルールグループを関連づける</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#using-arrays-as-field-names" id="id55">フィールド名の指定に配列を使う</a></li>
@@ -1153,93 +1153,93 @@ application/config/form_validation.php で次のようにエラー区切り文�
 </div>
 <div class="section" id="saving-groups">
 <span id="id20"></span><h2><a class="toc-backref" href="#id50">検証ルールを設定ファイルに保存</a><a class="headerlink" href="#saving-groups" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>A nice feature of the Form Validation class is that it permits you to
-store all your validation rules for your entire application in a config
-file. You can organize these rules into &#8220;groups&#8221;. These groups can
-either be loaded automatically when a matching controller/method is
-called, or you can manually call each set as needed.</p>
+<p>フォームバリデーションクラスの素晴らしい機能として、
+アプリケーション全体のために、すべての検証ルールを設定ファイル内に保存することができます。
+「グループ」にこれらのルールを整理することができます。
+コントローラ/メソッドが一致するものを自動的にロードするか、
+または必要に応じて手動で呼び出すことでそれらのグループを読み込むことができます。</p>
 <div class="section" id="id21">
 <h3><a class="toc-backref" href="#id51">ルールの保存方法</a><a class="headerlink" href="#id21" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>To store your validation rules, simply create a file named
-form_validation.php in your application/config/ folder. In that file
-you will place an array named $config with your rules. As shown earlier,
-the validation array will have this prototype:</p>
+<p>検証ルールを保存するには、
+単に application/config/ フォルダに form_validation.php という名前のファイルを作成します。
+このファイルでは、 $config という名前の配列を配置し、バリデーションルールを書きます。
+先に示したように、バリデーションの配列は次のプロトタイプを持っています:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$config</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
         <span class="k">array</span><span class="p">(</span>
                 <span class="s1">&#39;field&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;username&#39;</span><span class="p">,</span>
-                <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Username&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;ユーザ名&#39;</span><span class="p">,</span>
                 <span class="s1">&#39;rules&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required&#39;</span>
         <span class="p">),</span>
         <span class="k">array</span><span class="p">(</span>
                 <span class="s1">&#39;field&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;password&#39;</span><span class="p">,</span>
-                <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Password&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;パスワード&#39;</span><span class="p">,</span>
                 <span class="s1">&#39;rules&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required&#39;</span>
         <span class="p">),</span>
         <span class="k">array</span><span class="p">(</span>
                 <span class="s1">&#39;field&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;passconf&#39;</span><span class="p">,</span>
-                <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Password Confirmation&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;パスワード確認&#39;</span><span class="p">,</span>
                 <span class="s1">&#39;rules&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required&#39;</span>
         <span class="p">),</span>
         <span class="k">array</span><span class="p">(</span>
                 <span class="s1">&#39;field&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;email&#39;</span><span class="p">,</span>
-                <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Email&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;メールアドレス&#39;</span><span class="p">,</span>
                 <span class="s1">&#39;rules&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required&#39;</span>
         <span class="p">)</span>
 <span class="p">);</span>
 </pre></div>
 </div>
-<p>Your validation rule file will be loaded automatically and used when you
-call the <code class="docutils literal"><span class="pre">run()</span></code> method.</p>
-<p>Please note that you MUST name your <code class="docutils literal"><span class="pre">$config</span></code> array.</p>
+<p>バリデーションルールファイルは自動的に読み込まれ、
+<code class="docutils literal"><span class="pre">run()</span></code> メソッドを呼び出すときに使用されます。</p>
+<p><code class="docutils literal"><span class="pre">$config</span></code> 配列という名前を　つ　け　な　け　れ　ば　な　ら　な　い　のでご注意ください。</p>
 </div>
 <div class="section" id="id22">
 <h3><a class="toc-backref" href="#id52">検証ルールのセットを作る</a><a class="headerlink" href="#id22" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>In order to organize your rules into &#8220;sets&#8221; requires that you place them
-into &#8220;sub arrays&#8221;. Consider the following example, showing two sets of
-rules. We&#8217;ve arbitrarily called these two rules &#8220;signup&#8221; and &#8220;email&#8221;.
-You can name your rules anything you want:</p>
+<p>バリデーションルールを「セット」に整理するためには、
+「サブ配列」にそれらを置くことが必要です。次の例を考えてみましょう、ルールを 2 セット作ります。
+「signup」と「email」の 2 つのルールとします。
+この名称は任意につけられます:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$config</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
         <span class="s1">&#39;signup&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
                 <span class="k">array</span><span class="p">(</span>
                         <span class="s1">&#39;field&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;username&#39;</span><span class="p">,</span>
-                        <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Username&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;ユーザ名&#39;</span><span class="p">,</span>
                         <span class="s1">&#39;rules&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required&#39;</span>
                 <span class="p">),</span>
                 <span class="k">array</span><span class="p">(</span>
                         <span class="s1">&#39;field&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;password&#39;</span><span class="p">,</span>
-                        <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Password&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;パスワード&#39;</span><span class="p">,</span>
                         <span class="s1">&#39;rules&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required&#39;</span>
                 <span class="p">),</span>
                 <span class="k">array</span><span class="p">(</span>
                         <span class="s1">&#39;field&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;passconf&#39;</span><span class="p">,</span>
-                        <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Password Confirmation&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;パスワード確認&#39;</span><span class="p">,</span>
                         <span class="s1">&#39;rules&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required&#39;</span>
                 <span class="p">),</span>
                 <span class="k">array</span><span class="p">(</span>
                         <span class="s1">&#39;field&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;email&#39;</span><span class="p">,</span>
-                        <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Email&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;メールアドレス&#39;</span><span class="p">,</span>
                         <span class="s1">&#39;rules&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required&#39;</span>
                 <span class="p">)</span>
         <span class="p">),</span>
         <span class="s1">&#39;email&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
                 <span class="k">array</span><span class="p">(</span>
                         <span class="s1">&#39;field&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;emailaddress&#39;</span><span class="p">,</span>
-                        <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;EmailAddress&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;eメールアドレス&#39;</span><span class="p">,</span>
                         <span class="s1">&#39;rules&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required|valid_email&#39;</span>
                 <span class="p">),</span>
                 <span class="k">array</span><span class="p">(</span>
                         <span class="s1">&#39;field&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span>
-                        <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Name&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;名前&#39;</span><span class="p">,</span>
                         <span class="s1">&#39;rules&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required|alpha&#39;</span>
                 <span class="p">),</span>
                 <span class="k">array</span><span class="p">(</span>
                         <span class="s1">&#39;field&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;title&#39;</span><span class="p">,</span>
-                        <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Title&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;タイトル&#39;</span><span class="p">,</span>
                         <span class="s1">&#39;rules&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required&#39;</span>
                 <span class="p">),</span>
                 <span class="k">array</span><span class="p">(</span>
                         <span class="s1">&#39;field&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;message&#39;</span><span class="p">,</span>
-                        <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;MessageBody&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;メッセージ本文&#39;</span><span class="p">,</span>
                         <span class="s1">&#39;rules&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required&#39;</span>
                 <span class="p">)</span>
         <span class="p">)</span>
@@ -1249,8 +1249,8 @@ You can name your rules anything you want:</p>
 </div>
 <div class="section" id="id23">
 <h3><a class="toc-backref" href="#id53">特定のルールグループを呼び出す</a><a class="headerlink" href="#id23" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>In order to call a specific group, you will pass its name to the <code class="docutils literal"><span class="pre">run()</span></code>
-method. For example, to call the signup rule you will do this:</p>
+<p>特定のグループを呼び出すには、 <code class="docutils literal"><span class="pre">run()</span></code> メソッドにその名前を渡します。
+たとえば、 signup ルールを呼び出すにはこうします:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">run</span><span class="p">(</span><span class="s1">&#39;signup&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="k">FALSE</span><span class="p">)</span>
 <span class="p">{</span>
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;myform&#39;</span><span class="p">);</span>
@@ -1263,11 +1263,11 @@ method. For example, to call the signup rule you will do this:</p>
 </div>
 </div>
 <div class="section" id="id24">
-<h3><a class="toc-backref" href="#id54">コントローラー内のメソッドにルールグループを関連づける</a><a class="headerlink" href="#id24" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>An alternate (and more automatic) method of calling a rule group is to
-name it according to the controller class/method you intend to use it
-with. For example, let&#8217;s say you have a controller named Member and a
-method named signup. Here&#8217;s what your class might look like:</p>
+<h3><a class="toc-backref" href="#id54">コントローラーのメソッドにルールグループを関連づける</a><a class="headerlink" href="#id24" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>ルールグループを呼び出す（より自動的な）別の方法として、
+バリデーションルールを使いたいコントローラのクラス/メソッドに応じた名前を付けることです。
+例えば、 Member コントローラと
+signup メソッドがあるとしましょう​。次のようなクラスです:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
 <span class="k">class</span> <span class="nc">Member</span> <span class="k">extends</span> <span class="nx">CI_Controller</span> <span class="p">{</span>
@@ -1288,37 +1288,37 @@ method named signup. Here&#8217;s what your class might look like:</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>In your validation config file, you will name your rule group
-member/signup:</p>
+<p>バリデーション設定ファイルでは、ルールグループに
+member/signup という名前をつけます:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$config</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
         <span class="s1">&#39;member/signup&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
                 <span class="k">array</span><span class="p">(</span>
                         <span class="s1">&#39;field&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;username&#39;</span><span class="p">,</span>
-                        <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Username&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;ユーザ名&#39;</span><span class="p">,</span>
                         <span class="s1">&#39;rules&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required&#39;</span>
                 <span class="p">),</span>
                 <span class="k">array</span><span class="p">(</span>
                         <span class="s1">&#39;field&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;password&#39;</span><span class="p">,</span>
-                        <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Password&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;パスワード&#39;</span><span class="p">,</span>
                         <span class="s1">&#39;rules&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required&#39;</span>
                 <span class="p">),</span>
                 <span class="k">array</span><span class="p">(</span>
                         <span class="s1">&#39;field&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;passconf&#39;</span><span class="p">,</span>
-                        <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;PasswordConfirmation&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;パスワード確認&#39;</span><span class="p">,</span>
                         <span class="s1">&#39;rules&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required&#39;</span>
                 <span class="p">),</span>
                 <span class="k">array</span><span class="p">(</span>
                         <span class="s1">&#39;field&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;email&#39;</span><span class="p">,</span>
-                        <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Email&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;メールアドレス&#39;</span><span class="p">,</span>
                         <span class="s1">&#39;rules&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;required&#39;</span>
                 <span class="p">)</span>
         <span class="p">)</span>
 <span class="p">);</span>
 </pre></div>
 </div>
-<p>When a rule group is named identically to a controller class/method it
-will be used automatically when the <code class="docutils literal"><span class="pre">run()</span></code> method is invoked from that
-class/method.</p>
+<p>ルールグループにコントローラのクラス/メソッドと同じ名前がつけられている場合、
+<code class="docutils literal"><span class="pre">run()</span></code> メソッドはそのクラス/メソッドから呼び出されたときに
+自動的にそれを使用します。</p>
 </div>
 </div>
 <div class="section" id="using-arrays-as-field-names">
