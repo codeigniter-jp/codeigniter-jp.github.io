@@ -422,14 +422,14 @@
             
   <div class="section" id="ftp">
 <h1>FTP クラス<a class="headerlink" href="#ftp" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>CodeIgniter&#8217;s FTP Class permits files to be transfered to a remote
-server. Remote files can also be moved, renamed, and deleted. The FTP
-class also includes a &#8220;mirroring&#8221; function that permits an entire local
-directory to be recreated remotely via FTP.</p>
+<p>CodeIgniter の FTP クラスを使うと、リモートサーバにファイルを転送できます。
+リモートにあるファイルは、移動、リネーム、そして削除も可能です。
+また、FTP クラスには、FTP経由でローカルディレクトリをすべてリモートに
+再作成する &#8220;ミラーリング&#8221;機能もあります。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">SFTP and SSL FTP protocols are not supported, only standard
-FTP.</p>
+<p class="last">SFTP と SSL FTP プロトコルはサポートされていません。
+通常の FTPのみサポートされます。</p>
 </div>
 <div class="contents local topic" id="contents">
 <ul class="simple">
@@ -445,18 +445,18 @@ FTP.</p>
 <h2><a class="toc-backref" href="#id5">FTPクラスの機能</a><a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <div class="section" id="id2">
 <h3><a class="toc-backref" href="#id6">クラスの初期化</a><a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>Like most other classes in CodeIgniter, the FTP class is initialized in
-your controller using the $this-&gt;load-&gt;library function:</p>
+<p>CodeIgniter の大部分のクラスと同様、FTP クラスは、コントローラの中で
+$this-&gt;load-&gt;library メソッドを使って初期化します:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;ftp&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Once loaded, the FTP object will be available using: $this-&gt;ftp</p>
+<p>一度読み込まれると、FTP オブジェクトは、次のようにして利用できます: $this-&gt;ftp</p>
 </div>
 <div class="section" id="id3">
 <h3><a class="toc-backref" href="#id7">使用例</a><a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>In this example a connection is opened to the FTP server, and a local
-file is read and uploaded in ASCII mode. The file permissions are set to
-755.</p>
+<p>以下の例では、FTPサーバに対してコネクションが開かれ、
+ローカルファイルが ASCII モードで読み取られてアップロードされます。
+ファイルのパーミッションは755に設定します。</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;ftp&#39;</span><span class="p">);</span>
 
 <span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;hostname&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;ftp.example.com&#39;</span><span class="p">;</span>
@@ -471,7 +471,7 @@ file is read and uploaded in ASCII mode. The file permissions are set to
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">ftp</span><span class="o">-&gt;</span><span class="na">close</span><span class="p">();</span>
 </pre></div>
 </div>
-<p>In this example a list of files is retrieved from the server.</p>
+<p>以下の例では、サーバからファイルのリストが取得されます。</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;ftp&#39;</span><span class="p">);</span>
 
 <span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;hostname&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;ftp.example.com&#39;</span><span class="p">;</span>
@@ -488,7 +488,7 @@ file is read and uploaded in ASCII mode. The file permissions are set to
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">ftp</span><span class="o">-&gt;</span><span class="na">close</span><span class="p">();</span>
 </pre></div>
 </div>
-<p>In this example a local directory is mirrored on the server.</p>
+<p>以下の例では、ローカルディレクトリがサーバにミラーされます。</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;ftp&#39;</span><span class="p">);</span>
 
 <span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;hostname&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;ftp.example.com&#39;</span><span class="p">;</span>
@@ -518,11 +518,11 @@ file is read and uploaded in ASCII mode. The file permissions are set to
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$config</strong> (<em>array</em>) &#8211; Connection values</li>
+<li><strong>$config</strong> (<em>array</em>) &#8211; 接続情報</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">TRUE on success, FALSE on failure</p>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">成功時は TRUE 、 失敗時は FALSE</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">bool</p>
@@ -530,10 +530,10 @@ file is read and uploaded in ASCII mode. The file permissions are set to
 </tr>
 </tbody>
 </table>
-<p>Connects and logs into to the FTP server. Connection preferences are set
-by passing an array to the function, or you can store them in a config
-file.</p>
-<p>Here is an example showing how you set preferences manually:</p>
+<p>FTP サーバに接続してログインします。
+接続の設定は、配列で渡すか設定ファイルに
+保管しておくことができます。</p>
+<p>以下は、手動で設定をセットする方法を示した例です:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;ftp&#39;</span><span class="p">);</span>
 
 <span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;hostname&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;ftp.example.com&#39;</span><span class="p">;</span>
@@ -546,12 +546,12 @@ file.</p>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">ftp</span><span class="o">-&gt;</span><span class="na">connect</span><span class="p">(</span><span class="nv">$config</span><span class="p">);</span>
 </pre></div>
 </div>
-<p><strong>Setting FTP Preferences in a Config File</strong></p>
-<p>If you prefer you can store your FTP preferences in a config file.
-Simply create a new file called the ftp.php, add the $config array in
-that file. Then save the file at <em>application/config/ftp.php</em> and it
-will be used automatically.</p>
-<p><strong>Available connection options</strong></p>
+<p><strong>設定ファイルでの FTP の設定</strong></p>
+<p>必要であれば、FTP の設定を設定ファイルに保管することもできます。
+単純に、 ftp.php という名前で新しいファイルを作成し、そのファイルに
+$config という名前の設定用配列を追加します。 <em>application/config/ftp.php</em> ファイルに
+保存すると、自動的にそれが使われます。</p>
+<p><strong>利用できる接続オプション</strong></p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="13%" />
@@ -567,27 +567,27 @@ will be used automatically.</p>
 <tbody valign="top">
 <tr class="row-even"><td><strong>hostname</strong></td>
 <td>n/a</td>
-<td>FTP hostname (usually something like: ftp.example.com)</td>
+<td>FTP ホスト名（通常は次のようになります: ftp.example.com）</td>
 </tr>
 <tr class="row-odd"><td><strong>username</strong></td>
 <td>n/a</td>
-<td>FTP username</td>
+<td>FTP ユーザ名</td>
 </tr>
 <tr class="row-even"><td><strong>password</strong></td>
 <td>n/a</td>
-<td>FTP password</td>
+<td>FTP パスワード</td>
 </tr>
 <tr class="row-odd"><td><strong>port</strong></td>
 <td>21</td>
-<td>FTP server port number</td>
+<td>FTP ポート番号</td>
 </tr>
 <tr class="row-even"><td><strong>debug</strong></td>
 <td>FALSE</td>
-<td>TRUE/FALSE (boolean): Whether to enable debugging to display error messages</td>
+<td>TRUE/FALSE （ブール値）: デバッグ用にエラーメッセージを表示するかどうか</td>
 </tr>
 <tr class="row-odd"><td><strong>passive</strong></td>
 <td>TRUE</td>
-<td>TRUE/FALSE (boolean): Whether to use passive mode</td>
+<td>TRUE/FALSE （ブール値）: PASSIVE モードを使用するかどうか</td>
 </tr>
 </tbody>
 </table>
@@ -601,14 +601,14 @@ will be used automatically.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$locpath</strong> (<em>string</em>) &#8211; Local file path</li>
-<li><strong>$rempath</strong> (<em>string</em>) &#8211; Remote file path</li>
-<li><strong>$mode</strong> (<em>string</em>) &#8211; FTP mode, defaults to &#8216;auto&#8217; (options are: &#8216;auto&#8217;, &#8216;binary&#8217;, &#8216;ascii&#8217;)</li>
-<li><strong>$permissions</strong> (<em>int</em>) &#8211; File permissions (octal)</li>
+<li><strong>$locpath</strong> (<em>string</em>) &#8211; ローカルのファイルパス</li>
+<li><strong>$rempath</strong> (<em>string</em>) &#8211; リモートのファイルパス</li>
+<li><strong>$mode</strong> (<em>string</em>) &#8211; FTP モード、 デフォルトは &#8216;auto&#8217; （&#8217;auto&#8217; 、 &#8216;binary&#8217; 、 &#8216;ascii&#8217; を指定する）</li>
+<li><strong>$permissions</strong> (<em>int</em>) &#8211; File パーミッション（8進数）</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">TRUE on success, FALSE on failure</p>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">成功時は TRUE 、 失敗時は FALSE</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">bool</p>
@@ -616,14 +616,14 @@ will be used automatically.</p>
 </tr>
 </tbody>
 </table>
-<p>Uploads a file to your server. You must supply the local path and the
-remote path, and you can optionally set the mode and permissions.
-Example:</p>
+<p>サーバにファイルをアップロードします。ローカルのパスとリモートのパス、オプションで、
+転送モードとパーミッションを設定します。
+例:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">ftp</span><span class="o">-&gt;</span><span class="na">upload</span><span class="p">(</span><span class="s1">&#39;/local/path/to/myfile.html&#39;</span><span class="p">,</span> <span class="s1">&#39;/public_html/myfile.html&#39;</span><span class="p">,</span> <span class="s1">&#39;ascii&#39;</span><span class="p">,</span> <span class="mo">0775</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>If &#8216;auto&#8217; mode is used it will base the mode on the file extension of the source file.</p>
-<p>If set, permissions have to be passed as an octal value.</p>
+<p>&#8216;auto&#8217; モードが使用されているときは、転送するファイルの拡張子によって転送モードが決められます。</p>
+<p>パーミッションを設定する場合は8進数の値を渡さなければなりません。</p>
 </dd></dl>
 
 <dl class="method">
@@ -634,13 +634,13 @@ Example:</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$rempath</strong> (<em>string</em>) &#8211; Remote file path</li>
-<li><strong>$locpath</strong> (<em>string</em>) &#8211; Local file path</li>
-<li><strong>$mode</strong> (<em>string</em>) &#8211; FTP mode, defaults to &#8216;auto&#8217; (options are: &#8216;auto&#8217;, &#8216;binary&#8217;, &#8216;ascii&#8217;)</li>
+<li><strong>$rempath</strong> (<em>string</em>) &#8211; リモートのファイルパス</li>
+<li><strong>$locpath</strong> (<em>string</em>) &#8211; ローカルのファイルパス</li>
+<li><strong>$mode</strong> (<em>string</em>) &#8211; FTP モード、 デフォルトは &#8216;auto&#8217; （&#8217;auto&#8217; 、 &#8216;binary&#8217; 、 &#8216;ascii&#8217; を指定する）</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">TRUE on success, FALSE on failure</p>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">成功時は TRUE 、 失敗時は FALSE</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">bool</p>
@@ -648,14 +648,14 @@ Example:</p>
 </tr>
 </tbody>
 </table>
-<p>Downloads a file from your server. You must supply the remote path and
-the local path, and you can optionally set the mode. Example:</p>
+<p>サーバからファイルをダウンロードします。リモートとローカルのパスを指定
+する必要があります。オプションでモードを指定できます。 例:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">ftp</span><span class="o">-&gt;</span><span class="na">download</span><span class="p">(</span><span class="s1">&#39;/public_html/myfile.html&#39;</span><span class="p">,</span> <span class="s1">&#39;/local/path/to/myfile.html&#39;</span><span class="p">,</span> <span class="s1">&#39;ascii&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>If &#8216;auto&#8217; mode is used it will base the mode on the file extension of the source file.</p>
-<p>Returns FALSE if the download does not execute successfully
-(including if PHP does not have permission to write the local file).</p>
+<p>&#8216;auto&#8217; モードが使用されているときは、転送するファイルの拡張子によって転送モードが決められます。</p>
+<p>ダウンロードに成功しなかった場合は FALSE を返します。
+（ローカルファイルに対するパーミッションがなかった場合も含む）</p>
 </dd></dl>
 
 <dl class="method">
@@ -666,13 +666,13 @@ the local path, and you can optionally set the mode. Example:</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$old_file</strong> (<em>string</em>) &#8211; Old file name</li>
-<li><strong>$new_file</strong> (<em>string</em>) &#8211; New file name</li>
-<li><strong>$move</strong> (<em>bool</em>) &#8211; Whether a move is being performed</li>
+<li><strong>$old_file</strong> (<em>string</em>) &#8211; 変更するファイルの名前</li>
+<li><strong>$new_file</strong> (<em>string</em>) &#8211; 新しいファイルの名前</li>
+<li><strong>$move</strong> (<em>bool</em>) &#8211; move を行うかどうか</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">TRUE on success, FALSE on failure</p>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">成功時は TRUE 、 失敗時は FALSE</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">bool</p>
@@ -680,8 +680,8 @@ the local path, and you can optionally set the mode. Example:</p>
 </tr>
 </tbody>
 </table>
-<p>Permits you to rename a file. Supply the source file name/path and the new file name/path.</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// Renames green.html to blue.html</span>
+<p>ファイルをリネームします。変更するファイルの名前/パスと、新しいファイルの名前/パスを指定します。</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// green.html を blue.html にリネームします。</span>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">ftp</span><span class="o">-&gt;</span><span class="na">rename</span><span class="p">(</span><span class="s1">&#39;/public_html/foo/green.html&#39;</span><span class="p">,</span> <span class="s1">&#39;/public_html/foo/blue.html&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -695,12 +695,12 @@ the local path, and you can optionally set the mode. Example:</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$old_file</strong> (<em>string</em>) &#8211; Old file name</li>
-<li><strong>$new_file</strong> (<em>string</em>) &#8211; New file name</li>
+<li><strong>$old_file</strong> (<em>string</em>) &#8211; 変更するファイルの名前</li>
+<li><strong>$new_file</strong> (<em>string</em>) &#8211; 新しいファイルの名前</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">TRUE on success, FALSE on failure</p>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">成功時は TRUE 、 失敗時は FALSE</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">bool</p>
@@ -708,14 +708,14 @@ the local path, and you can optionally set the mode. Example:</p>
 </tr>
 </tbody>
 </table>
-<p>Lets you move a file. Supply the source and destination paths:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// Moves blog.html from &quot;joe&quot; to &quot;fred&quot;</span>
+<p>ファイルを移動できます。移動元と移動先のパスを指定します:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// blog.html を &quot;joe&quot; から &quot;fred&quot; に移動します。</span>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">ftp</span><span class="o">-&gt;</span><span class="na">move</span><span class="p">(</span><span class="s1">&#39;/public_html/joe/blog.html&#39;</span><span class="p">,</span> <span class="s1">&#39;/public_html/fred/blog.html&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">If the destination file name is different the file will be renamed.</p>
+<p class="last">移動先のファイル名が元と違う場合はリネームされます。</p>
 </div>
 </dd></dl>
 
@@ -727,11 +727,11 @@ the local path, and you can optionally set the mode. Example:</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$filepath</strong> (<em>string</em>) &#8211; Path to file to delete</li>
+<li><strong>$filepath</strong> (<em>string</em>) &#8211; 削除するファイルのパス</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">TRUE on success, FALSE on failure</p>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">成功時は TRUE 、 失敗時は FALSE</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">bool</p>
@@ -739,7 +739,7 @@ the local path, and you can optionally set the mode. Example:</p>
 </tr>
 </tbody>
 </table>
-<p>Lets you delete a file. Supply the source path with the file name.</p>
+<p>ファイルを削除できます。削除するファイルのパスとファイル名を指定します。</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">ftp</span><span class="o">-&gt;</span><span class="na">delete_file</span><span class="p">(</span><span class="s1">&#39;/public_html/joe/blog.html&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -753,11 +753,11 @@ the local path, and you can optionally set the mode. Example:</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$filepath</strong> (<em>string</em>) &#8211; Path to directory to delete</li>
+<li><strong>$filepath</strong> (<em>string</em>) &#8211; 削除するディレクトリのパス</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">TRUE on success, FALSE on failure</p>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">成功時は TRUE 、 失敗時は FALSE</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">bool</p>
@@ -765,14 +765,14 @@ the local path, and you can optionally set the mode. Example:</p>
 </tr>
 </tbody>
 </table>
-<p>Lets you delete a directory and everything it contains. Supply the
-source path to the directory with a trailing slash.</p>
+<p>ディレクトリとそのディレクトリに含まれるものをすべて削除します。
+削除するディレクトリへのパスを末尾にスラッシュをつけて指定します。</p>
 <div class="admonition important">
 <p class="first admonition-title">重要</p>
-<p class="last">Be VERY careful with this method!
-It will recursively delete <strong>everything</strong> within the supplied path,
-including sub-folders and all files. Make absolutely sure your path
-is correct. Try using <code class="docutils literal"><span class="pre">list_files()</span></code> first to verify that your path is correct.</p>
+<p class="last">このメソッドを使うときは、「厳重に」注意してください！！
+渡されたパス以下のサブフォルダと全ファイルの <strong>すべてのもの</strong> を再帰的に削除します。
+パスが完全に正しいかを確認するようにしてください。
+<code class="docutils literal"><span class="pre">list_files()</span></code> メソッドをまず使って、パスが正しいかを検証するようにしてください。</p>
 </div>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">ftp</span><span class="o">-&gt;</span><span class="na">delete_dir</span><span class="p">(</span><span class="s1">&#39;/public_html/path/to/folder/&#39;</span><span class="p">);</span>
 </pre></div>
@@ -787,11 +787,11 @@ is correct. Try using <code class="docutils literal"><span class="pre">list_file
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$path</strong> (<em>string</em>) &#8211; Directory path</li>
+<li><strong>$path</strong> (<em>string</em>) &#8211; ディレクトリのパス</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">An array list of files or FALSE on failure</p>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">ファイルの配列、失敗時は FALSE</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">array</p>
@@ -799,8 +799,8 @@ is correct. Try using <code class="docutils literal"><span class="pre">list_file
 </tr>
 </tbody>
 </table>
-<p>Permits you to retrieve a list of files on your server returned as an
-array. You must supply the path to the desired directory.</p>
+<p>サーバにあるファイルのリストを取得して 配列 として返します。
+取得したいディレクトリへのパスを指定する必要があります。</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$list</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">ftp</span><span class="o">-&gt;</span><span class="na">list_files</span><span class="p">(</span><span class="s1">&#39;/public_html/&#39;</span><span class="p">);</span>
 <span class="nb">print_r</span><span class="p">(</span><span class="nv">$list</span><span class="p">);</span>
 </pre></div>
@@ -815,12 +815,12 @@ array. You must supply the path to the desired directory.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$locpath</strong> (<em>string</em>) &#8211; Local path</li>
-<li><strong>$rempath</strong> (<em>string</em>) &#8211; Remote path</li>
+<li><strong>$locpath</strong> (<em>string</em>) &#8211; ローカルのパス</li>
+<li><strong>$rempath</strong> (<em>string</em>) &#8211; リモートのパス</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">TRUE on success, FALSE on failure</p>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">成功時は TRUE 、 失敗時は FALSE</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">bool</p>
@@ -828,10 +828,10 @@ array. You must supply the path to the desired directory.</p>
 </tr>
 </tbody>
 </table>
-<p>Recursively reads a local folder and everything it contains (including
-sub-folders) and creates a mirror via FTP based on it. Whatever the
-directory structure of the original file path will be recreated on the
-server. You must supply a source path and a destination path:</p>
+<p>ローカルフォルダ内のすべて(サブフォルダ含む)を再帰的に読み取って、
+FTP 経由で読み取ったもののミラーを作成します。
+元のファイルパスのディレクトリ構造がサーバに再作成されます。
+作成元のパスと作成先のパスを指定する必要があります:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">ftp</span><span class="o">-&gt;</span><span class="na">mirror</span><span class="p">(</span><span class="s1">&#39;/path/to/myfolder/&#39;</span><span class="p">,</span> <span class="s1">&#39;/public_html/myfolder/&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -845,12 +845,12 @@ server. You must supply a source path and a destination path:</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$path</strong> (<em>string</em>) &#8211; Path to directory to create</li>
-<li><strong>$permissions</strong> (<em>int</em>) &#8211; Permissions (octal)</li>
+<li><strong>$path</strong> (<em>string</em>) &#8211; 作成するディレクトリのパス</li>
+<li><strong>$permissions</strong> (<em>int</em>) &#8211; パーミッション（8進数）</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">TRUE on success, FALSE on failure</p>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">成功時は TRUE 、 失敗時は FALSE</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">bool</p>
@@ -858,10 +858,10 @@ server. You must supply a source path and a destination path:</p>
 </tr>
 </tbody>
 </table>
-<p>Lets you create a directory on your server. Supply the path ending in
-the folder name you wish to create, with a trailing slash.</p>
-<p>Permissions can be set by passing an octal value in the second parameter.</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// Creates a folder named &quot;bar&quot;</span>
+<p>サーバにディレクトリを作成できます。作成したいフォルダ名を末尾にスラッ
+シュをつけて指定します。</p>
+<p>パーミッションは、 8進数の値で第2引数に指定できます。</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// &quot;bar&quot;という名前のフォルダを作成します。</span>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">ftp</span><span class="o">-&gt;</span><span class="na">mkdir</span><span class="p">(</span><span class="s1">&#39;/public_html/foo/bar/&#39;</span><span class="p">,</span> <span class="mo">0755</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -875,12 +875,12 @@ the folder name you wish to create, with a trailing slash.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$path</strong> (<em>string</em>) &#8211; Path to alter permissions for</li>
-<li><strong>$perm</strong> (<em>int</em>) &#8211; Permissions (octal)</li>
+<li><strong>$path</strong> (<em>string</em>) &#8211; パーミッションを変更するファイルまたはディレクトリのパス</li>
+<li><strong>$perm</strong> (<em>int</em>) &#8211; パーミッション（8進数）</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">TRUE on success, FALSE on failure</p>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">成功時は TRUE 、 失敗時は FALSE</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">bool</p>
@@ -888,9 +888,9 @@ the folder name you wish to create, with a trailing slash.</p>
 </tr>
 </tbody>
 </table>
-<p>Permits you to set file permissions. Supply the path to the file or
-directory you wish to alter permissions on:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// Chmod &quot;bar&quot; to 755</span>
+<p>ファイルのパーミッションをセットできます。パーミッションを設定したいファイルまたは
+ディレクトリのパスを指定します:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// &quot;bar&quot; に755のパーミッションを設定します。</span>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">ftp</span><span class="o">-&gt;</span><span class="na">chmod</span><span class="p">(</span><span class="s1">&#39;/public_html/foo/bar/&#39;</span><span class="p">,</span> <span class="mo">0755</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -904,12 +904,11 @@ directory you wish to alter permissions on:</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$path</strong> (<em>string</em>) &#8211; Directory path</li>
-<li><strong>$suppress_debug</strong> (<em>bool</em>) &#8211; Whether to turn off debug messages for this command</li>
+<li><strong>$path</strong> (<em>string</em>) &#8211; ディレクトリのパス</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">TRUE on success, FALSE on failure</p>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">成功時は TRUE 、 失敗時は FALSE</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">bool</p>
@@ -917,9 +916,7 @@ directory you wish to alter permissions on:</p>
 </tr>
 </tbody>
 </table>
-<p>Changes the current working directory to the specified path.</p>
-<p>The <code class="docutils literal"><span class="pre">$suppress_debug</span></code> parameter is useful in case you want to use this method
-as an <code class="docutils literal"><span class="pre">is_dir()</span></code> alternative for FTP.</p>
+<p>作業ディレクトリを指定したパスへ変更します。</p>
 </dd></dl>
 
 <dl class="method">
@@ -929,14 +926,14 @@ as an <code class="docutils literal"><span class="pre">is_dir()</span></code> al
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">返り値:</th><td class="field-body">TRUE on success, FALSE on failure</td>
+<tr class="field-odd field"><th class="field-name">返り値:</th><td class="field-body">成功時は TRUE 、 失敗時は FALSE</td>
 </tr>
 <tr class="field-even field"><th class="field-name">返り値の型:</th><td class="field-body">bool</td>
 </tr>
 </tbody>
 </table>
-<p>Closes the connection to your server. It&#8217;s recommended that you use this
-when you are finished uploading.</p>
+<p>サーバとのコネクションを切断します。アップロードが終わったら、
+このメソッドを使うのをおすすめします。</p>
 </dd></dl>
 
 </dd></dl>
@@ -963,7 +960,7 @@ when you are finished uploading.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 9月 27, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
+      最終更新: 10月 09, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 
