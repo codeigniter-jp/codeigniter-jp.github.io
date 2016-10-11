@@ -1047,7 +1047,7 @@ SQLクエリを生成します</p>
 <div class="section" id="id9">
 <h2><a class="toc-backref" href="#id23">データの更新</a><a class="headerlink" href="#id9" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p><strong>$this-&gt;db-&gt;replace()</strong></p>
-<p>このメソッドは REPLACE 分を実行します, これは基本的には SQL
+<p>このメソッドは REPLACE 文を実行します, これは基本的には SQL
 標準の（必要なら）DELETE + INSERT で、 <em>PRIMARY</em> と <em>UNIQUE</em>
 キーを判定要素として使用します。
 これにより、複雑なロジックを組み込む必要を抑えられます。
@@ -1065,7 +1065,7 @@ SQLクエリを生成します</p>
 <span class="c1">// 次を生成: REPLACE INTO mytable (title, name, date) VALUES (&#39;My title&#39;, &#39;My name&#39;, &#39;My date&#39;)</span>
 </pre></div>
 </div>
-<p>上記の例では、もし <em>title</em> フィールドを主キーと決めつけるならば、
+<p>上記の例では、<em>title</em> フィールドを主キーとすると、
 <em>title</em> の値に &#8216;My title&#8217; を含む行があれば、その行は
 新しいデータで置き換えられる形で削除されます。</p>
 <p><code class="docutils literal"><span class="pre">set()</span></code> メソッドの使い方もまたすべてのフィールドを
@@ -2656,7 +2656,7 @@ where、like、group_by、having、order_by</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 10月 09, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
+      最終更新: 10月 11, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 
