@@ -49,7 +49,9 @@
     
       <div id="pulldown-menu" class="ciNav">
         <ul>
-<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -90,7 +92,7 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">一般的なトピック</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="urls.html">CodeIgniter の URL</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">コントローラ</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">コントローラ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="reserved_names.html">予約語</a></li>
 <li class="toctree-l2"><a class="reference internal" href="views.html">ビュー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="models.html">モデル</a></li>
@@ -233,7 +235,9 @@
           
           
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -274,7 +278,7 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">一般的なトピック</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="urls.html">CodeIgniter の URL</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">コントローラ</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">コントローラ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="reserved_names.html">予約語</a></li>
 <li class="toctree-l2"><a class="reference internal" href="views.html">ビュー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="models.html">モデル</a></li>
@@ -507,7 +511,7 @@ HTTP リクエストをどのように処理するかを決定します。</p>
 </div>
 <div class="section" id="id4">
 <h2><a class="toc-backref" href="#id16">メソッド</a><a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>上記の例では、メソッド名は <code class="docutils literal"><span class="pre">index()</span></code> です。「 index 」メソッドは
+<p>上記の例では、メソッド名は <tt class="docutils literal"><span class="pre">index()</span></tt> です。「 index 」メソッドは
 URI の <strong>第 2 セグメント</strong> が空の場合、常にデフォルトでロードされます。
 「 Hello World 」のメッセージを表示する別の方法は、次のようになります:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">example</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">index</span><span class="o">.</span><span class="nx">php</span><span class="o">/</span><span class="nx">blog</span><span class="o">/</span><span class="nx">index</span><span class="o">/</span>
@@ -559,7 +563,7 @@ URI の <strong>第 2 セグメント</strong> が空の場合、常にデフォ
 </div>
 <div class="admonition important">
 <p class="first admonition-title">重要</p>
-<p class="last"><a class="reference internal" href="routing.html"><span class="doc">URI ルーティング</span></a> 機能を使用している場合、
+<p class="last"><a class="reference internal" href="routing.html"><em>URI ルーティング</em></a> 機能を使用している場合、
 メソッドに渡されるセグメントは
 再ルーティングされたものになります。</p>
 </div>
@@ -576,14 +580,14 @@ URI の <strong>第 2 セグメント</strong> が空の場合、常にデフォ
 <p>「 blog 」が書かれている箇所が使用したいコントローラクラスの名前を書くところです。
 いま URI セグメントになにもを指定せずにメインの index.php ファイルをロードすれば、
 デフォルトとして「 Hello World 」のメッセージが表示されます。</p>
-<p>詳細については <a class="reference internal" href="routing.html"><span class="doc">URI ルーティング</span></a> ドキュメントの「予約済みルート」セクションを
+<p>詳細については <a class="reference internal" href="routing.html"><em>URI ルーティング</em></a> ドキュメントの「予約済みルート」セクションを
 参照してください。</p>
 </div>
 <div class="section" id="id6">
 <h2><a class="toc-backref" href="#id19">メソッド呼び出しの再マッピング</a><a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>上述のように、 URI の第 2 セグメントは通常、
 コントローラのどのメソッドを呼び出すかを決定します。CodeIgniter では
-<code class="docutils literal"><span class="pre">_remap()</span></code> メソッドを使用してこの動作をオーバーライドすることができます:</p>
+<tt class="docutils literal"><span class="pre">_remap()</span></tt> メソッドを使用してこの動作をオーバーライドすることができます:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="k">function</span> <span class="nf">_remap</span><span class="p">()</span>
 <span class="p">{</span>
         <span class="c1">// Some code here...</span>
@@ -598,7 +602,7 @@ URI により呼び出されるメソッドを決定する通常の動作をオ�
 独自のメソッドルーティングルールを定義することができます。</p>
 </div>
 <p>オーバーライドされるメソッド名（典型的には URI の第 2 セグメント）が
-<code class="docutils literal"><span class="pre">_remap()</span></code> メソッドにパラメータとして渡されます:</p>
+<tt class="docutils literal"><span class="pre">_remap()</span></tt> メソッドにパラメータとして渡されます:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="k">function</span> <span class="nf">_remap</span><span class="p">(</span><span class="nv">$method</span><span class="p">)</span>
 <span class="p">{</span>
         <span class="k">if</span> <span class="p">(</span><span class="nv">$method</span> <span class="o">===</span> <span class="s1">&#39;some_method&#39;</span><span class="p">)</span>
@@ -612,7 +616,7 @@ URI により呼び出されるメソッドを決定する通常の動作をオ�
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>メソッド名の後の追加のセグメントは、オプションの 2 番目のパラメータとして <code class="docutils literal"><span class="pre">_remap()</span></code> に
+<p>メソッド名の後の追加のセグメントは、オプションの 2 番目のパラメータとして <tt class="docutils literal"><span class="pre">_remap()</span></tt> に
 渡されます。この配列は
 PHP の <a class="reference external" href="http://php.net/call_user_func_array">call_user_func_array()</a> と組み合わせて使用することで、
 CodeIgniterのデフォルト動作をエミュレートできます。</p>
@@ -633,13 +637,13 @@ CodeIgniterのデフォルト動作をエミュレートできます。</p>
 <h2><a class="toc-backref" href="#id20">出力処理</a><a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>CodeIgniter には出力クラスがあり、Webブラウザにレンダリングされる
 最終的なデータを送信する面倒を自動的にみてくれます。詳細な情報は
-<a class="reference internal" href="views.html"><span class="doc">ビュー</span></a> と <a class="reference internal" href="../libraries/output.html"><span class="doc">出力クラス</span></a> ページで見つけることができます。しかしながらいくつかのケースにおいて、
+<a class="reference internal" href="views.html"><em>ビュー</em></a> と <a class="reference internal" href="../libraries/output.html"><em>出力クラス</em></a> ページで見つけることができます。しかしながらいくつかのケースにおいて、
 最終データをいくらか後処理をして自分自身でブラウザに送信したいこともあるでしょう。
-CodeIgniter では <code class="docutils literal"><span class="pre">_output()</span></code> メソッドをコントローラに追加することで、
+CodeIgniter では <tt class="docutils literal"><span class="pre">_output()</span></tt> メソッドをコントローラに追加することで、
 確定した出力データを受け取ることができます。</p>
 <div class="admonition important">
 <p class="first admonition-title">重要</p>
-<p class="last">コントローラに <code class="docutils literal"><span class="pre">_output()</span></code> という名前のメソッドが含まれている場合、
+<p class="last">コントローラに <tt class="docutils literal"><span class="pre">_output()</span></tt> という名前のメソッドが含まれている場合、
 最終データを直接出力するかわりとして、出力クラスから <strong>常に</strong> 呼び出されます。
 メソッドの最初のパラメータに
 最終出力が含まれます。</p>
@@ -653,14 +657,14 @@ CodeIgniter では <code class="docutils literal"><span class="pre">_output()</s
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p><code class="docutils literal"><span class="pre">_output()</span></code> メソッドは、確定状態でデータを受信することに注意してください。
-<code class="docutils literal"><span class="pre">_output()</span></code> メソッドに渡される前に、
+<p><tt class="docutils literal"><span class="pre">_output()</span></tt> メソッドは、確定状態でデータを受信することに注意してください。
+<tt class="docutils literal"><span class="pre">_output()</span></tt> メソッドに渡される前に、
 ベンチマークとメモリ使用量データはレンダリングされ、
 （キャッシュを有効にしている場合）キャッシュファイルは書き込まれており、
-（その <a class="reference internal" href="../libraries/output.html"><span class="doc">機能</span></a> を使っていれば）
+（その <a class="reference internal" href="../libraries/output.html"><em>機能</em></a> を使っていれば）
 ヘッダは送信されています。
 コントローラの出力を適切にキャッシュするため、
-<code class="docutils literal"><span class="pre">_output()</span></code> メソッドで次のようにできます:</p>
+<tt class="docutils literal"><span class="pre">_output()</span></tt> メソッドで次のようにできます:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">output</span><span class="o">-&gt;</span><span class="na">cache_expiration</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
 <span class="p">{</span>
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">output</span><span class="o">-&gt;</span><span class="na">_write_cache</span><span class="p">(</span><span class="nv">$output</span><span class="p">);</span>
@@ -672,7 +676,7 @@ CodeIgniter では <code class="docutils literal"><span class="pre">_output()</s
 それらはあなたの追加処理を取得できないからです。
 最終処理のいずれかが行われる <em>前に</em> 出力を制御する
 別の方法については、
-<a class="reference internal" href="../libraries/output.html"><span class="doc">出力ライブラリ</span></a> で利用可能なメソッドを参照してください 。</p>
+<a class="reference internal" href="../libraries/output.html"><em>出力ライブラリ</em></a> で利用可能なメソッドを参照してください 。</p>
 </div>
 </div>
 <div class="section" id="id8">
@@ -722,8 +726,8 @@ CodeIgniter はできます。</p>
 URL にサブディレクトリ <em>のみ</em> が含まれている場合に呼び出される
 デフォルトのコントローラを持っていたいでしょう。シンプルに「 default_controller 」の設定を
 <em>application/config/routes.php</em> ファイルで行い、名前が一致するようにコントローラを置いてください。</p>
-<p>CodeIgniter はまた、 <a class="reference internal" href="routing.html"><span class="doc">URI
-ルーティング</span></a> 機能により URI を再マッピングすることもできます。</p>
+<p>CodeIgniter はまた、 <a class="reference internal" href="routing.html"><em>URI
+ルーティング</em></a> 機能により URI を再マッピングすることもできます。</p>
 </div>
 <div class="section" id="id10">
 <h2><a class="toc-backref" href="#id23">クラスのコンストラクタ</a><a class="headerlink" href="#id10" title="このヘッドラインへのパーマリンク">¶</a></h2>
@@ -756,13 +760,13 @@ URL にサブディレクトリ <em>のみ</em> が含まれている場合に�
 <p>あなたのコントローラクラスはメインのアプリケーションコントローラを継承しますので、
 親クラスで使っているメソッド名と同一の名前をつけないように注意する必要があります。
 さもなくばあなたの関数がそれらをオーバーライドしてしまいます。
-<a class="reference internal" href="reserved_names.html"><span class="doc">予約語</span></a>
+<a class="reference internal" href="reserved_names.html"><em>予約語</em></a>
 の全リストを参照してください。</p>
 <div class="admonition important">
 <p class="first admonition-title">重要</p>
 <p class="last">また、そのクラス名と同じ名前のメソッドを作ってもいけません。
-そうしてしまうと、クラス内に <code class="docutils literal"><span class="pre">__construct()</span></code> メソッドがない場合、
-たとえば <code class="docutils literal"><span class="pre">index:::index()</span></code> メソッドが
+そうしてしまうと、クラス内に <tt class="docutils literal"><span class="pre">__construct()</span></tt> メソッドがない場合、
+たとえば <tt class="docutils literal"><span class="pre">index:::index()</span></tt> メソッドが
 クラスのコンストラクタとして実行されます！　これは PHP4
 の後方互換機能です。</p>
 </div>
@@ -792,7 +796,7 @@ URL にサブディレクトリ <em>のみ</em> が含まれている場合に�
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 10月 11, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
+      最終更新: Nov 23, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

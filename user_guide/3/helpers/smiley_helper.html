@@ -49,7 +49,9 @@
     
       <div id="pulldown-menu" class="ciNav">
         <ul>
-<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -189,7 +191,7 @@
 <li class="toctree-l2"><a class="reference internal" href="number_helper.html">数字ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="path_helper.html">パスヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="security_helper.html">セキュリティヘルパー</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">スマイリーヘルパー</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">スマイリーヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="string_helper.html">文字列ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="text_helper.html">テキストヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="typography_helper.html">タイポグラフィーヘルパー</a></li>
@@ -233,7 +235,9 @@
           
           
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -373,7 +377,7 @@
 <li class="toctree-l2"><a class="reference internal" href="number_helper.html">数字ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="path_helper.html">パスヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="security_helper.html">セキュリティヘルパー</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">スマイリーヘルパー</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">スマイリーヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="string_helper.html">文字列ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="text_helper.html">テキストヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="typography_helper.html">タイポグラフィーヘルパー</a></li>
@@ -479,10 +483,10 @@
 という名前のファイルを作成し、その中に下記のコードを書いて下さい。</p>
 <div class="admonition important">
 <p class="first admonition-title">重要</p>
-<p class="last"><a class="reference internal" href="#get_clickable_smileys" title="get_clickable_smileys"><code class="xref php php-func docutils literal"><span class="pre">get_clickable_smileys()</span></code></a> 関数で、URL を smiley
+<p class="last"><a class="reference internal" href="#get_clickable_smileys" title="get_clickable_smileys"><tt class="xref php php-func docutils literal"><span class="pre">get_clickable_smileys()</span></tt></a> 関数で、URL を smiley
 フォルダの場所を指すように変更します。</p>
 </div>
-<p>スマイリーヘルパーのほか、 <a class="reference internal" href="../libraries/table.html"><span class="doc">HTML テーブルクラス</span></a>
+<p>スマイリーヘルパーのほか、 <a class="reference internal" href="../libraries/table.html"><em>HTML テーブルクラス</em></a>
 を使っているのがわかると思います。:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
@@ -529,7 +533,7 @@
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$image_array</span> <span class="o">=</span> <span class="nx">get_smiley_links</span><span class="p">(</span><span class="s2">&quot;http://example.com/images/smileys/&quot;</span><span class="p">,</span> <span class="s2">&quot;comment_textarea_alias&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>別名とフィールド ID を関連付けるため、<code class="xref py py-func docutils literal"><span class="pre">smiley_js()</span></code> 関数に
+<p>別名とフィールド ID を関連付けるため、<tt class="xref py py-func docutils literal"><span class="pre">smiley_js()</span></tt> 関数に
 それら両方を渡します。:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$image_array</span> <span class="o">=</span> <span class="nx">smiley_js</span><span class="p">(</span><span class="s2">&quot;comment_textarea_alias&quot;</span><span class="p">,</span> <span class="s2">&quot;comments&quot;</span><span class="p">);</span>
 </pre></div>
@@ -541,7 +545,7 @@
 <h2><a class="toc-backref" href="#id14">利用できる機能</a><a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <dl class="function">
 <dt id="get_clickable_smileys">
-<code class="descname">get_clickable_smileys</code><span class="sig-paren">(</span><em>$image_url</em><span class="optional">[</span>, <em>$alias = ''</em><span class="optional">[</span>, <em>$smileys = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#get_clickable_smileys" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">get_clickable_smileys</tt><big>(</big><em>$image_url</em><span class="optional">[</span>, <em>$alias = ''</em><span class="optional">[</span>, <em>$smileys = NULL</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#get_clickable_smileys" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -571,7 +575,7 @@
 
 <dl class="function">
 <dt id="smiley_js">
-<code class="descname">smiley_js</code><span class="sig-paren">(</span><span class="optional">[</span><em>$alias = ''</em><span class="optional">[</span>, <em>$field_id = ''</em><span class="optional">[</span>, <em>$inline = TRUE</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#smiley_js" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">smiley_js</tt><big>(</big><span class="optional">[</span><em>$alias = ''</em><span class="optional">[</span>, <em>$field_id = ''</em><span class="optional">[</span>, <em>$inline = TRUE</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#smiley_js" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -604,7 +608,7 @@
 
 <dl class="function">
 <dt id="parse_smileys">
-<code class="descname">parse_smileys</code><span class="sig-paren">(</span><span class="optional">[</span><em>$str = ''</em><span class="optional">[</span>, <em>$image_url = ''</em><span class="optional">[</span>, <em>$smileys = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#parse_smileys" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">parse_smileys</tt><big>(</big><span class="optional">[</span><em>$str = ''</em><span class="optional">[</span>, <em>$image_url = ''</em><span class="optional">[</span>, <em>$smileys = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#parse_smileys" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -657,7 +661,7 @@ URL を指定する必要があります。</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 10月 11, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
+      最終更新: Nov 23, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

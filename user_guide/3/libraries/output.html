@@ -49,7 +49,9 @@
     
       <div id="pulldown-menu" class="ciNav">
         <ul>
-<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -137,7 +139,7 @@
 <li class="toctree-l2"><a class="reference internal" href="language.html">言語クラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="loader.html">ローダ（読み込み処理）クラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="migration.html">マイグレーションクラス</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">出力クラス</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">出力クラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pagination.html">ページネーションクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="parser.html">テンプレートパーサクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="security.html">セキュリティクラス</a></li>
@@ -233,7 +235,9 @@
           
           
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -321,7 +325,7 @@
 <li class="toctree-l2"><a class="reference internal" href="language.html">言語クラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="loader.html">ローダ（読み込み処理）クラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="migration.html">マイグレーションクラス</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">出力クラス</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">出力クラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pagination.html">ページネーションクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="parser.html">テンプレートパーサクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="security.html">セキュリティクラス</a></li>
@@ -424,7 +428,7 @@
 <h1>出力クラス<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <p>出力クラスはコアクラスであり、主な機能はひとつだけです: 要求元のブラウザに完成した
 Web ページを送信します。また、あなたが Web ページの
-<a class="reference internal" href="../general/caching.html"><span class="doc">キャッシュ機能</span></a> を使用する場合は、
+<a class="reference internal" href="../general/caching.html"><em>キャッシュ機能</em></a> を使用する場合は、
 それを処理する責任も持ちます。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
@@ -433,7 +437,7 @@ Web ページを送信します。また、あなたが Web ページの
 </div>
 <p>通常の状況ではあなたの操作なしに透過的に動作しますので、
 出力クラスを意識することはありません。たとえば、
-ビューファイルをロードするために <a class="reference internal" href="loader.html"><span class="doc">Loader</span></a> クラスを使うとき、
+ビューファイルをロードするために <a class="reference internal" href="loader.html"><em>Loader</em></a> クラスを使うとき、
 自動的に出力クラスに渡されますが、 CodeIgniter
 によりシステム実行の終了時に自動的に呼び出されます。
 しかしながら、必要がある場合、
@@ -447,10 +451,10 @@ Web ページを送信します。また、あなたが Web ページの
 <h2><a class="toc-backref" href="#id4">クラスリファレンス</a><a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <dl class="class">
 <dt id="CI_Output">
-<em class="property">class </em><code class="descname">CI_Output</code><a class="headerlink" href="#CI_Output" title="この定義へのパーマリンク">¶</a></dt>
+<em class="property">class </em><tt class="descname">CI_Output</tt><a class="headerlink" href="#CI_Output" title="この定義へのパーマリンク">¶</a></dt>
 <dd><dl class="attribute">
 <dt>
-<code class="descname">$parse_exec_vars = TRUE;</code></dt>
+<tt class="descname">$parse_exec_vars = TRUE;</tt></dt>
 <dd><p>{elapsed_time} と {memory_usage} 擬似変数の構文解析を有効/無効にします。</p>
 <p>CodeIgniterはデフォルトで出力中のこれらのトークンを解析します。
 これを無効にするには、コントローラでこのプロパティを FALSE に設定します。</p>
@@ -461,7 +465,7 @@ Web ページを送信します。また、あなたが Web ページの
 
 <dl class="method">
 <dt id="CI_Output::set_output">
-<code class="descname">set_output</code><span class="sig-paren">(</span><em>$output</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_Output::set_output" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">set_output</tt><big>(</big><em>$output</em><big>)</big><a class="headerlink" href="#CI_Output::set_output" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -493,7 +497,7 @@ Web ページを送信します。また、あなたが Web ページの
 
 <dl class="method">
 <dt id="CI_Output::set_content_type">
-<code class="descname">set_content_type</code><span class="sig-paren">(</span><em>$mime_type</em><span class="optional">[</span>, <em>$charset = NULL</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Output::set_content_type" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">set_content_type</tt><big>(</big><em>$mime_type</em><span class="optional">[</span>, <em>$charset = NULL</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Output::set_content_type" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -535,7 +539,7 @@ Web ページを送信します。また、あなたが Web ページの
 
 <dl class="method">
 <dt id="CI_Output::get_content_type">
-<code class="descname">get_content_type</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Output::get_content_type" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">get_content_type</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_Output::get_content_type" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -558,7 +562,7 @@ Web ページを送信します。また、あなたが Web ページの
 
 <dl class="method">
 <dt id="CI_Output::get_header">
-<code class="descname">get_header</code><span class="sig-paren">(</span><em>$header</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_Output::get_header" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">get_header</tt><big>(</big><em>$header</em><big>)</big><a class="headerlink" href="#CI_Output::get_header" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -589,13 +593,13 @@ Web ページを送信します。また、あなたが Web ページの
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">PHP 標準の <code class="docutils literal"><span class="pre">header()</span></code> 関数を使用して送信される生のヘッダも検出対象です。</p>
+<p class="last">PHP 標準の <tt class="docutils literal"><span class="pre">header()</span></tt> 関数を使用して送信される生のヘッダも検出対象です。</p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="CI_Output::get_output">
-<code class="descname">get_output</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Output::get_output" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">get_output</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_Output::get_output" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -611,14 +615,14 @@ Web ページを送信します。また、あなたが Web ページの
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$string</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">output</span><span class="o">-&gt;</span><span class="na">get_output</span><span class="p">();</span>
 </pre></div>
 </div>
-<p><code class="docutils literal"><span class="pre">$this-&gt;load-&gt;view()</span></code> などの
+<p><tt class="docutils literal"><span class="pre">$this-&gt;load-&gt;view()</span></tt> などの
 CodeIgniter の機能により出力クラスに送られたデータのみが
 この関数から取得できることに注意してください。</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="CI_Output::append_output">
-<code class="descname">append_output</code><span class="sig-paren">(</span><em>$output</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_Output::append_output" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">append_output</tt><big>(</big><em>$output</em><big>)</big><a class="headerlink" href="#CI_Output::append_output" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -644,7 +648,7 @@ CodeIgniter の機能により出力クラスに送られたデータのみが
 
 <dl class="method">
 <dt id="CI_Output::set_header">
-<code class="descname">set_header</code><span class="sig-paren">(</span><em>$header</em><span class="optional">[</span>, <em>$replace = TRUE</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Output::set_header" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">set_header</tt><big>(</big><em>$header</em><span class="optional">[</span>, <em>$replace = TRUE</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Output::set_header" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -677,7 +681,7 @@ CodeIgniter の機能により出力クラスに送られたデータのみが
 
 <dl class="method">
 <dt id="CI_Output::set_status_header">
-<code class="descname">set_status_header</code><span class="sig-paren">(</span><span class="optional">[</span><em>$code = 200</em><span class="optional">[</span>, <em>$text = ''</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Output::set_status_header" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">set_status_header</tt><big>(</big><span class="optional">[</span><em>$code = 200</em><span class="optional">[</span>, <em>$text = ''</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Output::set_status_header" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -704,14 +708,14 @@ CodeIgniter の機能により出力クラスに送られたデータのみが
 <p>ヘッダの完全なリストについては <a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html">ここを参照してください</a> 。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">このメソッドは <a class="reference internal" href="../general/common_functions.html"><span class="doc">共通関数</span></a> の
-<code class="xref py py-func docutils literal"><span class="pre">set_status_header()</span></code> のエイリアスです。</p>
+<p class="last">このメソッドは <a class="reference internal" href="../general/common_functions.html"><em>共通関数</em></a> の
+<tt class="xref py py-func docutils literal"><span class="pre">set_status_header()</span></tt> のエイリアスです。</p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="CI_Output::enable_profiler">
-<code class="descname">enable_profiler</code><span class="sig-paren">(</span><span class="optional">[</span><em>$val = TRUE</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Output::enable_profiler" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">enable_profiler</tt><big>(</big><span class="optional">[</span><em>$val = TRUE</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Output::enable_profiler" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -729,10 +733,10 @@ CodeIgniter の機能により出力クラスに送られたデータのみが
 </tr>
 </tbody>
 </table>
-<p><a class="reference internal" href="../general/profiling.html"><span class="doc">プロファイラ</span></a> を有効/無効にすることができます。
+<p><a class="reference internal" href="../general/profiling.html"><em>プロファイラ</em></a> を有効/無効にすることができます。
 プロファイラはデバッグと最適化を目的として、ベンチマークとその他の値をページの下部に表示します。</p>
 <p>プロファイラを有効にするには
-<a class="reference internal" href="../general/controllers.html"><span class="doc">コントローラ</span></a> メソッド内の任意の場所につぎの行を追加します:</p>
+<a class="reference internal" href="../general/controllers.html"><em>コントローラ</em></a> メソッド内の任意の場所につぎの行を追加します:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">output</span><span class="o">-&gt;</span><span class="na">enable_profiler</span><span class="p">(</span><span class="k">TRUE</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -745,7 +749,7 @@ CodeIgniter の機能により出力クラスに送られたデータのみが
 
 <dl class="method">
 <dt id="CI_Output::set_profiler_sections">
-<code class="descname">set_profiler_sections</code><span class="sig-paren">(</span><em>$sections</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_Output::set_profiler_sections" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">set_profiler_sections</tt><big>(</big><em>$sections</em><big>)</big><a class="headerlink" href="#CI_Output::set_profiler_sections" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -764,12 +768,12 @@ CodeIgniter の機能により出力クラスに送られたデータのみが
 </tbody>
 </table>
 <p>プロファイラが有効になっているとき、特定のセクションを有効/無効にすることができます。
-詳細は <a class="reference internal" href="../general/profiling.html"><span class="doc">プロファイラ</span></a> ドキュメントを参照してください。</p>
+詳細は <a class="reference internal" href="../general/profiling.html"><em>プロファイラ</em></a> ドキュメントを参照してください。</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="CI_Output::cache">
-<code class="descname">cache</code><span class="sig-paren">(</span><em>$time</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_Output::cache" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">cache</tt><big>(</big><em>$time</em><big>)</big><a class="headerlink" href="#CI_Output::cache" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -788,12 +792,12 @@ CodeIgniter の機能により出力クラスに送られたデータのみが
 </tbody>
 </table>
 <p>指定された秒数で現在のページをキャッシュします。</p>
-<p>詳細は <a class="reference internal" href="../general/caching.html"><span class="doc">キャッシングのドキュメント</span></a> を参照してください。</p>
+<p>詳細は <a class="reference internal" href="../general/caching.html"><em>キャッシングのドキュメント</em></a> を参照してください。</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="CI_Output::_display">
-<code class="descname">_display</code><span class="sig-paren">(</span><span class="optional">[</span><em>$output = ''</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Output::_display" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">_display</tt><big>(</big><span class="optional">[</span><em>$output = ''</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Output::_display" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -816,7 +820,7 @@ CodeIgniter の機能により出力クラスに送られたデータのみが
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
 <p class="last">このメソッドはスクリプト実行の終了時に自動的に呼び出されるので、
-<code class="docutils literal"><span class="pre">exit()</span></code> または <code class="docutils literal"><span class="pre">die()</span></code> を使用してスクリプト実行を中止しない限り、手動で呼び出す必要はありません。</p>
+<tt class="docutils literal"><span class="pre">exit()</span></tt> または <tt class="docutils literal"><span class="pre">die()</span></tt> を使用してスクリプト実行を中止しない限り、手動で呼び出す必要はありません。</p>
 </div>
 <p>例:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$response</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;status&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;OK&#39;</span><span class="p">);</span>
@@ -859,7 +863,7 @@ CodeIgniter の機能により出力クラスに送られたデータのみが
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 10月 11, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
+      最終更新: Nov 23, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

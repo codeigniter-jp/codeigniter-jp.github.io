@@ -49,7 +49,9 @@
     
       <div id="pulldown-menu" class="ciNav">
         <ul>
-<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -168,7 +170,7 @@
 <li class="toctree-l2"><a class="reference internal" href="caching.html">クエリキャッシュ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="forge.html">データベースフォージを使用したデータベース操作</a></li>
 <li class="toctree-l2"><a class="reference internal" href="utilities.html">データベースユーティリティクラス</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">データベースドライバリファレンス</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">データベースドライバリファレンス</a></li>
 </ul>
 </li>
 </ul>
@@ -233,7 +235,9 @@
           
           
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -352,7 +356,7 @@
 <li class="toctree-l2"><a class="reference internal" href="caching.html">クエリキャッシュ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="forge.html">データベースフォージを使用したデータベース操作</a></li>
 <li class="toctree-l2"><a class="reference internal" href="utilities.html">データベースユーティリティクラス</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">データベースドライバリファレンス</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">データベースドライバリファレンス</a></li>
 </ul>
 </li>
 </ul>
@@ -435,10 +439,10 @@ driver does not support them.</p>
 </div>
 <dl class="class">
 <dt id="CI_DB_driver">
-<em class="property">class </em><code class="descname">CI_DB_driver</code><a class="headerlink" href="#CI_DB_driver" title="この定義へのパーマリンク">¶</a></dt>
+<em class="property">class </em><tt class="descname">CI_DB_driver</tt><a class="headerlink" href="#CI_DB_driver" title="この定義へのパーマリンク">¶</a></dt>
 <dd><dl class="method">
 <dt id="CI_DB_driver::initialize">
-<code class="descname">initialize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_DB_driver::initialize" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">initialize</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_DB_driver::initialize" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -455,7 +459,7 @@ the database.</p>
 
 <dl class="method">
 <dt id="CI_DB_driver::db_connect">
-<code class="descname">db_connect</code><span class="sig-paren">(</span><em>$persistent = TRUE</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_DB_driver::db_connect" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">db_connect</tt><big>(</big><em>$persistent = TRUE</em><big>)</big><a class="headerlink" href="#CI_DB_driver::db_connect" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -477,14 +481,14 @@ the database.</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
 <p class="last">The returned value depends on the underlying
-driver in use. For example, a <code class="docutils literal"><span class="pre">mysqli</span></code> instance
+driver in use. For example, a <tt class="docutils literal"><span class="pre">mysqli</span></tt> instance
 will be returned with the &#8216;mysqli&#8217; driver.</p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="CI_DB_driver::db_pconnect">
-<code class="descname">db_pconnect</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_DB_driver::db_pconnect" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">db_pconnect</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_DB_driver::db_pconnect" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -498,13 +502,13 @@ will be returned with the &#8216;mysqli&#8217; driver.</p>
 <p>Establish a persistent connection with the database.</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">This method is just an alias for <code class="docutils literal"><span class="pre">db_connect(TRUE)</span></code>.</p>
+<p class="last">This method is just an alias for <tt class="docutils literal"><span class="pre">db_connect(TRUE)</span></tt>.</p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="CI_DB_driver::reconnect">
-<code class="descname">reconnect</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_DB_driver::reconnect" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">reconnect</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_DB_driver::reconnect" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -522,7 +526,7 @@ server&#8217;s idle timeout.</p>
 
 <dl class="method">
 <dt id="CI_DB_driver::db_select">
-<code class="descname">db_select</code><span class="sig-paren">(</span><span class="optional">[</span><em>$database = ''</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_DB_driver::db_select" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">db_select</tt><big>(</big><span class="optional">[</span><em>$database = ''</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_driver::db_select" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -545,7 +549,7 @@ server&#8217;s idle timeout.</p>
 
 <dl class="method">
 <dt id="CI_DB_driver::platform">
-<code class="descname">platform</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_DB_driver::platform" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">platform</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_DB_driver::platform" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -561,7 +565,7 @@ server&#8217;s idle timeout.</p>
 
 <dl class="method">
 <dt id="CI_DB_driver::version">
-<code class="descname">version</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_DB_driver::version" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">version</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_DB_driver::version" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -577,7 +581,7 @@ server&#8217;s idle timeout.</p>
 
 <dl class="method">
 <dt id="CI_DB_driver::query">
-<code class="descname">query</code><span class="sig-paren">(</span><em>$sql</em><span class="optional">[</span>, <em>$binds = FALSE</em><span class="optional">[</span>, <em>$return_object = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_DB_driver::query" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">query</tt><big>(</big><em>$sql</em><span class="optional">[</span>, <em>$binds = FALSE</em><span class="optional">[</span>, <em>$return_object = NULL</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_driver::query" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -605,14 +609,14 @@ upon successful execution of a &#8220;read&#8221; type query.</p>
 <div><ul class="simple">
 <li>Boolean TRUE upon successful execution of a &#8220;write type&#8221; queries</li>
 <li>Boolean FALSE upon failure</li>
-<li><code class="docutils literal"><span class="pre">CI_DB_result</span></code> object for &#8220;read type&#8221; queries</li>
+<li><tt class="docutils literal"><span class="pre">CI_DB_result</span></tt> object for &#8220;read type&#8221; queries</li>
 </ul>
 </div></blockquote>
 </dd></dl>
 
 <dl class="method">
 <dt id="CI_DB_driver::simple_query">
-<code class="descname">simple_query</code><span class="sig-paren">(</span><em>$sql</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_DB_driver::simple_query" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">simple_query</tt><big>(</big><em>$sql</em><big>)</big><a class="headerlink" href="#CI_DB_driver::simple_query" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -630,14 +634,14 @@ upon successful execution of a &#8220;read&#8221; type query.</p>
 </tr>
 </tbody>
 </table>
-<p>A simplified version of the <code class="docutils literal"><span class="pre">query()</span></code> method, appropriate
+<p>A simplified version of the <tt class="docutils literal"><span class="pre">query()</span></tt> method, appropriate
 for use when you don&#8217;t need to get a result object or to
 just send a query to the database and not care for the result.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="CI_DB_driver::affected_rows">
-<code class="descname">affected_rows</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_DB_driver::affected_rows" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">affected_rows</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_DB_driver::affected_rows" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -655,7 +659,7 @@ during the last executed query.</p>
 
 <dl class="method">
 <dt id="CI_DB_driver::trans_strict">
-<code class="descname">trans_strict</code><span class="sig-paren">(</span><span class="optional">[</span><em>$mode = TRUE</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_DB_driver::trans_strict" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">trans_strict</tt><big>(</big><span class="optional">[</span><em>$mode = TRUE</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_driver::trans_strict" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -681,7 +685,7 @@ affect any others.</p>
 
 <dl class="method">
 <dt id="CI_DB_driver::trans_off">
-<code class="descname">trans_off</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_DB_driver::trans_off" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">trans_off</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_DB_driver::trans_off" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -695,7 +699,7 @@ affect any others.</p>
 
 <dl class="method">
 <dt id="CI_DB_driver::trans_start">
-<code class="descname">trans_start</code><span class="sig-paren">(</span><span class="optional">[</span><em>$test_mode = FALSE</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_DB_driver::trans_start" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">trans_start</tt><big>(</big><span class="optional">[</span><em>$test_mode = FALSE</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_driver::trans_start" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -718,7 +722,7 @@ affect any others.</p>
 
 <dl class="method">
 <dt id="CI_DB_driver::trans_complete">
-<code class="descname">trans_complete</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_DB_driver::trans_complete" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">trans_complete</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_DB_driver::trans_complete" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -734,7 +738,7 @@ affect any others.</p>
 
 <dl class="method">
 <dt id="CI_DB_driver::trans_status">
-<code class="descname">trans_status</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_DB_driver::trans_status" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">trans_status</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_DB_driver::trans_status" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -751,7 +755,7 @@ determine if it has failed.</p>
 
 <dl class="method">
 <dt id="CI_DB_driver::compile_binds">
-<code class="descname">compile_binds</code><span class="sig-paren">(</span><em>$sql</em>, <em>$binds</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_DB_driver::compile_binds" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">compile_binds</tt><big>(</big><em>$sql</em>, <em>$binds</em><big>)</big><a class="headerlink" href="#CI_DB_driver::compile_binds" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -775,7 +779,7 @@ determine if it has failed.</p>
 
 <dl class="method">
 <dt id="CI_DB_driver::is_write_type">
-<code class="descname">is_write_type</code><span class="sig-paren">(</span><em>$sql</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_DB_driver::is_write_type" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">is_write_type</tt><big>(</big><em>$sql</em><big>)</big><a class="headerlink" href="#CI_DB_driver::is_write_type" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -799,7 +803,7 @@ INSERT, UPDATE, DELETE) or &#8220;read&#8221; type (i.e. SELECT).</p>
 
 <dl class="method">
 <dt id="CI_DB_driver::elapsed_time">
-<code class="descname">elapsed_time</code><span class="sig-paren">(</span><span class="optional">[</span><em>$decimals = 6</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_DB_driver::elapsed_time" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">elapsed_time</tt><big>(</big><span class="optional">[</span><em>$decimals = 6</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_driver::elapsed_time" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -822,7 +826,7 @@ INSERT, UPDATE, DELETE) or &#8220;read&#8221; type (i.e. SELECT).</p>
 
 <dl class="method">
 <dt id="CI_DB_driver::total_queries">
-<code class="descname">total_queries</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_DB_driver::total_queries" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">total_queries</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_DB_driver::total_queries" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -839,7 +843,7 @@ executed so far.</p>
 
 <dl class="method">
 <dt id="CI_DB_driver::last_query">
-<code class="descname">last_query</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_DB_driver::last_query" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">last_query</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_DB_driver::last_query" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -855,7 +859,7 @@ executed so far.</p>
 
 <dl class="method">
 <dt id="CI_DB_driver::escape">
-<code class="descname">escape</code><span class="sig-paren">(</span><em>$str</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_DB_driver::escape" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">escape</tt><big>(</big><em>$str</em><big>)</big><a class="headerlink" href="#CI_DB_driver::escape" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -879,7 +883,7 @@ NULLs.</p>
 
 <dl class="method">
 <dt id="CI_DB_driver::escape_str">
-<code class="descname">escape_str</code><span class="sig-paren">(</span><em>$str</em><span class="optional">[</span>, <em>$like = FALSE</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_DB_driver::escape_str" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">escape_str</tt><big>(</big><em>$str</em><span class="optional">[</span>, <em>$like = FALSE</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_driver::escape_str" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -908,7 +912,7 @@ around them.</p>
 
 <dl class="method">
 <dt id="CI_DB_driver::escape_like_str">
-<code class="descname">escape_like_str</code><span class="sig-paren">(</span><em>$str</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_DB_driver::escape_like_str" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">escape_like_str</tt><big>(</big><em>$str</em><big>)</big><a class="headerlink" href="#CI_DB_driver::escape_like_str" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -927,22 +931,22 @@ around them.</p>
 </tbody>
 </table>
 <p>Escape LIKE strings.</p>
-<p>Similar to <code class="docutils literal"><span class="pre">escape_str()</span></code>, but will also escape the <code class="docutils literal"><span class="pre">%</span></code>
-and <code class="docutils literal"><span class="pre">_</span></code> wildcard characters, so that they don&#8217;t cause
+<p>Similar to <tt class="docutils literal"><span class="pre">escape_str()</span></tt>, but will also escape the <tt class="docutils literal"><span class="pre">%</span></tt>
+and <tt class="docutils literal"><span class="pre">_</span></tt> wildcard characters, so that they don&#8217;t cause
 false-positives in LIKE conditions.</p>
 <div class="admonition important">
 <p class="first admonition-title">重要</p>
-<p class="last">The <code class="docutils literal"><span class="pre">escape_like_str()</span></code> method uses &#8216;!&#8217; (exclamation mark)
+<p class="last">The <tt class="docutils literal"><span class="pre">escape_like_str()</span></tt> method uses &#8216;!&#8217; (exclamation mark)
 to escape special characters for <em>LIKE</em> conditions. Because this
 method escapes partial strings that you would wrap in quotes
-yourself, it cannot automatically add the <code class="docutils literal"><span class="pre">ESCAPE</span> <span class="pre">'!'</span></code>
+yourself, it cannot automatically add the <tt class="docutils literal"><span class="pre">ESCAPE</span> <span class="pre">'!'</span></tt>
 condition for you, and so you&#8217;ll have to manually do that.</p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="CI_DB_driver::primary">
-<code class="descname">primary</code><span class="sig-paren">(</span><em>$table</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_DB_driver::primary" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">primary</tt><big>(</big><em>$table</em><big>)</big><a class="headerlink" href="#CI_DB_driver::primary" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -971,7 +975,7 @@ as the primary key.</p>
 
 <dl class="method">
 <dt id="CI_DB_driver::count_all">
-<code class="descname">count_all</code><span class="sig-paren">(</span><span class="optional">[</span><em>$table = ''</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_DB_driver::count_all" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">count_all</tt><big>(</big><span class="optional">[</span><em>$table = ''</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_driver::count_all" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -995,7 +999,7 @@ table was provided.</p>
 
 <dl class="method">
 <dt id="CI_DB_driver::list_tables">
-<code class="descname">list_tables</code><span class="sig-paren">(</span><span class="optional">[</span><em>$constrain_by_prefix = FALSE</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_DB_driver::list_tables" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">list_tables</tt><big>(</big><span class="optional">[</span><em>$constrain_by_prefix = FALSE</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_driver::list_tables" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1018,7 +1022,7 @@ table was provided.</p>
 
 <dl class="method">
 <dt id="CI_DB_driver::table_exists">
-<code class="descname">table_exists</code><span class="sig-paren">(</span><em>$table_name</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_DB_driver::table_exists" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">table_exists</tt><big>(</big><em>$table_name</em><big>)</big><a class="headerlink" href="#CI_DB_driver::table_exists" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1041,7 +1045,7 @@ table was provided.</p>
 
 <dl class="method">
 <dt id="CI_DB_driver::list_fields">
-<code class="descname">list_fields</code><span class="sig-paren">(</span><em>$table</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_DB_driver::list_fields" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">list_fields</tt><big>(</big><em>$table</em><big>)</big><a class="headerlink" href="#CI_DB_driver::list_fields" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1064,7 +1068,7 @@ table was provided.</p>
 
 <dl class="method">
 <dt id="CI_DB_driver::field_exists">
-<code class="descname">field_exists</code><span class="sig-paren">(</span><em>$field_name</em>, <em>$table_name</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_DB_driver::field_exists" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">field_exists</tt><big>(</big><em>$field_name</em>, <em>$table_name</em><big>)</big><a class="headerlink" href="#CI_DB_driver::field_exists" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1088,7 +1092,7 @@ table was provided.</p>
 
 <dl class="method">
 <dt id="CI_DB_driver::field_data">
-<code class="descname">field_data</code><span class="sig-paren">(</span><em>$table</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_DB_driver::field_data" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">field_data</tt><big>(</big><em>$table</em><big>)</big><a class="headerlink" href="#CI_DB_driver::field_data" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1111,7 +1115,7 @@ table was provided.</p>
 
 <dl class="method">
 <dt id="CI_DB_driver::escape_identifiers">
-<code class="descname">escape_identifiers</code><span class="sig-paren">(</span><em>$item</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_DB_driver::escape_identifiers" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">escape_identifiers</tt><big>(</big><em>$item</em><big>)</big><a class="headerlink" href="#CI_DB_driver::escape_identifiers" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1134,7 +1138,7 @@ table was provided.</p>
 
 <dl class="method">
 <dt id="CI_DB_driver::insert_string">
-<code class="descname">insert_string</code><span class="sig-paren">(</span><em>$table</em>, <em>$data</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_DB_driver::insert_string" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">insert_string</tt><big>(</big><em>$table</em>, <em>$data</em><big>)</big><a class="headerlink" href="#CI_DB_driver::insert_string" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1158,7 +1162,7 @@ table was provided.</p>
 
 <dl class="method">
 <dt id="CI_DB_driver::update_string">
-<code class="descname">update_string</code><span class="sig-paren">(</span><em>$table</em>, <em>$data</em>, <em>$where</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_DB_driver::update_string" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">update_string</tt><big>(</big><em>$table</em>, <em>$data</em>, <em>$where</em><big>)</big><a class="headerlink" href="#CI_DB_driver::update_string" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1183,7 +1187,7 @@ table was provided.</p>
 
 <dl class="method">
 <dt id="CI_DB_driver::call_function">
-<code class="descname">call_function</code><span class="sig-paren">(</span><em>$function</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_DB_driver::call_function" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">call_function</tt><big>(</big><em>$function</em><big>)</big><a class="headerlink" href="#CI_DB_driver::call_function" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1207,7 +1211,7 @@ wrapper.</p>
 
 <dl class="method">
 <dt id="CI_DB_driver::cache_set_path">
-<code class="descname">cache_set_path</code><span class="sig-paren">(</span><span class="optional">[</span><em>$path = ''</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_DB_driver::cache_set_path" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">cache_set_path</tt><big>(</big><span class="optional">[</span><em>$path = ''</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_driver::cache_set_path" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1227,7 +1231,7 @@ wrapper.</p>
 
 <dl class="method">
 <dt id="CI_DB_driver::cache_on">
-<code class="descname">cache_on</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_DB_driver::cache_on" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">cache_on</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_DB_driver::cache_on" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1243,7 +1247,7 @@ wrapper.</p>
 
 <dl class="method">
 <dt id="CI_DB_driver::cache_off">
-<code class="descname">cache_off</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_DB_driver::cache_off" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">cache_off</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_DB_driver::cache_off" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1259,7 +1263,7 @@ wrapper.</p>
 
 <dl class="method">
 <dt id="CI_DB_driver::cache_delete">
-<code class="descname">cache_delete</code><span class="sig-paren">(</span><span class="optional">[</span><em>$segment_one = ''</em><span class="optional">[</span>, <em>$segment_two = ''</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_DB_driver::cache_delete" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">cache_delete</tt><big>(</big><span class="optional">[</span><em>$segment_one = ''</em><span class="optional">[</span>, <em>$segment_two = ''</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_driver::cache_delete" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1283,7 +1287,7 @@ wrapper.</p>
 
 <dl class="method">
 <dt id="CI_DB_driver::cache_delete_all">
-<code class="descname">cache_delete_all</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_DB_driver::cache_delete_all" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">cache_delete_all</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_DB_driver::cache_delete_all" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1299,7 +1303,7 @@ wrapper.</p>
 
 <dl class="method">
 <dt id="CI_DB_driver::close">
-<code class="descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_DB_driver::close" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">close</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_DB_driver::close" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1313,7 +1317,7 @@ wrapper.</p>
 
 <dl class="method">
 <dt id="CI_DB_driver::display_error">
-<code class="descname">display_error</code><span class="sig-paren">(</span><span class="optional">[</span><em>$error = ''</em><span class="optional">[</span>, <em>$swap = ''</em><span class="optional">[</span>, <em>$native = FALSE</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_DB_driver::display_error" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">display_error</tt><big>(</big><span class="optional">[</span><em>$error = ''</em><span class="optional">[</span>, <em>$swap = ''</em><span class="optional">[</span>, <em>$native = FALSE</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_driver::display_error" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1343,7 +1347,7 @@ wrapper.</p>
 
 <dl class="method">
 <dt id="CI_DB_driver::protect_identifiers">
-<code class="descname">protect_identifiers</code><span class="sig-paren">(</span><em>$item</em><span class="optional">[</span>, <em>$prefix_single = FALSE</em><span class="optional">[</span>, <em>$protect_identifiers = NULL</em><span class="optional">[</span>, <em>$field_exists = TRUE</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_DB_driver::protect_identifiers" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">protect_identifiers</tt><big>(</big><em>$item</em><span class="optional">[</span>, <em>$prefix_single = FALSE</em><span class="optional">[</span>, <em>$protect_identifiers = NULL</em><span class="optional">[</span>, <em>$field_exists = TRUE</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_driver::protect_identifiers" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1407,7 +1411,7 @@ position, and escape only the correct identifiers.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 10月 11, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
+      最終更新: Nov 23, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

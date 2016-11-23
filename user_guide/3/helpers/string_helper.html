@@ -49,7 +49,9 @@
     
       <div id="pulldown-menu" class="ciNav">
         <ul>
-<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -190,7 +192,7 @@
 <li class="toctree-l2"><a class="reference internal" href="path_helper.html">パスヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="security_helper.html">セキュリティヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="smiley_helper.html">スマイリーヘルパー</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">文字列ヘルパー</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">文字列ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="text_helper.html">テキストヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="typography_helper.html">タイポグラフィーヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="url_helper.html">URL ヘルパー</a></li>
@@ -233,7 +235,9 @@
           
           
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -374,7 +378,7 @@
 <li class="toctree-l2"><a class="reference internal" href="path_helper.html">パスヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="security_helper.html">セキュリティヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="smiley_helper.html">スマイリーヘルパー</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">文字列ヘルパー</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">文字列ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="text_helper.html">テキストヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="typography_helper.html">タイポグラフィーヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="url_helper.html">URL ヘルパー</a></li>
@@ -447,7 +451,7 @@
 <p>次の関数が利用できます:</p>
 <dl class="function">
 <dt id="random_string">
-<code class="descname">random_string</code><span class="sig-paren">(</span><span class="optional">[</span><em>$type = 'alnum'</em><span class="optional">[</span>, <em>$len = 8</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#random_string" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">random_string</tt><big>(</big><span class="optional">[</span><em>$type = 'alnum'</em><span class="optional">[</span>, <em>$len = 8</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#random_string" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -473,11 +477,11 @@
 <ul class="simple">
 <li><strong>alpha</strong>: 大文字小文字の文字列。</li>
 <li><strong>alnum</strong>: 大文字小文字の英数字。</li>
-<li><strong>basic</strong>: <code class="docutils literal"><span class="pre">mt_rand()</span></code> に基づいた乱数。</li>
+<li><strong>basic</strong>: <tt class="docutils literal"><span class="pre">mt_rand()</span></tt> に基づいた乱数。</li>
 <li><strong>numeric</strong>: 数字文字列。</li>
 <li><strong>nozero</strong>: ゼロ以外の数字文字列。</li>
-<li><strong>md5</strong>: <code class="docutils literal"><span class="pre">md5()</span></code> に基づいた暗号化された乱数（固定長32文字）。</li>
-<li><strong>sha1</strong>: <code class="docutils literal"><span class="pre">sha1()</span></code> に基づいた暗号化された乱数（固定長40文字）。</li>
+<li><strong>md5</strong>: <tt class="docutils literal"><span class="pre">md5()</span></tt> に基づいた暗号化された乱数（固定長32文字）。</li>
+<li><strong>sha1</strong>: <tt class="docutils literal"><span class="pre">sha1()</span></tt> に基づいた暗号化された乱数（固定長40文字）。</li>
 </ul>
 <p>使用例:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nx">random_string</span><span class="p">(</span><span class="s1">&#39;alnum&#39;</span><span class="p">,</span> <span class="mi">16</span><span class="p">);</span>
@@ -492,7 +496,7 @@
 
 <dl class="function">
 <dt id="increment_string">
-<code class="descname">increment_string</code><span class="sig-paren">(</span><em>$str</em><span class="optional">[</span>, <em>$separator = '_'</em><span class="optional">[</span>, <em>$first = 1</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#increment_string" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">increment_string</tt><big>(</big><em>$str</em><span class="optional">[</span>, <em>$separator = '_'</em><span class="optional">[</span>, <em>$first = 1</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#increment_string" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -525,7 +529,7 @@
 
 <dl class="function">
 <dt id="alternator">
-<code class="descname">alternator</code><span class="sig-paren">(</span><em>$args</em><span class="sig-paren">)</span><a class="headerlink" href="#alternator" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">alternator</tt><big>(</big><em>$args</em><big>)</big><a class="headerlink" href="#alternator" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -568,7 +572,7 @@
 
 <dl class="function">
 <dt id="repeater">
-<code class="descname">repeater</code><span class="sig-paren">(</span><em>$data</em><span class="optional">[</span>, <em>$num = 1</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#repeater" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">repeater</tt><big>(</big><em>$data</em><span class="optional">[</span>, <em>$num = 1</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#repeater" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -595,14 +599,14 @@
 <p>上の例では、30の新しい行が生成されます。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">この関数は非推奨です。 ネイティブの <code class="docutils literal"><span class="pre">str_repeat()</span></code> を
+<p class="last">この関数は非推奨です。 ネイティブの <tt class="docutils literal"><span class="pre">str_repeat()</span></tt> を
 代わりに使用してください。</p>
 </div>
 </dd></dl>
 
 <dl class="function">
 <dt id="reduce_double_slashes">
-<code class="descname">reduce_double_slashes</code><span class="sig-paren">(</span><em>$str</em><span class="sig-paren">)</span><a class="headerlink" href="#reduce_double_slashes" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">reduce_double_slashes</tt><big>(</big><em>$str</em><big>)</big><a class="headerlink" href="#reduce_double_slashes" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -631,7 +635,7 @@
 
 <dl class="function">
 <dt id="strip_slashes">
-<code class="descname">strip_slashes</code><span class="sig-paren">(</span><em>$data</em><span class="sig-paren">)</span><a class="headerlink" href="#strip_slashes" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">strip_slashes</tt><big>(</big><em>$data</em><big>)</big><a class="headerlink" href="#strip_slashes" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -669,14 +673,14 @@
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
 <p class="last">歴史的な理由で、この関数は文字列の入力を受け入れ扱います。
-しかし、この使い方は、単に <code class="docutils literal"><span class="pre">stripslashes()</span></code> のエイリアスと
+しかし、この使い方は、単に <tt class="docutils literal"><span class="pre">stripslashes()</span></tt> のエイリアスと
 見なせます。</p>
 </div>
 </dd></dl>
 
 <dl class="function">
 <dt id="trim_slashes">
-<code class="descname">trim_slashes</code><span class="sig-paren">(</span><em>$str</em><span class="sig-paren">)</span><a class="headerlink" href="#trim_slashes" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">trim_slashes</tt><big>(</big><em>$str</em><big>)</big><a class="headerlink" href="#trim_slashes" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -701,7 +705,7 @@
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">この関数は非推奨です。ネイティブの <code class="docutils literal"><span class="pre">trim()</span></code> を代わりに使ってください。
+<p class="last">この関数は非推奨です。ネイティブの <tt class="docutils literal"><span class="pre">trim()</span></tt> を代わりに使ってください。
 |
 | trim($str, &#8216;/&#8217;);</p>
 </div>
@@ -709,7 +713,7 @@
 
 <dl class="function">
 <dt id="reduce_multiples">
-<code class="descname">reduce_multiples</code><span class="sig-paren">(</span><em>$str</em><span class="optional">[</span>, <em>$character = ''</em><span class="optional">[</span>, <em>$trim = FALSE</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#reduce_multiples" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">reduce_multiples</tt><big>(</big><em>$str</em><span class="optional">[</span>, <em>$character = ''</em><span class="optional">[</span>, <em>$trim = FALSE</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#reduce_multiples" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -745,7 +749,7 @@
 
 <dl class="function">
 <dt id="quotes_to_entities">
-<code class="descname">quotes_to_entities</code><span class="sig-paren">(</span><em>$str</em><span class="sig-paren">)</span><a class="headerlink" href="#quotes_to_entities" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">quotes_to_entities</tt><big>(</big><em>$str</em><big>)</big><a class="headerlink" href="#quotes_to_entities" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -773,7 +777,7 @@
 
 <dl class="function">
 <dt id="strip_quotes">
-<code class="descname">strip_quotes</code><span class="sig-paren">(</span><em>$str</em><span class="sig-paren">)</span><a class="headerlink" href="#strip_quotes" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">strip_quotes</tt><big>(</big><em>$str</em><big>)</big><a class="headerlink" href="#strip_quotes" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -820,7 +824,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 10月 11, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
+      最終更新: Nov 23, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

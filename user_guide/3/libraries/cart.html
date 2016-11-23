@@ -49,7 +49,9 @@
     
       <div id="pulldown-menu" class="ciNav">
         <ul>
-<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -123,7 +125,7 @@
 <li class="toctree-l2"><a class="reference internal" href="benchmark.html">ベンチマーククラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="caching.html">キャッシングドライバ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="calendar.html">カレンダークラス</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">ショッピングカートクラス</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">ショッピングカートクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="config.html">設定クラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="email.html">Email クラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="encrypt.html">Encrypt クラス</a></li>
@@ -233,7 +235,9 @@
           
           
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -307,7 +311,7 @@
 <li class="toctree-l2"><a class="reference internal" href="benchmark.html">ベンチマーククラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="caching.html">キャッシングドライバ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="calendar.html">カレンダークラス</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">ショッピングカートクラス</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">ショッピングカートクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="config.html">設定クラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="email.html">Email クラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="encrypt.html">Encrypt クラス</a></li>
@@ -457,11 +461,11 @@
 <div class="admonition important">
 <p class="first admonition-title">重要</p>
 <p class="last">カートクラスは、データベースに情報を保存するために
-CodeIgniter の <a class="reference internal" href="sessions.html"><span class="doc">セッション</span></a> を利用しますので、
+CodeIgniter の <a class="reference internal" href="sessions.html"><em>セッション</em></a> を利用しますので、
 カートクラスを利用する前に、セッションの説明で示しているように、
 データベーステーブルをセットアップする必要があります。
 また、データベースを利用するために、application/config/config.php
-ファイルの <a class="reference internal" href="sessions.html"><span class="doc">セッション</span></a> の設定項目を設定してください。</p>
+ファイルの <a class="reference internal" href="sessions.html"><em>セッション</em></a> の設定項目を設定してください。</p>
 </div>
 <p>ショッピングカートクラスをコントローラのコンストラクタ
 で初期化するには、$this-&gt;load-&gt;library メソッドを利用します:</p>
@@ -482,7 +486,7 @@ CodeIgniter の <a class="reference internal" href="sessions.html"><span class="
 <div class="section" id="id4">
 <h3><a class="toc-backref" href="#id11">カートに商品を追加する</a><a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>ショッピングカートに商品を追加するには、
-下記のように <code class="docutils literal"><span class="pre">$this-&gt;cart-&gt;insert()</span></code> メソッドに、商品情報の配列を
+下記のように <tt class="docutils literal"><span class="pre">$this-&gt;cart-&gt;insert()</span></tt> メソッドに、商品情報の配列を
 渡すだけです:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
         <span class="s1">&#39;id&#39;</span>      <span class="o">=&gt;</span> <span class="s1">&#39;sku_123ABC&#39;</span><span class="p">,</span>
@@ -532,7 +536,7 @@ CodeIgniter の <a class="reference internal" href="sessions.html"><span class="
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">cart</span><span class="o">-&gt;</span><span class="na">insert</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>あなたが正常に挿入した場合、 <code class="docutils literal"><span class="pre">insert()</span></code> メソッドは、
+<p>あなたが正常に挿入した場合、 <tt class="docutils literal"><span class="pre">insert()</span></tt> メソッドは、
 単一の項目として$ROWIDを返します。</p>
 </div>
 <div class="section" id="id5">
@@ -569,8 +573,8 @@ CodeIgniter の <a class="reference internal" href="sessions.html"><span class="
 </div>
 <div class="section" id="id6">
 <h3><a class="toc-backref" href="#id13">カートを表示する</a><a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>カートを表示するには、下のようなコードの <a class="reference internal" href="../general/views.html"><span class="doc">ビューファイル</span></a> を作成します。</p>
-<p>この例では、<a class="reference internal" href="../helpers/form_helper.html"><span class="doc">フォームヘルパー</span></a> を
+<p>カートを表示するには、下のようなコードの <a class="reference internal" href="../general/views.html"><em>ビューファイル</em></a> を作成します。</p>
+<p>この例では、<a class="reference internal" href="../helpers/form_helper.html"><em>フォームヘルパー</em></a> を
 利用しているのを注意してください。</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span> <span class="k">echo</span> <span class="nx">form_open</span><span class="p">(</span><span class="s1">&#39;path/to/controller/update/method&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span>
 
@@ -630,7 +634,7 @@ CodeIgniter の <a class="reference internal" href="sessions.html"><span class="
 <div class="section" id="id7">
 <h3><a class="toc-backref" href="#id14">カートを更新する</a><a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>カートの情報を更新するには、Row ID と数量
-を含む配列を <code class="docutils literal"><span class="pre">$this-&gt;cart-&gt;update()</span></code> メソッド
+を含む配列を <tt class="docutils literal"><span class="pre">$this-&gt;cart-&gt;update()</span></tt> メソッド
 に渡す必要があります</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
@@ -703,30 +707,30 @@ CodeIgniter の <a class="reference internal" href="sessions.html"><span class="
 <h2><a class="toc-backref" href="#id16">クラスリファレンス</a><a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <dl class="class">
 <dt id="CI_Cart">
-<em class="property">class </em><code class="descname">CI_Cart</code><a class="headerlink" href="#CI_Cart" title="この定義へのパーマリンク">¶</a></dt>
+<em class="property">class </em><tt class="descname">CI_Cart</tt><a class="headerlink" href="#CI_Cart" title="この定義へのパーマリンク">¶</a></dt>
 <dd><dl class="attribute">
 <dt>
-<code class="descname">$product_id_rules = '.a-z0-9_-'</code></dt>
+<tt class="descname">$product_id_rules = '.a-z0-9_-'</tt></dt>
 <dd><p>デフォルトで、英数字、ダッシュ、アンダースコア、ピリオド -
 これらは、製品IDを検証するために使用する正規表現ルールです</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt>
-<code class="descname">$product_name_rules      = 'w -.:'</code></dt>
+<tt class="descname">$product_name_rules      = 'w -.:'</tt></dt>
 <dd><p>デフォルトで 英数字、ダッシュ、アンダースコア、コロン、ピリオド
 これらは、製品IDと製品名を検証するために使用する正規表現ルールです</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt>
-<code class="descname">$product_name_safe = TRUE</code></dt>
+<tt class="descname">$product_name_safe = TRUE</tt></dt>
 <dd><p>唯一で安全な製品名を判定する。 デフォルトでTRUE。</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="CI_Cart::insert">
-<code class="descname">insert</code><span class="sig-paren">(</span><span class="optional">[</span><em>$items = array()</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Cart::insert" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">insert</tt><big>(</big><span class="optional">[</span><em>$items = array()</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Cart::insert" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -750,7 +754,7 @@ CodeIgniter の <a class="reference internal" href="sessions.html"><span class="
 
 <dl class="method">
 <dt id="CI_Cart::update">
-<code class="descname">update</code><span class="sig-paren">(</span><span class="optional">[</span><em>$items = array()</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Cart::update" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">update</tt><big>(</big><span class="optional">[</span><em>$items = array()</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Cart::update" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -776,7 +780,7 @@ CodeIgniter の <a class="reference internal" href="sessions.html"><span class="
 
 <dl class="method">
 <dt id="CI_Cart::remove">
-<code class="descname">remove</code><span class="sig-paren">(</span><em>$rowid</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_Cart::remove" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">remove</tt><big>(</big><em>$rowid</em><big>)</big><a class="headerlink" href="#CI_Cart::remove" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -794,13 +798,13 @@ CodeIgniter の <a class="reference internal" href="sessions.html"><span class="
 </tr>
 </tbody>
 </table>
-<p><code class="docutils literal"><span class="pre">$rowid</span></code> を渡すことでショッピングカートからアイテムを削除すること
+<p><tt class="docutils literal"><span class="pre">$rowid</span></tt> を渡すことでショッピングカートからアイテムを削除すること
 ができます。</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="CI_Cart::total">
-<code class="descname">total</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Cart::total" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">total</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_Cart::total" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -816,7 +820,7 @@ CodeIgniter の <a class="reference internal" href="sessions.html"><span class="
 
 <dl class="method">
 <dt id="CI_Cart::total_items">
-<code class="descname">total_items</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Cart::total_items" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">total_items</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_Cart::total_items" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -832,7 +836,7 @@ CodeIgniter の <a class="reference internal" href="sessions.html"><span class="
 
 <dl class="method">
 <dt id="CI_Cart::contents">
-<code class="descname">contents</code><span class="sig-paren">(</span><span class="optional">[</span><em>$newest_first = FALSE</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Cart::contents" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">contents</tt><big>(</big><span class="optional">[</span><em>$newest_first = FALSE</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Cart::contents" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -858,7 +862,7 @@ CodeIgniter の <a class="reference internal" href="sessions.html"><span class="
 
 <dl class="method">
 <dt id="CI_Cart::get_item">
-<code class="descname">get_item</code><span class="sig-paren">(</span><em>$row_id</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_Cart::get_item" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">get_item</tt><big>(</big><em>$row_id</em><big>)</big><a class="headerlink" href="#CI_Cart::get_item" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -882,7 +886,7 @@ CodeIgniter の <a class="reference internal" href="sessions.html"><span class="
 
 <dl class="method">
 <dt id="CI_Cart::has_options">
-<code class="descname">has_options</code><span class="sig-paren">(</span><em>$row_id = ''</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_Cart::has_options" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">has_options</tt><big>(</big><em>$row_id = ''</em><big>)</big><a class="headerlink" href="#CI_Cart::has_options" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -908,7 +912,7 @@ CodeIgniter の <a class="reference internal" href="sessions.html"><span class="
 
 <dl class="method">
 <dt id="CI_Cart::product_options">
-<code class="descname">product_options</code><span class="sig-paren">(</span><span class="optional">[</span><em>$row_id = ''</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Cart::product_options" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">product_options</tt><big>(</big><span class="optional">[</span><em>$row_id = ''</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Cart::product_options" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -934,7 +938,7 @@ owid を渡す必要があるので、カートを表示する の例で示す�
 
 <dl class="method">
 <dt id="CI_Cart::destroy">
-<code class="descname">destroy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Cart::destroy" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">destroy</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_Cart::destroy" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -971,7 +975,7 @@ owid を渡す必要があるので、カートを表示する の例で示す�
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 10月 11, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
+      最終更新: Nov 23, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

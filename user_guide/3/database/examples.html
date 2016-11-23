@@ -49,7 +49,9 @@
     
       <div id="pulldown-menu" class="ciNav">
         <ul>
-<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -155,7 +157,7 @@
 </ul>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">データベースリファレンス</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">クイックスタート: 使用例</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">クイックスタート: 使用例</a></li>
 <li class="toctree-l2"><a class="reference internal" href="configuration.html">データベース設定</a></li>
 <li class="toctree-l2"><a class="reference internal" href="connecting.html">データベースへの接続</a></li>
 <li class="toctree-l2"><a class="reference internal" href="queries.html">クエリの実行</a></li>
@@ -233,7 +235,9 @@
           
           
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -339,7 +343,7 @@
 </ul>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">データベースリファレンス</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">クイックスタート: 使用例</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">クイックスタート: 使用例</a></li>
 <li class="toctree-l2"><a class="reference internal" href="configuration.html">データベース設定</a></li>
 <li class="toctree-l2"><a class="reference internal" href="connecting.html">データベースへの接続</a></li>
 <li class="toctree-l2"><a class="reference internal" href="queries.html">クエリの実行</a></li>
@@ -427,7 +431,7 @@
 ご覧ください。</p>
 <div class="section" id="id1">
 <h2>データベースクラスの初期化<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>次のコードは <a class="reference internal" href="configuration.html"><span class="doc">設定ファイル</span></a>
+<p>次のコードは <a class="reference internal" href="configuration.html"><em>設定ファイル</em></a>
 での設定に基づいてデータベースクラスをロードし初期化します:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">database</span><span class="p">();</span>
 </pre></div>
@@ -435,7 +439,7 @@
 <p>いったんロードされれば、クラスは、後述する例のように使うための準備が整います。</p>
 <dl class="docutils">
 <dt>Note: 全ページでデータベースアクセスが必要な場合は、自動的に接続することもできます。</dt>
-<dd><a class="reference internal" href="connecting.html"><span class="doc">接続</span></a> のページで詳細をご覧ください。</dd>
+<dd><a class="reference internal" href="connecting.html"><em>接続</em></a> のページで詳細をご覧ください。</dd>
 </dl>
 </div>
 <div class="section" id="id2">
@@ -499,7 +503,7 @@ $row[&#8216;name&#8217;]</p>
 </div>
 <div class="section" id="query-builder">
 <h2>Query Builder クエリ<a class="headerlink" href="#query-builder" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p><a class="reference internal" href="query_builder.html"><span class="doc">Query Builder パターン</span></a> を使うと、
+<p><a class="reference internal" href="query_builder.html"><em>Query Builder パターン</em></a> を使うと、
 簡単にデータ取得が行えます:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;table_name&#39;</span><span class="p">);</span>
 
@@ -510,7 +514,7 @@ $row[&#8216;name&#8217;]</p>
 </pre></div>
 </div>
 <p>上の get() メソッドは 指定されたテーブルの全データを取得します。
-<a class="reference internal" href="query_builder.html"><span class="doc">Query Builder</span></a> クラスは、
+<a class="reference internal" href="query_builder.html"><em>Query Builder</em></a> クラスは、
 データを処理するためのフル装備の関数をもっています。</p>
 </div>
 <div class="section" id="id7">
@@ -546,7 +550,7 @@ $row[&#8216;name&#8217;]</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 10月 11, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
+      最終更新: Nov 23, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

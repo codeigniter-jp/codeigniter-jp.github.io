@@ -49,7 +49,9 @@
     
       <div id="pulldown-menu" class="ciNav">
         <ul>
-<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -107,7 +109,7 @@
 <li class="toctree-l2"><a class="reference internal" href="compatibility_functions.html">互換関数</a></li>
 <li class="toctree-l2"><a class="reference internal" href="routing.html">URI ルーティング</a></li>
 <li class="toctree-l2"><a class="reference internal" href="errors.html">エラー処理</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">キャッシュ</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">キャッシュ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="profiling.html">アプリケーションのプロファイリング</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cli.html">CLI で実行する</a></li>
 <li class="toctree-l2"><a class="reference internal" href="managing_apps.html">アプリケーションの管理</a></li>
@@ -233,7 +235,9 @@
           
           
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -291,7 +295,7 @@
 <li class="toctree-l2"><a class="reference internal" href="compatibility_functions.html">互換関数</a></li>
 <li class="toctree-l2"><a class="reference internal" href="routing.html">URI ルーティング</a></li>
 <li class="toctree-l2"><a class="reference internal" href="errors.html">エラー処理</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">キャッシュ</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">キャッシュ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="profiling.html">アプリケーションのプロファイリング</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cli.html">CLI で実行する</a></li>
 <li class="toctree-l2"><a class="reference internal" href="managing_apps.html">アプリケーションの管理</a></li>
@@ -447,7 +451,7 @@ application/cache フォルダに書き込まれます。
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">output</span><span class="o">-&gt;</span><span class="na">cache</span><span class="p">(</span><span class="nv">$n</span><span class="p">);</span>
 </pre></div>
 </div>
-<p><code class="docutils literal"><span class="pre">$n</span></code> の箇所は 、リフレッシュされる間隔、ページのキャッシュを残したい <strong>分</strong> 数
+<p><tt class="docutils literal"><span class="pre">$n</span></tt> の箇所は 、リフレッシュされる間隔、ページのキャッシュを残したい <strong>分</strong> 数
 です。</p>
 <p>上記のタグはメソッド内のどこにでも置くことができます。
 どんな順番で書くかによる影響を受けませんので、あなたにとって最も理にかなっていると思う場所に配置してください。
@@ -456,7 +460,7 @@ application/cache フォルダに書き込まれます。
 <p class="first admonition-title">重要</p>
 <p class="last">CodeIgniter の出力用コンテンツの保存方法のため、
 キャッシュは
-<a class="reference internal" href="views.html"><span class="doc">ビュー</span></a> で出力した場合のみ動作します。</p>
+<a class="reference internal" href="views.html"><em>ビュー</em></a> で出力した場合のみ動作します。</p>
 </div>
 <div class="admonition important">
 <p class="first admonition-title">重要</p>
@@ -479,7 +483,7 @@ application/cache フォルダに書き込まれます。
 <p class="last">タグを削除しても、すぐにはキャッシュは削除されません。
 通常のように期限切れを待つ必要があります。</p>
 </div>
-<p>手動でキャッシュを削除する必要がある場合、 <code class="docutils literal"><span class="pre">delete_cache()</span></code>
+<p>手動でキャッシュを削除する必要がある場合、 <tt class="docutils literal"><span class="pre">delete_cache()</span></tt>
 メソッドを使用することができます:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// 現在リクエストされている URI のキャッシュを削除する</span>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">output</span><span class="o">-&gt;</span><span class="na">delete_cache</span><span class="p">();</span>
@@ -510,7 +514,7 @@ application/cache フォルダに書き込まれます。
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 10月 11, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
+      最終更新: Nov 23, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

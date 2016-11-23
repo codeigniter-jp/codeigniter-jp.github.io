@@ -49,7 +49,9 @@
     
       <div id="pulldown-menu" class="ciNav">
         <ul>
-<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -159,7 +161,7 @@
 <li class="toctree-l2"><a class="reference internal" href="configuration.html">データベース設定</a></li>
 <li class="toctree-l2"><a class="reference internal" href="connecting.html">データベースへの接続</a></li>
 <li class="toctree-l2"><a class="reference internal" href="queries.html">クエリの実行</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">クエリ結果の生成</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">クエリ結果の生成</a></li>
 <li class="toctree-l2"><a class="reference internal" href="helpers.html">クエリヘルパー関数</a></li>
 <li class="toctree-l2"><a class="reference internal" href="query_builder.html">クエリビルダクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="transactions.html">トランザクション</a></li>
@@ -233,7 +235,9 @@
           
           
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -343,7 +347,7 @@
 <li class="toctree-l2"><a class="reference internal" href="configuration.html">データベース設定</a></li>
 <li class="toctree-l2"><a class="reference internal" href="connecting.html">データベースへの接続</a></li>
 <li class="toctree-l2"><a class="reference internal" href="queries.html">クエリの実行</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">クエリ結果の生成</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">クエリ結果の生成</a></li>
 <li class="toctree-l2"><a class="reference internal" href="helpers.html">クエリヘルパー関数</a></li>
 <li class="toctree-l2"><a class="reference internal" href="query_builder.html">クエリビルダクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="transactions.html">トランザクション</a></li>
@@ -448,8 +452,8 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>上の メソッド は <code class="docutils literal"><span class="pre">result_object()</span></code> の別名です。</p>
-<p><code class="docutils literal"><span class="pre">result()</span></code> には各結果オブジェクトをインスタンス化したいクラス名の
+<p>上の メソッド は <tt class="docutils literal"><span class="pre">result_object()</span></tt> の別名です。</p>
+<p><tt class="docutils literal"><span class="pre">result()</span></tt> には各結果オブジェクトをインスタンス化したいクラス名の
 文字列を渡すこともできます（note: クラスはロードされていなければいけません）。</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM users;&quot;</span><span class="p">);</span>
 
@@ -508,7 +512,7 @@
 </pre></div>
 </div>
 <p><strong>row_array()</strong></p>
-<p>配列を返すこと以外は、上の <code class="docutils literal"><span class="pre">row()</span></code> メソッドと同じです。
+<p>配列を返すこと以外は、上の <tt class="docutils literal"><span class="pre">row()</span></tt> メソッドと同じです。
 例:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s2">&quot;YOUR QUERY&quot;</span><span class="p">);</span>
 
@@ -550,11 +554,11 @@
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
 <p class="last">All the methods above will load the whole result into memory
-(prefetching). Use <code class="docutils literal"><span class="pre">unbuffered_row()</span></code> for processing large
+(prefetching). Use <tt class="docutils literal"><span class="pre">unbuffered_row()</span></tt> for processing large
 result sets.</p>
 </div>
 <p><strong>unbuffered_row()</strong></p>
-<p>このメソッドは、<code class="docutils literal"><span class="pre">row()</span></code> のように結果をすべてメモリにプリフェッチせずに
+<p>このメソッドは、<tt class="docutils literal"><span class="pre">row()</span></tt> のように結果をすべてメモリにプリフェッチせずに
 単一行を返します。もしクエリに1行以上ある場合は、現在の行を返し、
 内部データポインタを移動します。</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s2">&quot;YOUR QUERY&quot;</span><span class="p">);</span>
@@ -577,11 +581,11 @@ result sets.</p>
 </div>
 <div class="section" id="id4">
 <h2><a class="toc-backref" href="#id9">カスタム結果オブジェクト</a><a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>結果は配列か <code class="docutils literal"><span class="pre">stdClass</span></code> のインスタンスの代わりにカスタムクラスの
-インスタンスで受け取ることができます。これは <code class="docutils literal"><span class="pre">result()</span></code> と <code class="docutils literal"><span class="pre">result_array()</span></code>
+<p>結果は配列か <tt class="docutils literal"><span class="pre">stdClass</span></tt> のインスタンスの代わりにカスタムクラスの
+インスタンスで受け取ることができます。これは <tt class="docutils literal"><span class="pre">result()</span></tt> と <tt class="docutils literal"><span class="pre">result_array()</span></tt>
 メソッドで許可されています。クラスはすでにメモリにロードされていなければいけません。
 オブジェクトはデータベースから全ての値をプロパティとして返されます。
-もし非 public のプロパティとして宣言されている場合は、 <code class="docutils literal"><span class="pre">__set()</span></code> メソッド
+もし非 public のプロパティとして宣言されている場合は、 <tt class="docutils literal"><span class="pre">__set()</span></tt> メソッド
 を提供しセットされるようにしてください。</p>
 <p>例:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">User</span> <span class="p">{</span>
@@ -616,8 +620,8 @@ result sets.</p>
 </pre></div>
 </div>
 <p>下記2つのメソッド以外にも、次のメソッドも結果を返すクラス名を指定する
-ことができます: <code class="docutils literal"><span class="pre">first_row()</span></code> , <code class="docutils literal"><span class="pre">last_row()</span></code> , <code class="docutils literal"><span class="pre">next_row()</span></code>
-と <code class="docutils literal"><span class="pre">previous_row()</span></code> 。</p>
+ことができます: <tt class="docutils literal"><span class="pre">first_row()</span></tt> , <tt class="docutils literal"><span class="pre">last_row()</span></tt> , <tt class="docutils literal"><span class="pre">next_row()</span></tt>
+と <tt class="docutils literal"><span class="pre">previous_row()</span></tt> 。</p>
 <p><strong>custom_result_object()</strong></p>
 <p>結果セットすべてを指定されたクラスのインスタンスの配列として返します。
 唯一のパラメータはインスタンス化したいクラス名です。</p>
@@ -649,7 +653,7 @@ result sets.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>さらに、 <code class="docutils literal"><span class="pre">row()</span></code> メソッドもまったく同じ方法で使うことができます。</p>
+<p>さらに、 <tt class="docutils literal"><span class="pre">row()</span></tt> メソッドもまったく同じ方法で使うことができます。</p>
 <p>例:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$row</span> <span class="o">=</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">custom_row_object</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;User&#39;</span><span class="p">);</span>
 </pre></div>
@@ -669,7 +673,7 @@ result sets.</p>
 <p class="first admonition-title">注釈</p>
 <p class="last">すべてのデータベースドライバが結果セットの全件数を取得する
 ネイティブの方法を持っているわけではありません。その場合、全データは
-プリフェッチされ結果配列に対して <code class="docutils literal"><span class="pre">count()</span></code> が手動で呼ばれることで
+プリフェッチされ結果配列に対して <tt class="docutils literal"><span class="pre">count()</span></tt> が手動で呼ばれることで
 同じ結果を導いています。</p>
 </div>
 <p><strong>num_fields()</strong></p>
@@ -705,7 +709,7 @@ result sets.</p>
 </div>
 <p><strong>data_seek()</strong></p>
 <p>このメソッドは次の結果行の内部ポインタをフェッチするようにします。
-<code class="docutils literal"><span class="pre">unbuffered_row()</span></code> との組み合わせてのみ有効です。</p>
+<tt class="docutils literal"><span class="pre">unbuffered_row()</span></tt> との組み合わせてのみ有効です。</p>
 <p>メソッドは正の整数を受け付け（初期値は 0 ）、成功時は TRUE 、
 失敗時は FALSE を返します。</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s1">&#39;SELECT `field_name` FROM `table_name`&#39;</span><span class="p">);</span>
@@ -723,10 +727,10 @@ FALSE を返します。特筆すべきは PDO で使えないという点です
 <h2><a class="toc-backref" href="#id11">クラスリファレンス</a><a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <dl class="class">
 <dt id="CI_DB_result">
-<em class="property">class </em><code class="descname">CI_DB_result</code><a class="headerlink" href="#CI_DB_result" title="この定義へのパーマリンク">¶</a></dt>
+<em class="property">class </em><tt class="descname">CI_DB_result</tt><a class="headerlink" href="#CI_DB_result" title="この定義へのパーマリンク">¶</a></dt>
 <dd><dl class="method">
 <dt id="CI_DB_result::result">
-<code class="descname">result</code><span class="sig-paren">(</span><span class="optional">[</span><em>$type = 'object'</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_DB_result::result" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">result</tt><big>(</big><span class="optional">[</span><em>$type = 'object'</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_result::result" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -744,14 +748,14 @@ FALSE を返します。特筆すべきは PDO で使えないという点です
 </tr>
 </tbody>
 </table>
-<p><code class="docutils literal"><span class="pre">result_array()</span></code>, <code class="docutils literal"><span class="pre">result_object()</span></code>, と
-<code class="docutils literal"><span class="pre">custom_result_object()</span></code> のラッパーメソッド。</p>
+<p><tt class="docutils literal"><span class="pre">result_array()</span></tt>, <tt class="docutils literal"><span class="pre">result_object()</span></tt>, と
+<tt class="docutils literal"><span class="pre">custom_result_object()</span></tt> のラッパーメソッド。</p>
 <p>使い方: <a class="reference internal" href="#id2">結果配列</a> を参照。</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="CI_DB_result::result_array">
-<code class="descname">result_array</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_DB_result::result_array" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">result_array</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_DB_result::result_array" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -769,7 +773,7 @@ FALSE を返します。特筆すべきは PDO で使えないという点です
 
 <dl class="method">
 <dt id="CI_DB_result::result_object">
-<code class="descname">result_object</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_DB_result::result_object" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">result_object</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_DB_result::result_object" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -780,14 +784,14 @@ FALSE を返します。特筆すべきは PDO で使えないという点です
 </tr>
 </tbody>
 </table>
-<p>クエリ結果を配列として返し、各行は <code class="docutils literal"><span class="pre">stdClass()</span></code>
+<p>クエリ結果を配列として返し、各行は <tt class="docutils literal"><span class="pre">stdClass()</span></tt>
 型のオブジェクトとして返します。</p>
 <p>使い方: <a class="reference internal" href="#id2">結果配列</a> を参照。</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="CI_DB_result::custom_result_object">
-<code class="descname">custom_result_object</code><span class="sig-paren">(</span><em>$class_name</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_DB_result::custom_result_object" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">custom_result_object</tt><big>(</big><em>$class_name</em><big>)</big><a class="headerlink" href="#CI_DB_result::custom_result_object" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -811,7 +815,7 @@ FALSE を返します。特筆すべきは PDO で使えないという点です
 
 <dl class="method">
 <dt id="CI_DB_result::row">
-<code class="descname">row</code><span class="sig-paren">(</span><span class="optional">[</span><em>$n = 0</em><span class="optional">[</span>, <em>$type = 'object'</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_DB_result::row" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">row</tt><big>(</big><span class="optional">[</span><em>$n = 0</em><span class="optional">[</span>, <em>$type = 'object'</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_result::row" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -830,14 +834,14 @@ FALSE を返します。特筆すべきは PDO で使えないという点です
 </tr>
 </tbody>
 </table>
-<p><code class="docutils literal"><span class="pre">row_array()</span></code>, <code class="docutils literal"><span class="pre">row_object()</span></code>, と
-<code class="docutils literal"><span class="pre">custom_row_object()</span></code> ラッパーメソッド。</p>
+<p><tt class="docutils literal"><span class="pre">row_array()</span></tt>, <tt class="docutils literal"><span class="pre">row_object()</span></tt>, と
+<tt class="docutils literal"><span class="pre">custom_row_object()</span></tt> ラッパーメソッド。</p>
 <p>使い方: <a class="reference internal" href="#id3">結果行</a> を参照。</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="CI_DB_result::unbuffered_row">
-<code class="descname">unbuffered_row</code><span class="sig-paren">(</span><span class="optional">[</span><em>$type = 'object'</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_DB_result::unbuffered_row" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">unbuffered_row</tt><big>(</big><span class="optional">[</span><em>$type = 'object'</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_result::unbuffered_row" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -862,7 +866,7 @@ FALSE を返します。特筆すべきは PDO で使えないという点です
 
 <dl class="method">
 <dt id="CI_DB_result::row_array">
-<code class="descname">row_array</code><span class="sig-paren">(</span><span class="optional">[</span><em>$n = 0</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_DB_result::row_array" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">row_array</tt><big>(</big><span class="optional">[</span><em>$n = 0</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_result::row_array" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -886,7 +890,7 @@ FALSE を返します。特筆すべきは PDO で使えないという点です
 
 <dl class="method">
 <dt id="CI_DB_result::row_object">
-<code class="descname">row_object</code><span class="sig-paren">(</span><span class="optional">[</span><em>$n = 0</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_DB_result::row_object" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">row_object</tt><big>(</big><span class="optional">[</span><em>$n = 0</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_result::row_object" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -902,14 +906,14 @@ FALSE を返します。特筆すべきは PDO で使えないという点です
 </tr>
 </tbody>
 </table>
-<p>要求された結果行を <code class="docutils literal"><span class="pre">stdClass</span></code> 型のオブジェクト
+<p>要求された結果行を <tt class="docutils literal"><span class="pre">stdClass</span></tt> 型のオブジェクト
 として返します。</p>
 <p>使い方: <a class="reference internal" href="#id3">結果行</a> を参照。</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="CI_DB_result::custom_row_object">
-<code class="descname">custom_row_object</code><span class="sig-paren">(</span><em>$n</em>, <em>$type</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_DB_result::custom_row_object" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">custom_row_object</tt><big>(</big><em>$n</em>, <em>$type</em><big>)</big><a class="headerlink" href="#CI_DB_result::custom_row_object" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -934,7 +938,7 @@ FALSE を返します。特筆すべきは PDO で使えないという点です
 
 <dl class="method">
 <dt id="CI_DB_result::data_seek">
-<code class="descname">data_seek</code><span class="sig-paren">(</span><span class="optional">[</span><em>$n = 0</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_DB_result::data_seek" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">data_seek</tt><big>(</big><span class="optional">[</span><em>$n = 0</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_result::data_seek" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -958,7 +962,7 @@ FALSE を返します。特筆すべきは PDO で使えないという点です
 
 <dl class="method">
 <dt id="CI_DB_result::set_row">
-<code class="descname">set_row</code><span class="sig-paren">(</span><em>$key</em><span class="optional">[</span>, <em>$value = NULL</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_DB_result::set_row" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">set_row</tt><big>(</big><em>$key</em><span class="optional">[</span>, <em>$value = NULL</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_result::set_row" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -979,7 +983,7 @@ FALSE を返します。特筆すべきは PDO で使えないという点です
 
 <dl class="method">
 <dt id="CI_DB_result::next_row">
-<code class="descname">next_row</code><span class="sig-paren">(</span><span class="optional">[</span><em>$type = 'object'</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_DB_result::next_row" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">next_row</tt><big>(</big><span class="optional">[</span><em>$type = 'object'</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_result::next_row" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1002,7 +1006,7 @@ FALSE を返します。特筆すべきは PDO で使えないという点です
 
 <dl class="method">
 <dt id="CI_DB_result::previous_row">
-<code class="descname">previous_row</code><span class="sig-paren">(</span><span class="optional">[</span><em>$type = 'object'</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_DB_result::previous_row" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">previous_row</tt><big>(</big><span class="optional">[</span><em>$type = 'object'</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_result::previous_row" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1025,7 +1029,7 @@ FALSE を返します。特筆すべきは PDO で使えないという点です
 
 <dl class="method">
 <dt id="CI_DB_result::first_row">
-<code class="descname">first_row</code><span class="sig-paren">(</span><span class="optional">[</span><em>$type = 'object'</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_DB_result::first_row" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">first_row</tt><big>(</big><span class="optional">[</span><em>$type = 'object'</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_result::first_row" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1048,7 +1052,7 @@ FALSE を返します。特筆すべきは PDO で使えないという点です
 
 <dl class="method">
 <dt id="CI_DB_result::last_row">
-<code class="descname">last_row</code><span class="sig-paren">(</span><span class="optional">[</span><em>$type = 'object'</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_DB_result::last_row" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">last_row</tt><big>(</big><span class="optional">[</span><em>$type = 'object'</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_DB_result::last_row" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1071,7 +1075,7 @@ FALSE を返します。特筆すべきは PDO で使えないという点です
 
 <dl class="method">
 <dt id="CI_DB_result::num_rows">
-<code class="descname">num_rows</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_DB_result::num_rows" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">num_rows</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_DB_result::num_rows" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1088,7 +1092,7 @@ FALSE を返します。特筆すべきは PDO で使えないという点です
 
 <dl class="method">
 <dt id="CI_DB_result::num_fields">
-<code class="descname">num_fields</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_DB_result::num_fields" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">num_fields</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_DB_result::num_fields" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1105,7 +1109,7 @@ FALSE を返します。特筆すべきは PDO で使えないという点です
 
 <dl class="method">
 <dt id="CI_DB_result::field_data">
-<code class="descname">field_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_DB_result::field_data" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">field_data</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_DB_result::field_data" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1116,13 +1120,13 @@ FALSE を返します。特筆すべきは PDO で使えないという点です
 </tr>
 </tbody>
 </table>
-<p>フィールドのメタデータを含んだ <code class="docutils literal"><span class="pre">stdClass</span></code> の配列を
+<p>フィールドのメタデータを含んだ <tt class="docutils literal"><span class="pre">stdClass</span></tt> の配列を
 生成します。</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="CI_DB_result::free_result">
-<code class="descname">free_result</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_DB_result::free_result" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">free_result</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_DB_result::free_result" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1137,7 +1141,7 @@ FALSE を返します。特筆すべきは PDO で使えないという点です
 
 <dl class="method">
 <dt id="CI_DB_result::list_fields">
-<code class="descname">list_fields</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_DB_result::list_fields" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">list_fields</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_DB_result::list_fields" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1176,7 +1180,7 @@ FALSE を返します。特筆すべきは PDO で使えないという点です
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 10月 11, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
+      最終更新: Nov 23, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

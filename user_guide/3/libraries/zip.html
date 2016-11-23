@@ -49,7 +49,9 @@
     
       <div id="pulldown-menu" class="ciNav">
         <ul>
-<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -149,7 +151,7 @@
 <li class="toctree-l2"><a class="reference internal" href="uri.html">URI クラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="user_agent.html">ユーザエージェントクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="xmlrpc.html">XML-RPC および XML-RPC サーバクラス</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Zip 圧縮クラス</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Zip 圧縮クラス</a></li>
 </ul>
 </li>
 </ul>
@@ -233,7 +235,9 @@
           
           
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -333,7 +337,7 @@
 <li class="toctree-l2"><a class="reference internal" href="uri.html">URI クラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="user_agent.html">ユーザエージェントクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="xmlrpc.html">XML-RPC および XML-RPC サーバクラス</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Zip 圧縮クラス</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Zip 圧縮クラス</a></li>
 </ul>
 </li>
 </ul>
@@ -469,10 +473,10 @@ Archives can be downloaded to your desktop or saved to a directory.</p>
 <h2><a class="toc-backref" href="#id8">クラスリファレンス</a><a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <dl class="class">
 <dt id="CI_Zip">
-<em class="property">class </em><code class="descname">CI_Zip</code><a class="headerlink" href="#CI_Zip" title="この定義へのパーマリンク">¶</a></dt>
+<em class="property">class </em><tt class="descname">CI_Zip</tt><a class="headerlink" href="#CI_Zip" title="この定義へのパーマリンク">¶</a></dt>
 <dd><dl class="attribute">
 <dt>
-<code class="descname">$compression_level = 2</code></dt>
+<tt class="descname">$compression_level = 2</tt></dt>
 <dd><p>圧縮レベルを使用します。</p>
 <p>効果的に圧縮を抑制している 0 から最も高圧縮な 9 までの範囲あります:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">zip</span><span class="o">-&gt;</span><span class="na">compression_level</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
@@ -482,7 +486,7 @@ Archives can be downloaded to your desktop or saved to a directory.</p>
 
 <dl class="method">
 <dt id="CI_Zip::add_data">
-<code class="descname">add_data</code><span class="sig-paren">(</span><em>$filepath</em><span class="optional">[</span>, <em>$data = NULL</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Zip::add_data" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">add_data</tt><big>(</big><em>$filepath</em><span class="optional">[</span>, <em>$data = NULL</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Zip::add_data" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -533,7 +537,7 @@ Archives can be downloaded to your desktop or saved to a directory.</p>
 
 <dl class="method">
 <dt id="CI_Zip::add_dir">
-<code class="descname">add_dir</code><span class="sig-paren">(</span><em>$directory</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_Zip::add_dir" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">add_dir</tt><big>(</big><em>$directory</em><big>)</big><a class="headerlink" href="#CI_Zip::add_dir" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -557,7 +561,7 @@ Archives can be downloaded to your desktop or saved to a directory.</p>
 
 <dl class="method">
 <dt id="CI_Zip::read_file">
-<code class="descname">read_file</code><span class="sig-paren">(</span><em>$path</em><span class="optional">[</span>, <em>$archive_filepath = FALSE</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Zip::read_file" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">read_file</tt><big>(</big><em>$path</em><span class="optional">[</span>, <em>$archive_filepath = FALSE</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Zip::read_file" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -605,7 +609,7 @@ $this-&gt;zip-&gt;download(&#8216;my_archive.zip&#8217;);</p>
 
 <dl class="method">
 <dt id="CI_Zip::read_dir">
-<code class="descname">read_dir</code><span class="sig-paren">(</span><em>$path</em><span class="optional">[</span>, <em>$preserve_filepath = TRUE</em><span class="optional">[</span>, <em>$root_path = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Zip::read_dir" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">read_dir</tt><big>(</big><em>$path</em><span class="optional">[</span>, <em>$preserve_filepath = TRUE</em><span class="optional">[</span>, <em>$root_path = NULL</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Zip::read_dir" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -648,7 +652,7 @@ $this-&gt;zip-&gt;download(&#8216;my_backup.zip&#8217;);</p>
 
 <dl class="method">
 <dt id="CI_Zip::archive">
-<code class="descname">archive</code><span class="sig-paren">(</span><em>$filepath</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_Zip::archive" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">archive</tt><big>(</big><em>$filepath</em><big>)</big><a class="headerlink" href="#CI_Zip::archive" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -675,7 +679,7 @@ $this-&gt;zip-&gt;download(&#8216;my_backup.zip&#8217;);</p>
 
 <dl class="method">
 <dt id="CI_Zip::download">
-<code class="descname">download</code><span class="sig-paren">(</span><em>$filename = 'backup.zip'</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_Zip::download" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">download</tt><big>(</big><em>$filename = 'backup.zip'</em><big>)</big><a class="headerlink" href="#CI_Zip::download" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -705,7 +709,7 @@ Zip ファイルにつけたい名前を指定する必要があります。 例
 
 <dl class="method">
 <dt id="CI_Zip::get_zip">
-<code class="descname">get_zip</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Zip::get_zip" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">get_zip</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_Zip::get_zip" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -728,7 +732,7 @@ $data = &#8216;I was born in an elevator...&#8217;;</p>
 
 <dl class="method">
 <dt id="CI_Zip::clear_data">
-<code class="descname">clear_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Zip::clear_data" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">clear_data</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_Zip::clear_data" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -776,7 +780,7 @@ $this-&gt;zip-&gt;read_file(&#8220;/path/to/photo.jpg&#8221;); // ファイル�
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 10月 11, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
+      最終更新: Nov 23, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

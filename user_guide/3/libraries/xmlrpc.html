@@ -49,7 +49,9 @@
     
       <div id="pulldown-menu" class="ciNav">
         <ul>
-<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -148,7 +150,7 @@
 <li class="toctree-l2"><a class="reference internal" href="unit_testing.html">ユニットテストクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="uri.html">URI クラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="user_agent.html">ユーザエージェントクラス</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">XML-RPC および XML-RPC サーバクラス</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">XML-RPC および XML-RPC サーバクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="zip.html">Zip 圧縮クラス</a></li>
 </ul>
 </li>
@@ -233,7 +235,9 @@
           
           
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -332,7 +336,7 @@
 <li class="toctree-l2"><a class="reference internal" href="unit_testing.html">ユニットテストクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="uri.html">URI クラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="user_agent.html">ユーザエージェントクラス</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">XML-RPC および XML-RPC サーバクラス</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">XML-RPC および XML-RPC サーバクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="zip.html">Zip 圧縮クラス</a></li>
 </ul>
 </li>
@@ -603,7 +607,7 @@ function names.</p>
 <p>There are two additional configuration keys you may make use of when
 initializing the server class: debug can be set to TRUE in order to
 enable debugging, and xss_clean may be set to FALSE to prevent sending
-data through the Security library&#8217;s <code class="docutils literal"><span class="pre">xss_clean()</span></code> method.</p>
+data through the Security library&#8217;s <tt class="docutils literal"><span class="pre">xss_clean()</span></tt> method.</p>
 </div>
 <div class="section" id="id8">
 <h3><a class="toc-backref" href="#id25">サーバリクエストの処理</a><a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">¶</a></h3>
@@ -626,7 +630,7 @@ contains the data sent by the XML-RPC Client. Using this object you will
 have access to the <em>request parameters</em> enabling you to process the
 request. When you are done you will send a Response back to the Client.</p>
 <p>Below is a real-world example, using the Blogger API. One of the methods
-in the Blogger API is <code class="docutils literal"><span class="pre">getUserInfo()</span></code>. Using this method, an XML-RPC
+in the Blogger API is <tt class="docutils literal"><span class="pre">getUserInfo()</span></tt>. Using this method, an XML-RPC
 Client can send the Server a username and password, in return the Server
 sends back information about that particular user (nickname, user ID,
 email address, etc.). Here is how the processing function might look:</p>
@@ -665,11 +669,11 @@ email address, etc.). Here is how the processing function might look:</p>
 </div>
 <div class="section" id="notes">
 <h4><a class="toc-backref" href="#id26">Notes:</a><a class="headerlink" href="#notes" title="このヘッドラインへのパーマリンク">¶</a></h4>
-<p>The <code class="docutils literal"><span class="pre">output_parameters()</span></code> method retrieves an indexed array
+<p>The <tt class="docutils literal"><span class="pre">output_parameters()</span></tt> method retrieves an indexed array
 corresponding to the request parameters sent by the client. In the above
 example, the output parameters will be the username and password.</p>
 <p>If the username and password sent by the client were not valid, and
-error message is returned using <code class="docutils literal"><span class="pre">send_error_message()</span></code>.</p>
+error message is returned using <tt class="docutils literal"><span class="pre">send_error_message()</span></tt>.</p>
 <p>If the operation was successful, the client will be sent back a response
 array containing the user&#8217;s info.</p>
 </div>
@@ -759,7 +763,7 @@ folder:</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
 <p class="last">In the above code we are using a &#8220;url helper&#8221;. You can find more
-information in the <a class="reference internal" href="../general/helpers.html"><span class="doc">Helpers Functions</span></a> page.</p>
+information in the <a class="reference internal" href="../general/helpers.html"><em>Helpers Functions</em></a> page.</p>
 </div>
 </div>
 <div class="section" id="id13">
@@ -811,7 +815,7 @@ folder:</p>
 back to you.</p>
 <p>The client you created sends a message (&#8220;How&#8217;s is going?&#8221;) to the
 server, along with a request for the &#8220;Greetings&#8221; method. The Server
-receives the request and maps it to the <code class="docutils literal"><span class="pre">process()</span></code> method, where a
+receives the request and maps it to the <tt class="docutils literal"><span class="pre">process()</span></tt> method, where a
 response is sent back.</p>
 </div>
 </div>
@@ -867,10 +871,10 @@ seven types of values that you can send via XML-RPC:</p>
 <h2><a class="toc-backref" href="#id35">クラスリファレンス</a><a class="headerlink" href="#id17" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <dl class="class">
 <dt id="CI_Xmlrpc">
-<em class="property">class </em><code class="descname">CI_Xmlrpc</code><a class="headerlink" href="#CI_Xmlrpc" title="この定義へのパーマリンク">¶</a></dt>
+<em class="property">class </em><tt class="descname">CI_Xmlrpc</tt><a class="headerlink" href="#CI_Xmlrpc" title="この定義へのパーマリンク">¶</a></dt>
 <dd><dl class="method">
 <dt id="CI_Xmlrpc::initialize">
-<code class="descname">initialize</code><span class="sig-paren">(</span><span class="optional">[</span><em>$config = array()</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Xmlrpc::initialize" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">initialize</tt><big>(</big><span class="optional">[</span><em>$config = array()</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Xmlrpc::initialize" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -890,7 +894,7 @@ seven types of values that you can send via XML-RPC:</p>
 
 <dl class="method">
 <dt id="CI_Xmlrpc::server">
-<code class="descname">server</code><span class="sig-paren">(</span><em>$url</em><span class="optional">[</span>, <em>$port = 80</em><span class="optional">[</span>, <em>$proxy = FALSE</em><span class="optional">[</span>, <em>$proxy_port = 8080</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Xmlrpc::server" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">server</tt><big>(</big><em>$url</em><span class="optional">[</span>, <em>$port = 80</em><span class="optional">[</span>, <em>$proxy = FALSE</em><span class="optional">[</span>, <em>$proxy_port = 8080</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Xmlrpc::server" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -920,7 +924,7 @@ seven types of values that you can send via XML-RPC:</p>
 
 <dl class="method">
 <dt id="CI_Xmlrpc::timeout">
-<code class="descname">timeout</code><span class="sig-paren">(</span><em>$seconds = 5</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_Xmlrpc::timeout" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">timeout</tt><big>(</big><em>$seconds = 5</em><big>)</big><a class="headerlink" href="#CI_Xmlrpc::timeout" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -943,7 +947,7 @@ seven types of values that you can send via XML-RPC:</p>
 
 <dl class="method">
 <dt id="CI_Xmlrpc::method">
-<code class="descname">method</code><span class="sig-paren">(</span><em>$function</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_Xmlrpc::method" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">method</tt><big>(</big><em>$function</em><big>)</big><a class="headerlink" href="#CI_Xmlrpc::method" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -967,7 +971,7 @@ seven types of values that you can send via XML-RPC:</p>
 
 <dl class="method">
 <dt id="CI_Xmlrpc::request">
-<code class="descname">request</code><span class="sig-paren">(</span><em>$incoming</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_Xmlrpc::request" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">request</tt><big>(</big><em>$incoming</em><big>)</big><a class="headerlink" href="#CI_Xmlrpc::request" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -991,7 +995,7 @@ seven types of values that you can send via XML-RPC:</p>
 
 <dl class="method">
 <dt id="CI_Xmlrpc::send_request">
-<code class="descname">send_request</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Xmlrpc::send_request" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">send_request</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_Xmlrpc::send_request" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1007,7 +1011,7 @@ seven types of values that you can send via XML-RPC:</p>
 
 <dl class="method">
 <dt id="CI_Xmlrpc::display_error">
-<code class="descname">display_error</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Xmlrpc::display_error" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">display_error</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_Xmlrpc::display_error" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1026,7 +1030,7 @@ seven types of values that you can send via XML-RPC:</p>
 
 <dl class="method">
 <dt id="CI_Xmlrpc::display_response">
-<code class="descname">display_response</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Xmlrpc::display_response" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">display_response</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_Xmlrpc::display_response" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1045,7 +1049,7 @@ seven types of values that you can send via XML-RPC:</p>
 
 <dl class="method">
 <dt id="CI_Xmlrpc::send_error_message">
-<code class="descname">send_error_message</code><span class="sig-paren">(</span><em>$number</em>, <em>$message</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_Xmlrpc::send_error_message" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">send_error_message</tt><big>(</big><em>$number</em>, <em>$message</em><big>)</big><a class="headerlink" href="#CI_Xmlrpc::send_error_message" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1095,7 +1099,7 @@ First parameter is the error number while the second parameter is the error mess
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 10月 11, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
+      最終更新: Nov 23, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

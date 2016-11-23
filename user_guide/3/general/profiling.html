@@ -49,7 +49,9 @@
     
       <div id="pulldown-menu" class="ciNav">
         <ul>
-<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -108,7 +110,7 @@
 <li class="toctree-l2"><a class="reference internal" href="routing.html">URI ルーティング</a></li>
 <li class="toctree-l2"><a class="reference internal" href="errors.html">エラー処理</a></li>
 <li class="toctree-l2"><a class="reference internal" href="caching.html">キャッシュ</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">アプリケーションのプロファイリング</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">アプリケーションのプロファイリング</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cli.html">CLI で実行する</a></li>
 <li class="toctree-l2"><a class="reference internal" href="managing_apps.html">アプリケーションの管理</a></li>
 <li class="toctree-l2"><a class="reference internal" href="environments.html">複数環境への対応</a></li>
@@ -233,7 +235,9 @@
           
           
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -292,7 +296,7 @@
 <li class="toctree-l2"><a class="reference internal" href="routing.html">URI ルーティング</a></li>
 <li class="toctree-l2"><a class="reference internal" href="errors.html">エラー処理</a></li>
 <li class="toctree-l2"><a class="reference internal" href="caching.html">キャッシュ</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">アプリケーションのプロファイリング</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">アプリケーションのプロファイリング</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cli.html">CLI で実行する</a></li>
 <li class="toctree-l2"><a class="reference internal" href="managing_apps.html">アプリケーションの管理</a></li>
 <li class="toctree-l2"><a class="reference internal" href="environments.html">複数環境への対応</a></li>
@@ -423,7 +427,7 @@
   <div class="section" id="id1">
 <h1>アプリケーションのプロファイリング<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <p>プロファイラクラスはベンチマーク結果を表示します、実行したクエリと
-<code class="docutils literal"><span class="pre">$_POST</span></code> データを、ページの下部に。
+<tt class="docutils literal"><span class="pre">$_POST</span></tt> データを、ページの下部に。
 この情報は開発時にデバッグや最適化を支援するために
 役立ちます。</p>
 <div class="section" id="id2">
@@ -431,14 +435,14 @@
 <div class="admonition important">
 <p class="first admonition-title">重要</p>
 <p class="last">このクラスは初期化する必要は　あ　り　ま　せ　ん　。
-以下の説明のようにプロファイリングが有効になっている場合に、 <a class="reference internal" href="../libraries/output.html"><span class="doc">出力ライブラリ</span></a>
+以下の説明のようにプロファイリングが有効になっている場合に、 <a class="reference internal" href="../libraries/output.html"><em>出力ライブラリ</em></a>
 により自動的にロードされます。</p>
 </div>
 </div>
 <div class="section" id="id3">
 <h2>プロファイラを有効にする<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>プロファイラを有効にするには、
-<a class="reference internal" href="controllers.html"><span class="doc">コントローラ</span></a> メソッド内の任意の場所につぎの行を追加します:</p>
+<a class="reference internal" href="controllers.html"><em>コントローラ</em></a> メソッド内の任意の場所につぎの行を追加します:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">output</span><span class="o">-&gt;</span><span class="na">enable_profiler</span><span class="p">(</span><span class="k">TRUE</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -454,7 +458,7 @@
 <p>プロファイラでベンチマークデータを処理し表示させるするためには、
 特定の構文を使用して測定点をマークする必要があります。</p>
 <p>ベンチマークポイントの設定については
-<a class="reference internal" href="../libraries/benchmark.html"><span class="doc">ベンチマークライブラリ</span></a> ページをお読みください。</p>
+<a class="reference internal" href="../libraries/benchmark.html"><em>ベンチマークライブラリ</em></a> ページをお読みください。</p>
 </div>
 <div class="section" id="id5">
 <h2>プロファイラセクションの有効化と無効化<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h2>
@@ -469,7 +473,7 @@ TRUE または FALSE に設定することで有効または無効にするこ�
 </div>
 <p>コントローラではデフォルトと
 設定ファイル値を上書きすることができます、
-<a class="reference internal" href="../libraries/output.html"><span class="doc">出力ライブラリ</span></a> の <code class="docutils literal"><span class="pre">set_profiler_sections()</span></code> メソッドの呼び出しです:</p>
+<a class="reference internal" href="../libraries/output.html"><em>出力ライブラリ</em></a> の <tt class="docutils literal"><span class="pre">set_profiler_sections()</span></tt> メソッドの呼び出しです:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$sections</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
         <span class="s1">&#39;config&#39;</span>  <span class="o">=&gt;</span> <span class="k">TRUE</span><span class="p">,</span>
         <span class="s1">&#39;queries&#39;</span> <span class="o">=&gt;</span> <span class="k">TRUE</span>
@@ -542,10 +546,10 @@ TRUE または FALSE に設定することで有効または無効にするこ�
 </table>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">データベース設定での <a class="reference internal" href="../database/configuration.html"><span class="doc">save_queries</span></a>
+<p class="last">データベース設定での <a class="reference internal" href="../database/configuration.html"><em>save_queries</em></a>
 設定の無効化はデータベースクエリのプロファイリングにも影響し、
 上記の「 queries 」設定も使えなくします。
-必要に応じて、<code class="docutils literal"><span class="pre">$this-&gt;db-&gt;save_queries</span> <span class="pre">=</span> <span class="pre">TRUE:</span></code> でこの設定を上書きすることができます。
+必要に応じて、<tt class="docutils literal"><span class="pre">$this-&gt;db-&gt;save_queries</span> <span class="pre">=</span> <span class="pre">TRUE:</span></tt> でこの設定を上書きすることができます。
 この設定抜きにしてはクエリまたは
 <cite>last_query &lt;database/helpers&gt;</cite> を表示することはできません。</p>
 </div>
@@ -571,7 +575,7 @@ TRUE または FALSE に設定することで有効または無効にするこ�
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 10月 11, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
+      最終更新: Nov 23, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

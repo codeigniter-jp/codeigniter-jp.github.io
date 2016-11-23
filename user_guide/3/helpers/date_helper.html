@@ -49,7 +49,9 @@
     
       <div id="pulldown-menu" class="ciNav">
         <ul>
-<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -177,7 +179,7 @@
 <li class="toctree-l2"><a class="reference internal" href="array_helper.html">配列ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="captcha_helper.html">キャプチャ ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cookie_helper.html">Cookie ヘルパー</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">日付ヘルパー</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">日付ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="directory_helper.html">ディレクトリヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="download_helper.html">ダウンロードヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="email_helper.html">eメールヘルパー</a></li>
@@ -233,7 +235,9 @@
           
           
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -361,7 +365,7 @@
 <li class="toctree-l2"><a class="reference internal" href="array_helper.html">配列ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="captcha_helper.html">キャプチャ ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cookie_helper.html">Cookie ヘルパー</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">日付ヘルパー</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">日付ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="directory_helper.html">ディレクトリヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="download_helper.html">ダウンロードヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="email_helper.html">eメールヘルパー</a></li>
@@ -442,7 +446,7 @@
 <p>次の関数が利用できます:</p>
 <dl class="function">
 <dt id="now">
-<code class="descname">now</code><span class="sig-paren">(</span><span class="optional">[</span><em>$timezone = NULL</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#now" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">now</tt><big>(</big><span class="optional">[</span><em>$timezone = NULL</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#now" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -465,17 +469,17 @@
 指す時刻になります。
 マスターの時間を PHP でサポートされるタイムゾーンに設定しないつもりなら、
 (各ユーザが各々のタイムゾーンを設定することができるサイトであれば通常そうすると
-思います) PHP の <code class="docutils literal"><span class="pre">time()</span></code> 関数を使わずに、この関数を利用する利点はありません。</p>
+思います) PHP の <tt class="docutils literal"><span class="pre">time()</span></tt> 関数を使わずに、この関数を利用する利点はありません。</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nx">now</span><span class="p">(</span><span class="s1">&#39;Australia/Victoria&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>タイムゾーンを指定しない場合、 戻り値として <strong>time_reference</strong> の設定に基づく
-<code class="docutils literal"><span class="pre">time()</span></code> の値を返却します。</p>
+<tt class="docutils literal"><span class="pre">time()</span></tt> の値を返却します。</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="mdate">
-<code class="descname">mdate</code><span class="sig-paren">(</span><span class="optional">[</span><em>$datestr = ''</em><span class="optional">[</span>, <em>$time = ''</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#mdate" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">mdate</tt><big>(</big><span class="optional">[</span><em>$datestr = ''</em><span class="optional">[</span>, <em>$time = ''</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#mdate" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -512,7 +516,7 @@
 
 <dl class="function">
 <dt id="standard_date">
-<code class="descname">standard_date</code><span class="sig-paren">(</span><span class="optional">[</span><em>$fmt = 'DATE_RFC822'</em><span class="optional">[</span>, <em>$time = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#standard_date" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">standard_date</tt><big>(</big><span class="optional">[</span><em>$fmt = 'DATE_RFC822'</em><span class="optional">[</span>, <em>$time = NULL</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#standard_date" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -540,7 +544,7 @@
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p>この関数は廃止予定です。 代わりにPHP 標準の <code class="docutils literal"><span class="pre">date()</span></code> と
+<p>この関数は廃止予定です。 代わりにPHP 標準の <tt class="docutils literal"><span class="pre">date()</span></tt> と
 <a class="reference external" href="http://php.net/manual/ja/class.datetime.php#datetime.constants.types">DateTime&#8217;s format constants</a>
 を使用してください。:</p>
 <div class="last highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nb">date</span><span class="p">(</span><span class="nx">DATE_RFC822</span><span class="p">,</span> <span class="nb">time</span><span class="p">());</span>
@@ -607,7 +611,7 @@
 
 <dl class="function">
 <dt id="local_to_gmt">
-<code class="descname">local_to_gmt</code><span class="sig-paren">(</span><span class="optional">[</span><em>$time = ''</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#local_to_gmt" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">local_to_gmt</tt><big>(</big><span class="optional">[</span><em>$time = ''</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#local_to_gmt" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -634,7 +638,7 @@
 
 <dl class="function">
 <dt id="gmt_to_local">
-<code class="descname">gmt_to_local</code><span class="sig-paren">(</span><span class="optional">[</span><em>$time = ''</em><span class="optional">[</span>, <em>$timezone = 'UTC'</em><span class="optional">[</span>, <em>$dst = FALSE</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#gmt_to_local" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">gmt_to_local</tt><big>(</big><span class="optional">[</span><em>$time = ''</em><span class="optional">[</span>, <em>$timezone = 'UTC'</em><span class="optional">[</span>, <em>$dst = FALSE</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#gmt_to_local" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -672,7 +676,7 @@
 
 <dl class="function">
 <dt id="mysql_to_unix">
-<code class="descname">mysql_to_unix</code><span class="sig-paren">(</span><span class="optional">[</span><em>$time = ''</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#mysql_to_unix" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">mysql_to_unix</tt><big>(</big><span class="optional">[</span><em>$time = ''</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#mysql_to_unix" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -699,7 +703,7 @@
 
 <dl class="function">
 <dt id="unix_to_human">
-<code class="descname">unix_to_human</code><span class="sig-paren">(</span><span class="optional">[</span><em>$time = ''</em><span class="optional">[</span>, <em>$seconds = FALSE</em><span class="optional">[</span>, <em>$fmt = 'us'</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#unix_to_human" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">unix_to_human</tt><big>(</big><span class="optional">[</span><em>$time = ''</em><span class="optional">[</span>, <em>$seconds = FALSE</em><span class="optional">[</span>, <em>$fmt = 'us'</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#unix_to_human" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -740,7 +744,7 @@
 
 <dl class="function">
 <dt id="human_to_unix">
-<code class="descname">human_to_unix</code><span class="sig-paren">(</span><span class="optional">[</span><em>$datestr = ''</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#human_to_unix" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">human_to_unix</tt><big>(</big><span class="optional">[</span><em>$datestr = ''</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#human_to_unix" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -758,7 +762,7 @@
 </tr>
 </tbody>
 </table>
-<p><code class="xref php php-func docutils literal"><span class="pre">unix_to_time()</span></code> 関数の反対です。&#8221;人&#8221; の時間を入力として、
+<p><tt class="xref php php-func docutils literal"><span class="pre">unix_to_time()</span></tt> 関数の反対です。&#8221;人&#8221; の時間を入力として、
 UNIXタイムスタンプを返します。 これは、フォームから &#8220;人&#8221;が読める形式に
 フォーマットされた日付を受け取る時に役立ちます。渡された文字列が、
 上で示したようなフォーマットでない場合、ブール値の FALSE を返します。</p>
@@ -772,14 +776,14 @@ UNIXタイムスタンプを返します。 これは、フォームから &#822
 
 <dl class="function">
 <dt id="nice_date">
-<code class="descname">nice_date</code><span class="sig-paren">(</span><span class="optional">[</span><em>$bad_date = ''</em><span class="optional">[</span>, <em>$format = FALSE</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#nice_date" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">nice_date</tt><big>(</big><span class="optional">[</span><em>$bad_date = ''</em><span class="optional">[</span>, <em>$format = FALSE</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#nice_date" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
 <li><strong>$bad_date</strong> (<em>int</em>) &#8211; 不完全な日付フォーマット</li>
-<li><strong>$format</strong> (<em>string</em>) &#8211; 返却される日付フォーマット（PHP の <code class="docutils literal"><span class="pre">date()</span></code> 関数と同様）</li>
+<li><strong>$format</strong> (<em>string</em>) &#8211; 返却される日付フォーマット（PHP の <tt class="docutils literal"><span class="pre">date()</span></tt> 関数と同様）</li>
 </ul>
 </td>
 </tr>
@@ -810,7 +814,7 @@ UNIXタイムスタンプを返します。 これは、フォームから &#822
 
 <dl class="function">
 <dt id="timespan">
-<code class="descname">timespan</code><span class="sig-paren">(</span><span class="optional">[</span><em>$seconds = 1</em><span class="optional">[</span>, <em>$time = ''</em><span class="optional">[</span>, <em>$units = ''</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#timespan" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">timespan</tt><big>(</big><span class="optional">[</span><em>$seconds = 1</em><span class="optional">[</span>, <em>$time = ''</em><span class="optional">[</span>, <em>$units = ''</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#timespan" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -857,7 +861,7 @@ file: language/&lt;あなたの言語&gt;/date_lang.php</p>
 
 <dl class="function">
 <dt id="days_in_month">
-<code class="descname">days_in_month</code><span class="sig-paren">(</span><span class="optional">[</span><em>$month = 0</em><span class="optional">[</span>, <em>$year = ''</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#days_in_month" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">days_in_month</tt><big>(</big><span class="optional">[</span><em>$month = 0</em><span class="optional">[</span>, <em>$year = ''</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#days_in_month" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -885,14 +889,14 @@ file: language/&lt;あなたの言語&gt;/date_lang.php</p>
 <p>第2引数が空の時、現在の年が使われます。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">この関数は <code class="docutils literal"><span class="pre">cal_days_in_month()</span></code> が利用できる場合は
+<p class="last">この関数は <tt class="docutils literal"><span class="pre">cal_days_in_month()</span></tt> が利用できる場合は
 エイリアスになります。</p>
 </div>
 </dd></dl>
 
 <dl class="function">
 <dt id="date_range">
-<code class="descname">date_range</code><span class="sig-paren">(</span><span class="optional">[</span><em>$unix_start = ''</em><span class="optional">[</span>, <em>$mixed = ''</em><span class="optional">[</span>, <em>$is_unix = TRUE</em><span class="optional">[</span>, <em>$format = 'Y-m-d'</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#date_range" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">date_range</tt><big>(</big><span class="optional">[</span><em>$unix_start = ''</em><span class="optional">[</span>, <em>$mixed = ''</em><span class="optional">[</span>, <em>$is_unix = TRUE</em><span class="optional">[</span>, <em>$format = 'Y-m-d'</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#date_range" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -901,7 +905,7 @@ file: language/&lt;あなたの言語&gt;/date_lang.php</p>
 <li><strong>$unix_start</strong> (<em>int</em>) &#8211; 開始日の UNIX タイムスタンプ</li>
 <li><strong>$mixed</strong> (<em>int</em>) &#8211; 終了日の UNIX タイムスタンプ又は日数</li>
 <li><strong>$is_unix</strong> (<em>bool</em>) &#8211; 第2引数がタイムスタンプでない場合は FALSE を設定する</li>
-<li><strong>$format</strong> (<em>string</em>) &#8211; 出力する日付フォーマット。 <code class="docutils literal"><span class="pre">date()</span></code> 関数と同様。</li>
+<li><strong>$format</strong> (<em>string</em>) &#8211; 出力する日付フォーマット。 <tt class="docutils literal"><span class="pre">date()</span></tt> 関数と同様。</li>
 </ul>
 </td>
 </tr>
@@ -927,7 +931,7 @@ file: language/&lt;あなたの言語&gt;/date_lang.php</p>
 
 <dl class="function">
 <dt id="timezones">
-<code class="descname">timezones</code><span class="sig-paren">(</span><span class="optional">[</span><em>$tz = ''</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#timezones" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">timezones</tt><big>(</big><span class="optional">[</span><em>$tz = ''</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#timezones" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -952,12 +956,12 @@ file: language/&lt;あなたの言語&gt;/date_lang.php</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nx">timezones</span><span class="p">(</span><span class="s1">&#39;UM5&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>このメソッドは、<a class="reference internal" href="#timezone_menu" title="timezone_menu"><code class="xref php php-func docutils literal"><span class="pre">timezone_menu()</span></code></a> とともに使うと役立ちます。</p>
+<p>このメソッドは、<a class="reference internal" href="#timezone_menu" title="timezone_menu"><tt class="xref php php-func docutils literal"><span class="pre">timezone_menu()</span></tt></a> とともに使うと役立ちます。</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="timezone_menu">
-<code class="descname">timezone_menu</code><span class="sig-paren">(</span><span class="optional">[</span><em>$default = 'UTC'</em><span class="optional">[</span>, <em>$class = ''</em><span class="optional">[</span>, <em>$name = 'timezones'</em><span class="optional">[</span>, <em>$attributes = ''</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#timezone_menu" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">timezone_menu</tt><big>(</big><span class="optional">[</span><em>$default = 'UTC'</em><span class="optional">[</span>, <em>$class = ''</em><span class="optional">[</span>, <em>$name = 'timezones'</em><span class="optional">[</span>, <em>$attributes = ''</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#timezone_menu" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1199,7 +1203,7 @@ language/&lt;あなたの言語&gt;/date_lang.php</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 10月 11, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
+      最終更新: Nov 23, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

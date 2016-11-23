@@ -49,7 +49,9 @@
     
       <div id="pulldown-menu" class="ciNav">
         <ul>
-<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -134,7 +136,7 @@
 <li class="toctree-l2"><a class="reference internal" href="image_lib.html">画像操作クラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="input.html">入力クラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="javascript.html">JavaScript クラス</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">言語クラス</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">言語クラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="loader.html">ローダ（読み込み処理）クラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="migration.html">マイグレーションクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="output.html">出力クラス</a></li>
@@ -233,7 +235,9 @@
           
           
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -318,7 +322,7 @@
 <li class="toctree-l2"><a class="reference internal" href="image_lib.html">画像操作クラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="input.html">入力クラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="javascript.html">JavaScript クラス</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">言語クラス</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">言語クラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="loader.html">ローダ（読み込み処理）クラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="migration.html">マイグレーションクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="output.html">出力クラス</a></li>
@@ -530,7 +534,7 @@ or &#8220;en-CA-x-ca&#8221; for English and some of its variants.</p>
 For example, let&#8217;s say you want to create a file containing error messages.
 You might name it: error_lang.php</p>
 <p>Within the file you will assign each line of text to an array called
-<code class="docutils literal"><span class="pre">$lang</span></code> with this prototype:</p>
+<tt class="docutils literal"><span class="pre">$lang</span></tt> with this prototype:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$lang</span><span class="p">[</span><span class="s1">&#39;language_key&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;The actual message to be shown&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
@@ -588,13 +592,13 @@ disable error logging, in case you&#8217;re not sure if the line exists:</p>
 <div class="section" id="id10">
 <h4><a class="toc-backref" href="#id20">フォームのラベルを出力</a><a class="headerlink" href="#id10" title="このヘッドラインへのパーマリンク">¶</a></h4>
 <p>This feature has been deprecated from the language library and moved to
-the <a class="reference internal" href="../helpers/language_helper.html#lang" title="lang"><code class="xref php php-func docutils literal"><span class="pre">lang()</span></code></a> function of the <a class="reference internal" href="../helpers/language_helper.html"><span class="doc">Language Helper</span></a>.</p>
+the <a class="reference internal" href="../helpers/language_helper.html#lang" title="lang"><tt class="xref php php-func docutils literal"><span class="pre">lang()</span></tt></a> function of the <a class="reference internal" href="../helpers/language_helper.html"><em>Language Helper</em></a>.</p>
 </div>
 </div>
 <div class="section" id="id11">
 <h3><a class="toc-backref" href="#id21">言語の自動読み込み</a><a class="headerlink" href="#id11" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>If you find that you need a particular language globally throughout your
-application, you can tell CodeIgniter to <a class="reference internal" href="../general/autoloader.html"><span class="doc">auto-load</span></a> it during system initialization. This is done
+application, you can tell CodeIgniter to <a class="reference internal" href="../general/autoloader.html"><em>auto-load</em></a> it during system initialization. This is done
 by opening the <strong>application/config/autoload.php</strong> file and adding the
 language(s) to the autoload array.</p>
 </div>
@@ -603,10 +607,10 @@ language(s) to the autoload array.</p>
 <h2><a class="toc-backref" href="#id22">Class Reference</a><a class="headerlink" href="#class-reference" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <dl class="class">
 <dt id="CI_Lang">
-<em class="property">class </em><code class="descname">CI_Lang</code><a class="headerlink" href="#CI_Lang" title="この定義へのパーマリンク">¶</a></dt>
+<em class="property">class </em><tt class="descname">CI_Lang</tt><a class="headerlink" href="#CI_Lang" title="この定義へのパーマリンク">¶</a></dt>
 <dd><dl class="method">
 <dt id="CI_Lang::load">
-<code class="descname">load</code><span class="sig-paren">(</span><em>$langfile</em><span class="optional">[</span>, <em>$idiom = ''</em><span class="optional">[</span>, <em>$return = FALSE</em><span class="optional">[</span>, <em>$add_suffix = TRUE</em><span class="optional">[</span>, <em>$alt_path = ''</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Lang::load" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">load</tt><big>(</big><em>$langfile</em><span class="optional">[</span>, <em>$idiom = ''</em><span class="optional">[</span>, <em>$return = FALSE</em><span class="optional">[</span>, <em>$add_suffix = TRUE</em><span class="optional">[</span>, <em>$alt_path = ''</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Lang::load" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -633,7 +637,7 @@ language(s) to the autoload array.</p>
 
 <dl class="method">
 <dt id="CI_Lang::line">
-<code class="descname">line</code><span class="sig-paren">(</span><em>$line</em><span class="optional">[</span>, <em>$log_errors = TRUE</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Lang::line" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">line</tt><big>(</big><em>$line</em><span class="optional">[</span>, <em>$log_errors = TRUE</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Lang::line" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -680,7 +684,7 @@ based on the line&#8217;s name.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 10月 11, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
+      最終更新: Nov 23, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

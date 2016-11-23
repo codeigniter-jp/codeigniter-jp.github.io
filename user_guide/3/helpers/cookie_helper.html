@@ -49,7 +49,9 @@
     
       <div id="pulldown-menu" class="ciNav">
         <ul>
-<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -176,7 +178,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">ヘルパー</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="array_helper.html">配列ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="captcha_helper.html">キャプチャ ヘルパー</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Cookie ヘルパー</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Cookie ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="date_helper.html">日付ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="directory_helper.html">ディレクトリヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="download_helper.html">ダウンロードヘルパー</a></li>
@@ -233,7 +235,9 @@
           
           
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -360,7 +364,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">ヘルパー</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="array_helper.html">配列ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="captcha_helper.html">キャプチャ ヘルパー</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Cookie ヘルパー</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Cookie ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="date_helper.html">日付ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="directory_helper.html">ディレクトリヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="download_helper.html">ダウンロードヘルパー</a></li>
@@ -442,7 +446,7 @@
 <p>次の関数が利用できます:</p>
 <dl class="function">
 <dt id="set_cookie">
-<code class="descname">set_cookie</code><span class="sig-paren">(</span><em>$name</em><span class="optional">[</span>, <em>$value = ''</em><span class="optional">[</span>, <em>$expire = ''</em><span class="optional">[</span>, <em>$domain = ''</em><span class="optional">[</span>, <em>$path = '/'</em><span class="optional">[</span>, <em>$prefix = ''</em><span class="optional">[</span>, <em>$secure = FALSE</em><span class="optional">[</span>, <em>$httponly = FALSE</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#set_cookie" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">set_cookie</tt><big>(</big><em>$name</em><span class="optional">[</span>, <em>$value = ''</em><span class="optional">[</span>, <em>$expire = ''</em><span class="optional">[</span>, <em>$domain = ''</em><span class="optional">[</span>, <em>$path = '/'</em><span class="optional">[</span>, <em>$prefix = ''</em><span class="optional">[</span>, <em>$secure = FALSE</em><span class="optional">[</span>, <em>$httponly = FALSE</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#set_cookie" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -465,14 +469,14 @@
 </tbody>
 </table>
 <p>このヘルパー関数はブラウザのクッキーをセットするのに便利な
-関数です。 この関数は <code class="docutils literal"><span class="pre">CI_Input::set_cookie()</span></code> のエイリアスですので、
-詳細は <a class="reference internal" href="../libraries/input.html"><span class="doc">入力およびセキュリティクラス</span></a>
+関数です。 この関数は <tt class="docutils literal"><span class="pre">CI_Input::set_cookie()</span></tt> のエイリアスですので、
+詳細は <a class="reference internal" href="../libraries/input.html"><em>入力およびセキュリティクラス</em></a>
 を参照してください。</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="get_cookie">
-<code class="descname">get_cookie</code><span class="sig-paren">(</span><em>$index</em><span class="optional">[</span>, <em>$xss_clean = NULL</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#get_cookie" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">get_cookie</tt><big>(</big><em>$index</em><span class="optional">[</span>, <em>$xss_clean = NULL</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#get_cookie" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -493,15 +497,15 @@
 </table>
 <p>このヘルパー関数はブラウザのクッキーをセットするのに便利な
 関数です。 この関数は <em>application/config/config.php</em> ファイルに
-<code class="docutils literal"><span class="pre">$config['cookie_prefix']</span></code> を指定した場合に接頭辞が付与される事を除けば
-<code class="docutils literal"><span class="pre">CI_Input::cookie()</span></code> とほとんど一緒です。
-詳細は  <a class="reference internal" href="../libraries/input.html"><span class="doc">入力およびセキュリティクラス</span></a> を
+<tt class="docutils literal"><span class="pre">$config['cookie_prefix']</span></tt> を指定した場合に接頭辞が付与される事を除けば
+<tt class="docutils literal"><span class="pre">CI_Input::cookie()</span></tt> とほとんど一緒です。
+詳細は  <a class="reference internal" href="../libraries/input.html"><em>入力およびセキュリティクラス</em></a> を
 参照してください。</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="delete_cookie">
-<code class="descname">delete_cookie</code><span class="sig-paren">(</span><em>$name</em><span class="optional">[</span>, <em>$domain = ''</em><span class="optional">[</span>, <em>$path = '/'</em><span class="optional">[</span>, <em>$prefix = ''</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#delete_cookie" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">delete_cookie</tt><big>(</big><em>$name</em><span class="optional">[</span>, <em>$domain = ''</em><span class="optional">[</span>, <em>$path = '/'</em><span class="optional">[</span>, <em>$prefix = ''</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#delete_cookie" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -524,7 +528,7 @@
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">delete_cookie</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>この関数は、値や有効期限のパラメータがない以外は、 <code class="docutils literal"><span class="pre">set_cookie()</span></code> と
+<p>この関数は、値や有効期限のパラメータがない以外は、 <tt class="docutils literal"><span class="pre">set_cookie()</span></tt> と
 同じものです。
 第1引数に配列で渡すか、
 個別パラメータで値を渡すことができます。</p>
@@ -555,7 +559,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 10月 11, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
+      最終更新: Nov 23, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

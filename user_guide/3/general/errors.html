@@ -49,7 +49,9 @@
     
       <div id="pulldown-menu" class="ciNav">
         <ul>
-<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -106,7 +108,7 @@
 <li class="toctree-l2"><a class="reference internal" href="common_functions.html">共通関数</a></li>
 <li class="toctree-l2"><a class="reference internal" href="compatibility_functions.html">互換関数</a></li>
 <li class="toctree-l2"><a class="reference internal" href="routing.html">URI ルーティング</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">エラー処理</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">エラー処理</a></li>
 <li class="toctree-l2"><a class="reference internal" href="caching.html">キャッシュ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="profiling.html">アプリケーションのプロファイリング</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cli.html">CLI で実行する</a></li>
@@ -233,7 +235,9 @@
           
           
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -290,7 +294,7 @@
 <li class="toctree-l2"><a class="reference internal" href="common_functions.html">共通関数</a></li>
 <li class="toctree-l2"><a class="reference internal" href="compatibility_functions.html">互換関数</a></li>
 <li class="toctree-l2"><a class="reference internal" href="routing.html">URI ルーティング</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">エラー処理</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">エラー処理</a></li>
 <li class="toctree-l2"><a class="reference internal" href="caching.html">キャッシュ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="profiling.html">アプリケーションのプロファイリング</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cli.html">CLI で実行する</a></li>
@@ -439,7 +443,7 @@ error_reporting() 関数を
 アプリケーション全体でグローバルに使用することができます。
 このアプローチは、エラーメッセージがクラス/関数のスコープを気にすることなくトリガーすることを可能にします。</p>
 <p>CodeIgniter はまた、コアのどこかが
-<code class="docutils literal"><span class="pre">exit()</span></code> をいつ呼び出そうともステータスコードを返します。この終了ステータスコードは HTTP
+<tt class="docutils literal"><span class="pre">exit()</span></tt> をいつ呼び出そうともステータスコードを返します。この終了ステータスコードは HTTP
 ステータスコードから分離されており、他のプロセスへの通知として機能します。
 そのプロセスはスクリプトが正常に完了したかどうか、正常終了しなかった場合、
 どのような問題により異常終了したかを監視していることでしょう。
@@ -449,7 +453,7 @@ error_reporting() 関数を
 <p>以下の機能によりエラーを生成できます:</p>
 <dl class="function">
 <dt id="show_error">
-<code class="descname">show_error</code><span class="sig-paren">(</span><em>$message</em>, <em>$status_code</em>, <em>$heading = 'An Error Was Encountered'</em><span class="sig-paren">)</span><a class="headerlink" href="#show_error" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">show_error</tt><big>(</big><em>$message</em>, <em>$status_code</em>, <em>$heading = 'An Error Was Encountered'</em><big>)</big><a class="headerlink" href="#show_error" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -474,19 +478,19 @@ error_reporting() 関数を
 <p>または:</p>
 <blockquote>
 <div>application/views/errors/cli/error_general.php</div></blockquote>
-<p>引数 <code class="docutils literal"><span class="pre">$status_code</span></code> は HTTP
-ステータスコードがエラーとして送信されるべきかを決定します。 <code class="docutils literal"><span class="pre">$status_code</span></code> が
+<p>引数 <tt class="docutils literal"><span class="pre">$status_code</span></tt> は HTTP
+ステータスコードがエラーとして送信されるべきかを決定します。 <tt class="docutils literal"><span class="pre">$status_code</span></tt> が
 100 未満である場合、 HTTP ステータスコードは 500 に設定され、
-終了ステータスコードは <code class="docutils literal"><span class="pre">$status_code</span> <span class="pre">+</span> <span class="pre">EXIT__AUTO_MIN</span></code> に設定されます。
-その値が <code class="docutils literal"><span class="pre">EXIT__AUTO_MAX</span></code> より大きい場合、
-または <code class="docutils literal"><span class="pre">$status_code</span></code> が 100 以上である場合、終了状態コードは
-<code class="docutils literal"><span class="pre">EXIT_ERROR</span></code> に設定されます。
+終了ステータスコードは <tt class="docutils literal"><span class="pre">$status_code</span> <span class="pre">+</span> <span class="pre">EXIT__AUTO_MIN</span></tt> に設定されます。
+その値が <tt class="docutils literal"><span class="pre">EXIT__AUTO_MAX</span></tt> より大きい場合、
+または <tt class="docutils literal"><span class="pre">$status_code</span></tt> が 100 以上である場合、終了状態コードは
+<tt class="docutils literal"><span class="pre">EXIT_ERROR</span></tt> に設定されます。
 詳細については <em>application/config/constants.php</em> で確認することができます。</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="show_404">
-<code class="descname">show_404</code><span class="sig-paren">(</span><em>$page = ''</em>, <em>$log_error = TRUE</em><span class="sig-paren">)</span><a class="headerlink" href="#show_404" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">show_404</tt><big>(</big><em>$page = ''</em>, <em>$log_error = TRUE</em><big>)</big><a class="headerlink" href="#show_404" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -512,16 +516,16 @@ error_reporting() 関数を
 <div>application/views/errors/cli/error_404.php</div></blockquote>
 <p>この関数は、ファイルパスのページが見つからなかったことを示す文字列が渡されることを期待しています。
 終了ステータスコードは
-<code class="docutils literal"><span class="pre">EXIT_UNKNOWN_FILE</span></code> に設定されます。コントローラが見つからない場合、
+<tt class="docutils literal"><span class="pre">EXIT_UNKNOWN_FILE</span></tt> に設定されます。コントローラが見つからない場合、
 CodeIgniter は自動的に 404
 メッセージを表示することに注意してください。</p>
-<p>CodeIgniterは自動的にあらゆる <code class="docutils literal"><span class="pre">show_404()</span></code> 呼び出しをログに記録します。
+<p>CodeIgniterは自動的にあらゆる <tt class="docutils literal"><span class="pre">show_404()</span></tt> 呼び出しをログに記録します。
 オプションの第 2 パラメータを FALSE に設定すると、ログをスキップします。</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="log_message">
-<code class="descname">log_message</code><span class="sig-paren">(</span><em>$level</em>, <em>$message</em><span class="sig-paren">)</span><a class="headerlink" href="#log_message" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">log_message</tt><big>(</big><em>$level</em>, <em>$message</em><big>)</big><a class="headerlink" href="#log_message" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -596,7 +600,7 @@ CodeIgniter は自動的に 404
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 10月 11, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
+      最終更新: Nov 23, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

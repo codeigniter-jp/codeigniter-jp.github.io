@@ -49,7 +49,9 @@
     
       <div id="pulldown-menu" class="ciNav">
         <ul>
-<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">インストール方法</a><ul class="current">
@@ -233,7 +235,9 @@
           
           
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">インストール方法</a><ul class="current">
@@ -439,7 +443,7 @@ index.phpファイルを静的ページに置き換えて、オフラインに�
 <h2>Step 2: index.php ファイル（任意）のアップグレード<a class="headerlink" href="#step-2-index-php" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>私たちは、index.php ファイルへいくつかの微調整を行いました。
 主なものはディレクトリセパレータの適切な使用法（例: ハードコードされた &#8220;/&#8221; の代わりに
-<code class="docutils literal"><span class="pre">DIRECTORY_SEPARATOR</span></code> を利用する）に関連しています。</p>
+<tt class="docutils literal"><span class="pre">DIRECTORY_SEPARATOR</span></tt> を利用する）に関連しています。</p>
 <p>このステップを飛ばしても壊れることはありませんが、Windows を実行している場合や
 全ての変更に追随したい場合、index.php ファイルを更新することを
 推奨します。</p>
@@ -449,13 +453,13 @@ index.phpファイルを静的ページに置き換えて、オフラインに�
 </div>
 <div class="section" id="step-3-prep-for-form">
 <h2>Step 3: &#8216;prep_for_form&#8217; 使用の削除（廃止予定）<a class="headerlink" href="#step-3-prep-for-form" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p><a class="reference internal" href="../libraries/form_validation.html"><span class="doc">フォームバリデーション（検証）</span></a> には
-<code class="docutils literal"><span class="pre">set_rules()</span></code> 内のルールとして、自動的に入力データをHTMLエンコードする/可能性のある
-<code class="docutils literal"><span class="pre">prep_for_form()</span></code> メソッドがあります。</p>
+<p><a class="reference internal" href="../libraries/form_validation.html"><em>フォームバリデーション（検証）</em></a> には
+<tt class="docutils literal"><span class="pre">set_rules()</span></tt> 内のルールとして、自動的に入力データをHTMLエンコードする/可能性のある
+<tt class="docutils literal"><span class="pre">prep_for_form()</span></tt> メソッドがあります。</p>
 <p>最初の段階で自動的にエンコードされた入力（出力の代わりとなる）データというのは
 良くない動作と言えます。CodeIgniter と PHP は、
 このメソッド以外に他の選択肢を提供します。
-例えば、<a class="reference internal" href="../helpers/form_helper.html"><span class="doc">フォームヘルパー</span></a> の関数は、必要な時に
+例えば、<a class="reference internal" href="../helpers/form_helper.html"><em>フォームヘルパー</em></a> の関数は、必要な時に
 自動的に HTML エスケープを実施します。</p>
 <p>従って、 <em>prep_for_form</em> メソッド/ルールは、まったく実用的ではありません。
 そして、現在は非推奨であり、3.1以上で削除される予定です。</p>
@@ -486,7 +490,7 @@ index.phpファイルを静的ページに置き換えて、オフラインに�
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 10月 11, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
+      最終更新: Nov 23, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

@@ -49,7 +49,9 @@
     
       <div id="pulldown-menu" class="ciNav">
         <ul>
-<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -156,7 +158,7 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">データベースリファレンス</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="examples.html">クイックスタート: 使用例</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">データベース設定</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">データベース設定</a></li>
 <li class="toctree-l2"><a class="reference internal" href="connecting.html">データベースへの接続</a></li>
 <li class="toctree-l2"><a class="reference internal" href="queries.html">クエリの実行</a></li>
 <li class="toctree-l2"><a class="reference internal" href="results.html">クエリ結果の生成</a></li>
@@ -233,7 +235,9 @@
           
           
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -340,7 +344,7 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">データベースリファレンス</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="examples.html">クイックスタート: 使用例</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">データベース設定</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">データベース設定</a></li>
 <li class="toctree-l2"><a class="reference internal" href="connecting.html">データベースへの接続</a></li>
 <li class="toctree-l2"><a class="reference internal" href="queries.html">クエリの実行</a></li>
 <li class="toctree-l2"><a class="reference internal" href="results.html">クエリ結果の生成</a></li>
@@ -424,7 +428,7 @@
 <h1>データベース設定<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <p>CodeIgniter には、データベース接続用項目（ユーザ名、パスワード、デ
 ータベース名など）を保存できる設定ファイルがあります。 設定ファイルは
-application/config/database.php にあります。また、特定の <a class="reference internal" href="../libraries/config.html"><span class="doc">環境</span></a> のためのデータベース接続用項目を設定をするため
+application/config/database.php にあります。また、特定の <a class="reference internal" href="../libraries/config.html"><em>環境</em></a> のためのデータベース接続用項目を設定をするため
 に、それぞれの環境の設定フォルダの中に <strong>database.php</strong>
 を置くこともできます。</p>
 <p>設定は、次のひな形で、多次元配列で保存されて
@@ -557,7 +561,7 @@ CodeIgniterは自動でそれらを追記します。</p>
 </div>
 <div class="section" id="query-builder">
 <h2>Query Builder<a class="headerlink" href="#query-builder" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p><a class="reference internal" href="query_builder.html"><span class="doc">Query Builder クラス</span></a>
+<p><a class="reference internal" href="query_builder.html"><em>Query Builder クラス</em></a>
 はデータベース設定ファイルの $query_builder 変数に TRUE/FALSE（ブール値）
 をセットすることによりグローバルに有効または無効にできます。
 query builder クラスを使用しない場合は、
@@ -604,7 +608,7 @@ FALSEをセットするとデータベースクラスを初期化したときに
 <td>データベースの種類。例: mysql、postgres、odbc など。小文字で指定しなければなりません。</td>
 </tr>
 <tr class="row-even"><td><strong>dbprefix</strong></td>
-<td>オプションのテーブル名プリフィックス（接頭辞）。これは、 <a class="reference internal" href="query_builder.html"><span class="doc">Query Builder</span></a>
+<td>オプションのテーブル名プリフィックス（接頭辞）。これは、 <a class="reference internal" href="query_builder.html"><em>Query Builder</em></a>
 を使った問い合わせを実行するときに、テーブル名に付加される接頭辞になります。これを指定すると、
 単一のデータベースを共有して CodeIgniter を複数インストールすることが可能になります。</td>
 </tr>
@@ -616,7 +620,7 @@ FALSEをセットするとデータベースクラスを初期化したときに
 </tr>
 <tr class="row-odd"><td><strong>cache_on</strong></td>
 <td>TRUE/FALSE（boolean）- データベースクエリのキャッシュを有効にするかどうか。
-<a class="reference internal" href="caching.html"><span class="doc">データベースキャッシュクラス</span></a> を参照してください。</td>
+<a class="reference internal" href="caching.html"><em>データベースキャッシュクラス</em></a> を参照してください。</td>
 </tr>
 <tr class="row-even"><td><strong>cachedir</strong></td>
 <td>データベースクエリのキャッシュディレクトリへの絶対サーバパス。</td>
@@ -703,7 +707,7 @@ FALSEをセットするとデータベースクラスを初期化したときに
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 10月 11, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
+      最終更新: Nov 23, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

@@ -49,7 +49,9 @@
     
       <div id="pulldown-menu" class="ciNav">
         <ul>
-<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">インストール方法</a><ul class="current">
@@ -233,7 +235,9 @@
           
           
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">インストール方法</a><ul class="current">
@@ -437,9 +441,9 @@ index.phpファイルを静的ページに置き換えて、オフラインに�
 </div>
 <div class="section" id="step-2">
 <h2>Step 2: データベース接続方法の変更<a class="headerlink" href="#step-2" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p><em>config/autoload.php</em> 設定や、手動で <code class="docutils literal"><span class="pre">$this-&gt;load-&gt;database()</span></code> を呼び出すことや
-あまり知られていない <code class="docutils literal"><span class="pre">DB()</span></code> 関数を使うかどうかに関わらず
-データベースの &#8220;ローディング&#8221; に失敗すると、現在は <code class="docutils literal"><span class="pre">RuntimeException</span></code> を
+<p><em>config/autoload.php</em> 設定や、手動で <tt class="docutils literal"><span class="pre">$this-&gt;load-&gt;database()</span></tt> を呼び出すことや
+あまり知られていない <tt class="docutils literal"><span class="pre">DB()</span></tt> 関数を使うかどうかに関わらず
+データベースの &#8220;ローディング&#8221; に失敗すると、現在は <tt class="docutils literal"><span class="pre">RuntimeException</span></tt> を
 スローします。</p>
 <p>また、指定された文字コードを設定することができない場合も、
 現在は接続の失敗とみなされます。</p>
@@ -452,7 +456,7 @@ index.phpファイルを静的ページに置き換えて、オフラインに�
 <p>これが意味していることは、もしデータベースに接続できない場合や
 誤った文字コードが設定されている場合、CodeIgniter は黙ってエラーにせずに、
 代わりに例外をスローします。</p>
-<p>明示的に例外を捕捉することを選択できます。（その用途では <a class="reference internal" href="../database/index.html"><span class="doc">データベースクラス</span></a>
+<p>明示的に例外を捕捉することを選択できます。（その用途では <a class="reference internal" href="../database/index.html"><em>データベースクラス</em></a>
 をロードするのに <em>config/autoload.php</em> を使うことはできません。）</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">try</span>
 <span class="p">{</span>
@@ -469,18 +473,18 @@ index.phpファイルを静的ページに置き換えて、オフラインに�
 エラー画面が表示されます。</p>
 <div class="section" id="db-set-charset">
 <h3>db_set_charset() の呼び出しを削除<a class="headerlink" href="#db-set-charset" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>上述の変更により、 <code class="docutils literal"><span class="pre">db_set_charset()</span></code> メソッドの目的は、
+<p>上述の変更により、 <tt class="docutils literal"><span class="pre">db_set_charset()</span></tt> メソッドの目的は、
 現在は実行時に接続時の文字コードを変更することだけです。
 それは意味がありません。ほとんどのデータベースドライバーが
 それをサポートしていないというのが理由です。
-従って、 <code class="docutils literal"><span class="pre">db_set_charset()</span></code> はもはや必要でなく、削除されました。</p>
+従って、 <tt class="docutils literal"><span class="pre">db_set_charset()</span></tt> はもはや必要でなく、削除されました。</p>
 </div>
 </div>
 <div class="section" id="step-3-cli-uri">
 <h2>Step 3: CLI リクエストの URI の解析に関連したロジックを確認<a class="headerlink" href="#step-3-cli-uri" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>CLI から CodeIgniter のアプリケーションを実行する時、
-<a class="reference internal" href="../libraries/uri.html"><span class="doc">URI クラス</span></a> は、現在
-<code class="docutils literal"><span class="pre">$config['url_suffix']</span></code> と <code class="docutils literal"><span class="pre">$config['permitted_uri_chars']</span></code> の設定は
+<a class="reference internal" href="../libraries/uri.html"><em>URI クラス</em></a> は、現在
+<tt class="docutils literal"><span class="pre">$config['url_suffix']</span></tt> と <tt class="docutils literal"><span class="pre">$config['permitted_uri_chars']</span></tt> の設定は
 無視されます。</p>
 <p>これらの2つのオプションは、コマンドラインでは意味がありません。
 （この変更が行われた理由です。）そのため、このことによって影響を受けることは
@@ -489,30 +493,30 @@ index.phpファイルを静的ページに置き換えて、オフラインに�
 </div>
 <div class="section" id="step-4-redismemcache-d">
 <h2>Step 4: Redis、Memcache(d) キャッシュライブラリの設定ファイルを確認<a class="headerlink" href="#step-4-redismemcache-d" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p><a class="reference internal" href="../libraries/caching.html"><span class="doc">キャッシングドライバ</span></a> の
+<p><a class="reference internal" href="../libraries/caching.html"><em>キャッシングドライバ</em></a> の
 &#8216;redis&#8217; 、&#8217;memcached&#8217; ドライバのための新しい改善は、
 設定値への小さな修正が必要となる場合があります...</p>
 <div class="section" id="redis">
 <h3>Redis<a class="headerlink" href="#redis" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>UNIX ソケット接続を使って &#8216;redis&#8217; ドライバを利用してる場合、
-ソケットのパスを <code class="docutils literal"><span class="pre">$config['socket']</span></code> から <code class="docutils literal"><span class="pre">$config['host']</span></code> へ
+ソケットのパスを <tt class="docutils literal"><span class="pre">$config['socket']</span></tt> から <tt class="docutils literal"><span class="pre">$config['host']</span></tt> へ
 移行する必要があります。</p>
-<p><code class="docutils literal"><span class="pre">$config['socket_type']</span></code> オプションもまた削除されました。しかしながら
+<p><tt class="docutils literal"><span class="pre">$config['socket_type']</span></tt> オプションもまた削除されました。しかしながら
 それはアプリケーションへ影響しません。 - それは無視されます。
-そして接続タイプは <code class="docutils literal"><span class="pre">$config['host']</span></code> のフォーマットによって決定されます。</p>
+そして接続タイプは <tt class="docutils literal"><span class="pre">$config['host']</span></tt> のフォーマットによって決定されます。</p>
 </div>
 <div class="section" id="memcache-d">
 <h3>Memcache(d)<a class="headerlink" href="#memcache-d" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>&#8216;memcached&#8217; は、現在、<code class="docutils literal"><span class="pre">host</span></code> 値を指定しない設定を無視します。
+<p>&#8216;memcached&#8217; は、現在、<tt class="docutils literal"><span class="pre">host</span></tt> 値を指定しない設定を無視します。
 （以前は、ホストにデフォルトの &#8216;127.0.0.1&#8217; を設定していました）</p>
-<p>従って、例えば <code class="docutils literal"><span class="pre">port</span></code> のみ設定を追加していた場合、
-現在はその上、明示的に <code class="docutils literal"><span class="pre">host</span></code> に &#8216;127.0.0.1&#8217; を設定する必要があります。</p>
+<p>従って、例えば <tt class="docutils literal"><span class="pre">port</span></tt> のみ設定を追加していた場合、
+現在はその上、明示的に <tt class="docutils literal"><span class="pre">host</span></tt> に &#8216;127.0.0.1&#8217; を設定する必要があります。</p>
 </div>
 </div>
 <div class="section" id="step-5-doctype-html">
 <h2>Step 5: doctype() HTML ヘルパーの使用を確認<a class="headerlink" href="#step-5-doctype-html" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p><a class="reference internal" href="../helpers/html_helper.html"><span class="doc">HTML ヘルパー</span></a> の 関数である
-<a class="reference internal" href="../helpers/html_helper.html#doctype" title="doctype"><code class="xref php php-func docutils literal"><span class="pre">doctype()</span></code></a> は ドキュメントタイプが指定されていない場合
+<p><a class="reference internal" href="../helpers/html_helper.html"><em>HTML ヘルパー</em></a> の 関数である
+<a class="reference internal" href="../helpers/html_helper.html#doctype" title="doctype"><tt class="xref php php-func docutils literal"><span class="pre">doctype()</span></tt></a> は ドキュメントタイプが指定されていない場合
 &#8216;xhtml1-strict&#8217; (XHTML 1.0 Strict) をデフォルトで使用していました。デフォルト値は現在、
 言うまでもなくモダンな HTML 5 スタンダードを表す &#8216;html5&#8217; に変更されました。</p>
 <p>どんなものもこの変更によって壊れるべきではありません。もし、アプリケーションが
@@ -541,7 +545,7 @@ index.phpファイルを静的ページに置き換えて、オフラインに�
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 10月 11, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
+      最終更新: Nov 23, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

@@ -49,7 +49,9 @@
     
       <div id="pulldown-menu" class="ciNav">
         <ul>
-<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -180,7 +182,7 @@
 <li class="toctree-l2"><a class="reference internal" href="date_helper.html">日付ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="directory_helper.html">ディレクトリヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="download_helper.html">ダウンロードヘルパー</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">eメールヘルパー</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">eメールヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="file_helper.html">ファイルヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="form_helper.html">フォームヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="html_helper.html">HTML ヘルパー</a></li>
@@ -233,7 +235,9 @@
           
           
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -364,7 +368,7 @@
 <li class="toctree-l2"><a class="reference internal" href="date_helper.html">日付ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="directory_helper.html">ディレクトリヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="download_helper.html">ダウンロードヘルパー</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">eメールヘルパー</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">eメールヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="file_helper.html">ファイルヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="form_helper.html">フォームヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="html_helper.html">HTML ヘルパー</a></li>
@@ -423,7 +427,7 @@
   <div class="section" id="e">
 <h1>eメールヘルパー<a class="headerlink" href="#e" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <p>eメールヘルパーはeメールの処理を支援する関数を提供します。より堅牢な
-eメールの処理方法については CodeIgniter の <a class="reference internal" href="../libraries/email.html"><span class="doc">Email クラス</span></a> を参照してください。</p>
+eメールの処理方法については CodeIgniter の <a class="reference internal" href="../libraries/email.html"><em>Email クラス</em></a> を参照してください。</p>
 <div class="admonition important">
 <p class="first admonition-title">重要</p>
 <p class="last">eメールヘルパーは非推奨です。
@@ -447,7 +451,7 @@ eメールの処理方法については CodeIgniter の <a class="reference int
 <p>次の関数が利用できます:</p>
 <dl class="function">
 <dt id="valid_email">
-<code class="descname">valid_email</code><span class="sig-paren">(</span><em>$email</em><span class="sig-paren">)</span><a class="headerlink" href="#valid_email" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">valid_email</tt><big>(</big><em>$email</em><big>)</big><a class="headerlink" href="#valid_email" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -481,7 +485,7 @@ eメールの処理方法については CodeIgniter の <a class="reference int
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p>この関数で行うことはPHP標準の <code class="docutils literal"><span class="pre">filter_var()</span></code> でもできます:</p>
+<p>この関数で行うことはPHP標準の <tt class="docutils literal"><span class="pre">filter_var()</span></tt> でもできます:</p>
 <div class="last highlight-ci"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nx">bool</span><span class="p">)</span> <span class="nb">filter_var</span><span class="p">(</span><span class="nv">$email</span><span class="p">,</span> <span class="nx">FILTER_VALIDATE_EMAIL</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -490,7 +494,7 @@ eメールの処理方法については CodeIgniter の <a class="reference int
 
 <dl class="function">
 <dt id="send_email">
-<code class="descname">send_email</code><span class="sig-paren">(</span><em>$recipient</em>, <em>$subject</em>, <em>$message</em><span class="sig-paren">)</span><a class="headerlink" href="#send_email" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">send_email</tt><big>(</big><em>$recipient</em>, <em>$subject</em>, <em>$message</em><big>)</big><a class="headerlink" href="#send_email" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -514,13 +518,13 @@ eメールの処理方法については CodeIgniter の <a class="reference int
 関数を使ってメールを送信します。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p>この関数で行うことはPHP標準の <code class="docutils literal"><span class="pre">mail</span></code> でもできます</p>
+<p>この関数で行うことはPHP標準の <tt class="docutils literal"><span class="pre">mail</span></tt> でもできます</p>
 <div class="last highlight-ci"><div class="highlight"><pre><span></span><span class="nb">mail</span><span class="p">(</span><span class="nv">$recipient</span><span class="p">,</span> <span class="nv">$subject</span><span class="p">,</span> <span class="nv">$message</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
-<p>より堅牢なメールの処理方法については、CodeIgniter の <a class="reference internal" href="../libraries/email.html"><span class="doc">Email
-クラス</span></a> を参照してください。</p>
+<p>より堅牢なメールの処理方法については、CodeIgniter の <a class="reference internal" href="../libraries/email.html"><em>Email
+クラス</em></a> を参照してください。</p>
 </dd></dl>
 
 </div>
@@ -545,7 +549,7 @@ eメールの処理方法については CodeIgniter の <a class="reference int
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 10月 11, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
+      最終更新: Nov 23, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

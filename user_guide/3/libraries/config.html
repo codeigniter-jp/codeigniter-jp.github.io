@@ -49,7 +49,9 @@
     
       <div id="pulldown-menu" class="ciNav">
         <ul>
-<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -124,7 +126,7 @@
 <li class="toctree-l2"><a class="reference internal" href="caching.html">キャッシングドライバ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="calendar.html">カレンダークラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cart.html">ショッピングカートクラス</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">設定クラス</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">設定クラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="email.html">Email クラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="encrypt.html">Encrypt クラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="encryption.html">Encryption ライブラリ</a></li>
@@ -233,7 +235,9 @@
           
           
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -308,7 +312,7 @@
 <li class="toctree-l2"><a class="reference internal" href="caching.html">キャッシングドライバ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="calendar.html">カレンダークラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cart.html">ショッピングカートクラス</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">設定クラス</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">設定クラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="email.html">Email クラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="encrypt.html">Encrypt クラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="encryption.html">Encryption ライブラリ</a></li>
@@ -479,7 +483,7 @@
 <div class="section" id="id5">
 <h4><a class="toc-backref" href="#id14">手動での読み込み</a><a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h4>
 <p>ユーザ定義の設定ファイルをロードするには、その設定ファイルが必要に
-なる <a class="reference internal" href="../general/controllers.html"><span class="doc">コントローラ</span></a> の中で次のメソッド
+なる <a class="reference internal" href="../general/controllers.html"><em>コントローラ</em></a> の中で次のメソッド
 を使います:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">config</span><span class="o">-&gt;</span><span class="na">load</span><span class="p">(</span><span class="s1">&#39;filename&#39;</span><span class="p">);</span>
 </pre></div>
@@ -554,8 +558,8 @@ NULLを返します。</p>
 <div class="section" id="config-environments">
 <span id="id9"></span><h3><a class="toc-backref" href="#id18">複数の環境</a><a class="headerlink" href="#config-environments" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>現状の環境により異なった設定ファイルをロードすることができます。
-定数 ENVIRONMENT が index.php で定義されており、 <a class="reference internal" href="../general/environments.html"><span class="doc">複数の
-環境の取扱い</span></a> のセクションに詳細が記述
+定数 ENVIRONMENT が index.php で定義されており、 <a class="reference internal" href="../general/environments.html"><em>複数の
+環境の取扱い</em></a> のセクションに詳細が記述
 されています。</p>
 <p>環境固有の設定ファイルを作成するには、 application/config/{ENVIRONMENT}/{FILENAME}.php
 に設定ファイルを作成またはコピーします。</p>
@@ -590,22 +594,22 @@ NULLを返します。</p>
 <h2><a class="toc-backref" href="#id19">クラスリファレンス</a><a class="headerlink" href="#id10" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <dl class="class">
 <dt id="CI_Config">
-<em class="property">class </em><code class="descname">CI_Config</code><a class="headerlink" href="#CI_Config" title="この定義へのパーマリンク">¶</a></dt>
+<em class="property">class </em><tt class="descname">CI_Config</tt><a class="headerlink" href="#CI_Config" title="この定義へのパーマリンク">¶</a></dt>
 <dd><dl class="attribute">
 <dt>
-<code class="descname">$config</code></dt>
+<tt class="descname">$config</tt></dt>
 <dd><p>ロードされたすべての設定値の配列</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt>
-<code class="descname">$is_loaded</code></dt>
+<tt class="descname">$is_loaded</tt></dt>
 <dd><p>すべてのロードされた設定ファイルの配列</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="CI_Config::item">
-<code class="descname">item</code><span class="sig-paren">(</span><em>$item</em><span class="optional">[</span>, <em>$index=''</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Config::item" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">item</tt><big>(</big><em>$item</em><span class="optional">[</span>, <em>$index=''</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Config::item" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -629,7 +633,7 @@ NULLを返します。</p>
 
 <dl class="method">
 <dt id="CI_Config::set_item">
-<code class="descname">set_item</code><span class="sig-paren">(</span><em>$item</em>, <em>$value</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_Config::set_item" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">set_item</tt><big>(</big><em>$item</em>, <em>$value</em><big>)</big><a class="headerlink" href="#CI_Config::set_item" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -650,7 +654,7 @@ NULLを返します。</p>
 
 <dl class="method">
 <dt id="CI_Config::slash_item">
-<code class="descname">slash_item</code><span class="sig-paren">(</span><em>$item</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_Config::slash_item" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">slash_item</tt><big>(</big><em>$item</em><big>)</big><a class="headerlink" href="#CI_Config::slash_item" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -668,13 +672,13 @@ NULLを返します。</p>
 </tr>
 </tbody>
 </table>
-<p>この方法は、 <code class="docutils literal"><span class="pre">item()</span></code> と同じです,  設定項目の末尾に
+<p>この方法は、 <tt class="docutils literal"><span class="pre">item()</span></tt> と同じです,  設定項目の末尾に
 スラッシュを加えます。</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="CI_Config::load">
-<code class="descname">load</code><span class="sig-paren">(</span><span class="optional">[</span><em>$file = ''</em><span class="optional">[</span>, <em>$use_sections = FALSE</em><span class="optional">[</span>, <em>$fail_gracefully = FALSE</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Config::load" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">load</tt><big>(</big><span class="optional">[</span><em>$file = ''</em><span class="optional">[</span>, <em>$use_sections = FALSE</em><span class="optional">[</span>, <em>$fail_gracefully = FALSE</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Config::load" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -699,7 +703,7 @@ NULLを返します。</p>
 
 <dl class="method">
 <dt id="CI_Config::site_url">
-<code class="descname">site_url</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Config::site_url" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">site_url</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_Config::site_url" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -712,13 +716,13 @@ NULLを返します。</p>
 </table>
 <p>このメソッドは、設定ファイルで、&#8221;index&#8221; の値に指定した、
 サイトへの URL を取得します。</p>
-<p>このメソッドは、通常 <a class="reference internal" href="../helpers/url_helper.html"><span class="doc">URLヘルパー</span></a>
+<p>このメソッドは、通常 <a class="reference internal" href="../helpers/url_helper.html"><em>URLヘルパー</em></a>
 で対応する関数を経由してアクセスされます。</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="CI_Config::base_url">
-<code class="descname">base_url</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Config::base_url" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">base_url</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_Config::base_url" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -731,13 +735,13 @@ NULLを返します。</p>
 </table>
 <p>このメソッドは、サイトの URL、プラス、オプションの
 スタイルシートや画像などへのパスを取得します。</p>
-<p>このメソッドは、通常 <a class="reference internal" href="../helpers/url_helper.html"><span class="doc">URLヘルパー</span></a>
+<p>このメソッドは、通常 <a class="reference internal" href="../helpers/url_helper.html"><em>URLヘルパー</em></a>
 で対応する関数を経由してアクセスされます。</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="CI_Config::system_url">
-<code class="descname">system_url</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Config::system_url" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">system_url</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_Config::system_url" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -781,7 +785,7 @@ NULLを返します。</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 10月 11, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
+      最終更新: Nov 23, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

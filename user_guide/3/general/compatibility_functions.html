@@ -49,7 +49,9 @@
     
       <div id="pulldown-menu" class="ciNav">
         <ul>
-<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -104,7 +106,7 @@
 <li class="toctree-l2"><a class="reference internal" href="hooks.html">フック――フレームワークコアの拡張</a></li>
 <li class="toctree-l2"><a class="reference internal" href="autoloader.html">リソースのオートロード</a></li>
 <li class="toctree-l2"><a class="reference internal" href="common_functions.html">共通関数</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">互換関数</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">互換関数</a></li>
 <li class="toctree-l2"><a class="reference internal" href="routing.html">URI ルーティング</a></li>
 <li class="toctree-l2"><a class="reference internal" href="errors.html">エラー処理</a></li>
 <li class="toctree-l2"><a class="reference internal" href="caching.html">キャッシュ</a></li>
@@ -233,7 +235,9 @@
           
           
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -288,7 +292,7 @@
 <li class="toctree-l2"><a class="reference internal" href="hooks.html">フック――フレームワークコアの拡張</a></li>
 <li class="toctree-l2"><a class="reference internal" href="autoloader.html">リソースのオートロード</a></li>
 <li class="toctree-l2"><a class="reference internal" href="common_functions.html">共通関数</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">互換関数</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">互換関数</a></li>
 <li class="toctree-l2"><a class="reference internal" href="routing.html">URI ルーティング</a></li>
 <li class="toctree-l2"><a class="reference internal" href="errors.html">エラー処理</a></li>
 <li class="toctree-l2"><a class="reference internal" href="caching.html">キャッシュ</a></li>
@@ -468,21 +472,21 @@ PHP でネイティブに提供しているものの、より新しいバージ�
 <h3><a class="toc-backref" href="#id18">依存関係</a><a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <ul class="simple">
 <li>PHP 5.3.7</li>
-<li><code class="docutils literal"><span class="pre">crypt()</span></code> の <code class="docutils literal"><span class="pre">CRYPT_BLOWFISH</span></code> サポート</li>
+<li><tt class="docutils literal"><span class="pre">crypt()</span></tt> の <tt class="docutils literal"><span class="pre">CRYPT_BLOWFISH</span></tt> サポート</li>
 </ul>
 </div>
 <div class="section" id="id5">
 <h3><a class="toc-backref" href="#id19">定数</a><a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">PASSWORD_BCRYPT</span></code></li>
-<li><code class="docutils literal"><span class="pre">PASSWORD_DEFAULT</span></code></li>
+<li><tt class="docutils literal"><span class="pre">PASSWORD_BCRYPT</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">PASSWORD_DEFAULT</span></tt></li>
 </ul>
 </div>
 <div class="section" id="id6">
 <h3><a class="toc-backref" href="#id20">関数リファレンス</a><a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <dl class="function">
 <dt id="password_get_info">
-<code class="descname">password_get_info</code><span class="sig-paren">(</span><em>$hash</em><span class="sig-paren">)</span><a class="headerlink" href="#password_get_info" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">password_get_info</tt><big>(</big><em>$hash</em><big>)</big><a class="headerlink" href="#password_get_info" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -506,7 +510,7 @@ PHP でネイティブに提供しているものの、より新しいバージ�
 
 <dl class="function">
 <dt id="password_hash">
-<code class="descname">password_hash</code><span class="sig-paren">(</span><em>$password</em>, <em>$algo</em><span class="optional">[</span>, <em>$options = array()</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#password_hash" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">password_hash</tt><big>(</big><em>$password</em>, <em>$algo</em><span class="optional">[</span>, <em>$options = array()</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#password_hash" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -533,8 +537,8 @@ PHP でネイティブに提供しているものの、より新しいバージ�
 <p class="last">指定の（有効な）saltを提供しない限り、
 この機能はさらに CSPRNG ソースにも依存します。
 下記のいずれかがそれを満たします:
-- <code class="docutils literal"><span class="pre">mcrypt_create_iv()</span></code> と <code class="docutils literal"><span class="pre">MCRYPT_DEV_URANDOM</span></code>
-- <code class="docutils literal"><span class="pre">openssl_random_pseudo_bytes()</span></code>
+- <tt class="docutils literal"><span class="pre">mcrypt_create_iv()</span></tt> と <tt class="docutils literal"><span class="pre">MCRYPT_DEV_URANDOM</span></tt>
+- <tt class="docutils literal"><span class="pre">openssl_random_pseudo_bytes()</span></tt>
 - /dev/arandom
 - /dev/urandom</p>
 </div>
@@ -542,7 +546,7 @@ PHP でネイティブに提供しているものの、より新しいバージ�
 
 <dl class="function">
 <dt id="password_needs_rehash">
-<code class="descname">password_needs_rehash</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#password_needs_rehash" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">password_needs_rehash</tt><big>(</big><big>)</big><a class="headerlink" href="#password_needs_rehash" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -568,7 +572,7 @@ PHP でネイティブに提供しているものの、より新しいバージ�
 
 <dl class="function">
 <dt id="password_verify">
-<code class="descname">password_verify</code><span class="sig-paren">(</span><em>$password</em>, <em>$hash</em><span class="sig-paren">)</span><a class="headerlink" href="#password_verify" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">password_verify</tt><big>(</big><em>$password</em>, <em>$hash</em><big>)</big><a class="headerlink" href="#password_verify" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -595,8 +599,8 @@ PHP でネイティブに提供しているものの、より新しいバージ�
 </div>
 <div class="section" id="id7">
 <h2><a class="toc-backref" href="#id21">ハッシュ（メッセージダイジェスト）</a><a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>この互換レイヤには <code class="docutils literal"><span class="pre">hash_equals()</span></code> 関数と
-<code class="docutils literal"><span class="pre">hash_pbkdf2()</span></code> 関数のバックポートが含まれています。本来おのおの PHP 5.6 およびまたは
+<p>この互換レイヤには <tt class="docutils literal"><span class="pre">hash_equals()</span></tt> 関数と
+<tt class="docutils literal"><span class="pre">hash_pbkdf2()</span></tt> 関数のバックポートが含まれています。本来おのおの PHP 5.6 およびまたは
 PHP 5.5 を必要とするものです。</p>
 <div class="section" id="id8">
 <h3><a class="toc-backref" href="#id22">依存関係</a><a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">¶</a></h3>
@@ -608,7 +612,7 @@ PHP 5.5 を必要とするものです。</p>
 <h3><a class="toc-backref" href="#id23">関数リファレンス</a><a class="headerlink" href="#id9" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <dl class="function">
 <dt id="hash_equals">
-<code class="descname">hash_equals</code><span class="sig-paren">(</span><em>$known_string</em>, <em>$user_string</em><span class="sig-paren">)</span><a class="headerlink" href="#hash_equals" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">hash_equals</tt><big>(</big><em>$known_string</em>, <em>$user_string</em><big>)</big><a class="headerlink" href="#hash_equals" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -633,7 +637,7 @@ PHP 5.5 を必要とするものです。</p>
 
 <dl class="function">
 <dt id="hash_pbkdf2">
-<code class="descname">hash_pbkdf2</code><span class="sig-paren">(</span><em>$algo</em>, <em>$password</em>, <em>$salt</em>, <em>$iterations</em><span class="optional">[</span>, <em>$length = 0</em><span class="optional">[</span>, <em>$raw_output = FALSE</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#hash_pbkdf2" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">hash_pbkdf2</tt><big>(</big><em>$algo</em>, <em>$password</em>, <em>$salt</em>, <em>$iterations</em><span class="optional">[</span>, <em>$length = 0</em><span class="optional">[</span>, <em>$raw_output = FALSE</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#hash_pbkdf2" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -670,7 +674,7 @@ PHP 5.5 を必要とするものです。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
 <p class="last">文字セットパラメータが省略されている場合、
-<code class="docutils literal"><span class="pre">$config['charset']</span></code> が使用されます。</p>
+<tt class="docutils literal"><span class="pre">$config['charset']</span></tt> が使用されます。</p>
 </div>
 <div class="section" id="id12">
 <h3><a class="toc-backref" href="#id25">依存関係</a><a class="headerlink" href="#id12" title="このヘッドラインへのパーマリンク">¶</a></h3>
@@ -691,14 +695,14 @@ iconv が利用できない場合、対応する非 mbstring
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
 <p class="last">本来の mbstring 拡張モジュールへの依存がありそれをチェックしたい場合、
-<code class="docutils literal"><span class="pre">MB_ENABLED</span></code> 定数を使用します。</p>
+<tt class="docutils literal"><span class="pre">MB_ENABLED</span></tt> 定数を使用します。</p>
 </div>
 </div>
 <div class="section" id="id13">
 <h3><a class="toc-backref" href="#id26">関数リファレンス</a><a class="headerlink" href="#id13" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <dl class="function">
 <dt id="mb_strlen">
-<code class="descname">mb_strlen</code><span class="sig-paren">(</span><em>$str</em><span class="optional">[</span>, <em>$encoding = NULL</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#mb_strlen" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">mb_strlen</tt><big>(</big><em>$str</em><span class="optional">[</span>, <em>$encoding = NULL</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#mb_strlen" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -723,7 +727,7 @@ iconv が利用できない場合、対応する非 mbstring
 
 <dl class="function">
 <dt id="mb_strpos">
-<code class="descname">mb_strpos</code><span class="sig-paren">(</span><em>$haystack</em>, <em>$needle</em><span class="optional">[</span>, <em>$offset = 0</em><span class="optional">[</span>, <em>$encoding = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#mb_strpos" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">mb_strpos</tt><big>(</big><em>$haystack</em>, <em>$needle</em><span class="optional">[</span>, <em>$offset = 0</em><span class="optional">[</span>, <em>$encoding = NULL</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#mb_strpos" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -750,7 +754,7 @@ mb_strpos() の PHP マニュアル &lt;<a class="reference external" href="http
 
 <dl class="function">
 <dt id="mb_substr">
-<code class="descname">mb_substr</code><span class="sig-paren">(</span><em>$str</em>, <em>$start</em><span class="optional">[</span>, <em>$length = NULL</em><span class="optional">[</span>, <em>$encoding = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#mb_substr" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">mb_substr</tt><big>(</big><em>$str</em>, <em>$start</em><span class="optional">[</span>, <em>$length = NULL</em><span class="optional">[</span>, <em>$encoding = NULL</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#mb_substr" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -791,7 +795,7 @@ PHP バージョンを必要とする PHP 標準関数のいくらかをサポ�
 <h3><a class="toc-backref" href="#id29">関数リファレンス</a><a class="headerlink" href="#id16" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <dl class="function">
 <dt id="array_column">
-<code class="descname">array_column</code><span class="sig-paren">(</span><em>array $array</em>, <em>$column_key</em><span class="optional">[</span>, <em>$index_key = NULL</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#array_column" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">array_column</tt><big>(</big><em>array $array</em>, <em>$column_key</em><span class="optional">[</span>, <em>$index_key = NULL</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#array_column" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -817,7 +821,7 @@ PHP バージョンを必要とする PHP 標準関数のいくらかをサポ�
 
 <dl class="function">
 <dt id="array_replace">
-<code class="descname">array_replace</code><span class="sig-paren">(</span><em>array $array1</em><span class="optional">[</span>, <em>...</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#array_replace" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">array_replace</tt><big>(</big><em>array $array1</em><span class="optional">[</span>, <em>...</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#array_replace" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -842,7 +846,7 @@ PHP バージョンを必要とする PHP 標準関数のいくらかをサポ�
 
 <dl class="function">
 <dt id="array_replace_recursive">
-<code class="descname">array_replace_recursive</code><span class="sig-paren">(</span><em>array $array1</em><span class="optional">[</span>, <em>...</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#array_replace_recursive" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">array_replace_recursive</tt><big>(</big><em>array $array1</em><span class="optional">[</span>, <em>...</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#array_replace_recursive" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -872,7 +876,7 @@ PHP 5.3 以上でないならば、参照に注意してください！</p>
 
 <dl class="function">
 <dt id="hex2bin">
-<code class="descname">hex2bin</code><span class="sig-paren">(</span><em>$data</em><span class="sig-paren">)</span><a class="headerlink" href="#hex2bin" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">hex2bin</tt><big>(</big><em>$data</em><big>)</big><a class="headerlink" href="#hex2bin" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -895,7 +899,7 @@ PHP 5.3 以上でないならば、参照に注意してください！</p>
 
 <dl class="function">
 <dt id="quoted_printable_encode">
-<code class="descname">quoted_printable_encode</code><span class="sig-paren">(</span><em>$str</em><span class="sig-paren">)</span><a class="headerlink" href="#quoted_printable_encode" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">quoted_printable_encode</tt><big>(</big><em>$str</em><big>)</big><a class="headerlink" href="#quoted_printable_encode" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -940,7 +944,7 @@ PHP 5.3 以上でないならば、参照に注意してください！</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 10月 11, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
+      最終更新: Nov 23, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

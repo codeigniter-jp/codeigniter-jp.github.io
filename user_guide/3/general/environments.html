@@ -49,7 +49,9 @@
     
       <div id="pulldown-menu" class="ciNav">
         <ul>
-<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -111,7 +113,7 @@
 <li class="toctree-l2"><a class="reference internal" href="profiling.html">アプリケーションのプロファイリング</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cli.html">CLI で実行する</a></li>
 <li class="toctree-l2"><a class="reference internal" href="managing_apps.html">アプリケーションの管理</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">複数環境への対応</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">複数環境への対応</a></li>
 <li class="toctree-l2"><a class="reference internal" href="alternative_php.html">ビューファイルでの PHP の代替構文</a></li>
 <li class="toctree-l2"><a class="reference internal" href="security.html">セキュリティ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="styleguide.html">PHP スタイルガイド</a></li>
@@ -233,7 +235,9 @@
           
           
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -295,7 +299,7 @@
 <li class="toctree-l2"><a class="reference internal" href="profiling.html">アプリケーションのプロファイリング</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cli.html">CLI で実行する</a></li>
 <li class="toctree-l2"><a class="reference internal" href="managing_apps.html">アプリケーションの管理</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">複数環境への対応</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">複数環境への対応</a></li>
 <li class="toctree-l2"><a class="reference internal" href="alternative_php.html">ビューファイルでの PHP の代替構文</a></li>
 <li class="toctree-l2"><a class="reference internal" href="security.html">セキュリティ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="styleguide.html">PHP スタイルガイド</a></li>
@@ -430,7 +434,7 @@
 <div class="section" id="environment">
 <h2>ENVIRONMENT 定数<a class="headerlink" href="#environment" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>デフォルトでは CodeIgniter には環境定数セットがついてきます、
-<code class="docutils literal"><span class="pre">$_SERVER['CI_ENV']</span></code> で提供された値か、なければデフォルトでは
+<tt class="docutils literal"><span class="pre">$_SERVER['CI_ENV']</span></tt> で提供された値か、なければデフォルトでは
 「 development 」です。index.php の上のほうにつぎのものがあるでしょう:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nb">define</span><span class="p">(</span><span class="s1">&#39;ENVIRONMENT&#39;</span><span class="p">,</span> <span class="nb">isset</span><span class="p">(</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">&#39;CI_ENV&#39;</span><span class="p">])</span> <span class="o">?</span> <span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">&#39;CI_ENV&#39;</span><span class="p">]</span> <span class="o">:</span> <span class="s1">&#39;development&#39;</span><span class="p">);</span>
 </pre></div>
@@ -453,14 +457,14 @@ IP アドレスに基づいて定数を設定することもできます。</p>
 <p>ENVIRONMENT 定数を「 development 」に設定すると、
 発生するすべての PHP エラーがブラウザにレンダリングされます。
 逆に、定数を「 production 」に設定すると、すべてのエラー出力が無効になります。
-本番環境でにエラー報告を無効にすることは <a class="reference internal" href="security.html"><span class="doc">良いセキュリティプラクティス</span></a> です。</p>
+本番環境でにエラー報告を無効にすることは <a class="reference internal" href="security.html"><em>良いセキュリティプラクティス</em></a> です。</p>
 </div>
 <div class="section" id="id4">
 <h3>設定ファイル<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>オプションで、 CodeIgniter
 に環境固有の設定ファイルをロードさせることができます。
 これは API キーのような、複数の環境間で異なるものを管理するために便利です。
-<a class="reference internal" href="../libraries/config.html"><span class="doc">設定クラス</span></a> ドキュメントの環境セクションで詳細に説明されています。</p>
+<a class="reference internal" href="../libraries/config.html"><em>設定クラス</em></a> ドキュメントの環境セクションで詳細に説明されています。</p>
 </div>
 </div>
 </div>
@@ -484,7 +488,7 @@ IP アドレスに基づいて定数を設定することもできます。</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 10月 11, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
+      最終更新: Nov 23, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

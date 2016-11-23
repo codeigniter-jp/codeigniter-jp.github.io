@@ -49,7 +49,9 @@
     
       <div id="pulldown-menu" class="ciNav">
         <ul>
-<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -73,7 +75,7 @@
 </ul>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">チュートリアル</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">静的なページ</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">静的なページ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="news_section.html">ニュースセクション</a></li>
 <li class="toctree-l2"><a class="reference internal" href="create_news_items.html">ニュース記事を作成</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conclusion.html">おわりに</a></li>
@@ -233,7 +235,9 @@
           
           
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -257,7 +261,7 @@
 </ul>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">チュートリアル</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">静的なページ</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">静的なページ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="news_section.html">ニュースセクション</a></li>
 <li class="toctree-l2"><a class="reference internal" href="create_news_items.html">ニュース記事を作成</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conclusion.html">おわりに</a></li>
@@ -423,7 +427,7 @@
   <div class="section" id="id1">
 <h1>静的なページ<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <p><strong>注意:</strong> このチュートリアルでは、あなたが既に CodeIgniter をダウンロードし、開発環境に
-<a class="reference internal" href="../installation/index.html"><span class="doc">フレームワークをインストール</span></a> している
+<a class="reference internal" href="../installation/index.html"><em>フレームワークをインストール</em></a> している
 ことを前提としています。</p>
 <p>まず最初に静的なページを処理する  <strong>コントローラ</strong> をセットアップします。
 コントローラはシンプルな指名するお仕事を支援するクラスです。
@@ -450,15 +454,15 @@ MVC では非常に頻繁にこのような URL のパターンが見られま�
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>あなたは <code class="docutils literal"><span class="pre">Pages</span></code> という名のクラスを作り、そこに 1 つの <code class="docutils literal"><span class="pre">$page</span></code> という引数を
-とる view メソッドを作成しました。<code class="docutils literal"><span class="pre">Pages</span></code> クラスは
-<code class="docutils literal"><span class="pre">CI_Controller</span></code> クラスを継承しています。これは、新しく作られたこの
-Page クラスは <code class="docutils literal"><span class="pre">CI_Controller</span></code> クラス（<em>system/core/Controller.php</em>）
+<p>あなたは <tt class="docutils literal"><span class="pre">Pages</span></tt> という名のクラスを作り、そこに 1 つの <tt class="docutils literal"><span class="pre">$page</span></tt> という引数を
+とる view メソッドを作成しました。<tt class="docutils literal"><span class="pre">Pages</span></tt> クラスは
+<tt class="docutils literal"><span class="pre">CI_Controller</span></tt> クラスを継承しています。これは、新しく作られたこの
+Page クラスは <tt class="docutils literal"><span class="pre">CI_Controller</span></tt> クラス（<em>system/core/Controller.php</em>）
 に定義されたメソッドや変数をアクセスできるということです。</p>
 <p><strong>コントローラはあなたのアプリケーションの全てのリクエストの中心となる部分</strong> です。
 CodeIgniter の非常に専門的な議論において、これは <em>スーパーオブジェクト</em>
 と呼ばれる事があります。一般的なPHPクラスと同じように、コントローラ内では
-<code class="docutils literal"><span class="pre">$this</span></code> という変数でこれを参照します。<code class="docutils literal"><span class="pre">$this</span></code> を参照する事によって
+<tt class="docutils literal"><span class="pre">$this</span></tt> という変数でこれを参照します。<tt class="docutils literal"><span class="pre">$this</span></tt> を参照する事によって
 ライブラリやビューをロードしたり、フレームワークの基本的な制御を行ないます。</p>
 <p>最初のメソッドを作成したら、次は基本的なページテンプレートを作っていきましょう。
 まずは 2 つの &#8220;ビュー&#8221;（ページテンプレート）を作り、
@@ -475,7 +479,7 @@ CodeIgniter の非常に専門的な議論において、これは <em>スーパ
 </pre></div>
 </div>
 <p>ヘッダにはメインのビューをロードする前に表示させたい単純な HTML コードが
-見出しと共に含まれています。ここで後々コントローラにて定義する <code class="docutils literal"><span class="pre">$title</span></code>
+見出しと共に含まれています。ここで後々コントローラにて定義する <tt class="docutils literal"><span class="pre">$title</span></tt>
 変数を出力させる事にもなります。では次は
 <em>application/views/templates/footer.php</em> にフッタを作成し、
 下記のコードを記述してください:</p>
@@ -486,7 +490,7 @@ CodeIgniter の非常に専門的な議論において、これは <em>スーパ
 </div>
 <div class="section" id="id2">
 <h2>コントローラにロジックを追加<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>先ほどあなたは <code class="docutils literal"><span class="pre">view()</span></code> メソッドを持ったコントローラを準備しました。
+<p>先ほどあなたは <tt class="docutils literal"><span class="pre">view()</span></tt> メソッドを持ったコントローラを準備しました。
 このメソッドは、ロードするページの名前になる引数を 1 つ取ります。
 静的なページテンプレートは <em>application/views/pages/</em>
 に配置されます。</p>
@@ -515,32 +519,32 @@ CodeIgniter の非常に専門的な議論において、これは <em>スーパ
 表示されます。
 もしページが存在しなければ、&#8221;404 Page not found&#8221; エラーが表示されます。</p>
 <p>このメソッドの 1 行目では、まずページが存在するかどうかをチェックしています。
-PHP のネイティブな <code class="docutils literal"><span class="pre">file_exists()</span></code> 関数がファイルの存在有無を判別するために
-使用されています。<code class="docutils literal"><span class="pre">show_404()</span></code> は CodeIgniter のビルトイン関数で、
+PHP のネイティブな <tt class="docutils literal"><span class="pre">file_exists()</span></tt> 関数がファイルの存在有無を判別するために
+使用されています。<tt class="docutils literal"><span class="pre">show_404()</span></tt> は CodeIgniter のビルトイン関数で、
 デフォルトのエラーページを描画してくれます。</p>
-<p>ヘッダテンプレートの中で、<code class="docutils literal"><span class="pre">$title</span></code> 変数はページのタイトルをカスタマイズする
+<p>ヘッダテンプレートの中で、<tt class="docutils literal"><span class="pre">$title</span></tt> 変数はページのタイトルをカスタマイズする
 ために使われました。
 タイトルはこのメソッド内で定義されていますが、値を変数に代入するのではなく、
-<code class="docutils literal"><span class="pre">$data</span></code> 配列の title 要素に代入されます。</p>
+<tt class="docutils literal"><span class="pre">$data</span></tt> 配列の title 要素に代入されます。</p>
 <p>最後にしなければいけないのは、ビューを表示順にロードしてくことです。
-<code class="docutils literal"><span class="pre">view()</span></code> メソッドの第 2 引数はビューに値を引き渡すために使われます。
-<code class="docutils literal"><span class="pre">$data</span></code> 配列のそれぞれの値は、キーを変数名とした変数に
+<tt class="docutils literal"><span class="pre">view()</span></tt> メソッドの第 2 引数はビューに値を引き渡すために使われます。
+<tt class="docutils literal"><span class="pre">$data</span></tt> 配列のそれぞれの値は、キーを変数名とした変数に
 代入されます。
-つまり、コントローラ内の <code class="docutils literal"><span class="pre">$data['title']</span></code> は、
-ビュー内の <code class="docutils literal"><span class="pre">$title</span></code> と同等です。</p>
+つまり、コントローラ内の <tt class="docutils literal"><span class="pre">$data['title']</span></tt> は、
+ビュー内の <tt class="docutils literal"><span class="pre">$title</span></tt> と同等です。</p>
 </div>
 <div class="section" id="id3">
 <h2>ルーティング<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>これであなたのコントローラは稼働しています！　ブラウザ上で
-<code class="docutils literal"><span class="pre">[your-site-url]index.php/pages/view</span></code> にアクセスしてみてください。
-<code class="docutils literal"><span class="pre">index.php/pages/view/about</span></code> にアクセスすれば、ヘッダとフッタを含んだ
+<tt class="docutils literal"><span class="pre">[your-site-url]index.php/pages/view</span></tt> にアクセスしてみてください。
+<tt class="docutils literal"><span class="pre">index.php/pages/view/about</span></tt> にアクセスすれば、ヘッダとフッタを含んだ
 about ページが見えるはずです。</p>
 <p>独自のルーティング規則を使い、あなたはどんな URI でも好きなコントローラの好きな
 メソッドにマッピングする事ができ、下記の通常の規約から自由になることができます:
-<code class="docutils literal"><span class="pre">http://example.com/[コントローラクラス]/[コントローラメソッド]/[引数]</span></code></p>
+<tt class="docutils literal"><span class="pre">http://example.com/[コントローラクラス]/[コントローラメソッド]/[引数]</span></tt></p>
 <p>実際にやってみましょう。<em>application/config/routes.php</em> に配置されている
 ルーティングファイルを開き、次の 2 行を追記してください。
-そして <code class="docutils literal"><span class="pre">$route</span></code> 配列に要素を追加している他のすべてのコードを削除してください。</p>
+そして <tt class="docutils literal"><span class="pre">$route</span></tt> 配列に要素を追加している他のすべてのコードを削除してください。</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;default_controller&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;pages/view&#39;</span><span class="p">;</span>
 <span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;(:any)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;pages/view/$1&#39;</span><span class="p">;</span>
 </pre></div>
@@ -552,12 +556,12 @@ about ページが見えるはずです。</p>
 コントローラとメソッドを必要に応じて引数付きで
 呼び出します。</p>
 <p>ルーティングについては URI ルーティングの
-<a class="reference internal" href="../general/routing.html"><span class="doc">ドキュメント</span></a> を参照して下さい。</p>
-<p>この例では、<code class="docutils literal"><span class="pre">$route</span></code> 配列の 2 番目の規則は <strong>どんな</strong> リクエストでも
-ワイルドカード文字列 <code class="docutils literal"><span class="pre">(:any)</span></code> を使ってマッチします。そして、それを
-<code class="docutils literal"><span class="pre">Pages</span></code> クラスの <code class="docutils literal"><span class="pre">view()</span></code> メソッドに引数として渡します。</p>
-<p>では、 <code class="docutils literal"><span class="pre">index.php/about</span></code> にアクセスしてみてください。
-正しく Pages コントローラの <code class="docutils literal"><span class="pre">view()</span></code> メソッドにルーティングされましたか？　素晴らしい！</p>
+<a class="reference internal" href="../general/routing.html"><em>ドキュメント</em></a> を参照して下さい。</p>
+<p>この例では、<tt class="docutils literal"><span class="pre">$route</span></tt> 配列の 2 番目の規則は <strong>どんな</strong> リクエストでも
+ワイルドカード文字列 <tt class="docutils literal"><span class="pre">(:any)</span></tt> を使ってマッチします。そして、それを
+<tt class="docutils literal"><span class="pre">Pages</span></tt> クラスの <tt class="docutils literal"><span class="pre">view()</span></tt> メソッドに引数として渡します。</p>
+<p>では、 <tt class="docutils literal"><span class="pre">index.php/about</span></tt> にアクセスしてみてください。
+正しく Pages コントローラの <tt class="docutils literal"><span class="pre">view()</span></tt> メソッドにルーティングされましたか？　素晴らしい！</p>
 </div>
 </div>
 
@@ -580,7 +584,7 @@ about ページが見えるはずです。</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 10月 11, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
+      最終更新: Nov 23, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

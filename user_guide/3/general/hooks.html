@@ -49,7 +49,9 @@
     
       <div id="pulldown-menu" class="ciNav">
         <ul>
-<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -101,7 +103,7 @@
 <li class="toctree-l2"><a class="reference internal" href="creating_drivers.html">ドライバの作成</a></li>
 <li class="toctree-l2"><a class="reference internal" href="core_classes.html">コアシステムクラスの作成</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ancillary_classes.html">補助的なクラス作成</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">フック――フレームワークコアの拡張</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">フック――フレームワークコアの拡張</a></li>
 <li class="toctree-l2"><a class="reference internal" href="autoloader.html">リソースのオートロード</a></li>
 <li class="toctree-l2"><a class="reference internal" href="common_functions.html">共通関数</a></li>
 <li class="toctree-l2"><a class="reference internal" href="compatibility_functions.html">互換関数</a></li>
@@ -233,7 +235,9 @@
           
           
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -285,7 +289,7 @@
 <li class="toctree-l2"><a class="reference internal" href="creating_drivers.html">ドライバの作成</a></li>
 <li class="toctree-l2"><a class="reference internal" href="core_classes.html">コアシステムクラスの作成</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ancillary_classes.html">補助的なクラス作成</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">フック――フレームワークコアの拡張</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">フック――フレームワークコアの拡張</a></li>
 <li class="toctree-l2"><a class="reference internal" href="autoloader.html">リソースのオートロード</a></li>
 <li class="toctree-l2"><a class="reference internal" href="common_functions.html">共通関数</a></li>
 <li class="toctree-l2"><a class="reference internal" href="compatibility_functions.html">互換関数</a></li>
@@ -425,7 +429,7 @@
 <p>CodeIgniter のフック機能は、コアファイルをハッキングすることなく、
 フレームワークの内部に入り込んで動作を変更するための手段を提供します。
 CodeIgniter が実行するとき、つぎの
-<a class="reference internal" href="../overview/appflow.html"><span class="doc">アプリケーションフロー</span></a> ページに図解される特定の実行プロセスに従います。
+<a class="reference internal" href="../overview/appflow.html"><em>アプリケーションフロー</em></a> ページに図解される特定の実行プロセスに従います。
 手元にはインスタンスがあるかもしれませんが、
 実行プロセスの特定の段階でいくつかのアクションを起こしたいかもしれません。たとえば、
 コントローラがロードされ得る直前、
@@ -527,14 +531,14 @@ filepath として使用します。末尾にスラッシュは不要です。</
 <li><strong>post_controller</strong>
 コントローラの実行が完全に終わった直後に呼び出されます。</li>
 <li><strong>display_override</strong>
-<code class="docutils literal"><span class="pre">_display()</span></code> メソッドをオーバーライドします。システム実行の最後で
+<tt class="docutils literal"><span class="pre">_display()</span></tt> メソッドをオーバーライドします。システム実行の最後で
 ウェブブラウザに確定ページを送信するために使用されるものです。これにより
 独自の方法による表示が可能になります。
-CI スーパーオブジェクトへの参照が <code class="docutils literal"><span class="pre">$this-&gt;CI</span> <span class="pre">=&amp;</span> <span class="pre">get_instance()</span></code> により必要となること、
+CI スーパーオブジェクトへの参照が <tt class="docutils literal"><span class="pre">$this-&gt;CI</span> <span class="pre">=&amp;</span> <span class="pre">get_instance()</span></tt> により必要となること、
 そして確定データは
-<code class="docutils literal"><span class="pre">$this-&gt;CI-&gt;output-&gt;get_output()</span></code> を呼び出すことによって利用できるようになることを覚えておいてください。</li>
+<tt class="docutils literal"><span class="pre">$this-&gt;CI-&gt;output-&gt;get_output()</span></tt> を呼び出すことによって利用できるようになることを覚えておいてください。</li>
 <li><strong>cache_override</strong>
-<a class="reference internal" href="../libraries/output.html"><span class="doc">出力ライブラリ</span></a> の <code class="docutils literal"><span class="pre">_display_cache()</span></code>
+<a class="reference internal" href="../libraries/output.html"><em>出力ライブラリ</em></a> の <tt class="docutils literal"><span class="pre">_display_cache()</span></tt>
 メソッドのかわりに独自のメソッドを呼び出すことができます。これにより、
 独自のキャッシュ表示機構を使用できるようになります。</li>
 <li><strong>post_system</strong>
@@ -564,7 +568,7 @@ CI スーパーオブジェクトへの参照が <code class="docutils literal">
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 10月 11, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
+      最終更新: Nov 23, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

@@ -49,7 +49,9 @@
     
       <div id="pulldown-menu" class="ciNav">
         <ul>
-<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -192,7 +194,7 @@
 <li class="toctree-l2"><a class="reference internal" href="smiley_helper.html">スマイリーヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="string_helper.html">文字列ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="text_helper.html">テキストヘルパー</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">タイポグラフィーヘルパー</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">タイポグラフィーヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="url_helper.html">URL ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="xml_helper.html">XML ヘルパー</a></li>
 </ul>
@@ -233,7 +235,9 @@
           
           
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -376,7 +380,7 @@
 <li class="toctree-l2"><a class="reference internal" href="smiley_helper.html">スマイリーヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="string_helper.html">文字列ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="text_helper.html">テキストヘルパー</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">タイポグラフィーヘルパー</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">タイポグラフィーヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="url_helper.html">URL ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="xml_helper.html">XML ヘルパー</a></li>
 </ul>
@@ -442,7 +446,7 @@
 <p>次の関数が利用できます:</p>
 <dl class="function">
 <dt id="auto_typography">
-<code class="descname">auto_typography</code><span class="sig-paren">(</span><em>$str</em><span class="optional">[</span>, <em>$reduce_linebreaks = FALSE</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#auto_typography" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">auto_typography</tt><big>(</big><em>$str</em><span class="optional">[</span>, <em>$reduce_linebreaks = FALSE</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#auto_typography" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -463,8 +467,8 @@
 </table>
 <p>意味論的にも文の体裁を整える面でも正しい HTML
 にテキストをフォーマットします。</p>
-<p>この関数は <code class="docutils literal"><span class="pre">CI_Typography::auto_typography()</span></code> のエイリアスです。
-より多くの情報を得るには、<a class="reference internal" href="../libraries/typography.html"><span class="doc">タイポグラフィークラス</span></a>
+<p>この関数は <tt class="docutils literal"><span class="pre">CI_Typography::auto_typography()</span></tt> のエイリアスです。
+より多くの情報を得るには、<a class="reference internal" href="../libraries/typography.html"><em>タイポグラフィークラス</em></a>
 を見てください。</p>
 <p>使用例:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$string</span> <span class="o">=</span> <span class="nx">auto_typography</span><span class="p">(</span><span class="nv">$string</span><span class="p">);</span>
@@ -474,14 +478,14 @@
 <p class="first admonition-title">注釈</p>
 <p class="last">特に、フォーマットしようとする大量のコンテンツがある場合、
 文の体裁を整える処理は負荷が高くなります。 この関数を使うようにした場合は、
-ページを <a class="reference internal" href="../general/caching.html"><span class="doc">キャッシュする</span></a>
+ページを <a class="reference internal" href="../general/caching.html"><em>キャッシュする</em></a>
 のを検討する必要があるかもしれません。</p>
 </div>
 </dd></dl>
 
 <dl class="function">
 <dt id="nl2br_except_pre">
-<code class="descname">nl2br_except_pre</code><span class="sig-paren">(</span><em>$str</em><span class="sig-paren">)</span><a class="headerlink" href="#nl2br_except_pre" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">nl2br_except_pre</tt><big>(</big><em>$str</em><big>)</big><a class="headerlink" href="#nl2br_except_pre" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -501,7 +505,7 @@
 </table>
 <p>&lt;pre&gt;タグの中でない改行を&lt;br /&gt;タグに変換します。
 この関数は&lt;pre&gt;タグを無視しないという点を除いて、
-PHP に組み込みの <code class="docutils literal"><span class="pre">nl2br()</span></code> 関数と同じものです。</p>
+PHP に組み込みの <tt class="docutils literal"><span class="pre">nl2br()</span></tt> 関数と同じものです。</p>
 <p>使用例:</p>
 <blockquote>
 <div>$string = nl2br_except_pre($string);</div></blockquote>
@@ -509,7 +513,7 @@ PHP に組み込みの <code class="docutils literal"><span class="pre">nl2br()<
 
 <dl class="function">
 <dt id="entity_decode">
-<code class="descname">entity_decode</code><span class="sig-paren">(</span><em>$str</em>, <em>$charset = NULL</em><span class="sig-paren">)</span><a class="headerlink" href="#entity_decode" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">entity_decode</tt><big>(</big><em>$str</em>, <em>$charset = NULL</em><big>)</big><a class="headerlink" href="#entity_decode" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -528,8 +532,8 @@ PHP に組み込みの <code class="docutils literal"><span class="pre">nl2br()<
 </tr>
 </tbody>
 </table>
-<p>この関数は <code class="docutils literal"><span class="pre">CI_Security::entity_decode()</span></code> のエイリアスです。
-より多くの情報を得るには、<a class="reference internal" href="../libraries/security.html"><span class="doc">セキュリティクラス</span></a>
+<p>この関数は <tt class="docutils literal"><span class="pre">CI_Security::entity_decode()</span></tt> のエイリアスです。
+より多くの情報を得るには、<a class="reference internal" href="../libraries/security.html"><em>セキュリティクラス</em></a>
 を見てください。</p>
 </dd></dl>
 
@@ -555,7 +559,7 @@ PHP に組み込みの <code class="docutils literal"><span class="pre">nl2br()<
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 10月 11, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
+      最終更新: Nov 23, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

@@ -49,7 +49,9 @@
     
       <div id="pulldown-menu" class="ciNav">
         <ul>
-<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -93,7 +95,7 @@
 <li class="toctree-l2"><a class="reference internal" href="controllers.html">コントローラ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="reserved_names.html">予約語</a></li>
 <li class="toctree-l2"><a class="reference internal" href="views.html">ビュー</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">モデル</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">モデル</a></li>
 <li class="toctree-l2"><a class="reference internal" href="helpers.html">ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="libraries.html">CodeIgniter のライブラリの利用</a></li>
 <li class="toctree-l2"><a class="reference internal" href="creating_libraries.html">ライブラリの作成</a></li>
@@ -233,7 +235,9 @@
           
           
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -277,7 +281,7 @@
 <li class="toctree-l2"><a class="reference internal" href="controllers.html">コントローラ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="reserved_names.html">予約語</a></li>
 <li class="toctree-l2"><a class="reference internal" href="views.html">ビュー</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">モデル</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">モデル</a></li>
 <li class="toctree-l2"><a class="reference internal" href="helpers.html">ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="libraries.html">CodeIgniter のライブラリの利用</a></li>
 <li class="toctree-l2"><a class="reference internal" href="creating_libraries.html">ライブラリの作成</a></li>
@@ -485,14 +489,14 @@
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">上記の例では <a class="reference internal" href="../database/query_builder.html"><span class="doc">クエリビルダ</span></a> データベースメソッドを使っています。</p>
+<p class="last">上記の例では <a class="reference internal" href="../database/query_builder.html"><em>クエリビルダ</em></a> データベースメソッドを使っています。</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">この例では簡潔に書くため、直接 <code class="docutils literal"><span class="pre">$_POST</span></code> を使用しています。
+<p class="last">この例では簡潔に書くため、直接 <tt class="docutils literal"><span class="pre">$_POST</span></tt> を使用しています。
 これは一般には悪いプラクティスであり、より一般的なアプローチはとしては
-<a class="reference internal" href="../libraries/input.html"><span class="doc">入力ライブラリ</span></a> の
-<code class="docutils literal"><span class="pre">$this-&gt;input-&gt;post('title')</span></code> を使用してください。</p>
+<a class="reference internal" href="../libraries/input.html"><em>入力ライブラリ</em></a> の
+<tt class="docutils literal"><span class="pre">$this-&gt;input-&gt;post('title')</span></tt> を使用してください。</p>
 </div>
 </div>
 <div class="section" id="id4">
@@ -533,7 +537,7 @@
 <div class="section" id="id5">
 <h2><a class="toc-backref" href="#id11">モデルのロード</a><a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>モデルは一般的に
-<a class="reference internal" href="controllers.html"><span class="doc">コントローラ</span></a> メソッドでロードされ、呼び出されます。
+<a class="reference internal" href="controllers.html"><em>コントローラ</em></a> メソッドでロードされ、呼び出されます。
 モデルをロードするにはつぎのメソッドを使います:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">model</span><span class="p">(</span><span class="s1">&#39;model_name&#39;</span><span class="p">);</span>
 </pre></div>
@@ -587,7 +591,7 @@ models ディレクトリからの相対パスを含めます。たとえば、
 <p>モデルがロードされても、自動的にはデータベースに接続 <strong>しません</strong> 。
 接続するための以下のオプションが利用できます:</p>
 <ul>
-<li><p class="first">標準的なデータベース方法を用いて接続することができます、 <a class="reference internal" href="../database/connecting.html"><span class="doc">ここで説明しているものです</span></a>、コントローラクラスとモデルクラスの
+<li><p class="first">標準的なデータベース方法を用いて接続することができます、 <a class="reference internal" href="../database/connecting.html"><em>ここで説明しているものです</em></a>、コントローラクラスとモデルクラスの
 どちらからでもできます。</p>
 </li>
 <li><p class="first">第 3 引数に
@@ -635,7 +639,7 @@ TRUE（真偽値）を渡すことでロード時に自動接続させること�
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 10月 11, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
+      最終更新: Nov 23, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

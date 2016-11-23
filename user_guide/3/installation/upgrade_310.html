@@ -49,7 +49,9 @@
     
       <div id="pulldown-menu" class="ciNav">
         <ul>
-<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">インストール方法</a><ul class="current">
@@ -233,7 +235,9 @@
           
           
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">インストール方法</a><ul class="current">
@@ -445,12 +449,12 @@ page.</p>
 </div>
 <div class="section" id="step-3-if-you-re-using-the-odbc-database-driver-check-for-usage-of-query-builder">
 <h2>Step 3: If you&#8217;re using the &#8216;odbc&#8217; database driver, check for usage of Query Builder<a class="headerlink" href="#step-3-if-you-re-using-the-odbc-database-driver-check-for-usage-of-query-builder" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p><a class="reference internal" href="../database/query_builder.html"><span class="doc">Query Builder</span></a> functionality and <code class="docutils literal"><span class="pre">escape()</span></code> can
+<p><a class="reference internal" href="../database/query_builder.html"><em>Query Builder</em></a> functionality and <tt class="docutils literal"><span class="pre">escape()</span></tt> can
 no longer be used with the &#8216;odbc&#8217; database driver.</p>
 <p>This is because, due to its nature, the <a class="reference external" href="https://secure.php.net/odbc">ODBC extension for PHP</a>
 does not provide a function that allows to safely escape user-supplied strings for usage
-inside an SQL query (which our <a class="reference internal" href="../database/query_builder.html"><span class="doc">Query Builder</span></a> relies on).</p>
-<p>Thus, user inputs MUST be bound, as shown in <a class="reference internal" href="../database/queries.html"><span class="doc">Running Queries</span></a>,
+inside an SQL query (which our <a class="reference internal" href="../database/query_builder.html"><em>Query Builder</em></a> relies on).</p>
+<p>Thus, user inputs MUST be bound, as shown in <a class="reference internal" href="../database/queries.html"><em>Running Queries</em></a>,
 under the &#8220;Query Bindings&#8221; section.</p>
 </div>
 </div>
@@ -474,7 +478,7 @@ under the &#8220;Query Bindings&#8221; section.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 10月 11, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
+      最終更新: Nov 23, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

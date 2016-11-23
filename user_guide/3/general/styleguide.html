@@ -49,7 +49,9 @@
     
       <div id="pulldown-menu" class="ciNav">
         <ul>
-<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -114,7 +116,7 @@
 <li class="toctree-l2"><a class="reference internal" href="environments.html">複数環境への対応</a></li>
 <li class="toctree-l2"><a class="reference internal" href="alternative_php.html">ビューファイルでの PHP の代替構文</a></li>
 <li class="toctree-l2"><a class="reference internal" href="security.html">セキュリティ</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">PHP スタイルガイド</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">PHP スタイルガイド</a></li>
 </ul>
 </li>
 </ul>
@@ -233,7 +235,9 @@
           
           
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -298,7 +302,7 @@
 <li class="toctree-l2"><a class="reference internal" href="environments.html">複数環境への対応</a></li>
 <li class="toctree-l2"><a class="reference internal" href="alternative_php.html">ビューファイルでの PHP の代替構文</a></li>
 <li class="toctree-l2"><a class="reference internal" href="security.html">セキュリティ</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">PHP スタイルガイド</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">PHP スタイルガイド</a></li>
 </ul>
 </li>
 </ul>
@@ -693,10 +697,10 @@ SLASH 、 LD 、 RD 、 PATH_CACHE などが割り当てられている場合は
 </div>
 <div class="section" id="id8">
 <h2><a class="toc-backref" href="#id37">論理演算子</a><a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p><code class="docutils literal"><span class="pre">||</span></code> 「論理和」比較演算子の使用はやめましょう。いくつかの出力デバイス上で不明確だからです
+<p><tt class="docutils literal"><span class="pre">||</span></tt> 「論理和」比較演算子の使用はやめましょう。いくつかの出力デバイス上で不明確だからです
 (例として、数字の 11 のように見えます) 。
-<code class="docutils literal"><span class="pre">&amp;&amp;</span></code> は <code class="docutils literal"><span class="pre">AND</span></code> よりも好ましいですが、どちらとも許容されます。
-<code class="docutils literal"><span class="pre">!</span></code> の前後には空白文字をいれるべきです。</p>
+<tt class="docutils literal"><span class="pre">&amp;&amp;</span></tt> は <tt class="docutils literal"><span class="pre">AND</span></tt> よりも好ましいですが、どちらとも許容されます。
+<tt class="docutils literal"><span class="pre">!</span></tt> の前後には空白文字をいれるべきです。</p>
 <p><strong>誤</strong>:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nv">$foo</span> <span class="o">||</span> <span class="nv">$bar</span><span class="p">)</span>
 <span class="k">if</span> <span class="p">(</span><span class="nv">$foo</span> <span class="k">AND</span> <span class="nv">$bar</span><span class="p">)</span>  <span class="c1">// 問題ありませんが推奨されません、一般的なシンタックスハイライトアプリのためです</span>
@@ -764,7 +768,7 @@ NULL と真偽値 FALSE は空文字列となり、 0（および
 <div class="section" id="id11">
 <h2><a class="toc-backref" href="#id39">デバッグコード</a><a class="headerlink" href="#id11" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>あなたの成果物にデバッグコードを放置しないでください、たとえコメントアウトしてあってもです。
-<code class="docutils literal"><span class="pre">var_dump()</span></code> 、 <code class="docutils literal"><span class="pre">print_r()</span></code> 、 <code class="docutils literal"><span class="pre">die()</span></code>/<code class="docutils literal"><span class="pre">exit()</span></code> のようなものはコードに含めないべきです、
+<tt class="docutils literal"><span class="pre">var_dump()</span></tt> 、 <tt class="docutils literal"><span class="pre">print_r()</span></tt> 、 <tt class="docutils literal"><span class="pre">die()</span></tt>/<tt class="docutils literal"><span class="pre">exit()</span></tt> のようなものはコードに含めないべきです、
 デバッグ以外の特定の目的を果たすわけでない限りは。</p>
 </div>
 <div class="section" id="id12">
@@ -944,8 +948,8 @@ elseif 、 for 、 foreach 、 if 、 switch 、 while) のうしろにはスペ
 <div class="section" id="id21">
 <h2><a class="toc-backref" href="#id49">PHPのエラー</a><a class="headerlink" href="#id21" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>コードはエラーなく実行されなければならず、この要件を満たすために warning や notice
-を非表示にしてはなりません。例として、自分でセットしていない変数にはまず <code class="docutils literal"><span class="pre">isset()</span></code>
-で確認するまでは決してアクセスしません（<code class="docutils literal"><span class="pre">$_POST</span></code>
+を非表示にしてはなりません。例として、自分でセットしていない変数にはまず <tt class="docutils literal"><span class="pre">isset()</span></tt>
+で確認するまでは決してアクセスしません（<tt class="docutils literal"><span class="pre">$_POST</span></tt>
 配列のキーの類です）。</p>
 <p>あなたの dev 環境で　す　べ　て　のユーザーに対してエラー報告が有効になっていることを確認してください。
 また PHP 環境で display_errors が有効になっていることを確認してください。
@@ -964,7 +968,7 @@ php.ini でこれを変更することができない場合は、だいたいの
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
 <p class="last"><a class="reference external" href="http://php.net/manual/en/errorfunc.configuration.php#ini.display-errors">display_errors</a>
-の <code class="docutils literal"><span class="pre">ini_set()</span></code> による実行時設定は
+の <tt class="docutils literal"><span class="pre">ini_set()</span></tt> による実行時設定は
 PHP 環境で有効にした場合と同一ではありません。すなわち、スクリプトに
 fatal error がある場合には何の意味もありません。</p>
 </div>
@@ -1075,7 +1079,7 @@ AS 、 JOIN 、 ON 、 IN 、 など。</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 10月 11, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
+      最終更新: Nov 23, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

@@ -49,7 +49,9 @@
     
       <div id="pulldown-menu" class="ciNav">
         <ul>
-<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -158,7 +160,7 @@
 <li class="toctree-l2"><a class="reference internal" href="examples.html">クイックスタート: 使用例</a></li>
 <li class="toctree-l2"><a class="reference internal" href="configuration.html">データベース設定</a></li>
 <li class="toctree-l2"><a class="reference internal" href="connecting.html">データベースへの接続</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">クエリの実行</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">クエリの実行</a></li>
 <li class="toctree-l2"><a class="reference internal" href="results.html">クエリ結果の生成</a></li>
 <li class="toctree-l2"><a class="reference internal" href="helpers.html">クエリヘルパー関数</a></li>
 <li class="toctree-l2"><a class="reference internal" href="query_builder.html">クエリビルダクラス</a></li>
@@ -233,7 +235,9 @@
           
           
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -342,7 +346,7 @@
 <li class="toctree-l2"><a class="reference internal" href="examples.html">クイックスタート: 使用例</a></li>
 <li class="toctree-l2"><a class="reference internal" href="configuration.html">データベース設定</a></li>
 <li class="toctree-l2"><a class="reference internal" href="connecting.html">データベースへの接続</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">クエリの実行</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">クエリの実行</a></li>
 <li class="toctree-l2"><a class="reference internal" href="results.html">クエリ結果の生成</a></li>
 <li class="toctree-l2"><a class="reference internal" href="helpers.html">クエリヘルパー関数</a></li>
 <li class="toctree-l2"><a class="reference internal" href="query_builder.html">クエリビルダクラス</a></li>
@@ -431,7 +435,7 @@
 </pre></div>
 </div>
 <p>query() メソッドは、「読み取り」タイプのクエリが実行されたときには、
-<a class="reference internal" href="results.html"><span class="doc">結果を表示する</span></a> ために使用するデータベースの結果
+<a class="reference internal" href="results.html"><em>結果を表示する</em></a> ために使用するデータベースの結果
 <strong>オブジェクト</strong> を返します。 「書き込み」タイプの問い合わせを実行したとき
 には、単純にクエリが成功したかどうかによって TRUE か FALSE
 が返ります。データを取得するときには、通常は query
@@ -464,7 +468,7 @@
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">たとえば PostreSQL の <code class="docutils literal"><span class="pre">pg_exec()</span></code> は書き込みクエリでも
+<p class="last">たとえば PostreSQL の <tt class="docutils literal"><span class="pre">pg_exec()</span></tt> は書き込みクエリでも
 必ず成功時にリソースを返します。 boolean 値を期待している場合は
 それを考慮してください。</p>
 </div>
@@ -540,10 +544,10 @@ TRUE（ブール値）を指定します:</p>
 </div>
 <div class="admonition important">
 <p class="first admonition-title">重要</p>
-<p class="last">The <code class="docutils literal"><span class="pre">escape_like_str()</span></code> method uses &#8216;!&#8217; (exclamation mark)
+<p class="last">The <tt class="docutils literal"><span class="pre">escape_like_str()</span></tt> method uses &#8216;!&#8217; (exclamation mark)
 to escape special characters for <em>LIKE</em> conditions. Because this
 method escapes partial strings that you would wrap in quotes
-yourself, it cannot automatically add the <code class="docutils literal"><span class="pre">ESCAPE</span> <span class="pre">'!'</span></code>
+yourself, it cannot automatically add the <tt class="docutils literal"><span class="pre">ESCAPE</span> <span class="pre">'!'</span></tt>
 condition for you, and so you&#8217;ll have to manually do that.</p>
 </div>
 </div>
@@ -605,7 +609,7 @@ condition for you, and so you&#8217;ll have to manually do that.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 10月 11, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
+      最終更新: Nov 23, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

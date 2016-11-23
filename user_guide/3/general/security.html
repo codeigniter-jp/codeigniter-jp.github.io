@@ -49,7 +49,9 @@
     
       <div id="pulldown-menu" class="ciNav">
         <ul>
-<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -113,7 +115,7 @@
 <li class="toctree-l2"><a class="reference internal" href="managing_apps.html">アプリケーションの管理</a></li>
 <li class="toctree-l2"><a class="reference internal" href="environments.html">複数環境への対応</a></li>
 <li class="toctree-l2"><a class="reference internal" href="alternative_php.html">ビューファイルでの PHP の代替構文</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">セキュリティ</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">セキュリティ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="styleguide.html">PHP スタイルガイド</a></li>
 </ul>
 </li>
@@ -233,7 +235,9 @@
           
           
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -297,7 +301,7 @@
 <li class="toctree-l2"><a class="reference internal" href="managing_apps.html">アプリケーションの管理</a></li>
 <li class="toctree-l2"><a class="reference internal" href="environments.html">複数環境への対応</a></li>
 <li class="toctree-l2"><a class="reference internal" href="alternative_php.html">ビューファイルでの PHP の代替構文</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">セキュリティ</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">セキュリティ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="styleguide.html">PHP スタイルガイド</a></li>
 </ul>
 </li>
@@ -449,7 +453,7 @@ URI は以下のもののみ
 <div class="section" id="register-globals">
 <h2>register_globals<a class="headerlink" href="#register-globals" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>システムの初期化時、
-<code class="docutils literal"><span class="pre">$_GET</span></code> 、 <code class="docutils literal"><span class="pre">$_POST</span></code> 、 <code class="docutils literal"><span class="pre">$_REQUEST</span></code> と <code class="docutils literal"><span class="pre">$</span> <span class="pre">_COOKIE</span></code> 内に見つけられる変数でグローバル変数のものはすべて unset されます。</p>
+<tt class="docutils literal"><span class="pre">$_GET</span></tt> 、 <tt class="docutils literal"><span class="pre">$_POST</span></tt> 、 <tt class="docutils literal"><span class="pre">$_REQUEST</span></tt> と <tt class="docutils literal"><span class="pre">$</span> <span class="pre">_COOKIE</span></tt> 内に見つけられる変数でグローバル変数のものはすべて unset されます。</p>
 <p>この unset ルーチンは <em>register_globals = off</em> と同じ効果です。</p>
 </div>
 <div class="section" id="display-errors">
@@ -462,7 +466,7 @@ URI は以下のもののみ
 「 <strong>production</strong> 」の値に設定すると、これらのエラーをオフにします。
 開発モードでは「 development 」の値を使用することをおすすめします。
 環境の区別についての詳しい情報は
-<a class="reference internal" href="environments.html"><span class="doc">複数環境への対応</span></a> ページにあります。</p>
+<a class="reference internal" href="environments.html"><em>複数環境への対応</em></a> ページにあります。</p>
 </div>
 <div class="section" id="magic-quotes-runtime">
 <h2>magic_quotes_runtime<a class="headerlink" href="#magic-quotes-runtime" title="このヘッドラインへのパーマリンク">¶</a></h2>
@@ -492,7 +496,7 @@ COOKIE データであれ、 URI データであれ、 XML-RPC データであ�
 このフィルタは、データに悪意のある JavaScript を埋め込むために一般的に使用される技術、
 またはクッキーをハイジャックしようとするなど、
 悪さしようとするコードを探し出します。 XSS フィルターは
-<a class="reference internal" href="../libraries/security.html"><span class="doc">ここ</span></a> で説明されています。</p>
+<a class="reference internal" href="../libraries/security.html"><em>ここ</em></a> で説明されています。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
 <p class="last">XSS フィルタリングは <em>出力でのみ実行</em> するべきです。
@@ -508,7 +512,7 @@ COOKIE データであれ、 URI データであれ、 XML-RPC データであ�
 <p>CodeIgniter では CSRF の保護をすぐにお使いいただけます、
 自動的にすべての非 GET HTTP リクエストをトリガーとしますが、
 サブミットフォームを正しい方法で作成することが必要になります。
-これは <a class="reference internal" href="../libraries/security.html"><span class="doc">セキュリティライブラリ</span></a> ドキュメントで説明されています。</p>
+これは <a class="reference internal" href="../libraries/security.html"><em>セキュリティライブラリ</em></a> ドキュメントで説明されています。</p>
 </div>
 <div class="section" id="id3">
 <h2>パスワードの取り扱い<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
@@ -562,21 +566,21 @@ DoS 攻撃を軽減するため、パスワードの長さに比較的高めの�
 </div>
 <div class="section" id="id5">
 <h2>入力データを検証する<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p>CodeIgniter には <a class="reference internal" href="../libraries/form_validation.html"><span class="doc">フォームバリデーションライブラリ</span></a> があり、
+<p>CodeIgniter には <a class="reference internal" href="../libraries/form_validation.html"><em>フォームバリデーションライブラリ</em></a> があり、
 検証、フィルタリング、およびデータの準備を支援します。</p>
 <p>しかしそれがあなたのユースケースでは機能しない場合でも、
 常にすべての入力データを検証し、サニタイズしてください。
-たとえば、数値文字列を入力として期待する場合、 <code class="docutils literal"><span class="pre">is_numeric()</span></code>
-または <code class="docutils literal"><span class="pre">ctype_digit()</span></code> を使ってチェックすることができます。
+たとえば、数値文字列を入力として期待する場合、 <tt class="docutils literal"><span class="pre">is_numeric()</span></tt>
+または <tt class="docutils literal"><span class="pre">ctype_digit()</span></tt> を使ってチェックすることができます。
 常にチェックを一定のパターンに絞り込むよう取り組んでください。</p>
-<p>心得ておいてください、 <code class="docutils literal"><span class="pre">$_POST</span></code> や <code class="docutils literal"><span class="pre">$_GET</span></code> 変数に限らず、
+<p>心得ておいてください、 <tt class="docutils literal"><span class="pre">$_POST</span></tt> や <tt class="docutils literal"><span class="pre">$_GET</span></tt> 変数に限らず、
 クッキー、ユーザーエージェント文字列および基本的に
 <em>みずからのコードで直接作成されていないすべてのデータ</em> が対象であることを。</p>
 </div>
 <div class="section" id="id6">
 <h2>データベースへの挿入前にすべてのデータをエスケープする<a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>エスケープなしにデータベースに情報を挿入しないでください。
-詳細については <a class="reference internal" href="../database/queries.html"><span class="doc">データベースクエリ</span></a> で説明されているセクションを参照してください。</p>
+詳細については <a class="reference internal" href="../database/queries.html"><em>データベースクエリ</em></a> で説明されているセクションを参照してください。</p>
 </div>
 <div class="section" id="id7">
 <h2>ファイルを隠す<a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">¶</a></h2>
@@ -614,7 +618,7 @@ DoS 攻撃を軽減するため、パスワードの長さに比較的高めの�
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 10月 11, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
+      最終更新: Nov 23, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

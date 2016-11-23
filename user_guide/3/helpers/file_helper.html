@@ -49,7 +49,9 @@
     
       <div id="pulldown-menu" class="ciNav">
         <ul>
-<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -181,7 +183,7 @@
 <li class="toctree-l2"><a class="reference internal" href="directory_helper.html">ディレクトリヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="download_helper.html">ダウンロードヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="email_helper.html">eメールヘルパー</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">ファイルヘルパー</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">ファイルヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="form_helper.html">フォームヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="html_helper.html">HTML ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="inflector_helper.html">語形変換ヘルパー</a></li>
@@ -233,7 +235,9 @@
           
           
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -365,7 +369,7 @@
 <li class="toctree-l2"><a class="reference internal" href="directory_helper.html">ディレクトリヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="download_helper.html">ダウンロードヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="email_helper.html">eメールヘルパー</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">ファイルヘルパー</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">ファイルヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="form_helper.html">フォームヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="html_helper.html">HTML ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="inflector_helper.html">語形変換ヘルパー</a></li>
@@ -441,7 +445,7 @@
 <p>次の関数が利用できます:</p>
 <dl class="function">
 <dt id="read_file">
-<code class="descname">read_file</code><span class="sig-paren">(</span><em>$file</em><span class="sig-paren">)</span><a class="headerlink" href="#read_file" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">read_file</tt><big>(</big><em>$file</em><big>)</big><a class="headerlink" href="#read_file" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -474,7 +478,7 @@
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
 <p class="last">この関数は廃止予定です。
-かわりに <code class="docutils literal"><span class="pre">file_get_contents()</span></code> を使ってください。</p>
+かわりに <tt class="docutils literal"><span class="pre">file_get_contents()</span></tt> を使ってください。</p>
 </div>
 <div class="admonition important">
 <p class="first admonition-title">重要</p>
@@ -486,7 +490,7 @@
 
 <dl class="function">
 <dt id="write_file">
-<code class="descname">write_file</code><span class="sig-paren">(</span><em>$path</em>, <em>$data</em><span class="optional">[</span>, <em>$mode = 'wb'</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#write_file" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">write_file</tt><big>(</big><em>$path</em>, <em>$data</em><span class="optional">[</span>, <em>$mode = 'wb'</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#write_file" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -494,7 +498,7 @@
 <tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
 <li><strong>$path</strong> (<em>string</em>) &#8211; ファイルパス</li>
 <li><strong>$data</strong> (<em>string</em>) &#8211; ファイルに書き込むデータ</li>
-<li><strong>$mode</strong> (<em>string</em>) &#8211; <code class="docutils literal"><span class="pre">fopen()</span></code> モード</li>
+<li><strong>$mode</strong> (<em>string</em>) &#8211; <tt class="docutils literal"><span class="pre">fopen()</span></tt> モード</li>
 </ul>
 </td>
 </tr>
@@ -540,7 +544,7 @@
 
 <dl class="function">
 <dt id="delete_files">
-<code class="descname">delete_files</code><span class="sig-paren">(</span><em>$path</em><span class="optional">[</span>, <em>$del_dir = FALSE</em><span class="optional">[</span>, <em>$htdocs = FALSE</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#delete_files" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">delete_files</tt><big>(</big><em>$path</em><span class="optional">[</span>, <em>$del_dir = FALSE</em><span class="optional">[</span>, <em>$htdocs = FALSE</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#delete_files" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -579,7 +583,7 @@
 
 <dl class="function">
 <dt id="get_filenames">
-<code class="descname">get_filenames</code><span class="sig-paren">(</span><em>$source_dir</em><span class="optional">[</span>, <em>$include_path = FALSE</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#get_filenames" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">get_filenames</tt><big>(</big><em>$source_dir</em><span class="optional">[</span>, <em>$include_path = FALSE</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#get_filenames" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -609,7 +613,7 @@
 
 <dl class="function">
 <dt id="get_dir_file_info">
-<code class="descname">get_dir_file_info</code><span class="sig-paren">(</span><em>$source_dir</em>, <em>$top_level_only</em><span class="sig-paren">)</span><a class="headerlink" href="#get_dir_file_info" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">get_dir_file_info</tt><big>(</big><em>$source_dir</em>, <em>$top_level_only</em><big>)</big><a class="headerlink" href="#get_dir_file_info" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -640,7 +644,7 @@
 
 <dl class="function">
 <dt id="get_file_info">
-<code class="descname">get_file_info</code><span class="sig-paren">(</span><em>$file</em><span class="optional">[</span>, <em>$returned_values = array('name'</em>, <em>'server_path'</em>, <em>'size'</em>, <em>'date')</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#get_file_info" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">get_file_info</tt><big>(</big><em>$file</em><span class="optional">[</span>, <em>$returned_values = array('name'</em>, <em>'server_path'</em>, <em>'size'</em>, <em>'date')</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#get_file_info" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -662,13 +666,13 @@
 <p>ファイルとパスを引数に取り、<em>name</em> 、 <em>path</em> 、 <em>size</em> や <em>date modified</em> 等の
 ファイルの属性情報を返却(オプション)します。 第2引数は返却して欲しい情報を明示的に
 指定することが可能です。</p>
-<p>有効な <code class="docutils literal"><span class="pre">$returned_values</span></code> のオプション: <cite>name</cite> 、 <cite>size</cite> 、 <cite>date</cite> 、 <cite>readable</cite> 、 <cite>writeable</cite> 、
+<p>有効な <tt class="docutils literal"><span class="pre">$returned_values</span></tt> のオプション: <cite>name</cite> 、 <cite>size</cite> 、 <cite>date</cite> 、 <cite>readable</cite> 、 <cite>writeable</cite> 、
 <cite>executable</cite> や <cite>fileperms</cite>.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="get_mime_by_extension">
-<code class="descname">get_mime_by_extension</code><span class="sig-paren">(</span><em>$filename</em><span class="sig-paren">)</span><a class="headerlink" href="#get_mime_by_extension" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">get_mime_by_extension</tt><big>(</big><em>$filename</em><big>)</big><a class="headerlink" href="#get_mime_by_extension" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -702,7 +706,7 @@
 
 <dl class="function">
 <dt id="symbolic_permissions">
-<code class="descname">symbolic_permissions</code><span class="sig-paren">(</span><em>$perms</em><span class="sig-paren">)</span><a class="headerlink" href="#symbolic_permissions" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">symbolic_permissions</tt><big>(</big><em>$perms</em><big>)</big><a class="headerlink" href="#symbolic_permissions" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -720,7 +724,7 @@
 </tr>
 </tbody>
 </table>
-<p>( <code class="docutils literal"><span class="pre">fileperms()</span></code> で返ってくるような) 数字のパーミッションを引数として渡すと、
+<p>( <tt class="docutils literal"><span class="pre">fileperms()</span></tt> で返ってくるような) 数字のパーミッションを引数として渡すと、
 文字列のファイルパーミッションを返します。</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nx">symbolic_permissions</span><span class="p">(</span><span class="nb">fileperms</span><span class="p">(</span><span class="s1">&#39;./index.php&#39;</span><span class="p">));</span>  <span class="c1">// -rw-r--r--</span>
 </pre></div>
@@ -729,7 +733,7 @@
 
 <dl class="function">
 <dt id="octal_permissions">
-<code class="descname">octal_permissions</code><span class="sig-paren">(</span><em>$perms</em><span class="sig-paren">)</span><a class="headerlink" href="#octal_permissions" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">octal_permissions</tt><big>(</big><em>$perms</em><big>)</big><a class="headerlink" href="#octal_permissions" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -747,7 +751,7 @@
 </tr>
 </tbody>
 </table>
-<p>( <code class="docutils literal"><span class="pre">fileperms()</span></code> で返ってくるような) 数字のパーミッションを引数として渡すと、
+<p>( <tt class="docutils literal"><span class="pre">fileperms()</span></tt> で返ってくるような) 数字のパーミッションを引数として渡すと、
 8進数3文字のファイルパーミッションを返します。</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nx">octal_permissions</span><span class="p">(</span><span class="nb">fileperms</span><span class="p">(</span><span class="s1">&#39;./index.php&#39;</span><span class="p">));</span> <span class="c1">// 644</span>
 </pre></div>
@@ -776,7 +780,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 10月 11, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
+      最終更新: Nov 23, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

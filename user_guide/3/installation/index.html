@@ -48,12 +48,14 @@
     
       <div id="pulldown-menu" class="ciNav">
         <ul>
-<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">インストール方法</a><ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="">インストール方法</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="downloads.html">CodeIgniter のダウンロード</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">インストール方法</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">インストール方法</a></li>
 <li class="toctree-l2"><a class="reference internal" href="upgrading.html">以前のバージョンからのアップグレード</a></li>
 <li class="toctree-l2"><a class="reference internal" href="troubleshooting.html">トラブルシューティング</a></li>
 </ul>
@@ -232,12 +234,14 @@
           
           
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">インストール方法</a><ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="">インストール方法</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="downloads.html">CodeIgniter のダウンロード</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">インストール方法</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">インストール方法</a></li>
 <li class="toctree-l2"><a class="reference internal" href="upgrading.html">以前のバージョンからのアップグレード</a></li>
 <li class="toctree-l2"><a class="reference internal" href="troubleshooting.html">トラブルシューティング</a></li>
 </ul>
@@ -433,7 +437,7 @@
 </ol>
 <p>CodeIgniter のファイルの設置場所を隠すことでセキュリティを高めたい場合は、 system
 および application フォルダを別の名前に変更することができます。
-これらのファイル名を変更した場合は、 <em>index.php</em> を開き <code class="docutils literal"><span class="pre">$system_path</span></code> 変数と <code class="docutils literal"><span class="pre">$application_folder</span></code>
+これらのファイル名を変更した場合は、 <em>index.php</em> を開き <tt class="docutils literal"><span class="pre">$system_path</span></tt> 変数と <tt class="docutils literal"><span class="pre">$application_folder</span></tt>
 変数の値を新しいフォルダ名に
 書き換えてください。</p>
 <p>セキュリティ的にベストなのは、system および application フォルダ
@@ -444,17 +448,17 @@
 これらは公開ディレクトリには置かないのがベストです。</p>
 <p>views を公開したままにしたい場合は、 application フォルダの外に
 views フォルダを移動することもできます。</p>
-<p>各フォルダを移動した場合は、 index.php を開き、 <code class="docutils literal"><span class="pre">$system_path</span></code> 変数と
-<code class="docutils literal"><span class="pre">$application_folder</span></code> 変数、 <code class="docutils literal"><span class="pre">$view_folder</span></code> 変数の値を
+<p>各フォルダを移動した場合は、 index.php を開き、 <tt class="docutils literal"><span class="pre">$system_path</span></tt> 変数と
+<tt class="docutils literal"><span class="pre">$application_folder</span></tt> 変数、 <tt class="docutils literal"><span class="pre">$view_folder</span></tt> 変数の値を
 フルパスで指定するのが好ましいでしょう。例) &#8216;<em>/www/MyUser/system</em>&#8216;。</p>
 <p>本番環境での追加の対策としては、 PHP のエラー報告や他の開発専用の
 機能を無効するにすることが挙げられます。
-CodeIgniter では、これは <code class="docutils literal"><span class="pre">ENVIRONMENT</span></code> 定数を設定することによってできます。
-詳細は <a class="reference internal" href="../general/security.html"><span class="doc">セキュリティページ</span></a> を
+CodeIgniter では、これは <tt class="docutils literal"><span class="pre">ENVIRONMENT</span></tt> 定数を設定することによってできます。
+詳細は <a class="reference internal" href="../general/security.html"><em>セキュリティページ</em></a> を
 確認してください。</p>
 <p>これで終わりです！</p>
 <p>初めて CodeIgniter を使うのでしたら、
-ユーザガイドの <a class="reference internal" href="../overview/getting_started.html"><span class="doc">はじめよう</span></a>
+ユーザガイドの <a class="reference internal" href="../overview/getting_started.html"><em>はじめよう</em></a>
 から読んでみてください。動的な PHP アプリケーションの構築方法を学習できますよ！</p>
 <div class="toctree-wrapper compound">
 </div>
@@ -479,7 +483,7 @@ CodeIgniter では、これは <code class="docutils literal"><span class="pre">
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 10月 11, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
+      最終更新: Nov 23, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

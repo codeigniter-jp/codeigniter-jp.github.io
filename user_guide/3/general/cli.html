@@ -49,7 +49,9 @@
     
       <div id="pulldown-menu" class="ciNav">
         <ul>
-<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -109,7 +111,7 @@
 <li class="toctree-l2"><a class="reference internal" href="errors.html">エラー処理</a></li>
 <li class="toctree-l2"><a class="reference internal" href="caching.html">キャッシュ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="profiling.html">アプリケーションのプロファイリング</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">CLI で実行する</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">CLI で実行する</a></li>
 <li class="toctree-l2"><a class="reference internal" href="managing_apps.html">アプリケーションの管理</a></li>
 <li class="toctree-l2"><a class="reference internal" href="environments.html">複数環境への対応</a></li>
 <li class="toctree-l2"><a class="reference internal" href="alternative_php.html">ビューファイルでの PHP の代替構文</a></li>
@@ -233,7 +235,9 @@
           
           
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -293,7 +297,7 @@
 <li class="toctree-l2"><a class="reference internal" href="errors.html">エラー処理</a></li>
 <li class="toctree-l2"><a class="reference internal" href="caching.html">キャッシュ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="profiling.html">アプリケーションのプロファイリング</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">CLI で実行する</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">CLI で実行する</a></li>
 <li class="toctree-l2"><a class="reference internal" href="managing_apps.html">アプリケーションの管理</a></li>
 <li class="toctree-l2"><a class="reference internal" href="environments.html">複数環境への対応</a></li>
 <li class="toctree-l2"><a class="reference internal" href="alternative_php.html">ビューファイルでの PHP の代替構文</a></li>
@@ -422,7 +426,7 @@
             
   <div class="section" id="cli">
 <h1><a class="toc-backref" href="#id4">CLI で実行する</a><a class="headerlink" href="#cli" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>アプリケーション <a class="reference internal" href="controllers.html"><span class="doc">コントローラ</span></a>
+<p>アプリケーション <a class="reference internal" href="controllers.html"><em>コントローラ</em></a>
 の呼び出しはブラウザによる URL だけでなく、コマンドラインインターフェイス
 (CLI) を使用してロードすることもできます。</p>
 <div class="contents topic" id="page-contents">
@@ -449,7 +453,7 @@
 必ずしも明確ではありません。</p>
 <ul class="simple">
 <li><em>wget</em> や <em>curl</em> を使用することなく cron ジョブを実行する</li>
-<li><a class="reference internal" href="common_functions.html#is_cli" title="is_cli"><code class="xref php php-func docutils literal"><span class="pre">is_cli()</span></code></a> の戻り値をチェックすることで、URL からロードされることがないように
+<li><a class="reference internal" href="common_functions.html#is_cli" title="is_cli"><tt class="xref php php-func docutils literal"><span class="pre">is_cli()</span></tt></a> の戻り値をチェックすることで、URL からロードされることがないように
 cron ジョブをアクセスできなくする</li>
 <li>パーミッション設定、キャッシュフォルダの削除、
 バックアップを実行するなど、インタラクティブな「タスク」を作る</li>
@@ -497,7 +501,7 @@ $ php index.php tools message
 <h2><a class="toc-backref" href="#id8">さいごに！</a><a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>これが、つまり、コマンドライン上のコントローラについて知っておくべきすべてです。
 これはただの標準的なコントローラであるため、ルーティングと
-<code class="docutils literal"><span class="pre">_remap()</span></code> も正常に動作することを忘れないでください。</p>
+<tt class="docutils literal"><span class="pre">_remap()</span></tt> も正常に動作することを忘れないでください。</p>
 </div>
 </div>
 
@@ -520,7 +524,7 @@ $ php index.php tools message
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 10月 11, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
+      最終更新: Nov 23, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

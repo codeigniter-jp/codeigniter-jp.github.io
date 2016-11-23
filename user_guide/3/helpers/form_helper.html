@@ -49,7 +49,9 @@
     
       <div id="pulldown-menu" class="ciNav">
         <ul>
-<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -182,7 +184,7 @@
 <li class="toctree-l2"><a class="reference internal" href="download_helper.html">ダウンロードヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="email_helper.html">eメールヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="file_helper.html">ファイルヘルパー</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">フォームヘルパー</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">フォームヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="html_helper.html">HTML ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="inflector_helper.html">語形変換ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="language_helper.html">言語ヘルパー</a></li>
@@ -233,7 +235,9 @@
           
           
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -366,7 +370,7 @@
 <li class="toctree-l2"><a class="reference internal" href="download_helper.html">ダウンロードヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="email_helper.html">eメールヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="file_helper.html">ファイルヘルパー</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">フォームヘルパー</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">フォームヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="html_helper.html">HTML ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="inflector_helper.html">語形変換ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="language_helper.html">言語ヘルパー</a></li>
@@ -442,8 +446,8 @@
 <h2><a class="toc-backref" href="#id6">フィールド値のエスケープ</a><a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>フォーム要素の中に HTML やクォートのような文字列を使う必要が
 あるかもしれません。安全に実行するために、
-<a class="reference internal" href="../general/common_functions.html"><span class="doc">共通関数</span></a>
-<code class="xref py py-func docutils literal"><span class="pre">html_escape()</span></code> を使用する必要があります。</p>
+<a class="reference internal" href="../general/common_functions.html"><em>共通関数</em></a>
+<tt class="xref py py-func docutils literal"><span class="pre">html_escape()</span></tt> を使用する必要があります。</p>
 <p>次の例を考えてみましょう:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$string</span> <span class="o">=</span> <span class="s1">&#39;Here is a string containing &quot;quoted&quot; text.&#39;</span><span class="p">;</span>
 
@@ -451,7 +455,7 @@
 </pre></div>
 </div>
 <p>上記の文字列はクォートのセットが含まれていますので、フォームが壊れてしまう
-原因となります。 <a class="reference internal" href="../general/common_functions.html#html_escape" title="html_escape"><code class="xref php php-func docutils literal"><span class="pre">html_escape()</span></code></a> 関数は、 HTML 特殊文字を
+原因となります。 <a class="reference internal" href="../general/common_functions.html#html_escape" title="html_escape"><tt class="xref php php-func docutils literal"><span class="pre">html_escape()</span></tt></a> 関数は、 HTML 特殊文字を
 安全に使用できるように変換します:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;myfield&quot;</span> <span class="nx">value</span><span class="o">=</span><span class="s2">&quot;&lt;?php echo html_escape(</span><span class="si">$string</span><span class="s2">); ?&gt;&quot;</span> <span class="o">/&gt;</span>
 </pre></div>
@@ -469,7 +473,7 @@
 <p>次の関数が利用できます:</p>
 <dl class="function">
 <dt id="form_open">
-<code class="descname">form_open</code><span class="sig-paren">(</span><span class="optional">[</span><em>$action = ''</em><span class="optional">[</span>, <em>$attributes = ''</em><span class="optional">[</span>, <em>$hidden = array()</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#form_open" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">form_open</tt><big>(</big><span class="optional">[</span><em>$action = ''</em><span class="optional">[</span>, <em>$attributes = ''</em><span class="optional">[</span>, <em>$hidden = array()</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#form_open" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -541,7 +545,7 @@
 
 <dl class="function">
 <dt id="form_open_multipart">
-<code class="descname">form_open_multipart</code><span class="sig-paren">(</span><span class="optional">[</span><em>$action = ''</em><span class="optional">[</span>, <em>$attributes = array()</em><span class="optional">[</span>, <em>$hidden = array()</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#form_open_multipart" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">form_open_multipart</tt><big>(</big><span class="optional">[</span><em>$action = ''</em><span class="optional">[</span>, <em>$attributes = array()</em><span class="optional">[</span>, <em>$hidden = array()</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#form_open_multipart" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -562,13 +566,13 @@
 </tbody>
 </table>
 <p>ファイルをアップロードする際に使う <em>マルチパート (multipart)</em>
-の指定を属性に追加する以外は、この関数は上記の <a class="reference internal" href="#form_open" title="form_open"><code class="xref php php-func docutils literal"><span class="pre">form_open()</span></code></a>
+の指定を属性に追加する以外は、この関数は上記の <a class="reference internal" href="#form_open" title="form_open"><tt class="xref php php-func docutils literal"><span class="pre">form_open()</span></tt></a>
 とまったく同じです。</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="form_hidden">
-<code class="descname">form_hidden</code><span class="sig-paren">(</span><em>$name</em><span class="optional">[</span>, <em>$value = ''</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#form_hidden" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">form_hidden</tt><big>(</big><em>$name</em><span class="optional">[</span>, <em>$value = ''</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#form_hidden" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -650,7 +654,7 @@
 
 <dl class="function">
 <dt id="form_input">
-<code class="descname">form_input</code><span class="sig-paren">(</span><span class="optional">[</span><em>$data = ''</em><span class="optional">[</span>, <em>$value = ''</em><span class="optional">[</span>, <em>$extra = ''</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#form_input" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">form_input</tt><big>(</big><span class="optional">[</span><em>$data = ''</em><span class="optional">[</span>, <em>$value = ''</em><span class="optional">[</span>, <em>$extra = ''</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#form_input" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -710,7 +714,7 @@
 
 <dl class="function">
 <dt id="form_password">
-<code class="descname">form_password</code><span class="sig-paren">(</span><span class="optional">[</span><em>$data = ''</em><span class="optional">[</span>, <em>$value = ''</em><span class="optional">[</span>, <em>$extra = ''</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#form_password" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">form_password</tt><big>(</big><span class="optional">[</span><em>$data = ''</em><span class="optional">[</span>, <em>$value = ''</em><span class="optional">[</span>, <em>$extra = ''</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#form_password" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -731,12 +735,12 @@
 </tbody>
 </table>
 <p>この関数は、&#8221;password&#8221; タイプのフィールドをセットする以外は、上記の
-<a class="reference internal" href="#form_input" title="form_input"><code class="xref php php-func docutils literal"><span class="pre">form_input()</span></code></a> 関数とあらゆる点で同じです。</p>
+<a class="reference internal" href="#form_input" title="form_input"><tt class="xref php php-func docutils literal"><span class="pre">form_input()</span></tt></a> 関数とあらゆる点で同じです。</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="form_upload">
-<code class="descname">form_upload</code><span class="sig-paren">(</span><span class="optional">[</span><em>$data = ''</em><span class="optional">[</span>, <em>$value = ''</em><span class="optional">[</span>, <em>$extra = ''</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#form_upload" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">form_upload</tt><big>(</big><span class="optional">[</span><em>$data = ''</em><span class="optional">[</span>, <em>$value = ''</em><span class="optional">[</span>, <em>$extra = ''</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#form_upload" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -757,13 +761,13 @@
 </tbody>
 </table>
 <p>この関数は、ファイルのアップロード時に使用できる &#8220;file&#8221;
-タイプのフィールドをセットする以外は、上記の <a class="reference internal" href="#form_input" title="form_input"><code class="xref php php-func docutils literal"><span class="pre">form_input()</span></code></a>
+タイプのフィールドをセットする以外は、上記の <a class="reference internal" href="#form_input" title="form_input"><tt class="xref php php-func docutils literal"><span class="pre">form_input()</span></tt></a>
 関数とあらゆる点で同じです。</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="form_textarea">
-<code class="descname">form_textarea</code><span class="sig-paren">(</span><span class="optional">[</span><em>$data = ''</em><span class="optional">[</span>, <em>$value = ''</em><span class="optional">[</span>, <em>$extra = ''</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#form_textarea" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">form_textarea</tt><big>(</big><span class="optional">[</span><em>$data = ''</em><span class="optional">[</span>, <em>$value = ''</em><span class="optional">[</span>, <em>$extra = ''</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#form_textarea" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -784,7 +788,7 @@
 </tbody>
 </table>
 <p>この関数は、&#8221;textarea&#8221; のフィールドをセットする以外は、上記の
-<a class="reference internal" href="#form_input" title="form_input"><code class="xref php php-func docutils literal"><span class="pre">form_input()</span></code></a> 関数とあらゆる点で同じです。</p>
+<a class="reference internal" href="#form_input" title="form_input"><tt class="xref php php-func docutils literal"><span class="pre">form_input()</span></tt></a> 関数とあらゆる点で同じです。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
 <p class="last">上記の例の <em>maxlength</em> と <em>size</em> 属性を指定するかわりに、
@@ -794,7 +798,7 @@
 
 <dl class="function">
 <dt id="form_dropdown">
-<code class="descname">form_dropdown</code><span class="sig-paren">(</span><span class="optional">[</span><em>$name = ''</em><span class="optional">[</span>, <em>$options = array()</em><span class="optional">[</span>, <em>$selected = array()</em><span class="optional">[</span>, <em>$extra = ''</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#form_dropdown" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">form_dropdown</tt><big>(</big><span class="optional">[</span><em>$name = ''</em><span class="optional">[</span>, <em>$options = array()</em><span class="optional">[</span>, <em>$selected = array()</em><span class="optional">[</span>, <em>$extra = ''</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#form_dropdown" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -872,14 +876,14 @@
 <span class="k">echo</span> <span class="nx">form_dropdown</span><span class="p">(</span><span class="s1">&#39;shirts&#39;</span><span class="p">,</span> <span class="nv">$options</span><span class="p">,</span> <span class="s1">&#39;large&#39;</span><span class="p">,</span> <span class="nv">$js</span><span class="p">);</span>
 </pre></div>
 </div>
-<p><code class="docutils literal"><span class="pre">$options</span></code> に渡される配列が多次元配列である場合、
-<code class="docutils literal"><span class="pre">form_dropdown()</span></code> は配列のキーをラベルとした
+<p><tt class="docutils literal"><span class="pre">$options</span></tt> に渡される配列が多次元配列である場合、
+<tt class="docutils literal"><span class="pre">form_dropdown()</span></tt> は配列のキーをラベルとした
 &lt;optgroup&gt; を生成します。</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="form_multiselect">
-<code class="descname">form_multiselect</code><span class="sig-paren">(</span><span class="optional">[</span><em>$name = ''</em><span class="optional">[</span>, <em>$options = array()</em><span class="optional">[</span>, <em>$selected = array()</em><span class="optional">[</span>, <em>$extra = ''</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#form_multiselect" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">form_multiselect</tt><big>(</big><span class="optional">[</span><em>$name = ''</em><span class="optional">[</span>, <em>$options = array()</em><span class="optional">[</span>, <em>$selected = array()</em><span class="optional">[</span>, <em>$extra = ''</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#form_multiselect" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -906,12 +910,12 @@
 第3引数は選択状態にしたい値です。</p>
 <p>フィールド名に、例として foo[] のような POST の配列を
 利用する必要がある、という点を除けば、
-引数の使い方は上記の <a class="reference internal" href="#form_dropdown" title="form_dropdown"><code class="xref php php-func docutils literal"><span class="pre">form_dropdown()</span></code></a> と同じです。</p>
+引数の使い方は上記の <a class="reference internal" href="#form_dropdown" title="form_dropdown"><tt class="xref php php-func docutils literal"><span class="pre">form_dropdown()</span></tt></a> と同じです。</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="form_fieldset">
-<code class="descname">form_fieldset</code><span class="sig-paren">(</span><span class="optional">[</span><em>$legend_text = ''</em><span class="optional">[</span>, <em>$attributes = array()</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#form_fieldset" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">form_fieldset</tt><big>(</big><span class="optional">[</span><em>$legend_text = ''</em><span class="optional">[</span>, <em>$attributes = array()</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#form_fieldset" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -971,7 +975,7 @@
 
 <dl class="function">
 <dt id="form_fieldset_close">
-<code class="descname">form_fieldset_close</code><span class="sig-paren">(</span><span class="optional">[</span><em>$extra = ''</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#form_fieldset_close" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">form_fieldset_close</tt><big>(</big><span class="optional">[</span><em>$extra = ''</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#form_fieldset_close" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1001,7 +1005,7 @@
 
 <dl class="function">
 <dt id="form_checkbox">
-<code class="descname">form_checkbox</code><span class="sig-paren">(</span><span class="optional">[</span><em>$data = ''</em><span class="optional">[</span>, <em>$value = ''</em><span class="optional">[</span>, <em>$checked = FALSE</em><span class="optional">[</span>, <em>$extra = ''</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#form_checkbox" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">form_checkbox</tt><big>(</big><span class="optional">[</span><em>$data = ''</em><span class="optional">[</span>, <em>$value = ''</em><span class="optional">[</span>, <em>$checked = FALSE</em><span class="optional">[</span>, <em>$extra = ''</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#form_checkbox" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1059,7 +1063,7 @@
 
 <dl class="function">
 <dt id="form_radio">
-<code class="descname">form_radio</code><span class="sig-paren">(</span><span class="optional">[</span><em>$data = ''</em><span class="optional">[</span>, <em>$value = ''</em><span class="optional">[</span>, <em>$checked = FALSE</em><span class="optional">[</span>, <em>$extra = ''</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#form_radio" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">form_radio</tt><big>(</big><span class="optional">[</span><em>$data = ''</em><span class="optional">[</span>, <em>$value = ''</em><span class="optional">[</span>, <em>$checked = FALSE</em><span class="optional">[</span>, <em>$extra = ''</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#form_radio" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1081,12 +1085,12 @@
 </tbody>
 </table>
 <p>この関数は、&#8221;radio&#8221; タイプのフィールドをセットする以外は、上記の
-<a class="reference internal" href="#form_checkbox" title="form_checkbox"><code class="xref php php-func docutils literal"><span class="pre">form_checkbox()</span></code></a> 関数とあらゆる点で同じです。</p>
+<a class="reference internal" href="#form_checkbox" title="form_checkbox"><tt class="xref php php-func docutils literal"><span class="pre">form_checkbox()</span></tt></a> 関数とあらゆる点で同じです。</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="form_label">
-<code class="descname">form_label</code><span class="sig-paren">(</span><span class="optional">[</span><em>$label_text = ''</em><span class="optional">[</span>, <em>$id = ''</em><span class="optional">[</span>, <em>$attributes = array()</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#form_label" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">form_label</tt><big>(</big><span class="optional">[</span><em>$label_text = ''</em><span class="optional">[</span>, <em>$id = ''</em><span class="optional">[</span>, <em>$attributes = array()</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#form_label" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1127,7 +1131,7 @@
 
 <dl class="function">
 <dt id="form_submit">
-<code class="descname">form_submit</code><span class="sig-paren">(</span><span class="optional">[</span><em>$data = ''</em><span class="optional">[</span>, <em>$value = ''</em><span class="optional">[</span>, <em>$extra = ''</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#form_submit" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">form_submit</tt><big>(</big><span class="optional">[</span><em>$data = ''</em><span class="optional">[</span>, <em>$value = ''</em><span class="optional">[</span>, <em>$extra = ''</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#form_submit" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1159,7 +1163,7 @@
 
 <dl class="function">
 <dt id="form_reset">
-<code class="descname">form_reset</code><span class="sig-paren">(</span><span class="optional">[</span><em>$data = ''</em><span class="optional">[</span>, <em>$value = ''</em><span class="optional">[</span>, <em>$extra = ''</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#form_reset" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">form_reset</tt><big>(</big><span class="optional">[</span><em>$data = ''</em><span class="optional">[</span>, <em>$value = ''</em><span class="optional">[</span>, <em>$extra = ''</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#form_reset" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1180,12 +1184,12 @@
 </tbody>
 </table>
 <p>通常のリセットボタンを生成します。
-使い方は <code class="xref py py-func docutils literal"><span class="pre">form_submit()</span></code> と同様です。</p>
+使い方は <tt class="xref py py-func docutils literal"><span class="pre">form_submit()</span></tt> と同様です。</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="form_button">
-<code class="descname">form_button</code><span class="sig-paren">(</span><span class="optional">[</span><em>$data = ''</em><span class="optional">[</span>, <em>$content = ''</em><span class="optional">[</span>, <em>$extra = ''</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#form_button" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">form_button</tt><big>(</big><span class="optional">[</span><em>$data = ''</em><span class="optional">[</span>, <em>$content = ''</em><span class="optional">[</span>, <em>$extra = ''</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#form_button" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1235,7 +1239,7 @@
 
 <dl class="function">
 <dt id="form_close">
-<code class="descname">form_close</code><span class="sig-paren">(</span><span class="optional">[</span><em>$extra = ''</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#form_close" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">form_close</tt><big>(</big><span class="optional">[</span><em>$extra = ''</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#form_close" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1265,7 +1269,7 @@
 
 <dl class="function">
 <dt id="set_value">
-<code class="descname">set_value</code><span class="sig-paren">(</span><em>$field</em><span class="optional">[</span>, <em>$default = ''</em><span class="optional">[</span>, <em>$html_escape = TRUE</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#set_value" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">set_value</tt><big>(</big><em>$field</em><span class="optional">[</span>, <em>$default = ''</em><span class="optional">[</span>, <em>$html_escape = TRUE</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#set_value" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1288,7 +1292,7 @@
 <p>入力フォームやテキストエリアの値を設定します。
 関数の第1引数でフィールド名を指定します。
 第2引数（オプション）では、フォームの初期値を指定できます。
-例えば <a class="reference internal" href="#form_input" title="form_input"><code class="xref php php-func docutils literal"><span class="pre">form_input()</span></code></a> と組み合わせてこの関数を使って
+例えば <a class="reference internal" href="#form_input" title="form_input"><tt class="xref php php-func docutils literal"><span class="pre">form_input()</span></tt></a> と組み合わせてこの関数を使って
 二重にエスケープされることを避ける必要がある場合、
 第3引数（オプション）では、値の HTML のエスケープ処理をオフにできます。</p>
 <p>例:</p>
@@ -1298,17 +1302,17 @@
 <p>上記のフォームは、最初に読み込まれた時には&#8221;0&#8221;を表示します。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last"><a class="reference internal" href="../libraries/form_validation.html"><span class="doc">フォームバリデーション (検証)</span></a> をロードし
+<p class="last"><a class="reference internal" href="../libraries/form_validation.html"><em>フォームバリデーション (検証)</em></a> をロードし
 このヘルパーで使われているフィールド名の検証ルールを設定している場合、
-<a class="reference internal" href="../libraries/form_validation.html"><span class="doc">フォームバリデーション (検証)</span></a> 自身の
-<code class="docutils literal"><span class="pre">set_value()</span></code> メソッドの呼び出しを行います。
-それ以外の場合、この関数はフィールドの値を設定するために <code class="docutils literal"><span class="pre">$_POST</span></code> を参照します。</p>
+<a class="reference internal" href="../libraries/form_validation.html"><em>フォームバリデーション (検証)</em></a> 自身の
+<tt class="docutils literal"><span class="pre">set_value()</span></tt> メソッドの呼び出しを行います。
+それ以外の場合、この関数はフィールドの値を設定するために <tt class="docutils literal"><span class="pre">$_POST</span></tt> を参照します。</p>
 </div>
 </dd></dl>
 
 <dl class="function">
 <dt id="set_select">
-<code class="descname">set_select</code><span class="sig-paren">(</span><em>$field</em><span class="optional">[</span>, <em>$value = ''</em><span class="optional">[</span>, <em>$default = FALSE</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#set_select" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">set_select</tt><big>(</big><em>$field</em><span class="optional">[</span>, <em>$value = ''</em><span class="optional">[</span>, <em>$default = FALSE</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#set_select" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1345,7 +1349,7 @@ TRUE/FALSE で項目の初期状態を指定できます。</p>
 
 <dl class="function">
 <dt id="set_checkbox">
-<code class="descname">set_checkbox</code><span class="sig-paren">(</span><em>$field</em><span class="optional">[</span>, <em>$value = ''</em><span class="optional">[</span>, <em>$default = FALSE</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#set_checkbox" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">set_checkbox</tt><big>(</big><em>$field</em><span class="optional">[</span>, <em>$value = ''</em><span class="optional">[</span>, <em>$default = FALSE</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#set_checkbox" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1378,7 +1382,7 @@ TRUE/FALSE で項目の初期状態を指定できます。</p>
 
 <dl class="function">
 <dt id="set_radio">
-<code class="descname">set_radio</code><span class="sig-paren">(</span><em>$field</em><span class="optional">[</span>, <em>$value = ''</em><span class="optional">[</span>, <em>$default = FALSE</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#set_radio" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">set_radio</tt><big>(</big><em>$field</em><span class="optional">[</span>, <em>$value = ''</em><span class="optional">[</span>, <em>$default = FALSE</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#set_radio" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1399,7 +1403,7 @@ TRUE/FALSE で項目の初期状態を指定できます。</p>
 </tbody>
 </table>
 <p>送信された状態のラジオボタンを表示します。
-この関数は上記の <a class="reference internal" href="#set_checkbox" title="set_checkbox"><code class="xref php php-func docutils literal"><span class="pre">set_checkbox()</span></code></a> と同じ挙動です。</p>
+この関数は上記の <a class="reference internal" href="#set_checkbox" title="set_checkbox"><tt class="xref php php-func docutils literal"><span class="pre">set_checkbox()</span></tt></a> と同じ挙動です。</p>
 <p>例:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;radio&quot;</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;myradio&quot;</span> <span class="nx">value</span><span class="o">=</span><span class="s2">&quot;1&quot;</span> <span class="o">&lt;?</span><span class="nx">php</span> <span class="k">echo</span>  <span class="nx">set_radio</span><span class="p">(</span><span class="s1">&#39;myradio&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span> <span class="cp">?&gt;</span> /&gt;
 <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;radio&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;myradio&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;2&quot;</span> <span class="cp">&lt;?php</span> <span class="k">echo</span>  <span class="nx">set_radio</span><span class="p">(</span><span class="s1">&#39;myradio&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span> <span class="p">/&gt;</span>
@@ -1408,16 +1412,16 @@ TRUE/FALSE で項目の初期状態を指定できます。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
 <p class="last">フォームバリデーション（検証）クラスを使っている場合、
-たとえ値が空であろうとも、<code class="docutils literal"><span class="pre">set_*()</span></code> が動作するために、常にフィールドに
+たとえ値が空であろうとも、<tt class="docutils literal"><span class="pre">set_*()</span></tt> が動作するために、常にフィールドに
 ルールを指定する必要があります。その理由は、もしフォームバリデーション（検証）オブジェクトが
-定義されていれば <code class="docutils literal"><span class="pre">set_*()</span></code> のための制御は、一般的なヘルパー関数のかわりのクラスの
+定義されていれば <tt class="docutils literal"><span class="pre">set_*()</span></tt> のための制御は、一般的なヘルパー関数のかわりのクラスの
 メソッドに引き渡されれるからです。</p>
 </div>
 </dd></dl>
 
 <dl class="function">
 <dt id="form_error">
-<code class="descname">form_error</code><span class="sig-paren">(</span><span class="optional">[</span><em>$field = ''</em><span class="optional">[</span>, <em>$prefix = ''</em><span class="optional">[</span>, <em>$suffix = ''</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#form_error" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">form_error</tt><big>(</big><span class="optional">[</span><em>$field = ''</em><span class="optional">[</span>, <em>$prefix = ''</em><span class="optional">[</span>, <em>$suffix = ''</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#form_error" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1437,7 +1441,7 @@ TRUE/FALSE で項目の初期状態を指定できます。</p>
 </tr>
 </tbody>
 </table>
-<p><a class="reference internal" href="../libraries/form_validation.html"><span class="doc">フォームバリデーション（検証）</span></a> より
+<p><a class="reference internal" href="../libraries/form_validation.html"><em>フォームバリデーション（検証）</em></a> より
 指定したフィールド名に関連付けらたバリデーション（検証）エラーメッセージを返します。
 必要に応じて、エラーメッセージの周りに置く開始タグと終了タグ（複数可）を
 指定することができます</p>
@@ -1452,7 +1456,7 @@ TRUE/FALSE で項目の初期状態を指定できます。</p>
 
 <dl class="function">
 <dt id="validation_errors">
-<code class="descname">validation_errors</code><span class="sig-paren">(</span><span class="optional">[</span><em>$prefix = ''</em><span class="optional">[</span>, <em>$suffix = ''</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#validation_errors" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">validation_errors</tt><big>(</big><span class="optional">[</span><em>$prefix = ''</em><span class="optional">[</span>, <em>$suffix = ''</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#validation_errors" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1471,9 +1475,9 @@ TRUE/FALSE で項目の初期状態を指定できます。</p>
 </tr>
 </tbody>
 </table>
-<p><a class="reference internal" href="#form_error" title="form_error"><code class="xref php php-func docutils literal"><span class="pre">form_error()</span></code></a> 関数と同様に
+<p><a class="reference internal" href="#form_error" title="form_error"><tt class="xref php php-func docutils literal"><span class="pre">form_error()</span></tt></a> 関数と同様に
 必要に応じて、それぞれのメッセージの周りに置く開始タグと終了タグを指定し
-<a class="reference internal" href="../libraries/form_validation.html"><span class="doc">フォームバリデーション（検証）</span></a>
+<a class="reference internal" href="../libraries/form_validation.html"><em>フォームバリデーション（検証）</em></a>
 によって生成されたすべてのバリデーション（検証）エラーメッセージを返します。</p>
 <p>例:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nx">validation_errors</span><span class="p">(</span><span class="s1">&#39;&lt;span class=&quot;error&quot;&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;/span&gt;&#39;</span><span class="p">);</span>
@@ -1491,7 +1495,7 @@ TRUE/FALSE で項目の初期状態を指定できます。</p>
 
 <dl class="function">
 <dt id="form_prep">
-<code class="descname">form_prep</code><span class="sig-paren">(</span><em>$str</em><span class="sig-paren">)</span><a class="headerlink" href="#form_prep" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">form_prep</tt><big>(</big><em>$str</em><big>)</big><a class="headerlink" href="#form_prep" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1520,7 +1524,7 @@ TRUE/FALSE で項目の初期状態を指定できます。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
 <p class="last">この関数は廃止予定で、
-<a class="reference internal" href="../general/common_functions.html"><span class="doc">共通関数</span></a> <code class="xref py py-func docutils literal"><span class="pre">html_escape()</span></code> のエイリアスです。
+<a class="reference internal" href="../general/common_functions.html"><em>共通関数</em></a> <tt class="xref py py-func docutils literal"><span class="pre">html_escape()</span></tt> のエイリアスです。
 かわりにそちらを使用してください。</p>
 </div>
 </dd></dl>
@@ -1547,7 +1551,7 @@ TRUE/FALSE で項目の初期状態を指定できます。</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 10月 11, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
+      最終更新: Nov 23, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

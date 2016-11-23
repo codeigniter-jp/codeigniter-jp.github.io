@@ -49,7 +49,9 @@
     
       <div id="pulldown-menu" class="ciNav">
         <ul>
-<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -183,7 +185,7 @@
 <li class="toctree-l2"><a class="reference internal" href="email_helper.html">eメールヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="file_helper.html">ファイルヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="form_helper.html">フォームヘルパー</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">HTML ヘルパー</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">HTML ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="inflector_helper.html">語形変換ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="language_helper.html">言語ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="number_helper.html">数字ヘルパー</a></li>
@@ -233,7 +235,9 @@
           
           
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -367,7 +371,7 @@
 <li class="toctree-l2"><a class="reference internal" href="email_helper.html">eメールヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="file_helper.html">ファイルヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="form_helper.html">フォームヘルパー</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">HTML ヘルパー</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">HTML ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="inflector_helper.html">語形変換ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="language_helper.html">言語ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="number_helper.html">数字ヘルパー</a></li>
@@ -442,7 +446,7 @@
 <p>次の関数が利用できます:</p>
 <dl class="function">
 <dt id="heading">
-<code class="descname">heading</code><span class="sig-paren">(</span><span class="optional">[</span><em>$data = ''</em><span class="optional">[</span>, <em>$h = '1'</em><span class="optional">[</span>, <em>$attributes = ''</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#heading" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">heading</tt><big>(</big><span class="optional">[</span><em>$data = ''</em><span class="optional">[</span>, <em>$h = '1'</em><span class="optional">[</span>, <em>$attributes = ''</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#heading" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -483,7 +487,7 @@ echo heading(&#8216;How are you?&#8217;, 4, array(&#8216;id&#8217; =&gt; &#8216;
 
 <dl class="function">
 <dt id="img">
-<code class="descname">img</code><span class="sig-paren">(</span><span class="optional">[</span><em>$src = ''</em><span class="optional">[</span>, <em>$index_page = FALSE</em><span class="optional">[</span>, <em>$attributes = ''</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#img" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">img</tt><big>(</big><span class="optional">[</span><em>$src = ''</em><span class="optional">[</span>, <em>$index_page = FALSE</em><span class="optional">[</span>, <em>$attributes = ''</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#img" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -508,7 +512,7 @@ echo heading(&#8216;How are you?&#8217;, 4, array(&#8216;id&#8217; =&gt; &#8216;
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nx">img</span><span class="p">(</span><span class="s1">&#39;images/picture.jpg&#39;</span><span class="p">);</span> <span class="c1">// 結果 &lt;img src=&quot;http://site.com/images/picture.jpg&quot; /&gt;</span>
 </pre></div>
 </div>
-<p><em>src</em> が <code class="docutils literal"><span class="pre">$config['index_page']</span></code>  に指定されたページを
+<p><em>src</em> が <tt class="docutils literal"><span class="pre">$config['index_page']</span></tt>  に指定されたページを
 アドレスに追加するかどうかという、TRUE/FALSE で指定する
 オプションの第2引数があります。
 おそらく、メディアコントローラを使用していた場合は、次のようになります:</p>
@@ -516,7 +520,7 @@ echo heading(&#8216;How are you?&#8217;, 4, array(&#8216;id&#8217; =&gt; &#8216;
 </pre></div>
 </div>
 <p>また、すべての属性と値を完全に制御するために
-連想配列を <code class="docutils literal"><span class="pre">img()</span></code> 関数に渡すことができます。もし、<em>alt</em> 属性が
+連想配列を <tt class="docutils literal"><span class="pre">img()</span></tt> 関数に渡すことができます。もし、<em>alt</em> 属性が
 与えられない場合、 CodeIgniter は空の文字列を出力します。</p>
 <p>例:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$image_properties</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
@@ -537,7 +541,7 @@ echo heading(&#8216;How are you?&#8217;, 4, array(&#8216;id&#8217; =&gt; &#8216;
 
 <dl class="function">
 <dt id="link_tag">
-<code class="descname">link_tag</code><span class="sig-paren">(</span><span class="optional">[</span><em>$href = ''</em><span class="optional">[</span>, <em>$rel = 'stylesheet'</em><span class="optional">[</span>, <em>$type = 'text/css'</em><span class="optional">[</span>, <em>$title = ''</em><span class="optional">[</span>, <em>$media = ''</em><span class="optional">[</span>, <em>$index_page = FALSE</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#link_tag" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">link_tag</tt><big>(</big><span class="optional">[</span><em>$href = ''</em><span class="optional">[</span>, <em>$rel = 'stylesheet'</em><span class="optional">[</span>, <em>$type = 'text/css'</em><span class="optional">[</span>, <em>$title = ''</em><span class="optional">[</span>, <em>$media = ''</em><span class="optional">[</span>, <em>$index_page = FALSE</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#link_tag" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -563,7 +567,7 @@ echo heading(&#8216;How are you?&#8217;, 4, array(&#8216;id&#8217; =&gt; &#8216;
 <p>&lt;link /&gt; タグを生成できます。これは、スタイルシートのリンクだけでなく
 他のリンクのためにも役立ちます。引数には <em>href</em> 、オプションで <em>rel</em> 、
 <em>type</em> 、 <em>title</em> 、 <em>media</em> 、<em>index_page</em> を指定できます。</p>
-<p><em>index_page</em> は、 <em>href</em> が <code class="docutils literal"><span class="pre">$config['index_page']</span></code>
+<p><em>index_page</em> は、 <em>href</em> が <tt class="docutils literal"><span class="pre">$config['index_page']</span></tt>
 に指定されたページをアドレスに追加するかどうかという真偽値です。</p>
 <p>例:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nx">link_tag</span><span class="p">(</span><span class="s1">&#39;css/mystyles.css&#39;</span><span class="p">);</span>
@@ -579,7 +583,7 @@ echo heading(&#8216;How are you?&#8217;, 4, array(&#8216;id&#8217; =&gt; &#8216;
 </pre></div>
 </div>
 <p>また、すべての属性と値を完全に制御するために
-連想配列を <code class="docutils literal"><span class="pre">link()</span></code> 関数に渡すことができます:</p>
+連想配列を <tt class="docutils literal"><span class="pre">link()</span></tt> 関数に渡すことができます:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$link</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
         <span class="s1">&#39;href&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;css/printer.css&#39;</span><span class="p">,</span>
         <span class="s1">&#39;rel&#39;</span>   <span class="o">=&gt;</span> <span class="s1">&#39;stylesheet&#39;</span><span class="p">,</span>
@@ -595,7 +599,7 @@ echo heading(&#8216;How are you?&#8217;, 4, array(&#8216;id&#8217; =&gt; &#8216;
 
 <dl class="function">
 <dt id="ul">
-<code class="descname">ul</code><span class="sig-paren">(</span><em>$list</em><span class="optional">[</span>, <em>$attributes = ''</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#ul" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">ul</tt><big>(</big><em>$list</em><span class="optional">[</span>, <em>$attributes = ''</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#ul" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -727,7 +731,7 @@ echo heading(&#8216;How are you?&#8217;, 4, array(&#8216;id&#8217; =&gt; &#8216;
 
 <dl class="function">
 <dt id="ol">
-<code class="descname">ol</code><span class="sig-paren">(</span><em>$list</em>, <em>$attributes = ''</em><span class="sig-paren">)</span><a class="headerlink" href="#ol" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">ol</tt><big>(</big><em>$list</em>, <em>$attributes = ''</em><big>)</big><a class="headerlink" href="#ol" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -747,12 +751,12 @@ echo heading(&#8216;How are you?&#8217;, 4, array(&#8216;id&#8217; =&gt; &#8216;
 </tbody>
 </table>
 <p>&lt;ul&gt; のかわりに 順序付きリストのための &lt;ol&gt; タグ
-を生成するだけで、 <a class="reference internal" href="#ul" title="ul"><code class="xref php php-func docutils literal"><span class="pre">ul()</span></code></a> と同一です。</p>
+を生成するだけで、 <a class="reference internal" href="#ul" title="ul"><tt class="xref php php-func docutils literal"><span class="pre">ul()</span></tt></a> と同一です。</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="meta">
-<code class="descname">meta</code><span class="sig-paren">(</span><span class="optional">[</span><em>$name = ''</em><span class="optional">[</span>, <em>$content = ''</em><span class="optional">[</span>, <em>$type = 'name'</em><span class="optional">[</span>, <em>$newline = &quot;n&quot;</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#meta" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">meta</tt><big>(</big><span class="optional">[</span><em>$name = ''</em><span class="optional">[</span>, <em>$content = ''</em><span class="optional">[</span>, <em>$type = 'name'</em><span class="optional">[</span>, <em>$newline = &quot;n&quot;</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#meta" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -828,7 +832,7 @@ echo heading(&#8216;How are you?&#8217;, 4, array(&#8216;id&#8217; =&gt; &#8216;
 
 <dl class="function">
 <dt id="doctype">
-<code class="descname">doctype</code><span class="sig-paren">(</span><span class="optional">[</span><em>$type = 'html5'</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#doctype" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">doctype</tt><big>(</big><span class="optional">[</span><em>$type = 'html5'</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#doctype" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -951,7 +955,7 @@ application/config/doctypes.php で指定可能です。</p>
 
 <dl class="function">
 <dt id="br">
-<code class="descname">br</code><span class="sig-paren">(</span><span class="optional">[</span><em>$count = 1</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#br" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">br</tt><big>(</big><span class="optional">[</span><em>$count = 1</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#br" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -980,14 +984,14 @@ application/config/doctypes.php で指定可能です。</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">この関数は廃止予定です。かわりに <code class="docutils literal"><span class="pre">&lt;br</span> <span class="pre">/&gt;</span></code> を組み合わせて
-PHP標準の <code class="docutils literal"><span class="pre">str_repeat()</span></code> を使ってください。</p>
+<p class="last">この関数は廃止予定です。かわりに <tt class="docutils literal"><span class="pre">&lt;br</span> <span class="pre">/&gt;</span></tt> を組み合わせて
+PHP標準の <tt class="docutils literal"><span class="pre">str_repeat()</span></tt> を使ってください。</p>
 </div>
 </dd></dl>
 
 <dl class="function">
 <dt id="nbs">
-<code class="descname">nbs</code><span class="sig-paren">(</span><span class="optional">[</span><em>$num = 1</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#nbs" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">nbs</tt><big>(</big><span class="optional">[</span><em>$num = 1</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#nbs" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1016,8 +1020,8 @@ PHP標準の <code class="docutils literal"><span class="pre">str_repeat()</span
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">この関数は廃止予定です。かわりに <code class="docutils literal"><span class="pre">&amp;nbsp;</span></code> を組み合わせて
-PHP標準の <code class="docutils literal"><span class="pre">str_repeat()</span></code> を使ってください。</p>
+<p class="last">この関数は廃止予定です。かわりに <tt class="docutils literal"><span class="pre">&amp;nbsp;</span></tt> を組み合わせて
+PHP標準の <tt class="docutils literal"><span class="pre">str_repeat()</span></tt> を使ってください。</p>
 </div>
 </dd></dl>
 
@@ -1043,7 +1047,7 @@ PHP標準の <code class="docutils literal"><span class="pre">str_repeat()</span
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 10月 11, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
+      最終更新: Nov 23, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

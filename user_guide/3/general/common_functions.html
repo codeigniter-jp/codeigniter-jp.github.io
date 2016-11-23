@@ -49,7 +49,9 @@
     
       <div id="pulldown-menu" class="ciNav">
         <ul>
-<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -103,7 +105,7 @@
 <li class="toctree-l2"><a class="reference internal" href="ancillary_classes.html">補助的なクラス作成</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hooks.html">フック――フレームワークコアの拡張</a></li>
 <li class="toctree-l2"><a class="reference internal" href="autoloader.html">リソースのオートロード</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">共通関数</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">共通関数</a></li>
 <li class="toctree-l2"><a class="reference internal" href="compatibility_functions.html">互換関数</a></li>
 <li class="toctree-l2"><a class="reference internal" href="routing.html">URI ルーティング</a></li>
 <li class="toctree-l2"><a class="reference internal" href="errors.html">エラー処理</a></li>
@@ -233,7 +235,9 @@
           
           
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -287,7 +291,7 @@
 <li class="toctree-l2"><a class="reference internal" href="ancillary_classes.html">補助的なクラス作成</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hooks.html">フック――フレームワークコアの拡張</a></li>
 <li class="toctree-l2"><a class="reference internal" href="autoloader.html">リソースのオートロード</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">共通関数</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">共通関数</a></li>
 <li class="toctree-l2"><a class="reference internal" href="compatibility_functions.html">互換関数</a></li>
 <li class="toctree-l2"><a class="reference internal" href="routing.html">URI ルーティング</a></li>
 <li class="toctree-l2"><a class="reference internal" href="errors.html">エラー処理</a></li>
@@ -427,7 +431,7 @@
 ライブラリやヘルパーをロードする必要はありません。</p>
 <div class="custom-index container"></div><dl class="function">
 <dt id="is_php">
-<code class="descname">is_php</code><span class="sig-paren">(</span><em>$version</em><span class="sig-paren">)</span><a class="headerlink" href="#is_php" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">is_php</tt><big>(</big><em>$version</em><big>)</big><a class="headerlink" href="#is_php" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -461,7 +465,7 @@
 
 <dl class="function">
 <dt id="is_really_writable">
-<code class="descname">is_really_writable</code><span class="sig-paren">(</span><em>$file</em><span class="sig-paren">)</span><a class="headerlink" href="#is_really_writable" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">is_really_writable</tt><big>(</big><em>$file</em><big>)</big><a class="headerlink" href="#is_really_writable" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -479,7 +483,7 @@
 </tr>
 </tbody>
 </table>
-<p><code class="docutils literal"><span class="pre">is_writable()</span></code> は Windows サーバー上で TRUE を返し、
+<p><tt class="docutils literal"><span class="pre">is_writable()</span></tt> は Windows サーバー上で TRUE を返し、
 OS のレポートとして PHP に読み取り専用属性がマークされていて
 本当に書き込めない場合にのみ FALSE を返します。</p>
 <p>この関数は最初に実際にファイルに書き込もうとすることによって、
@@ -504,7 +508,7 @@ OS のレポートとして PHP に読み取り専用属性がマークされて
 
 <dl class="function">
 <dt id="config_item">
-<code class="descname">config_item</code><span class="sig-paren">(</span><em>$key</em><span class="sig-paren">)</span><a class="headerlink" href="#config_item" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">config_item</tt><big>(</big><em>$key</em><big>)</big><a class="headerlink" href="#config_item" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -522,15 +526,15 @@ OS のレポートとして PHP に読み取り専用属性がマークされて
 </tr>
 </tbody>
 </table>
-<p><a class="reference internal" href="../libraries/config.html"><span class="doc">設定ライブラリ</span></a> は設定情報にアクセスするために推奨される方法ですが、
-単一のキーを取得するためには <code class="docutils literal"><span class="pre">config_item()</span></code>
-を使用することもできます。詳細については <a class="reference internal" href="../libraries/config.html"><span class="doc">設定ライブラリ</span></a>
+<p><a class="reference internal" href="../libraries/config.html"><em>設定ライブラリ</em></a> は設定情報にアクセスするために推奨される方法ですが、
+単一のキーを取得するためには <tt class="docutils literal"><span class="pre">config_item()</span></tt>
+を使用することもできます。詳細については <a class="reference internal" href="../libraries/config.html"><em>設定ライブラリ</em></a>
 マニュアルを参照してください。</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="set_status_header">
-<code class="descname">set_status_header</code><span class="sig-paren">(</span><em>$code</em><span class="optional">[</span>, <em>$text = ''</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#set_status_header" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">set_status_header</tt><big>(</big><em>$code</em><span class="optional">[</span>, <em>$text = ''</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#set_status_header" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -557,7 +561,7 @@ OS のレポートとして PHP に読み取り専用属性がマークされて
 
 <dl class="function">
 <dt id="remove_invisible_characters">
-<code class="descname">remove_invisible_characters</code><span class="sig-paren">(</span><em>$str</em><span class="optional">[</span>, <em>$url_encoded = TRUE</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#remove_invisible_characters" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">remove_invisible_characters</tt><big>(</big><em>$str</em><span class="optional">[</span>, <em>$url_encoded = TRUE</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#remove_invisible_characters" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -587,7 +591,7 @@ OS のレポートとして PHP に読み取り専用属性がマークされて
 
 <dl class="function">
 <dt id="html_escape">
-<code class="descname">html_escape</code><span class="sig-paren">(</span><em>$var</em><span class="sig-paren">)</span><a class="headerlink" href="#html_escape" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">html_escape</tt><big>(</big><em>$var</em><big>)</big><a class="headerlink" href="#html_escape" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -605,14 +609,14 @@ OS のレポートとして PHP に読み取り専用属性がマークされて
 </tr>
 </tbody>
 </table>
-<p>この関数は PHP ネイティブの <code class="docutils literal"><span class="pre">htmlspecialchars()</span></code>
+<p>この関数は PHP ネイティブの <tt class="docutils literal"><span class="pre">htmlspecialchars()</span></tt>
 関数の別名として機能するほか、文字列の配列を処理できるという利点があります。</p>
 <p>これはクロスサイトスクリプティング（XSS）の予防に有用です。</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="get_mimes">
-<code class="descname">get_mimes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#get_mimes" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">get_mimes</tt><big>(</big><big>)</big><a class="headerlink" href="#get_mimes" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -629,7 +633,7 @@ OS のレポートとして PHP に読み取り専用属性がマークされて
 
 <dl class="function">
 <dt id="is_https">
-<code class="descname">is_https</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#is_https" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">is_https</tt><big>(</big><big>)</big><a class="headerlink" href="#is_https" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -646,7 +650,7 @@ OS のレポートとして PHP に読み取り専用属性がマークされて
 
 <dl class="function">
 <dt id="is_cli">
-<code class="descname">is_cli</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#is_cli" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">is_cli</tt><big>(</big><big>)</big><a class="headerlink" href="#is_cli" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -661,14 +665,14 @@ OS のレポートとして PHP に読み取り専用属性がマークされて
 FALSE を返します。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">この関数は、 <code class="docutils literal"><span class="pre">PHP_SAPI</span></code> 値が「 cli 」であるかどうかと、
-<code class="docutils literal"><span class="pre">STDIN</span></code> 定数が定義されているかどうかの両方をチェックします。</p>
+<p class="last">この関数は、 <tt class="docutils literal"><span class="pre">PHP_SAPI</span></tt> 値が「 cli 」であるかどうかと、
+<tt class="docutils literal"><span class="pre">STDIN</span></tt> 定数が定義されているかどうかの両方をチェックします。</p>
 </div>
 </dd></dl>
 
 <dl class="function">
 <dt id="function_usable">
-<code class="descname">function_usable</code><span class="sig-paren">(</span><em>$function_name</em><span class="sig-paren">)</span><a class="headerlink" href="#function_usable" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">function_usable</tt><big>(</big><em>$function_name</em><big>)</big><a class="headerlink" href="#function_usable" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -687,11 +691,11 @@ FALSE を返します。</p>
 </tbody>
 </table>
 <p>関数が存在し使用可能であれば TRUE を、そうでなければ FALSE を返します。</p>
-<p>この関数は <code class="docutils literal"><span class="pre">function_exists()</span></code> を確認し、また、
+<p>この関数は <tt class="docutils literal"><span class="pre">function_exists()</span></tt> を確認し、また、
 <cite>Suhosin extension &lt;http://www.hardened-php.net/suhosin/&gt;</cite> がロードされていれば
 関数が無効化されていないかどうかをチェックします。</p>
 <p>これは
-<code class="docutils literal"><span class="pre">eval()</span></code> や <code class="docutils literal"><span class="pre">exec()</span></code> など、危険であり、制限の厳しいセキュリティポリシーを持つサーバ上で
+<tt class="docutils literal"><span class="pre">eval()</span></tt> や <tt class="docutils literal"><span class="pre">exec()</span></tt> など、危険であり、制限の厳しいセキュリティポリシーを持つサーバ上で
 無効にされうる関数の可用性をチェックする場合に便利です。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
@@ -723,7 +727,7 @@ FALSE を返します。</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 10月 11, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
+      最終更新: Nov 23, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

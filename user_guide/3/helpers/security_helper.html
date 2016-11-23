@@ -49,7 +49,9 @@
     
       <div id="pulldown-menu" class="ciNav">
         <ul>
-<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -188,7 +190,7 @@
 <li class="toctree-l2"><a class="reference internal" href="language_helper.html">言語ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="number_helper.html">数字ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="path_helper.html">パスヘルパー</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">セキュリティヘルパー</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">セキュリティヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="smiley_helper.html">スマイリーヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="string_helper.html">文字列ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="text_helper.html">テキストヘルパー</a></li>
@@ -233,7 +235,9 @@
           
           
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -372,7 +376,7 @@
 <li class="toctree-l2"><a class="reference internal" href="language_helper.html">言語ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="number_helper.html">数字ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="path_helper.html">パスヘルパー</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">セキュリティヘルパー</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">セキュリティヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="smiley_helper.html">スマイリーヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="string_helper.html">文字列ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="text_helper.html">テキストヘルパー</a></li>
@@ -441,7 +445,7 @@
 <p>次の関数が利用できます:</p>
 <dl class="function">
 <dt id="xss_clean">
-<code class="descname">xss_clean</code><span class="sig-paren">(</span><em>$str</em><span class="optional">[</span>, <em>$is_image = FALSE</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#xss_clean" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">xss_clean</tt><big>(</big><em>$str</em><span class="optional">[</span>, <em>$is_image = FALSE</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#xss_clean" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -461,13 +465,13 @@
 </tbody>
 </table>
 <p>クロスサイトスクリプティングハッキングのフィルタリングを提供します。</p>
-<p>この関数は、 <code class="docutils literal"><span class="pre">CI_Input::xss_clean()</span></code> のエイリアスです。より多くの情報を
-得るには、<a class="reference internal" href="../libraries/input.html"><span class="doc">入力クラス</span></a> を見てください。</p>
+<p>この関数は、 <tt class="docutils literal"><span class="pre">CI_Input::xss_clean()</span></tt> のエイリアスです。より多くの情報を
+得るには、<a class="reference internal" href="../libraries/input.html"><em>入力クラス</em></a> を見てください。</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="sanitize_filename">
-<code class="descname">sanitize_filename</code><span class="sig-paren">(</span><em>$filename</em><span class="sig-paren">)</span><a class="headerlink" href="#sanitize_filename" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">sanitize_filename</tt><big>(</big><em>$filename</em><big>)</big><a class="headerlink" href="#sanitize_filename" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -486,14 +490,14 @@
 </tbody>
 </table>
 <p>ディレクトリトラバーサルに対する保護を提供します。</p>
-<p>この関数は、 <code class="docutils literal"><span class="pre">CI_Security::sanitize_filename()</span></code> のエイリアスです。
-より多くの情報を得るには、<a class="reference internal" href="../libraries/security.html"><span class="doc">セキュリティクラス</span></a>
+<p>この関数は、 <tt class="docutils literal"><span class="pre">CI_Security::sanitize_filename()</span></tt> のエイリアスです。
+より多くの情報を得るには、<a class="reference internal" href="../libraries/security.html"><em>セキュリティクラス</em></a>
 を見てください。</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="do_hash">
-<code class="descname">do_hash</code><span class="sig-paren">(</span><em>$str</em><span class="optional">[</span>, <em>$type = 'sha1'</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#do_hash" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">do_hash</tt><big>(</big><em>$str</em><span class="optional">[</span>, <em>$type = 'sha1'</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#do_hash" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -523,18 +527,18 @@
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">この関数は、以前は <code class="docutils literal"><span class="pre">dohash()</span></code> という名前でした。
-<code class="docutils literal"><span class="pre">do_hash()</span></code> の使用が推奨され、変更されました。</p>
+<p class="last">この関数は、以前は <tt class="docutils literal"><span class="pre">dohash()</span></tt> という名前でした。
+<tt class="docutils literal"><span class="pre">do_hash()</span></tt> の使用が推奨され、変更されました。</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">この関数は廃止予定です。ネイティブの <code class="docutils literal"><span class="pre">hash()</span></code> を代わりに使用してください。</p>
+<p class="last">この関数は廃止予定です。ネイティブの <tt class="docutils literal"><span class="pre">hash()</span></tt> を代わりに使用してください。</p>
 </div>
 </dd></dl>
 
 <dl class="function">
 <dt id="strip_image_tags">
-<code class="descname">strip_image_tags</code><span class="sig-paren">(</span><em>$str</em><span class="sig-paren">)</span><a class="headerlink" href="#strip_image_tags" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">strip_image_tags</tt><big>(</big><em>$str</em><big>)</big><a class="headerlink" href="#strip_image_tags" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -558,14 +562,14 @@
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$string</span> <span class="o">=</span> <span class="nx">strip_image_tags</span><span class="p">(</span><span class="nv">$string</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>この関数は、 <code class="docutils literal"><span class="pre">CI_Security::strip_image_tags()</span></code> のエイリアスです。
-より多くの情報を得るには、<a class="reference internal" href="../libraries/security.html"><span class="doc">セキュリティクラス</span></a>
+<p>この関数は、 <tt class="docutils literal"><span class="pre">CI_Security::strip_image_tags()</span></tt> のエイリアスです。
+より多くの情報を得るには、<a class="reference internal" href="../libraries/security.html"><em>セキュリティクラス</em></a>
 を見てください。</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="encode_php_tags">
-<code class="descname">encode_php_tags</code><span class="sig-paren">(</span><em>$str</em><span class="sig-paren">)</span><a class="headerlink" href="#encode_php_tags" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">encode_php_tags</tt><big>(</big><em>$str</em><big>)</big><a class="headerlink" href="#encode_php_tags" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -586,7 +590,7 @@
 <p>これは、PHP タグを HTML エンティティに変換するセキュリティ関数です。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">これを使用しても <a class="reference internal" href="#xss_clean" title="xss_clean"><code class="xref php php-func docutils literal"><span class="pre">xss_clean()</span></code></a> は自動的に行われません。</p>
+<p class="last">これを使用しても <a class="reference internal" href="#xss_clean" title="xss_clean"><tt class="xref php php-func docutils literal"><span class="pre">xss_clean()</span></tt></a> は自動的に行われません。</p>
 </div>
 <p>例:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$string</span> <span class="o">=</span> <span class="nx">encode_php_tags</span><span class="p">(</span><span class="nv">$string</span><span class="p">);</span>
@@ -616,7 +620,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 10月 11, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
+      最終更新: Nov 23, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

@@ -49,7 +49,9 @@
     
       <div id="pulldown-menu" class="ciNav">
         <ul>
-<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -141,7 +143,7 @@
 <li class="toctree-l2"><a class="reference internal" href="pagination.html">ページネーションクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="parser.html">テンプレートパーサクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="security.html">セキュリティクラス</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">セッションライブラリ</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">セッションライブラリ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="table.html">HTML テーブルクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="trackback.html">トラックバッククラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="typography.html">タイポグラフィークラス</a></li>
@@ -233,7 +235,9 @@
           
           
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -325,7 +329,7 @@
 <li class="toctree-l2"><a class="reference internal" href="pagination.html">ページネーションクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="parser.html">テンプレートパーサクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="security.html">セキュリティクラス</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">セッションライブラリ</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">セッションライブラリ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="table.html">HTML テーブルクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="trackback.html">トラックバッククラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="typography.html">タイポグラフィークラス</a></li>
@@ -478,13 +482,13 @@
 <h3><a class="toc-backref" href="#id25">セッションの初期化</a><a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>セッションは通常、各ページをまたいでグローバルに実行されます。
 そのため、セッションクラスは次のどちらかによって初期化されるべきです、
-<a class="reference internal" href="../general/controllers.html"><span class="doc">コントローラ</span></a> のコンストラクタ、
-またはシステムによる <a class="reference internal" href="../general/autoloader.html"><span class="doc">オートロード</span></a> によってです。
+<a class="reference internal" href="../general/controllers.html"><em>コントローラ</em></a> のコンストラクタ、
+またはシステムによる <a class="reference internal" href="../general/autoloader.html"><em>オートロード</em></a> によってです。
 たいていの場合、セッションクラスはバックグラウンドで黙って実行されます。
 そして明示的なクラスの初期化は読み込み、作成、更新が必要な時にだけ
 行えばよいです。</p>
 <p>セッションクラスの初期化をコントローラのコンストラクタで手動で
-行うには、 <code class="docutils literal"><span class="pre">$this-&gt;load-&gt;library()</span></code> メソッドを使用します:</p>
+行うには、 <tt class="docutils literal"><span class="pre">$this-&gt;load-&gt;library()</span></tt> メソッドを使用します:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;session&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -494,9 +498,9 @@
 </div>
 <div class="admonition important">
 <p class="first admonition-title">重要</p>
-<p class="last">変数 <code class="docutils literal"><span class="pre">$this-&gt;load</span></code> の <a class="reference internal" href="loader.html"><span class="doc">ローダクラス</span></a> は CodeIgniter の基本となる
+<p class="last">変数 <tt class="docutils literal"><span class="pre">$this-&gt;load</span></tt> の <a class="reference internal" href="loader.html"><em>ローダクラス</em></a> は CodeIgniter の基本となる
 コントローラによってインスタンス化されるため、コントローラのコンストラクタでの
-<code class="docutils literal"><span class="pre">parent::__construct()</span></code> の呼び出しはライブラリをロードしようとする前に
+<tt class="docutils literal"><span class="pre">parent::__construct()</span></tt> の呼び出しはライブラリをロードしようとする前に
 行ってください。</p>
 </div>
 </div>
@@ -541,7 +545,7 @@
 処理をし終わってもう不要になったにもかかわらず、ひらいたセッションを持ちっぱなしに
 していることです。なので必要なことは、現在のリクエストのためのセッションが
 もういらなくなったあと、セッションを閉じることです。</p>
-<p>短く言えば、セッション変数を使い終えたら <code class="docutils literal"><span class="pre">session_write_close()</span></code> を
+<p>短く言えば、セッション変数を使い終えたら <tt class="docutils literal"><span class="pre">session_write_close()</span></tt> を
 呼び出してください。</p>
 </div>
 </div>
@@ -568,7 +572,7 @@ PHP の <a class="reference external" href="http://php.net/manual/ja/reserved.va
 </div>
 <div class="section" id="id7">
 <h3><a class="toc-backref" href="#id29">セッションデータの取得</a><a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>セッション配列のどんな情報でも、 <code class="docutils literal"><span class="pre">$</span> <span class="pre">_SESSION</span></code> スーパーグローバル変数を通して
+<p>セッション配列のどんな情報でも、 <tt class="docutils literal"><span class="pre">$</span> <span class="pre">_SESSION</span></tt> スーパーグローバル変数を通して
 利用できます:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;item&#39;</span><span class="p">]</span>
 </pre></div>
@@ -577,12 +581,12 @@ PHP の <a class="reference external" href="http://php.net/manual/ja/reserved.va
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">item</span>
 </pre></div>
 </div>
-<p>そして後方互換性のために、 <code class="docutils literal"><span class="pre">userdata()</span></code> メソッドを通して:</p>
+<p>そして後方互換性のために、 <tt class="docutils literal"><span class="pre">userdata()</span></tt> メソッドを通して:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">userdata</span><span class="p">(</span><span class="s1">&#39;item&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>item は、取得したい項目に対応する配列のキーです。
-たとえば <code class="docutils literal"><span class="pre">$name</span></code> 変数に以前に格納した「 name 」の項目を割り当てるには、
+たとえば <tt class="docutils literal"><span class="pre">$name</span></tt> 変数に以前に格納した「 name 」の項目を割り当てるには、
 こうします:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$name</span> <span class="o">=</span> <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">];</span>
 
@@ -597,7 +601,7 @@ PHP の <a class="reference external" href="http://php.net/manual/ja/reserved.va
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">あなたがアクセスしようとしている項目が存在しない場合、 <code class="docutils literal"><span class="pre">userdata()</span></code> メソッドは NULL を
+<p class="last">あなたがアクセスしようとしている項目が存在しない場合、 <tt class="docutils literal"><span class="pre">userdata()</span></tt> メソッドは NULL を
 返します。</p>
 </div>
 <p>存在するすべてのユーザーデータを取得したい場合は、
@@ -616,15 +620,15 @@ PHP の <a class="reference external" href="http://php.net/manual/ja/reserved.va
 認証されると、セッションにユーザー名とメールアドレスを追加することができます。
 あなたがそれを必要とするときに、どこでも、データベースクエリを実行することなく
 取得できるようにするためです。</p>
-<p>シンプルに <code class="docutils literal"><span class="pre">$</span> <span class="pre">_SESSION</span></code> 配列にデータを割り当てることができます、ほかの変数と同じようにです。
-もしくは <code class="docutils literal"><span class="pre">$this-&gt;session</span></code> プロパティとして割り当てられます。</p>
+<p>シンプルに <tt class="docutils literal"><span class="pre">$</span> <span class="pre">_SESSION</span></tt> 配列にデータを割り当てることができます、ほかの変数と同じようにです。
+もしくは <tt class="docutils literal"><span class="pre">$this-&gt;session</span></tt> プロパティとして割り当てられます。</p>
 <p>あるいは、古い方法である「 userdata 」も使えます。
-とはいえそれは <code class="docutils literal"><span class="pre">set_userdata()</span></code> メソッドに新しいデータを含む配列を
+とはいえそれは <tt class="docutils literal"><span class="pre">set_userdata()</span></tt> メソッドに新しいデータを含む配列を
 渡すだけです:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">set_userdata</span><span class="p">(</span><span class="nv">$array</span><span class="p">);</span>
 </pre></div>
 </div>
-<p><code class="docutils literal"><span class="pre">$array</span></code> はあなたの新しいデータを含む連想配列です。
+<p><tt class="docutils literal"><span class="pre">$array</span></tt> はあなたの新しいデータを含む連想配列です。
 次に例を示します:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$newdata</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
         <span class="s1">&#39;username&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;johndoe&#39;</span><span class="p">,</span>
@@ -635,27 +639,27 @@ PHP の <a class="reference external" href="http://php.net/manual/ja/reserved.va
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">set_userdata</span><span class="p">(</span><span class="nv">$newdata</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>ユーザデータにひとつひとつ値を追加したい場合、 <code class="docutils literal"><span class="pre">set_userdata()</span></code> は
+<p>ユーザデータにひとつひとつ値を追加したい場合、 <tt class="docutils literal"><span class="pre">set_userdata()</span></tt> は
 次の構文もサポートしています:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">set_userdata</span><span class="p">(</span><span class="s1">&#39;some_name&#39;</span><span class="p">,</span> <span class="s1">&#39;some_value&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>セッション値が存在することを確認したい場合は、単に <code class="docutils literal"><span class="pre">isset()</span></code> で
+<p>セッション値が存在することを確認したい場合は、単に <tt class="docutils literal"><span class="pre">isset()</span></tt> で
 確認してください:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// &#39;some_name&#39; の値が存在しない場合またはNULLである場合は FALSE を、</span>
 <span class="c1">// それ以外の場合は TRUE を返します:</span>
 <span class="nb">isset</span><span class="p">(</span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;some_name&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
-<p>もしくは <code class="docutils literal"><span class="pre">has_userdata()</span></code> を呼び出します:</p>
+<p>もしくは <tt class="docutils literal"><span class="pre">has_userdata()</span></tt> を呼び出します:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">has_userdata</span><span class="p">(</span><span class="s1">&#39;some_name&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="id9">
 <h3><a class="toc-backref" href="#id31">セッションデータを削除する</a><a class="headerlink" href="#id9" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>他の変数とまったく同じように、 <code class="docutils literal"><span class="pre">$_SESSION</span></code> の値を
-削除するには <code class="docutils literal"><span class="pre">unset()</span></code> を使えます:</p>
+<p>他の変数とまったく同じように、 <tt class="docutils literal"><span class="pre">$_SESSION</span></tt> の値を
+削除するには <tt class="docutils literal"><span class="pre">unset()</span></tt> を使えます:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nb">unset</span><span class="p">(</span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;some_name&#39;</span><span class="p">]);</span>
 
 <span class="c1">// 複数の値を削除したい場合:</span>
@@ -666,8 +670,8 @@ PHP の <a class="reference external" href="http://php.net/manual/ja/reserved.va
 <span class="p">);</span>
 </pre></div>
 </div>
-<p>また、セッションに情報を追加するために <code class="docutils literal"><span class="pre">set_userdata()</span></code> が
-使えるように、 <code class="docutils literal"><span class="pre">unset_userdata()</span></code> にキーを渡すことで削除することができます。
+<p>また、セッションに情報を追加するために <tt class="docutils literal"><span class="pre">set_userdata()</span></tt> が
+使えるように、 <tt class="docutils literal"><span class="pre">unset_userdata()</span></tt> にキーを渡すことで削除することができます。
 例として、セッションデータ配列から「 some_name 」を
 削除したい場合は:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">unset_userdata</span><span class="p">(</span><span class="s1">&#39;some_name&#39;</span><span class="p">);</span>
@@ -681,8 +685,8 @@ PHP の <a class="reference external" href="http://php.net/manual/ja/reserved.va
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">以前のバージョンでは <code class="docutils literal"><span class="pre">unset_userdata()</span></code> メソッド
-は <code class="docutils literal"><span class="pre">key</span> <span class="pre">=&gt;</span> <span class="pre">'dummy</span> <span class="pre">value'</span></code> の連想配列を受けつけていました。
+<p class="last">以前のバージョンでは <tt class="docutils literal"><span class="pre">unset_userdata()</span></tt> メソッド
+は <tt class="docutils literal"><span class="pre">key</span> <span class="pre">=&gt;</span> <span class="pre">'dummy</span> <span class="pre">value'</span></tt> の連想配列を受けつけていました。
 これはもうサポートされなくなりました。</p>
 </div>
 </div>
@@ -709,23 +713,23 @@ PHP の <a class="reference external" href="http://php.net/manual/ja/reserved.va
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">mark_as_flash</span><span class="p">(</span><span class="s1">&#39;item&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>または別法として、 <code class="docutils literal"><span class="pre">set_flashdata()</span></code> メソッドを使います:</p>
+<p>または別法として、 <tt class="docutils literal"><span class="pre">set_flashdata()</span></tt> メソッドを使います:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">set_flashdata</span><span class="p">(</span><span class="s1">&#39;item&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>また、 <code class="docutils literal"><span class="pre">set_userdata()</span></code> と同じ方法で <code class="docutils literal"><span class="pre">set_flashdata()</span></code> に配列を渡すことが
+<p>また、 <tt class="docutils literal"><span class="pre">set_userdata()</span></tt> と同じ方法で <tt class="docutils literal"><span class="pre">set_flashdata()</span></tt> に配列を渡すことが
 できます。</p>
 <p>フラッシュデータ変数の読み取りは通常のセッションデータと同じく
-<code class="docutils literal"><span class="pre">$_SESSION</span></code> を使います:</p>
+<tt class="docutils literal"><span class="pre">$_SESSION</span></tt> を使います:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;item&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 <div class="admonition important">
 <p class="first admonition-title">重要</p>
-<p class="last"><code class="docutils literal"><span class="pre">userdata()</span></code> メソッドはフラッシュデータを返しません。</p>
+<p class="last"><tt class="docutils literal"><span class="pre">userdata()</span></tt> メソッドはフラッシュデータを返しません。</p>
 </div>
 <p>「 flashdata 」だけを確実に読みたい場合（ほかの種類のセッションを
-読みたくない場合）、 <code class="docutils literal"><span class="pre">flashdata()</span></code> メソッドを使用することができます:</p>
+読みたくない場合）、 <tt class="docutils literal"><span class="pre">flashdata()</span></tt> メソッドを使用することができます:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">flashdata</span><span class="p">(</span><span class="s1">&#39;item&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -735,11 +739,11 @@ PHP の <a class="reference external" href="http://php.net/manual/ja/reserved.va
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">フラッシュデータがない場合、 <code class="docutils literal"><span class="pre">flashdata()</span></code> メソッドはNULLを
+<p class="last">フラッシュデータがない場合、 <tt class="docutils literal"><span class="pre">flashdata()</span></tt> メソッドはNULLを
 返します。</p>
 </div>
 <p>もし次のリクエストでもフラシュデータ変数を保持する必要があるとわかった場合、
-<code class="docutils literal"><span class="pre">keep_flashdata()</span></code> メソッドを使用して保持することができます。
+<tt class="docutils literal"><span class="pre">keep_flashdata()</span></tt> メソッドを使用して保持することができます。
 単一のフラッシュデータ、またはフラッシュデータの配列を渡せます。</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">keep_flashdata</span><span class="p">(</span><span class="s1">&#39;item&#39;</span><span class="p">);</span>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">keep_flashdata</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;item1&#39;</span><span class="p">,</span> <span class="s1">&#39;item2&#39;</span><span class="p">,</span> <span class="s1">&#39;item3&#39;</span><span class="p">));</span>
@@ -782,7 +786,7 @@ __ci_vars には触らないでください）。</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">set_tempdata</span><span class="p">(</span><span class="s1">&#39;item&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="mi">300</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>また、 <code class="docutils literal"><span class="pre">set_tempdata()</span></code> には配列を渡すことができます:</p>
+<p>また、 <tt class="docutils literal"><span class="pre">set_tempdata()</span></tt> には配列を渡すことができます:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$tempdata</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;newuser&#39;</span> <span class="o">=&gt;</span> <span class="k">TRUE</span><span class="p">,</span> <span class="s1">&#39;message&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Thanks for joining!&#39;</span><span class="p">);</span>
 
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">set_tempdata</span><span class="p">(</span><span class="nv">$tempdata</span><span class="p">,</span> <span class="k">NULL</span><span class="p">,</span> <span class="nv">$expire</span><span class="p">);</span>
@@ -800,10 +804,10 @@ $_SESSION スーパーグローバル配列でアクセスすることができ�
 </div>
 <div class="admonition important">
 <p class="first admonition-title">重要</p>
-<p class="last"><code class="docutils literal"><span class="pre">userdata()</span></code> メソッドはテンプデータを返しません。</p>
+<p class="last"><tt class="docutils literal"><span class="pre">userdata()</span></tt> メソッドはテンプデータを返しません。</p>
 </div>
 <p>「 tempdata 」だけを確実に読みたい場合（ほかの種類のセッションを読みたくない場合）、
-<code class="docutils literal"><span class="pre">tempdata()</span></code> メソッドを使用することができます:</p>
+<tt class="docutils literal"><span class="pre">tempdata()</span></tt> メソッドを使用することができます:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">tempdata</span><span class="p">(</span><span class="s1">&#39;item&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -813,18 +817,18 @@ $_SESSION スーパーグローバル配列でアクセスすることができ�
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">テンプデータが見つからない場合 <code class="docutils literal"><span class="pre">tempdata()</span></code> メソッドは
+<p class="last">テンプデータが見つからない場合 <tt class="docutils literal"><span class="pre">tempdata()</span></tt> メソッドは
 NULL を返します。</p>
 </div>
 <p>有効期限が切れる前にテンプデータ値を削除する必要がある場合は
-<code class="docutils literal"><span class="pre">$_SESSION</span></code> 配列を直接 unset してください:</p>
+<tt class="docutils literal"><span class="pre">$_SESSION</span></tt> 配列を直接 unset してください:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nb">unset</span><span class="p">(</span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;item&#39;</span><span class="p">]);</span>
 </pre></div>
 </div>
 <p>しかしながら、この方法はアイテムをテンプデータとするマーカーを削除しません
 (次の HTTP リクエストで不正扱いになります) 。
 そのため同じリクエストで同じキーを再利用したい場合、
-<code class="docutils literal"><span class="pre">unset_tempdata()</span></code> を使用すべきところでしょう:</p>
+<tt class="docutils literal"><span class="pre">unset_tempdata()</span></tt> を使用すべきところでしょう:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">unset_tempdata</span><span class="p">(</span><span class="s1">&#39;item&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -833,7 +837,7 @@ NULL を返します。</p>
 <h3><a class="toc-backref" href="#id34">セッションの破棄</a><a class="headerlink" href="#id12" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>現在のセッションをクリアするには（たとえばログアウト時）、
 単に PHP の <a class="reference external" href="http://php.net/session_destroy">session_destroy()</a> 関数を使うか、
-<code class="docutils literal"><span class="pre">sess_destroy()</span></code> メソッドを使います。
+<tt class="docutils literal"><span class="pre">sess_destroy()</span></tt> メソッドを使います。
 どちらもまったく同じです:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nb">session_destroy</span><span class="p">();</span>
 
@@ -860,9 +864,9 @@ NULL を返します。</p>
 これらにアクセスするための代替手段を記します:</p>
 <blockquote>
 <div><ul class="simple">
-<li>session_id: <code class="docutils literal"><span class="pre">session_id()</span></code></li>
-<li>ip_address: <code class="docutils literal"><span class="pre">$_SERVER['REMOTE_ADDR']</span></code></li>
-<li>user_agent: <code class="docutils literal"><span class="pre">$this-&gt;input-&gt;user_agent()</span></code> （セッションでは使われません）</li>
+<li>session_id: <tt class="docutils literal"><span class="pre">session_id()</span></tt></li>
+<li>ip_address: <tt class="docutils literal"><span class="pre">$_SERVER['REMOTE_ADDR']</span></tt></li>
+<li>user_agent: <tt class="docutils literal"><span class="pre">$this-&gt;input-&gt;user_agent()</span></tt> （セッションでは使われません）</li>
 <li>last_activity: ストレージによります。ストレートな方法はありません。ごめんなさい！</li>
 </ul>
 </div></blockquote>
@@ -942,8 +946,8 @@ INI 設定を取得しようとします。古い CodeIgniter の
 どうかすべてきちんと設定してください。</p>
 </div>
 <p>上記の値に加えて、クッキーとネイティブドライバは
-次の設定値が適用されます。この値は <a class="reference internal" href="input.html"><span class="doc">入力</span></a> および
-<a class="reference internal" href="security.html"><span class="doc">セキュリティ</span></a> クラスと共有しています:</p>
+次の設定値が適用されます。この値は <a class="reference internal" href="input.html"><em>入力</em></a> および
+<a class="reference internal" href="security.html"><em>セキュリティ</em></a> クラスと共有しています:</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="17%" />
@@ -994,7 +998,7 @@ HttpOnly のパラメータはセキュリティ上の理由から常に有効�
 <p>デフォルトでは <a class="reference internal" href="#id16">ファイルドライバ</a> がセッションが初期化されるときに使用されます。
 それは最も安全な選択であり、どこでも動くと期待されるからです
 （実質的にあらゆる実行環境はファイルシステムを持っています）。</p>
-<p>一方、他のドライバは <strong>application/config/config.php</strong> ファイルの <code class="docutils literal"><span class="pre">$config['sess_driver']</span></code>
+<p>一方、他のドライバは <strong>application/config/config.php</strong> ファイルの <tt class="docutils literal"><span class="pre">$config['sess_driver']</span></tt>
 により選択することができます、あなたがそれを選ぶなら。
 しかし、それぞれのドライバには異なる注意点があり、それらを使う前にそれら
 （後述します）に熟知しておくべきということを頭にとどめておいてください。</p>
@@ -1020,7 +1024,7 @@ HttpOnly のパラメータはセキュリティ上の理由から常に有効�
 PHP の session.save_path
 &lt;<a class="reference external" href="http://php.net/manual/ja/session.configuration.php#ini.session.save-path">http://php.net/manual/ja/session.configuration.php#ini.session.save-path</a>&gt;`_
 で使用されるディレクトリレベルとモードの形式を サポートしていません、そして、そのオプションのほとんどは、
-安全のためにハードコーディングされています。そのかわり、ただひとつ絶対パスだけは <code class="docutils literal"><span class="pre">$config['sess_save_path']</span></code> でサポートされています。</p>
+安全のためにハードコーディングされています。そのかわり、ただひとつ絶対パスだけは <tt class="docutils literal"><span class="pre">$config['sess_save_path']</span></tt> でサポートされています。</p>
 <p>知っておくべきもう一つの重要なことは、
 セッションファイルを格納するティレクトリとして広範囲に読み込み可能なディレクトリ、
 または共有ディレクトリを使用していないことを確認することです。 <em>ただ一人あなただけが</em>
@@ -1063,8 +1067,8 @@ PHP の session.save_path
 <blockquote>
 <div><ul class="simple">
 <li><strong>デフォルト</strong> のデータベース接続（つまりコントローラから
-<code class="docutils literal"><span class="pre">$this-&gt;db</span></code> としてアクセスできるもの）だけを使えます。</li>
-<li><a class="reference internal" href="../database/query_builder.html"><span class="doc">クエリビルダ</span></a> を有効にしていることが
+<tt class="docutils literal"><span class="pre">$this-&gt;db</span></tt> としてアクセスできるもの）だけを使えます。</li>
+<li><a class="reference internal" href="../database/query_builder.html"><em>クエリビルダ</em></a> を有効にしていることが
 必要です。</li>
 <li>持続的接続を使用することは　で　き　ま　せ　ん　。</li>
 <li><em>cache_on</em> 設定が有効な接続では使用することは　で　き　ま　せ　ん　。</li>
@@ -1072,7 +1076,7 @@ PHP の session.save_path
 </div></blockquote>
 <p>「 database 」セッションドライバを使用するためにはまた、すでに言及したように、
 テーブルをデータベース上に作成する必要があり、そして
-<code class="docutils literal"><span class="pre">$config['sess_save_path']</span></code> にテーブル名を設定します。
+<tt class="docutils literal"><span class="pre">$config['sess_save_path']</span></tt> にテーブル名を設定します。
 たとえばテーブル名として「 ci_sessions 」を使用する場合、
 こうします:</p>
 <blockquote>
@@ -1127,7 +1131,7 @@ $config[&#8216;sess_save_path&#8217;] = &#8216;ci_sessions&#8217;;</div></blockq
 提供されていないためです。ロックなしにセッションを使うと、
 特にAJAXを多用する場合において、あらゆる種類の問題を引き起こします。
 私たちはそのようなものはサポートしません。パフォーマンス問題を抱えている場合は、
-セッションデータを処理したあとに <code class="docutils literal"><span class="pre">session_write_close()</span></code> を
+セッションデータを処理したあとに <tt class="docutils literal"><span class="pre">session_write_close()</span></tt> を
 使用してください。</p>
 </div>
 </div>
@@ -1150,7 +1154,7 @@ Redisとその使われ方に詳しくなければ「 Redis 」ドライバは
 使えないでしょう。</p>
 <p>「 file 」と「 databse 」のドライバと同じように、
 セッションを保存するストレージの場所を
-<code class="docutils literal"><span class="pre">$config['sess_save_path']</span></code> に設定する必要があります。
+<tt class="docutils literal"><span class="pre">$config['sess_save_path']</span></tt> に設定する必要があります。
 そのフォーマットはすこしだけそれらと異なり、また複雑です。
 最高の説明が <em>phpredis</em> 拡張の README ファイルでなされているので、
 私たちはそれへのリンクを渡すにとどめましょう。</p>
@@ -1159,10 +1163,10 @@ Redisとその使われ方に詳しくなければ「 Redis 」ドライバは
 <div class="admonition warning">
 <p class="first admonition-title">警告</p>
 <p class="last">CodeIgniter のセッションライブラリは実際の「 Redis 」の
-<code class="docutils literal"><span class="pre">session.save_handler</span></code> を使用して　い　ま　せ　ん　。上記リンクのパス形式に <strong>だけ</strong>
+<tt class="docutils literal"><span class="pre">session.save_handler</span></tt> を使用して　い　ま　せ　ん　。上記リンクのパス形式に <strong>だけ</strong>
 注意してください。</p>
 </div>
-<p>しかしながら、最も一般的なケースではシンプルな <code class="docutils literal"><span class="pre">host:port</span></code> のペアで
+<p>しかしながら、最も一般的なケースではシンプルな <tt class="docutils literal"><span class="pre">host:port</span></tt> のペアで
 十分でしょう:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;sess_driver&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;redis&#39;</span><span class="p">;</span>
 <span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;sess_save_path&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;tcp://localhost:6379&#39;</span><span class="p">;</span>
@@ -1188,15 +1192,15 @@ Y 秒の期限を定められた値 X が Y 秒経過後にそれが削除され
 （その時間より前には削除されないということでは必ずしもありません）。
 極めてまれではありますが、
 それによりセッションが失われる可能性があることを考慮するべきです。</p>
-<p><code class="docutils literal"><span class="pre">$config['sess_save_path']</span></code> の形式は非常に簡便で、
-<code class="docutils literal"><span class="pre">host:port</span></code> のペアだけです:</p>
+<p><tt class="docutils literal"><span class="pre">$config['sess_save_path']</span></tt> の形式は非常に簡便で、
+<tt class="docutils literal"><span class="pre">host:port</span></tt> のペアだけです:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;sess_driver&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;memcached&#39;</span><span class="p">;</span>
 <span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;sess_save_path&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;localhost:11211&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 <div class="section" id="id20">
 <h5><a class="toc-backref" href="#id43">ボーナスヒント</a><a class="headerlink" href="#id20" title="このヘッドラインへのパーマリンク">¶</a></h5>
-<p>複数サーバを使ったコロン区切りの値（<code class="docutils literal"><span class="pre">:weight</span></code>）の <em>重みづけ</em> パラメータも
+<p>複数サーバを使ったコロン区切りの値（<tt class="docutils literal"><span class="pre">:weight</span></tt>）の <em>重みづけ</em> パラメータも
 サポートされています。しかし、
 私たちはそれを信頼できるほどのテストはしていないことにご注意ください。</p>
 <p>あなたが（あなた自身のリスクで）この機能を試してみたい場合、
@@ -1223,7 +1227,7 @@ CodeIgniter においても実装しようとすべきではありません。
 忠告しましたよ。</p>
 <p>セッションにいくつか機能を追加したい場合は、ベースとなる Session
 クラスを継承してください、そのほうがはるかに簡単です。
-その方法を学ぶには <a class="reference internal" href="../general/creating_libraries.html"><span class="doc">ライブラリの作成</span></a>
+その方法を学ぶには <a class="reference internal" href="../general/creating_libraries.html"><em>ライブラリの作成</em></a>
 の記事を読んでください。</p>
 <p>さて、話を戻しましょう―― CodeIgniter のセッションドライバを作成するとき、
 従わなければならない 3 つの原則があります:</p>
@@ -1232,10 +1236,10 @@ CodeIgniter においても実装しようとすべきではありません。
 <li><p class="first">ドライバのファイルは <strong>application/libraries/Session/drivers/</strong>
 の下に置いて、セッションクラスで使用される命名規則に従ってください。</p>
 <p>たとえば「 dummy 」ドライバを作成するとすれば、
-<code class="docutils literal"><span class="pre">Session_dummy_driver</span></code> のクラス名で、
+<tt class="docutils literal"><span class="pre">Session_dummy_driver</span></tt> のクラス名で、
 <em>application/libraries/Session/drivers/Session_dummy_driver.php</em> で定義する必要があります。</p>
 </li>
-<li><p class="first"><code class="docutils literal"><span class="pre">CI_Session_driver</span></code> クラスを継承します。</p>
+<li><p class="first"><tt class="docutils literal"><span class="pre">CI_Session_driver</span></tt> クラスを継承します。</p>
 <p>これはいくつかの内部向けヘルパーメソッドを持つ基礎的なクラスです。
 それはほかのクラスと同様に拡張できます、あなたが本当にそれが必要なら。
 しかし私たちはその方法を説明しようとは思いません……あなたがCIでの継承とオーバーライドに詳しいなら、
@@ -1245,7 +1249,7 @@ CodeIgniter においても実装しようとすべきではありません。
 <li><p class="first"><a class="reference external" href="http://php.net/sessionhandlerinterface">SessionHandlerInterface</a> インターフェースを実装します。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last"><code class="docutils literal"><span class="pre">SessionHandlerInterface</span></code> はPHP 5.4.0 以降からの提供であることに
+<p class="last"><tt class="docutils literal"><span class="pre">SessionHandlerInterface</span></tt> はPHP 5.4.0 以降からの提供であることに
 気づかれたかもしれません。古い PHP で実行している場合、 CodeIgniter は
 自動的に同じ内容のインターフェースを作ります。</p>
 </div>
@@ -1310,10 +1314,10 @@ CodeIgniter においても実装しようとすべきではありません。
 <h2><a class="toc-backref" href="#id45">クラスリファレンス</a><a class="headerlink" href="#id22" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <dl class="class">
 <dt id="CI_Session">
-<em class="property">class </em><code class="descname">CI_Session</code><a class="headerlink" href="#CI_Session" title="この定義へのパーマリンク">¶</a></dt>
+<em class="property">class </em><tt class="descname">CI_Session</tt><a class="headerlink" href="#CI_Session" title="この定義へのパーマリンク">¶</a></dt>
 <dd><dl class="method">
 <dt id="CI_Session::userdata">
-<code class="descname">userdata</code><span class="sig-paren">(</span><span class="optional">[</span><em>$key = NULL</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Session::userdata" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">userdata</tt><big>(</big><span class="optional">[</span><em>$key = NULL</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Session::userdata" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1331,19 +1335,19 @@ CodeIgniter においても実装しようとすべきではありません。
 </tr>
 </tbody>
 </table>
-<p>Gets 特定の <code class="docutils literal"><span class="pre">$_SESSION</span></code> アイテムの値または、
+<p>Gets 特定の <tt class="docutils literal"><span class="pre">$_SESSION</span></tt> アイテムの値または、
 キーを指定しない場合はすべての「 userdata 」アイテムの値を取得します。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
 <p class="last">これは古いアプリケーションの
 後方互換性のためだけに残されたメソッドです。
-かわりに直接 <code class="docutils literal"><span class="pre">$_SESSION</span></code> を使うべきです。</p>
+かわりに直接 <tt class="docutils literal"><span class="pre">$_SESSION</span></tt> を使うべきです。</p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="CI_Session::all_userdata">
-<code class="descname">all_userdata</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Session::all_userdata" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">all_userdata</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_Session::all_userdata" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1357,25 +1361,25 @@ CodeIgniter においても実装しようとすべきではありません。
 <p>すべての「 userdata 」を含む配列を返します。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">このメソッドは廃止予定です。かわりに <code class="docutils literal"><span class="pre">userdata()</span></code>
+<p class="last">このメソッドは廃止予定です。かわりに <tt class="docutils literal"><span class="pre">userdata()</span></tt>
 を引数なしで使ってください。</p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt>
-<code class="descname">&amp;get_userdata()</code></dt>
+<tt class="descname">&amp;get_userdata()</tt></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">返り値:</th><td class="field-body"><code class="docutils literal"><span class="pre">$_SESSION</span></code> への参照</td>
+<tr class="field-odd field"><th class="field-name">返り値:</th><td class="field-body"><tt class="docutils literal"><span class="pre">$_SESSION</span></tt> への参照</td>
 </tr>
 <tr class="field-even field"><th class="field-name">返り値の型:</th><td class="field-body">array</td>
 </tr>
 </tbody>
 </table>
-<p><code class="docutils literal"><span class="pre">$_SESSION</span></code> 配列への参照を返します。</p>
+<p><tt class="docutils literal"><span class="pre">$_SESSION</span></tt> 配列への参照を返します。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
 <p class="last">これは古いアプリケーションの
@@ -1385,7 +1389,7 @@ CodeIgniter においても実装しようとすべきではありません。
 
 <dl class="method">
 <dt id="CI_Session::has_userdata">
-<code class="descname">has_userdata</code><span class="sig-paren">(</span><em>$key</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_Session::has_userdata" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">has_userdata</tt><big>(</big><em>$key</em><big>)</big><a class="headerlink" href="#CI_Session::has_userdata" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1403,19 +1407,19 @@ CodeIgniter においても実装しようとすべきではありません。
 </tr>
 </tbody>
 </table>
-<p>アイテムが <code class="docutils literal"><span class="pre">$_SESSION</span></code> に存在するかを確認します。</p>
+<p>アイテムが <tt class="docutils literal"><span class="pre">$_SESSION</span></tt> に存在するかを確認します。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
 <p class="last">これは古いアプリケーションの
 後方互換性のためだけに残されたメソッドです。
-これは <code class="docutils literal"><span class="pre">isset($_SESSION[$key])</span></code> のエイリアスにすぎません
+これは <tt class="docutils literal"><span class="pre">isset($_SESSION[$key])</span></tt> のエイリアスにすぎません
 ――どうぞかわりに isset() を使ってください。</p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="CI_Session::set_userdata">
-<code class="descname">set_userdata</code><span class="sig-paren">(</span><em>$data</em><span class="optional">[</span>, <em>$value = NULL</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Session::set_userdata" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">set_userdata</tt><big>(</big><em>$data</em><span class="optional">[</span>, <em>$value = NULL</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Session::set_userdata" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1431,7 +1435,7 @@ CodeIgniter においても実装しようとすべきではありません。
 </tr>
 </tbody>
 </table>
-<p>スーパーグローバル変数 <code class="docutils literal"><span class="pre">$_SESSION</span></code> にデータを設定します。</p>
+<p>スーパーグローバル変数 <tt class="docutils literal"><span class="pre">$_SESSION</span></tt> にデータを設定します。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
 <p class="last">これは古いアプリケーションの
@@ -1441,7 +1445,7 @@ CodeIgniter においても実装しようとすべきではありません。
 
 <dl class="method">
 <dt id="CI_Session::unset_userdata">
-<code class="descname">unset_userdata</code><span class="sig-paren">(</span><em>$key</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_Session::unset_userdata" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">unset_userdata</tt><big>(</big><em>$key</em><big>)</big><a class="headerlink" href="#CI_Session::unset_userdata" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1456,20 +1460,20 @@ CodeIgniter においても実装しようとすべきではありません。
 </tr>
 </tbody>
 </table>
-<p>指定のキーをスーパーグローバル変数 <code class="docutils literal"><span class="pre">$_SESSION</span></code>
+<p>指定のキーをスーパーグローバル変数 <tt class="docutils literal"><span class="pre">$_SESSION</span></tt>
 から削除します。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
 <p class="last">これは古いアプリケーションの
 後方互換性のためだけに残されたメソッドです。
-これは <code class="docutils literal"><span class="pre">unset($_SESSION[$key])</span></code> のエイリアスにすぎません
+これは <tt class="docutils literal"><span class="pre">unset($_SESSION[$key])</span></tt> のエイリアスにすぎません
 ――どうぞかわりに unset() を使ってください。</p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="CI_Session::mark_as_flash">
-<code class="descname">mark_as_flash</code><span class="sig-paren">(</span><em>$key</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_Session::mark_as_flash" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">mark_as_flash</tt><big>(</big><em>$key</em><big>)</big><a class="headerlink" href="#CI_Session::mark_as_flash" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1487,13 +1491,13 @@ CodeIgniter においても実装しようとすべきではありません。
 </tr>
 </tbody>
 </table>
-<p><code class="docutils literal"><span class="pre">$_SESSION</span></code> アイテムのキー（または複数のキー）を
+<p><tt class="docutils literal"><span class="pre">$_SESSION</span></tt> アイテムのキー（または複数のキー）を
 「 flashdata 」としてマークします。</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="CI_Session::get_flash_keys">
-<code class="descname">get_flash_keys</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Session::get_flash_keys" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">get_flash_keys</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_Session::get_flash_keys" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1504,13 +1508,13 @@ CodeIgniter においても実装しようとすべきではありません。
 </tr>
 </tbody>
 </table>
-<p><code class="docutils literal"><span class="pre">$_SESSION</span></code> のうち
+<p><tt class="docutils literal"><span class="pre">$_SESSION</span></tt> のうち
 「 flashdata 」としてマークされたすべての値の配列を取得します。</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="CI_Session::unmark_flash">
-<code class="descname">unmark_flash</code><span class="sig-paren">(</span><em>$key</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_Session::unmark_flash" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">unmark_flash</tt><big>(</big><em>$key</em><big>)</big><a class="headerlink" href="#CI_Session::unmark_flash" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1525,13 +1529,13 @@ CodeIgniter においても実装しようとすべきではありません。
 </tr>
 </tbody>
 </table>
-<p><code class="docutils literal"><span class="pre">$_SESSION</span></code> アイテムのキー（または複数のキー）の
+<p><tt class="docutils literal"><span class="pre">$_SESSION</span></tt> アイテムのキー（または複数のキー）の
 「 flashdata 」としてのマークを外します。</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="CI_Session::flashdata">
-<code class="descname">flashdata</code><span class="sig-paren">(</span><span class="optional">[</span><em>$key = NULL</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Session::flashdata" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">flashdata</tt><big>(</big><span class="optional">[</span><em>$key = NULL</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Session::flashdata" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1549,20 +1553,20 @@ CodeIgniter においても実装しようとすべきではありません。
 </tr>
 </tbody>
 </table>
-<p><code class="docutils literal"><span class="pre">$_SESSION</span></code> アイテムのうち
+<p><tt class="docutils literal"><span class="pre">$_SESSION</span></tt> アイテムのうち
 「 flashdata 」としてマークされた値、または引数が指定されない場合はすべての「 flashdata 」の配列
 を取得します。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
 <p class="last">これは古いアプリケーションの
 後方互換性のためだけに残されたメソッドです。
-かわりに直接 <code class="docutils literal"><span class="pre">$_SESSION</span></code> を使うべきです。</p>
+かわりに直接 <tt class="docutils literal"><span class="pre">$_SESSION</span></tt> を使うべきです。</p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="CI_Session::keep_flashdata">
-<code class="descname">keep_flashdata</code><span class="sig-paren">(</span><em>$key</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_Session::keep_flashdata" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">keep_flashdata</tt><big>(</big><em>$key</em><big>)</big><a class="headerlink" href="#CI_Session::keep_flashdata" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1586,13 +1590,13 @@ CodeIgniter においても実装しようとすべきではありません。
 <p class="first admonition-title">注釈</p>
 <p class="last">これは古いアプリケーションの
 後方互換性のためだけに残されたメソッドです。
-これは <code class="docutils literal"><span class="pre">mark_as_flash()</span></code> のエイリアスにすぎません。</p>
+これは <tt class="docutils literal"><span class="pre">mark_as_flash()</span></tt> のエイリアスにすぎません。</p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="CI_Session::set_flashdata">
-<code class="descname">set_flashdata</code><span class="sig-paren">(</span><em>$data</em><span class="optional">[</span>, <em>$value = NULL</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Session::set_flashdata" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">set_flashdata</tt><big>(</big><em>$data</em><span class="optional">[</span>, <em>$value = NULL</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Session::set_flashdata" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1608,7 +1612,7 @@ CodeIgniter においても実装しようとすべきではありません。
 </tr>
 </tbody>
 </table>
-<p>スーパーグローバル変数 <code class="docutils literal"><span class="pre">$_SESSION</span></code> にデータを設定し、
+<p>スーパーグローバル変数 <tt class="docutils literal"><span class="pre">$_SESSION</span></tt> にデータを設定し、
 「 flashdata 」としてマークします。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
@@ -1619,7 +1623,7 @@ CodeIgniter においても実装しようとすべきではありません。
 
 <dl class="method">
 <dt id="CI_Session::mark_as_temp">
-<code class="descname">mark_as_temp</code><span class="sig-paren">(</span><em>$key</em><span class="optional">[</span>, <em>$ttl = 300</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Session::mark_as_temp" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">mark_as_temp</tt><big>(</big><em>$key</em><span class="optional">[</span>, <em>$ttl = 300</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Session::mark_as_temp" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1638,13 +1642,13 @@ CodeIgniter においても実装しようとすべきではありません。
 </tr>
 </tbody>
 </table>
-<p><code class="docutils literal"><span class="pre">$_SESSION</span></code> アイテムのキー（または複数のキー）を
+<p><tt class="docutils literal"><span class="pre">$_SESSION</span></tt> アイテムのキー（または複数のキー）を
 「 tempdata 」としてマークします。</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="CI_Session::get_temp_keys">
-<code class="descname">get_temp_keys</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Session::get_temp_keys" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">get_temp_keys</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_Session::get_temp_keys" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1655,13 +1659,13 @@ CodeIgniter においても実装しようとすべきではありません。
 </tr>
 </tbody>
 </table>
-<p><code class="docutils literal"><span class="pre">$_SESSION</span></code> のうち
+<p><tt class="docutils literal"><span class="pre">$_SESSION</span></tt> のうち
 「 tempdata 」としてマークされたすべての値の配列を取得します。</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="CI_Session::unmark_temp">
-<code class="descname">unmark_temp</code><span class="sig-paren">(</span><em>$key</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_Session::unmark_temp" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">unmark_temp</tt><big>(</big><em>$key</em><big>)</big><a class="headerlink" href="#CI_Session::unmark_temp" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1676,13 +1680,13 @@ CodeIgniter においても実装しようとすべきではありません。
 </tr>
 </tbody>
 </table>
-<p><code class="docutils literal"><span class="pre">$_SESSION</span></code> アイテムのキー（または複数のキー）の
+<p><tt class="docutils literal"><span class="pre">$_SESSION</span></tt> アイテムのキー（または複数のキー）の
 「 tempdata 」としてのマークを外します。</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="CI_Session::tempdata">
-<code class="descname">tempdata</code><span class="sig-paren">(</span><span class="optional">[</span><em>$key = NULL</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Session::tempdata" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">tempdata</tt><big>(</big><span class="optional">[</span><em>$key = NULL</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Session::tempdata" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1700,20 +1704,20 @@ CodeIgniter においても実装しようとすべきではありません。
 </tr>
 </tbody>
 </table>
-<p><code class="docutils literal"><span class="pre">$_SESSION</span></code> アイテムのうち
+<p><tt class="docutils literal"><span class="pre">$_SESSION</span></tt> アイテムのうち
 「 tempdata 」としてマークされた値、または引数が指定されない場合はすべての「 flashdata 」の配列
 を取得します。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
 <p class="last">これは古いアプリケーションの
 後方互換性のためだけに残されたメソッドです。
-かわりに直接 <code class="docutils literal"><span class="pre">$_SESSION</span></code> を使うべきです。</p>
+かわりに直接 <tt class="docutils literal"><span class="pre">$_SESSION</span></tt> を使うべきです。</p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="CI_Session::set_tempdata">
-<code class="descname">set_tempdata</code><span class="sig-paren">(</span><em>$data</em><span class="optional">[</span>, <em>$value = NULL</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Session::set_tempdata" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">set_tempdata</tt><big>(</big><em>$data</em><span class="optional">[</span>, <em>$value = NULL</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Session::set_tempdata" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1730,7 +1734,7 @@ CodeIgniter においても実装しようとすべきではありません。
 </tr>
 </tbody>
 </table>
-<p>スーパーグローバル変数 <code class="docutils literal"><span class="pre">$_SESSION</span></code> にデータを設定し、
+<p>スーパーグローバル変数 <tt class="docutils literal"><span class="pre">$_SESSION</span></tt> にデータを設定し、
 「 tempdata 」としてマークします。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
@@ -1741,7 +1745,7 @@ CodeIgniter においても実装しようとすべきではありません。
 
 <dl class="method">
 <dt id="CI_Session::sess_regenerate">
-<code class="descname">sess_regenerate</code><span class="sig-paren">(</span><span class="optional">[</span><em>$destroy = FALSE</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Session::sess_regenerate" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">sess_regenerate</tt><big>(</big><span class="optional">[</span><em>$destroy = FALSE</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Session::sess_regenerate" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1767,7 +1771,7 @@ CodeIgniter においても実装しようとすべきではありません。
 
 <dl class="method">
 <dt id="CI_Session::sess_destroy">
-<code class="descname">sess_destroy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Session::sess_destroy" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">sess_destroy</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_Session::sess_destroy" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1792,7 +1796,7 @@ CodeIgniter においても実装しようとすべきではありません。
 
 <dl class="method">
 <dt id="CI_Session::__get">
-<code class="descname">__get</code><span class="sig-paren">(</span><em>$key</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_Session::__get" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">__get</tt><big>(</big><em>$key</em><big>)</big><a class="headerlink" href="#CI_Session::__get" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1811,16 +1815,16 @@ CodeIgniter においても実装しようとすべきではありません。
 </tbody>
 </table>
 <p>これはマジックメソッドで、
-<code class="docutils literal"><span class="pre">$_SESSION['item']</span></code> のかわりに <code class="docutils literal"><span class="pre">$this-&gt;session-&gt;item</span></code> で使えるようにするものです、
+<tt class="docutils literal"><span class="pre">$_SESSION['item']</span></tt> のかわりに <tt class="docutils literal"><span class="pre">$this-&gt;session-&gt;item</span></tt> で使えるようにするものです、
 もしあなたがお好みなら。</p>
-<p><code class="docutils literal"><span class="pre">$this-&gt;session-&gt;session_id</span></code> にアクセスした場合、
-これは <code class="docutils literal"><span class="pre">session_id()</span></code> によって取得されるセッション ID を
+<p><tt class="docutils literal"><span class="pre">$this-&gt;session-&gt;session_id</span></tt> にアクセスした場合、
+これは <tt class="docutils literal"><span class="pre">session_id()</span></tt> によって取得されるセッション ID を
 返します。</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="CI_Session::__set">
-<code class="descname">__set</code><span class="sig-paren">(</span><em>$key</em>, <em>$value</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_Session::__set" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">__set</tt><big>(</big><em>$key</em>, <em>$value</em><big>)</big><a class="headerlink" href="#CI_Session::__set" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1837,7 +1841,7 @@ CodeIgniter においても実装しようとすべきではありません。
 </tbody>
 </table>
 <p>これはマジックメソッドで、
-<code class="docutils literal"><span class="pre">$this-&gt;session</span></code> プロパティで <code class="docutils literal"><span class="pre">$_SESSION</span></code> に
+<tt class="docutils literal"><span class="pre">$this-&gt;session</span></tt> プロパティで <tt class="docutils literal"><span class="pre">$_SESSION</span></tt> に
 アクセスできるようにするものです:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">foo</span> <span class="o">=</span> <span class="s1">&#39;bar&#39;</span><span class="p">;</span>
 
@@ -1871,7 +1875,7 @@ CodeIgniter においても実装しようとすべきではありません。
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 10月 11, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
+      最終更新: Nov 23, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

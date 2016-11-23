@@ -49,7 +49,9 @@
     
       <div id="pulldown-menu" class="ciNav">
         <ul>
-<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -96,7 +98,7 @@
 <li class="toctree-l2"><a class="reference internal" href="models.html">モデル</a></li>
 <li class="toctree-l2"><a class="reference internal" href="helpers.html">ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="libraries.html">CodeIgniter のライブラリの利用</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">ライブラリの作成</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">ライブラリの作成</a></li>
 <li class="toctree-l2"><a class="reference internal" href="drivers.html">CodeIgniter のドライバを使う</a></li>
 <li class="toctree-l2"><a class="reference internal" href="creating_drivers.html">ドライバの作成</a></li>
 <li class="toctree-l2"><a class="reference internal" href="core_classes.html">コアシステムクラスの作成</a></li>
@@ -233,7 +235,9 @@
           
           
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -280,7 +284,7 @@
 <li class="toctree-l2"><a class="reference internal" href="models.html">モデル</a></li>
 <li class="toctree-l2"><a class="reference internal" href="helpers.html">ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="libraries.html">CodeIgniter のライブラリの利用</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">ライブラリの作成</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">ライブラリの作成</a></li>
 <li class="toctree-l2"><a class="reference internal" href="drivers.html">CodeIgniter のドライバを使う</a></li>
 <li class="toctree-l2"><a class="reference internal" href="creating_drivers.html">ドライバの作成</a></li>
 <li class="toctree-l2"><a class="reference internal" href="core_classes.html">コアシステムクラスの作成</a></li>
@@ -479,7 +483,7 @@ application/libraries ディレクトリ内に独自のライブラリを作成�
 </div>
 <div class="section" id="id5">
 <h2>あなたのクラスの利用<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<p><a class="reference internal" href="controllers.html"><span class="doc">コントローラ</span></a> メソッドのどこででも、
+<p><a class="reference internal" href="controllers.html"><em>コントローラ</em></a> メソッドのどこででも、
 標準の方法を使用してクラスを初期化することができます:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;someclass&#39;</span><span class="p">);</span>
 </pre></div>
@@ -524,17 +528,17 @@ application/libraries ディレクトリ内に独自のライブラリを作成�
 <div class="section" id="codeigniter">
 <h2>ライブラリ内で CodeIgniter のリソースを利用する<a class="headerlink" href="#codeigniter" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>あなたのライブラリ内で CodeIgniter のネイティブリソースにアクセスするには
-<code class="docutils literal"><span class="pre">get_instance()</span></code> メソッドを使用します。このメソッドは CodeIgniter
+<tt class="docutils literal"><span class="pre">get_instance()</span></tt> メソッドを使用します。このメソッドは CodeIgniter
 のスーパーオブジェクトを返します。</p>
 <p>通常、コントローラメソッド内では
-<code class="docutils literal"><span class="pre">$this</span></code> 構造を使用して、 CodeIgniter メソッドの利用可能なうちのいずれかを呼び出しています:</p>
+<tt class="docutils literal"><span class="pre">$this</span></tt> 構造を使用して、 CodeIgniter メソッドの利用可能なうちのいずれかを呼び出しています:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">helper</span><span class="p">(</span><span class="s1">&#39;url&#39;</span><span class="p">);</span>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;session&#39;</span><span class="p">);</span>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">config</span><span class="o">-&gt;</span><span class="na">item</span><span class="p">(</span><span class="s1">&#39;base_url&#39;</span><span class="p">);</span>
 <span class="c1">// など。</span>
 </pre></div>
 </div>
-<p>しかしながら <code class="docutils literal"><span class="pre">$this</span></code> はこれはコントローラ内、
+<p>しかしながら <tt class="docutils literal"><span class="pre">$this</span></tt> はこれはコントローラ内、
 モデル内、ビュー内で直接使用する場合にだけ動作します。独自のカスタムクラス内から CodeIgniter
 のクラスを使用したい場合は、以下のようにできます:</p>
 <p>まず、変数に CodeIgniter のオブジェクトを割り当てます:</p>
@@ -542,7 +546,7 @@ application/libraries ディレクトリ内に独自のライブラリを作成�
 </pre></div>
 </div>
 <p>オブジェクトを変数に割り当てたなら、
-<code class="docutils literal"><span class="pre">$this</span></code> の <em>かわりに</em> その変数を使用します:</p>
+<tt class="docutils literal"><span class="pre">$this</span></tt> の <em>かわりに</em> その変数を使用します:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$CI</span> <span class="o">=&amp;</span> <span class="nx">get_instance</span><span class="p">();</span>
 
 <span class="nv">$CI</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">helper</span><span class="p">(</span><span class="s1">&#39;url&#39;</span><span class="p">);</span>
@@ -553,7 +557,7 @@ application/libraries ディレクトリ内に独自のライブラリを作成�
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p>上記 <code class="docutils literal"><span class="pre">get_instance()</span></code> 関数は、
+<p>上記 <tt class="docutils literal"><span class="pre">get_instance()</span></tt> 関数は、
 参照によって渡されていることがわかるでしょう:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$CI</span> <span class="o">=&amp;</span> <span class="nx">get_instance</span><span class="p">();</span>
 </pre></div>
@@ -700,7 +704,7 @@ Email クラスを拡張継承したものをロードするには次のよう�
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 10月 11, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
+      最終更新: Nov 23, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

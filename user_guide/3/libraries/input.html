@@ -49,7 +49,9 @@
     
       <div id="pulldown-menu" class="ciNav">
         <ul>
-<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -132,7 +134,7 @@
 <li class="toctree-l2"><a class="reference internal" href="form_validation.html">フォームバリデーション（検証）</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ftp.html">FTP クラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="image_lib.html">画像操作クラス</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">入力クラス</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">入力クラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="javascript.html">JavaScript クラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="language.html">言語クラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="loader.html">ローダ（読み込み処理）クラス</a></li>
@@ -233,7 +235,9 @@
           
           
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -316,7 +320,7 @@
 <li class="toctree-l2"><a class="reference internal" href="form_validation.html">フォームバリデーション（検証）</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ftp.html">FTP クラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="image_lib.html">画像操作クラス</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">入力クラス</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">入力クラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="javascript.html">JavaScript クラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="language.html">言語クラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="loader.html">ローダ（読み込み処理）クラス</a></li>
@@ -422,158 +426,158 @@
             
   <div class="section" id="id1">
 <h1>入力クラス<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
-<p>The Input Class serves two purposes:</p>
+<p>入力クラスには2つの目的があります:</p>
 <ol class="arabic simple">
-<li>It pre-processes global input data for security.</li>
-<li>It provides some helper methods for fetching input data and pre-processing it.</li>
+<li>グローバルな入力データをセキュリティのために前処理します。</li>
+<li>入力データを取り出し、前処理するためのヘルパーメソッドを提供します。</li>
 </ol>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">This class is initialized automatically by the system so there
-is no need to do it manually.</p>
+<p class="last">このクラスは、システムで自動的に初期化されるので、
+手動で初期化する必要はありません。</p>
 </div>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#id2" id="id5">入力フィルタリング</a><ul>
-<li><a class="reference internal" href="#id3" id="id6">セキュリティフィルタリング</a></li>
-<li><a class="reference internal" href="#xss" id="id7">XSS フィルタリング</a></li>
+<li><a class="reference internal" href="#id2" id="id7">入力フィルタリング</a><ul>
+<li><a class="reference internal" href="#id3" id="id8">セキュリティフィルタリング</a></li>
+<li><a class="reference internal" href="#xss" id="id9">XSS フィルタリング</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#accessing-form-data" id="id8">Accessing form data</a><ul>
-<li><a class="reference internal" href="#using-post-get-cookie-or-server-data" id="id9">Using POST, GET, COOKIE, or SERVER Data</a></li>
-<li><a class="reference internal" href="#php-input-stream" id="id10">php://input streamを使う</a></li>
+<li><a class="reference internal" href="#accessing-form-data" id="id10">Accessing form data</a><ul>
+<li><a class="reference internal" href="#postgetcookie-server" id="id11">POST、GET、COOKIE あるいは SERVER データの使用</a></li>
+<li><a class="reference internal" href="#php-input-stream" id="id12">php://input streamを使う</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id4" id="id11">クラスリファレンス</a></li>
+<li><a class="reference internal" href="#id4" id="id13">クラスリファレンス</a></li>
 </ul>
 </div>
 <div class="custom-index container"></div><div class="section" id="id2">
-<h2><a class="toc-backref" href="#id5">入力フィルタリング</a><a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id7">入力フィルタリング</a><a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <div class="section" id="id3">
-<h3><a class="toc-backref" href="#id6">セキュリティフィルタリング</a><a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>The security filtering method is called automatically when a new
-<a class="reference internal" href="../general/controllers.html"><span class="doc">controller</span></a> is invoked. It does the
-following:</p>
+<h3><a class="toc-backref" href="#id8">セキュリティフィルタリング</a><a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>セキュリティフィルタ機能は、新しい <a class="reference internal" href="../general/controllers.html"><em>コントローラ</em></a> が
+起動されると自動的に呼び出されます。
+フィルタ機能は、次のことを行います:</p>
 <ul class="simple">
-<li>If <code class="docutils literal"><span class="pre">$config['allow_get_array']</span></code> is FALSE (default is TRUE), destroys
-the global GET array.</li>
-<li>Destroys all global variables in the event register_globals is
-turned on.</li>
-<li>Filters the GET/POST/COOKIE array keys, permitting only alpha-numeric
-(and a few other) characters.</li>
-<li>Provides XSS (Cross-site Scripting Hacks) filtering. This can be
-enabled globally, or upon request.</li>
-<li>Standardizes newline characters to <code class="docutils literal"><span class="pre">PHP_EOL</span></code> (\n in UNIX-based OSes,
-\r\n under Windows). This is configurable.</li>
+<li><tt class="docutils literal"><span class="pre">$config['allow_get_array']</span></tt> が FALSE に設定されている場合（デフォルトは TRUE ）、
+グローバルな GET配列($_GET) のデータを消去します。</li>
+<li>register_globals が ON
+に設定されているときにセットされるグローバル変数は消去されます。</li>
+<li>英数字 (と少数の他の文字) だけを許可するよう GET/POST/COOKIE
+配列のキーがフィルタリングされます。</li>
+<li>XSS (クロスサイトスクリプティング攻撃) フィルタリングを提供します。
+この機能は、グローバルまたは、リクエストごとに有効化できます。</li>
+<li>改行文字を <tt class="docutils literal"><span class="pre">PHP_EOL</span></tt> に統一します( UNIX ベースでのOSであれば \n 、
+Windowsでは \r\n )。これは設定可能です。</li>
 </ul>
 </div>
 <div class="section" id="xss">
-<h3><a class="toc-backref" href="#id7">XSS フィルタリング</a><a class="headerlink" href="#xss" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>The Input class has the ability to filter input automatically to prevent
-cross-site scripting attacks. If you want the filter to run
-automatically every time it encounters POST or COOKIE data you can
-enable it by opening your <em>application/config/config.php</em> file and setting
+<h3><a class="toc-backref" href="#id9">XSS フィルタリング</a><a class="headerlink" href="#xss" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>入力クラスではクロスサイトスクリプティング攻撃を防ぐ為、自動的に入力値
+をフィルタする機能が備わっています。 <em>application/config/config.php</em> ファイルを
+次のように設定することで POST または COOKIE
+データを扱う際、自動的にフィルタを実行することができます
 this:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;global_xss_filtering&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">TRUE</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>Please refer to the <a class="reference internal" href="security.html"><span class="doc">Security class</span></a> documentation for
-information on using XSS Filtering in your application.</p>
+<p>アプリケーション内で XSS フィルタリングを利用する方法については
+<a class="reference internal" href="security.html"><em>セキュリティクラス</em></a> を参照してください。</p>
 <div class="admonition important">
 <p class="first admonition-title">重要</p>
-<p class="last">The &#8216;global_xss_filtering&#8217; setting is DEPRECATED and kept
-solely for backwards-compatibility purposes. XSS escaping should
-be performed on <em>output</em>, not <em>input</em>!</p>
+<p class="last">&#8216;global_xss_filtering&#8217; を設定することは推奨されていません。
+後方互換の為にのみ維持されているものです。 XSS エスケープは <em>出力値</em> にのみ行われ、
+<em>入力値</em> には行われません！</p>
 </div>
 </div>
 </div>
 <div class="section" id="accessing-form-data">
-<h2><a class="toc-backref" href="#id8">Accessing form data</a><a class="headerlink" href="#accessing-form-data" title="このヘッドラインへのパーマリンク">¶</a></h2>
-<div class="section" id="using-post-get-cookie-or-server-data">
-<h3><a class="toc-backref" href="#id9">Using POST, GET, COOKIE, or SERVER Data</a><a class="headerlink" href="#using-post-get-cookie-or-server-data" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>CodeIgniter comes with helper methods that let you fetch POST, GET,
-COOKIE or SERVER items. The main advantage of using the provided
-methods rather than fetching an item directly (<code class="docutils literal"><span class="pre">$_POST['something']</span></code>)
-is that the methods will check to see if the item is set and return
-NULL if not. This lets you conveniently use data without
-having to test whether an item exists first. In other words, normally
-you might do something like this:</p>
+<h2><a class="toc-backref" href="#id10">Accessing form data</a><a class="headerlink" href="#accessing-form-data" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="postgetcookie-server">
+<h3><a class="toc-backref" href="#id11">POST、GET、COOKIE あるいは SERVER データの使用</a><a class="headerlink" href="#postgetcookie-server" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>CodeIgniter には、POST、GET、COOKIE あるいは SERVER
+のデータを取得するためのヘルパーメソッドが備わっています。
+直接項目を取得する(例: <tt class="docutils literal"><span class="pre">$_POST['something']</span></tt> )のでなく、このクラスが
+提供するメソッドを使う主な利点は、メソッドにより値がセットされているかチェックされ、
+セットされていない場合は、 NULL を返すということです。
+このメソッドを利用すれば、項目が存在するかどうかをまずテストすることなく、便利にデータを使えます。
+つまり、通常は、次のようなコードになりますが:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$something</span> <span class="o">=</span> <span class="nb">isset</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;something&#39;</span><span class="p">])</span> <span class="o">?</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;something&#39;</span><span class="p">]</span> <span class="o">:</span> <span class="k">NULL</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>With CodeIgniter&#8217;s built in methods you can simply do this:</p>
+<p>CodeIgniter の組み込みメソッドを使うと、単純に次のようになります:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$something</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">post</span><span class="p">(</span><span class="s1">&#39;something&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>The main methods are:</p>
+<p>よく使用するメソッドは次の通りです:</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">$this-&gt;input-&gt;post()</span></code></li>
-<li><code class="docutils literal"><span class="pre">$this-&gt;input-&gt;get()</span></code></li>
-<li><code class="docutils literal"><span class="pre">$this-&gt;input-&gt;cookie()</span></code></li>
-<li><code class="docutils literal"><span class="pre">$this-&gt;input-&gt;server()</span></code></li>
+<li><tt class="docutils literal"><span class="pre">$this-&gt;input-&gt;post()</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">$this-&gt;input-&gt;get()</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">$this-&gt;input-&gt;cookie()</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">$this-&gt;input-&gt;server()</span></tt></li>
 </ul>
 </div>
 <div class="section" id="php-input-stream">
-<h3><a class="toc-backref" href="#id10">php://input streamを使う</a><a class="headerlink" href="#php-input-stream" title="このヘッドラインへのパーマリンク">¶</a></h3>
-<p>If you want to utilize the PUT, DELETE, PATCH or other exotic request
-methods, they can only be accessed via a special input stream, that
-can only be read once. This isn&#8217;t as easy as just reading from e.g.
-the <code class="docutils literal"><span class="pre">$_POST</span></code> array, because it will always exist and you can try
-and access multiple variables without caring that you might only have
-one shot at all of the POST data.</p>
-<p>CodeIgniter will take care of that for you, and you can read the data
-from the <strong>php://input</strong> stream at any time, just by using the
-<code class="docutils literal"><span class="pre">$raw_input_stream</span></code> property:</p>
+<h3><a class="toc-backref" href="#id12">php://input streamを使う</a><a class="headerlink" href="#php-input-stream" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>PUT、DELETE、PATCH 及び他の特殊なリクエストメソッドを使用する場合、
+リクエスト値は特殊な入力ストリーム経由で一度だけ読み出すことが出来ます。
+これらの値を読み出すことは簡単ではありません。
+<tt class="docutils literal"><span class="pre">$_POST</span></tt> の配列は常に存在し、
+POST データに一度だけアクセスしたかを気にすることなく、複数の値に
+アクセスすることができるからです。</p>
+<p>CodeIgniter は <tt class="docutils literal"><span class="pre">$raw_input_stream</span></tt> 変数を使用することで、
+<strong>php://input</strong> ストリームからの
+データをいつでも読み出すことができます:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">raw_input_stream</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>Additionally if the input stream is form-encoded like $_POST you can
-access its values by calling the
-<code class="docutils literal"><span class="pre">input_stream()</span></code> method:</p>
+<p>加えて、入力ストリームを $_POST のように
+フォームエンコードされた値で取得したい場合は
+<tt class="docutils literal"><span class="pre">input_stream()</span></tt> を使用してください:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">input_stream</span><span class="p">(</span><span class="s1">&#39;key&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Similar to other methods such as <code class="docutils literal"><span class="pre">get()</span></code> and <code class="docutils literal"><span class="pre">post()</span></code>, if the
-requested data is not found, it will return NULL and you can also
-decide whether to run the data through <code class="docutils literal"><span class="pre">xss_clean()</span></code> by passing
-a boolean value as the second parameter:</p>
+<p>他の <tt class="docutils literal"><span class="pre">get()</span></tt> や <tt class="docutils literal"><span class="pre">post()</span></tt> と同様に、
+リクエストされたデータが見つからない場合、 NULL を返却します。
+リクエストデータに <tt class="docutils literal"><span class="pre">xss_clean()</span></tt> を適用するかどうかを制御したい場合は
+第二引数にブール値を渡してください。:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">input_stream</span><span class="p">(</span><span class="s1">&#39;key&#39;</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span> <span class="c1">// XSS Clean</span>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">input_stream</span><span class="p">(</span><span class="s1">&#39;key&#39;</span><span class="p">,</span> <span class="k">FALSE</span><span class="p">);</span> <span class="c1">// No XSS filter</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">You can utilize <code class="docutils literal"><span class="pre">method()</span></code> in order to know if you&#8217;re reading
-PUT, DELETE or PATCH data.</p>
+<p class="last">読み込んだデータが PUT、 DELETE または PATCH かを知りたい場合
+<tt class="docutils literal"><span class="pre">method()</span></tt> を使用してください。</p>
 </div>
 </div>
 </div>
 <div class="section" id="id4">
-<h2><a class="toc-backref" href="#id11">クラスリファレンス</a><a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<h2><a class="toc-backref" href="#id13">クラスリファレンス</a><a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <dl class="class">
 <dt id="CI_Input">
-<em class="property">class </em><code class="descname">CI_Input</code><a class="headerlink" href="#CI_Input" title="この定義へのパーマリンク">¶</a></dt>
+<em class="property">class </em><tt class="descname">CI_Input</tt><a class="headerlink" href="#CI_Input" title="この定義へのパーマリンク">¶</a></dt>
 <dd><dl class="attribute">
 <dt>
-<code class="descname">$raw_input_stream</code></dt>
-<dd><p>Read only property that will return php://input data as is.</p>
-<p>The property can be read multiple times.</p>
+<tt class="descname">$raw_input_stream</tt></dt>
+<dd><p>php://input データから返却される読み取り専用の値。</p>
+<p>この変数は何度でも参照可能です。</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="CI_Input::post">
-<code class="descname">post</code><span class="sig-paren">(</span><span class="optional">[</span><em>$index = NULL</em><span class="optional">[</span>, <em>$xss_clean = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Input::post" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">post</tt><big>(</big><span class="optional">[</span><em>$index = NULL</em><span class="optional">[</span>, <em>$xss_clean = NULL</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Input::post" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$index</strong> (<em>mixed</em>) &#8211; POST parameter name</li>
-<li><strong>$xss_clean</strong> (<em>bool</em>) &#8211; Whether to apply XSS filtering</li>
+<li><strong>$index</strong> (<em>mixed</em>) &#8211; POST パラメータの名前</li>
+<li><strong>$xss_clean</strong> (<em>bool</em>) &#8211; XSS フィルタリングを適用するかどうか</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">$_POST if no parameters supplied, otherwise the POST value if found or NULL if not</p>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">$_POST パラメータが指定されていない場合は NULL 、それ以外は $_POST パラメータの値</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">mixed</p>
@@ -581,33 +585,33 @@ PUT, DELETE or PATCH data.</p>
 </tr>
 </tbody>
 </table>
-<p>The first parameter will contain the name of the POST item you are
-looking for:</p>
+<p>第1引数は、コレクションの中から探し出す POST
+された項目の名前になります:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">post</span><span class="p">(</span><span class="s1">&#39;some_data&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>The method returns NULL if the item you are attempting to retrieve
-does not exist.</p>
-<p>The second optional parameter lets you run the data through the XSS
-filter. It&#8217;s enabled by setting the second parameter to boolean TRUE
-or by setting your <code class="docutils literal"><span class="pre">$config['global_xss_filtering']</span></code> to TRUE.</p>
+<p>このメソッドは、取り出そうとして見つからなかった場合、 NULL
+を返します。</p>
+<p>第二引数は XSSフィルタをデータに適用できるようにするオプションのパラメータです。
+第二引数にブール値の TRUE を設定するか <a href="#id5"><span class="problematic" id="id6">``</span></a>$config[&#8216;global_xss_filtering&#8217;]``を
+ブール値の TRUE にすることで有効になります。</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">post</span><span class="p">(</span><span class="s1">&#39;some_data&#39;</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>To return an array of all POST items call without any parameters.</p>
-<p>To return all POST items and pass them through the XSS filter set the
-first parameter NULL while setting the second parameter to boolean TRUE.</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">post</span><span class="p">(</span><span class="k">NULL</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span> <span class="c1">// returns all POST items with XSS filter</span>
-<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">post</span><span class="p">(</span><span class="k">NULL</span><span class="p">,</span> <span class="k">FALSE</span><span class="p">);</span> <span class="c1">// returns all POST items without XSS filter</span>
+<p>引数を指定せずに呼び出すことで、 POST されたすべての値を連想配列で返します。</p>
+<p>第1引数を NULL 、第2引数にブール値の TRUE を指定することで、POST
+されたすべての値を XSS フィルタに通すことができます。</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">post</span><span class="p">(</span><span class="k">NULL</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span> <span class="c1">// POST された値を XSS フィルタを通して返します</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">post</span><span class="p">(</span><span class="k">NULL</span><span class="p">,</span> <span class="k">FALSE</span><span class="p">);</span> <span class="c1">// POST された値を XSS フィルタを通さずに返します</span>
 </pre></div>
 </div>
-<p>To return an array of multiple POST parameters, pass all the required keys
-as an array.</p>
+<p>複数の POST パラメータの配列を返却したい時は必要なキーを
+配列で渡してください。</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">post</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;field1&#39;</span><span class="p">,</span> <span class="s1">&#39;field2&#39;</span><span class="p">));</span>
 </pre></div>
 </div>
-<p>Same rule applied here, to retrive the parameters with XSS filtering enabled, set the
-second parameter to boolean TRUE.</p>
+<p>ここではXSS フィルタリングを有効にしてパラメータを取得するために
+同じルールを適用し、第二引数のパラメータにブール値の TRUE を設定してください。</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">post</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;field1&#39;</span><span class="p">,</span> <span class="s1">&#39;field2&#39;</span><span class="p">),</span> <span class="k">TRUE</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -615,18 +619,18 @@ second parameter to boolean TRUE.</p>
 
 <dl class="method">
 <dt id="CI_Input::get">
-<code class="descname">get</code><span class="sig-paren">(</span><span class="optional">[</span><em>$index = NULL</em><span class="optional">[</span>, <em>$xss_clean = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Input::get" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">get</tt><big>(</big><span class="optional">[</span><em>$index = NULL</em><span class="optional">[</span>, <em>$xss_clean = NULL</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Input::get" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$index</strong> (<em>mixed</em>) &#8211; GET parameter name</li>
-<li><strong>$xss_clean</strong> (<em>bool</em>) &#8211; Whether to apply XSS filtering</li>
+<li><strong>$index</strong> (<em>mixed</em>) &#8211; GET パラメータの名前</li>
+<li><strong>$xss_clean</strong> (<em>bool</em>) &#8211; XSS フィルタリングを適用するかどうか</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">$_GET if no parameters supplied, otherwise the GET value if found or NULL if not</p>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">$_GET パラメータが指定されていない場合はNULL、それ以外は $_GET パラメータの値</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">mixed</p>
@@ -634,24 +638,24 @@ second parameter to boolean TRUE.</p>
 </tr>
 </tbody>
 </table>
-<p>This method is identical to <code class="docutils literal"><span class="pre">post()</span></code>, only it fetches GET data.</p>
+<p>このメソッドは、get データを取り出すということ以外は、 <tt class="docutils literal"><span class="pre">post()</span></tt> メソッドと同じです</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;some_data&#39;</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>To return an array of all GET items call without any parameters.</p>
-<p>To return all GET items and pass them through the XSS filter set the
-first parameter NULL while setting the second parameter to boolean TRUE.</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="k">NULL</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span> <span class="c1">// returns all GET items with XSS filter</span>
-<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="k">NULL</span><span class="p">,</span> <span class="k">FALSE</span><span class="p">);</span> <span class="c1">// returns all GET items without XSS filtering</span>
+<p>引数を指定せずに呼び出すことで、 GET されたすべての値を連想配列で返します。</p>
+<p>第1引数を NULL 、第2引数にブール値の TRUE を指定することで、
+GET されたすべての値を XSS フィルタに通すことができます。</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="k">NULL</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span> <span class="c1">// GET された値を XSS フィルタを通して返します</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="k">NULL</span><span class="p">,</span> <span class="k">FALSE</span><span class="p">);</span> <span class="c1">// GET された値を XSS フィルタを通さずに返します</span>
 </pre></div>
 </div>
-<p>To return an array of multiple GET parameters, pass all the required keys
-as an array.</p>
+<p>複数の POST パラメータの配列を返却したい時は必要なキーを
+配列で渡してください。</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;field1&#39;</span><span class="p">,</span> <span class="s1">&#39;field2&#39;</span><span class="p">));</span>
 </pre></div>
 </div>
-<p>Same rule applied here, to retrive the parameters with XSS filtering enabled, set the
-second parameter to boolean TRUE.</p>
+<p>ここではXSS フィルタリングを有効にしてパラメータを取得するために
+同じルールを適用し、第二引数のパラメータにブール値の TRUE を設定してください。</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;field1&#39;</span><span class="p">,</span> <span class="s1">&#39;field2&#39;</span><span class="p">),</span> <span class="k">TRUE</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -659,18 +663,18 @@ second parameter to boolean TRUE.</p>
 
 <dl class="method">
 <dt id="CI_Input::post_get">
-<code class="descname">post_get</code><span class="sig-paren">(</span><em>$index</em><span class="optional">[</span>, <em>$xss_clean = NULL</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Input::post_get" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">post_get</tt><big>(</big><em>$index</em><span class="optional">[</span>, <em>$xss_clean = NULL</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Input::post_get" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$index</strong> (<em>string</em>) &#8211; POST/GET parameter name</li>
-<li><strong>$xss_clean</strong> (<em>bool</em>) &#8211; Whether to apply XSS filtering</li>
+<li><strong>$index</strong> (<em>string</em>) &#8211; POST/GET パラメータの名前</li>
+<li><strong>$xss_clean</strong> (<em>bool</em>) &#8211; XSS フィルタリングを適用するかどうか</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">POST/GET value if found, NULL if not</p>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">POST/GET の値があれば POST/GET の値、ない場合は NULL</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">mixed</p>
@@ -678,9 +682,9 @@ second parameter to boolean TRUE.</p>
 </tr>
 </tbody>
 </table>
-<p>This method works pretty much the same way as <code class="docutils literal"><span class="pre">post()</span></code> and <code class="docutils literal"><span class="pre">get()</span></code>,
-only combined. It will search through both POST and GET streams for data,
-looking in POST first, and then in GET:</p>
+<p>このメソッドは組み合わされているだけで、<tt class="docutils literal"><span class="pre">post()</span></tt> や <tt class="docutils literal"><span class="pre">get()</span></tt> と
+同様に動作します。 POST と GET の両方のストリームデータを探し、
+初めにPOST、その後に GET を探します。:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">post_get</span><span class="p">(</span><span class="s1">&#39;some_data&#39;</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -688,18 +692,18 @@ looking in POST first, and then in GET:</p>
 
 <dl class="method">
 <dt id="CI_Input::get_post">
-<code class="descname">get_post</code><span class="sig-paren">(</span><em>$index</em><span class="optional">[</span>, <em>$xss_clean = NULL</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Input::get_post" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">get_post</tt><big>(</big><em>$index</em><span class="optional">[</span>, <em>$xss_clean = NULL</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Input::get_post" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$index</strong> (<em>string</em>) &#8211; GET/POST parameter name</li>
-<li><strong>$xss_clean</strong> (<em>bool</em>) &#8211; Whether to apply XSS filtering</li>
+<li><strong>$index</strong> (<em>string</em>) &#8211; GET/POST のパラメータの名前</li>
+<li><strong>$xss_clean</strong> (<em>bool</em>) &#8211; XSS フィルタリングを適用するかどうか</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">GET/POST value if found, NULL if not</p>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">GET/POST の値があれば POST/GET の値、ない場合は NULL</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">mixed</p>
@@ -707,31 +711,31 @@ looking in POST first, and then in GET:</p>
 </tr>
 </tbody>
 </table>
-<p>This method works the same way as <code class="docutils literal"><span class="pre">post_get()</span></code> only it looks for GET
-data first.</p>
+<p>このメソッドは GET データを初めに探しにいく以外 <tt class="docutils literal"><span class="pre">post_get()</span></tt> と
+同じように動作します。</p>
 <blockquote>
 <div>$this-&gt;input-&gt;get_post(&#8216;some_data&#8217;, TRUE);</div></blockquote>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">This method used to act EXACTLY like <code class="docutils literal"><span class="pre">post_get()</span></code>, but it&#8217;s
-behavior has changed in CodeIgniter 3.0.</p>
+<p class="last">このメソッドは <tt class="docutils literal"><span class="pre">post_get()</span></tt> と同じように動作していました。しかし、
+CodeIgniter 3.0でこの動作は変更されました。</p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="CI_Input::cookie">
-<code class="descname">cookie</code><span class="sig-paren">(</span><span class="optional">[</span><em>$index = NULL</em><span class="optional">[</span>, <em>$xss_clean = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Input::cookie" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">cookie</tt><big>(</big><span class="optional">[</span><em>$index = NULL</em><span class="optional">[</span>, <em>$xss_clean = NULL</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Input::cookie" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$index</strong> (<em>mixed</em>) &#8211; COOKIE name</li>
-<li><strong>$xss_clean</strong> (<em>bool</em>) &#8211; Whether to apply XSS filtering</li>
+<li><strong>$index</strong> (<em>mixed</em>) &#8211; COOKIE の名前</li>
+<li><strong>$xss_clean</strong> (<em>bool</em>) &#8211; XSS フィルタリングを適用するかどうか</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">$_COOKIE if no parameters supplied, otherwise the COOKIE value if found or NULL if not</p>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">$_COOKIE パラメータが指定されていない場合はNULL、それ以外は COOKIE の値</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">mixed</p>
@@ -739,39 +743,39 @@ behavior has changed in CodeIgniter 3.0.</p>
 </tr>
 </tbody>
 </table>
-<p>This method is identical to <code class="docutils literal"><span class="pre">post()</span></code> and <code class="docutils literal"><span class="pre">get()</span></code>, only it fetches cookie
-data:</p>
+<p>このメソッドは、クッキーデータを取り出すということ以外は、
+<tt class="docutils literal"><span class="pre">post()</span></tt> や <tt class="docutils literal"><span class="pre">get()</span></tt> メソッドと同じです:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">cookie</span><span class="p">(</span><span class="s1">&#39;some_cookie&#39;</span><span class="p">);</span>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">cookie</span><span class="p">(</span><span class="s1">&#39;some_cookie&#39;</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span> <span class="c1">// with XSS filter</span>
 </pre></div>
 </div>
-<p>To return an array of multiple cookie values, pass all the required keys
-as an array.</p>
+<p>複数のクッキーの配列を返却したい時は必要なキーを
+配列で渡してください。</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">cookie</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;some_cookie&#39;</span><span class="p">,</span> <span class="s1">&#39;some_cookie2&#39;</span><span class="p">));</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">Unlike the <a class="reference internal" href="../helpers/cookie_helper.html"><span class="doc">Cookie Helper</span></a>
-function <a class="reference internal" href="../helpers/cookie_helper.html#get_cookie" title="get_cookie"><code class="xref php php-func docutils literal"><span class="pre">get_cookie()</span></code></a>, this method does NOT prepend
-your configured <code class="docutils literal"><span class="pre">$config['cookie_prefix']</span></code> value.</p>
+<p class="last">doc:<cite>Cookie Helper &lt;../helpers/cookie_helper&gt;</cite>
+function <a class="reference internal" href="../helpers/cookie_helper.html#get_cookie" title="get_cookie"><tt class="xref php php-func docutils literal"><span class="pre">get_cookie()</span></tt></a> とは異なり、
+このメソッドは先頭に <tt class="docutils literal"><span class="pre">$config['cookie_prefix']</span></tt> に設定された値を付与しません。</p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="CI_Input::server">
-<code class="descname">server</code><span class="sig-paren">(</span><em>$index</em><span class="optional">[</span>, <em>$xss_clean = NULL</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Input::server" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">server</tt><big>(</big><em>$index</em><span class="optional">[</span>, <em>$xss_clean = NULL</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Input::server" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$index</strong> (<em>mixed</em>) &#8211; Value name</li>
-<li><strong>$xss_clean</strong> (<em>bool</em>) &#8211; Whether to apply XSS filtering</li>
+<li><strong>$index</strong> (<em>mixed</em>) &#8211; 値の名前</li>
+<li><strong>$xss_clean</strong> (<em>bool</em>) &#8211; XSS フィルタリングを適用するかどうか</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">$_SERVER item value if found, NULL if not</p>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">$_SERVER の値があれば　$_SERVER の値、ない場合は NULL</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">mixed</p>
@@ -779,13 +783,13 @@ your configured <code class="docutils literal"><span class="pre">$config['cookie
 </tr>
 </tbody>
 </table>
-<p>This method is identical to the <code class="docutils literal"><span class="pre">post()</span></code>, <code class="docutils literal"><span class="pre">get()</span></code> and <code class="docutils literal"><span class="pre">cookie()</span></code>
-methods, only it fetches server data (<code class="docutils literal"><span class="pre">$_SERVER</span></code>):</p>
+<p>このメソッドは、 SERVER データ(<tt class="docutils literal"><span class="pre">$_SERVER</span></tt>)を取り出すということ以外は、
+<tt class="docutils literal"><span class="pre">post()</span></tt> 、 <tt class="docutils literal"><span class="pre">get()</span></tt> や <tt class="docutils literal"><span class="pre">cookie()</span></tt> と同じです:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">server</span><span class="p">(</span><span class="s1">&#39;some_data&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>To return an array of multiple <code class="docutils literal"><span class="pre">$_SERVER</span></code> values, pass all the required keys
-as an array.</p>
+<p>複数の <tt class="docutils literal"><span class="pre">$_SERVER</span></tt> の配列を返却したい時は必要なキーを
+配列で渡してください。</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">server</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;SERVER_PROTOCOL&#39;</span><span class="p">,</span> <span class="s1">&#39;REQUEST_URI&#39;</span><span class="p">));</span>
 </pre></div>
 </div>
@@ -793,18 +797,18 @@ as an array.</p>
 
 <dl class="method">
 <dt id="CI_Input::input_stream">
-<code class="descname">input_stream</code><span class="sig-paren">(</span><span class="optional">[</span><em>$index = NULL</em><span class="optional">[</span>, <em>$xss_clean = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Input::input_stream" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">input_stream</tt><big>(</big><span class="optional">[</span><em>$index = NULL</em><span class="optional">[</span>, <em>$xss_clean = NULL</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Input::input_stream" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$index</strong> (<em>mixed</em>) &#8211; Key name</li>
-<li><strong>$xss_clean</strong> (<em>bool</em>) &#8211; Whether to apply XSS filtering</li>
+<li><strong>$index</strong> (<em>mixed</em>) &#8211; キーの名前</li>
+<li><strong>$xss_clean</strong> (<em>bool</em>) &#8211; XSS フィルタリングを適用するかどうか</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">Input stream array if no parameters supplied, otherwise the specified value if found or NULL if not</p>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">入力ストリームのパラメータが指定されていない場合は NULL、 それ以外は入力ストリームの値</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">mixed</p>
@@ -812,26 +816,26 @@ as an array.</p>
 </tr>
 </tbody>
 </table>
-<p>This method is identical to <code class="docutils literal"><span class="pre">get()</span></code>, <code class="docutils literal"><span class="pre">post()</span></code> and <code class="docutils literal"><span class="pre">cookie()</span></code>,
-only it fetches the <em>php://input</em> stream data.</p>
+<p>このメソッドは <em>php://input</em> ストリームデータを取得する以外は
+<tt class="docutils literal"><span class="pre">get()</span></tt>、 <tt class="docutils literal"><span class="pre">post()</span></tt> および <tt class="docutils literal"><span class="pre">cookie()</span></tt> と同じです。</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="CI_Input::set_cookie">
-<code class="descname">set_cookie</code><span class="sig-paren">(</span><em>$name = ''</em><span class="optional">[</span>, <em>$value = ''</em><span class="optional">[</span>, <em>$expire = ''</em><span class="optional">[</span>, <em>$domain = ''</em><span class="optional">[</span>, <em>$path = '/'</em><span class="optional">[</span>, <em>$prefix = ''</em><span class="optional">[</span>, <em>$secure = FALSE</em><span class="optional">[</span>, <em>$httponly = FALSE</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Input::set_cookie" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">set_cookie</tt><big>(</big><em>$name = ''</em><span class="optional">[</span>, <em>$value = ''</em><span class="optional">[</span>, <em>$expire = ''</em><span class="optional">[</span>, <em>$domain = ''</em><span class="optional">[</span>, <em>$path = '/'</em><span class="optional">[</span>, <em>$prefix = ''</em><span class="optional">[</span>, <em>$secure = FALSE</em><span class="optional">[</span>, <em>$httponly = FALSE</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Input::set_cookie" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$name</strong> (<em>mixed</em>) &#8211; Cookie name or an array of parameters</li>
-<li><strong>$value</strong> (<em>string</em>) &#8211; Cookie value</li>
-<li><strong>$expire</strong> (<em>int</em>) &#8211; Cookie expiration time in seconds</li>
-<li><strong>$domain</strong> (<em>string</em>) &#8211; Cookie domain</li>
-<li><strong>$path</strong> (<em>string</em>) &#8211; Cookie path</li>
-<li><strong>$prefix</strong> (<em>string</em>) &#8211; Cookie name prefix</li>
-<li><strong>$secure</strong> (<em>bool</em>) &#8211; Whether to only transfer the cookie through HTTPS</li>
-<li><strong>$httponly</strong> (<em>bool</em>) &#8211; Whether to only make the cookie accessible for HTTP requests (no JavaScript)</li>
+<li><strong>$name</strong> (<em>mixed</em>) &#8211; クッキー名または配列のパラメータ</li>
+<li><strong>$value</strong> (<em>string</em>) &#8211; クッキーの値</li>
+<li><strong>$expire</strong> (<em>int</em>) &#8211; クッキーの有効期限の秒数</li>
+<li><strong>$domain</strong> (<em>string</em>) &#8211; クッキーのドメイン</li>
+<li><strong>$path</strong> (<em>string</em>) &#8211; クッキーのパス</li>
+<li><strong>$prefix</strong> (<em>string</em>) &#8211; クッキーの値の接頭辞</li>
+<li><strong>$secure</strong> (<em>bool</em>) &#8211; HTTPS 経由でのみクッキーを転送するかどうか</li>
+<li><strong>$httponly</strong> (<em>bool</em>) &#8211; HTTP リクエストでクッキーのアクセスを可能とするかどうか ( JavaScript でアクセスさせるかどうか)</li>
 </ul>
 </td>
 </tr>
@@ -840,12 +844,12 @@ only it fetches the <em>php://input</em> stream data.</p>
 </tr>
 </tbody>
 </table>
-<p>Sets a cookie containing the values you specify. There are two ways to
-pass information to this method so that a cookie can be set: Array
-Method, and Discrete Parameters:</p>
-<p><strong>Array Method</strong></p>
-<p>Using this method, an associative array is passed to the first
-パラメータ:</p>
+<p>指定した値を含むクッキーをセットします。 クッキーをセットする為に
+このメソッドに情報を渡すには、2つの方法があります: 配列で渡す方法と
+個々のパラメータを渡す方法です:</p>
+<p><strong>配列で渡す方法</strong></p>
+<p>この方法では、第1引数に連想配列が
+渡されます:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$cookie</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
         <span class="s1">&#39;name&#39;</span>   <span class="o">=&gt;</span> <span class="s1">&#39;The Cookie Name&#39;</span><span class="p">,</span>
         <span class="s1">&#39;value&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;The Value&#39;</span><span class="p">,</span>
@@ -860,23 +864,23 @@ Method, and Discrete Parameters:</p>
 </pre></div>
 </div>
 <p><strong>Notes</strong></p>
-<p>Only the name and value are required. To delete a cookie set it with the
-expiration blank.</p>
-<p>The expiration is set in <strong>seconds</strong>, which will be added to the current
-time. Do not include the time, but rather only the number of seconds
-from <em>now</em> that you wish the cookie to be valid. If the expiration is
-set to zero the cookie will only last as long as the browser is open.</p>
-<p>For site-wide cookies regardless of how your site is requested, add your
-URL to the <strong>domain</strong> starting with a period, like this:
+<p>name と value のみが必須属性となりますクッキーを削除するには
+有効期限に空白をセットします。</p>
+<p>有効期限は現在時刻から数えた <strong>秒数</strong> で指定します。
+時刻を指定するのではなく、クッキーを <em>現在時刻</em> から
+何秒間有効かを秒数だけで指定します。 有効期限を 0 にセットすると、
+ブラウザが開いている間だけ、クッキーが有効になります。</p>
+<p>どのようにリクエストを受け付けたかにかかわらず、サイト全体で使うクッキーには、
+次のように <strong>domain</strong> にピリオドから始まる URL を追加してください:
 .your-domain.com</p>
-<p>The path is usually not needed since the method sets a root path.</p>
-<p>The prefix is only needed if you need to avoid name collisions with
-other identically named cookies for your server.</p>
-<p>The secure boolean is only needed if you want to make it a secure cookie
-by setting it to TRUE.</p>
-<p><strong>Discrete Parameters</strong></p>
-<p>If you prefer, you can set the cookie by passing data using individual
-パラメータ:</p>
+<p>パスは、メソッドがルートパスをセットするので通常は必要ありません。</p>
+<p>プリフィックスは、同一のサーバによってセットされたクッキーにおける
+名前の衝突を回避したい場合にのみ必要です。</p>
+<p>セキュアのブール値は、セキュアなクッキーを使用したい場合のみ TRUE
+にする必要があります。</p>
+<p><strong>個々のパラメータを渡す方法</strong></p>
+<p>希望であれば、個別のパラメータを使ってデータを渡してクッキーを
+セットすることができます:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">set_cookie</span><span class="p">(</span><span class="nv">$name</span><span class="p">,</span> <span class="nv">$value</span><span class="p">,</span> <span class="nv">$expire</span><span class="p">,</span> <span class="nv">$domain</span><span class="p">,</span> <span class="nv">$path</span><span class="p">,</span> <span class="nv">$prefix</span><span class="p">,</span> <span class="nv">$secure</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -884,45 +888,44 @@ by setting it to TRUE.</p>
 
 <dl class="method">
 <dt id="CI_Input::ip_address">
-<code class="descname">ip_address</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Input::ip_address" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">ip_address</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_Input::ip_address" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">返り値:</th><td class="field-body">Visitor&#8217;s IP address or &#8216;0.0.0.0&#8217; if not valid</td>
+<tr class="field-odd field"><th class="field-name">返り値:</th><td class="field-body">アクセスしてきたIPアドレスまたはアドレスが正しくない場合は &#8216;0.0.0.0&#8217;</td>
 </tr>
 <tr class="field-even field"><th class="field-name">返り値の型:</th><td class="field-body">string</td>
 </tr>
 </tbody>
 </table>
-<p>Returns the IP address for the current user. If the IP address is not
-valid, the method will return &#8216;0.0.0.0&#8217;:</p>
+<p>現在のユーザの IP アドレスを返します。
+アドレスが正しくない場合、このメソッドは、 &#8216;0.0.0.0&#8217; を返却します:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">ip_address</span><span class="p">();</span>
 </pre></div>
 </div>
 <div class="admonition important">
 <p class="first admonition-title">重要</p>
-<p class="last">This method takes into account the <code class="docutils literal"><span class="pre">$config['proxy_ips']</span></code>
-setting and will return the reported HTTP_X_FORWARDED_FOR,
-HTTP_CLIENT_IP, HTTP_X_CLIENT_IP or HTTP_X_CLUSTER_CLIENT_IP
-address for the allowed IP addresses.</p>
+<p class="last">このメソッドは <tt class="docutils literal"><span class="pre">$config['proxy_ips']</span></tt> の設定値を考慮して、
+報告された HTTP_X_FORWARDED_FOR、HTTP_CLIENT_IP、 HTTP_X_CLIENT_IP または
+HTTP_X_CLUSTER_CLIENT_IP のアドレスを有効なIPアドレスとして返却します。</p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="CI_Input::valid_ip">
-<code class="descname">valid_ip</code><span class="sig-paren">(</span><em>$ip</em><span class="optional">[</span>, <em>$which = ''</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Input::valid_ip" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">valid_ip</tt><big>(</big><em>$ip</em><span class="optional">[</span>, <em>$which = ''</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Input::valid_ip" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$ip</strong> (<em>string</em>) &#8211; IP address</li>
-<li><strong>$which</strong> (<em>string</em>) &#8211; IP protocol (&#8216;ipv4&#8217; or &#8216;ipv6&#8217;)</li>
+<li><strong>$ip</strong> (<em>string</em>) &#8211; IPアドレス</li>
+<li><strong>$which</strong> (<em>string</em>) &#8211; IPプロトコル (&#8216;ipv4&#8217; または &#8216;ipv6&#8217;)</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">TRUE if the address is valid, FALSE if not</p>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">正常あれば TRUE、そうでない場合は FALSE</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">bool</p>
@@ -930,12 +933,17 @@ address for the allowed IP addresses.</p>
 </tr>
 </tbody>
 </table>
-<p>Takes an IP address as input and returns TRUE or FALSE (boolean) depending
-on whether it is valid or not.</p>
+<p>入力値にIPアドレスを渡すとIPアドレスが有効かどうかを
+TRUE または FALSE (ブール値) で返却します。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">The $this-&gt;input-&gt;ip_address() method above automatically
+<p class="last">$this-&gt;input-&gt;ip_address()
 validates the IP address.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">上記の $this-&gt;input-&gt;ip_address() メソッドは自動的に
+IPアドレスの検証を行います。</p>
 </div>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span> <span class="o">!</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">valid_ip</span><span class="p">(</span><span class="nv">$ip</span><span class="p">))</span>
 <span class="p">{</span>
@@ -947,22 +955,22 @@ validates the IP address.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Accepts an optional second string parameter of &#8216;ipv4&#8217; or &#8216;ipv6&#8217; to specify
-an IP format. The default checks for both formats.</p>
+<p>第二引数はオプションで特定のIPの形式を &#8216;ipv4&#8217; または &#8216;ipv6&#8217; で指定します。
+デフォルトはどちらの形式もチェックします。</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="CI_Input::user_agent">
-<code class="descname">user_agent</code><span class="sig-paren">(</span><span class="optional">[</span><em>$xss_clean = NULL</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Input::user_agent" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">user_agent</tt><big>(</big><span class="optional">[</span><em>$xss_clean = NULL</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Input::user_agent" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">User agent string or NULL if not set</p>
+<tr class="field-odd field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">ユーザーエージェント または設定されていない場合は NULL</p>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$xss_clean</strong> (<em>bool</em>) &#8211; Whether to apply XSS filtering</li>
+<li><strong>$xss_clean</strong> (<em>bool</em>) &#8211; XSS フィルタリングを適用するかどうか</li>
 </ul>
 </td>
 </tr>
@@ -971,28 +979,28 @@ an IP format. The default checks for both formats.</p>
 </tr>
 </tbody>
 </table>
-<p>Returns the user agent string (web browser) being used by the current user,
-or NULL if it&#8217;s not available.</p>
+<p>現在のユーザが使用しているユーザエージェント(Webブラウザ)を返します。
+利用できないときは NULL を返します。</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">user_agent</span><span class="p">();</span>
 </pre></div>
 </div>
-<p>See the <a class="reference internal" href="user_agent.html"><span class="doc">User Agent Class</span></a> for methods which extract
-information from the user agent string.</p>
+<p>ユーザエージェントの文字列から情報を抽出する方法は
+<a class="reference internal" href="user_agent.html"><em>ユーザエージェントクラス</em></a> を参照してください。</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="CI_Input::request_headers">
-<code class="descname">request_headers</code><span class="sig-paren">(</span><span class="optional">[</span><em>$xss_clean = FALSE</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Input::request_headers" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">request_headers</tt><big>(</big><span class="optional">[</span><em>$xss_clean = FALSE</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Input::request_headers" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$xss_clean</strong> (<em>bool</em>) &#8211; Whether to apply XSS filtering</li>
+<li><strong>$xss_clean</strong> (<em>bool</em>) &#8211; XSS フィルタリングを適用するかどうか</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">An array of HTTP request headers</p>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">HTTP リクエストヘッダの配列</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">array</p>
@@ -1000,10 +1008,9 @@ information from the user agent string.</p>
 </tr>
 </tbody>
 </table>
-<p>Returns an array of HTTP request headers.
-Useful if running in a non-Apache environment where
-<a class="reference external" href="http://php.net/apache_request_headers">apache_request_headers()</a>
-will not be supported.</p>
+<p>HTTP リクエストヘッダの配列を返します。
+Apache 以外 の( <a class="reference external" href="http://php.net/apache_request_headers">apache_request_headers()</a> をサポートしない)
+環境で有効です。</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$headers</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">request_headers</span><span class="p">();</span>
 </pre></div>
 </div>
@@ -1011,18 +1018,18 @@ will not be supported.</p>
 
 <dl class="method">
 <dt id="CI_Input::get_request_header">
-<code class="descname">get_request_header</code><span class="sig-paren">(</span><em>$index</em><span class="optional">[</span>, <em>$xss_clean = FALSE</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Input::get_request_header" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">get_request_header</tt><big>(</big><em>$index</em><span class="optional">[</span>, <em>$xss_clean = FALSE</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Input::get_request_header" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$index</strong> (<em>string</em>) &#8211; HTTP request header name</li>
-<li><strong>$xss_clean</strong> (<em>bool</em>) &#8211; Whether to apply XSS filtering</li>
+<li><strong>$index</strong> (<em>string</em>) &#8211; HTTP リクエストヘッダの名前</li>
+<li><strong>$xss_clean</strong> (<em>bool</em>) &#8211; XSS フィルタリングを適用するかどうか</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">An HTTP request header or NULL if not found</p>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">見つからなかった場合は NULL、 それ以外は HTTP リクエストヘッダの値</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">string</p>
@@ -1030,8 +1037,8 @@ will not be supported.</p>
 </tr>
 </tbody>
 </table>
-<p>Returns a single member of the request headers array or NULL
-if the searched header is not found.</p>
+<p>検索されたヘッダが見つかればリクエストヘッダの配列の要素を返却し、
+見つからない場合は NULL を返却します。</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">get_request_header</span><span class="p">(</span><span class="s1">&#39;some-header&#39;</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -1039,65 +1046,65 @@ if the searched header is not found.</p>
 
 <dl class="method">
 <dt id="CI_Input::is_ajax_request">
-<code class="descname">is_ajax_request</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Input::is_ajax_request" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">is_ajax_request</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_Input::is_ajax_request" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">返り値:</th><td class="field-body">TRUE if it is an Ajax request, FALSE if not</td>
+<tr class="field-odd field"><th class="field-name">返り値:</th><td class="field-body">Ajax リクエストであれば TRUE、それ以外は FALSE</td>
 </tr>
 <tr class="field-even field"><th class="field-name">返り値の型:</th><td class="field-body">bool</td>
 </tr>
 </tbody>
 </table>
-<p>Checks to see if the HTTP_X_REQUESTED_WITH server header has been
-set, and returns boolean TRUE if it is or FALSE if not.</p>
+<p>サーバのヘッダに HTTP_X_REQUESTED_WITH がセットされているかチェックし、
+セットされている場合はブール値の TRUE 、セットされていない場合は FALSE を返します。</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="CI_Input::is_cli_request">
-<code class="descname">is_cli_request</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Input::is_cli_request" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">is_cli_request</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_Input::is_cli_request" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">返り値:</th><td class="field-body">TRUE if it is a CLI request, FALSE if not</td>
+<tr class="field-odd field"><th class="field-name">返り値:</th><td class="field-body">CLI リクエストの場合は TRUE、そうでない場合は FALSE</td>
 </tr>
 <tr class="field-even field"><th class="field-name">返り値の型:</th><td class="field-body">bool</td>
 </tr>
 </tbody>
 </table>
-<p>Checks to see if the application was run from the command-line
-interface.</p>
+<p>アプリケーションがコマンドラインから実行されているかを
+チェックします。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">This method checks both the PHP SAPI name currently in use
-and if the <code class="docutils literal"><span class="pre">STDIN</span></code> constant is defined, which is usually a
-failsafe way to see if PHP is being run via the command line.</p>
+<p class="last">このメソッドは現在使用されている PHP SAPI の名前と
+<tt class="docutils literal"><span class="pre">STDIN</span></tt> 定数が定義されている事をチェックします。
+これは通常、PHP がコマンドライン経由で実行されている事を確認する安全な方法です。</p>
 </div>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">is_cli_request</span><span class="p">()</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">This method is DEPRECATED and is now just an alias for the
-<code class="xref py py-func docutils literal"><span class="pre">is_cli()</span></code> function.</p>
+<p class="last">このメソッドは推奨されておらず、
+現在は <tt class="xref py py-func docutils literal"><span class="pre">is_cli()</span></tt> ファンクションのエイリアスです。</p>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="CI_Input::method">
-<code class="descname">method</code><span class="sig-paren">(</span><span class="optional">[</span><em>$upper = FALSE</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Input::method" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">method</tt><big>(</big><span class="optional">[</span><em>$upper = FALSE</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Input::method" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
-<li><strong>$upper</strong> (<em>bool</em>) &#8211; Whether to return the request method name in upper or lower case</li>
+<li><strong>$upper</strong> (<em>bool</em>) &#8211; リクエストメソッドの名前を大文字のみまたは小文字のみで返却するかどうか</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">HTTP request method</p>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">HTTP リクエストメソッド</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">string</p>
@@ -1105,8 +1112,8 @@ failsafe way to see if PHP is being run via the command line.</p>
 </tr>
 </tbody>
 </table>
-<p>Returns the <code class="docutils literal"><span class="pre">$_SERVER['REQUEST_METHOD']</span></code>, with the option to set it
-in uppercase or lowercase.</p>
+<p>設定したオプションにより
+大文字のみまたは小文字のみで <tt class="docutils literal"><span class="pre">$_SERVER['REQUEST_METHOD']</span></tt> の値を返却します。</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">method</span><span class="p">(</span><span class="k">TRUE</span><span class="p">);</span> <span class="c1">// Outputs: POST</span>
 <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">method</span><span class="p">(</span><span class="k">FALSE</span><span class="p">);</span> <span class="c1">// Outputs: post</span>
 <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">method</span><span class="p">();</span> <span class="c1">// Outputs: post</span>
@@ -1138,7 +1145,7 @@ in uppercase or lowercase.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 10月 11, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
+      最終更新: Nov 23, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

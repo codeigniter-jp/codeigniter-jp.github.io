@@ -49,7 +49,9 @@
     
       <div id="pulldown-menu" class="ciNav">
         <ul>
-<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -110,7 +112,7 @@
 <li class="toctree-l2"><a class="reference internal" href="caching.html">キャッシュ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="profiling.html">アプリケーションのプロファイリング</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cli.html">CLI で実行する</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">アプリケーションの管理</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">アプリケーションの管理</a></li>
 <li class="toctree-l2"><a class="reference internal" href="environments.html">複数環境への対応</a></li>
 <li class="toctree-l2"><a class="reference internal" href="alternative_php.html">ビューファイルでの PHP の代替構文</a></li>
 <li class="toctree-l2"><a class="reference internal" href="security.html">セキュリティ</a></li>
@@ -233,7 +235,9 @@
           
           
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -294,7 +298,7 @@
 <li class="toctree-l2"><a class="reference internal" href="caching.html">キャッシュ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="profiling.html">アプリケーションのプロファイリング</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cli.html">CLI で実行する</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">アプリケーションの管理</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">アプリケーションの管理</a></li>
 <li class="toctree-l2"><a class="reference internal" href="environments.html">複数環境への対応</a></li>
 <li class="toctree-l2"><a class="reference internal" href="alternative_php.html">ビューファイルでの PHP の代替構文</a></li>
 <li class="toctree-l2"><a class="reference internal" href="security.html">セキュリティ</a></li>
@@ -431,7 +435,7 @@
 <h2>アプリケーションディレクトリの名前を変更する<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>アプリケーションディレクトリの名前を変更したい場合、実際に変更をして、
 メインの index.php ファイルを開いて
-<code class="docutils literal"><span class="pre">$application_folder</span></code> 変数にその名前を設定します:</p>
+<tt class="docutils literal"><span class="pre">$application_folder</span></tt> 変数にその名前を設定します:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$application_folder</span> <span class="o">=</span> <span class="s1">&#39;application&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
@@ -441,7 +445,7 @@
 <p>サーバ上の別の場所にアプリケーションディレクトリを移動させ、
 ドキュメントルートから外すことが可能です。
 これを行うため、メインの index.php を開き、 <em>サーバのフルパス</em> を
-<code class="docutils literal"><span class="pre">$application_folder</span></code> 変数に設定します:</p>
+<tt class="docutils literal"><span class="pre">$application_folder</span></tt> 変数に設定します:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$application_folder</span> <span class="o">=</span> <span class="s1">&#39;/path/to/your/application&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
@@ -468,7 +472,7 @@
 </pre></div>
 </div>
 <p>どのアプリケーションを使うかを選択するために、メインの
-index.php ファイルを開き <code class="docutils literal"><span class="pre">$application_folder</span></code> 変数を設定する必要があります。
+index.php ファイルを開き <tt class="docutils literal"><span class="pre">$application_folder</span></tt> 変数を設定する必要があります。
 たとえば、「 foo 」というアプリケーションを使うためには:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$application_folder</span> <span class="o">=</span> <span class="s1">&#39;applications/foo&#39;</span><span class="p">;</span>
 </pre></div>
@@ -501,7 +505,7 @@ index.php ファイルを開き <code class="docutils literal"><span class="pre"
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 10月 11, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
+      最終更新: Nov 23, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

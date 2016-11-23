@@ -49,7 +49,9 @@
     
       <div id="pulldown-menu" class="ciNav">
         <ul>
-<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -74,7 +76,7 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">チュートリアル</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="static_pages.html">静的なページ</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">ニュースセクション</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">ニュースセクション</a></li>
 <li class="toctree-l2"><a class="reference internal" href="create_news_items.html">ニュース記事を作成</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conclusion.html">おわりに</a></li>
 </ul>
@@ -233,7 +235,9 @@
           
           
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -258,7 +262,7 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">チュートリアル</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="static_pages.html">静的なページ</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">ニュースセクション</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">ニュースセクション</a></li>
 <li class="toctree-l2"><a class="reference internal" href="create_news_items.html">ニュース記事を作成</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conclusion.html">おわりに</a></li>
 </ul>
@@ -433,7 +437,7 @@
 他のデータ格納場所からデータを抽出したり、追加したり、更新する場所です。
 モデルはデータを表現します。</p>
 <p><em>application/models/</em> ディレクトリを開き、新しく <em>News_model.php</em> という
-ファイルを作成して、次のコードを記述してください。データベースの設定が <a class="reference internal" href="../database/configuration.html"><span class="doc">ここ</span></a> で記述されているように適切であることも
+ファイルを作成して、次のコードを記述してください。データベースの設定が <a class="reference internal" href="../database/configuration.html"><em>ここ</em></a> で記述されているように適切であることも
 確認してください。</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 <span class="k">class</span> <span class="nc">News_model</span> <span class="k">extends</span> <span class="nx">CI_Model</span> <span class="p">{</span>
@@ -445,9 +449,9 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>このコードは以前使ったコントローラのコードに似ています。ここでは <code class="docutils literal"><span class="pre">CI_Model</span></code>
+<p>このコードは以前使ったコントローラのコードに似ています。ここでは <tt class="docutils literal"><span class="pre">CI_Model</span></tt>
 を継承し新しいモデルを作成しており、Database ライブラリをロードして
-います。これにより、Database クラスが <code class="docutils literal"><span class="pre">$this-&gt;db</span></code> オブジェクトを通して
+います。これにより、Database クラスが <tt class="docutils literal"><span class="pre">$this-&gt;db</span></tt> オブジェクトを通して
 利用可能になります。</p>
 <p>データベースにクエリを投げる前に、データベースのスキーマを作らなければいけません。
 自分のデータベースに接続し、下記の SQL コマンド（MySQL）を実行してください。
@@ -464,9 +468,9 @@
 </div>
 <p>データベースとモデルの準備ができたら、次に必要なのはデータベースから全ての記事を
 取得するためのメソッドです。そのためには CodeIgniter に含まれているデータベース
-抽象化レイヤ — <a class="reference internal" href="../database/query_builder.html"><span class="doc">Query Builder</span></a> — を使います。
+抽象化レイヤ — <a class="reference internal" href="../database/query_builder.html"><em>Query Builder</em></a> — を使います。
 これにより、&#8217;クエリ&#8217; を一度書くだけで
-<a class="reference internal" href="../general/requirements.html"><span class="doc">サポート済みの全データベースシステム</span></a> 上で
+<a class="reference internal" href="../general/requirements.html"><em>サポート済みの全データベースシステム</em></a> 上で
 動かすことが出来ます。
 次のコードをモデルに追加してください。</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="k">function</span> <span class="nf">get_news</span><span class="p">(</span><span class="nv">$slug</span> <span class="o">=</span> <span class="k">FALSE</span><span class="p">)</span>
@@ -483,15 +487,15 @@
 </pre></div>
 </div>
 <p>このコードにより二種類のクエリを実行することが出来ます。全ての news レコードを
-取得するか、<a class="reference external" href="#">slug</a> を使って特定の news 記事を取得できます。<code class="docutils literal"><span class="pre">$slug</span></code> 変数
+取得するか、<a class="reference external" href="#">slug</a> を使って特定の news 記事を取得できます。<tt class="docutils literal"><span class="pre">$slug</span></tt> 変数
 がクエリを実行する前にサニタイズされてないことに気づいたかもしれませんが、
-<a class="reference internal" href="../database/query_builder.html"><span class="doc">Query Builder</span></a> がこれを代わりに行なってくれています。</p>
+<a class="reference internal" href="../database/query_builder.html"><em>Query Builder</em></a> がこれを代わりに行なってくれています。</p>
 </div>
 <div class="section" id="id3">
 <h2>ニュースを表示する<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>クエリを書き終えたので、今度はニュース記事を表示するビューとモデルとを紐づけて
-ユーザに表示しなければいけません。これを行なうには以前作成した <code class="docutils literal"><span class="pre">Pages</span></code>
-コントローラを使う事も出来ますが、わかりやすくするために新たに <code class="docutils literal"><span class="pre">News</span></code>
+ユーザに表示しなければいけません。これを行なうには以前作成した <tt class="docutils literal"><span class="pre">Pages</span></tt>
+コントローラを使う事も出来ますが、わかりやすくするために新たに <tt class="docutils literal"><span class="pre">News</span></tt>
 コントローラを定義しましょう。
 <em>application/controllers/News.php</em> に新しいコントローラを作成してください。</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
@@ -517,12 +521,12 @@
 </pre></div>
 </div>
 <p>コードを見てみると、以前作られたファイルといくつか共通点があるのに気づくかも
-しれません。まず、<code class="docutils literal"><span class="pre">__construct()</span></code> メソッド: これは親クラス（<code class="docutils literal"><span class="pre">CI_Controller</span></code>）のコンストラクタを呼んだ後に、
+しれません。まず、<tt class="docutils literal"><span class="pre">__construct()</span></tt> メソッド: これは親クラス（<tt class="docutils literal"><span class="pre">CI_Controller</span></tt>）のコンストラクタを呼んだ後に、
 モデルをロードし、このコントローラ内の全てのメソッドで利用できるようにします。
-また、<a class="reference internal" href="../helpers/url_helper.html"><span class="doc">URL ヘルパー</span></a> 関数の集合をロードします。
+また、<a class="reference internal" href="../helpers/url_helper.html"><em>URL ヘルパー</em></a> 関数の集合をロードします。
 ヘルパー関数の 1 つを後でビューの中で使うためです。</p>
 <p>次に、2 つのメソッドがあります。1 つは全ニュースを閲覧するためで、1 つは特定の
-ニュース記事のためです。2 番目のメソッドでは <code class="docutils literal"><span class="pre">$slug</span></code> 変数がモデルのメソッドに
+ニュース記事のためです。2 番目のメソッドでは <tt class="docutils literal"><span class="pre">$slug</span></tt> 変数がモデルのメソッドに
 渡されているのが見えます。
 モデルはこの slug を使い、どのニュース記事を返すかを見つけます。</p>
 <p>これでコントローラはモデル経由でデータを取得できますが、
@@ -540,7 +544,7 @@
 </pre></div>
 </div>
 <p>上記のコードは全 news レコードを取得し、変数に代入します。タイトルの値も
-<code class="docutils literal"><span class="pre">$data['title']</span></code> 要素に代入されており、全てのデータはビューに渡されます。
+<tt class="docutils literal"><span class="pre">$data['title']</span></tt> 要素に代入されており、全てのデータはビューに渡されます。
 今度はニュース記事を描画するためのビューを作成する必要があります。
 <em>application/views/news/index.php</em> を作成し、
 次のコードを追加してください。</p>
@@ -566,7 +570,7 @@
 まだ存在しません。先ほど作られたモデルはこの処理を簡単に行なえるように作られて
 います。あなたがやらなければいけないのはコントローラに多少のコードを追記するのと、
 新規のビューを作成する事だけです。
-<code class="docutils literal"><span class="pre">News</span></code> コントローラに戻り、<code class="docutils literal"><span class="pre">view()</span></code> を次のように更新してください:</p>
+<tt class="docutils literal"><span class="pre">News</span></tt> コントローラに戻り、<tt class="docutils literal"><span class="pre">view()</span></tt> を次のように更新してください:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="k">function</span> <span class="nf">view</span><span class="p">(</span><span class="nv">$slug</span> <span class="o">=</span> <span class="k">NULL</span><span class="p">)</span>
 <span class="p">{</span>
         <span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;news_item&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">news_model</span><span class="o">-&gt;</span><span class="na">get_news</span><span class="p">(</span><span class="nv">$slug</span><span class="p">);</span>
@@ -584,7 +588,7 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<p><code class="docutils literal"><span class="pre">get_news()</span></code> メソッドをパラメータなしで呼び出す代わりに、<code class="docutils literal"><span class="pre">$slug</span></code> 変数が
+<p><tt class="docutils literal"><span class="pre">get_news()</span></tt> メソッドをパラメータなしで呼び出す代わりに、<tt class="docutils literal"><span class="pre">$slug</span></tt> 変数が
 渡され、特定のニュース記事が返ってくるようになります。あとは、これに対応した
 ビューを <em>application/views/news/view.php</em> に作成するだけです。
 次のコードをこのファイルに記述してください。</p>
@@ -599,9 +603,9 @@
 <p>以前作ったワイルドカードルーティング規則のために、作成したコントローラのための
 新たなルートが必要です。ルーティングファイル（<em>application/config/routes.php</em>）
 を下記のように修正してください。
-これによりリクエストが <code class="docutils literal"><span class="pre">Pages</span></code> コントローラではなく、正しく <code class="docutils literal"><span class="pre">News</span></code>
+これによりリクエストが <tt class="docutils literal"><span class="pre">Pages</span></tt> コントローラではなく、正しく <tt class="docutils literal"><span class="pre">News</span></tt>
 コントローラに到達することが保証されます。最初の行は slug 付きの URI を
-<code class="docutils literal"><span class="pre">News</span></code> コントローラの <code class="docutils literal"><span class="pre">view()</span></code> メソッドにルーティングしてくれます。</p>
+<tt class="docutils literal"><span class="pre">News</span></tt> コントローラの <tt class="docutils literal"><span class="pre">view()</span></tt> メソッドにルーティングしてくれます。</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;news/(:any)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;news/view/$1&#39;</span><span class="p">;</span>
 <span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;news&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;news&#39;</span><span class="p">;</span>
 <span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;(:any)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;pages/view/$1&#39;</span><span class="p">;</span>
@@ -632,7 +636,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 10月 11, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
+      最終更新: Nov 23, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

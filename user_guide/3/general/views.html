@@ -49,7 +49,9 @@
     
       <div id="pulldown-menu" class="ciNav">
         <ul>
-<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -92,7 +94,7 @@
 <li class="toctree-l2"><a class="reference internal" href="urls.html">CodeIgniter の URL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="controllers.html">コントローラ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="reserved_names.html">予約語</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">ビュー</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">ビュー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="models.html">モデル</a></li>
 <li class="toctree-l2"><a class="reference internal" href="helpers.html">ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="libraries.html">CodeIgniter のライブラリの利用</a></li>
@@ -233,7 +235,9 @@
           
           
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -276,7 +280,7 @@
 <li class="toctree-l2"><a class="reference internal" href="urls.html">CodeIgniter の URL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="controllers.html">コントローラ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="reserved_names.html">予約語</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">ビュー</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">ビュー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="models.html">モデル</a></li>
 <li class="toctree-l2"><a class="reference internal" href="helpers.html">ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="libraries.html">CodeIgniter のライブラリの利用</a></li>
@@ -425,13 +429,13 @@
 <p>ビューは簡単にウェブページ、またはヘッダー、フッター、
 サイドバーなどのようなページフラグメントです。実際、ビューは柔軟にほかのビューの中に埋め込むことができます
 (さらにそのビューもほかの中に、中に、中に……) そのような階層が必要なら、です。</p>
-<p>ビューは直接呼び出されることはなく、 <a class="reference internal" href="controllers.html"><span class="doc">コントローラ</span></a> によってロードされる必要があります。
+<p>ビューは直接呼び出されることはなく、 <a class="reference internal" href="controllers.html"><em>コントローラ</em></a> によってロードされる必要があります。
 MVC フレームワークを使っていることを忘れないでください、
 コントローラは交通整理役として振る舞うので、
 特定のビューを取得する責任があるのです。
-<a class="reference internal" href="controllers.html"><span class="doc">コントローラ</span></a> ページを読んでいない場合、
+<a class="reference internal" href="controllers.html"><em>コントローラ</em></a> ページを読んでいない場合、
 先にそちらを読んでください。</p>
-<p><a class="reference internal" href="controllers.html"><span class="doc">コントローラ</span></a> ページで作成したコントローラの例を使って、
+<p><a class="reference internal" href="controllers.html"><em>コントローラ</em></a> ページで作成したコントローラの例を使って、
 ビューを追加してみましょう。</p>
 <div class="section" id="id2">
 <h2>ビューの作成<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
@@ -482,7 +486,7 @@ URL は次のようなものです:</p>
 <div class="section" id="id4">
 <h2>複数のビューを読み込む<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>CodeIgniter はコントローラでの
-<code class="docutils literal"><span class="pre">$this-&gt;load-&gt;view()</span></code> の複数回呼び出しをうまく処理します。複数回の呼び出しがあった場合、
+<tt class="docutils literal"><span class="pre">$this-&gt;load-&gt;view()</span></tt> の複数回呼び出しをうまく処理します。複数回の呼び出しがあった場合、
 それらはまとめて追加されます。たとえば、
 ヘッダビュー、メニュービュー、内容ビュー、およびフッタビューを使いたいとします。
 次のようになります:</p>
@@ -615,7 +619,7 @@ URL は次のようなものです:</p>
 <p class="first admonition-title">注釈</p>
 <p class="last">上記の例では、 PHP の別の構文を使用していることに気がついたでしょう。
 詳しくないのであれば、
-<a class="reference internal" href="alternative_php.html"><span class="doc">これ</span></a> を読むと良いです。</p>
+<a class="reference internal" href="alternative_php.html"><em>これ</em></a> を読むと良いです。</p>
 </div>
 </div>
 <div class="section" id="id8">
@@ -651,7 +655,7 @@ URL は次のようなものです:</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 10月 11, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
+      最終更新: Nov 23, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

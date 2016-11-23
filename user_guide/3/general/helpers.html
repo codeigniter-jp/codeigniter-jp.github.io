@@ -49,7 +49,9 @@
     
       <div id="pulldown-menu" class="ciNav">
         <ul>
-<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -94,7 +96,7 @@
 <li class="toctree-l2"><a class="reference internal" href="reserved_names.html">予約語</a></li>
 <li class="toctree-l2"><a class="reference internal" href="views.html">ビュー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="models.html">モデル</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">ヘルパー</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="libraries.html">CodeIgniter のライブラリの利用</a></li>
 <li class="toctree-l2"><a class="reference internal" href="creating_libraries.html">ライブラリの作成</a></li>
 <li class="toctree-l2"><a class="reference internal" href="drivers.html">CodeIgniter のドライバを使う</a></li>
@@ -233,7 +235,9 @@
           
           
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -278,7 +282,7 @@
 <li class="toctree-l2"><a class="reference internal" href="reserved_names.html">予約語</a></li>
 <li class="toctree-l2"><a class="reference internal" href="views.html">ビュー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="models.html">モデル</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">ヘルパー</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="libraries.html">CodeIgniter のライブラリの利用</a></li>
 <li class="toctree-l2"><a class="reference internal" href="creating_libraries.html">ライブラリの作成</a></li>
 <li class="toctree-l2"><a class="reference internal" href="drivers.html">CodeIgniter のドライバを使う</a></li>
@@ -434,8 +438,8 @@
 各ヘルパー関数は、他の機能に依存することなく、ある特定の作業を実行します。</p>
 <p>CodeIgniter はデフォルトではヘルパーファイルをロードしないので、
 ヘルパー使用の最初のステップはそれをロードすることです。一度読み込まれると、
-それは <a class="reference internal" href="controllers.html"><span class="doc">コントローラ</span></a> と
-<a class="reference internal" href="views.html"><span class="doc">ビュー</span></a> でグローバルに利用できるようになります。</p>
+それは <a class="reference internal" href="controllers.html"><em>コントローラ</em></a> と
+<a class="reference internal" href="views.html"><em>ビュー</em></a> でグローバルに利用できるようになります。</p>
 <p>ヘルパーはたいてい <strong>system/helpers</strong>
 、または <strong>application/helpers ディレクトリ</strong> にあります。CodeIgniter は最初に
 ** application/helpers ディレクトリ** を検索します。
@@ -487,7 +491,7 @@
 <h2>ヘルパーの使いかた<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>使いたい関数を含むヘルパーファイルを一度ロードすれば、
 標準の PHP 関数のような方法でそれを呼び出せます。</p>
-<p>たとえば、ビューファイルのいずれかで <code class="docutils literal"><span class="pre">anchor()</span></code> 関数を使用してリンクを作成するには、
+<p>たとえば、ビューファイルのいずれかで <tt class="docutils literal"><span class="pre">anchor()</span></tt> 関数を使用してリンクを作成するには、
 次のようにします:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span> <span class="k">echo</span> <span class="nx">anchor</span><span class="p">(</span><span class="s1">&#39;blog/comments&#39;</span><span class="p">,</span> <span class="s1">&#39;Click Here&#39;</span><span class="p">);</span><span class="cp">?&gt;</span>
 </pre></div>
@@ -576,7 +580,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 10月 11, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
+      最終更新: Nov 23, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

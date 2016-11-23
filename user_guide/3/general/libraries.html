@@ -49,7 +49,9 @@
     
       <div id="pulldown-menu" class="ciNav">
         <ul>
-<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -95,7 +97,7 @@
 <li class="toctree-l2"><a class="reference internal" href="views.html">ビュー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="models.html">モデル</a></li>
 <li class="toctree-l2"><a class="reference internal" href="helpers.html">ヘルパー</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">CodeIgniter のライブラリの利用</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">CodeIgniter のライブラリの利用</a></li>
 <li class="toctree-l2"><a class="reference internal" href="creating_libraries.html">ライブラリの作成</a></li>
 <li class="toctree-l2"><a class="reference internal" href="drivers.html">CodeIgniter のドライバを使う</a></li>
 <li class="toctree-l2"><a class="reference internal" href="creating_drivers.html">ドライバの作成</a></li>
@@ -233,7 +235,9 @@
           
           
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -279,7 +283,7 @@
 <li class="toctree-l2"><a class="reference internal" href="views.html">ビュー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="models.html">モデル</a></li>
 <li class="toctree-l2"><a class="reference internal" href="helpers.html">ヘルパー</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">CodeIgniter のライブラリの利用</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">CodeIgniter のライブラリの利用</a></li>
 <li class="toctree-l2"><a class="reference internal" href="creating_libraries.html">ライブラリの作成</a></li>
 <li class="toctree-l2"><a class="reference internal" href="drivers.html">CodeIgniter のドライバを使う</a></li>
 <li class="toctree-l2"><a class="reference internal" href="creating_drivers.html">ドライバの作成</a></li>
@@ -424,13 +428,13 @@
 <h1>CodeIgniter のライブラリの利用<a class="headerlink" href="#codeigniter" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <p>使用可能なライブラリはすべて <em>system/libraries/</em>
 ディレクトリに保存されています。ほとんどの場合、
-<a class="reference internal" href="controllers.html"><span class="doc">コントローラ</span></a> 内でつぎの初期化方法を使い、
+<a class="reference internal" href="controllers.html"><em>コントローラ</em></a> 内でつぎの初期化方法を使い、
 これらのクラスのいずれかを初期化することが必要になります:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;class_name&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>「 class_name 」の箇所が呼び出したいクラスの名前です。
-たとえば、 <a class="reference internal" href="../libraries/form_validation.html"><span class="doc">フォームバリデーションライブラリ</span></a>
+たとえば、 <a class="reference internal" href="../libraries/form_validation.html"><em>フォームバリデーションライブラリ</em></a>
 をロードするためには次のようにします:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;form_validation&#39;</span><span class="p">);</span>
 </pre></div>
@@ -446,7 +450,7 @@
 <div class="section" id="id1">
 <h2>独自ライブラリを作成する<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>どうぞユーザーガイドの該当セクションをお読みください、
-<a class="reference internal" href="creating_libraries.html"><span class="doc">独自ライブラリの作成</span></a> 方法が論じられています。</p>
+<a class="reference internal" href="creating_libraries.html"><em>独自ライブラリの作成</em></a> 方法が論じられています。</p>
 </div>
 </div>
 
@@ -469,7 +473,7 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 10月 11, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
+      最終更新: Nov 23, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

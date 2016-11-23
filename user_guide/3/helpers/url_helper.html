@@ -49,7 +49,9 @@
     
       <div id="pulldown-menu" class="ciNav">
         <ul>
-<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -193,7 +195,7 @@
 <li class="toctree-l2"><a class="reference internal" href="string_helper.html">文字列ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="text_helper.html">テキストヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="typography_helper.html">タイポグラフィーヘルパー</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">URL ヘルパー</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">URL ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="xml_helper.html">XML ヘルパー</a></li>
 </ul>
 </li>
@@ -233,7 +235,9 @@
           
           
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -377,7 +381,7 @@
 <li class="toctree-l2"><a class="reference internal" href="string_helper.html">文字列ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="text_helper.html">テキストヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="typography_helper.html">タイポグラフィーヘルパー</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">URL ヘルパー</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">URL ヘルパー</a></li>
 <li class="toctree-l2"><a class="reference internal" href="xml_helper.html">XML ヘルパー</a></li>
 </ul>
 </li>
@@ -441,7 +445,7 @@
 <p>次の関数が利用できます:</p>
 <dl class="function">
 <dt id="site_url">
-<code class="descname">site_url</code><span class="sig-paren">(</span><span class="optional">[</span><em>$uri = ''</em><span class="optional">[</span>, <em>$protocol = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#site_url" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">site_url</tt><big>(</big><span class="optional">[</span><em>$uri = ''</em><span class="optional">[</span>, <em>$protocol = NULL</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#site_url" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -479,13 +483,13 @@ URL に追加され、この関数に渡された URI
 <span class="k">echo</span> <span class="nx">site_url</span><span class="p">(</span><span class="nv">$segments</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>この関数は <code class="docutils literal"><span class="pre">CI_Config::site_url()</span></code> のエイリアスです。より多くの情報を
-得るには、<a class="reference internal" href="../libraries/config.html"><span class="doc">設定クラス</span></a> を見てください。</p>
+<p>この関数は <tt class="docutils literal"><span class="pre">CI_Config::site_url()</span></tt> のエイリアスです。より多くの情報を
+得るには、<a class="reference internal" href="../libraries/config.html"><em>設定クラス</em></a> を見てください。</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="base_url">
-<code class="descname">base_url</code><span class="sig-paren">(</span><em>$uri = ''</em>, <em>$protocol = NULL</em><span class="sig-paren">)</span><a class="headerlink" href="#base_url" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">base_url</tt><big>(</big><em>$uri = ''</em>, <em>$protocol = NULL</em><big>)</big><a class="headerlink" href="#base_url" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -509,28 +513,28 @@ URL に追加され、この関数に渡された URI
 </pre></div>
 </div>
 <p>この関数は <em>index_page</em> がないことと、また、 <em>url_suffix</em> が
-追加されないこと以外は <a class="reference internal" href="#site_url" title="site_url"><code class="xref php php-func docutils literal"><span class="pre">site_url()</span></code></a> と同じ結果を返します。</p>
-<p>また <a class="reference internal" href="#site_url" title="site_url"><code class="xref php php-func docutils literal"><span class="pre">site_url()</span></code></a> のように、セグメントを文字列または配列として、
+追加されないこと以外は <a class="reference internal" href="#site_url" title="site_url"><tt class="xref php php-func docutils literal"><span class="pre">site_url()</span></tt></a> と同じ結果を返します。</p>
+<p>また <a class="reference internal" href="#site_url" title="site_url"><tt class="xref php php-func docutils literal"><span class="pre">site_url()</span></tt></a> のように、セグメントを文字列または配列として、
 この関数に渡すことができます。下記は文字列での例です:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nx">base_url</span><span class="p">(</span><span class="s2">&quot;blog/post/123&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>上の例では、次のようなものが返されます:
 <em>http://example.com/blog/post/123</em></p>
-<p>この関数は <a class="reference internal" href="#site_url" title="site_url"><code class="xref php php-func docutils literal"><span class="pre">site_url()</span></code></a> とは違い、画像やスタイルシートなどの
+<p>この関数は <a class="reference internal" href="#site_url" title="site_url"><tt class="xref php php-func docutils literal"><span class="pre">site_url()</span></tt></a> とは違い、画像やスタイルシートなどの
 ファイルへの文字列を渡すことができるのが便利です。例:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nx">base_url</span><span class="p">(</span><span class="s2">&quot;images/icons/edit.png&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>上の例では、次のようなものが返されます:
 <em>http://example.com/images/icons/edit.png</em></p>
-<p>この関数は <code class="docutils literal"><span class="pre">CI_Config::base_url()</span></code> のエイリアスです。より多くの情報を
-得るには、<a class="reference internal" href="../libraries/config.html"><span class="doc">設定クラス</span></a> を見てください。</p>
+<p>この関数は <tt class="docutils literal"><span class="pre">CI_Config::base_url()</span></tt> のエイリアスです。より多くの情報を
+得るには、<a class="reference internal" href="../libraries/config.html"><em>設定クラス</em></a> を見てください。</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="current_url">
-<code class="descname">current_url</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#current_url" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">current_url</tt><big>(</big><big>)</big><a class="headerlink" href="#current_url" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -553,7 +557,7 @@ URL に追加され、この関数に渡された URI
 
 <dl class="function">
 <dt id="uri_string">
-<code class="descname">uri_string</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#uri_string" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">uri_string</tt><big>(</big><big>)</big><a class="headerlink" href="#uri_string" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -573,13 +577,13 @@ URL に追加され、この関数に渡された URI
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">blog</span><span class="o">/</span><span class="nx">comments</span><span class="o">/</span><span class="mi">123</span>
 </pre></div>
 </div>
-<p>この関数は <code class="docutils literal"><span class="pre">CI_Config::uri_string()</span></code> のエイリアスです。より多くの情報を
-得るには、<a class="reference internal" href="../libraries/config.html"><span class="doc">設定クラス</span></a> を見てください。</p>
+<p>この関数は <tt class="docutils literal"><span class="pre">CI_Config::uri_string()</span></tt> のエイリアスです。より多くの情報を
+得るには、<a class="reference internal" href="../libraries/config.html"><em>設定クラス</em></a> を見てください。</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="index_page">
-<code class="descname">index_page</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#index_page" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">index_page</tt><big>(</big><big>)</big><a class="headerlink" href="#index_page" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -599,7 +603,7 @@ URL に追加され、この関数に渡された URI
 
 <dl class="function">
 <dt id="anchor">
-<code class="descname">anchor</code><span class="sig-paren">(</span><em>$uri = ''</em>, <em>$title = ''</em>, <em>$attributes = ''</em><span class="sig-paren">)</span><a class="headerlink" href="#anchor" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">anchor</tt><big>(</big><em>$uri = ''</em>, <em>$title = ''</em>, <em>$attributes = ''</em><big>)</big><a class="headerlink" href="#anchor" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -621,7 +625,7 @@ URL に追加され、この関数に渡された URI
 </table>
 <p>サイトの URL にもとづいて、標準の HTML アンカーリンクを生成します。</p>
 <p>第1引数は、URL に追加したいセグメントを指定します。
-上の <a class="reference internal" href="#site_url" title="site_url"><code class="xref php php-func docutils literal"><span class="pre">site_url()</span></code></a> 関数のように、文字列または、
+上の <a class="reference internal" href="#site_url" title="site_url"><tt class="xref php php-func docutils literal"><span class="pre">site_url()</span></tt></a> 関数のように、文字列または、
 配列でセグメントを指定します。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
@@ -650,7 +654,7 @@ URL に追加され、この関数に渡された URI
 
 <dl class="function">
 <dt id="anchor_popup">
-<code class="descname">anchor_popup</code><span class="sig-paren">(</span><em>$uri = ''</em>, <em>$title = ''</em>, <em>$attributes = FALSE</em><span class="sig-paren">)</span><a class="headerlink" href="#anchor_popup" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">anchor_popup</tt><big>(</big><em>$uri = ''</em>, <em>$title = ''</em>, <em>$attributes = FALSE</em><big>)</big><a class="headerlink" href="#anchor_popup" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -670,7 +674,7 @@ URL に追加され、この関数に渡された URI
 </tr>
 </tbody>
 </table>
-<p>新しいウィンドで URL を開くこと以外は、 <a class="reference internal" href="#anchor" title="anchor"><code class="xref php php-func docutils literal"><span class="pre">anchor()</span></code></a> 関数とほとんど同じです。
+<p>新しいウィンドで URL を開くこと以外は、 <a class="reference internal" href="#anchor" title="anchor"><tt class="xref php php-func docutils literal"><span class="pre">anchor()</span></tt></a> 関数とほとんど同じです。
 ウィンドウの開き方をコントロールするために、JavaScript の window
 オブジェクトの属性(プロパティ)を第3引数で指定できます。 第3引数が設定
 されていない場合は、ユーザのブラウザの設定により新しいウィンドウを開き
@@ -714,7 +718,7 @@ window name または window target のどちらかを受け入れる JavaScript
 
 <dl class="function">
 <dt id="mailto">
-<code class="descname">mailto</code><span class="sig-paren">(</span><em>$email</em>, <em>$title = ''</em>, <em>$attributes = ''</em><span class="sig-paren">)</span><a class="headerlink" href="#mailto" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">mailto</tt><big>(</big><em>$email</em>, <em>$title = ''</em>, <em>$attributes = ''</em><big>)</big><a class="headerlink" href="#mailto" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -738,7 +742,7 @@ window name または window target のどちらかを受け入れる JavaScript
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nx">mailto</span><span class="p">(</span><span class="s1">&#39;me@my-site.com&#39;</span><span class="p">,</span> <span class="s1">&#39;Click Here to Contact Me&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>上の <a class="reference internal" href="#anchor" title="anchor"><code class="xref php php-func docutils literal"><span class="pre">anchor()</span></code></a> 関数のように、第3引数で
+<p>上の <a class="reference internal" href="#anchor" title="anchor"><tt class="xref php php-func docutils literal"><span class="pre">anchor()</span></tt></a> 関数のように、第3引数で
 属性を指定できます。:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$attributes</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;title&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Mail me&#39;</span><span class="p">);</span>
 <span class="k">echo</span> <span class="nx">mailto</span><span class="p">(</span><span class="s1">&#39;me@my-site.com&#39;</span><span class="p">,</span> <span class="s1">&#39;Contact Me&#39;</span><span class="p">,</span> <span class="nv">$attributes</span><span class="p">);</span>
@@ -748,7 +752,7 @@ window name または window target のどちらかを受け入れる JavaScript
 
 <dl class="function">
 <dt id="safe_mailto">
-<code class="descname">safe_mailto</code><span class="sig-paren">(</span><em>$email</em>, <em>$title = ''</em>, <em>$attributes = ''</em><span class="sig-paren">)</span><a class="headerlink" href="#safe_mailto" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">safe_mailto</tt><big>(</big><em>$email</em>, <em>$title = ''</em>, <em>$attributes = ''</em><big>)</big><a class="headerlink" href="#safe_mailto" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -770,12 +774,12 @@ window name または window target のどちらかを受け入れる JavaScript
 </table>
 <p>この関数は、スパムロボットにメールアドレスが収集されてしまうのを防ぐため、
 メールアドレスのリンクを JavaScript で書き出すために、
-序数を使った難読化バージョンの <em>mailto</em> タグを書き出します。この点を除いて、<a class="reference internal" href="#mailto" title="mailto"><code class="xref php php-func docutils literal"><span class="pre">mailto()</span></code></a> 関数と同じです。</p>
+序数を使った難読化バージョンの <em>mailto</em> タグを書き出します。この点を除いて、<a class="reference internal" href="#mailto" title="mailto"><tt class="xref php php-func docutils literal"><span class="pre">mailto()</span></tt></a> 関数と同じです。</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="auto_link">
-<code class="descname">auto_link</code><span class="sig-paren">(</span><em>$str</em>, <em>$type = 'both'</em>, <em>$popup = FALSE</em><span class="sig-paren">)</span><a class="headerlink" href="#auto_link" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">auto_link</tt><big>(</big><em>$str</em>, <em>$type = 'both'</em>, <em>$popup = FALSE</em><big>)</big><a class="headerlink" href="#auto_link" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -802,7 +806,7 @@ window name または window target のどちらかを受け入れる JavaScript
 </div>
 <p>第2引数は、URL とメールアドレスのどちらを変換するか、あるいは両方を変換するか
 を指定します。指定しない場合、デフォルトでは両方を変換するようになっています。
-Email リンクは上にあるように <a class="reference internal" href="#safe_mailto" title="safe_mailto"><code class="xref php php-func docutils literal"><span class="pre">safe_mailto()</span></code></a> を使って
+Email リンクは上にあるように <a class="reference internal" href="#safe_mailto" title="safe_mailto"><tt class="xref php php-func docutils literal"><span class="pre">safe_mailto()</span></tt></a> を使って
 エンコードされます。</p>
 <p>URL のみを変換する場合:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$string</span> <span class="o">=</span> <span class="nx">auto_link</span><span class="p">(</span><span class="nv">$string</span><span class="p">,</span> <span class="s1">&#39;url&#39;</span><span class="p">);</span>
@@ -821,7 +825,7 @@ Email リンクは上にあるように <a class="reference internal" href="#saf
 
 <dl class="function">
 <dt id="url_title">
-<code class="descname">url_title</code><span class="sig-paren">(</span><em>$str</em>, <em>$separator = '-'</em>, <em>$lowercase = FALSE</em><span class="sig-paren">)</span><a class="headerlink" href="#url_title" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">url_title</tt><big>(</big><em>$str</em>, <em>$separator = '-'</em>, <em>$lowercase = FALSE</em><big>)</big><a class="headerlink" href="#url_title" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -874,7 +878,7 @@ URL に使いたいときなどに役立ちます。例:</p>
 
 <dl class="function">
 <dt id="prep_url">
-<code class="descname">prep_url</code><span class="sig-paren">(</span><em>$str = ''</em><span class="sig-paren">)</span><a class="headerlink" href="#prep_url" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">prep_url</tt><big>(</big><em>$str = ''</em><big>)</big><a class="headerlink" href="#prep_url" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -901,7 +905,7 @@ URL に使いたいときなどに役立ちます。例:</p>
 
 <dl class="function">
 <dt id="redirect">
-<code class="descname">redirect</code><span class="sig-paren">(</span><em>$uri = ''</em>, <em>$method = 'auto'</em>, <em>$code = NULL</em><span class="sig-paren">)</span><a class="headerlink" href="#redirect" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">redirect</tt><big>(</big><em>$uri = ''</em>, <em>$method = 'auto'</em>, <em>$code = NULL</em><big>)</big><a class="headerlink" href="#redirect" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -947,8 +951,8 @@ Location は高速ですが、 IIS サーバでは信頼性は低下します。
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">とても細かいヘッダのコントロールを行う場合は、<a class="reference internal" href="../libraries/output.html"><span class="doc">出力クラス</span></a> の
-<code class="docutils literal"><span class="pre">set_header()</span></code> メソッドを使うべきです。</p>
+<p class="last">とても細かいヘッダのコントロールを行う場合は、<a class="reference internal" href="../libraries/output.html"><em>出力クラス</em></a> の
+<tt class="docutils literal"><span class="pre">set_header()</span></tt> メソッドを使うべきです。</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
@@ -990,7 +994,7 @@ Location は高速ですが、 IIS サーバでは信頼性は低下します。
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 10月 11, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
+      最終更新: Nov 23, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

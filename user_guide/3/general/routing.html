@@ -49,7 +49,9 @@
     
       <div id="pulldown-menu" class="ciNav">
         <ul>
-<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -105,7 +107,7 @@
 <li class="toctree-l2"><a class="reference internal" href="autoloader.html">リソースのオートロード</a></li>
 <li class="toctree-l2"><a class="reference internal" href="common_functions.html">共通関数</a></li>
 <li class="toctree-l2"><a class="reference internal" href="compatibility_functions.html">互換関数</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">URI ルーティング</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">URI ルーティング</a></li>
 <li class="toctree-l2"><a class="reference internal" href="errors.html">エラー処理</a></li>
 <li class="toctree-l2"><a class="reference internal" href="caching.html">キャッシュ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="profiling.html">アプリケーションのプロファイリング</a></li>
@@ -233,7 +235,9 @@
           
           
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -289,7 +293,7 @@
 <li class="toctree-l2"><a class="reference internal" href="autoloader.html">リソースのオートロード</a></li>
 <li class="toctree-l2"><a class="reference internal" href="common_functions.html">共通関数</a></li>
 <li class="toctree-l2"><a class="reference internal" href="compatibility_functions.html">互換関数</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">URI ルーティング</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">URI ルーティング</a></li>
 <li class="toctree-l2"><a class="reference internal" href="errors.html">エラー処理</a></li>
 <li class="toctree-l2"><a class="reference internal" href="caching.html">キャッシュ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="profiling.html">アプリケーションのプロファイリング</a></li>
@@ -444,7 +448,7 @@ URL に対応するものではなく別のクラス/メソッドが呼び出さ
 <div class="section" id="id1">
 <h2>独自のルーティングルールを設定する<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>ルーティングルールは <em>application/config/routes.php</em> ファイルで定義されています。
-その中で、独自のルーティング基準を指定することを可能にする <code class="docutils literal"><span class="pre">$route</span></code> という配列があります。
+その中で、独自のルーティング基準を指定することを可能にする <tt class="docutils literal"><span class="pre">$route</span></tt> という配列があります。
 ルートはワイルドカードや正規表現を使用して
 指定することができます。</p>
 </div>
@@ -536,9 +540,9 @@ URL に対応するものではなく別のクラス/メソッドが呼び出さ
 </div>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
-<p class="last">上記の例では、 <code class="docutils literal"><span class="pre">$1</span></code> プレースホルダに
+<p class="last">上記の例では、 <tt class="docutils literal"><span class="pre">$1</span></tt> プレースホルダに
 スラッシュが含まれている場合、
-<code class="docutils literal"><span class="pre">Auth::login()</span></code> に渡される際にまた複数のパラメータに分割されます。</p>
+<tt class="docutils literal"><span class="pre">Auth::login()</span></tt> に渡される際にまた複数のパラメータに分割されます。</p>
 </div>
 <p>正規表現を知らず詳細を学びたい人には、
 <a class="reference external" href="http://www.regular-expressions.info/">regular-expressions.info</a>
@@ -569,13 +573,13 @@ RESTful なアプリケーションを構築する際に特に便利です。標
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;products&#39;</span><span class="p">][</span><span class="s1">&#39;put&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;product/insert&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>上記の例では、 URI 「 products 」への PUT リクエストは <code class="docutils literal"><span class="pre">Product::insert()</span></code>
+<p>上記の例では、 URI 「 products 」への PUT リクエストは <tt class="docutils literal"><span class="pre">Product::insert()</span></tt>
 コントローラメソッドを呼び出します。</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;products/(:num)&#39;</span><span class="p">][</span><span class="s1">&#39;DELETE&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;product/delete/$1&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>最初のセグメントとして「 product 」と第 2 セグメントに数値を持つ URL への DELETE リクエストは
-<code class="docutils literal"><span class="pre">Product::delete()</span></code> にマッピングされ、数値は第 1 引数として渡されます。</p>
+<tt class="docutils literal"><span class="pre">Product::delete()</span></tt> にマッピングされ、数値は第 1 引数として渡されます。</p>
 <p>HTTP動詞の利用はもちろん、任意です。</p>
 </div>
 <div class="section" id="id6">
@@ -586,9 +590,9 @@ RESTful なアプリケーションを構築する際に特に便利です。標
 </div>
 <p>このルートポイントは URI になにもデータがない場合に呼び出されるべきアクションです、
 これはルート URL を読み込んだ時のケースになります。
-この設定は <strong>controller/method</strong> の値を指定できますが、指定しない場合は <code class="docutils literal"><span class="pre">index()</span></code>
+この設定は <strong>controller/method</strong> の値を指定できますが、指定しない場合は <tt class="docutils literal"><span class="pre">index()</span></tt>
 がデフォルトになります。上記の例では
-<code class="docutils literal"><span class="pre">Welcome::index()</span></code> が呼び出されることになります。</p>
+<tt class="docutils literal"><span class="pre">Welcome::index()</span></tt> が呼び出されることになります。</p>
 <div class="admonition note">
 <p class="first admonition-title">注釈</p>
 <p class="last">この設定の一部としてディレクトリを使用することはできません！</p>
@@ -602,7 +606,7 @@ RESTful なアプリケーションを構築する際に特に便利です。標
 コントローラクラスを指定します。これはデフォルトの 404 エラーページを
 オーバーライドします。「 default_controller 」と同じディレクトリごとのルールは
 ここにも適用されます。</p>
-<p>これは <code class="docutils literal"><span class="pre">show_404()</span></code> 関数には影響しません。
+<p>これは <tt class="docutils literal"><span class="pre">show_404()</span></tt> 関数には影響しません。
 それは引き続き <em>application/views/errors/error_404.php</em> にあるデフォルトの <em>error_404.php</em>
 ファイルをロードします。</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;translate_uri_dashes&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">FALSE</span><span class="p">;</span>
@@ -641,7 +645,7 @@ RESTful なアプリケーションを構築する際に特に便利です。標
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 10月 11, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
+      最終更新: Nov 23, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

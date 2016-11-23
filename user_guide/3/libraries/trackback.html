@@ -49,7 +49,9 @@
     
       <div id="pulldown-menu" class="ciNav">
         <ul>
-<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -143,7 +145,7 @@
 <li class="toctree-l2"><a class="reference internal" href="security.html">セキュリティクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sessions.html">セッションライブラリ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="table.html">HTML テーブルクラス</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">トラックバッククラス</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">トラックバッククラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="typography.html">タイポグラフィークラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="unit_testing.html">ユニットテストクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="uri.html">URI クラス</a></li>
@@ -233,7 +235,9 @@
           
           
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -327,7 +331,7 @@
 <li class="toctree-l2"><a class="reference internal" href="security.html">セキュリティクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sessions.html">セッションライブラリ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="table.html">HTML テーブルクラス</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">トラックバッククラス</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">トラックバッククラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="typography.html">タイポグラフィークラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="unit_testing.html">ユニットテストクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="uri.html">URI クラス</a></li>
@@ -448,7 +452,7 @@ receive Trackback data.</p>
 <div class="section" id="id3">
 <h3><a class="toc-backref" href="#id10">クラスの初期化</a><a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>Like most other classes in CodeIgniter, the Trackback class is
-initialized in your controller using the <code class="docutils literal"><span class="pre">$this-&gt;load-&gt;library()</span></code> method:</p>
+initialized in your controller using the <tt class="docutils literal"><span class="pre">$this-&gt;load-&gt;library()</span></tt> method:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;trackback&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -635,22 +639,22 @@ encouraged to add.</p>
 <h2><a class="toc-backref" href="#id17">クラスリファレンス</a><a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <dl class="class">
 <dt id="CI_Trackback">
-<em class="property">class </em><code class="descname">CI_Trackback</code><a class="headerlink" href="#CI_Trackback" title="この定義へのパーマリンク">¶</a></dt>
+<em class="property">class </em><tt class="descname">CI_Trackback</tt><a class="headerlink" href="#CI_Trackback" title="この定義へのパーマリンク">¶</a></dt>
 <dd><dl class="attribute">
 <dt>
-<code class="descname">$data = array('url' =&gt; '', 'title' =&gt; '', 'excerpt' =&gt; '', 'blog_name' =&gt; '', 'charset' =&gt; '')</code></dt>
+<tt class="descname">$data = array('url' =&gt; '', 'title' =&gt; '', 'excerpt' =&gt; '', 'blog_name' =&gt; '', 'charset' =&gt; '')</tt></dt>
 <dd><p>Trackback data array.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt>
-<code class="descname">$convert_ascii = TRUE</code></dt>
+<tt class="descname">$convert_ascii = TRUE</tt></dt>
 <dd><p>Whether to convert high ASCII and MS Word characters to HTML entities.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="CI_Trackback::send">
-<code class="descname">send</code><span class="sig-paren">(</span><em>$tb_data</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_Trackback::send" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">send</tt><big>(</big><em>$tb_data</em><big>)</big><a class="headerlink" href="#CI_Trackback::send" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -673,7 +677,7 @@ encouraged to add.</p>
 
 <dl class="method">
 <dt id="CI_Trackback::receive">
-<code class="descname">receive</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Trackback::receive" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">receive</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_Trackback::receive" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -685,12 +689,12 @@ encouraged to add.</p>
 </tbody>
 </table>
 <p>This method simply validates the incoming TB data, returning TRUE on success and FALSE on failure.
-If the data is valid it is set to the <code class="docutils literal"><span class="pre">$this-&gt;data</span></code> array so that it can be inserted into a database.</p>
+If the data is valid it is set to the <tt class="docutils literal"><span class="pre">$this-&gt;data</span></tt> array so that it can be inserted into a database.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="CI_Trackback::send_error">
-<code class="descname">send_error</code><span class="sig-paren">(</span><span class="optional">[</span><em>$message = 'Incomplete information'</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Trackback::send_error" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">send_error</tt><big>(</big><span class="optional">[</span><em>$message = 'Incomplete information'</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Trackback::send_error" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -714,7 +718,7 @@ If the data is valid it is set to the <code class="docutils literal"><span class
 
 <dl class="method">
 <dt id="CI_Trackback::send_success">
-<code class="descname">send_success</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Trackback::send_success" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">send_success</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_Trackback::send_success" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -732,7 +736,7 @@ If the data is valid it is set to the <code class="docutils literal"><span class
 
 <dl class="method">
 <dt id="CI_Trackback::data">
-<code class="descname">data</code><span class="sig-paren">(</span><em>$item</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_Trackback::data" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">data</tt><big>(</big><em>$item</em><big>)</big><a class="headerlink" href="#CI_Trackback::data" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -755,7 +759,7 @@ If the data is valid it is set to the <code class="docutils literal"><span class
 
 <dl class="method">
 <dt id="CI_Trackback::process">
-<code class="descname">process</code><span class="sig-paren">(</span><em>$url</em>, <em>$data</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_Trackback::process" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">process</tt><big>(</big><em>$url</em>, <em>$data</em><big>)</big><a class="headerlink" href="#CI_Trackback::process" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -779,7 +783,7 @@ If the data is valid it is set to the <code class="docutils literal"><span class
 
 <dl class="method">
 <dt id="CI_Trackback::extract_urls">
-<code class="descname">extract_urls</code><span class="sig-paren">(</span><em>$urls</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_Trackback::extract_urls" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">extract_urls</tt><big>(</big><em>$urls</em><big>)</big><a class="headerlink" href="#CI_Trackback::extract_urls" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -802,7 +806,7 @@ If the data is valid it is set to the <code class="docutils literal"><span class
 
 <dl class="method">
 <dt id="CI_Trackback::validate_url">
-<code class="descname">validate_url</code><span class="sig-paren">(</span><em>&amp;$url</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_Trackback::validate_url" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">validate_url</tt><big>(</big><em>&amp;$url</em><big>)</big><a class="headerlink" href="#CI_Trackback::validate_url" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -822,7 +826,7 @@ If the data is valid it is set to the <code class="docutils literal"><span class
 
 <dl class="method">
 <dt id="CI_Trackback::get_id">
-<code class="descname">get_id</code><span class="sig-paren">(</span><em>$url</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_Trackback::get_id" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">get_id</tt><big>(</big><em>$url</em><big>)</big><a class="headerlink" href="#CI_Trackback::get_id" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -845,7 +849,7 @@ If the data is valid it is set to the <code class="docutils literal"><span class
 
 <dl class="method">
 <dt id="CI_Trackback::convert_xml">
-<code class="descname">convert_xml</code><span class="sig-paren">(</span><em>$str</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_Trackback::convert_xml" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">convert_xml</tt><big>(</big><em>$str</em><big>)</big><a class="headerlink" href="#CI_Trackback::convert_xml" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -868,7 +872,7 @@ If the data is valid it is set to the <code class="docutils literal"><span class
 
 <dl class="method">
 <dt id="CI_Trackback::limit_characters">
-<code class="descname">limit_characters</code><span class="sig-paren">(</span><em>$str</em><span class="optional">[</span>, <em>$n = 500</em><span class="optional">[</span>, <em>$end_char = '&amp;#8230;'</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Trackback::limit_characters" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">limit_characters</tt><big>(</big><em>$str</em><span class="optional">[</span>, <em>$n = 500</em><span class="optional">[</span>, <em>$end_char = '&amp;#8230;'</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Trackback::limit_characters" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -893,7 +897,7 @@ If the data is valid it is set to the <code class="docutils literal"><span class
 
 <dl class="method">
 <dt id="CI_Trackback::convert_ascii">
-<code class="descname">convert_ascii</code><span class="sig-paren">(</span><em>$str</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_Trackback::convert_ascii" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">convert_ascii</tt><big>(</big><em>$str</em><big>)</big><a class="headerlink" href="#CI_Trackback::convert_ascii" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -916,7 +920,7 @@ If the data is valid it is set to the <code class="docutils literal"><span class
 
 <dl class="method">
 <dt id="CI_Trackback::set_error">
-<code class="descname">set_error</code><span class="sig-paren">(</span><em>$msg</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_Trackback::set_error" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">set_error</tt><big>(</big><em>$msg</em><big>)</big><a class="headerlink" href="#CI_Trackback::set_error" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -936,7 +940,7 @@ If the data is valid it is set to the <code class="docutils literal"><span class
 
 <dl class="method">
 <dt id="CI_Trackback::display_errors">
-<code class="descname">display_errors</code><span class="sig-paren">(</span><span class="optional">[</span><em>$open = '&lt;p&gt;'</em><span class="optional">[</span>, <em>$close = '&lt;/p&gt;'</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_Trackback::display_errors" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">display_errors</tt><big>(</big><span class="optional">[</span><em>$open = '&lt;p&gt;'</em><span class="optional">[</span>, <em>$close = '&lt;/p&gt;'</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Trackback::display_errors" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -982,7 +986,7 @@ If the data is valid it is set to the <code class="docutils literal"><span class
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 10月 11, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
+      最終更新: Nov 23, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

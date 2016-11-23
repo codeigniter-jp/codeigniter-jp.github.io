@@ -49,7 +49,9 @@
     
       <div id="pulldown-menu" class="ciNav">
         <ul>
-<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -130,7 +132,7 @@
 <li class="toctree-l2"><a class="reference internal" href="encryption.html">Encryption ライブラリ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="file_uploading.html">ファイルアップロードクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="form_validation.html">フォームバリデーション（検証）</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">FTP クラス</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">FTP クラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="image_lib.html">画像操作クラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="input.html">入力クラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="javascript.html">JavaScript クラス</a></li>
@@ -233,7 +235,9 @@
           
           
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -314,7 +318,7 @@
 <li class="toctree-l2"><a class="reference internal" href="encryption.html">Encryption ライブラリ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="file_uploading.html">ファイルアップロードクラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="form_validation.html">フォームバリデーション（検証）</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">FTP クラス</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">FTP クラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="image_lib.html">画像操作クラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="input.html">入力クラス</a></li>
 <li class="toctree-l2"><a class="reference internal" href="javascript.html">JavaScript クラス</a></li>
@@ -509,10 +513,10 @@ $this-&gt;load-&gt;library メソッドを使って初期化します:</p>
 <h2><a class="toc-backref" href="#id8">クラスリファレンス</a><a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <dl class="class">
 <dt id="CI_FTP">
-<em class="property">class </em><code class="descname">CI_FTP</code><a class="headerlink" href="#CI_FTP" title="この定義へのパーマリンク">¶</a></dt>
+<em class="property">class </em><tt class="descname">CI_FTP</tt><a class="headerlink" href="#CI_FTP" title="この定義へのパーマリンク">¶</a></dt>
 <dd><dl class="method">
 <dt id="CI_FTP::connect">
-<code class="descname">connect</code><span class="sig-paren">(</span><span class="optional">[</span><em>$config = array()</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_FTP::connect" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">connect</tt><big>(</big><span class="optional">[</span><em>$config = array()</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_FTP::connect" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -595,7 +599,7 @@ $config という名前の設定用配列を追加します。 <em>application/c
 
 <dl class="method">
 <dt id="CI_FTP::upload">
-<code class="descname">upload</code><span class="sig-paren">(</span><em>$locpath</em>, <em>$rempath</em><span class="optional">[</span>, <em>$mode = 'auto'</em><span class="optional">[</span>, <em>$permissions = NULL</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_FTP::upload" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">upload</tt><big>(</big><em>$locpath</em>, <em>$rempath</em><span class="optional">[</span>, <em>$mode = 'auto'</em><span class="optional">[</span>, <em>$permissions = NULL</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_FTP::upload" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -628,7 +632,7 @@ $config という名前の設定用配列を追加します。 <em>application/c
 
 <dl class="method">
 <dt id="CI_FTP::download">
-<code class="descname">download</code><span class="sig-paren">(</span><em>$rempath</em>, <em>$locpath</em><span class="optional">[</span>, <em>$mode = 'auto'</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_FTP::download" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">download</tt><big>(</big><em>$rempath</em>, <em>$locpath</em><span class="optional">[</span>, <em>$mode = 'auto'</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_FTP::download" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -660,7 +664,7 @@ $config という名前の設定用配列を追加します。 <em>application/c
 
 <dl class="method">
 <dt id="CI_FTP::rename">
-<code class="descname">rename</code><span class="sig-paren">(</span><em>$old_file</em>, <em>$new_file</em><span class="optional">[</span>, <em>$move = FALSE</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_FTP::rename" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">rename</tt><big>(</big><em>$old_file</em>, <em>$new_file</em><span class="optional">[</span>, <em>$move = FALSE</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_FTP::rename" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -689,7 +693,7 @@ $config という名前の設定用配列を追加します。 <em>application/c
 
 <dl class="method">
 <dt id="CI_FTP::move">
-<code class="descname">move</code><span class="sig-paren">(</span><em>$old_file</em>, <em>$new_file</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_FTP::move" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">move</tt><big>(</big><em>$old_file</em>, <em>$new_file</em><big>)</big><a class="headerlink" href="#CI_FTP::move" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -721,7 +725,7 @@ $config という名前の設定用配列を追加します。 <em>application/c
 
 <dl class="method">
 <dt id="CI_FTP::delete_file">
-<code class="descname">delete_file</code><span class="sig-paren">(</span><em>$filepath</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_FTP::delete_file" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">delete_file</tt><big>(</big><em>$filepath</em><big>)</big><a class="headerlink" href="#CI_FTP::delete_file" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -747,7 +751,7 @@ $config という名前の設定用配列を追加します。 <em>application/c
 
 <dl class="method">
 <dt id="CI_FTP::delete_dir">
-<code class="descname">delete_dir</code><span class="sig-paren">(</span><em>$filepath</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_FTP::delete_dir" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">delete_dir</tt><big>(</big><em>$filepath</em><big>)</big><a class="headerlink" href="#CI_FTP::delete_dir" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -772,7 +776,7 @@ $config という名前の設定用配列を追加します。 <em>application/c
 <p class="last">このメソッドを使うときは、「厳重に」注意してください！！
 渡されたパス以下のサブフォルダと全ファイルの <strong>すべてのもの</strong> を再帰的に削除します。
 パスが完全に正しいかを確認するようにしてください。
-<code class="docutils literal"><span class="pre">list_files()</span></code> メソッドをまず使って、パスが正しいかを検証するようにしてください。</p>
+<tt class="docutils literal"><span class="pre">list_files()</span></tt> メソッドをまず使って、パスが正しいかを検証するようにしてください。</p>
 </div>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">ftp</span><span class="o">-&gt;</span><span class="na">delete_dir</span><span class="p">(</span><span class="s1">&#39;/public_html/path/to/folder/&#39;</span><span class="p">);</span>
 </pre></div>
@@ -781,7 +785,7 @@ $config という名前の設定用配列を追加します。 <em>application/c
 
 <dl class="method">
 <dt id="CI_FTP::list_files">
-<code class="descname">list_files</code><span class="sig-paren">(</span><span class="optional">[</span><em>$path = '.'</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_FTP::list_files" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">list_files</tt><big>(</big><span class="optional">[</span><em>$path = '.'</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_FTP::list_files" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -809,7 +813,7 @@ $config という名前の設定用配列を追加します。 <em>application/c
 
 <dl class="method">
 <dt id="CI_FTP::mirror">
-<code class="descname">mirror</code><span class="sig-paren">(</span><em>$locpath</em>, <em>$rempath</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_FTP::mirror" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">mirror</tt><big>(</big><em>$locpath</em>, <em>$rempath</em><big>)</big><a class="headerlink" href="#CI_FTP::mirror" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -839,7 +843,7 @@ FTP 経由で読み取ったもののミラーを作成します。
 
 <dl class="method">
 <dt id="CI_FTP::mkdir">
-<code class="descname">mkdir</code><span class="sig-paren">(</span><em>$path</em><span class="optional">[</span>, <em>$permissions = NULL</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_FTP::mkdir" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">mkdir</tt><big>(</big><em>$path</em><span class="optional">[</span>, <em>$permissions = NULL</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_FTP::mkdir" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -869,7 +873,7 @@ FTP 経由で読み取ったもののミラーを作成します。
 
 <dl class="method">
 <dt id="CI_FTP::chmod">
-<code class="descname">chmod</code><span class="sig-paren">(</span><em>$path</em>, <em>$perm</em><span class="sig-paren">)</span><a class="headerlink" href="#CI_FTP::chmod" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">chmod</tt><big>(</big><em>$path</em>, <em>$perm</em><big>)</big><a class="headerlink" href="#CI_FTP::chmod" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -898,7 +902,7 @@ FTP 経由で読み取ったもののミラーを作成します。
 
 <dl class="method">
 <dt id="CI_FTP::changedir">
-<code class="descname">changedir</code><span class="sig-paren">(</span><em>$path</em><span class="optional">[</span>, <em>$suppress_debug = FALSE</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_FTP::changedir" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">changedir</tt><big>(</big><em>$path</em><span class="optional">[</span>, <em>$suppress_debug = FALSE</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_FTP::changedir" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -921,7 +925,7 @@ FTP 経由で読み取ったもののミラーを作成します。
 
 <dl class="method">
 <dt id="CI_FTP::close">
-<code class="descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CI_FTP::close" title="この定義へのパーマリンク">¶</a></dt>
+<tt class="descname">close</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_FTP::close" title="この定義へのパーマリンク">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -960,7 +964,7 @@ FTP 経由で読み取ったもののミラーを作成します。
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 10月 11, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
+      最終更新: Nov 23, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 

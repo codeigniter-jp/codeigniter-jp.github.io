@@ -49,7 +49,9 @@
     
       <div id="pulldown-menu" class="ciNav">
         <ul>
-<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -75,7 +77,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">チュートリアル</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="static_pages.html">静的なページ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="news_section.html">ニュースセクション</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">ニュース記事を作成</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">ニュース記事を作成</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conclusion.html">おわりに</a></li>
 </ul>
 </li>
@@ -233,7 +235,9 @@
           
           
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
@@ -259,7 +263,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">チュートリアル</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="static_pages.html">静的なページ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="news_section.html">ニュースセクション</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">ニュース記事を作成</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">ニュース記事を作成</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conclusion.html">おわりに</a></li>
 </ul>
 </li>
@@ -451,16 +455,16 @@
 </pre></div>
 </div>
 <p>この中で見慣れないものが２つあると思います：
-<code class="docutils literal"><span class="pre">form_open()</span></code> 関数と <code class="docutils literal"><span class="pre">validation_errors()</span></code> 関数です。</p>
-<p>最初の関数は <a class="reference internal" href="../helpers/form_helper.html"><span class="doc">formヘルパー</span></a>
+<tt class="docutils literal"><span class="pre">form_open()</span></tt> 関数と <tt class="docutils literal"><span class="pre">validation_errors()</span></tt> 関数です。</p>
+<p>最初の関数は <a class="reference internal" href="../helpers/form_helper.html"><em>formヘルパー</em></a>
 によって提供されており、form要素を描画すると共に、
-<a class="reference internal" href="../libraries/security.html"><span class="doc">CSRF 保護フィールド</span></a> のような追加の
+<a class="reference internal" href="../libraries/security.html"><em>CSRF 保護フィールド</em></a> のような追加の
 機能も利用可能になります。後者はフォームバリデーションに関する
 エラーを出力するためのものです。</p>
 <p>では news コントローラに戻ってください。ここで２つの事を行ないます：
 フォームが送信されたのかを確認する事と、送信されたデータがバリデーション
 のルールを満たすかどうか確認する事です。 これをするには
-<a class="reference internal" href="../libraries/form_validation.html"><span class="doc">form validation</span></a> ライブラリを使用します。</p>
+<a class="reference internal" href="../libraries/form_validation.html"><em>form validation</em></a> ライブラリを使用します。</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="k">function</span> <span class="nf">create</span><span class="p">()</span>
 <span class="p">{</span>
     <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">helper</span><span class="p">(</span><span class="s1">&#39;form&#39;</span><span class="p">);</span>
@@ -488,12 +492,12 @@
 </div>
 <p>上記のコードは様々な処理を追加しています。まず最初の数行でformヘルパー
 と form validation ライブラリをロードします。 次に、フォームバリデーション
-のルールが定義されます。<code class="docutils literal"><span class="pre">set_rules()</span></code> メソッドには３つの引数が渡されます；
+のルールが定義されます。<tt class="docutils literal"><span class="pre">set_rules()</span></tt> メソッドには３つの引数が渡されます；
 入力フィールドの名前、エラーメッセージに使用される名前、そして実際のルール。
 この例では title と text フィールドは必須（required）とします。</p>
 <p>CodeIgniter には上記のような強力なフォームバリデーションのライブラリ
 が備わっています。 このライブラリについては
-<a class="reference internal" href="../libraries/form_validation.html"><span class="doc">ここで詳細を知ることができます</span></a> 。</p>
+<a class="reference internal" href="../libraries/form_validation.html"><em>ここで詳細を知ることができます</em></a> 。</p>
 <p>コードの続きを見ていくと、フォームバリデーションが正しく行なわれたかの
 条件分岐があります。 もし不正だった場合はフォームのページが表示され、
 送信され <strong>なおかつ</strong> 全てのルールを通過した場合はモデルが呼ばれます。
@@ -524,18 +528,18 @@
 </div>
 <p>このメソッドはデータベースにニュース記事を挿入してくれます。
 3行目には url_title() という新しい関数があります。
-<a class="reference internal" href="../helpers/url_helper.html"><span class="doc">URL ヘルパー</span></a> によって提供
+<a class="reference internal" href="../helpers/url_helper.html"><em>URL ヘルパー</em></a> によって提供
 されているこの関数は、渡した文字列を解析し、空白スペースを全て
 ハイフン（-）に置換して全文字を小文字にしてくれます。
 結果はURIを生成するのにぴったりの綺麗なslugです。</p>
-<p>続けて、<code class="docutils literal"><span class="pre">$data</span></code> 配列内に実際に挿入されるレコードを準備しましょう。
+<p>続けて、<tt class="docutils literal"><span class="pre">$data</span></tt> 配列内に実際に挿入されるレコードを準備しましょう。
 それぞれの要素は以前作成したデータベースのカラムと対応しています。
 ここで post() という
-<a class="reference internal" href="../libraries/input.html"><span class="doc">inputライブラリ</span></a>
+<a class="reference internal" href="../libraries/input.html"><em>inputライブラリ</em></a>
 の新しいメソッドに気づくと思います。このメソッドはあなたのデータが
 正しくサニタイズされるようにして、悪意のある外部攻撃からあなたを
 守ってくれます。input ライブラリはデフォルトで読み込まれるライブラリ
-です。最後に <code class="docutils literal"><span class="pre">$data</span></code> 配列をデータベースに挿入しておしまいです。</p>
+です。最後に <tt class="docutils literal"><span class="pre">$data</span></tt> 配列をデータベースに挿入しておしまいです。</p>
 </div>
 <div class="section" id="id4">
 <h2>ルーティング<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
@@ -576,7 +580,7 @@ URLに index.php/news/create を入れてみてください。
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-      最終更新: 10月 11, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
+      最終更新: Nov 23, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
     </p>
   </div>
 
