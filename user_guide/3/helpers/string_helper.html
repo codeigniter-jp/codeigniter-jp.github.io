@@ -1,0 +1,876 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>文字列ヘルパー &mdash; CodeIgniter 3.2.0-dev ドキュメント</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/ci-icon.ico"/>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="CodeIgniter 3.2.0-dev ドキュメント" href="../index.html"/>
+        <link rel="up" title="ヘルパー" href="index.html"/>
+        <link rel="next" title="テキストヘルパー" href="text_helper.html"/>
+        <link rel="prev" title="スマイリーヘルパー" href="smiley_helper.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div id="nav">
+  <div id="nav_inner">
+    
+    
+    
+      <div id="pulldown-menu" class="ciNav">
+        <ul>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../installation/downloads.html">CodeIgniter のダウンロード</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/index.html">インストール方法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">以前のバージョンからのアップグレード</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/troubleshooting.html">トラブルシューティング</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview/index.html">CodeIgniter 概要</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../overview/getting_started.html">CodeIgniter をはじめよう</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/at_a_glance.html">CodeIgniter の簡単な紹介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/features.html">CodeIgniter の機能</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/appflow.html">アプリケーションフローチャート</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/mvc.html">Model-View-Controller</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/goals.html">設計とアーキテクチャのゴール</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">チュートリアル</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/static_pages.html">静的なページ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/news_section.html">ニュースセクション</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/create_news_items.html">ニュース記事を作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/conclusion.html">おわりに</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contributing/index.html">CodeIgniter への貢献</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/index.html">CodeIgniter のドキュメントを書く</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DCO.html">Developer&#8217;s Certificate of Origin 1.1</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../general/index.html">一般的なトピック</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../general/urls.html">CodeIgniter の URL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/controllers.html">コントローラ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/reserved_names.html">予約語</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/views.html">ビュー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/models.html">モデル</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/helpers.html">ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/libraries.html">CodeIgniter のライブラリの利用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/creating_libraries.html">ライブラリの作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/drivers.html">CodeIgniter のドライバを使う</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/creating_drivers.html">ドライバの作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/core_classes.html">コアシステムクラスの作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/ancillary_classes.html">補助的なクラス作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/hooks.html">フック――フレームワークコアの拡張</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/autoloader.html">リソースのオートロード</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/common_functions.html">共通関数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/compatibility_functions.html">互換関数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/routing.html">URI ルーティング</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/errors.html">エラー処理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/caching.html">キャッシュ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/profiling.html">アプリケーションのプロファイリング</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/cli.html">CLI で実行する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/managing_apps.html">アプリケーションの管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/environments.html">複数環境への対応</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/alternative_php.html">ビューファイルでの PHP の代替構文</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/security.html">セキュリティ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/styleguide.html">PHP スタイルガイド</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../libraries/index.html">ライブラリ</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/benchmark.html">ベンチマーククラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/caching.html">キャッシングドライバ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/calendar.html">カレンダークラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/cart.html">ショッピングカートクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/config.html">設定クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/email.html">Email クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/encrypt.html">Encrypt クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/encryption.html">Encryption ライブラリ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/file_uploading.html">ファイルアップロードクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/form_validation.html">フォームバリデーション（検証）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/ftp.html">FTP クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/image_lib.html">画像操作クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/input.html">入力クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/javascript.html">JavaScript クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/language.html">言語クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/loader.html">ローダ（読み込み処理）クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/migration.html">マイグレーションクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/output.html">出力クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/pagination.html">ページネーションクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/parser.html">テンプレートパーサクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/security.html">セキュリティクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションライブラリ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/table.html">HTML テーブルクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/trackback.html">トラックバッククラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/typography.html">タイポグラフィークラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/unit_testing.html">ユニットテストクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/uri.html">URI クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/user_agent.html">ユーザエージェントクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/xmlrpc.html">XML-RPC および XML-RPC サーバクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/zip.html">Zip 圧縮クラス</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../database/index.html">データベースリファレンス</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../database/examples.html">クイックスタート: 使用例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/configuration.html">データベース設定</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/connecting.html">データベースへの接続</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/queries.html">クエリの実行</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/results.html">クエリ結果の生成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/helpers.html">クエリヘルパー関数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/query_builder.html">クエリビルダクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/transactions.html">トランザクション</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/metadata.html">メタデータの取得</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/call_function.html">カスタム関数呼び出し</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/caching.html">クエリキャッシュ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/forge.html">データベースフォージを使用したデータベース操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/utilities.html">データベースユーティリティクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/db_driver_reference.html">データベースドライバリファレンス</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">ヘルパー</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="array_helper.html">配列ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="captcha_helper.html">キャプチャ ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cookie_helper.html">Cookie ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="date_helper.html">日付ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="directory_helper.html">ディレクトリヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="download_helper.html">ダウンロードヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="email_helper.html">eメールヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_helper.html">ファイルヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="form_helper.html">フォームヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="html_helper.html">HTML ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inflector_helper.html">語形変換ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="language_helper.html">言語ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="number_helper.html">数字ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="path_helper.html">パスヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_helper.html">セキュリティヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="smiley_helper.html">スマイリーヘルパー</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">文字列ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text_helper.html">テキストヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="typography_helper.html">タイポグラフィーヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="url_helper.html">URL ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xml_helper.html">XML ヘルパー</a></li>
+</ul>
+</li>
+</ul>
+
+      </div>
+    
+      
+  </div>
+</div>
+<div id="nav2">
+  <a href="#" id="openToc">
+    <img src="data:image/jpeg;base64,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" title="Toggle Table of Contents" alt="Toggle Table of Contents" />
+  </a>
+</div>
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+          <a href="../index.html" class="fa fa-home"> CodeIgniter</a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../installation/downloads.html">CodeIgniter のダウンロード</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/index.html">インストール方法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">以前のバージョンからのアップグレード</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/troubleshooting.html">トラブルシューティング</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview/index.html">CodeIgniter 概要</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../overview/getting_started.html">CodeIgniter をはじめよう</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/at_a_glance.html">CodeIgniter の簡単な紹介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/features.html">CodeIgniter の機能</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/appflow.html">アプリケーションフローチャート</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/mvc.html">Model-View-Controller</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/goals.html">設計とアーキテクチャのゴール</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">チュートリアル</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/static_pages.html">静的なページ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/news_section.html">ニュースセクション</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/create_news_items.html">ニュース記事を作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/conclusion.html">おわりに</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contributing/index.html">CodeIgniter への貢献</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/index.html">CodeIgniter のドキュメントを書く</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DCO.html">Developer&#8217;s Certificate of Origin 1.1</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../general/index.html">一般的なトピック</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../general/urls.html">CodeIgniter の URL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/controllers.html">コントローラ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/reserved_names.html">予約語</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/views.html">ビュー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/models.html">モデル</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/helpers.html">ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/libraries.html">CodeIgniter のライブラリの利用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/creating_libraries.html">ライブラリの作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/drivers.html">CodeIgniter のドライバを使う</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/creating_drivers.html">ドライバの作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/core_classes.html">コアシステムクラスの作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/ancillary_classes.html">補助的なクラス作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/hooks.html">フック――フレームワークコアの拡張</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/autoloader.html">リソースのオートロード</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/common_functions.html">共通関数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/compatibility_functions.html">互換関数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/routing.html">URI ルーティング</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/errors.html">エラー処理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/caching.html">キャッシュ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/profiling.html">アプリケーションのプロファイリング</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/cli.html">CLI で実行する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/managing_apps.html">アプリケーションの管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/environments.html">複数環境への対応</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/alternative_php.html">ビューファイルでの PHP の代替構文</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/security.html">セキュリティ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/styleguide.html">PHP スタイルガイド</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../libraries/index.html">ライブラリ</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/benchmark.html">ベンチマーククラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/caching.html">キャッシングドライバ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/calendar.html">カレンダークラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/cart.html">ショッピングカートクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/config.html">設定クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/email.html">Email クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/encrypt.html">Encrypt クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/encryption.html">Encryption ライブラリ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/file_uploading.html">ファイルアップロードクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/form_validation.html">フォームバリデーション（検証）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/ftp.html">FTP クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/image_lib.html">画像操作クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/input.html">入力クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/javascript.html">JavaScript クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/language.html">言語クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/loader.html">ローダ（読み込み処理）クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/migration.html">マイグレーションクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/output.html">出力クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/pagination.html">ページネーションクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/parser.html">テンプレートパーサクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/security.html">セキュリティクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションライブラリ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/table.html">HTML テーブルクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/trackback.html">トラックバッククラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/typography.html">タイポグラフィークラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/unit_testing.html">ユニットテストクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/uri.html">URI クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/user_agent.html">ユーザエージェントクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/xmlrpc.html">XML-RPC および XML-RPC サーバクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/zip.html">Zip 圧縮クラス</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../database/index.html">データベースリファレンス</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../database/examples.html">クイックスタート: 使用例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/configuration.html">データベース設定</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/connecting.html">データベースへの接続</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/queries.html">クエリの実行</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/results.html">クエリ結果の生成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/helpers.html">クエリヘルパー関数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/query_builder.html">クエリビルダクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/transactions.html">トランザクション</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/metadata.html">メタデータの取得</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/call_function.html">カスタム関数呼び出し</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/caching.html">クエリキャッシュ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/forge.html">データベースフォージを使用したデータベース操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/utilities.html">データベースユーティリティクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/db_driver_reference.html">データベースドライバリファレンス</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">ヘルパー</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="array_helper.html">配列ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="captcha_helper.html">キャプチャ ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cookie_helper.html">Cookie ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="date_helper.html">日付ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="directory_helper.html">ディレクトリヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="download_helper.html">ダウンロードヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="email_helper.html">eメールヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_helper.html">ファイルヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="form_helper.html">フォームヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="html_helper.html">HTML ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inflector_helper.html">語形変換ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="language_helper.html">言語ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="number_helper.html">数字ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="path_helper.html">パスヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_helper.html">セキュリティヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="smiley_helper.html">スマイリーヘルパー</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">文字列ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text_helper.html">テキストヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="typography_helper.html">タイポグラフィーヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="url_helper.html">URL ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xml_helper.html">XML ヘルパー</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">CodeIgniter</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+        <li><a href="index.html">ヘルパー</a> &raquo;</li>
+      
+    <li>文字列ヘルパー</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+    <div style="float:right;margin-left:5px;" id="closeMe">
+      <img title="Classic Layout" alt="classic layout" src="data:image/gif;base64,R0lGODlhFAAUAJEAAAAAADMzM////wAAACH5BAUUAAIALAAAAAAUABQAAAImlI+py+0PU5gRBRDM3DxbWoXis42X13USOLauUIqnlsaH/eY6UwAAOw==" />
+    </div>
+  </ul>
+<div style="float:right;margin-left:5px;">[ <a href="https://github.com/codeigniter-jp/ci-ja/blob/develop/user_guide_ja_src/source/helpers/string_helper.rst">旧版翻訳途中</a> | <a href="https://github.com/bcit-ci/CodeIgniter/commits/develop/user_guide_src/source/helpers/string_helper.rst">原文履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/commits/develop_japanese/source/helpers/string_helper.rst">翻訳履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/source/helpers/string_helper.rst">GitHubで修正</a> ]</div><br /><div style="float:right;margin-left:5px;">[ <b class="highlighted">翻訳者募集中</b> → <a href="https://docs.google.com/spreadsheets/d/1ZWD5XqwH-Uo9X7MR644jbL6O8p5LxIngLT8M547H8wc/edit?pref=2&pli=1#gid=0">翻訳状況</a> ]</div>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="id1">
+<h1>文字列ヘルパー<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>文字列ヘルパーファイルは、文字列を処理するのに役立つ関数で
+構成されています。</p>
+<div class="admonition important">
+<p class="first admonition-title">重要</p>
+<p class="last">これらの関数は、いかなる種類のセキュリティ関連のロジックのために
+使われるのに意図されたものではなく、適切ではないことに注意してください。</p>
+</div>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#id2" id="id4">ヘルパーのロード</a></li>
+<li><a class="reference internal" href="#id3" id="id5">利用できる機能</a></li>
+</ul>
+</div>
+<div class="custom-index container"></div><div class="section" id="id2">
+<h2><a class="toc-backref" href="#id4">ヘルパーのロード</a><a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>このヘルパーは次のコードを使ってロードします:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">helper</span><span class="p">(</span><span class="s1">&#39;string&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2><a class="toc-backref" href="#id5">利用できる機能</a><a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>次の関数が利用できます:</p>
+<dl class="function">
+<dt id="random_string">
+<tt class="descname">random_string</tt><big>(</big><span class="optional">[</span><em>$type = 'alnum'</em><span class="optional">[</span>, <em>$len = 8</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#random_string" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$type</strong> (<em>string</em>) &#8211; ランダム化の種類</li>
+<li><strong>$len</strong> (<em>int</em>) &#8211; 出力する文字の長さ</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">ランダムな文字列</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">string</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>指定したタイプとサイズのランダムな文字列を生成します。パスワードを作成
+したり、ランダムなハッシュ値を生成したりするのに役立ちます。</p>
+<p>第1引数には文字列のタイプを指定し、第2引数には文字列のサイズ（文字数）
+を指定します。次の選択肢が使えます:</p>
+<ul class="simple">
+<li><strong>alpha</strong>: 大文字小文字の文字列。</li>
+<li><strong>alnum</strong>: 大文字小文字の英数字。</li>
+<li><strong>basic</strong>: <tt class="docutils literal"><span class="pre">mt_rand()</span></tt> に基づいた乱数。</li>
+<li><strong>numeric</strong>: 数字文字列。</li>
+<li><strong>nozero</strong>: ゼロ以外の数字文字列。</li>
+<li><strong>md5</strong>: <tt class="docutils literal"><span class="pre">md5()</span></tt> に基づいた暗号化された乱数（固定長32文字）。</li>
+<li><strong>sha1</strong>: <tt class="docutils literal"><span class="pre">sha1()</span></tt> に基づいた暗号化された乱数（固定長40文字）。</li>
+</ul>
+<p>使用例:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nx">random_string</span><span class="p">(</span><span class="s1">&#39;alnum&#39;</span><span class="p">,</span> <span class="mi">16</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last"><em>unique</em> と <em>encrypt</em> は 非推奨です。 それらは、それぞれ
+<em>md5</em> と <em>sha1</em> の別名となっています。</p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="increment_string">
+<tt class="descname">increment_string</tt><big>(</big><em>$str</em><span class="optional">[</span>, <em>$separator = '_'</em><span class="optional">[</span>, <em>$first = 1</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#increment_string" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$str</strong> (<em>string</em>) &#8211; 入力文字列</li>
+<li><strong>$separator</strong> (<em>string</em>) &#8211; 番号を増加し追記するためのセパレータ</li>
+<li><strong>$first</strong> (<em>int</em>) &#8211; 開始番号</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">番号を増加させた文字列</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">string</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>番号を付加する、または増やすことで、文字列を増加させます。 &#8220;コピー&#8221; または
+ファイル、ユニークなタイトルかスラッグを持たせたデータベースの
+コンテンツの複製を作成するのに便利です。</p>
+<p>使用例:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nx">increment_string</span><span class="p">(</span><span class="s1">&#39;file&#39;</span><span class="p">,</span> <span class="s1">&#39;_&#39;</span><span class="p">);</span> <span class="c1">// &quot;file_1&quot;</span>
+<span class="k">echo</span> <span class="nx">increment_string</span><span class="p">(</span><span class="s1">&#39;file&#39;</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span> <span class="c1">// &quot;file-2&quot;</span>
+<span class="k">echo</span> <span class="nx">increment_string</span><span class="p">(</span><span class="s1">&#39;file_4&#39;</span><span class="p">);</span> <span class="c1">// &quot;file_5&quot;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="alternator">
+<tt class="descname">alternator</tt><big>(</big><em>$args</em><big>)</big><a class="headerlink" href="#alternator" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$args</strong> (<em>mixed</em>) &#8211; 可変長引数</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">いずれかの文字列</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">mixed</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>ループの中でローテーションで使うように、2つ以上の項目を入れ替え可能
+にします。例:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="nv">$i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="nv">$i</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="k">echo</span> <span class="nx">alternator</span><span class="p">(</span><span class="s1">&#39;string one&#39;</span><span class="p">,</span> <span class="s1">&#39;string two&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>必要な数だけ追加でき、
+各ループで繰り返す度に次の項目が返ります。</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="nv">$i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="nv">$i</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="k">echo</span> <span class="nx">alternator</span><span class="p">(</span><span class="s1">&#39;one&#39;</span><span class="p">,</span> <span class="s1">&#39;two&#39;</span><span class="p">,</span> <span class="s1">&#39;three&#39;</span><span class="p">,</span> <span class="s1">&#39;four&#39;</span><span class="p">,</span> <span class="s1">&#39;five&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">この関数を複数回に分けて呼び出すとき、再度初期化するために、
+一度、引数なしでこの関数を呼び出してください。</p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="repeater">
+<tt class="descname">repeater</tt><big>(</big><em>$data</em><span class="optional">[</span>, <em>$num = 1</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#repeater" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$data</strong> (<em>string</em>) &#8211; 入力文字列</li>
+<li><strong>$num</strong> (<em>int</em>) &#8211; 繰り返す回数</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">繰り返された文字列</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">string</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>渡したデータのコピーを繰り返し生成します。例:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$string</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nx">repeater</span><span class="p">(</span><span class="nv">$string</span><span class="p">,</span> <span class="mi">30</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>上の例では、30の新しい行が生成されます。</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">この関数は非推奨です。 ネイティブの <tt class="docutils literal"><span class="pre">str_repeat()</span></tt> を
+代わりに使用してください。</p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="reduce_double_slashes">
+<tt class="descname">reduce_double_slashes</tt><big>(</big><em>$str</em><big>)</big><a class="headerlink" href="#reduce_double_slashes" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$str</strong> (<em>string</em>) &#8211; 入力文字列</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">複数スラッシュを正常化した文字列</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">string</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>URL プロトコルのプレフィックス（例 http&amp;#58;//）を除いて、
+文字列中のダブルスラッシュをシングルスラッシュに変換します。</p>
+<p>例:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$string</span> <span class="o">=</span> <span class="s2">&quot;http://example.com//index.php&quot;</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nx">reduce_double_slashes</span><span class="p">(</span><span class="nv">$string</span><span class="p">);</span> <span class="c1">// &quot;http://example.com/index.php&quot; を返します</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="strip_slashes">
+<tt class="descname">strip_slashes</tt><big>(</big><em>$data</em><big>)</big><a class="headerlink" href="#strip_slashes" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$data</strong> (<em>mixed</em>) &#8211; 入力文字列または文字列の配列</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">スラッシュを除去した文字列</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">mixed</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>文字列の配列からスラッシュを除去します。</p>
+<p>例:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$str</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;question&#39;</span><span class="nx">  </span><span class="o">=&gt;</span> <span class="s1">&#39;Is your name O\&#39;reilly?&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;answer&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;No, my name is O\&#39;connor.&#39;</span>
+<span class="p">);</span>
+
+<span class="nv">$str</span> <span class="o">=</span> <span class="nx">strip_slashes</span><span class="p">(</span><span class="nv">$str</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>上の例では以下の配列が返ります。:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;question&#39;</span><span class="nx">  </span><span class="o">=&gt;</span> <span class="s2">&quot;Is your name O&#39;reilly?&quot;</span><span class="p">,</span>
+        <span class="s1">&#39;answer&#39;</span> <span class="o">=&gt;</span> <span class="s2">&quot;No, my name is O&#39;connor.&quot;</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">歴史的な理由で、この関数は文字列の入力を受け入れ扱います。
+しかし、この使い方は、単に <tt class="docutils literal"><span class="pre">stripslashes()</span></tt> のエイリアスと
+見なせます。</p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="trim_slashes">
+<tt class="descname">trim_slashes</tt><big>(</big><em>$str</em><big>)</big><a class="headerlink" href="#trim_slashes" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$str</strong> (<em>string</em>) &#8211; 入力文字列</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">スラッシュをトリムした文字列</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">string</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>文字列から、先頭と末尾のスラッシュを除去します。例:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$string</span> <span class="o">=</span> <span class="s2">&quot;/this/that/theother/&quot;</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nx">trim_slashes</span><span class="p">(</span><span class="nv">$string</span><span class="p">);</span> <span class="c1">// this/that/theother 返します</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">この関数は非推奨です。ネイティブの <tt class="docutils literal"><span class="pre">trim()</span></tt> を代わりに使ってください。
+|
+| trim($str, &#8216;/&#8217;);</p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="reduce_multiples">
+<tt class="descname">reduce_multiples</tt><big>(</big><em>$str</em><span class="optional">[</span>, <em>$character = ''</em><span class="optional">[</span>, <em>$trim = FALSE</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#reduce_multiples" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$str</strong> (<em>string</em>) &#8211; 検索対象文字列</li>
+<li><strong>$character</strong> (<em>string</em>) &#8211; 縮約文字</li>
+<li><strong>$trim</strong> (<em>bool</em>) &#8211; 先頭と末尾の縮約文字を削除するかどうか</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">縮約した文字列</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">string</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>連続した文字を縮約します。
+例:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$string</span> <span class="o">=</span> <span class="s2">&quot;Fred, Bill,, Joe, Jimmy&quot;</span><span class="p">;</span>
+<span class="nv">$string</span> <span class="o">=</span> <span class="nx">reduce_multiples</span><span class="p">(</span><span class="nv">$string</span><span class="p">,</span><span class="s2">&quot;,&quot;</span><span class="p">);</span> <span class="c1">//&quot;Fred, Bill, Joe, Jimmy&quot; を返します</span>
+</pre></div>
+</div>
+<p>第3引数に TRUE を指定した場合は、先頭と末尾にある
+縮約文字が削除されます。例:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$string</span> <span class="o">=</span> <span class="s2">&quot;,Fred, Bill,, Joe, Jimmy,&quot;</span><span class="p">;</span>
+<span class="nv">$string</span> <span class="o">=</span> <span class="nx">reduce_multiples</span><span class="p">(</span><span class="nv">$string</span><span class="p">,</span> <span class="s2">&quot;, &quot;</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span> <span class="c1">//&quot;Fred, Bill, Joe, Jimmy&quot; を返します</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="quotes_to_entities">
+<tt class="descname">quotes_to_entities</tt><big>(</big><em>$str</em><big>)</big><a class="headerlink" href="#quotes_to_entities" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$str</strong> (<em>string</em>) &#8211; 入力文字列</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">HTML エンティティに変換したクォートを含む文字列</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">string</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>文字列の中のシングルおよびダブルクオートを対応する HTML 文字参照に変換します。
+例:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$string</span> <span class="o">=</span> <span class="s2">&quot;Joe&#39;s </span><span class="se">\&quot;</span><span class="s2">dinner</span><span class="se">\&quot;</span><span class="s2">&quot;</span><span class="p">;</span>
+<span class="nv">$string</span> <span class="o">=</span> <span class="nx">quotes_to_entities</span><span class="p">(</span><span class="nv">$string</span><span class="p">);</span> <span class="c1">//&quot;Joe&amp;#39;s &amp;quot;dinner&amp;quot;&quot; を返します</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="strip_quotes">
+<tt class="descname">strip_quotes</tt><big>(</big><em>$str</em><big>)</big><a class="headerlink" href="#strip_quotes" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$str</strong> (<em>string</em>) &#8211; 入力文字列</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">クォートを除去した文字列</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">string</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>文字列からシングルおよびダブルクオートを除去します。例:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$string</span> <span class="o">=</span> <span class="s2">&quot;Joe&#39;s </span><span class="se">\&quot;</span><span class="s2">dinner</span><span class="se">\&quot;</span><span class="s2">&quot;</span><span class="p">;</span>
+<span class="nv">$string</span> <span class="o">=</span> <span class="nx">strip_quotes</span><span class="p">(</span><span class="nv">$string</span><span class="p">);</span> <span class="c1">//&quot;Joes dinner&quot; を返します</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="text_helper.html" class="btn btn-neutral float-right" title="テキストヘルパー">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="smiley_helper.html" class="btn btn-neutral" title="スマイリーヘルパー"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
+      最終更新: Nov 23, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'3.2.0-dev',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  false
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

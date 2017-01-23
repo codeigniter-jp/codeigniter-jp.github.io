@@ -1,0 +1,1197 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>入力クラス &mdash; CodeIgniter 3.2.0-dev ドキュメント</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/ci-icon.ico"/>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="CodeIgniter 3.2.0-dev ドキュメント" href="../index.html"/>
+        <link rel="up" title="ライブラリ" href="index.html"/>
+        <link rel="next" title="JavaScript クラス" href="javascript.html"/>
+        <link rel="prev" title="画像操作クラス" href="image_lib.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div id="nav">
+  <div id="nav_inner">
+    
+    
+    
+      <div id="pulldown-menu" class="ciNav">
+        <ul>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../installation/downloads.html">CodeIgniter のダウンロード</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/index.html">インストール方法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">以前のバージョンからのアップグレード</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/troubleshooting.html">トラブルシューティング</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview/index.html">CodeIgniter 概要</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../overview/getting_started.html">CodeIgniter をはじめよう</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/at_a_glance.html">CodeIgniter の簡単な紹介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/features.html">CodeIgniter の機能</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/appflow.html">アプリケーションフローチャート</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/mvc.html">Model-View-Controller</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/goals.html">設計とアーキテクチャのゴール</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">チュートリアル</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/static_pages.html">静的なページ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/news_section.html">ニュースセクション</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/create_news_items.html">ニュース記事を作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/conclusion.html">おわりに</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contributing/index.html">CodeIgniter への貢献</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/index.html">CodeIgniter のドキュメントを書く</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DCO.html">Developer&#8217;s Certificate of Origin 1.1</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../general/index.html">一般的なトピック</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../general/urls.html">CodeIgniter の URL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/controllers.html">コントローラ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/reserved_names.html">予約語</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/views.html">ビュー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/models.html">モデル</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/helpers.html">ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/libraries.html">CodeIgniter のライブラリの利用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/creating_libraries.html">ライブラリの作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/drivers.html">CodeIgniter のドライバを使う</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/creating_drivers.html">ドライバの作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/core_classes.html">コアシステムクラスの作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/ancillary_classes.html">補助的なクラス作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/hooks.html">フック――フレームワークコアの拡張</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/autoloader.html">リソースのオートロード</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/common_functions.html">共通関数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/compatibility_functions.html">互換関数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/routing.html">URI ルーティング</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/errors.html">エラー処理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/caching.html">キャッシュ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/profiling.html">アプリケーションのプロファイリング</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/cli.html">CLI で実行する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/managing_apps.html">アプリケーションの管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/environments.html">複数環境への対応</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/alternative_php.html">ビューファイルでの PHP の代替構文</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/security.html">セキュリティ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/styleguide.html">PHP スタイルガイド</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">ライブラリ</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="benchmark.html">ベンチマーククラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="caching.html">キャッシングドライバ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="calendar.html">カレンダークラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cart.html">ショッピングカートクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html">設定クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="email.html">Email クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encrypt.html">Encrypt クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encryption.html">Encryption ライブラリ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_uploading.html">ファイルアップロードクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="form_validation.html">フォームバリデーション（検証）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ftp.html">FTP クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="image_lib.html">画像操作クラス</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">入力クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javascript.html">JavaScript クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="language.html">言語クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loader.html">ローダ（読み込み処理）クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="migration.html">マイグレーションクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="output.html">出力クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pagination.html">ページネーションクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="parser.html">テンプレートパーサクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security.html">セキュリティクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sessions.html">セッションライブラリ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="table.html">HTML テーブルクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trackback.html">トラックバッククラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="typography.html">タイポグラフィークラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unit_testing.html">ユニットテストクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="uri.html">URI クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_agent.html">ユーザエージェントクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xmlrpc.html">XML-RPC および XML-RPC サーバクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zip.html">Zip 圧縮クラス</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../database/index.html">データベースリファレンス</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../database/examples.html">クイックスタート: 使用例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/configuration.html">データベース設定</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/connecting.html">データベースへの接続</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/queries.html">クエリの実行</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/results.html">クエリ結果の生成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/helpers.html">クエリヘルパー関数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/query_builder.html">クエリビルダクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/transactions.html">トランザクション</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/metadata.html">メタデータの取得</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/call_function.html">カスタム関数呼び出し</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/caching.html">クエリキャッシュ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/forge.html">データベースフォージを使用したデータベース操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/utilities.html">データベースユーティリティクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/db_driver_reference.html">データベースドライバリファレンス</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../helpers/index.html">ヘルパー</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/array_helper.html">配列ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/captcha_helper.html">キャプチャ ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/cookie_helper.html">Cookie ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/date_helper.html">日付ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/directory_helper.html">ディレクトリヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/download_helper.html">ダウンロードヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/email_helper.html">eメールヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/file_helper.html">ファイルヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/form_helper.html">フォームヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/html_helper.html">HTML ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/inflector_helper.html">語形変換ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/language_helper.html">言語ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/number_helper.html">数字ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/path_helper.html">パスヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/security_helper.html">セキュリティヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/smiley_helper.html">スマイリーヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/string_helper.html">文字列ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/text_helper.html">テキストヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/typography_helper.html">タイポグラフィーヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/url_helper.html">URL ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/xml_helper.html">XML ヘルパー</a></li>
+</ul>
+</li>
+</ul>
+
+      </div>
+    
+      
+  </div>
+</div>
+<div id="nav2">
+  <a href="#" id="openToc">
+    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAgAAZABkAAD/7AARRHVja3kAAQAEAAAARgAA/+4ADkFkb2JlAGTAAAAAAf/bAIQABAMDAwMDBAMDBAYEAwQGBwUEBAUHCAYGBwYGCAoICQkJCQgKCgwMDAwMCgwMDQ0MDBERERERFBQUFBQUFBQUFAEEBQUIBwgPCgoPFA4ODhQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQU/8AAEQgAKwCaAwERAAIRAQMRAf/EAHsAAQAABwEBAAAAAAAAAAAAAAABAwQFBgcIAgkBAQAAAAAAAAAAAAAAAAAAAAAQAAEDAwICBwYEAgsAAAAAAAIBAwQAEQUSBiEHkROTVNQWGDFBUVIUCHEiMtOUFWGBobHRQlMkZIRVEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDSC+ygkOOaUoKigUCgUCgUCgUCgUCgUCgUCgkuGguIP9FBMFb0Hqg7We+3jlmIqqYFf4ub+/QYlnOR/LqIBKGFUbf8qWv971BytQXXE7Y3Lnm3HsFhp2TaZJAdchRXpIgSpdEJWxJEW3xoKV7F5OMy7JkQn2o7D6w33XGjEAkoiqrJEqIiOIiKuhePCgqp22dyYyS3CyWHnQ5joG61HkRnmnTbaFSMhExRVQRRVJU9iUHjE7ez+fJ0MFipmUNhBV8YUd2SoIV9KkjQla9ltegttBdPLW4/qocL+UTfrMiHW4+P9M71shuyrqaHTcxsl7jegpsji8nh5ZwMvDfgTm0RTjSmjYdFCS6KoOIipdFunCgmNYTMv457MMY6U7iI6oMieDDhRm1VbIhuoOkbqtuK0Hpzb+eZcYZexUxt6UyUqK2cd0SdjtgrhOgijcgERUlJOCIl6CpgbP3blRI8XgMjNARAyKNDfeRBdFDBVUAXgQrqH4pxoJTu2NysY97LP4ac1io5q1InHFeGO24LnVKJuKOkSQ/yKir+rh7aCLG1dzypZQI2FnvTgccYOM3FeN0XWERXAUEFVQgQkUktdLpegm+Td3/Xli/L+S/mYNJIOF9G/wBeLKrZHFb0akG6W1WtQWSg3Dyg5e7V3fipE3O4/wCrktyzYA+ufas2LbZIlmnAT2kvuoN1wft95augilglX/tzP3qCu9O3LL/wV/i5v79BvmTADq14UGu91467Z6U9y0HzH/ncj/U/sT/CgynZG7I2NezpZGUjIycJkYkZSG+uQ81pbBNKLxJfjwoMqZ3/ALYHl35AJ7/cuwHcu5k7r1Q5pHetBjquqVVJWGxj9Zrtcl/Ggy3dHMvauR3HFZj5nHNxSyW5JISYDMoIwx8tFIGHZhPNaykGapr6rUAiicEoMG21lMRj8buPAz8xhJrr7uOeiPTCyAwXUaGR1mgozbTusOsFLEiJ7fbQa/h7gcjy2H3V6xppwDNtUSxCJIqp7valBuWVzJ22xuCROXNNZiJkMtms0DbjUkAZjzoDrTMd9dDRI44ZC2YsrYdKWP2WDT2S3N9dNdlRYrGMYc06IURXSYb0igrpWS485xVNS6nF4rwslkoMwnbpgZLB7bmt5uMweAhDEl4B5uSLzzqTnnyVpW2jaJHRMSIjdDiiotvy3DOE5rYTEbkl5yFn28k7JyG4c7AU2HtLH1uKfaiMPI40CdYbpNtmLdwTSn5rewLNld+7TLdeal4WarWBkbVKBjgdElMJJwAAY5fl4kB3b1fp4XvagsGS3FjJfLzDNtS8aeXx7LzT7TyzByQE5PccRGRC0ZRUDRV6y62vbjagzLmJzS2vuPK43JY6aP1TW6Jz+RIWyFtyC06y3EkiiinAo7YCqfq1AqqnGgsOH3lhZO8d1pmcpB8j5XIm9OYlBJSQ/FSS4427DKO0RC8AlcEMhFdViRR1WDWR5t3WXVuL1d106kG9vdeye2g60+1FDyW0shIcXVpyroXt8I8dfd+NB1vioAdWnD3UF1+gD4UFc6CEKpagxXN43rwJLUHz7yX2c8zokt9uHlsPIhA4aRnnHJTLptIS6CNsY7iASpxUUMkReGpfbQW0vtN5pitvrsN28rwtBD0nc0+/Yft5XhaB6TuaXfsP28rwtA9J3NPv2H7eV4Wgek7mn37D9vK8LQPSdzT79h+3leFoHpO5pd+w/byvC0D0nc0u/Yft5XhaB6TuaXfsP28rwtA9J3NLv2H7eV4Wgek7ml37D9vK8LQPSdzS79h+3leFoHpO5p9+w/byvC0E9r7Reazy2HIYVPxkS/CUHVn26cosxyv2g7h89LYmZSXOenvLEQ1YaQ222RATcQCP8rSGqqA8S02W2pQ6FhMoAIlqCtsnwoCpdKClejI4i3Sgtb+GBxVuNBSFt1pV/RQefLjPyUDy4z8lA8uM/JQPLjPyUDy4z8lA8uM/JQPLjPyUDy4z8lA8uM/JQPLjPyUDy4z8lA8utJ/koJ7WCbBU/LQXOPAFq1koK8B0pag90CggtBBf6qB0UDooHRQOigdFA6KB0UDooHRQOigdFA6KB0UDooI0EaBQf//Z" title="Toggle Table of Contents" alt="Toggle Table of Contents" />
+  </a>
+</div>
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+          <a href="../index.html" class="fa fa-home"> CodeIgniter</a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../general/welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../installation/downloads.html">CodeIgniter のダウンロード</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/index.html">インストール方法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">以前のバージョンからのアップグレード</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/troubleshooting.html">トラブルシューティング</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview/index.html">CodeIgniter 概要</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../overview/getting_started.html">CodeIgniter をはじめよう</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/at_a_glance.html">CodeIgniter の簡単な紹介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/features.html">CodeIgniter の機能</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/appflow.html">アプリケーションフローチャート</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/mvc.html">Model-View-Controller</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/goals.html">設計とアーキテクチャのゴール</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">チュートリアル</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/static_pages.html">静的なページ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/news_section.html">ニュースセクション</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/create_news_items.html">ニュース記事を作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/conclusion.html">おわりに</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contributing/index.html">CodeIgniter への貢献</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/index.html">CodeIgniter のドキュメントを書く</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DCO.html">Developer&#8217;s Certificate of Origin 1.1</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../general/index.html">一般的なトピック</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../general/urls.html">CodeIgniter の URL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/controllers.html">コントローラ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/reserved_names.html">予約語</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/views.html">ビュー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/models.html">モデル</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/helpers.html">ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/libraries.html">CodeIgniter のライブラリの利用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/creating_libraries.html">ライブラリの作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/drivers.html">CodeIgniter のドライバを使う</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/creating_drivers.html">ドライバの作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/core_classes.html">コアシステムクラスの作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/ancillary_classes.html">補助的なクラス作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/hooks.html">フック――フレームワークコアの拡張</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/autoloader.html">リソースのオートロード</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/common_functions.html">共通関数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/compatibility_functions.html">互換関数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/routing.html">URI ルーティング</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/errors.html">エラー処理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/caching.html">キャッシュ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/profiling.html">アプリケーションのプロファイリング</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/cli.html">CLI で実行する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/managing_apps.html">アプリケーションの管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/environments.html">複数環境への対応</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/alternative_php.html">ビューファイルでの PHP の代替構文</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/security.html">セキュリティ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/styleguide.html">PHP スタイルガイド</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">ライブラリ</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="benchmark.html">ベンチマーククラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="caching.html">キャッシングドライバ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="calendar.html">カレンダークラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cart.html">ショッピングカートクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html">設定クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="email.html">Email クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encrypt.html">Encrypt クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encryption.html">Encryption ライブラリ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_uploading.html">ファイルアップロードクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="form_validation.html">フォームバリデーション（検証）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ftp.html">FTP クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="image_lib.html">画像操作クラス</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">入力クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javascript.html">JavaScript クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="language.html">言語クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loader.html">ローダ（読み込み処理）クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="migration.html">マイグレーションクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="output.html">出力クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pagination.html">ページネーションクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="parser.html">テンプレートパーサクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security.html">セキュリティクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sessions.html">セッションライブラリ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="table.html">HTML テーブルクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trackback.html">トラックバッククラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="typography.html">タイポグラフィークラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unit_testing.html">ユニットテストクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="uri.html">URI クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_agent.html">ユーザエージェントクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xmlrpc.html">XML-RPC および XML-RPC サーバクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zip.html">Zip 圧縮クラス</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../database/index.html">データベースリファレンス</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../database/examples.html">クイックスタート: 使用例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/configuration.html">データベース設定</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/connecting.html">データベースへの接続</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/queries.html">クエリの実行</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/results.html">クエリ結果の生成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/helpers.html">クエリヘルパー関数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/query_builder.html">クエリビルダクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/transactions.html">トランザクション</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/metadata.html">メタデータの取得</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/call_function.html">カスタム関数呼び出し</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/caching.html">クエリキャッシュ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/forge.html">データベースフォージを使用したデータベース操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/utilities.html">データベースユーティリティクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/db_driver_reference.html">データベースドライバリファレンス</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../helpers/index.html">ヘルパー</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/array_helper.html">配列ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/captcha_helper.html">キャプチャ ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/cookie_helper.html">Cookie ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/date_helper.html">日付ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/directory_helper.html">ディレクトリヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/download_helper.html">ダウンロードヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/email_helper.html">eメールヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/file_helper.html">ファイルヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/form_helper.html">フォームヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/html_helper.html">HTML ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/inflector_helper.html">語形変換ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/language_helper.html">言語ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/number_helper.html">数字ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/path_helper.html">パスヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/security_helper.html">セキュリティヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/smiley_helper.html">スマイリーヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/string_helper.html">文字列ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/text_helper.html">テキストヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/typography_helper.html">タイポグラフィーヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/url_helper.html">URL ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/xml_helper.html">XML ヘルパー</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">CodeIgniter</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+        <li><a href="index.html">ライブラリ</a> &raquo;</li>
+      
+    <li>入力クラス</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+    <div style="float:right;margin-left:5px;" id="closeMe">
+      <img title="Classic Layout" alt="classic layout" src="data:image/gif;base64,R0lGODlhFAAUAJEAAAAAADMzM////wAAACH5BAUUAAIALAAAAAAUABQAAAImlI+py+0PU5gRBRDM3DxbWoXis42X13USOLauUIqnlsaH/eY6UwAAOw==" />
+    </div>
+  </ul>
+<div style="float:right;margin-left:5px;">[ <a href="https://github.com/codeigniter-jp/ci-ja/blob/develop/user_guide_ja_src/source/libraries/input.rst">旧版翻訳途中</a> | <a href="https://github.com/bcit-ci/CodeIgniter/commits/develop/user_guide_src/source/libraries/input.rst">原文履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/commits/develop_japanese/source/libraries/input.rst">翻訳履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/source/libraries/input.rst">GitHubで修正</a> ]</div><br /><div style="float:right;margin-left:5px;">[ <b class="highlighted">翻訳者募集中</b> → <a href="https://docs.google.com/spreadsheets/d/1ZWD5XqwH-Uo9X7MR644jbL6O8p5LxIngLT8M547H8wc/edit?pref=2&pli=1#gid=0">翻訳状況</a> ]</div>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="id1">
+<h1>入力クラス<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>入力クラスには2つの目的があります:</p>
+<ol class="arabic simple">
+<li>グローバルな入力データをセキュリティのために前処理します。</li>
+<li>入力データを取り出し、前処理するためのヘルパーメソッドを提供します。</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">このクラスは、システムで自動的に初期化されるので、
+手動で初期化する必要はありません。</p>
+</div>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#id2" id="id7">入力フィルタリング</a><ul>
+<li><a class="reference internal" href="#id3" id="id8">セキュリティフィルタリング</a></li>
+<li><a class="reference internal" href="#xss" id="id9">XSS フィルタリング</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#accessing-form-data" id="id10">Accessing form data</a><ul>
+<li><a class="reference internal" href="#postgetcookie-server" id="id11">POST、GET、COOKIE あるいは SERVER データの使用</a></li>
+<li><a class="reference internal" href="#php-input-stream" id="id12">php://input streamを使う</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id4" id="id13">クラスリファレンス</a></li>
+</ul>
+</div>
+<div class="custom-index container"></div><div class="section" id="id2">
+<h2><a class="toc-backref" href="#id7">入力フィルタリング</a><a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="id3">
+<h3><a class="toc-backref" href="#id8">セキュリティフィルタリング</a><a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>セキュリティフィルタ機能は、新しい <a class="reference internal" href="../general/controllers.html"><em>コントローラ</em></a> が
+起動されると自動的に呼び出されます。
+フィルタ機能は、次のことを行います:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">$config['allow_get_array']</span></tt> が FALSE に設定されている場合（デフォルトは TRUE ）、
+グローバルな GET配列($_GET) のデータを消去します。</li>
+<li>register_globals が ON
+に設定されているときにセットされるグローバル変数は消去されます。</li>
+<li>英数字 (と少数の他の文字) だけを許可するよう GET/POST/COOKIE
+配列のキーがフィルタリングされます。</li>
+<li>XSS (クロスサイトスクリプティング攻撃) フィルタリングを提供します。
+この機能は、グローバルまたは、リクエストごとに有効化できます。</li>
+<li>改行文字を <tt class="docutils literal"><span class="pre">PHP_EOL</span></tt> に統一します( UNIX ベースでのOSであれば \n 、
+Windowsでは \r\n )。これは設定可能です。</li>
+</ul>
+</div>
+<div class="section" id="xss">
+<h3><a class="toc-backref" href="#id9">XSS フィルタリング</a><a class="headerlink" href="#xss" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>入力クラスではクロスサイトスクリプティング攻撃を防ぐ為、自動的に入力値
+をフィルタする機能が備わっています。 <em>application/config/config.php</em> ファイルを
+次のように設定することで POST または COOKIE
+データを扱う際、自動的にフィルタを実行することができます
+this:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;global_xss_filtering&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">TRUE</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>アプリケーション内で XSS フィルタリングを利用する方法については
+<a class="reference internal" href="security.html"><em>セキュリティクラス</em></a> を参照してください。</p>
+<div class="admonition important">
+<p class="first admonition-title">重要</p>
+<p class="last">&#8216;global_xss_filtering&#8217; を設定することは推奨されていません。
+後方互換の為にのみ維持されているものです。 XSS エスケープは <em>出力値</em> にのみ行われ、
+<em>入力値</em> には行われません！</p>
+</div>
+</div>
+</div>
+<div class="section" id="accessing-form-data">
+<h2><a class="toc-backref" href="#id10">Accessing form data</a><a class="headerlink" href="#accessing-form-data" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="postgetcookie-server">
+<h3><a class="toc-backref" href="#id11">POST、GET、COOKIE あるいは SERVER データの使用</a><a class="headerlink" href="#postgetcookie-server" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>CodeIgniter には、POST、GET、COOKIE あるいは SERVER
+のデータを取得するためのヘルパーメソッドが備わっています。
+直接項目を取得する(例: <tt class="docutils literal"><span class="pre">$_POST['something']</span></tt> )のでなく、このクラスが
+提供するメソッドを使う主な利点は、メソッドにより値がセットされているかチェックされ、
+セットされていない場合は、 NULL を返すということです。
+このメソッドを利用すれば、項目が存在するかどうかをまずテストすることなく、便利にデータを使えます。
+つまり、通常は、次のようなコードになりますが:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$something</span> <span class="o">=</span> <span class="nb">isset</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;something&#39;</span><span class="p">])</span> <span class="o">?</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;something&#39;</span><span class="p">]</span> <span class="o">:</span> <span class="k">NULL</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>CodeIgniter の組み込みメソッドを使うと、単純に次のようになります:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$something</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">post</span><span class="p">(</span><span class="s1">&#39;something&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>よく使用するメソッドは次の通りです:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">$this-&gt;input-&gt;post()</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">$this-&gt;input-&gt;get()</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">$this-&gt;input-&gt;cookie()</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">$this-&gt;input-&gt;server()</span></tt></li>
+</ul>
+</div>
+<div class="section" id="php-input-stream">
+<h3><a class="toc-backref" href="#id12">php://input streamを使う</a><a class="headerlink" href="#php-input-stream" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>PUT、DELETE、PATCH 及び他の特殊なリクエストメソッドを使用する場合、
+リクエスト値は特殊な入力ストリーム経由で一度だけ読み出すことが出来ます。
+これらの値を読み出すことは簡単ではありません。
+<tt class="docutils literal"><span class="pre">$_POST</span></tt> の配列は常に存在し、
+POST データに一度だけアクセスしたかを気にすることなく、複数の値に
+アクセスすることができるからです。</p>
+<p>CodeIgniter は <tt class="docutils literal"><span class="pre">$raw_input_stream</span></tt> 変数を使用することで、
+<strong>php://input</strong> ストリームからの
+データをいつでも読み出すことができます:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">raw_input_stream</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>加えて、入力ストリームを $_POST のように
+フォームエンコードされた値で取得したい場合は
+<tt class="docutils literal"><span class="pre">input_stream()</span></tt> を使用してください:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">input_stream</span><span class="p">(</span><span class="s1">&#39;key&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>他の <tt class="docutils literal"><span class="pre">get()</span></tt> や <tt class="docutils literal"><span class="pre">post()</span></tt> と同様に、
+リクエストされたデータが見つからない場合、 NULL を返却します。
+リクエストデータに <tt class="docutils literal"><span class="pre">xss_clean()</span></tt> を適用するかどうかを制御したい場合は
+第二引数にブール値を渡してください。:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">input_stream</span><span class="p">(</span><span class="s1">&#39;key&#39;</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span> <span class="c1">// XSS Clean</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">input_stream</span><span class="p">(</span><span class="s1">&#39;key&#39;</span><span class="p">,</span> <span class="k">FALSE</span><span class="p">);</span> <span class="c1">// No XSS filter</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">読み込んだデータが PUT、 DELETE または PATCH かを知りたい場合
+<tt class="docutils literal"><span class="pre">method()</span></tt> を使用してください。</p>
+</div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2><a class="toc-backref" href="#id13">クラスリファレンス</a><a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<dl class="class">
+<dt id="CI_Input">
+<em class="property">class </em><tt class="descname">CI_Input</tt><a class="headerlink" href="#CI_Input" title="この定義へのパーマリンク">¶</a></dt>
+<dd><dl class="attribute">
+<dt>
+<tt class="descname">$raw_input_stream</tt></dt>
+<dd><p>php://input データから返却される読み取り専用の値。</p>
+<p>この変数は何度でも参照可能です。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="CI_Input::post">
+<tt class="descname">post</tt><big>(</big><span class="optional">[</span><em>$index = NULL</em><span class="optional">[</span>, <em>$xss_clean = NULL</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Input::post" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$index</strong> (<em>mixed</em>) &#8211; POST パラメータの名前</li>
+<li><strong>$xss_clean</strong> (<em>bool</em>) &#8211; XSS フィルタリングを適用するかどうか</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">$_POST パラメータが指定されていない場合は NULL 、それ以外は $_POST パラメータの値</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">mixed</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>第1引数は、コレクションの中から探し出す POST
+された項目の名前になります:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">post</span><span class="p">(</span><span class="s1">&#39;some_data&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>このメソッドは、取り出そうとして見つからなかった場合、 NULL
+を返します。</p>
+<p>第二引数は XSSフィルタをデータに適用できるようにするオプションのパラメータです。
+第二引数にブール値の TRUE を設定するか <a href="#id5"><span class="problematic" id="id6">``</span></a>$config[&#8216;global_xss_filtering&#8217;]``を
+ブール値の TRUE にすることで有効になります。</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">post</span><span class="p">(</span><span class="s1">&#39;some_data&#39;</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>引数を指定せずに呼び出すことで、 POST されたすべての値を連想配列で返します。</p>
+<p>第1引数を NULL 、第2引数にブール値の TRUE を指定することで、POST
+されたすべての値を XSS フィルタに通すことができます。</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">post</span><span class="p">(</span><span class="k">NULL</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span> <span class="c1">// POST された値を XSS フィルタを通して返します</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">post</span><span class="p">(</span><span class="k">NULL</span><span class="p">,</span> <span class="k">FALSE</span><span class="p">);</span> <span class="c1">// POST された値を XSS フィルタを通さずに返します</span>
+</pre></div>
+</div>
+<p>複数の POST パラメータの配列を返却したい時は必要なキーを
+配列で渡してください。</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">post</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;field1&#39;</span><span class="p">,</span> <span class="s1">&#39;field2&#39;</span><span class="p">));</span>
+</pre></div>
+</div>
+<p>ここではXSS フィルタリングを有効にしてパラメータを取得するために
+同じルールを適用し、第二引数のパラメータにブール値の TRUE を設定してください。</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">post</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;field1&#39;</span><span class="p">,</span> <span class="s1">&#39;field2&#39;</span><span class="p">),</span> <span class="k">TRUE</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="CI_Input::get">
+<tt class="descname">get</tt><big>(</big><span class="optional">[</span><em>$index = NULL</em><span class="optional">[</span>, <em>$xss_clean = NULL</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Input::get" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$index</strong> (<em>mixed</em>) &#8211; GET パラメータの名前</li>
+<li><strong>$xss_clean</strong> (<em>bool</em>) &#8211; XSS フィルタリングを適用するかどうか</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">$_GET パラメータが指定されていない場合はNULL、それ以外は $_GET パラメータの値</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">mixed</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>このメソッドは、get データを取り出すということ以外は、 <tt class="docutils literal"><span class="pre">post()</span></tt> メソッドと同じです</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;some_data&#39;</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>引数を指定せずに呼び出すことで、 GET されたすべての値を連想配列で返します。</p>
+<p>第1引数を NULL 、第2引数にブール値の TRUE を指定することで、
+GET されたすべての値を XSS フィルタに通すことができます。</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="k">NULL</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span> <span class="c1">// GET された値を XSS フィルタを通して返します</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="k">NULL</span><span class="p">,</span> <span class="k">FALSE</span><span class="p">);</span> <span class="c1">// GET された値を XSS フィルタを通さずに返します</span>
+</pre></div>
+</div>
+<p>複数の POST パラメータの配列を返却したい時は必要なキーを
+配列で渡してください。</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;field1&#39;</span><span class="p">,</span> <span class="s1">&#39;field2&#39;</span><span class="p">));</span>
+</pre></div>
+</div>
+<p>ここではXSS フィルタリングを有効にしてパラメータを取得するために
+同じルールを適用し、第二引数のパラメータにブール値の TRUE を設定してください。</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;field1&#39;</span><span class="p">,</span> <span class="s1">&#39;field2&#39;</span><span class="p">),</span> <span class="k">TRUE</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="CI_Input::post_get">
+<tt class="descname">post_get</tt><big>(</big><em>$index</em><span class="optional">[</span>, <em>$xss_clean = NULL</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Input::post_get" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$index</strong> (<em>string</em>) &#8211; POST/GET パラメータの名前</li>
+<li><strong>$xss_clean</strong> (<em>bool</em>) &#8211; XSS フィルタリングを適用するかどうか</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">POST/GET の値があれば POST/GET の値、ない場合は NULL</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">mixed</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>このメソッドは組み合わされているだけで、<tt class="docutils literal"><span class="pre">post()</span></tt> や <tt class="docutils literal"><span class="pre">get()</span></tt> と
+同様に動作します。 POST と GET の両方のストリームデータを探し、
+初めにPOST、その後に GET を探します。:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">post_get</span><span class="p">(</span><span class="s1">&#39;some_data&#39;</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="CI_Input::get_post">
+<tt class="descname">get_post</tt><big>(</big><em>$index</em><span class="optional">[</span>, <em>$xss_clean = NULL</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Input::get_post" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$index</strong> (<em>string</em>) &#8211; GET/POST のパラメータの名前</li>
+<li><strong>$xss_clean</strong> (<em>bool</em>) &#8211; XSS フィルタリングを適用するかどうか</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">GET/POST の値があれば POST/GET の値、ない場合は NULL</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">mixed</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>このメソッドは GET データを初めに探しにいく以外 <tt class="docutils literal"><span class="pre">post_get()</span></tt> と
+同じように動作します。</p>
+<blockquote>
+<div>$this-&gt;input-&gt;get_post(&#8216;some_data&#8217;, TRUE);</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">このメソッドは <tt class="docutils literal"><span class="pre">post_get()</span></tt> と同じように動作していました。しかし、
+CodeIgniter 3.0でこの動作は変更されました。</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="CI_Input::cookie">
+<tt class="descname">cookie</tt><big>(</big><span class="optional">[</span><em>$index = NULL</em><span class="optional">[</span>, <em>$xss_clean = NULL</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Input::cookie" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$index</strong> (<em>mixed</em>) &#8211; COOKIE の名前</li>
+<li><strong>$xss_clean</strong> (<em>bool</em>) &#8211; XSS フィルタリングを適用するかどうか</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">$_COOKIE パラメータが指定されていない場合はNULL、それ以外は COOKIE の値</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">mixed</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>このメソッドは、クッキーデータを取り出すということ以外は、
+<tt class="docutils literal"><span class="pre">post()</span></tt> や <tt class="docutils literal"><span class="pre">get()</span></tt> メソッドと同じです:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">cookie</span><span class="p">(</span><span class="s1">&#39;some_cookie&#39;</span><span class="p">);</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">cookie</span><span class="p">(</span><span class="s1">&#39;some_cookie&#39;</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span> <span class="c1">// with XSS filter</span>
+</pre></div>
+</div>
+<p>複数のクッキーの配列を返却したい時は必要なキーを
+配列で渡してください。</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">cookie</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;some_cookie&#39;</span><span class="p">,</span> <span class="s1">&#39;some_cookie2&#39;</span><span class="p">));</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">doc:<cite>Cookie Helper &lt;../helpers/cookie_helper&gt;</cite>
+function <a class="reference internal" href="../helpers/cookie_helper.html#get_cookie" title="get_cookie"><tt class="xref php php-func docutils literal"><span class="pre">get_cookie()</span></tt></a> とは異なり、
+このメソッドは先頭に <tt class="docutils literal"><span class="pre">$config['cookie_prefix']</span></tt> に設定された値を付与しません。</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="CI_Input::server">
+<tt class="descname">server</tt><big>(</big><em>$index</em><span class="optional">[</span>, <em>$xss_clean = NULL</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Input::server" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$index</strong> (<em>mixed</em>) &#8211; 値の名前</li>
+<li><strong>$xss_clean</strong> (<em>bool</em>) &#8211; XSS フィルタリングを適用するかどうか</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">$_SERVER の値があれば　$_SERVER の値、ない場合は NULL</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">mixed</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>このメソッドは、 SERVER データ(<tt class="docutils literal"><span class="pre">$_SERVER</span></tt>)を取り出すということ以外は、
+<tt class="docutils literal"><span class="pre">post()</span></tt> 、 <tt class="docutils literal"><span class="pre">get()</span></tt> や <tt class="docutils literal"><span class="pre">cookie()</span></tt> と同じです:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">server</span><span class="p">(</span><span class="s1">&#39;some_data&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>複数の <tt class="docutils literal"><span class="pre">$_SERVER</span></tt> の配列を返却したい時は必要なキーを
+配列で渡してください。</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">server</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;SERVER_PROTOCOL&#39;</span><span class="p">,</span> <span class="s1">&#39;REQUEST_URI&#39;</span><span class="p">));</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="CI_Input::input_stream">
+<tt class="descname">input_stream</tt><big>(</big><span class="optional">[</span><em>$index = NULL</em><span class="optional">[</span>, <em>$xss_clean = NULL</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Input::input_stream" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$index</strong> (<em>mixed</em>) &#8211; キーの名前</li>
+<li><strong>$xss_clean</strong> (<em>bool</em>) &#8211; XSS フィルタリングを適用するかどうか</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">入力ストリームのパラメータが指定されていない場合は NULL、 それ以外は入力ストリームの値</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">mixed</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>このメソッドは <em>php://input</em> ストリームデータを取得する以外は
+<tt class="docutils literal"><span class="pre">get()</span></tt>、 <tt class="docutils literal"><span class="pre">post()</span></tt> および <tt class="docutils literal"><span class="pre">cookie()</span></tt> と同じです。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="CI_Input::set_cookie">
+<tt class="descname">set_cookie</tt><big>(</big><em>$name = ''</em><span class="optional">[</span>, <em>$value = ''</em><span class="optional">[</span>, <em>$expire = ''</em><span class="optional">[</span>, <em>$domain = ''</em><span class="optional">[</span>, <em>$path = '/'</em><span class="optional">[</span>, <em>$prefix = ''</em><span class="optional">[</span>, <em>$secure = FALSE</em><span class="optional">[</span>, <em>$httponly = FALSE</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Input::set_cookie" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$name</strong> (<em>mixed</em>) &#8211; クッキー名または配列のパラメータ</li>
+<li><strong>$value</strong> (<em>string</em>) &#8211; クッキーの値</li>
+<li><strong>$expire</strong> (<em>int</em>) &#8211; クッキーの有効期限の秒数</li>
+<li><strong>$domain</strong> (<em>string</em>) &#8211; クッキーのドメイン</li>
+<li><strong>$path</strong> (<em>string</em>) &#8211; クッキーのパス</li>
+<li><strong>$prefix</strong> (<em>string</em>) &#8211; クッキーの値の接頭辞</li>
+<li><strong>$secure</strong> (<em>bool</em>) &#8211; HTTPS 経由でのみクッキーを転送するかどうか</li>
+<li><strong>$httponly</strong> (<em>bool</em>) &#8211; HTTP リクエストでクッキーのアクセスを可能とするかどうか ( JavaScript でアクセスさせるかどうか)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">void</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>指定した値を含むクッキーをセットします。 クッキーをセットする為に
+このメソッドに情報を渡すには、2つの方法があります: 配列で渡す方法と
+個々のパラメータを渡す方法です:</p>
+<p><strong>配列で渡す方法</strong></p>
+<p>この方法では、第1引数に連想配列が
+渡されます:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$cookie</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;name&#39;</span>   <span class="o">=&gt;</span> <span class="s1">&#39;The Cookie Name&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;value&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;The Value&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;expire&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;86500&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;domain&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;.some-domain.com&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;path&#39;</span>   <span class="o">=&gt;</span> <span class="s1">&#39;/&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;prefix&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;myprefix_&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;secure&#39;</span> <span class="o">=&gt;</span> <span class="k">TRUE</span>
+<span class="p">);</span>
+
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">set_cookie</span><span class="p">(</span><span class="nv">$cookie</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><strong>Notes</strong></p>
+<p>name と value のみが必須属性となりますクッキーを削除するには
+有効期限に空白をセットします。</p>
+<p>有効期限は現在時刻から数えた <strong>秒数</strong> で指定します。
+時刻を指定するのではなく、クッキーを <em>現在時刻</em> から
+何秒間有効かを秒数だけで指定します。 有効期限を 0 にセットすると、
+ブラウザが開いている間だけ、クッキーが有効になります。</p>
+<p>どのようにリクエストを受け付けたかにかかわらず、サイト全体で使うクッキーには、
+次のように <strong>domain</strong> にピリオドから始まる URL を追加してください:
+.your-domain.com</p>
+<p>パスは、メソッドがルートパスをセットするので通常は必要ありません。</p>
+<p>プリフィックスは、同一のサーバによってセットされたクッキーにおける
+名前の衝突を回避したい場合にのみ必要です。</p>
+<p>セキュアのブール値は、セキュアなクッキーを使用したい場合のみ TRUE
+にする必要があります。</p>
+<p><strong>個々のパラメータを渡す方法</strong></p>
+<p>希望であれば、個別のパラメータを使ってデータを渡してクッキーを
+セットすることができます:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">set_cookie</span><span class="p">(</span><span class="nv">$name</span><span class="p">,</span> <span class="nv">$value</span><span class="p">,</span> <span class="nv">$expire</span><span class="p">,</span> <span class="nv">$domain</span><span class="p">,</span> <span class="nv">$path</span><span class="p">,</span> <span class="nv">$prefix</span><span class="p">,</span> <span class="nv">$secure</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="CI_Input::ip_address">
+<tt class="descname">ip_address</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_Input::ip_address" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">返り値:</th><td class="field-body">アクセスしてきたIPアドレスまたはアドレスが正しくない場合は &#8216;0.0.0.0&#8217;</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値の型:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
+<p>現在のユーザの IP アドレスを返します。
+アドレスが正しくない場合、このメソッドは、 &#8216;0.0.0.0&#8217; を返却します:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">ip_address</span><span class="p">();</span>
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="first admonition-title">重要</p>
+<p class="last">このメソッドは <tt class="docutils literal"><span class="pre">$config['proxy_ips']</span></tt> の設定値を考慮して、
+報告された HTTP_X_FORWARDED_FOR、HTTP_CLIENT_IP、 HTTP_X_CLIENT_IP または
+HTTP_X_CLUSTER_CLIENT_IP のアドレスを有効なIPアドレスとして返却します。</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="CI_Input::valid_ip">
+<tt class="descname">valid_ip</tt><big>(</big><em>$ip</em><span class="optional">[</span>, <em>$which = ''</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Input::valid_ip" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$ip</strong> (<em>string</em>) &#8211; IPアドレス</li>
+<li><strong>$which</strong> (<em>string</em>) &#8211; IPプロトコル (&#8216;ipv4&#8217; または &#8216;ipv6&#8217;)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">正常あれば TRUE、そうでない場合は FALSE</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">bool</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>入力値にIPアドレスを渡すとIPアドレスが有効かどうかを
+TRUE または FALSE (ブール値) で返却します。</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">$this-&gt;input-&gt;ip_address()
+validates the IP address.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">上記の $this-&gt;input-&gt;ip_address() メソッドは自動的に
+IPアドレスの検証を行います。</p>
+</div>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span> <span class="o">!</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">valid_ip</span><span class="p">(</span><span class="nv">$ip</span><span class="p">))</span>
+<span class="p">{</span>
+        <span class="k">echo</span> <span class="s1">&#39;Not Valid&#39;</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+        <span class="k">echo</span> <span class="s1">&#39;Valid&#39;</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>第二引数はオプションで特定のIPの形式を &#8216;ipv4&#8217; または &#8216;ipv6&#8217; で指定します。
+デフォルトはどちらの形式もチェックします。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="CI_Input::user_agent">
+<tt class="descname">user_agent</tt><big>(</big><span class="optional">[</span><em>$xss_clean = NULL</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Input::user_agent" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">ユーザーエージェント または設定されていない場合は NULL</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$xss_clean</strong> (<em>bool</em>) &#8211; XSS フィルタリングを適用するかどうか</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">mixed</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>現在のユーザが使用しているユーザエージェント(Webブラウザ)を返します。
+利用できないときは NULL を返します。</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">user_agent</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>ユーザエージェントの文字列から情報を抽出する方法は
+<a class="reference internal" href="user_agent.html"><em>ユーザエージェントクラス</em></a> を参照してください。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="CI_Input::request_headers">
+<tt class="descname">request_headers</tt><big>(</big><span class="optional">[</span><em>$xss_clean = FALSE</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Input::request_headers" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$xss_clean</strong> (<em>bool</em>) &#8211; XSS フィルタリングを適用するかどうか</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">HTTP リクエストヘッダの配列</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">array</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>HTTP リクエストヘッダの配列を返します。
+Apache 以外 の( <a class="reference external" href="http://php.net/apache_request_headers">apache_request_headers()</a> をサポートしない)
+環境で有効です。</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$headers</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">request_headers</span><span class="p">();</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="CI_Input::get_request_header">
+<tt class="descname">get_request_header</tt><big>(</big><em>$index</em><span class="optional">[</span>, <em>$xss_clean = FALSE</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Input::get_request_header" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$index</strong> (<em>string</em>) &#8211; HTTP リクエストヘッダの名前</li>
+<li><strong>$xss_clean</strong> (<em>bool</em>) &#8211; XSS フィルタリングを適用するかどうか</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">見つからなかった場合は NULL、 それ以外は HTTP リクエストヘッダの値</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">string</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>検索されたヘッダが見つかればリクエストヘッダの配列の要素を返却し、
+見つからない場合は NULL を返却します。</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">get_request_header</span><span class="p">(</span><span class="s1">&#39;some-header&#39;</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="CI_Input::is_ajax_request">
+<tt class="descname">is_ajax_request</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_Input::is_ajax_request" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">返り値:</th><td class="field-body">Ajax リクエストであれば TRUE、それ以外は FALSE</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値の型:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+<p>サーバのヘッダに HTTP_X_REQUESTED_WITH がセットされているかチェックし、
+セットされている場合はブール値の TRUE 、セットされていない場合は FALSE を返します。</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="CI_Input::is_cli_request">
+<tt class="descname">is_cli_request</tt><big>(</big><big>)</big><a class="headerlink" href="#CI_Input::is_cli_request" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">返り値:</th><td class="field-body">CLI リクエストの場合は TRUE、そうでない場合は FALSE</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値の型:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+<p>アプリケーションがコマンドラインから実行されているかを
+チェックします。</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">このメソッドは現在使用されている PHP SAPI の名前と
+<tt class="docutils literal"><span class="pre">STDIN</span></tt> 定数が定義されている事をチェックします。
+これは通常、PHP がコマンドライン経由で実行されている事を確認する安全な方法です。</p>
+</div>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">is_cli_request</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">このメソッドは推奨されておらず、
+現在は <tt class="xref py py-func docutils literal"><span class="pre">is_cli()</span></tt> ファンクションのエイリアスです。</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="CI_Input::method">
+<tt class="descname">method</tt><big>(</big><span class="optional">[</span><em>$upper = FALSE</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#CI_Input::method" title="この定義へのパーマリンク">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">パラメータ:</th><td class="field-body"><ul class="first simple">
+<li><strong>$upper</strong> (<em>bool</em>) &#8211; リクエストメソッドの名前を大文字のみまたは小文字のみで返却するかどうか</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">返り値:</th><td class="field-body"><p class="first">HTTP リクエストメソッド</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">返り値の型:</th><td class="field-body"><p class="first last">string</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>設定したオプションにより
+大文字のみまたは小文字のみで <tt class="docutils literal"><span class="pre">$_SERVER['REQUEST_METHOD']</span></tt> の値を返却します。</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">method</span><span class="p">(</span><span class="k">TRUE</span><span class="p">);</span> <span class="c1">// Outputs: POST</span>
+<span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">method</span><span class="p">(</span><span class="k">FALSE</span><span class="p">);</span> <span class="c1">// Outputs: post</span>
+<span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">method</span><span class="p">();</span> <span class="c1">// Outputs: post</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="javascript.html" class="btn btn-neutral float-right" title="JavaScript クラス">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="image_lib.html" class="btn btn-neutral" title="画像操作クラス"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
+      最終更新: Nov 23, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'3.2.0-dev',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  false
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

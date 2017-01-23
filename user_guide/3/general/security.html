@@ -1,0 +1,670 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>セキュリティ &mdash; CodeIgniter 3.2.0-dev ドキュメント</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/ci-icon.ico"/>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="CodeIgniter 3.2.0-dev ドキュメント" href="../index.html"/>
+        <link rel="up" title="一般的なトピック" href="index.html"/>
+        <link rel="next" title="PHP スタイルガイド" href="styleguide.html"/>
+        <link rel="prev" title="ビューファイルでの PHP の代替構文" href="alternative_php.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div id="nav">
+  <div id="nav_inner">
+    
+    
+    
+      <div id="pulldown-menu" class="ciNav">
+        <ul>
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../installation/downloads.html">CodeIgniter のダウンロード</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/index.html">インストール方法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">以前のバージョンからのアップグレード</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/troubleshooting.html">トラブルシューティング</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview/index.html">CodeIgniter 概要</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../overview/getting_started.html">CodeIgniter をはじめよう</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/at_a_glance.html">CodeIgniter の簡単な紹介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/features.html">CodeIgniter の機能</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/appflow.html">アプリケーションフローチャート</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/mvc.html">Model-View-Controller</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/goals.html">設計とアーキテクチャのゴール</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">チュートリアル</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/static_pages.html">静的なページ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/news_section.html">ニュースセクション</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/create_news_items.html">ニュース記事を作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/conclusion.html">おわりに</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contributing/index.html">CodeIgniter への貢献</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/index.html">CodeIgniter のドキュメントを書く</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DCO.html">Developer&#8217;s Certificate of Origin 1.1</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">一般的なトピック</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="urls.html">CodeIgniter の URL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="controllers.html">コントローラ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reserved_names.html">予約語</a></li>
+<li class="toctree-l2"><a class="reference internal" href="views.html">ビュー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html">モデル</a></li>
+<li class="toctree-l2"><a class="reference internal" href="helpers.html">ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libraries.html">CodeIgniter のライブラリの利用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="creating_libraries.html">ライブラリの作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="drivers.html">CodeIgniter のドライバを使う</a></li>
+<li class="toctree-l2"><a class="reference internal" href="creating_drivers.html">ドライバの作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core_classes.html">コアシステムクラスの作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ancillary_classes.html">補助的なクラス作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hooks.html">フック――フレームワークコアの拡張</a></li>
+<li class="toctree-l2"><a class="reference internal" href="autoloader.html">リソースのオートロード</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common_functions.html">共通関数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="compatibility_functions.html">互換関数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="routing.html">URI ルーティング</a></li>
+<li class="toctree-l2"><a class="reference internal" href="errors.html">エラー処理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="caching.html">キャッシュ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="profiling.html">アプリケーションのプロファイリング</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli.html">CLI で実行する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="managing_apps.html">アプリケーションの管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environments.html">複数環境への対応</a></li>
+<li class="toctree-l2"><a class="reference internal" href="alternative_php.html">ビューファイルでの PHP の代替構文</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">セキュリティ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="styleguide.html">PHP スタイルガイド</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../libraries/index.html">ライブラリ</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/benchmark.html">ベンチマーククラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/caching.html">キャッシングドライバ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/calendar.html">カレンダークラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/cart.html">ショッピングカートクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/config.html">設定クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/email.html">Email クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/encrypt.html">Encrypt クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/encryption.html">Encryption ライブラリ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/file_uploading.html">ファイルアップロードクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/form_validation.html">フォームバリデーション（検証）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/ftp.html">FTP クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/image_lib.html">画像操作クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/input.html">入力クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/javascript.html">JavaScript クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/language.html">言語クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/loader.html">ローダ（読み込み処理）クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/migration.html">マイグレーションクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/output.html">出力クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/pagination.html">ページネーションクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/parser.html">テンプレートパーサクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/security.html">セキュリティクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションライブラリ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/table.html">HTML テーブルクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/trackback.html">トラックバッククラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/typography.html">タイポグラフィークラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/unit_testing.html">ユニットテストクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/uri.html">URI クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/user_agent.html">ユーザエージェントクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/xmlrpc.html">XML-RPC および XML-RPC サーバクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/zip.html">Zip 圧縮クラス</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../database/index.html">データベースリファレンス</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../database/examples.html">クイックスタート: 使用例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/configuration.html">データベース設定</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/connecting.html">データベースへの接続</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/queries.html">クエリの実行</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/results.html">クエリ結果の生成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/helpers.html">クエリヘルパー関数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/query_builder.html">クエリビルダクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/transactions.html">トランザクション</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/metadata.html">メタデータの取得</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/call_function.html">カスタム関数呼び出し</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/caching.html">クエリキャッシュ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/forge.html">データベースフォージを使用したデータベース操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/utilities.html">データベースユーティリティクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/db_driver_reference.html">データベースドライバリファレンス</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../helpers/index.html">ヘルパー</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/array_helper.html">配列ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/captcha_helper.html">キャプチャ ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/cookie_helper.html">Cookie ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/date_helper.html">日付ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/directory_helper.html">ディレクトリヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/download_helper.html">ダウンロードヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/email_helper.html">eメールヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/file_helper.html">ファイルヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/form_helper.html">フォームヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/html_helper.html">HTML ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/inflector_helper.html">語形変換ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/language_helper.html">言語ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/number_helper.html">数字ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/path_helper.html">パスヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/security_helper.html">セキュリティヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/smiley_helper.html">スマイリーヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/string_helper.html">文字列ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/text_helper.html">テキストヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/typography_helper.html">タイポグラフィーヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/url_helper.html">URL ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/xml_helper.html">XML ヘルパー</a></li>
+</ul>
+</li>
+</ul>
+
+      </div>
+    
+      
+  </div>
+</div>
+<div id="nav2">
+  <a href="#" id="openToc">
+    <img src="data:image/jpeg;base64,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" title="Toggle Table of Contents" alt="Toggle Table of Contents" />
+  </a>
+</div>
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+          <a href="../index.html" class="fa fa-home"> CodeIgniter</a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="welcome.html">CodeIgniter へようこそ</a><ul class="simple">
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">インストール方法</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../installation/downloads.html">CodeIgniter のダウンロード</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/index.html">インストール方法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">以前のバージョンからのアップグレード</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/troubleshooting.html">トラブルシューティング</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview/index.html">CodeIgniter 概要</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../overview/getting_started.html">CodeIgniter をはじめよう</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/at_a_glance.html">CodeIgniter の簡単な紹介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/features.html">CodeIgniter の機能</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/appflow.html">アプリケーションフローチャート</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/mvc.html">Model-View-Controller</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/goals.html">設計とアーキテクチャのゴール</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">チュートリアル</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/static_pages.html">静的なページ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/news_section.html">ニュースセクション</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/create_news_items.html">ニュース記事を作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/conclusion.html">おわりに</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contributing/index.html">CodeIgniter への貢献</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../documentation/index.html">CodeIgniter のドキュメントを書く</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DCO.html">Developer&#8217;s Certificate of Origin 1.1</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">一般的なトピック</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="urls.html">CodeIgniter の URL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="controllers.html">コントローラ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reserved_names.html">予約語</a></li>
+<li class="toctree-l2"><a class="reference internal" href="views.html">ビュー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html">モデル</a></li>
+<li class="toctree-l2"><a class="reference internal" href="helpers.html">ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libraries.html">CodeIgniter のライブラリの利用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="creating_libraries.html">ライブラリの作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="drivers.html">CodeIgniter のドライバを使う</a></li>
+<li class="toctree-l2"><a class="reference internal" href="creating_drivers.html">ドライバの作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core_classes.html">コアシステムクラスの作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ancillary_classes.html">補助的なクラス作成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hooks.html">フック――フレームワークコアの拡張</a></li>
+<li class="toctree-l2"><a class="reference internal" href="autoloader.html">リソースのオートロード</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common_functions.html">共通関数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="compatibility_functions.html">互換関数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="routing.html">URI ルーティング</a></li>
+<li class="toctree-l2"><a class="reference internal" href="errors.html">エラー処理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="caching.html">キャッシュ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="profiling.html">アプリケーションのプロファイリング</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli.html">CLI で実行する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="managing_apps.html">アプリケーションの管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environments.html">複数環境への対応</a></li>
+<li class="toctree-l2"><a class="reference internal" href="alternative_php.html">ビューファイルでの PHP の代替構文</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">セキュリティ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="styleguide.html">PHP スタイルガイド</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../libraries/index.html">ライブラリ</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/benchmark.html">ベンチマーククラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/caching.html">キャッシングドライバ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/calendar.html">カレンダークラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/cart.html">ショッピングカートクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/config.html">設定クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/email.html">Email クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/encrypt.html">Encrypt クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/encryption.html">Encryption ライブラリ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/file_uploading.html">ファイルアップロードクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/form_validation.html">フォームバリデーション（検証）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/ftp.html">FTP クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/image_lib.html">画像操作クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/input.html">入力クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/javascript.html">JavaScript クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/language.html">言語クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/loader.html">ローダ（読み込み処理）クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/migration.html">マイグレーションクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/output.html">出力クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/pagination.html">ページネーションクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/parser.html">テンプレートパーサクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/security.html">セキュリティクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">セッションライブラリ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/table.html">HTML テーブルクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/trackback.html">トラックバッククラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/typography.html">タイポグラフィークラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/unit_testing.html">ユニットテストクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/uri.html">URI クラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/user_agent.html">ユーザエージェントクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/xmlrpc.html">XML-RPC および XML-RPC サーバクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/zip.html">Zip 圧縮クラス</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../database/index.html">データベースリファレンス</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../database/examples.html">クイックスタート: 使用例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/configuration.html">データベース設定</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/connecting.html">データベースへの接続</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/queries.html">クエリの実行</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/results.html">クエリ結果の生成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/helpers.html">クエリヘルパー関数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/query_builder.html">クエリビルダクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/transactions.html">トランザクション</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/metadata.html">メタデータの取得</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/call_function.html">カスタム関数呼び出し</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/caching.html">クエリキャッシュ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/forge.html">データベースフォージを使用したデータベース操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/utilities.html">データベースユーティリティクラス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../database/db_driver_reference.html">データベースドライバリファレンス</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../helpers/index.html">ヘルパー</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/array_helper.html">配列ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/captcha_helper.html">キャプチャ ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/cookie_helper.html">Cookie ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/date_helper.html">日付ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/directory_helper.html">ディレクトリヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/download_helper.html">ダウンロードヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/email_helper.html">eメールヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/file_helper.html">ファイルヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/form_helper.html">フォームヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/html_helper.html">HTML ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/inflector_helper.html">語形変換ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/language_helper.html">言語ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/number_helper.html">数字ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/path_helper.html">パスヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/security_helper.html">セキュリティヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/smiley_helper.html">スマイリーヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/string_helper.html">文字列ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/text_helper.html">テキストヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/typography_helper.html">タイポグラフィーヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/url_helper.html">URL ヘルパー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/xml_helper.html">XML ヘルパー</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">CodeIgniter</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+        <li><a href="index.html">一般的なトピック</a> &raquo;</li>
+      
+    <li>セキュリティ</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+    <div style="float:right;margin-left:5px;" id="closeMe">
+      <img title="Classic Layout" alt="classic layout" src="data:image/gif;base64,R0lGODlhFAAUAJEAAAAAADMzM////wAAACH5BAUUAAIALAAAAAAUABQAAAImlI+py+0PU5gRBRDM3DxbWoXis42X13USOLauUIqnlsaH/eY6UwAAOw==" />
+    </div>
+  </ul>
+<div style="float:right;margin-left:5px;">[ <a href="https://github.com/codeigniter-jp/ci-ja/blob/develop/user_guide_ja_src/source/general/security.rst">旧版翻訳途中</a> | <a href="https://github.com/bcit-ci/CodeIgniter/commits/develop/user_guide_src/source/general/security.rst">原文履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/commits/develop_japanese/source/general/security.rst">翻訳履歴</a> | <a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/source/general/security.rst">GitHubで修正</a> ]</div><br /><div style="float:right;margin-left:5px;">[ <b class="highlighted">翻訳者募集中</b> → <a href="https://docs.google.com/spreadsheets/d/1ZWD5XqwH-Uo9X7MR644jbL6O8p5LxIngLT8M547H8wc/edit?pref=2&pli=1#gid=0">翻訳状況</a> ]</div>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="id1">
+<h1>セキュリティ<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>このページでは、ウェブセキュリティに関するいくつかの「ベストプラクティス」と、
+CodeIgniter の内部のセキュリティ機能の詳細について説明します。</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">セキュリティ上の問い合わせ先を探してここに来た場合は、
+<cite>Contribution Guide &lt;../contributing/index&gt;</cite> をご参照ください。</p>
+</div>
+<div class="section" id="uri">
+<h2>URI セキュリティ<a class="headerlink" href="#uri" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>CodeIgniter では悪意のあるデータがアプリケーションに渡る可能性を最小限にするために、
+URI 文字列に使用できる文字に関してかなり限定しています。
+URI は以下のもののみ
+含むことができます:</p>
+<ul class="simple">
+<li>英数字テキスト（ラテン文字のみ）</li>
+<li>チルダ: ~</li>
+<li>パーセント記号: %</li>
+<li>ピリオド: .</li>
+<li>コロン: :</li>
+<li>アンダースコア: _</li>
+<li>ダッシュ: -</li>
+<li>スペース</li>
+</ul>
+</div>
+<div class="section" id="register-globals">
+<h2>register_globals<a class="headerlink" href="#register-globals" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>システムの初期化時、
+<tt class="docutils literal"><span class="pre">$_GET</span></tt> 、 <tt class="docutils literal"><span class="pre">$_POST</span></tt> 、 <tt class="docutils literal"><span class="pre">$_REQUEST</span></tt> と <tt class="docutils literal"><span class="pre">$</span> <span class="pre">_COOKIE</span></tt> 内に見つけられる変数でグローバル変数のものはすべて unset されます。</p>
+<p>この unset ルーチンは <em>register_globals = off</em> と同じ効果です。</p>
+</div>
+<div class="section" id="display-errors">
+<h2>display_errors<a class="headerlink" href="#display-errors" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>本番環境では一般的に PHP のエラー報告を「無効」にすることが望ましいです、
+内部の <em>display_errors</em> フラグを 0 に設定することにより行われます。
+これは素の PHP エラーを出力として書き出されることを無効にします。
+機密情報が潜在的に含まれているかもしれないからです。</p>
+<p>CodeIgniter の <strong>ENVIRONMENT</strong> 定数をindex.php で
+「 <strong>production</strong> 」の値に設定すると、これらのエラーをオフにします。
+開発モードでは「 development 」の値を使用することをおすすめします。
+環境の区別についての詳しい情報は
+<a class="reference internal" href="environments.html"><em>複数環境への対応</em></a> ページにあります。</p>
+</div>
+<div class="section" id="magic-quotes-runtime">
+<h2>magic_quotes_runtime<a class="headerlink" href="#magic-quotes-runtime" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p><em>magic_quotes_runtime</em> ディレクティブはシステムの初期化中にオフにされます。
+そのため、データベースからデータを取得するときに
+スラッシュを除去する必要はありません。</p>
+<div class="section" id="id2">
+<h3>ベストプラクティス<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>あらゆるデータについてアプリケーションに受け入れる前に、それがフォーム送信からの POST データであれ、
+COOKIE データであれ、 URI データであれ、 XML-RPC データであれ、
+または SERVER 配列でさえも、つぎの 3 段階のアプローチを
+実践することが推奨されます:</p>
+<ol class="arabic simple">
+<li>正しい型、長さ、大きさ等に一致していることを確認するために、
+データを検証する</li>
+<li>それが汚染されているかのように、データをフィルタリングする</li>
+<li>データベースにそれをサブミットするか、
+それをブラウザに出力する前にデータをエスケープする</li>
+</ol>
+<p>CodeIgniter はこのプロセスを支援する以下の機能とヒントを
+提供します:</p>
+</div>
+</div>
+<div class="section" id="xss">
+<h2>XSS フィルタリング<a class="headerlink" href="#xss" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>CodeIgniter にはクロスサイトスクリプティングフィルターが付属しています。
+このフィルタは、データに悪意のある JavaScript を埋め込むために一般的に使用される技術、
+またはクッキーをハイジャックしようとするなど、
+悪さしようとするコードを探し出します。 XSS フィルターは
+<a class="reference internal" href="../libraries/security.html"><em>ここ</em></a> で説明されています。</p>
+<div class="admonition note">
+<p class="first admonition-title">注釈</p>
+<p class="last">XSS フィルタリングは <em>出力でのみ実行</em> するべきです。
+入力データをフィルタリングすると望ましくない方法でデータを変更することになるかもしれません。
+パスワードから特殊文字を取り除いてしまったりなど、
+セキュリティを向上させるどころか低下させます。</p>
+</div>
+</div>
+<div class="section" id="csrf">
+<h2>CSRF 保護<a class="headerlink" href="#csrf" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>CSRF は クロスサイトリクエストフォージェリの略で、
+無意識のうちに犠牲者にリクエストを送信させる攻撃方法です。</p>
+<p>CodeIgniter では CSRF の保護をすぐにお使いいただけます、
+自動的にすべての非 GET HTTP リクエストをトリガーとしますが、
+サブミットフォームを正しい方法で作成することが必要になります。
+これは <a class="reference internal" href="../libraries/security.html"><em>セキュリティライブラリ</em></a> ドキュメントで説明されています。</p>
+</div>
+<div class="section" id="id3">
+<h2>パスワードの取り扱い<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>アプリケーションで適切にパスワードを扱うことは <em>重要事項</em> です。</p>
+<p>残念ながら、多くの開発者はどう取り扱えばよいかを知らず、
+そしてウェブは賞味期限切れないし間違ったアドバイスであふれており、助けになりません。</p>
+<p>私たちはあなたの助けとするため、やるべきこと、避けるべきことを合わせたリストを提供したいと思います。
+どうぞ下記をお読みください。</p>
+<ul>
+<li><p class="first">プレーンテキスト形式でパスワードを保存　し　な　い　で　ください。</p>
+<p>必ずパスワードを <strong>ハッシュ</strong> してください。</p>
+</li>
+<li><p class="first">パスワードを格納するためにBase64または類似のエンコーディングを使用　し　な　い　で　ください。</p>
+<p>これはプレーンテキストとして保存すると同程度のものです。本当に。
+<em>エンコーディング</em> ではなく <strong>ハッシュ</strong> してください。</p>
+<p>符号化と、そして暗号化も、双方向の処理です。
+パスワードはその所有者だけが知るべき秘密であり、
+そのため処理は一方向にだけ行われるものでなければなりません。ハッシュがそれです――
+未ハッシュまたは逆ハッシュというものは <em>存在せず</em> 、しかし復号化や暗号解除は存在します。</p>
+</li>
+<li><p class="first">MD5またはSHA1のような、弱いまたは壊れたハッシュアルゴリズムを使用　し　な　い　で　ください。</p>
+<p>これらのアルゴリズムは古く、欠陥があることが証明され、
+そもそもがパスワードハッシュのためには設計されていません。</p>
+<p>また、独自のアルゴリズムを考案　し　な　い　で　ください。</p>
+<p>BCrypt のような強力なパスワードハッシュアルゴリズムのみを使用してください、
+これは PHP の <a class="reference external" href="http://php.net/password">パスワードハッシュ</a> 関数で使用されています。</p>
+<p>PHP 5.5 以降でない場合でもこれらを使ってください、
+CodeIgniter は PHP 5.3.7 以上でそれらの関数を提供しています
+（その要件を満たしていない場合は――どうかアップグレードしてください）。</p>
+<p>もしあなたが本当に不運な人たちの一人で PHP のバージョンを十分新しいものにできないなら、
+<cite>hash_pbkdf() &lt;http://php.net/hash_pbkdf2&gt;</cite> を使用してください、
+これは互換性レイヤで提供しています。</p>
+</li>
+<li><p class="first">プレーンテキスト形式でのパスワード表示、送信は絶対に　し　な　い　で　ください！</p>
+<p>パスワードの所有者に対してでも、たとえ「パスワードを忘れたとき」機能を必要とする場合であっても、
+かわりにランダムな新しい、ワンタイム（これも重要です）パスワードを生成し、
+それを送信するだけにしてください。</p>
+</li>
+<li><p class="first">ユーザのパスワードに不必要な制限を設定　し　な　い　で　ください。</p>
+<p>BCrypt（72 文字の制限があります）の以外のハッシュアルゴリズムを使用している場合、
+DoS 攻撃を軽減するため、パスワードの長さに比較的高めの上限を設定する必要があります
+――1024文字、としましょう。</p>
+<p>それ以外ではなんであれ、
+パスワードにルールを強制するのは的を外しています。
+文字数の下限や、または特殊文字セットを含むことができないようにするものです。</p>
+<p>これはセキュリティが改善するのではなく <strong>低下</strong> するばかりか、
+それを行う理由が文字通りありません。ハッシュするのに技術的な制限や
+（実際的な）ストレージの制約はなにもありません、なにも！</p>
+</li>
+</ul>
+</div>
+<div class="section" id="id5">
+<h2>入力データを検証する<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>CodeIgniter には <a class="reference internal" href="../libraries/form_validation.html"><em>フォームバリデーションライブラリ</em></a> があり、
+検証、フィルタリング、およびデータの準備を支援します。</p>
+<p>しかしそれがあなたのユースケースでは機能しない場合でも、
+常にすべての入力データを検証し、サニタイズしてください。
+たとえば、数値文字列を入力として期待する場合、 <tt class="docutils literal"><span class="pre">is_numeric()</span></tt>
+または <tt class="docutils literal"><span class="pre">ctype_digit()</span></tt> を使ってチェックすることができます。
+常にチェックを一定のパターンに絞り込むよう取り組んでください。</p>
+<p>心得ておいてください、 <tt class="docutils literal"><span class="pre">$_POST</span></tt> や <tt class="docutils literal"><span class="pre">$_GET</span></tt> 変数に限らず、
+クッキー、ユーザーエージェント文字列および基本的に
+<em>みずからのコードで直接作成されていないすべてのデータ</em> が対象であることを。</p>
+</div>
+<div class="section" id="id6">
+<h2>データベースへの挿入前にすべてのデータをエスケープする<a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>エスケープなしにデータベースに情報を挿入しないでください。
+詳細については <a class="reference internal" href="../database/queries.html"><em>データベースクエリ</em></a> で説明されているセクションを参照してください。</p>
+</div>
+<div class="section" id="id7">
+<h2>ファイルを隠す<a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>もう一つの良いセキュリティプラクティスは、 <em>index.php</em>
+とサーバーの「 assets 」（例えば .js ファイル、CSSと画像ファイル）
+だけをサーバの <em>ウェブルート</em> ディレクトリ（最も一般的には「 htdocs/ 」という名前）
+の下に置くことです。ウェブからアクセスできるようにする必要があるファイルはこれらだけです。</p>
+<p>それら以外の何かを訪問者から見えるようにすると、
+スクリプトを実行するなど、潜在的に機密データにアクセスできるようになることを許すことになります。</p>
+<p>その設定が許可されていない場合、それらのリソースへのアクセスを制限する .htaccess
+ファイルの利用を試みてください。</p>
+<p>CodeIgniter ではディレクトリのすべてに index.html
+ファイルを置くことでこれらのデータを保護しようとしていますが、
+これは本気の攻撃者に対しては不十分であることを
+気に留めておいてください。</p>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="styleguide.html" class="btn btn-neutral float-right" title="PHP スタイルガイド">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="alternative_php.html" class="btn btn-neutral" title="ビューファイルでの PHP の代替構文"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
+      最終更新: Nov 23, 2016<br />Japanese Translation: <a href="http://codeigniter.jp/">CodeIgniter Users Group in Japan</a>（この日本語訳のライセンスは、<a href="https://github.com/codeigniter-jp/user_guide_src_ja/blob/develop_japanese/LICENSE.md">LICENSE.md</a> を参照してください）
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'3.2.0-dev',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  false
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
