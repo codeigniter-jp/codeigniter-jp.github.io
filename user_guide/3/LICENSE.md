@@ -2,7 +2,7 @@
 
 Copyright (c) 2008 - 2016, CodeIgniter Users Group in Japan
 
-This documentaion <https://github.com/codeigniter-jp/user_guide_src_ja> is licensed under the [No License](http://choosealicense.com/no-license/) in terms of GitHub.
+This documentaion is licensed under the [No License](http://choosealicense.com/no-license/) in terms of GitHub.
 
 ## The Original Documetation
 
