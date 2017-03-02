@@ -1,0 +1,1155 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja-JP">
+
+<head>
+ <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+ <meta name="robots" content="NOINDEX,NOFOLLOW" /> <meta http-equiv="Content-Script-Type" content="text/javascript" />
+ <title>FormatRule の変更点 - CodeIgniter Memo</title>
+ <link rel="stylesheet" type="text/css" media="screen" href="skin/monobook/monobook.css" />
+ <link rel="stylesheet" type="text/css" media="print" href="skin/monobook/monobook.print.css" />
+ <link rel="alternate" type="application/rss+xml" title="RSS" href="index.php?cmd=rss" />
+ <script type="text/javascript">
+ <!--
+var SKIN_DIR="skin/";
+var IMAGE_DIR="image/";
+var DEFAULT_LANG="ja_JP";
+var LANG="ja_JP";
+ // -->
+ </script>
+ <script type="text/javascript" src="skin/lang/ja_JP.js"></script>
+ <script type="text/javascript" src="skin/default.js"></script>
+ <script type="text/javascript" src="skin/ajax/textloader.js"></script>
+ <script type="text/javascript" src="skin/ajax/glossary.js"></script>
+ <script type="text/javascript" src="skin/tzCalculation_LocalTimeZone.js"></script>
+</head>
+<body>
+<div id="globalWrapper">
+ <div id="menubar"><h4 id="h4_content_1_0">ナビゲーション</h4><div class="menubox"><ul class="menu"><li><a href="https://github.com/codeigniter-jp/codeigniter-tettei-note" rel="nofollow">『CodeIgniter徹底入門』に対するノート</a></li><li><a href="http://www.seshop.com/book/errata/9185/list" rel="nofollow">正誤情報</a></li><li><a href="index.php?%25E3%2583%25AA%25E3%2583%25B3%25E3%2582%25AF%25E9%259B%2586" title="リンク集 (2844d)">リンク集</a></li><li><a href="index.php?%25E3%2582%25B5%25E3%2583%25B3%25E3%2583%2597%25E3%2583%25AB%25E3%2582%25B3%25E3%2583%25BC%25E3%2583%2589%25E3%2583%2580%25E3%2582%25A6%25E3%2583%25B3%25E3%2583%25AD%25E3%2583%25BC%25E3%2583%2589" title="サンプルコードダウンロード (623d)">サンプルコードダウンロード</a></li><li><a href="index.php?%25E8%25AA%25AD%25E8%2580%2585%25E3%2581%25AE%25E5%25A3%25B0" title="読者の声 (3144d)">読者の声</a></li><li><a href="http://codeigniter.jp/" rel="nofollow">日本CodeIgniterユーザ会</a></li></ul></div><h4 id="h4_content_1_1">広告</h4><iframe src="http://rcm-jp.amazon.co.jp/e/cm?t=bandnavi08-22&o=9&p=8&l=as1&asins=4798116769&fc1=000000&IS2=1&lt1=_blank&lc1=0000FF&bc1=000000&bg1=FFFFFF&f=ifr" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe><h4 id="h4_content_1_2">検索</h4><div class="monobook_search"><form action="index.php" method="get">
+<div><input type="hidden" name="encode_hint" value="ぷ" /></div><div><input type="hidden" name="encode_hint" value="ぷ" /></div> <div>  <input type="hidden" name="cmd" value="search" />  <input class="searchInput" type="text"  name="word" value="" size="20" />  <input type="hidden" name="type" id="_p_search_AND" value="AND"  checked="checked" />  &nbsp;<input class="searchButton" type="submit" value="Search" /> </div></form></div><h4 id="h4_content_1_3">ツールボックス</h4><div class="toolbox"><ul><li><a href="index.php?cmd=backup&amp;page=FormatRule">バックアップの表示</a></li><li><a href="index.php?plugin=related&amp;page=FormatRule">リンク元</a></li><li><a href="index.php?RecentChanges">最近更新したページ</a></li><li><a href="index.php?cmd=list">全ページ</a></li><li><a href="index.php?cmd=help">ヘルプ</a></li></ul></div><h5>recent(5)</h5><div class="monobook_recent"><strong>2015-09-03</strong><ul class="recent_list"> <li><a href="index.php?%25E3%2580%258ECodeIgniter%25E5%25BE%25B9%25E5%25BA%2595%25E5%2585%25A5%25E9%2596%2580%25E3%2580%258F%25E6%2583%2585%25E5%25A0%25B1%25E3%2583%259A%25E3%2583%25BC%25E3%2582%25B8" title="『CodeIgniter徹底入門』情報ページ (546d)">『CodeIgniter徹底入門』情報ページ</a></li> <li><a href="index.php?MenuBar" title="MenuBar (546d)">MenuBar</a></li></ul><strong>2015-06-18</strong><ul class="recent_list"> <li><a href="index.php?%25E3%2582%25B5%25E3%2583%25B3%25E3%2583%2597%25E3%2583%25AB%25E3%2582%25B3%25E3%2583%25BC%25E3%2583%2589%25E3%2583%2580%25E3%2582%25A6%25E3%2583%25B3%25E3%2583%25AD%25E3%2583%25BC%25E3%2583%2589" title="サンプルコードダウンロード (623d)">サンプルコードダウンロード</a></li></ul><strong>2009-05-19</strong><ul class="recent_list"> <li><a href="index.php?%25E3%2583%25AA%25E3%2583%25B3%25E3%2582%25AF%25E9%259B%2586" title="リンク集 (2844d)">リンク集</a></li></ul><strong>2008-07-22</strong><ul class="recent_list"> <li><a href="index.php?%25E8%25AA%25AD%25E8%2580%2585%25E3%2581%25AE%25E5%25A3%25B0" title="読者の声 (3144d)">読者の声</a></li></ul></div></div>
+ <div id="mainColumnWrapper">
+  <div id="main-column">
+   <div id="navigator"><ul><li id="wn_main" class="selected"><a href="index.php?FormatRule" title="FormatRule (3607d)">本文</a></li><li id="wn_note" class="noexists"><a href="index.php?cmd=wikinote&amp;page=note%252FFormatRule">ノート</a></li><li><a href="http://codeigniter.jp/tettei/index.php?cmd=revert&amp;page=FormatRule">この版へ差し戻し</a></li><li class="selected"><a href="index.php?cmd=diff&amp;page=FormatRule">差分</a></li></ul></div>
+   <div id="content">
+    <h1 class="firstHeading">FormatRule の変更点</h1><div id="contentSub"></div>
+    <ul>
+<li>追加された行は<span class="diff_added">この色</span>です。</li>
+<li>削除された行は<span class="diff_removed">この色</span>です。</li>
+ <li><a href="index.php?FormatRule">FormatRule</a> へ行く。</li>
+</ul>
+<hr class="full_hr" /><pre><span class="diff_added">#multilang(ja){{
+TITLE:整形ルール
+#norelated
+* テキスト整形のルール [#oca54177]
+
+通常は入力した文章がそのまま出力されます。
+
+- HTMLのタグは効果がありません。書かれた文章はそのまま(「&lt;font color=&quot;red&quot;&gt;text&lt;/font&gt;」といった形のまま)表示されます
+- 段落と段落の区切りには空行をはさんで下さい。空行をはさまず、連続している複数の行は同じ段落と解釈されます (連結して表示されます)
+
+これに加えて、特定のルールによるテキスト整形を行うことができます。以下では、プラグインについてはよく使われるものだけを簡略に説明しています。プラグインのオプションなど詳細な説明については [[PukiWiki/1.4/Manual/Plugin]] を参照してください。
+
+-------------------------------------
+#contents
+-------------------------------------
+
+** ブロック要素 [#vd593893]
+- ブロック要素は、インライン要素と他のブロック要素を子要素にすることができます。ただし、段落、見出し、水平線、#から始まるブロック要素は他のブロック要素を子要素にすることはできません。
+
+- 空行はトップレベルのブロック要素の区切りになります。空行が現われると、すべてのブロック要素は終了します。
+
+- ブロック要素は、他のブロック要素の子要素になることができます。
+-- リスト構造と引用文は他のブロック要素を子要素にすることができます。子要素のブロック要素は親要素のレベルに従ってインデントされて表示されます。空行が現われるとブロック要素は終了します。
+-- リスト構造と引用文のネストには3段階のレベルがありますが、リスト構造のレベルと引用文のレベルは独立しています。従って、リスト構造を引用文の子要素にする場合や引用文をリスト構造の子要素にする場合は、レベルを1段階増やさずに記述します。リスト構造を他のリスト構造の子要素にする場合や引用文を他の引用文の子要素にする場合は、レベルを1段階増やして記述します。
+-- 他のブロック要素の子要素となっている引用文から脱出するとき、親のブロック要素を継続したい場合は行頭に&lt;、&lt;&lt;、&lt;&lt;&lt;を記述します。&lt;で第1レベルの引用文から、&lt;&lt;で第2レベルの引用文から、&lt;&lt;&lt;で第3レベルの引用文から脱出します。空行を記述すると引用文だけでなく親のブロック要素からも脱出します。
+
+- ブロック要素となるプラグインは#～の形式になっています。((インライン要素となるプラグインやユーザ定義とは異なり、ブロック要素となるプラグインでは終端に;を付加する必要はありません。プラグインによっては正常に動作しなくなる場合があります。))
+
+*** 段落 [#n6691793]
+ インライン要素
+他のブロック要素を明示しない限り、段落となります。
+ ~ インライン要素
+行頭で ~ を指定した場合も段落になります。行頭書式の文字(~、-、+、:、&gt;、|、#、//)を通常の文字として段落の先頭に書きたい場合は、行頭に~を記述して書くことができます。
+
+- 段落の先頭は1文字分字下げされます。但し、番号なしリスト構造、番号付きリスト構造、引用文内の段落では字下げされません。定義リスト内の段落の先頭は1文字分字下げされます。
+- 段落は、新たなブロック要素が現われるまで継続します。
+- 段落は、他のブロック要素の子要素になることができます。
+- 段落は、他のブロック要素を子要素にすることはできません。 
+
+*** 引用文 [#af1781b1]
+ &gt; インライン要素
+行頭で &gt; を指定すると、引用文になります。引用文は &gt;、&gt;&gt;、&gt;&gt;&gt; の3レベルあります。
+- 引用文の中は、ブロック要素を明示しない限り、段落となります。
+- 引用文は、空行が現われるまで継続します。
+- 引用文内の段落は、新たな引用文またはブロック要素が現われるまで継続します。
+- 引用文は、他のブロック要素の子要素になることができます。他の引用文の子要素にする場合は、レベルを1段増やして記述します。リスト構造の子要素にする場合はレベルを1段増やさずに記述します。
+- 引用文は、他のブロック要素を子要素にすることができます。引用文の子要素となるリスト構造はレベルを1段増やさずに記述します。
+- リスト構造内の引用文から脱出する場合で、リスト構造を継続する場合は、&lt;、&lt;&lt;、&lt;&lt;&lt;を行頭に記述します。
+
+*** リスト構造 [#q8abd9a8]
+ - インライン要素
+行頭で - を指定すると、番号なしリストになります。番号なしリストは -、--、--- の3レベルあります。
+
+- 番号なしリストは、他のブロック要素の子要素になることができます。他のリスト構造の子要素にする場合は、レベルを1段増やして記述します。引用文の子要素にする場合は、レベルを増やさずに記述します。
+- -の直後に ~を記述すると段落を子要素にすることができます。
+-番号なしリストは、''リストの先頭がインライン要素または段落である場合に限り''、リストの次の行に他のブロック要素を記述することで、他のブロック要素を子要素にすることができます。
+
+ + インライン要素
+行頭で + を指定すると、番号付きリストになります。番号付きリストは +、++、+++ の3レベルあります。
+
+- 番号付きリストは、他のブロック要素の子要素になることができます。他のリスト構造の子要素にする場合は、レベルを1段増やして記述します。引用文の子要素にする場合は、レベルを増やさずに記述します。
+- + の直後に ~ を記述すると段落を子要素にすることができます。
+- 番号付きリストは、''リストの先頭がインライン要素または段落である場合に限り''、リストの次の行に他のブロック要素を記述することで、他のブロック要素を子要素にすることができます。
+
+ : 定義語 | 説明文
+行頭を : で始め、| 記号で区切ると、定義リストになります。定義リストは :、::、::: の3段階あります。定義リストの定義語、説明文は省略することができます。複数の連続した定義リストを記述し、2つ目以降の定義語を省略することで1つの定義語に対する複数の説明文を記述することができます。
+
+- 行中に | がないと定義リストにはなりません。
+- 定義語・説明文は、インライン要素のみ記述することができます。
+- 定義リストは、他のブロック要素の子要素になることができます。他のリスト構造の子要素にする場合は、レベルを1段増やして記述します。引用文の子要素にする場合は、レベルを増やさずに記述します。
+- | の直後に ~ を記述すると段落を子要素にすることができます。
+- 定義リストは、定義リストの次の行に他のブロック要素を記述することで、他のブロック要素を子要素にすることができます。
+
+*** 整形済みテキスト [#g72f3a72]
+行頭が半角空白で始まる行は整形済みテキストとなります。行の自動折り返しは行なわれません。
+
+- 整形済みテキストは、他のブロック要素の子要素になることができます。
+- 整形済みテキストは、他のブロック要素を子要素にすることができません。
+- 整形済みテキストは、すべての子要素を文字列として扱います。
+
+*** 表組み [#k7c49df4]
+ | インライン要素 | インライン要素 |
+行頭から | でインライン要素を区切ることで表組みになります。
+
+- 各要素の先頭に下記の記述子を指定できます。
+ LEFT:
+ CENTER:
+ RIGHT:
+ BGCOLOR(色):
+ COLOR(色):
+ SIZE(サイズ):
+-- 要素の表示位置及び背景色・文字色・文字サイズ(px単位)を指定します。デフォルトは左寄せになります。
+-
+|表組みの              |各セルの要素の配置に|関するサンプル              |
+|COLOR(crimson):左寄せ |CENTER:センタリング |BGCOLOR(yellow):RIGHT:右寄せ|
+|RIGHT:右寄せ          |左寄せ              |CENTER:センタリング         |
+- 行末にcを記述すると、書式指定行となります。書式指定行では、次の記述子が指定できます。
+ LEFT:
+ CENTER:
+ RIGHT:
+ BGCOLOR(色):
+ COLOR(色):
+ SIZE(サイズ):
+-- 記述子の後ろに数値を記述すると、セル幅がpx単位で指定できます。
+
+- 行末にhを記述すると、ヘッダ行(thead)になります。
+- 行末にfを記述すると、フッタ行(tfoot)になります。
+- セル内のインライン要素の先頭に~を付けると、ヘッダ(th)になります。
+- セル内に &gt; を単独で記述すると右のセルと連結します(colspan)。
+- セル内に ~ を単独で記述すると上のセルと連結します(rowspan)。
+
+- 表組みは、他のブロック要素の子要素になることができます。
+- 表組みは、他のブロック要素を子要素にすることができません。
+
+*** CSV形式の表組み [#zc726b7e]
+ ,データ,データ,…
+~行頭でカンマ(,)を記述し、インライン要素をカンマ区切りで記述すると表組みになります。
+
+- インライン要素はダブルクォーテーション(&quot;)で囲むことができます。ダブルクォーテーションで囲むことで、カンマ(,)を含むインライン要素を記述できます。
+- ダブルクォーテーション(&quot;)で囲んだデータの中で、ダブルクォーテーションを2つ(&quot;&quot;)続けることで、ダブルクォーテーション(&quot;)を含むインライン要素を記述できます。
+- インライン要素の代わりにイコールを2つ(==)記述すると、colspanを意味します。
+- インライン要素の左に1つ以上の半角空白文字を記述すると右寄せに、インライン要素の左右に1つ以上の半角空白文字を記述するとセンタリングになります。
+
+- 表組みは、他のブロック要素の子要素になることができます。
+- 表組みは、他のブロック要素を子要素にすることができません。
+
+*** 見出し [#z15343da]
+ * インライン要素
+行頭で * を記述すると、見出しになります。見出しは *、**、*** の3段階あります。
+
+- 見出しは、他のブロック要素の子要素になることはできません。見出しが現われると他のブロック要素は終了します。
+- 見出しは、他のブロック要素を子要素にすることはできません。
+
+*** 目次 [#l6dfa631]
+ #contents
+行頭で #contents を記述すると、見出しに基づいて目次を作成します。一般的に #contents はページの最初のほうに記述します。
+
+- 目次は、他のブロック要素の子要素になることができますが、トップレベルに設置することを前提に左マージンを設定してありますので、他のブロック要素の子要素にはしないでください。
+- 目次は、他のブロック要素を子要素にすることはできません。
+
+*** 左寄せ・センタリング・右寄せ [#bbc1f21c]
+ LEFT:インライン要素
+ CENTER:インライン要素
+ RIGHT:インライン要素
+行頭で LEFT:、 CENTER:、 RIGHT: を記述すると、インライン要素が左寄せ、センタリング、右寄せされます。
+
+- LEFT:、CENTER:、RIGHT:は、他のブロック要素の子要素になることができます。
+- LEFT:、CENTER:、RIGHT:は、他のブロック要素を子要素にすることができません。
+
+*** 水平線 [#s9799d2c]
+ ---------------------------------------------
+行頭で4つ以上の - を書くと水平線になります。
+
+- 水平線は、他のブロック要素の子要素になることはできません。水平線が現われると他のブロック要素は終了します。
+- 水平線は、他のブロック要素を子要素にすることはできません。
+
+ #hr
+行頭で #hr を記述すると、区切り線になります。区切り線は上位のブロック要素の幅の60%の長さの水平線がセンタリングされて引かれます。
+
+- 区切り線は、他のブロック要素の子要素になることができます。
+- 区切り線は、他のブロック要素を子要素にすることはできません。
+
+*** 行間開け [#j2656808]
+ #br
+行頭で #br を記述すると、ブロック要素間またはブロック要素内で行間を開けることができます((#brをブロック要素の直後の空行の次に指定すればブロック要素間の行間、ブロック要素の直後に指定すればそのブロック要素内での行間を開けることになります。#brは、行末改行と違って、次の行の行頭書式を無効にはしません))。
+
+- 行間開けは、他のブロック要素の子要素になることができます。
+- 行間開けは、他のブロック要素を子要素にすることはできません。
+
+*** 添付ファイル・画像の貼り付け [#p1971296]
+ #ref(添付ファイル名)
+ #ref(ファイルのURL)
+行頭で #ref を記述すると、添付ファイルまたは指定されたURLにあるファイルへのリンクを貼り付けることができます。ファイルが画像ファイルの場合は、その画像を表示します。
+
+- #ref には、カンマで区切って下記のパラメタを指定できます。パラメタを省略した場合はデフォルト値となります。
+ 添付ファイルのページ
+-- 添付ファイルが存在するページ名を指定します。デフォルトは現在のページです。
+-- このパラメタを指定する場合は、添付ファイル名の次に記述します。
+-
+ left
+ center
+ right
+-- ファイルへのリンク・画像を表示する位置を指定します。デフォルトではセンタリングされます。
+-
+ wrap
+ nowrap
+-- ファイルへのリンク・画像を枠で囲むかどうかを指定します。デフォルトは囲みません。
+-
+ around
+-- テキストの回り込みを指定します。デフォルトでは回り込みを行ないません。
+-
+ nolink
+-- デフォルトでは添付ファイルへのリンクが張られますが、nolinkを指定するとリンクを張りません。
+-
+ 代替文字列
+-- ファイル名の代わりに表示する文字列や画像の代替文字列を指定できます。指定しない場合は、ファイル名になります。
+-- 代替文字列には文字列以外のインライン要素を含めることはできません。ページ名、文字列以外のインライン要素を記述しても文字列として扱われます。
+-- このパラメタを指定する場合は、最後に記述します。
+
+- #refは、他のブロック要素の子要素になることができます。
+- #refは、他のブロック要素を子要素にすることはできません。
+
+*** テキストの回り込みの解除 [#a800a528]
+ #clear
+行頭で #clear を記述すると、 #ref で指定したテキストの回り込みを解除します。 #clear を指定しなくても、記事の末尾でテキストの回り込みが自動的に解除されます。
+
+- #clearは、他のブロック要素の子要素になることができます。
+- #clearは、他のブロック要素を子要素にすることができません。
+
+//  #img(,clear)
+// ~#clearと同じ。
+
+*** フォーム [#x23849ca]
+ #comment
+行頭で #comment を記述すると、コメントを挿入するためのフォームが埋め込まれます。
+
+- #commentは、他のブロック要素の子要素になることができますが、トップレベルに設置することを前提に左マージンを設定してありますので、他のブロック要素の子要素にはしないでください。
+- #commentは、他のブロック要素を子要素にすることはできません。
+
+ #pcomment
+行頭で #pcomment を記述すると、コメントを挿入するためのフォームが埋め込まれます。 #comment とは異なり、コメントは別ページに記録されます。また、コメントに対するレスポンスを階層状に表示します。
+
+- #pcommentは、他のブロック要素の子要素になることができますが、トップレベルに設置することを前提に左マージンを設定してありますので、他のブロック要素の子要素にはしないでください。
+- #pcommentは、他のブロック要素を子要素にすることはできません。
+
+ #article
+行頭で#articleを記述すると、簡易掲示板のフォームが埋め込まれます。
+
+- #articleは、他のブロック要素の子要素になることができますが、トップレベルに設置することを前提に左マージンを設定してありますので、他のブロック要素の子要素にはしないでください。
+- #articleは、他のブロック要素を子要素にすることはできません。
+
+ #vote(選択肢1,選択肢2,...)
+行頭で #vote を記述すると、簡易投票フォームが埋め込まれます。
+
+- 選択肢は文字列、ページ名、InterWiki、リンクを含めることができます。その他のインライン要素を含めることができません。
+- #voteは、他のブロック要素の子要素になることができますが、トップレベルに設置することを前提に左マージンを設定してありますので、他のブロック要素の子要素にはしないでください。
+- #voteは、他のブロック要素を子要素にすることはできません。
+
+** インライン要素 [#l7110f11]
+- インライン要素は、必ずブロック要素の子要素になっています。
+-- 行頭書式でブロック要素を明示しない場合は、段落の子要素となります。
+-- 行頭書式でブロック要素を明示した場合は、指定したブロック要素の子要素になります。
+
+- 特定のインライン要素は、他のインライン要素を子要素にすることができます。
+- インライン要素はブロック要素を子要素にすることはできません。
+- インライン要素となるプラグイン及びユーザー定義は &amp;amp;～; の形式になっています。
+- インライン要素となるプラグインに対してオプションと子要素を指定する場合は、 &amp;amp;プラグイン名(オプション){子要素}; の形式になります。
+
+*** 文字列 [#bd24e4ad]
+ 文字列
+文字列はインライン要素です。
+
+- 文字列は、他のインライン要素の子要素になることができます。
+- 文字列は、他のインライン要素を子要素にすることができません。
+
+*** 改行 [#f383c24f]
+ インライン要素~
+行末に~を書くと行末改行になります。行末改行はブロック要素内での改行になります。
+
+- 行末改行の次の行の行頭書式は無効になり、文字列として扱われます。
+- 行末改行は、他のインライン要素の子要素になることはできません。
+- 行末改行は、他のインライン要素を子要素にすることはできません。
+- 行末改行は、定義リストの定義語、表組みの要素、#で始まるブロック要素のパラメタの中では使用できません。
+
+ &amp;br;
+行中に &amp;amp;br; を書くと、そこで改行されます。行末の ~ と違い、定義リストの定義語や表組の要素、# で始まるブロック要素のパラメタの中でも使用できます。
+
+- 行中改行は、他のインライン要素の子要素になることができます。
+- 行中改行は、他のインライン要素を子要素にすることはできません。
+
+*** 強調・斜体 [#n38a029f]
+ ''インライン要素''
+行中のインライン要素を &amp;#39;&amp;#39; ではさむと、インライン要素が ''強調表示'' になります。
+
+- 強調は、他のインライン要素の子要素になることができます。
+- 強調は、他のインライン要素を子要素にすることができます。
+
+ '''インライン要素'''
+行中のインライン要素を &amp;#39;&amp;#39;&amp;#39; ではさむと、インライン要素が '''斜体表示''' になります。
+
+- 斜体は、他のインライン要素の子要素になることができます。
+- 斜体は、他のインライン要素を子要素にすることができます。
+
+*** 文字サイズ [#t513b12d]
+ &amp;size(サイズ){インライン要素};
+行中に &amp;amp;size を書くとインライン要素の文字サイズを指定することができます。サイズはピクセル単位(px)で指定します。例えば20を指定すると、SIZE(20){20ピクセルの文字の大きさ}になります。
+
+- 文字サイズは、他のインライン要素の子要素になることができます。
+- 文字サイズは、他のインライン要素を子要素にすることができます。
+
+*** 文字色 [#sf40816a]
+ &amp;color(文字色,背景色){インライン要素};
+行中に &amp;amp;color と書くとインライン要素の&amp;color(crimson){文字色};と&amp;color(blue,crimson){背景色};を指定することができます。背景色は省略できます。
+
+- 色の指定は、次のいずれかの形式で行ないます。
+-- [[色キーワード]]
+-- #16進数6桁
+-- #16進数3桁
+
+- 文字色は、他のインライン要素の子要素になることができます。
+- 文字色は、他のインライン要素を子要素にすることができます。
+
+*** 取消線 [#r81ec79f]
+ %%インライン要素%%
+行中のインライン要素を&amp;#37;&amp;#37;ではさむと、インライン要素に%%取消線%%が付きます。
+
+- 取消線は、他のインライン要素の子要素になることができます。
+- 取消線は、他のインライン要素を子要素にすることができます。
+
+***注釈 [#s21cf12e]
+ ((インライン要素))
+行中でインライン要素を &amp;#40;&amp;#40; と &amp;#41;&amp;#41; ではさむと、注釈((注釈のサンプル))が作成され、行中に注釈へのリンクが貼られます。
+
+- 注釈は、他のインライン要素の子要素になることができます。親要素は注釈文ではなく、注釈へのリンクに反映されます。
+- 注釈は、他のインライン要素を子要素にすることができます。子要素は注釈文に反映されます。
+
+// &amp;p;
+//注釈内に&amp;amp;p;を書くと改段落になります ((注釈内改段落は、本来はブロック要素ですが、PukiWikiでは注釈をインラインで記述するため、インライン要素として記述する必要があります。他のインライン要素の子要素にはできないことに留意して使用する必要があります。))。
+//-注釈内改段落は、他のインライン要素の子要素になることはできません。
+//-注釈内改段落は、他のインライン要素を子要素にすることはできません。
+
+*** 添付ファイル・画像の貼り付け [#v181e939]
+ &amp;ref(添付ファイル名);
+ &amp;ref(ファイルのURL);
+行中で &amp;amp;ref を記述すると、添付ファイルまたは指定されたURLにあるファイルへのリンクを貼り付けることができます。ファイルが画像ファイルの場合は、その画像を表示します。
+
+- &amp;amp;ref には、カンマで区切って下記のパラメタを指定できます。パラメタを省略した場合はデフォルト値となります。
+ 添付ファイルのページ
+-- 添付ファイルが存在するページ名を指定します。デフォルトは現在のページです。
+-- このパラメタを指定する場合は、添付ファイル名の次に記述します。
+-
+ nolink
+-- デフォルトでは添付ファイルへのリンクが張られますが、nolink を指定するとリンクを張りません。
+-
+ 代替文字列
+-- ファイル名の代わりに表示する文字列や画像の代替文字列を指定できます。指定しない場合は、ファイル名になります。
+-- 代替文字列には文字列以外のインライン要素を含めることはできません。ページ名、文字列以外のインライン要素を記述しても文字列として扱われます。
+-- このパラメタを指定する場合は、最後に記述します。
+
+- &amp;amp;ref は、他のインライン要素の子要素になることができます。
+- &amp;amp;ref は、他のインライン要素を子要素にはできません。
+
+*** ルビ構造 [#j137cd8e]
+ &amp;ruby(ルビ){インライン要素};
+行中で &amp;amp;ruby を書くとインライン要素に対するルビをふることができます。ルビに対応していないブラウザではルビが本文中に ( と ) に囲まれて表示されます。
+
+- ルビ構造のルビにはインライン要素を記述します。ただし、ルビの特性上、期待通りの表示になるとは限りません。
+- ルビ構造は、他のインライン要素の子要素になることができます。
+- ルビ構造は、他のインライン要素を子要素にすることができます。
+- ルビ構造をルビ構造の子要素にはできません(ネストはできません)。
+- 注釈内や文字サイズを小さくしている部分での使用は、ルビが判読できなくなるので避けてください。
+
+*** アンカーの設定 [#mb297616]
+ &amp;aname(アンカー名);
+ &amp;aname(アンカー名){インライン要素};
+行中で &amp;amp;aname を記述するとリンクのアンカーを設定することができます。リンクの飛び先にしたい位置に記述します。
+
+- アンカー名は、半角アルファベットから始まる半角アルファベット・数字・ハイフン・アンダースコアからなる文字列を指定します。
+- アンカー名の中には、全角文字や半角空白文字、半角記号を含めることはできません。
+- アンカー設定は、他のインライン要素の子要素になることができます。
+- アンカー設定は、他のインライン要素を子要素にすることができます。
+
+*** カウンタ表示 [#h7beb6ac]
+ &amp;counter;
+ &amp;counter(オプション);
+行中で &amp;amp;counter を記述するとそのページにアクセスした人の数を表示することができます。
+
+- &amp;amp;counter には次のオプションを指定できます。オプションを省略した場合はallが指定されたものとみなされます。
+ today
+-- 今日のアクセス数を表示します。
+-
+ yesterday
+-- 昨日のアクセス数を表示します。
+-
+ all
+-- アクセス総数を表示します。
+- カウンタ表示は、他のインライン要素の子要素になることができます。
+- カウンタ表示は、他のインライン要素を子要素にはできません。
+
+*** オンライン表示 [#ab42f827]
+ &amp;online;
+行中で &amp;amp;online を記述すると現在アクセス中の人数を表示することができます。
+
+- オンライン表示は、他のインライン要素の子要素になることができます。
+- オンライン表示は、他のインライン要素を子要素にはできません。
+
+***バージョン表示 [#f09f9e4b]
+ &amp;version;
+行中で &amp;amp;version を記述するとPukiWikiのバージョンを表示することができます。
+
+- バージョン表示は、他のインライン要素の子要素になることができます。
+- バージョン表示は、他のインライン要素を子要素にはできません。
+
+*** WikiName [#u8188184]
+ WikiName
+行中で、1つ以上の大文字→1つ以上の小文字→1つ以上の大文字→1つ以上の小文字の組合わせからなる半角//文字列はWikiNameになります。
+
+- WikiNameの中には、全角文字や半角空白文字、記号、数字を含めることはできません。
+- WikiNameは、PukiWiki内のページ名になります。すでに存在するページであればそのページへのリンクが自動的に貼られます。存在しない場合はWikiNameの後ろに?が自動的に付き、そのページを新規作成するためのリンクが貼られます。
+
+- WikiNameは、他のインライン要素の子要素になることができます。
+- WikiNameは、他のインライン要素を子要素にはできません。
+
+*** ページ名 [#gce935d9]
+ [[ぷきうぃき]]
+行中で &amp;#91;&amp;#91; と &amp;#93;&amp;#93; で囲まれた文字列はページ名になります。
+
+- ページ名の中には、全角文字、記号、数字、半角空白文字を含めることができます。
+- ページ名の中には、&quot;#&amp;amp;&lt;&gt; を含めることはできません。
+- すでに存在するページであればそのページへのリンクが自動的に貼られます。存在しない場合はページ名の後ろに?が自動的に付き、そのページを新規作成するためのリンクが貼られます。
+
+ [[ページ名#アンカー名]]
+- ページ名にアンカー名をつけることもできます。
+
+- ページ名は、他のインライン要素の子要素になることができます。
+- ページ名は、他のインライン要素を子要素にはできません。
+
+*** InterWiki [#g0dec0fe]
+ [[InterWikiName:ページ名]]
+行中のページ名形式の文字列の中で、: で2つの文字列を区切るとInterWikiになります。:の前にはInterWikiNameのページで定義したInterWikiNameを、: の後ろにはページ名を記述します。
+
+ [[InterWikiName:ページ名#アンカー名]]
+- ページ名の後ろにアンカー名をつけることもできます。
+
+- InterWikiNameの中には、全角文字を含めることができます。
+- InterWikiNameの中には、半角空白文字を含めるができます。
+- InterWikiは、他のインライン要素の子要素になることができます。
+- InterWikiは、他のインライン要素を子要素にはできません。
+
+*** リンク [#bd6593e1]
+ [[リンク名:URL]]
+行中のInterWikiNameの形式の文字列の中で、: の前に任意のリンク名を、: の後ろにURLを記述すると、そのリンク名でURLに対するリンクを貼ることができます。
+
+- リンク名には、全角文字や半角空白文字を含めることができます。メールアドレスを指定する場合は、mailto:を書かずにアドレスだけを記述します。
+
+ http://www.example.com/
+ https://www.example.com/
+ ftp://ftp.example.com/
+ news://news.example.com/
+ foo@example.com
+- 行中に直接、URLを記述した場合は自動的にそのURLに対するリンクが貼られます。
+
+- 記述したURLが画像ファイルである場合は、その画像を表示します。
+
+- リンクは、他のインライン要素の子要素になることができます。
+- リンクは、他のインライン要素を子要素にはできません。
+
+*** エイリアス [#u1026558]
+ [[エイリアス名&gt;ページ名]]
+行中のページ名形式の文字列の中で、&gt; で2つの文字列を区切るとエイリアスになります。 &gt; の前にはエイリアス名を、&gt; の後ろにはページ名を記述します。
+
+エイリアスはPukiWiki内のページ名とは別のエイリアス名で、指定したページへのリンクを貼ります。
+
+ [[エイリアス名&gt;ページ名#アンカー名]]
+ [[エイリアス名&gt;#アンカー名]]
+- ページ名にアンカー名を付け加えてアンカーへのリンクを貼ることができます。ページ名とアンカー名の間には#をつけます。カレントページのアンカーへリンクを貼る場合はページ名を省略することができます。
+
+ [[エイリアス名&gt;http://www.example.com/]]
+ [[エイリアス名&gt;https://www.example.com/]]
+ [[エイリアス名&gt;ftp://ftp.example.com/]]
+ [[エイリアス名&gt;news://news.example.com/]]
+ [[エイリアス名&gt;foo@example.com]]
+ [[エイリアス名&gt;InterWikiName:ページ名]]
+ [[エイリアス名&gt;InterWikiName:ページ名#アンカー名]]
+- エイリアスをURLやInterWikiと組み合わせることもできます。
+
+ [[エイリアス名:http://www.example.com/]]
+ [[エイリアス名:https://www.example.com/]]
+ [[エイリアス名:ftp://ftp.example.com/]]
+ [[エイリアス名:news://news.example.com/]]
+ [[エイリアス名:foo@example.com]]
+- URLを指定する場合は、&gt;の代わりに:も使用できます。
+
+- エイリアス名の中には、全角文字を含めることができます。
+- エイリアス名の中には、半角空白文字を含めることができます。
+- 階層化されたページでは、ページ名を相対指定することができます。
+- エイリアスは、他のインライン要素の子要素になることができます。
+- エイリアスは、他のインライン要素を子要素にできます。
+
+*** タブコード [#d2561bef]
+ &amp;t;
+行中で &amp;amp;t; と書くと、タブコードに置換されます。
+
+通常、フォーム内ではキーボードからタブコードを直接入力できない((クリップボードからの貼り付けの場合はタブコードを直接入力できます。))ので、タブコードを入力したい位置に&amp;amp;t;を記述すると、保存時にタブコードに置換します。
+
+- タブコードは、記事が書き込まれるときに置換されて記録されます。
+- タブコードは、他のインライン要素の子要素になることができます。
+- タブコードは、他のインライン要素を子要素にはできません。
+
+*** ページ名置換文字 [#hc95e608]
+ &amp;page;
+ &amp;fpage;
+行中で &amp;amp;page; 及び &amp;amp;fpage; と書くと、編集中のページ名に置換されます。ページ名が階層化されたページで「hogehoge/hoge」となっている場合、 &amp;amp;page; は「hoge」に、 &amp;amp;fpage; は「hogehoge/hoge」に置換されます。階層化されていないページでは、 &amp;amp;page; も &amp;amp;fpage; も同じになります。
+
+- ページ名置換文字は、記事が書き込まれるときに置換されて記録されます。
+- ページ名置換文字は、他のインライン要素の子要素になることができます。
+- ページ名置換文字は、他のインライン要素を子要素にはできません。
+
+*** 日時置換文字 [#f03aaf0a]
+ &amp;date;
+ &amp;time;
+ &amp;now;
+- 行中で &amp;amp;date; と書くと、更新時の日付に置換されます
+- 行中で &amp;amp;time; と書くと、更新時の時刻に置換されます
+- 行中で &amp;amp;now; と書くと、更新時の日時に置換されます
+
+ date?
+ time?
+ now?
+- PukiWiki 1.3系との後方互換性のために、 date&amp;#63;、 time&amp;#63;、 now&amp;#63; についても使用できるようにしてあります。
+
+- &amp;amp;date;、 &amp;amp;time;、 &amp;amp;now;は、記事が書き込まれるときに置換されて記録されます。
+- &amp;amp;date;、 &amp;amp;time;、 &amp;amp;now;は、他のインライン要素の子要素になることができます。
+- &amp;amp;date;、 &amp;amp;time;、 &amp;amp;now;は、他のインライン要素を子要素にはできません。
+
+ &amp;_date;
+ &amp;_time;
+ &amp;_now;
+- %%行中で &amp;amp;_date; と書くと、表示時の日付に置換されて出力されます。%%
+- %%行中で &amp;amp;_time; と書くと、表示時の時刻に置換されて出力されます。%%
+- %%行中で &amp;amp;_now; と書くと、表示時の日時に置換されて出力されます。%%
+
+ &amp;lastmod;
+ &amp;lastmod(ページ名);
+- 行中で &amp;amp;lastmod; と書くと、そのページの最終更新日時に置換されて出力されます。
+- ページ名を指定すると、その指定されたページの最終更新日時に置換されて出力されます。
+
+- %%&amp;amp;_date;、 &amp;amp;_time;、 &amp;amp;_now;、%% &amp;amp;lastmod;は、記事が表示されるときに置換されて出力されます。
+- %%&amp;amp;_date;、 &amp;amp;_time;、 &amp;amp;_now;、%% &amp;amp;lastmod;は、他のインライン要素の子要素になることができます。
+- %%&amp;amp;_date;、 &amp;amp;_time;、 &amp;amp;_now;、%% &amp;amp;lastmod;は、他のインライン要素を子要素にはできません。
+
+*** 文字参照文字 [#oc8e0c4c]
+文字参照は、SGMLで定義されている文字参照文字(&amp;amp;copy;や&amp;amp;reg;など)のほか、下記の独自の文字参照文字が使用できます。
+ &amp;heart;
+ &amp;smile;
+ &amp;bigsmile;
+ &amp;huh;
+ &amp;oh;
+ &amp;wink;
+ &amp;sad;
+ &amp;worried;
+- 行中で&amp;amp;heart;と書くと、ハートマーク &amp;heart; に置換されて出力されます。
+- 行中で&amp;amp;smile;と書くと、 &amp;smile; に置換されて出力されます。
+- 行中で&amp;amp;bigsmile;と書くと、 &amp;bigsmile; に置換されて出力されます。
+- 行中で&amp;amp;huh;と書くと、 &amp;huh; に置換されて出力されます。
+- 行中で&amp;amp;oh;と書くと、 &amp;oh; に置換されて出力されます。
+- 行中で&amp;amp;wink;と書くと、 &amp;wink; に置換されて出力されます。
+- 行中で&amp;amp;sad;と書くと、 &amp;sad; に置換されて出力されます。
+- 行中で&amp;amp;worried;と書くと、 &amp;worried; に置換されて出力されます。
+
+- 文字参照文字は、表示されるときに置換されます。
+- 文字参照文字は、他のインライン要素の子要素になることができます。
+- 文字参照文字は、他のインライン要素を子要素にはできません。
+
+*** 数値参照文字 [#ibd49862]
+ &amp;#10進数;
+ &amp;#x16進数;
+行中で &amp;amp;# と ; の間に10進数を、&amp;amp;#x と ;の間に16進数を書くと、Unicodeを数値参照して表示します。キーボードから直接入力できない文字やJIS第3水準・第4水準の文字などの表示に使用します。たとえば、内田百&amp;amp;#38290;と入力すると、内田百&amp;#38290;と表示されます。
+
+- 数値参照文字は、表示されるときに置換されます。
+- 数値参照文字は、他のインライン要素の子要素になることができます。
+- 数値参照文字は、他のインライン要素を子要素にはできません。
+- 16進数は半角小文字で指定する必要があります(XHTML 1.0 第2版から小文字に限定されました)。
+
+** その他 [#w8d0fa5a]
+
+*** コメント行 [#fa693c95]
+ // コメント
+行頭で // を指定すると、コメント行になります。コメント行は出力されない行です。
+
+- コメント行は、他の要素と無関係に行単位でどの位置にも記述できます。
+- コメント行は、前後の他の要素に何ら影響を及ぼしません。
+}}
+
+#multilang(en){{
+*Inline Elements [#v2f727fb]
+In the following table you can see how to use the inline text elements of PukiWiki
+
+|''Format example''|''Formatting code''|''Comment''|h
+|''Emphasised text''|&amp;#39;&amp;#39;Emphasised text&amp;#39;&amp;#39;|Put the text between two single quotes.|
+|'''Italic text'''|&amp;#39;&amp;#39;&amp;#39;Italic text&amp;#39;&amp;#39;&amp;#39;|Put the text between three single quotes.|
+|Text with&amp;br;a break|Text with &amp;amp;br; a break||
+|&amp;size(24){Text in font size 24};| &amp;amp;size(24){Text in font size 24};||
+|&amp;color(purple){Purple text};| &amp;amp;color(purple){Purple text};||
+|&amp;color(#123456){Colored text};| &amp;amp;color(#123456){Colored text};||
+|&amp;color(red,yellow){Red text with yellow backbround};| &amp;amp;color(red,yellow){Red text with yellow background};||
+|%%Strikethrough text%%| &amp;#37;&amp;#37;Strikethrough text&amp;#37;&amp;#37;||
+|((This is the footnote's text))|&amp;#40;&amp;#40;This is the footnote's text&amp;#41;&amp;#41;|This inserts a footnote with the given text at the bottom of the page.|
+|&amp;ref(http://www.example.com);|&amp;amp;ref(http:&amp;#47;&amp;#47;www.example.com);|This inserts a reference.|
+|&amp;aname(Anchor);|&amp;amp;aname(Anchor);|This inserts an invisible anchor for hyperlinking.|
+|&amp;counter;|&amp;amp;counter;|This inserts a counter. What does it count, in fact?|
+|&amp;online;|&amp;amp;online;|What does this do, in fact?|
+|&amp;version;|&amp;amp;version;|I guess this inserts the current version number of PukiWiki itself?|
+|WikiName|&amp;#87;ikiName|This create a link to another pages on the same Pukiwiki site.|
+|[[BracketName]]|&amp;#x5b;&amp;#x5b;&amp;#x42;racketName&amp;#x5d;&amp;#x5d;|This creates a link to another page on a same Pukiwiki site.|
+|[[External link:http://www.example.com]]|&amp;#91;&amp;#91;External link:http:&amp;#47;&amp;#47;www.example.com]]|This creates links to pages on other web sites.|
+|[[InterWikiLink:page name]]|&amp;#91;&amp;#91;Inter&amp;#87;iki&amp;#76;ink:page name]]|This creates a link to another Wiki, right?|
+|Paragraph| ~Paragraph||
+|Inline text&amp;br;Inline text| Inline text&amp;amp;br;Inline text|&amp;amp;br; is replaced with a line break.|
+|Inline text~&amp;br;#plug-in| Inline text~&amp;br;#plug-in|The ~, followed by a line break works as an escape character that disables the # character, which normally activates a plugin.|
+
+
+
+
+&amp;br;
+
+*Block Elements [#veaf1193]
+~In what follows, examples for the block elements will be given.
+First, you will see the example as it should be entered into PukiWiki,and
+next is the result you'll get. 
+
+**Preformatted text [#v6d2a929]
+  Preformatted text. There is a space in front of this text.
+
+ Preformatted text. There is a space in front of this text. 
+&amp;br;
+
+**Headings [#n6275890]
+ *Heading level 1
+ **Heading level 2
+ ***Heading level 3
+There are no examples of how the heading looks like here, 
+because they would disturb the structure of this document.
+But take a look at the headings above and below to see how 
+it might look. 
+&amp;br; 
+**Paragraphs and the tilde as and escape character [#a6ab3c0e]
+ ~Paragraph
+ ~*This will not be displayed as a heading
+~Paragraph
+~*This will not be displayed as a heading
+ Line break escape example~
+ #comment (disables first letter formatting rule, which is used to activate plug-ins.)
+Line break escape example~
+#comment (disables first letter formatting rule, which is used to activate plug-ins.)
+&amp;br;
+**Quotes [#q0849799]
+ &gt;Quote Level 1
+ &gt;&gt;Quote Level 2
+ &gt;&gt;&gt;Quote Level 3
+&gt;Quote Level 1
+&gt;&gt;Quote Level 2
+&gt;&gt;&gt;Quote Level 3
+&amp;br;
+**Unordered lists [#kbd4d759]
+ -Unordered list level 1
+ --Unordered list level 2
+ ---Unordered list level 3
+-Unordered list level 1
+--Unordered list level 2
+---Unordered list level 3
+&amp;br;
+**Ordered lists [#z291b8c3]
+ +Ordered list level 1
+ ++Ordered list level 2
+ +++Ordered list level 3
++Ordered list level 1
+++Ordered list level 2
++++Ordered list level 3
+&amp;br;
+**Definition lists [#z93a6096]
+ :Definition|Description
+:Definition|Description
+&amp;br;
+**Comments [#l279ee0b]
+ A comment is hidden here: 
+ //Comment
+A comment is hidden here: 
+//Comment
+&amp;br;
+**Horizontal Rule [#s0439a0c]
+ ----
+----
+**Table [#jecf0233]
+*** Simple [#v90083b4]
+ |aaa|bbb|ccc|
+ |111|222|333|
+|aaa|bbb|ccc|
+|111|222|333|
+*** Advanced [#n6c24e02]
+ |RIGHT:100|CENTER:|SIZE(20)|c -------------- format definition line
+ |~Header|Header2|Header3|h ----------------- header line
+ |CENTER:lowspan|COLOR(red):bbb|ccc|
+ |~|222|COLOR(#ff0000):BGCOLOR(yellow):333|
+ |footer|&gt;|CENTER:colspan|f ----------------- footer line
+
+|RIGHT:100|CENTER:|SIZE(20)|c
+|~Header|Header2|Header3|h
+|CENTER:lowspan|COLOR(red):bbb|ccc|
+|~|222|COLOR(#ff0000):BGCOLOR(yellow):333|
+|footer|&gt;|CENTER:colspan|f
+
+
+**CSV Table [#pece650e]
+ ,aaa,bbb,ccc
+ ,111,222,333
+,aaa,bbb,ccc
+,111,222,333
+
+//**Plug-ins
+// #contents 
+// (This is the table of contents plugin) 
+//
+//#contents 
+//(This is the table of contents plugin)
+// The above does not work?
+
+*Special entities : [#nb14c38a]
+// These expressions do not work with the default settings. 
+// See pukiwiki.ini.php and default.ini.php.
+//|FormattingSandbox|&amp;amp;page;|This one doesn't seem to work?|
+//|2003-10-28|&amp;amp;date;|This one doesn't seem to work?|
+//|03:33:43|&amp;amp;time;|This one doesn't seem to work?|
+//|2003-10-28 (&amp;#28779;) 03:33:43|&amp;amp;now;|This one doesn't seem to work?|
+//|2003-10-15|date ?| This one is replaced when  editing is finished.|
+//|12:35:09|time ?| This one is replaced when  editing is finished.|
+//|2003-10-15 (&amp;#27700;) 12:35:09|now ?| This one is replaced when  editing is finished.|
+
+|''Special entity''|''Code''|''Comments''|h
+|&amp;heart;|&amp;amp;heart;||
+|&amp;copy;|&amp;amp;copy;||
+|&amp;reg;|&amp;amp;reg;||
+|&amp;trade;|&amp;amp;trade;||
+|&amp;sup2;|&amp;amp;sup2;||
+|&amp;sup3;|&amp;amp;sup3;||
+|&amp;nbsp;|&amp;amp;nbsp;|You may not be able to see it,&amp;br;but there is a non-breaking space in the first column. &amp;br; It prevents a line from being broken at that point.|
+|&amp;#10;|&amp;amp;#10;|You can define any unicode character up to #32000 using this code. Please note that you need a font that supports the character, or you will not be able to see it.|
+|&amp;#19990;|&amp;amp;#19990;|You can use characters from all over the world!|
+|&amp;#9794;|&amp;amp;#9794;|It is a man's world.|
+|&amp;#9791;|&amp;amp;#9792;|But it would be nothing without a woman.|
+|&amp;#8734;|&amp;amp;#8734;|We could go on like this forever...|
+|&amp;#937;|&amp;amp;#937;|But here it must end.|
+
+&amp;br;
+
+*Nesting Elements [#vd8a37d7]
+**Paragraph Element-Emphasize Element [#n053ef8b]
+ ~This is the paragraph, which is the parent element that contains emphasized text. 
+ ''This is the emphasized text, that is the child element of the paragraph element.''
+ 
+~This is the paragraph, which is the parent element that contains emphasized text. 
+''This is the emphasized text, that is the child element of the paragraph element.''
+
+**Quotation Element-List Element [#a8c9880d]
+ Level[0]
+ &gt;Quotation Level[1]AAA
+ ~Quotation Level[1]BBB
+ &gt;&gt;Quotation Level[2]AAA
+ ~Quotation Level[2]BBB
+ &gt;&gt;&gt;Quotation Level[3]
+ -Child Element-List Level[1]
+ |TABLE|ELEMENT|NEXT|to|the Inline|element|in a list|
+ --Child Element-List Level[2]
+ &amp;br;Line Break in a Element
+ ---Child Element-List Level[3]
+ --Child Element-List Level[2]
+ ---Child Element-List Level[3]
+ &lt;&lt;Quotation Level[1]
+ &gt;&gt;Quotation Level[2]
+ &lt;&lt;Get out of the Quotation Level2 Element
+ &gt;&gt;&gt;Quotation Level[3]AAA
+ &gt;&gt;&gt;Quotation Level[3]BBB
+ -Child Element-List Level[1]
+ --Child Element-List Level[2]
+ ---Child Element-List Level[3]
+
+Level[0]
+&gt;Quotation Level[1]AAA
+~Quotation Level[1]BBB
+&gt;&gt;Quotation Level[2]AAA
+~Quotation Level[2]BBB
+&gt;&gt;&gt;Quotation Level[3]
+-Child Element-List Level[1]
+|TABLE|ELEMENT|NEXT|to|the Inline|element|in a list|
+--Child Element-List Level[2]
+&amp;br;Line Break in a Element
+---Child Element-List Level[3]
+--Child Element-List Level[2]
+---Child Element-List Level[3]
+&lt;&lt;Quotation Level[1]
+&gt;&gt;Quotation Level[2]
+&lt;&lt;Get out of the Quotation Level2 Element
+&gt;&gt;&gt;Quotation Level[3]AAA
+&gt;&gt;&gt;Quotation Level[3]BBB
+-Child Element-List Level[1]
+--Child Element-List Level[2]
+---Child Element-List Level[3]
+
+This section needs to be brushed up.
+}}
+
+#multilang(zh_TW){{
+TITLE:寫作語法
+#norelated
+*寫作語法 [#t474cb3d]
+底下是 PukiWiki 的寫作語法，HTML 的標籤語法目前並不支援
+#contents
+
+**文字的裝飾 [#sa30d3f7]
+ ''粗體字''
+''粗體字''
+ '''斜體字'''
+'''斜體字'''
+ %%刪除線%%
+%%刪除線%%
+ ((註解))
+((註解))
+ COLOR(#rrggbb){文字變顏色的}
+COLOR(red){文字變成紅色的}
+ SIZE(n){文字的大小}
+SIZE(36){文字的大小,36}
+
+**文字的對齊 [#j8a91132]
+ CENTER:置中對齊
+CENTER:置中對齊
+
+ LEFT:靠左對齊
+LEFT:靠左對齊
+
+ RIGHT:靠右對齊
+RIGHT:靠右對齊
+**圖片的顯示 [#p91a3a79]
+ #img(圖片的URL,left)
+#img(http://pukiwiki.idv.tw/image/noIE.png,left)
+
+ #img(圖片的URL,right)
+#img(http://pukiwiki.idv.tw/image/noIE.png,right)
+
+ #img(,clear)
+#img(,clear)
+
+**附件的處理 [#x09c9333]
+ #attach
+#attach
+
+ #ref(附件的名稱)
+#ref(附件的名稱)
+
+ #ref(附件的名稱,center)
+#ref(附件的名稱,center)
+
+ #ref(附件的名稱,right)
+#ref(附件的名稱,right)
+
+ #ref(附件的名稱,left)
+#ref(附件的名稱,left)
+
+ #ref(附件的名稱,right,around)
+#ref(附件的名稱,right,around)
+
+ #ref(附件的名稱,left,around)
+#ref(附件的名稱,left,around)
+
+預設為 left
+
+**標題列 [#ledb8597]
+ *H1
+ **H2
+ ***H3
+
+ #contents
+ 製作目錄索引
+
+**表格 [#bf80cc12]
+ |''Category:A''|''Category:B''|''Category:C''|
+ |Objective|for AI|Other|
+ |Java|LISP|Assembla|
+
+|''Category:A''|''Category:B''|''Category:C''|
+|Objective|for AI|Other|
+|Java|LISP|Assembla|
+
+ 表格可搭配 CENTER: RIGHT: 等屬性來使用
+
+ |左左左左左|中中中中中|右右右右右|
+ |左|CENTER:中|RIGHT:右|
+ |RIGHT:右|左|CENTER:中|
+
+|左左左左左|中中中中中|右右右右右|
+|左|CENTER:中|RIGHT:右|
+|RIGHT:右|左|CENTER:中|
+
+**評論 [#f9013a01]
+ #comment
+
+**文章 [#me286aca]
+ #article
+
+**備忘 [#u814f0e3]
+ #memo
+
+**投票 [#h4e58e45]
+ #vote(選項1,選項2,選項3)
+#vote(選項1[24],選項2[5],選項3[5])
+
+**語法的原型 [#nb55d0ba]
+開頭空白則表示該行文字不會被寫作語法所轉換
+
+**條列項目 [#t8a85629]
+ -第一層
+ --第二層
+ ---第三層
+-第一層
+--第二層
+---第三層
+
+ +
+ ++
+ +++
++數字1
+++數字2
++++數字3
+
+ :用語1|更多的解說1
+:用語1|更多的解說1
+
+**引用文字 [#s3e68591]
+ &gt;
+&gt; 這是引用文字
+
+**水平線 [#rbebd5f2]
+ ----
+----
+
+**換行、換段落 [#sdeecf57]
+ hoge~  換行
+hoge~
+
+ ~hoge  換段落
+~hoge
+
+**連結 [#ve789b5e]
+ (WikiName)
+ PukiWiki 
+PukiWiki
+
+ (BracketName)
+ [[SandBox]]
+[[SandBox]]
+
+ [[測試區]]
+[[測試區]]
+
+ [[http://pukiwiki.idv.tw/image/pukiwikiorg.png&gt;FrontPage]]
+[[http://pukiwiki.idv.tw/image/pukiwikiorg.png&gt;FrontPage]]
+
+ (InterWiki)
+ [[PukiWiki:FrontPage]]
+[[PukiWiki:FrontPage]]
+
+ [[PukiWiki.org&gt;PukiWiki:FrontPage]]
+[[PukiWiki.org&gt;PukiWiki:FrontPage]]
+
+ http://www.pukiwiki.org/
+ webmaster@pukiwiki.org
+http://www.pukiwiki.org/
+webmaster@pukiwiki.org
+
+ [[PukiWiki:http://www.pukiwiki.org/]]
+[[PukiWiki:http://www.pukiwiki.org/]]
+
+ [[PukiWiki&gt;http://www.pukiwiki.org/]]
+[[PukiWiki&gt;http://www.pukiwiki.org/]]
+
+**註解用的符號 [#j878c9e6]
+ 開頭以 // 表示的為註解用的行
+ // 這行是註解,看不到的
+// 這行是註解,看不到的
+
+**時間、日期的轉換 [#m05233d9]
+ date?
+2003-09-17
+
+ time?
+15:40:03
+
+ now?
+2003-09-17 (Wed) 15:40:03
+
+**其他 [#hfbedfc0]
+ #related
+#related
+
+ #norelated
+#norelated
+
+ #calendar_read(200309)
+#calendar_read(200309)
+
+ #calendar_edit(200309)
+#calendar_edit(200309)
+
+ #calendar2(off)
+#calendar2(off)
+
+**情境圖示 [#a404388d]
+CENTER:''各種臉型''
+|||CENTER:|c
+|~用法1|~用法2|~臉型|h
+|&amp;smile；|:)|&amp;smile;|
+|&amp;bigsmile；|:D|&amp;bigsmile;|
+|&amp;huh；|:p，:d|&amp;huh;|
+|&amp;oh；|X(，XD|&amp;oh;|
+|&amp;wink；|;)|&amp;wink;|
+|&amp;sad；|:(，;(|&amp;sad;|
+|&amp;heart；||&amp;heart;|
+|&amp;mheart；||&amp;mheart;|
+
+**直接插入型的元素 [#k43cefee]
+|''範例''|''用法''|''備註''|
+|''粗體字''|&amp;#39;&amp;#39;粗體字&amp;#39;&amp;#39;|將文字放在兩個單引號之間。|
+|'''斜體字'''|&amp;#39;&amp;#39;&amp;#39;斜體字&amp;#39;&amp;#39;&amp;#39;|將文字放在三個單引號之間。|
+|文字的&amp;br;換行|文字的&amp;amp;br;換行||
+|&amp;size(24){文字大小是 24};| &amp;amp;size(24){文字大小是 24};||
+|&amp;color(red){紅色字};| &amp;amp;color(red){紅色字};||
+|&amp;color(#a98765){有顏色的字};| &amp;amp;color(#a98765){有顏色的字};||
+|&amp;color(red,yellow){黃底紅字};| &amp;amp;color(red,yellow){黃底紅字};||
+|%%刪除線%%| &amp;#37;&amp;#37;刪除線&amp;#37;&amp;#37;||
+|((這是註腳的文字))|&amp;#40;&amp;#40;這是註腳的文字&amp;#41;&amp;#41;|在頁面的底部插入註腳。|
+|&amp;ref(http://pukiwiki.idv.tw);|&amp;amp;ref(http:&amp;#47;&amp;#47;pukiwiki.idv.tw);|插入一個參考連結。|
+|&amp;aname(Anchor);|&amp;amp;aname(Anchor);|插入一個頁內連結。|
+|&amp;counter;|&amp;amp;counter;|插入訪客人數統計。|
+|&amp;online;|&amp;amp;online;|插入目前站上訪客人數。|
+|&amp;version;|&amp;amp;version;|插入目前的 PukiWiki 版本資訊。|
+|WikiName|&amp;#87;ikiName|連結至站內的另一個頁面。|
+|[[BracketName]]|&amp;#x5b;&amp;#x5b;&amp;#x42;racketName&amp;#x5d;&amp;#x5d;|連結至站內的另一個頁面。|
+|[[外部連結:http://pukiwiki.org]]|&amp;#91;&amp;#91;外部連結:http:&amp;#47;&amp;#47;pukiwiki.org]]|連結至外部的頁面。|
+|[[InterWikiLink:頁面]]|&amp;#91;&amp;#91;Inter&amp;#87;iki&amp;#76;ink:頁面]]|連結至其他 Wiki 站的頁面。|
+&amp;br;
+
+**區塊型元素 [#z57f6202]
+ ~段落
+~段落
+ 後面隱藏的是註解: &amp;#47;&amp;#47;註解
+後面隱藏的是註解: //您無法看到註解。
+  預先格式化的文字。在文字的前面有一個空白。
+ 預先格式化的文字。在文字的前面有一個空白。
+
+ *標題一
+ **標題二
+ ***標題三
+
+ &gt;第一層引用
+ &gt;&gt;第二層引用
+ &gt;&gt;&gt;第三層引用
+&gt;第一層引用
+&gt;&gt;第二層引用
+&gt;&gt;&gt;第三層引用
+
+ -條列一
+ --條列二
+ ---條列三
+-條列一
+--條列二
+---條列三
+
+ +數字條列一
+ ++數字條列二
+ +++數字條列三
++數字條列一
+++數字條列二
++++數字條列三
+
+ :定義|描述
+:定義|描述
+
+ 水平線
+ ----
+----
+
+ 表格
+ |aaa|bbb|ccc|
+ |111|222|333|
+|aaa|bbb|ccc|
+|111|222|333|
+
+ CSV 表格
+ ,aaa,bbb,ccc
+ ,111,222,333
+,aaa,bbb,ccc
+,111,222,333
+&amp;br;
+|&amp;heart;|&amp;amp;heart;||
+|&amp;copy;|&amp;amp;copy;||
+|&amp;reg;|&amp;amp;reg;||
+|&amp;trade;|&amp;amp;trade;||
+|&amp;sup2;|&amp;amp;sup2;||
+|&amp;sup3;|&amp;amp;sup3;||
+|&amp;nbsp;|&amp;amp;nbsp;|You may not be able to see it,&amp;br;but there is a non-breaking space in the first column. &amp;br; It prevents a line from being broken at that point.|
+|&amp;#10;|&amp;amp;#10;|Is this a normal space?|
+|&amp;#16;|&amp;amp;#16;|And this, a minus sign? |
+}}</span></pre>
+   </div>
+  </div>
+ </div>
+  <div style="clear:both;height:1em;"></div>
+ <div id="logo"><a href="index.php" style="background-image: url(image/pukiwiki.plus_logo_trans.png);"></a></div>
+ <div id="personal"><ul><li id="login"><a href="http://codeigniter.jp/tettei/index.php?cmd=login&amp;page=FormatRule">ログインまたはアカウント作成</a></li></ul></div>
+ <div id="footer">
+  <div id="f-officialico">
+   <a href="http://pukiwiki.cafelounge.net/plus/"><img src="image/pukiwiki-plus.png" alt="PukiWikiPlus" /></a>
+  </div>
+  <div id="f-officialdevico">
+   <a href="http://pukiwiki.cafelounge.net/plus/"><img src="image/pukiwiki-plus.dev.png" alt="PukiWikiPlus-dev" /></a>
+  </div>
+  <div id="f-list">
+   <ul><li>Site admin: <a href="index.html">anonymous</a></li>    <li>convert time: 0.005 sec</li>
+    <li>Powered by PukiWiki</li>
+    <li><a href="http://lsx.sourceforge.jp/?monobook">Monobook for PukiWiki Plus! i18n</a></li>
+   </ul>
+  </div>
+  <div style="clear:both;"></div>
+ </div>
+</div>
+</body>
+</html>

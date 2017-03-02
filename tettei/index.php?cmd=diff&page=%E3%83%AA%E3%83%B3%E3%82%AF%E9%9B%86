@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja-JP">
+
+<head>
+ <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+ <meta name="robots" content="NOINDEX,NOFOLLOW" /> <meta http-equiv="Content-Script-Type" content="text/javascript" />
+ <title>リンク集 の変更点 - CodeIgniter Memo</title>
+ <link rel="stylesheet" type="text/css" media="screen" href="skin/monobook/monobook.css" />
+ <link rel="stylesheet" type="text/css" media="print" href="skin/monobook/monobook.print.css" />
+ <link rel="alternate" type="application/rss+xml" title="RSS" href="index.php?cmd=rss" />
+ <script type="text/javascript">
+ <!--
+var SKIN_DIR="skin/";
+var IMAGE_DIR="image/";
+var DEFAULT_LANG="ja_JP";
+var LANG="ja_JP";
+ // -->
+ </script>
+ <script type="text/javascript" src="skin/lang/ja_JP.js"></script>
+ <script type="text/javascript" src="skin/default.js"></script>
+ <script type="text/javascript" src="skin/ajax/textloader.js"></script>
+ <script type="text/javascript" src="skin/ajax/glossary.js"></script>
+ <script type="text/javascript" src="skin/tzCalculation_LocalTimeZone.js"></script>
+</head>
+<body>
+<div id="globalWrapper">
+ <div id="menubar"><h4 id="h4_content_1_0">ナビゲーション</h4><div class="menubox"><ul class="menu"><li><a href="https://github.com/codeigniter-jp/codeigniter-tettei-note" rel="nofollow">『CodeIgniter徹底入門』に対するノート</a></li><li><a href="http://www.seshop.com/book/errata/9185/list" rel="nofollow">正誤情報</a></li><li><a href="index.php?%25E3%2583%25AA%25E3%2583%25B3%25E3%2582%25AF%25E9%259B%2586" title="リンク集 (2844d)">リンク集</a></li><li><a href="index.php?%25E3%2582%25B5%25E3%2583%25B3%25E3%2583%2597%25E3%2583%25AB%25E3%2582%25B3%25E3%2583%25BC%25E3%2583%2589%25E3%2583%2580%25E3%2582%25A6%25E3%2583%25B3%25E3%2583%25AD%25E3%2583%25BC%25E3%2583%2589" title="サンプルコードダウンロード (623d)">サンプルコードダウンロード</a></li><li><a href="index.php?%25E8%25AA%25AD%25E8%2580%2585%25E3%2581%25AE%25E5%25A3%25B0" title="読者の声 (3144d)">読者の声</a></li><li><a href="http://codeigniter.jp/" rel="nofollow">日本CodeIgniterユーザ会</a></li></ul></div><h4 id="h4_content_1_1">広告</h4><iframe src="http://rcm-jp.amazon.co.jp/e/cm?t=bandnavi08-22&o=9&p=8&l=as1&asins=4798116769&fc1=000000&IS2=1&lt1=_blank&lc1=0000FF&bc1=000000&bg1=FFFFFF&f=ifr" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe><h4 id="h4_content_1_2">検索</h4><div class="monobook_search"><form action="index.php" method="get">
+<div><input type="hidden" name="encode_hint" value="ぷ" /></div><div><input type="hidden" name="encode_hint" value="ぷ" /></div> <div>  <input type="hidden" name="cmd" value="search" />  <input class="searchInput" type="text"  name="word" value="" size="20" />  <input type="hidden" name="type" id="_p_search_AND" value="AND"  checked="checked" />  &nbsp;<input class="searchButton" type="submit" value="Search" /> </div></form></div><h4 id="h4_content_1_3">ツールボックス</h4><div class="toolbox"><ul><li><a href="index.php?cmd=backup&amp;page=%25E3%2583%25AA%25E3%2583%25B3%25E3%2582%25AF%25E9%259B%2586">バックアップの表示</a></li><li><a href="index.php?plugin=related&amp;page=%25E3%2583%25AA%25E3%2583%25B3%25E3%2582%25AF%25E9%259B%2586">リンク元</a></li><li><a href="index.php?RecentChanges">最近更新したページ</a></li><li><a href="index.php?cmd=list">全ページ</a></li><li><a href="index.php?cmd=help">ヘルプ</a></li></ul></div><h5>recent(5)</h5><div class="monobook_recent"><strong>2015-09-03</strong><ul class="recent_list"> <li><a href="index.php?%25E3%2580%258ECodeIgniter%25E5%25BE%25B9%25E5%25BA%2595%25E5%2585%25A5%25E9%2596%2580%25E3%2580%258F%25E6%2583%2585%25E5%25A0%25B1%25E3%2583%259A%25E3%2583%25BC%25E3%2582%25B8" title="『CodeIgniter徹底入門』情報ページ (546d)">『CodeIgniter徹底入門』情報ページ</a></li> <li><a href="index.php?MenuBar" title="MenuBar (546d)">MenuBar</a></li></ul><strong>2015-06-18</strong><ul class="recent_list"> <li><a href="index.php?%25E3%2582%25B5%25E3%2583%25B3%25E3%2583%2597%25E3%2583%25AB%25E3%2582%25B3%25E3%2583%25BC%25E3%2583%2589%25E3%2583%2580%25E3%2582%25A6%25E3%2583%25B3%25E3%2583%25AD%25E3%2583%25BC%25E3%2583%2589" title="サンプルコードダウンロード (623d)">サンプルコードダウンロード</a></li></ul><strong>2009-05-19</strong><ul class="recent_list"> <li>リンク集</li></ul><strong>2008-07-22</strong><ul class="recent_list"> <li><a href="index.php?%25E8%25AA%25AD%25E8%2580%2585%25E3%2581%25AE%25E5%25A3%25B0" title="読者の声 (3144d)">読者の声</a></li></ul></div></div>
+ <div id="mainColumnWrapper">
+  <div id="main-column">
+   <div id="navigator"><ul><li id="wn_main" class="selected"><a href="index.php?%25E3%2583%25AA%25E3%2583%25B3%25E3%2582%25AF%25E9%259B%2586" title="リンク集 (2844d)">本文</a></li><li id="wn_note" class="noexists"><a href="index.php?cmd=wikinote&amp;page=note%252F%25E3%2583%25AA%25E3%2583%25B3%25E3%2582%25AF%25E9%259B%2586">ノート</a></li><li><a href="http://codeigniter.jp/tettei/index.php?cmd=revert&amp;page=%E3%83%AA%E3%83%B3%E3%82%AF%E9%9B%86">この版へ差し戻し</a></li><li class="selected"><a href="index.php?cmd=diff&amp;page=%25E3%2583%25AA%25E3%2583%25B3%25E3%2582%25AF%25E9%259B%2586">差分</a></li></ul></div>
+   <div id="content">
+    <h1 class="firstHeading">リンク集 の変更点</h1><div id="contentSub"></div>
+    <ul>
+<li>追加された行は<span class="diff_added">この色</span>です。</li>
+<li>削除された行は<span class="diff_removed">この色</span>です。</li>
+ <li><a href="index.php?%25E3%2583%25AA%25E3%2583%25B3%25E3%2582%25AF%25E9%259B%2586">リンク集</a> へ行く。</li>
+</ul>
+<hr class="full_hr" /><pre>* 『CodeIgniter徹底入門』リンク集 [#gcf3f098]
+
+** 第1章 [#se5ee68c]
+-CodeIgniterホームページ
+http://codeigniter.com/
+
+-TIOBE Programming Community Index
+http://www.tiobe.com/index.php/content/paperinfo/tpci/
+
+-PHP4のサポートに関する考え方
+http://www.derekallard.com/blog/post/codeigniter-will-not-be-dropping-support-for-php-4-anytime-soon/
+
+-CodeIgniterのベンチマーク
+http://www.sellersrank.com/php/cakephp-codeigniter-benchmark/
+
+** 第2章 [#o6259671]
+
+- apache friends - xampp
+http://www.apachefriends.org/jp/xampp.html
+
+- Pleiades
+http://mergedoc.sourceforge.jp/
+
+- PDT Project
+http://www.eclipse.org/pdt/
+
+- Xdebug - Debugger and Profiler Tool for PHP
+http://xdebug.org/
+
+- SourceForge.net XAMPP
+http://sourceforge.net/projects/xampp/
+
+- apache friends - xampp for windows
+http://www.apachefriends.org/jp/xampp-windows.html
+
+- Pleiades All in One PHP のダウンロード
+-- Eclipse 3.3 JRE付き http://mergedoc.sourceforge.jp/pleiades-redirect/3.3/pleiades_php_jre.zip.html
+-- Eclispe 3.3 JREなし
+http://mergedoc.sourceforge.jp/pleiades-redirect/3.3/pleiades_php.zip.html
+
+- 秀丸エディタ
+http://hide.maruo.co.jp/software/hidemaru.html
+
+- サクラエディタ
+http://sakura-editor.sourceforge.net/
+
+- xyzzy
+http://www.jsdlab.co.jp/~kamei/
+
+- 「Microsoft Visual C++ 2005 SP1 再頒布可能パッケージ (x86)」
+http://www.microsoft.com/downloads/search.aspx?displaylang=ja
+
+- XAMPP のセキュリティについて
+http://www.apachefriends.org/jp/xampp-windows.html#2784
+
+- PDT の新規更新サイト
+http://download.eclipse.org/tools/pdt/updates/
+
+- Java がインストール済みかどうかの確認および最新版のダウンロード
+http://www.java.com/ja/
+
+- CodeIgniter のダウンロード
+http://codeigniter.com/downloads/
+
+- 日本語言語パックのダウンロード
+http://codeigniter.jp/download/
+
+- apache friends - xampp for linux
+http://www.apachefriends.org/jp/xampp-linux.html
+
+- Xdebug のダウンロード
+http://xdebug.org/
+
+- PDT All-in-One のダウンロード
+http://www.eclipse.org/pdt/
+
+- PDT の新規更新サイト
+http://download.eclipse.org/tools/pdt/updates/
+
+- Pleiades のダウンロード
+http://mergedoc.sourceforge.jp/
+
+- Java Runtime Environment (JRE) 5.0 のダウンロード
+http://java.sun.com/javase/downloads/index_jdk5.jsp
+
+** 第3章 [#n6e8f664]
+
+-CodeIgniter公式サイト
+http://codeigniter.com/
+
+-Apache チュートリアル: .htaccess ファイル
+http://httpd.apache.org/docs/2.2/ja/howto/htaccess.html
+
+-日本CodeIgniterユーザ会
+http://codeigniter.jp/
+** 第4章 [#v50cbd98]
+
+-Smarty : Template Engine
+http://www.smarty.net/
+
+-PHPマニュアル「short_open_tag」
+http://jp2.php.net/manual/ja/ini.core.php
+** 第5章 [#u6666a55]
+
+-Ruby on Rails
+http://www.rubyonrails.org/
+
+-phpMyAdmin | MySQL Database Administration Tool | www.phpmyadmin.net
+http://www.phpmyadmin.net/home_page/index.php
+
+-PHPマニュアル「コア php.ini ディレクティブに関する説明」（register_globals）
+http://jp2.php.net/manual/ja/ini.core.php
+
+-PHPマニュアル「PHP オプションと情報」（magic_quotes_runtime）
+http://jp2.php.net/manual/ja/book.info.php
+** 第6章 [#y2886358]
+
+-PHPマニュアル「error_reporting」
+http://jp2.php.net/manual/ja/function.error-reporting.php
+
+** 第7章 [#ic5b579f]
+
+- PHPマニュアル「セッション処理関数」
+http://jp2.php.net/manual/ja/book.session.php
+
+- HTML 4.01 仕様書
+http://www.w3.org/TR/html401/charset.html#h-5.2.2
+
+- Mercury のライセンス購入方法
+http://www.pmail.com/mlicense.htm
+
+** 第8章 [#re17ba76]
+
+- PEAR
+http://pear.php.net/
+
+- PHPマニュアル「uniqid」
+http://jp2.php.net/manual/ja/function.uniqid.php
+
+<span class="diff_removed">** 9章 [#ud632ed9]</span>
+<span class="diff_added"  >** 第9章 [#ud632ed9]</span>
+
+- Ruby on Rails
+http://www.rubyonrails.org/
+<span class="diff_removed"></span>
+<span class="diff_removed"></span>
+** 第10章 [#ya5806dd]
+
+- Ajax for CodeIgniter
+http://codeigniter.com/wiki/Ajax_for_CodeIgniter/
+
+- Googleマップ
+http://maps.google.co.jp/
+
+- Prototype
+http://prototype.conio.net/
+
+- script.aculo.us
+http://script.aculo.us/
+
+- Smarty のダウンロード
+http://www.smarty.net/download.php
+
+- Yet Another Smarty
+http://codeigniter.com/wiki/Smarty/
+
+- PEAR のダウンロード
+http://pear.php.net/package/PEAR
+
+- PEAR::Spreadsheet_Excel_Writer のダウンロードします。
+http://pear.php.net/package/Spreadsheet_Excel_Writer
+
+- PEAR::OLE のダウンロード
+http://pear.php.net/package/OLE
+
+- simplelogin のダウンロード
+http://codeigniter.com/wiki/File:simplelogin_0.1.zip/
+
+- OpenID Foundation
+http://openid.net/
+
+- OpenID の仕様
+http://openid.net/developers/specs/
+
+- OpenID.ne.jp
+http://www.openid.ne.jp/
+
+- livedoor Auth
+http://auth.livedoor.com/
+
+- はてなでOpenID
+http://www.hatena.ne.jp/info/openid/
+
+- Yahoo! JAPAN
+http://openid.yahoo.co.jp/
+
+- JugemKey
+http://jugemkey.jp/
+
+- OpenID ライブラリのダウンロード
+http://codeigniter.com/wiki/OpenID/
+
+- PHP OpenID Library のダウンロード
+http://openidenabled.com/php-openid/
+
+- Zend Framework のダウンロード
+http://framework.zend.com/download
+
+- Zend_Service_Amazon のドキュメント
+http://framework.zend.com/manual/ja/zend.service.amazon.html
+
+- Wikipedia API
+http://wikipedia.simpleapi.net/
+
+** 第11章 [#c095026b]
+
+** 第12章 [#c154cac3]
+
+- PHPマニュアル「Mcrypt 暗号化 関数」
+http://jp2.php.net/manual/ja/ref.mcrypt.php
+
+- Windows 版のImageMagick のダウンロード
+http://www.imagemagick.net/www/binaryreleases.html#windows
+→ 変更されました
+http://www.imagemagick.net/script/binary-releases.php#windows
+
+- IPAフォントのダウンロード
+http://ossipedia.ipa.go.jp/ipafont/
+
+- 文字エンコードの一覧
+http://www.iana.org/assignments/character-sets
+
+** 第13章 [#ec5be998]
+
+-PHPマニュアル「time」
+http://jp2.php.net/manual/ja/function.time.php
+
+-PHPマニュアル「date」
+http://jp2.php.net/manual/ja/function.date.php
+
+-PHPマニュアル「header]
+http://jp2.php.net/manual/ja/function.header.php
+
+-PHPマニュアル「セーフモード」（open_basedir）
+http://jp2.php.net/manual/ja/features.safe-mode.php
+
+-PHPマニュアル「fopen」
+http://jp2.php.net/manual/ja/function.fopen.php
+
+-PHPマニュアル「unlink」
+http://jp2.php.net/manual/ja/function.unlink.php
+
+-PHPマニュアル「uniqid」
+http://jp2.php.net/manual/ja/function.uniqid.php
+
+-PHPマニュアル「highlight_string」
+http://jp2.php.net/manual/ja/function.highlight-string.php
+
+-PHPマニュアル「nl2br」
+http://jp2.php.net/manual/ja/function.nl2br.php
+
+**付録B [#ca3d66d4]
+- PHPマニュアル
+http://www.php.net/manual/ja/
+
+-CodeIgniterユーザガイド
+http://codeigniter.com/user_guide/
+
+-CodeIgniter ユーザガイド 日本語版 Version 1.5.4
+http://userguide.cilab.info/
+
+-Rapyd SA
+http://www.rapyd.com/
+
+-Kohana
+http://kohanaphp.com/
+
+-ユーザ会Web サイト
+http://codeigniter.jp/
+
+-ユーザ会ML
+http://lists.sourceforge.jp/mailman/listinfo/codeigniter-users
+</pre>
+   </div>
+  </div>
+ </div>
+  <div style="clear:both;height:1em;"></div>
+ <div id="logo"><a href="index.php" style="background-image: url(image/pukiwiki.plus_logo_trans.png);"></a></div>
+ <div id="personal"><ul><li id="login"><a href="http://codeigniter.jp/tettei/index.php?cmd=login&amp;page=%E3%83%AA%E3%83%B3%E3%82%AF%E9%9B%86">ログインまたはアカウント作成</a></li></ul></div>
+ <div id="footer">
+  <div id="f-officialico">
+   <a href="http://pukiwiki.cafelounge.net/plus/"><img src="image/pukiwiki-plus.png" alt="PukiWikiPlus" /></a>
+  </div>
+  <div id="f-officialdevico">
+   <a href="http://pukiwiki.cafelounge.net/plus/"><img src="image/pukiwiki-plus.dev.png" alt="PukiWikiPlus-dev" /></a>
+  </div>
+  <div id="f-list">
+   <ul><li>Site admin: <a href="index.html">anonymous</a></li>    <li>convert time: 0.003 sec</li>
+    <li>Powered by PukiWiki</li>
+    <li><a href="http://lsx.sourceforge.jp/?monobook">Monobook for PukiWiki Plus! i18n</a></li>
+   </ul>
+  </div>
+  <div style="clear:both;"></div>
+ </div>
+</div>
+</body>
+</html>

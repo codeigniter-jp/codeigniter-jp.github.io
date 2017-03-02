@@ -1,0 +1,590 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja-JP">
+
+<head>
+ <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+ <meta http-equiv="Content-Script-Type" content="text/javascript" />
+ <title>整形ルール - CodeIgniter Memo</title>
+ <link rel="stylesheet" type="text/css" media="screen" href="skin/monobook/monobook.css" />
+ <link rel="stylesheet" type="text/css" media="print" href="skin/monobook/monobook.print.css" />
+ <link rel="alternate" type="application/rss+xml" title="RSS" href="index.php?cmd=rss" />
+ <script type="text/javascript">
+ <!--
+var SKIN_DIR="skin/";
+var IMAGE_DIR="image/";
+var DEFAULT_LANG="ja_JP";
+var LANG="ja_JP";
+ // -->
+ </script>
+ <script type="text/javascript" src="skin/lang/ja_JP.js"></script>
+ <script type="text/javascript" src="skin/default.js"></script>
+ <script type="text/javascript" src="skin/ajax/textloader.js"></script>
+ <script type="text/javascript" src="skin/ajax/glossary.js"></script>
+ <script type="text/javascript" src="skin/tzCalculation_LocalTimeZone.js"></script>
+</head>
+<body>
+<div id="globalWrapper">
+ <div id="menubar"><h4 id="h4_content_4_0">ナビゲーション</h4><div class="menubox"><ul class="menu"><li><a href="https://github.com/codeigniter-jp/codeigniter-tettei-note" rel="nofollow">『CodeIgniter徹底入門』に対するノート</a></li><li><a href="http://www.seshop.com/book/errata/9185/list" rel="nofollow">正誤情報</a></li><li><a href="index.php?%25E3%2583%25AA%25E3%2583%25B3%25E3%2582%25AF%25E9%259B%2586" title="リンク集 (2844d)">リンク集</a></li><li><a href="index.php?%25E3%2582%25B5%25E3%2583%25B3%25E3%2583%2597%25E3%2583%25AB%25E3%2582%25B3%25E3%2583%25BC%25E3%2583%2589%25E3%2583%2580%25E3%2582%25A6%25E3%2583%25B3%25E3%2583%25AD%25E3%2583%25BC%25E3%2583%2589" title="サンプルコードダウンロード (623d)">サンプルコードダウンロード</a></li><li><a href="index.php?%25E8%25AA%25AD%25E8%2580%2585%25E3%2581%25AE%25E5%25A3%25B0" title="読者の声 (3144d)">読者の声</a></li><li><a href="http://codeigniter.jp/" rel="nofollow">日本CodeIgniterユーザ会</a></li></ul></div><h4 id="h4_content_4_1">広告</h4><iframe src="http://rcm-jp.amazon.co.jp/e/cm?t=bandnavi08-22&o=9&p=8&l=as1&asins=4798116769&fc1=000000&IS2=1&lt1=_blank&lc1=0000FF&bc1=000000&bg1=FFFFFF&f=ifr" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe><h4 id="h4_content_4_2">検索</h4><div class="monobook_search"><form action="index.php" method="get">
+<div><input type="hidden" name="encode_hint" value="ぷ" /></div><div><input type="hidden" name="encode_hint" value="ぷ" /></div> <div>  <input type="hidden" name="cmd" value="search" />  <input class="searchInput" type="text"  name="word" value="" size="20" />  <input type="hidden" name="type" id="_p_search_AND" value="AND"  checked="checked" />  &nbsp;<input class="searchButton" type="submit" value="Search" /> </div></form></div><h4 id="h4_content_4_3">ツールボックス</h4><div class="toolbox"><ul><li><a href="index.php?cmd=backup&amp;page=FormatRule">バックアップの表示</a></li><li><a href="index.php?plugin=related&amp;page=FormatRule">リンク元</a></li><li><a href="index.php?RecentChanges">最近更新したページ</a></li><li><a href="index.php?cmd=list">全ページ</a></li><li><a href="index.php?cmd=help">ヘルプ</a></li></ul></div><h5>recent(5)</h5><div class="monobook_recent"><strong>2015-09-03</strong><ul class="recent_list"> <li><a href="index.php?%25E3%2580%258ECodeIgniter%25E5%25BE%25B9%25E5%25BA%2595%25E5%2585%25A5%25E9%2596%2580%25E3%2580%258F%25E6%2583%2585%25E5%25A0%25B1%25E3%2583%259A%25E3%2583%25BC%25E3%2582%25B8" title="『CodeIgniter徹底入門』情報ページ (546d)">『CodeIgniter徹底入門』情報ページ</a></li> <li><a href="index.php?MenuBar" title="MenuBar (546d)">MenuBar</a></li></ul><strong>2015-06-18</strong><ul class="recent_list"> <li><a href="index.php?%25E3%2582%25B5%25E3%2583%25B3%25E3%2583%2597%25E3%2583%25AB%25E3%2582%25B3%25E3%2583%25BC%25E3%2583%2589%25E3%2583%2580%25E3%2582%25A6%25E3%2583%25B3%25E3%2583%25AD%25E3%2583%25BC%25E3%2583%2589" title="サンプルコードダウンロード (623d)">サンプルコードダウンロード</a></li></ul><strong>2009-05-19</strong><ul class="recent_list"> <li><a href="index.php?%25E3%2583%25AA%25E3%2583%25B3%25E3%2582%25AF%25E9%259B%2586" title="リンク集 (2844d)">リンク集</a></li></ul><strong>2008-07-22</strong><ul class="recent_list"> <li><a href="index.php?%25E8%25AA%25AD%25E8%2580%2585%25E3%2581%25AE%25E5%25A3%25B0" title="読者の声 (3144d)">読者の声</a></li></ul></div></div>
+ <div id="mainColumnWrapper">
+  <div id="main-column">
+   <div id="navigator"><ul><li id="wn_main" class="selected"><a href="index.php?FormatRule" title="FormatRule (3607d)">本文</a></li><li id="wn_note" class="noexists"><a href="index.php?cmd=wikinote&amp;page=note%252FFormatRule">ノート</a></li><li><a href="index.php?cmd=diff&amp;page=FormatRule">差分</a></li></ul></div>
+   <div id="content">
+    <h1 class="firstHeading">整形ルール</h1><div id="contentSub"></div>
+    
+<h2 id="h2_content_2_0">テキスト整形のルール  <a class="anchor_super" id="oca54177"></a> <a class="anchor_super" href="index.php?cmd=edit&amp;page=FormatRule&amp;id=oca54177"><img src="image/plus/paraedit.png" width="9" height="9" alt="Edit" title="Edit" /></a></h2>
+<p>通常は入力した文章がそのまま出力されます。</p>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>HTMLのタグは効果がありません。書かれた文章はそのまま(「&lt;font color=&quot;red&quot;&gt;text&lt;/font&gt;」といった形のまま)表示されます</li>
+<li>段落と段落の区切りには空行をはさんで下さい。空行をはさまず、連続している複数の行は同じ段落と解釈されます (連結して表示されます)</li></ul>
+<p>これに加えて、特定のルールによるテキスト整形を行うことができます。以下では、プラグインについてはよく使われるものだけを簡略に説明しています。プラグインのオプションなど詳細な説明については PukiWiki/1.4/Manual/Plugin を参照してください。</p>
+<hr class="full_hr" />
+<div class="contents">
+<a id="contents_2"></a>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li><a href="index.php?FormatRule#oca54177">  テキスト整形のルール </a>
+<ul class="list2" style="padding-left:16px;margin-left:16px"><li><a href="index.php?FormatRule#vd593893">  ブロック要素 </a>
+<ul class="list3" style="padding-left:16px;margin-left:16px"><li><a href="index.php?FormatRule#n6691793">  段落 </a></li>
+<li><a href="index.php?FormatRule#af1781b1">  引用文 </a></li>
+<li><a href="index.php?FormatRule#q8abd9a8">  リスト構造 </a></li>
+<li><a href="index.php?FormatRule#g72f3a72">  整形済みテキスト </a></li>
+<li><a href="index.php?FormatRule#k7c49df4">  表組み </a></li>
+<li><a href="index.php?FormatRule#zc726b7e">  CSV形式の表組み </a></li>
+<li><a href="index.php?FormatRule#z15343da">  見出し </a></li>
+<li><a href="index.php?FormatRule#l6dfa631">  目次 </a></li>
+<li><a href="index.php?FormatRule#bbc1f21c">  左寄せ・センタリング・右寄せ </a></li>
+<li><a href="index.php?FormatRule#s9799d2c">  水平線 </a></li>
+<li><a href="index.php?FormatRule#j2656808">  行間開け </a></li>
+<li><a href="index.php?FormatRule#p1971296">  添付ファイル・画像の貼り付け </a></li>
+<li><a href="index.php?FormatRule#a800a528">  テキストの回り込みの解除 </a></li>
+<li><a href="index.php?FormatRule#x23849ca">  フォーム </a></li></ul></li>
+<li><a href="index.php?FormatRule#l7110f11">  インライン要素 </a>
+<ul class="list3" style="padding-left:16px;margin-left:16px"><li><a href="index.php?FormatRule#bd24e4ad">  文字列 </a></li>
+<li><a href="index.php?FormatRule#f383c24f">  改行 </a></li>
+<li><a href="index.php?FormatRule#n38a029f">  強調・斜体 </a></li>
+<li><a href="index.php?FormatRule#t513b12d">  文字サイズ </a></li>
+<li><a href="index.php?FormatRule#sf40816a">  文字色 </a></li>
+<li><a href="index.php?FormatRule#r81ec79f">  取消線 </a></li>
+<li><a href="index.php?FormatRule#s21cf12e"> 注釈 </a></li>
+<li><a href="index.php?FormatRule#v181e939">  添付ファイル・画像の貼り付け </a></li>
+<li><a href="index.php?FormatRule#j137cd8e">  ルビ構造 </a></li>
+<li><a href="index.php?FormatRule#mb297616">  アンカーの設定 </a></li>
+<li><a href="index.php?FormatRule#h7beb6ac">  カウンタ表示 </a></li>
+<li><a href="index.php?FormatRule#ab42f827">  オンライン表示 </a></li>
+<li><a href="index.php?FormatRule#f09f9e4b"> バージョン表示 </a></li>
+<li><a href="index.php?FormatRule#u8188184">  WikiName </a></li>
+<li><a href="index.php?FormatRule#gce935d9">  ページ名 </a></li>
+<li><a href="index.php?FormatRule#g0dec0fe">  InterWiki </a></li>
+<li><a href="index.php?FormatRule#bd6593e1">  リンク </a></li>
+<li><a href="index.php?FormatRule#u1026558">  エイリアス </a></li>
+<li><a href="index.php?FormatRule#d2561bef">  タブコード </a></li>
+<li><a href="index.php?FormatRule#hc95e608">  ページ名置換文字 </a></li>
+<li><a href="index.php?FormatRule#f03aaf0a">  日時置換文字 </a></li>
+<li><a href="index.php?FormatRule#oc8e0c4c">  文字参照文字 </a></li>
+<li><a href="index.php?FormatRule#ibd49862">  数値参照文字 </a></li></ul></li>
+<li><a href="index.php?FormatRule#w8d0fa5a">  その他 </a>
+<ul class="list3" style="padding-left:16px;margin-left:16px"><li><a href="index.php?FormatRule#fa693c95">  コメント行 </a></li></ul></li></ul></li></ul>
+</div>
+
+<hr class="full_hr" />
+
+<h3 id="h3_content_2_1">ブロック要素  <a class="anchor_super" id="vd593893"></a> <a class="anchor_super" href="index.php?cmd=edit&amp;page=FormatRule&amp;id=vd593893"><img src="image/plus/paraedit.png" width="9" height="9" alt="Edit" title="Edit" /></a></h3>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>ブロック要素は、インライン要素と他のブロック要素を子要素にすることができます。ただし、段落、見出し、水平線、#から始まるブロック要素は他のブロック要素を子要素にすることはできません。</li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>空行はトップレベルのブロック要素の区切りになります。空行が現われると、すべてのブロック要素は終了します。</li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>ブロック要素は、他のブロック要素の子要素になることができます。
+<ul class="list2" style="padding-left:16px;margin-left:16px"><li>リスト構造と引用文は他のブロック要素を子要素にすることができます。子要素のブロック要素は親要素のレベルに従ってインデントされて表示されます。空行が現われるとブロック要素は終了します。</li>
+<li>リスト構造と引用文のネストには3段階のレベルがありますが、リスト構造のレベルと引用文のレベルは独立しています。従って、リスト構造を引用文の子要素にする場合や引用文をリスト構造の子要素にする場合は、レベルを1段階増やさずに記述します。リスト構造を他のリスト構造の子要素にする場合や引用文を他の引用文の子要素にする場合は、レベルを1段階増やして記述します。</li>
+<li>他のブロック要素の子要素となっている引用文から脱出するとき、親のブロック要素を継続したい場合は行頭に&lt;、&lt;&lt;、&lt;&lt;&lt;を記述します。&lt;で第1レベルの引用文から、&lt;&lt;で第2レベルの引用文から、&lt;&lt;&lt;で第3レベルの引用文から脱出します。空行を記述すると引用文だけでなく親のブロック要素からも脱出します。</li></ul></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>ブロック要素となるプラグインは#～の形式になっています。<a id="notetext_1" href="index.php?FormatRule#notefoot_1" class="note_super" title="インライン要素となるプラグインや...">*1</a></li></ul>
+
+<h4 id="h4_content_2_2">段落  <a class="anchor_super" id="n6691793"></a> <a class="anchor_super" href="index.php?cmd=edit&amp;page=FormatRule&amp;id=n6691793"><img src="image/plus/paraedit.png" width="9" height="9" alt="Edit" title="Edit" /></a></h4>
+<pre>インライン要素</pre>
+<p>他のブロック要素を明示しない限り、段落となります。</p>
+<pre>~ インライン要素</pre>
+<p>行頭で ~ を指定した場合も段落になります。行頭書式の文字(~、-、+、:、&gt;、|、#、//)を通常の文字として段落の先頭に書きたい場合は、行頭に~を記述して書くことができます。</p>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>段落の先頭は1文字分字下げされます。但し、番号なしリスト構造、番号付きリスト構造、引用文内の段落では字下げされません。定義リスト内の段落の先頭は1文字分字下げされます。</li>
+<li>段落は、新たなブロック要素が現われるまで継続します。</li>
+<li>段落は、他のブロック要素の子要素になることができます。</li>
+<li>段落は、他のブロック要素を子要素にすることはできません。</li></ul>
+
+<h4 id="h4_content_2_3">引用文  <a class="anchor_super" id="af1781b1"></a> <a class="anchor_super" href="index.php?cmd=edit&amp;page=FormatRule&amp;id=af1781b1"><img src="image/plus/paraedit.png" width="9" height="9" alt="Edit" title="Edit" /></a></h4>
+<pre>&gt; インライン要素</pre>
+<p>行頭で &gt; を指定すると、引用文になります。引用文は &gt;、&gt;&gt;、&gt;&gt;&gt; の3レベルあります。</p>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>引用文の中は、ブロック要素を明示しない限り、段落となります。</li>
+<li>引用文は、空行が現われるまで継続します。</li>
+<li>引用文内の段落は、新たな引用文またはブロック要素が現われるまで継続します。</li>
+<li>引用文は、他のブロック要素の子要素になることができます。他の引用文の子要素にする場合は、レベルを1段増やして記述します。リスト構造の子要素にする場合はレベルを1段増やさずに記述します。</li>
+<li>引用文は、他のブロック要素を子要素にすることができます。引用文の子要素となるリスト構造はレベルを1段増やさずに記述します。</li>
+<li>リスト構造内の引用文から脱出する場合で、リスト構造を継続する場合は、&lt;、&lt;&lt;、&lt;&lt;&lt;を行頭に記述します。</li></ul>
+
+<h4 id="h4_content_2_4">リスト構造  <a class="anchor_super" id="q8abd9a8"></a> <a class="anchor_super" href="index.php?cmd=edit&amp;page=FormatRule&amp;id=q8abd9a8"><img src="image/plus/paraedit.png" width="9" height="9" alt="Edit" title="Edit" /></a></h4>
+<pre>- インライン要素</pre>
+<p>行頭で - を指定すると、番号なしリストになります。番号なしリストは -、--、--- の3レベルあります。</p>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>番号なしリストは、他のブロック要素の子要素になることができます。他のリスト構造の子要素にする場合は、レベルを1段増やして記述します。引用文の子要素にする場合は、レベルを増やさずに記述します。</li>
+<li>-の直後に ~を記述すると段落を子要素にすることができます。</li>
+<li>番号なしリストは、<strong>リストの先頭がインライン要素または段落である場合に限り</strong>、リストの次の行に他のブロック要素を記述することで、他のブロック要素を子要素にすることができます。</li></ul>
+<pre>+ インライン要素</pre>
+<p>行頭で + を指定すると、番号付きリストになります。番号付きリストは +、++、+++ の3レベルあります。</p>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>番号付きリストは、他のブロック要素の子要素になることができます。他のリスト構造の子要素にする場合は、レベルを1段増やして記述します。引用文の子要素にする場合は、レベルを増やさずに記述します。</li>
+<li>+ の直後に ~ を記述すると段落を子要素にすることができます。</li>
+<li>番号付きリストは、<strong>リストの先頭がインライン要素または段落である場合に限り</strong>、リストの次の行に他のブロック要素を記述することで、他のブロック要素を子要素にすることができます。</li></ul>
+<pre>: 定義語 | 説明文</pre>
+<p>行頭を : で始め、| 記号で区切ると、定義リストになります。定義リストは :、::、::: の3段階あります。定義リストの定義語、説明文は省略することができます。複数の連続した定義リストを記述し、2つ目以降の定義語を省略することで1つの定義語に対する複数の説明文を記述することができます。</p>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>行中に | がないと定義リストにはなりません。</li>
+<li>定義語・説明文は、インライン要素のみ記述することができます。</li>
+<li>定義リストは、他のブロック要素の子要素になることができます。他のリスト構造の子要素にする場合は、レベルを1段増やして記述します。引用文の子要素にする場合は、レベルを増やさずに記述します。</li>
+<li>| の直後に ~ を記述すると段落を子要素にすることができます。</li>
+<li>定義リストは、定義リストの次の行に他のブロック要素を記述することで、他のブロック要素を子要素にすることができます。</li></ul>
+
+<h4 id="h4_content_2_5">整形済みテキスト  <a class="anchor_super" id="g72f3a72"></a> <a class="anchor_super" href="index.php?cmd=edit&amp;page=FormatRule&amp;id=g72f3a72"><img src="image/plus/paraedit.png" width="9" height="9" alt="Edit" title="Edit" /></a></h4>
+<p>行頭が半角空白で始まる行は整形済みテキストとなります。行の自動折り返しは行なわれません。</p>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>整形済みテキストは、他のブロック要素の子要素になることができます。</li>
+<li>整形済みテキストは、他のブロック要素を子要素にすることができません。</li>
+<li>整形済みテキストは、すべての子要素を文字列として扱います。</li></ul>
+
+<h4 id="h4_content_2_6">表組み  <a class="anchor_super" id="k7c49df4"></a> <a class="anchor_super" href="index.php?cmd=edit&amp;page=FormatRule&amp;id=k7c49df4"><img src="image/plus/paraedit.png" width="9" height="9" alt="Edit" title="Edit" /></a></h4>
+<pre>| インライン要素 | インライン要素 |</pre>
+<p>行頭から | でインライン要素を区切ることで表組みになります。</p>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>各要素の先頭に下記の記述子を指定できます。
+<pre>LEFT:
+CENTER:
+RIGHT:
+BGCOLOR(色):
+COLOR(色):
+SIZE(サイズ):</pre>
+<ul class="list2" style="padding-left:16px;margin-left:16px"><li>要素の表示位置及び背景色・文字色・文字サイズ(px単位)を指定します。デフォルトは左寄せになります。</li></ul>
+<div class="ie5"><table class="style_table" cellspacing="1" border="0"><tbody><tr><td class="style_td">表組みの</td><td class="style_td">各セルの要素の配置に</td><td class="style_td">関するサンプル</td></tr><tr><td class="style_td" style="color:crimson;">左寄せ</td><td class="style_td" style="text-align:center;">センタリング</td><td class="style_td" style="background-color:yellow; text-align:right;">右寄せ</td></tr><tr><td class="style_td" style="text-align:right;">右寄せ</td><td class="style_td">左寄せ</td><td class="style_td" style="text-align:center;">センタリング</td></tr></tbody></table></div></li>
+<li>行末にcを記述すると、書式指定行となります。書式指定行では、次の記述子が指定できます。
+<pre>LEFT:
+CENTER:
+RIGHT:
+BGCOLOR(色):
+COLOR(色):
+SIZE(サイズ):</pre>
+<ul class="list2" style="padding-left:16px;margin-left:16px"><li>記述子の後ろに数値を記述すると、セル幅がpx単位で指定できます。</li></ul></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>行末にhを記述すると、ヘッダ行(thead)になります。</li>
+<li>行末にfを記述すると、フッタ行(tfoot)になります。</li>
+<li>セル内のインライン要素の先頭に~を付けると、ヘッダ(th)になります。</li>
+<li>セル内に &gt; を単独で記述すると右のセルと連結します(colspan)。</li>
+<li>セル内に ~ を単独で記述すると上のセルと連結します(rowspan)。</li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>表組みは、他のブロック要素の子要素になることができます。</li>
+<li>表組みは、他のブロック要素を子要素にすることができません。</li></ul>
+
+<h4 id="h4_content_2_7">CSV形式の表組み  <a class="anchor_super" id="zc726b7e"></a> <a class="anchor_super" href="index.php?cmd=edit&amp;page=FormatRule&amp;id=zc726b7e"><img src="image/plus/paraedit.png" width="9" height="9" alt="Edit" title="Edit" /></a></h4>
+<pre>,データ,データ,…</pre>
+<p>行頭でカンマ(,)を記述し、インライン要素をカンマ区切りで記述すると表組みになります。</p>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>インライン要素はダブルクォーテーション(&quot;)で囲むことができます。ダブルクォーテーションで囲むことで、カンマ(,)を含むインライン要素を記述できます。</li>
+<li>ダブルクォーテーション(&quot;)で囲んだデータの中で、ダブルクォーテーションを2つ(&quot;&quot;)続けることで、ダブルクォーテーション(&quot;)を含むインライン要素を記述できます。</li>
+<li>インライン要素の代わりにイコールを2つ(==)記述すると、colspanを意味します。</li>
+<li>インライン要素の左に1つ以上の半角空白文字を記述すると右寄せに、インライン要素の左右に1つ以上の半角空白文字を記述するとセンタリングになります。</li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>表組みは、他のブロック要素の子要素になることができます。</li>
+<li>表組みは、他のブロック要素を子要素にすることができません。</li></ul>
+
+<h4 id="h4_content_2_8">見出し  <a class="anchor_super" id="z15343da"></a> <a class="anchor_super" href="index.php?cmd=edit&amp;page=FormatRule&amp;id=z15343da"><img src="image/plus/paraedit.png" width="9" height="9" alt="Edit" title="Edit" /></a></h4>
+<pre>* インライン要素</pre>
+<p>行頭で * を記述すると、見出しになります。見出しは *、**、*** の3段階あります。</p>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>見出しは、他のブロック要素の子要素になることはできません。見出しが現われると他のブロック要素は終了します。</li>
+<li>見出しは、他のブロック要素を子要素にすることはできません。</li></ul>
+
+<h4 id="h4_content_2_9">目次  <a class="anchor_super" id="l6dfa631"></a> <a class="anchor_super" href="index.php?cmd=edit&amp;page=FormatRule&amp;id=l6dfa631"><img src="image/plus/paraedit.png" width="9" height="9" alt="Edit" title="Edit" /></a></h4>
+<pre>#contents</pre>
+<p>行頭で #contents を記述すると、見出しに基づいて目次を作成します。一般的に #contents はページの最初のほうに記述します。</p>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>目次は、他のブロック要素の子要素になることができますが、トップレベルに設置することを前提に左マージンを設定してありますので、他のブロック要素の子要素にはしないでください。</li>
+<li>目次は、他のブロック要素を子要素にすることはできません。</li></ul>
+
+<h4 id="h4_content_2_10">左寄せ・センタリング・右寄せ  <a class="anchor_super" id="bbc1f21c"></a> <a class="anchor_super" href="index.php?cmd=edit&amp;page=FormatRule&amp;id=bbc1f21c"><img src="image/plus/paraedit.png" width="9" height="9" alt="Edit" title="Edit" /></a></h4>
+<pre>LEFT:インライン要素
+CENTER:インライン要素
+RIGHT:インライン要素</pre>
+<p>行頭で LEFT:、 CENTER:、 RIGHT: を記述すると、インライン要素が左寄せ、センタリング、右寄せされます。</p>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>LEFT:、CENTER:、RIGHT:は、他のブロック要素の子要素になることができます。</li>
+<li>LEFT:、CENTER:、RIGHT:は、他のブロック要素を子要素にすることができません。</li></ul>
+
+<h4 id="h4_content_2_11">水平線  <a class="anchor_super" id="s9799d2c"></a> <a class="anchor_super" href="index.php?cmd=edit&amp;page=FormatRule&amp;id=s9799d2c"><img src="image/plus/paraedit.png" width="9" height="9" alt="Edit" title="Edit" /></a></h4>
+<pre>---------------------------------------------</pre>
+<p>行頭で4つ以上の - を書くと水平線になります。</p>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>水平線は、他のブロック要素の子要素になることはできません。水平線が現われると他のブロック要素は終了します。</li>
+<li>水平線は、他のブロック要素を子要素にすることはできません。</li></ul>
+<pre>#hr</pre>
+<p>行頭で #hr を記述すると、区切り線になります。区切り線は上位のブロック要素の幅の60%の長さの水平線がセンタリングされて引かれます。</p>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>区切り線は、他のブロック要素の子要素になることができます。</li>
+<li>区切り線は、他のブロック要素を子要素にすることはできません。</li></ul>
+
+<h4 id="h4_content_2_12">行間開け  <a class="anchor_super" id="j2656808"></a> <a class="anchor_super" href="index.php?cmd=edit&amp;page=FormatRule&amp;id=j2656808"><img src="image/plus/paraedit.png" width="9" height="9" alt="Edit" title="Edit" /></a></h4>
+<pre>#br</pre>
+<p>行頭で #br を記述すると、ブロック要素間またはブロック要素内で行間を開けることができます<a id="notetext_2" href="index.php?FormatRule#notefoot_2" class="note_super" title="#brをブロック要素の直後の空行...">*2</a>。</p>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>行間開けは、他のブロック要素の子要素になることができます。</li>
+<li>行間開けは、他のブロック要素を子要素にすることはできません。</li></ul>
+
+<h4 id="h4_content_2_13">添付ファイル・画像の貼り付け  <a class="anchor_super" id="p1971296"></a> <a class="anchor_super" href="index.php?cmd=edit&amp;page=FormatRule&amp;id=p1971296"><img src="image/plus/paraedit.png" width="9" height="9" alt="Edit" title="Edit" /></a></h4>
+<pre>#ref(添付ファイル名)
+#ref(ファイルのURL)</pre>
+<p>行頭で #ref を記述すると、添付ファイルまたは指定されたURLにあるファイルへのリンクを貼り付けることができます。ファイルが画像ファイルの場合は、その画像を表示します。</p>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>#ref には、カンマで区切って下記のパラメタを指定できます。パラメタを省略した場合はデフォルト値となります。
+<pre>添付ファイルのページ</pre>
+<ul class="list2" style="padding-left:16px;margin-left:16px"><li>添付ファイルが存在するページ名を指定します。デフォルトは現在のページです。</li>
+<li>このパラメタを指定する場合は、添付ファイル名の次に記述します。</li></ul>
+<pre>left
+center
+right</pre>
+<ul class="list2" style="padding-left:16px;margin-left:16px"><li>ファイルへのリンク・画像を表示する位置を指定します。デフォルトではセンタリングされます。</li></ul>
+<pre>wrap
+nowrap</pre>
+<ul class="list2" style="padding-left:16px;margin-left:16px"><li>ファイルへのリンク・画像を枠で囲むかどうかを指定します。デフォルトは囲みません。</li></ul>
+<pre>around</pre>
+<ul class="list2" style="padding-left:16px;margin-left:16px"><li>テキストの回り込みを指定します。デフォルトでは回り込みを行ないません。</li></ul>
+<pre>nolink</pre>
+<ul class="list2" style="padding-left:16px;margin-left:16px"><li>デフォルトでは添付ファイルへのリンクが張られますが、nolinkを指定するとリンクを張りません。</li></ul>
+<pre>代替文字列</pre>
+<ul class="list2" style="padding-left:16px;margin-left:16px"><li>ファイル名の代わりに表示する文字列や画像の代替文字列を指定できます。指定しない場合は、ファイル名になります。</li>
+<li>代替文字列には文字列以外のインライン要素を含めることはできません。ページ名、文字列以外のインライン要素を記述しても文字列として扱われます。</li>
+<li>このパラメタを指定する場合は、最後に記述します。</li></ul></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>#refは、他のブロック要素の子要素になることができます。</li>
+<li>#refは、他のブロック要素を子要素にすることはできません。</li></ul>
+
+<h4 id="h4_content_2_14">テキストの回り込みの解除  <a class="anchor_super" id="a800a528"></a> <a class="anchor_super" href="index.php?cmd=edit&amp;page=FormatRule&amp;id=a800a528"><img src="image/plus/paraedit.png" width="9" height="9" alt="Edit" title="Edit" /></a></h4>
+<pre>#clear</pre>
+<p>行頭で #clear を記述すると、 #ref で指定したテキストの回り込みを解除します。 #clear を指定しなくても、記事の末尾でテキストの回り込みが自動的に解除されます。</p>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>#clearは、他のブロック要素の子要素になることができます。</li>
+<li>#clearは、他のブロック要素を子要素にすることができません。</li></ul>
+
+<h4 id="h4_content_2_15">フォーム  <a class="anchor_super" id="x23849ca"></a> <a class="anchor_super" href="index.php?cmd=edit&amp;page=FormatRule&amp;id=x23849ca"><img src="image/plus/paraedit.png" width="9" height="9" alt="Edit" title="Edit" /></a></h4>
+<pre>#comment</pre>
+<p>行頭で #comment を記述すると、コメントを挿入するためのフォームが埋め込まれます。</p>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>#commentは、他のブロック要素の子要素になることができますが、トップレベルに設置することを前提に左マージンを設定してありますので、他のブロック要素の子要素にはしないでください。</li>
+<li>#commentは、他のブロック要素を子要素にすることはできません。</li></ul>
+<pre>#pcomment</pre>
+<p>行頭で #pcomment を記述すると、コメントを挿入するためのフォームが埋め込まれます。 #comment とは異なり、コメントは別ページに記録されます。また、コメントに対するレスポンスを階層状に表示します。</p>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>#pcommentは、他のブロック要素の子要素になることができますが、トップレベルに設置することを前提に左マージンを設定してありますので、他のブロック要素の子要素にはしないでください。</li>
+<li>#pcommentは、他のブロック要素を子要素にすることはできません。</li></ul>
+<pre>#article</pre>
+<p>行頭で#articleを記述すると、簡易掲示板のフォームが埋め込まれます。</p>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>#articleは、他のブロック要素の子要素になることができますが、トップレベルに設置することを前提に左マージンを設定してありますので、他のブロック要素の子要素にはしないでください。</li>
+<li>#articleは、他のブロック要素を子要素にすることはできません。</li></ul>
+<pre>#vote(選択肢1,選択肢2,...)</pre>
+<p>行頭で #vote を記述すると、簡易投票フォームが埋め込まれます。</p>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>選択肢は文字列、ページ名、InterWiki、リンクを含めることができます。その他のインライン要素を含めることができません。</li>
+<li>#voteは、他のブロック要素の子要素になることができますが、トップレベルに設置することを前提に左マージンを設定してありますので、他のブロック要素の子要素にはしないでください。</li>
+<li>#voteは、他のブロック要素を子要素にすることはできません。</li></ul>
+
+<h3 id="h3_content_2_16">インライン要素  <a class="anchor_super" id="l7110f11"></a> <a class="anchor_super" href="index.php?cmd=edit&amp;page=FormatRule&amp;id=l7110f11"><img src="image/plus/paraedit.png" width="9" height="9" alt="Edit" title="Edit" /></a></h3>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>インライン要素は、必ずブロック要素の子要素になっています。
+<ul class="list2" style="padding-left:16px;margin-left:16px"><li>行頭書式でブロック要素を明示しない場合は、段落の子要素となります。</li>
+<li>行頭書式でブロック要素を明示した場合は、指定したブロック要素の子要素になります。</li></ul></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>特定のインライン要素は、他のインライン要素を子要素にすることができます。</li>
+<li>インライン要素はブロック要素を子要素にすることはできません。</li>
+<li>インライン要素となるプラグイン及びユーザー定義は &amp;～; の形式になっています。</li>
+<li>インライン要素となるプラグインに対してオプションと子要素を指定する場合は、 &amp;プラグイン名(オプション){子要素}; の形式になります。</li></ul>
+
+<h4 id="h4_content_2_17">文字列  <a class="anchor_super" id="bd24e4ad"></a> <a class="anchor_super" href="index.php?cmd=edit&amp;page=FormatRule&amp;id=bd24e4ad"><img src="image/plus/paraedit.png" width="9" height="9" alt="Edit" title="Edit" /></a></h4>
+<pre>文字列</pre>
+<p>文字列はインライン要素です。</p>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>文字列は、他のインライン要素の子要素になることができます。</li>
+<li>文字列は、他のインライン要素を子要素にすることができません。</li></ul>
+
+<h4 id="h4_content_2_18">改行  <a class="anchor_super" id="f383c24f"></a> <a class="anchor_super" href="index.php?cmd=edit&amp;page=FormatRule&amp;id=f383c24f"><img src="image/plus/paraedit.png" width="9" height="9" alt="Edit" title="Edit" /></a></h4>
+<pre>インライン要素~</pre>
+<p>行末に~を書くと行末改行になります。行末改行はブロック要素内での改行になります。</p>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>行末改行の次の行の行頭書式は無効になり、文字列として扱われます。</li>
+<li>行末改行は、他のインライン要素の子要素になることはできません。</li>
+<li>行末改行は、他のインライン要素を子要素にすることはできません。</li>
+<li>行末改行は、定義リストの定義語、表組みの要素、#で始まるブロック要素のパラメタの中では使用できません。</li></ul>
+<pre>&amp;br;</pre>
+<p>行中に &amp;br; を書くと、そこで改行されます。行末の ~ と違い、定義リストの定義語や表組の要素、# で始まるブロック要素のパラメタの中でも使用できます。</p>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>行中改行は、他のインライン要素の子要素になることができます。</li>
+<li>行中改行は、他のインライン要素を子要素にすることはできません。</li></ul>
+
+<h4 id="h4_content_2_19">強調・斜体  <a class="anchor_super" id="n38a029f"></a> <a class="anchor_super" href="index.php?cmd=edit&amp;page=FormatRule&amp;id=n38a029f"><img src="image/plus/paraedit.png" width="9" height="9" alt="Edit" title="Edit" /></a></h4>
+<pre>''インライン要素''</pre>
+<p>行中のインライン要素を &#39;&#39; ではさむと、インライン要素が <strong>強調表示</strong> になります。</p>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>強調は、他のインライン要素の子要素になることができます。</li>
+<li>強調は、他のインライン要素を子要素にすることができます。</li></ul>
+<pre>'''インライン要素'''</pre>
+<p>行中のインライン要素を &#39;&#39;&#39; ではさむと、インライン要素が <em>斜体表示</em> になります。</p>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>斜体は、他のインライン要素の子要素になることができます。</li>
+<li>斜体は、他のインライン要素を子要素にすることができます。</li></ul>
+
+<h4 id="h4_content_2_20">文字サイズ  <a class="anchor_super" id="t513b12d"></a> <a class="anchor_super" href="index.php?cmd=edit&amp;page=FormatRule&amp;id=t513b12d"><img src="image/plus/paraedit.png" width="9" height="9" alt="Edit" title="Edit" /></a></h4>
+<pre>&amp;size(サイズ){インライン要素};</pre>
+<p>行中に &amp;size を書くとインライン要素の文字サイズを指定することができます。サイズはピクセル単位(px)で指定します。例えば20を指定すると、<span style="font-size:20px">20ピクセルの文字の大きさ</span>になります。</p>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>文字サイズは、他のインライン要素の子要素になることができます。</li>
+<li>文字サイズは、他のインライン要素を子要素にすることができます。</li></ul>
+
+<h4 id="h4_content_2_21">文字色  <a class="anchor_super" id="sf40816a"></a> <a class="anchor_super" href="index.php?cmd=edit&amp;page=FormatRule&amp;id=sf40816a"><img src="image/plus/paraedit.png" width="9" height="9" alt="Edit" title="Edit" /></a></h4>
+<pre>&amp;color(文字色,背景色){インライン要素};</pre>
+<p>行中に &amp;color と書くとインライン要素の<span class="wikicolor" style="color:crimson">文字色</span>と<span class="wikicolor" style="color:blue; background-color:crimson">背景色</span>を指定することができます。背景色は省略できます。</p>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>色の指定は、次のいずれかの形式で行ないます。
+<ul class="list2" style="padding-left:16px;margin-left:16px"><li>色キーワード</li>
+<li>#16進数6桁</li>
+<li>#16進数3桁</li></ul></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>文字色は、他のインライン要素の子要素になることができます。</li>
+<li>文字色は、他のインライン要素を子要素にすることができます。</li></ul>
+
+<h4 id="h4_content_2_22">取消線  <a class="anchor_super" id="r81ec79f"></a> <a class="anchor_super" href="index.php?cmd=edit&amp;page=FormatRule&amp;id=r81ec79f"><img src="image/plus/paraedit.png" width="9" height="9" alt="Edit" title="Edit" /></a></h4>
+<pre>%%インライン要素%%</pre>
+<p>行中のインライン要素を&#37;&#37;ではさむと、インライン要素に<del>取消線</del>が付きます。</p>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>取消線は、他のインライン要素の子要素になることができます。</li>
+<li>取消線は、他のインライン要素を子要素にすることができます。</li></ul>
+
+<h4 id="h4_content_2_23">注釈  <a class="anchor_super" id="s21cf12e"></a> <a class="anchor_super" href="index.php?cmd=edit&amp;page=FormatRule&amp;id=s21cf12e"><img src="image/plus/paraedit.png" width="9" height="9" alt="Edit" title="Edit" /></a></h4>
+<pre>((インライン要素))</pre>
+<p>行中でインライン要素を &#40;&#40; と &#41;&#41; ではさむと、注釈<a id="notetext_3" href="index.php?FormatRule#notefoot_3" class="note_super" title="注釈のサンプル">*3</a>が作成され、行中に注釈へのリンクが貼られます。</p>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>注釈は、他のインライン要素の子要素になることができます。親要素は注釈文ではなく、注釈へのリンクに反映されます。</li>
+<li>注釈は、他のインライン要素を子要素にすることができます。子要素は注釈文に反映されます。</li></ul>
+
+<h4 id="h4_content_2_24">添付ファイル・画像の貼り付け  <a class="anchor_super" id="v181e939"></a> <a class="anchor_super" href="index.php?cmd=edit&amp;page=FormatRule&amp;id=v181e939"><img src="image/plus/paraedit.png" width="9" height="9" alt="Edit" title="Edit" /></a></h4>
+<pre>&amp;ref(添付ファイル名);
+&amp;ref(ファイルのURL);</pre>
+<p>行中で &amp;ref を記述すると、添付ファイルまたは指定されたURLにあるファイルへのリンクを貼り付けることができます。ファイルが画像ファイルの場合は、その画像を表示します。</p>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>&amp;ref には、カンマで区切って下記のパラメタを指定できます。パラメタを省略した場合はデフォルト値となります。
+<pre>添付ファイルのページ</pre>
+<ul class="list2" style="padding-left:16px;margin-left:16px"><li>添付ファイルが存在するページ名を指定します。デフォルトは現在のページです。</li>
+<li>このパラメタを指定する場合は、添付ファイル名の次に記述します。</li></ul>
+<pre>nolink</pre>
+<ul class="list2" style="padding-left:16px;margin-left:16px"><li>デフォルトでは添付ファイルへのリンクが張られますが、nolink を指定するとリンクを張りません。</li></ul>
+<pre>代替文字列</pre>
+<ul class="list2" style="padding-left:16px;margin-left:16px"><li>ファイル名の代わりに表示する文字列や画像の代替文字列を指定できます。指定しない場合は、ファイル名になります。</li>
+<li>代替文字列には文字列以外のインライン要素を含めることはできません。ページ名、文字列以外のインライン要素を記述しても文字列として扱われます。</li>
+<li>このパラメタを指定する場合は、最後に記述します。</li></ul></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>&amp;ref は、他のインライン要素の子要素になることができます。</li>
+<li>&amp;ref は、他のインライン要素を子要素にはできません。</li></ul>
+
+<h4 id="h4_content_2_25">ルビ構造  <a class="anchor_super" id="j137cd8e"></a> <a class="anchor_super" href="index.php?cmd=edit&amp;page=FormatRule&amp;id=j137cd8e"><img src="image/plus/paraedit.png" width="9" height="9" alt="Edit" title="Edit" /></a></h4>
+<pre>&amp;ruby(ルビ){インライン要素};</pre>
+<p>行中で &amp;ruby を書くとインライン要素に対するルビをふることができます。ルビに対応していないブラウザではルビが本文中に ( と ) に囲まれて表示されます。</p>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>ルビ構造のルビにはインライン要素を記述します。ただし、ルビの特性上、期待通りの表示になるとは限りません。</li>
+<li>ルビ構造は、他のインライン要素の子要素になることができます。</li>
+<li>ルビ構造は、他のインライン要素を子要素にすることができます。</li>
+<li>ルビ構造をルビ構造の子要素にはできません(ネストはできません)。</li>
+<li>注釈内や文字サイズを小さくしている部分での使用は、ルビが判読できなくなるので避けてください。</li></ul>
+
+<h4 id="h4_content_2_26">アンカーの設定  <a class="anchor_super" id="mb297616"></a> <a class="anchor_super" href="index.php?cmd=edit&amp;page=FormatRule&amp;id=mb297616"><img src="image/plus/paraedit.png" width="9" height="9" alt="Edit" title="Edit" /></a></h4>
+<pre>&amp;aname(アンカー名);
+&amp;aname(アンカー名){インライン要素};</pre>
+<p>行中で &amp;aname を記述するとリンクのアンカーを設定することができます。リンクの飛び先にしたい位置に記述します。</p>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>アンカー名は、半角アルファベットから始まる半角アルファベット・数字・ハイフン・アンダースコアからなる文字列を指定します。</li>
+<li>アンカー名の中には、全角文字や半角空白文字、半角記号を含めることはできません。</li>
+<li>アンカー設定は、他のインライン要素の子要素になることができます。</li>
+<li>アンカー設定は、他のインライン要素を子要素にすることができます。</li></ul>
+
+<h4 id="h4_content_2_27">カウンタ表示  <a class="anchor_super" id="h7beb6ac"></a> <a class="anchor_super" href="index.php?cmd=edit&amp;page=FormatRule&amp;id=h7beb6ac"><img src="image/plus/paraedit.png" width="9" height="9" alt="Edit" title="Edit" /></a></h4>
+<pre>&amp;counter;
+&amp;counter(オプション);</pre>
+<p>行中で &amp;counter を記述するとそのページにアクセスした人の数を表示することができます。</p>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>&amp;counter には次のオプションを指定できます。オプションを省略した場合はallが指定されたものとみなされます。
+<pre>today</pre>
+<ul class="list2" style="padding-left:16px;margin-left:16px"><li>今日のアクセス数を表示します。</li></ul>
+<pre>yesterday</pre>
+<ul class="list2" style="padding-left:16px;margin-left:16px"><li>昨日のアクセス数を表示します。</li></ul>
+<pre>all</pre>
+<ul class="list2" style="padding-left:16px;margin-left:16px"><li>アクセス総数を表示します。</li></ul></li>
+<li>カウンタ表示は、他のインライン要素の子要素になることができます。</li>
+<li>カウンタ表示は、他のインライン要素を子要素にはできません。</li></ul>
+
+<h4 id="h4_content_2_28">オンライン表示  <a class="anchor_super" id="ab42f827"></a> <a class="anchor_super" href="index.php?cmd=edit&amp;page=FormatRule&amp;id=ab42f827"><img src="image/plus/paraedit.png" width="9" height="9" alt="Edit" title="Edit" /></a></h4>
+<pre>&amp;online;</pre>
+<p>行中で &amp;online を記述すると現在アクセス中の人数を表示することができます。</p>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>オンライン表示は、他のインライン要素の子要素になることができます。</li>
+<li>オンライン表示は、他のインライン要素を子要素にはできません。</li></ul>
+
+<h4 id="h4_content_2_29">バージョン表示  <a class="anchor_super" id="f09f9e4b"></a> <a class="anchor_super" href="index.php?cmd=edit&amp;page=FormatRule&amp;id=f09f9e4b"><img src="image/plus/paraedit.png" width="9" height="9" alt="Edit" title="Edit" /></a></h4>
+<pre>&amp;version;</pre>
+<p>行中で &amp;version を記述するとPukiWikiのバージョンを表示することができます。</p>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>バージョン表示は、他のインライン要素の子要素になることができます。</li>
+<li>バージョン表示は、他のインライン要素を子要素にはできません。</li></ul>
+
+<h4 id="h4_content_2_30">WikiName  <a class="anchor_super" id="u8188184"></a> <a class="anchor_super" href="index.php?cmd=edit&amp;page=FormatRule&amp;id=u8188184"><img src="image/plus/paraedit.png" width="9" height="9" alt="Edit" title="Edit" /></a></h4>
+<pre>WikiName</pre>
+<p>行中で、1つ以上の大文字→1つ以上の小文字→1つ以上の大文字→1つ以上の小文字の組合わせからなる半角//文字列はWikiNameになります。</p>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>WikiNameの中には、全角文字や半角空白文字、記号、数字を含めることはできません。</li>
+<li>WikiNameは、PukiWiki内のページ名になります。すでに存在するページであればそのページへのリンクが自動的に貼られます。存在しない場合はWikiNameの後ろに?が自動的に付き、そのページを新規作成するためのリンクが貼られます。</li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>WikiNameは、他のインライン要素の子要素になることができます。</li>
+<li>WikiNameは、他のインライン要素を子要素にはできません。</li></ul>
+
+<h4 id="h4_content_2_31">ページ名  <a class="anchor_super" id="gce935d9"></a> <a class="anchor_super" href="index.php?cmd=edit&amp;page=FormatRule&amp;id=gce935d9"><img src="image/plus/paraedit.png" width="9" height="9" alt="Edit" title="Edit" /></a></h4>
+<pre>[[ぷきうぃき]]</pre>
+<p>行中で &#91;&#91; と &#93;&#93; で囲まれた文字列はページ名になります。</p>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>ページ名の中には、全角文字、記号、数字、半角空白文字を含めることができます。</li>
+<li>ページ名の中には、&quot;#&amp;&lt;&gt; を含めることはできません。</li>
+<li>すでに存在するページであればそのページへのリンクが自動的に貼られます。存在しない場合はページ名の後ろに?が自動的に付き、そのページを新規作成するためのリンクが貼られます。</li></ul>
+<pre>[[ページ名#アンカー名]]</pre>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>ページ名にアンカー名をつけることもできます。</li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>ページ名は、他のインライン要素の子要素になることができます。</li>
+<li>ページ名は、他のインライン要素を子要素にはできません。</li></ul>
+
+<h4 id="h4_content_2_32">InterWiki  <a class="anchor_super" id="g0dec0fe"></a> <a class="anchor_super" href="index.php?cmd=edit&amp;page=FormatRule&amp;id=g0dec0fe"><img src="image/plus/paraedit.png" width="9" height="9" alt="Edit" title="Edit" /></a></h4>
+<pre>[[InterWikiName:ページ名]]</pre>
+<p>行中のページ名形式の文字列の中で、: で2つの文字列を区切るとInterWikiになります。:の前には<!--autolink--><a href="index.php?InterWikiName" title="InterWikiName (3223d)">InterWikiName</a><!--/autolink-->のページで定義した<!--autolink--><a href="index.php?InterWikiName" title="InterWikiName (3223d)">InterWikiName</a><!--/autolink-->を、: の後ろにはページ名を記述します。</p>
+<pre>[[InterWikiName:ページ名#アンカー名]]</pre>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>ページ名の後ろにアンカー名をつけることもできます。</li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li><!--autolink--><a href="index.php?InterWikiName" title="InterWikiName (3223d)">InterWikiName</a><!--/autolink-->の中には、全角文字を含めることができます。</li>
+<li><!--autolink--><a href="index.php?InterWikiName" title="InterWikiName (3223d)">InterWikiName</a><!--/autolink-->の中には、半角空白文字を含めるができます。</li>
+<li>InterWikiは、他のインライン要素の子要素になることができます。</li>
+<li>InterWikiは、他のインライン要素を子要素にはできません。</li></ul>
+
+<h4 id="h4_content_2_33">リンク  <a class="anchor_super" id="bd6593e1"></a> <a class="anchor_super" href="index.php?cmd=edit&amp;page=FormatRule&amp;id=bd6593e1"><img src="image/plus/paraedit.png" width="9" height="9" alt="Edit" title="Edit" /></a></h4>
+<pre>[[リンク名:URL]]</pre>
+<p>行中の<!--autolink--><a href="index.php?InterWikiName" title="InterWikiName (3223d)">InterWikiName</a><!--/autolink-->の形式の文字列の中で、: の前に任意のリンク名を、: の後ろにURLを記述すると、そのリンク名でURLに対するリンクを貼ることができます。</p>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>リンク名には、全角文字や半角空白文字を含めることができます。メールアドレスを指定する場合は、mailto:を書かずにアドレスだけを記述します。</li></ul>
+<pre>http://www.example.com/
+https://www.example.com/
+ftp://ftp.example.com/
+news://news.example.com/
+foo@example.com</pre>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>行中に直接、URLを記述した場合は自動的にそのURLに対するリンクが貼られます。</li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>記述したURLが画像ファイルである場合は、その画像を表示します。</li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>リンクは、他のインライン要素の子要素になることができます。</li>
+<li>リンクは、他のインライン要素を子要素にはできません。</li></ul>
+
+<h4 id="h4_content_2_34">エイリアス  <a class="anchor_super" id="u1026558"></a> <a class="anchor_super" href="index.php?cmd=edit&amp;page=FormatRule&amp;id=u1026558"><img src="image/plus/paraedit.png" width="9" height="9" alt="Edit" title="Edit" /></a></h4>
+<pre>[[エイリアス名&gt;ページ名]]</pre>
+<p>行中のページ名形式の文字列の中で、&gt; で2つの文字列を区切るとエイリアスになります。 &gt; の前にはエイリアス名を、&gt; の後ろにはページ名を記述します。</p>
+<p>エイリアスはPukiWiki内のページ名とは別のエイリアス名で、指定したページへのリンクを貼ります。</p>
+<pre>[[エイリアス名&gt;ページ名#アンカー名]]
+[[エイリアス名&gt;#アンカー名]]</pre>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>ページ名にアンカー名を付け加えてアンカーへのリンクを貼ることができます。ページ名とアンカー名の間には#をつけます。カレントページのアンカーへリンクを貼る場合はページ名を省略することができます。</li></ul>
+<pre>[[エイリアス名&gt;http://www.example.com/]]
+[[エイリアス名&gt;https://www.example.com/]]
+[[エイリアス名&gt;ftp://ftp.example.com/]]
+[[エイリアス名&gt;news://news.example.com/]]
+[[エイリアス名&gt;foo@example.com]]
+[[エイリアス名&gt;InterWikiName:ページ名]]
+[[エイリアス名&gt;InterWikiName:ページ名#アンカー名]]</pre>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>エイリアスをURLやInterWikiと組み合わせることもできます。</li></ul>
+<pre>[[エイリアス名:http://www.example.com/]]
+[[エイリアス名:https://www.example.com/]]
+[[エイリアス名:ftp://ftp.example.com/]]
+[[エイリアス名:news://news.example.com/]]
+[[エイリアス名:foo@example.com]]</pre>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>URLを指定する場合は、&gt;の代わりに:も使用できます。</li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>エイリアス名の中には、全角文字を含めることができます。</li>
+<li>エイリアス名の中には、半角空白文字を含めることができます。</li>
+<li>階層化されたページでは、ページ名を相対指定することができます。</li>
+<li>エイリアスは、他のインライン要素の子要素になることができます。</li>
+<li>エイリアスは、他のインライン要素を子要素にできます。</li></ul>
+
+<h4 id="h4_content_2_35">タブコード  <a class="anchor_super" id="d2561bef"></a> <a class="anchor_super" href="index.php?cmd=edit&amp;page=FormatRule&amp;id=d2561bef"><img src="image/plus/paraedit.png" width="9" height="9" alt="Edit" title="Edit" /></a></h4>
+<pre>&amp;t;</pre>
+<p>行中で &amp;t; と書くと、タブコードに置換されます。</p>
+<p>通常、フォーム内ではキーボードからタブコードを直接入力できない<a id="notetext_4" href="index.php?FormatRule#notefoot_4" class="note_super" title="クリップボードからの貼り付けの場...">*4</a>ので、タブコードを入力したい位置に&amp;t;を記述すると、保存時にタブコードに置換します。</p>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>タブコードは、記事が書き込まれるときに置換されて記録されます。</li>
+<li>タブコードは、他のインライン要素の子要素になることができます。</li>
+<li>タブコードは、他のインライン要素を子要素にはできません。</li></ul>
+
+<h4 id="h4_content_2_36">ページ名置換文字  <a class="anchor_super" id="hc95e608"></a> <a class="anchor_super" href="index.php?cmd=edit&amp;page=FormatRule&amp;id=hc95e608"><img src="image/plus/paraedit.png" width="9" height="9" alt="Edit" title="Edit" /></a></h4>
+<pre>&amp;page;
+&amp;fpage;</pre>
+<p>行中で &amp;page; 及び &amp;fpage; と書くと、編集中のページ名に置換されます。ページ名が階層化されたページで「hogehoge/hoge」となっている場合、 &amp;page; は「hoge」に、 &amp;fpage; は「hogehoge/hoge」に置換されます。階層化されていないページでは、 &amp;page; も &amp;fpage; も同じになります。</p>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>ページ名置換文字は、記事が書き込まれるときに置換されて記録されます。</li>
+<li>ページ名置換文字は、他のインライン要素の子要素になることができます。</li>
+<li>ページ名置換文字は、他のインライン要素を子要素にはできません。</li></ul>
+
+<h4 id="h4_content_2_37">日時置換文字  <a class="anchor_super" id="f03aaf0a"></a> <a class="anchor_super" href="index.php?cmd=edit&amp;page=FormatRule&amp;id=f03aaf0a"><img src="image/plus/paraedit.png" width="9" height="9" alt="Edit" title="Edit" /></a></h4>
+<pre>&amp;date;
+&amp;time;
+&amp;now;</pre>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>行中で &amp;date; と書くと、更新時の日付に置換されます</li>
+<li>行中で &amp;time; と書くと、更新時の時刻に置換されます</li>
+<li>行中で &amp;now; と書くと、更新時の日時に置換されます</li></ul>
+<pre>date?
+time?
+now?</pre>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>PukiWiki 1.3系との後方互換性のために、 date&#63;、 time&#63;、 now&#63; についても使用できるようにしてあります。</li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>&amp;date;、 &amp;time;、 &amp;now;は、記事が書き込まれるときに置換されて記録されます。</li>
+<li>&amp;date;、 &amp;time;、 &amp;now;は、他のインライン要素の子要素になることができます。</li>
+<li>&amp;date;、 &amp;time;、 &amp;now;は、他のインライン要素を子要素にはできません。</li></ul>
+<pre>&amp;_date;
+&amp;_time;
+&amp;_now;</pre>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li><del>行中で &amp;_date; と書くと、表示時の日付に置換されて出力されます。</del></li>
+<li><del>行中で &amp;_time; と書くと、表示時の時刻に置換されて出力されます。</del></li>
+<li><del>行中で &amp;_now; と書くと、表示時の日時に置換されて出力されます。</del></li></ul>
+<pre>&amp;lastmod;
+&amp;lastmod(ページ名);</pre>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>行中で &amp;lastmod; と書くと、そのページの最終更新日時に置換されて出力されます。</li>
+<li>ページ名を指定すると、その指定されたページの最終更新日時に置換されて出力されます。</li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li><del>&amp;_date;、 &amp;_time;、 &amp;_now;、</del> &amp;lastmod;は、記事が表示されるときに置換されて出力されます。</li>
+<li><del>&amp;_date;、 &amp;_time;、 &amp;_now;、</del> &amp;lastmod;は、他のインライン要素の子要素になることができます。</li>
+<li><del>&amp;_date;、 &amp;_time;、 &amp;_now;、</del> &amp;lastmod;は、他のインライン要素を子要素にはできません。</li></ul>
+
+<h4 id="h4_content_2_38">文字参照文字  <a class="anchor_super" id="oc8e0c4c"></a> <a class="anchor_super" href="index.php?cmd=edit&amp;page=FormatRule&amp;id=oc8e0c4c"><img src="image/plus/paraedit.png" width="9" height="9" alt="Edit" title="Edit" /></a></h4>
+<p>文字参照は、SGMLで定義されている文字参照文字(&amp;copy;や&amp;reg;など)のほか、下記の独自の文字参照文字が使用できます。</p>
+<pre>&amp;heart;
+&amp;smile;
+&amp;bigsmile;
+&amp;huh;
+&amp;oh;
+&amp;wink;
+&amp;sad;
+&amp;worried;</pre>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>行中で&amp;heart;と書くと、ハートマーク  <img alt="[heart]" src="image/face/heart.png" /> に置換されて出力されます。</li>
+<li>行中で&amp;smile;と書くと、  <img alt="[smile]" src="image/face/smile.png" /> に置換されて出力されます。</li>
+<li>行中で&amp;bigsmile;と書くと、  <img alt="[bigsmile]" src="image/face/bigsmile.png" /> に置換されて出力されます。</li>
+<li>行中で&amp;huh;と書くと、  <img alt="[huh]" src="image/face/huh.png" /> に置換されて出力されます。</li>
+<li>行中で&amp;oh;と書くと、  <img alt="[oh]" src="image/face/oh.png" /> に置換されて出力されます。</li>
+<li>行中で&amp;wink;と書くと、  <img alt="[wink]" src="image/face/wink.png" /> に置換されて出力されます。</li>
+<li>行中で&amp;sad;と書くと、  <img alt="[sad]" src="image/face/sad.png" /> に置換されて出力されます。</li>
+<li>行中で&amp;worried;と書くと、  <img alt="[worried]" src="image/face/worried.png" /> に置換されて出力されます。</li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>文字参照文字は、表示されるときに置換されます。</li>
+<li>文字参照文字は、他のインライン要素の子要素になることができます。</li>
+<li>文字参照文字は、他のインライン要素を子要素にはできません。</li></ul>
+
+<h4 id="h4_content_2_39">数値参照文字  <a class="anchor_super" id="ibd49862"></a> <a class="anchor_super" href="index.php?cmd=edit&amp;page=FormatRule&amp;id=ibd49862"><img src="image/plus/paraedit.png" width="9" height="9" alt="Edit" title="Edit" /></a></h4>
+<pre>&amp;#10進数;
+&amp;#x16進数;</pre>
+<p>行中で &amp;# と ; の間に10進数を、&amp;#x と ;の間に16進数を書くと、Unicodeを数値参照して表示します。キーボードから直接入力できない文字やJIS第3水準・第4水準の文字などの表示に使用します。たとえば、内田百&amp;#38290;と入力すると、内田百&#38290;と表示されます。</p>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>数値参照文字は、表示されるときに置換されます。</li>
+<li>数値参照文字は、他のインライン要素の子要素になることができます。</li>
+<li>数値参照文字は、他のインライン要素を子要素にはできません。</li>
+<li>16進数は半角小文字で指定する必要があります(XHTML 1.0 第2版から小文字に限定されました)。</li></ul>
+
+<h3 id="h3_content_2_40">その他  <a class="anchor_super" id="w8d0fa5a"></a> <a class="anchor_super" href="index.php?cmd=edit&amp;page=FormatRule&amp;id=w8d0fa5a"><img src="image/plus/paraedit.png" width="9" height="9" alt="Edit" title="Edit" /></a></h3>
+
+<h4 id="h4_content_2_41">コメント行  <a class="anchor_super" id="fa693c95"></a> <a class="anchor_super" href="index.php?cmd=edit&amp;page=FormatRule&amp;id=fa693c95"><img src="image/plus/paraedit.png" width="9" height="9" alt="Edit" title="Edit" /></a></h4>
+<pre>// コメント</pre>
+<p>行頭で // を指定すると、コメント行になります。コメント行は出力されない行です。</p>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>コメント行は、他の要素と無関係に行単位でどの位置にも記述できます。</li>
+<li>コメント行は、前後の他の要素に何ら影響を及ぼしません。</li></ul>
+
+
+
+<!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+ <rdf:Description
+   rdf:about="http://codeigniter.jp/tettei/index.php?FormatRule"
+   dc:identifier="http://codeigniter.jp/tettei/index.php?FormatRule"
+   dc:title="FormatRule"
+   trackback:ping="http://codeigniter.jp/tettei/index.php?tb_id=dc09139a552e4fc4a9e88a150c545675" />
+</rdf:RDF>
+--><hr class="note_hr" /><a id="notefoot_1" href="index.php?FormatRule#notetext_1" class="note_super">*1</a>
+<span class="small">インライン要素となるプラグインやユーザ定義とは異なり、ブロック要素となるプラグインでは終端に;を付加する必要はありません。プラグインによっては正常に動作しなくなる場合があります。</span><br />
+<a id="notefoot_2" href="index.php?FormatRule#notetext_2" class="note_super">*2</a>
+<span class="small">#brをブロック要素の直後の空行の次に指定すればブロック要素間の行間、ブロック要素の直後に指定すればそのブロック要素内での行間を開けることになります。#brは、行末改行と違って、次の行の行頭書式を無効にはしません</span><br />
+<a id="notefoot_3" href="index.php?FormatRule#notetext_3" class="note_super">*3</a>
+<span class="small">注釈のサンプル</span><br />
+<a id="notefoot_4" href="index.php?FormatRule#notetext_4" class="note_super">*4</a>
+<span class="small">クリップボードからの貼り付けの場合はタブコードを直接入力できます。</span><br />   </div>
+  </div>
+ </div>
+  <div style="clear:both;height:1em;"></div>
+ <div id="logo"><a href="index.php" style="background-image: url(image/pukiwiki.plus_logo_trans.png);"></a></div>
+ <div id="personal"><ul><li id="login"><a href="http://codeigniter.jp/tettei/index.php?cmd=login&amp;page=FormatRule">ログインまたはアカウント作成</a></li></ul></div>
+ <div id="footer">
+  <div id="f-officialico">
+   <a href="http://pukiwiki.cafelounge.net/plus/"><img src="image/pukiwiki-plus.png" alt="PukiWikiPlus" /></a>
+  </div>
+  <div id="f-officialdevico">
+   <a href="http://pukiwiki.cafelounge.net/plus/"><img src="image/pukiwiki-plus.dev.png" alt="PukiWikiPlus-dev" /></a>
+  </div>
+  <div id="f-list">
+   <ul><li id="lastmod">Last-modified: Tue, 17 Apr 2007 16:03:08 JST  (3607d)</li><li>Site admin: <a href="index.html">anonymous</a></li>    <li>convert time: 0.196 sec</li>
+    <li>Powered by PukiWiki</li>
+    <li><a href="http://lsx.sourceforge.jp/?monobook">Monobook for PukiWiki Plus! i18n</a></li>
+   </ul>
+  </div>
+  <div style="clear:both;"></div>
+ </div>
+</div>
+</body>
+</html>

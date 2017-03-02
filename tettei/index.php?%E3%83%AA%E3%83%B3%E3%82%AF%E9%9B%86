@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja-JP">
+
+<head>
+ <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+ <meta http-equiv="Content-Script-Type" content="text/javascript" />
+ <title>リンク集 - CodeIgniter Memo</title>
+ <link rel="stylesheet" type="text/css" media="screen" href="skin/monobook/monobook.css" />
+ <link rel="stylesheet" type="text/css" media="print" href="skin/monobook/monobook.print.css" />
+ <link rel="alternate" type="application/rss+xml" title="RSS" href="index.php?cmd=rss" />
+ <script type="text/javascript">
+ <!--
+var SKIN_DIR="skin/";
+var IMAGE_DIR="image/";
+var DEFAULT_LANG="ja_JP";
+var LANG="ja_JP";
+ // -->
+ </script>
+ <script type="text/javascript" src="skin/lang/ja_JP.js"></script>
+ <script type="text/javascript" src="skin/default.js"></script>
+ <script type="text/javascript" src="skin/ajax/textloader.js"></script>
+ <script type="text/javascript" src="skin/ajax/glossary.js"></script>
+ <script type="text/javascript" src="skin/tzCalculation_LocalTimeZone.js"></script>
+</head>
+<body>
+<div id="globalWrapper">
+ <div id="menubar"><h4 id="h4_content_2_0">ナビゲーション</h4><div class="menubox"><ul class="menu"><li><a href="https://github.com/codeigniter-jp/codeigniter-tettei-note" rel="nofollow">『CodeIgniter徹底入門』に対するノート</a></li><li><a href="http://www.seshop.com/book/errata/9185/list" rel="nofollow">正誤情報</a></li><li><a href="index.php?%25E3%2583%25AA%25E3%2583%25B3%25E3%2582%25AF%25E9%259B%2586" title="リンク集 (2844d)">リンク集</a></li><li><a href="index.php?%25E3%2582%25B5%25E3%2583%25B3%25E3%2583%2597%25E3%2583%25AB%25E3%2582%25B3%25E3%2583%25BC%25E3%2583%2589%25E3%2583%2580%25E3%2582%25A6%25E3%2583%25B3%25E3%2583%25AD%25E3%2583%25BC%25E3%2583%2589" title="サンプルコードダウンロード (623d)">サンプルコードダウンロード</a></li><li><a href="index.php?%25E8%25AA%25AD%25E8%2580%2585%25E3%2581%25AE%25E5%25A3%25B0" title="読者の声 (3144d)">読者の声</a></li><li><a href="http://codeigniter.jp/" rel="nofollow">日本CodeIgniterユーザ会</a></li></ul></div><h4 id="h4_content_2_1">広告</h4><iframe src="http://rcm-jp.amazon.co.jp/e/cm?t=bandnavi08-22&o=9&p=8&l=as1&asins=4798116769&fc1=000000&IS2=1&lt1=_blank&lc1=0000FF&bc1=000000&bg1=FFFFFF&f=ifr" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe><h4 id="h4_content_2_2">検索</h4><div class="monobook_search"><form action="index.php" method="get">
+<div><input type="hidden" name="encode_hint" value="ぷ" /></div><div><input type="hidden" name="encode_hint" value="ぷ" /></div> <div>  <input type="hidden" name="cmd" value="search" />  <input class="searchInput" type="text"  name="word" value="" size="20" />  <input type="hidden" name="type" id="_p_search_AND" value="AND"  checked="checked" />  &nbsp;<input class="searchButton" type="submit" value="Search" /> </div></form></div><h4 id="h4_content_2_3">ツールボックス</h4><div class="toolbox"><ul><li><a href="index.php?cmd=backup&amp;page=%25E3%2583%25AA%25E3%2583%25B3%25E3%2582%25AF%25E9%259B%2586">バックアップの表示</a></li><li><a href="index.php?plugin=related&amp;page=%25E3%2583%25AA%25E3%2583%25B3%25E3%2582%25AF%25E9%259B%2586">リンク元</a></li><li><a href="index.php?RecentChanges">最近更新したページ</a></li><li><a href="index.php?cmd=list">全ページ</a></li><li><a href="index.php?cmd=help">ヘルプ</a></li></ul></div><h5>recent(5)</h5><div class="monobook_recent"><strong>2015-09-03</strong><ul class="recent_list"> <li><a href="index.php?%25E3%2580%258ECodeIgniter%25E5%25BE%25B9%25E5%25BA%2595%25E5%2585%25A5%25E9%2596%2580%25E3%2580%258F%25E6%2583%2585%25E5%25A0%25B1%25E3%2583%259A%25E3%2583%25BC%25E3%2582%25B8" title="『CodeIgniter徹底入門』情報ページ (546d)">『CodeIgniter徹底入門』情報ページ</a></li> <li><a href="index.php?MenuBar" title="MenuBar (546d)">MenuBar</a></li></ul><strong>2015-06-18</strong><ul class="recent_list"> <li><a href="index.php?%25E3%2582%25B5%25E3%2583%25B3%25E3%2583%2597%25E3%2583%25AB%25E3%2582%25B3%25E3%2583%25BC%25E3%2583%2589%25E3%2583%2580%25E3%2582%25A6%25E3%2583%25B3%25E3%2583%25AD%25E3%2583%25BC%25E3%2583%2589" title="サンプルコードダウンロード (623d)">サンプルコードダウンロード</a></li></ul><strong>2009-05-19</strong><ul class="recent_list"> <li>リンク集</li></ul><strong>2008-07-22</strong><ul class="recent_list"> <li><a href="index.php?%25E8%25AA%25AD%25E8%2580%2585%25E3%2581%25AE%25E5%25A3%25B0" title="読者の声 (3144d)">読者の声</a></li></ul></div></div>
+ <div id="mainColumnWrapper">
+  <div id="main-column">
+   <div id="navigator"><ul><li id="wn_main" class="selected"><a href="index.php?%25E3%2583%25AA%25E3%2583%25B3%25E3%2582%25AF%25E9%259B%2586" title="リンク集 (2844d)">本文</a></li><li id="wn_note" class="noexists"><a href="index.php?cmd=wikinote&amp;page=note%252F%25E3%2583%25AA%25E3%2583%25B3%25E3%2582%25AF%25E9%259B%2586">ノート</a></li><li><a href="index.php?cmd=diff&amp;page=%25E3%2583%25AA%25E3%2583%25B3%25E3%2582%25AF%25E9%259B%2586">差分</a></li></ul></div>
+   <div id="content">
+    <h1 class="firstHeading">リンク集</h1><div id="contentSub"></div>
+    <h2 id="h2_content_1_0">『CodeIgniter徹底入門』<!--autolink--><a href="index.php?%25E3%2583%25AA%25E3%2583%25B3%25E3%2582%25AF%25E9%259B%2586" title="リンク集 (2844d)">リンク集</a><!--/autolink-->  <a class="anchor_super" id="gcf3f098"></a> <a class="anchor_super" href="index.php?cmd=edit&amp;page=%25E3%2583%25AA%25E3%2583%25B3%25E3%2582%25AF%25E9%259B%2586&amp;id=gcf3f098"><img src="image/plus/paraedit.png" width="9" height="9" alt="Edit" title="Edit" /></a></h2>
+
+<h3 id="h3_content_1_1">第1章  <a class="anchor_super" id="se5ee68c"></a> <a class="anchor_super" href="index.php?cmd=edit&amp;page=%25E3%2583%25AA%25E3%2583%25B3%25E3%2582%25AF%25E9%259B%2586&amp;id=se5ee68c"><img src="image/plus/paraedit.png" width="9" height="9" alt="Edit" title="Edit" /></a></h3>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>CodeIgniterホームページ
+<a class="ext" href="http://codeigniter.com/" rel="nofollow">http://codeigniter.com/<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://codeigniter.com/', '_blank');" /></a></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>TIOBE Programming Community Index
+<a class="ext" href="http://www.tiobe.com/index.php/content/paperinfo/tpci/" rel="nofollow">http://www.tiobe.com/index.php/content/paperinfo/tpci/<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://www.tiobe.com/index.php/content/paperinfo/tpci/', '_blank');" /></a></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>PHP4のサポートに関する考え方
+<a class="ext" href="http://www.derekallard.com/blog/post/codeigniter-will-not-be-dropping-support-for-php-4-anytime-soon/" rel="nofollow">http://www.derekallard.com/blog/post/codeigniter-will-not-be-dropping-support-for-php-4-anytime-soon/<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://www.derekallard.com/blog/post/codeigniter-will-not-be-dropping-support-for-php-4-anytime-soon/', '_blank');" /></a></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>CodeIgniterのベンチマーク
+<a class="ext" href="http://www.sellersrank.com/php/cakephp-codeigniter-benchmark/" rel="nofollow">http://www.sellersrank.com/php/cakephp-codeigniter-benchmark/<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://www.sellersrank.com/php/cakephp-codeigniter-benchmark/', '_blank');" /></a></li></ul>
+
+<h3 id="h3_content_1_2">第2章  <a class="anchor_super" id="o6259671"></a> <a class="anchor_super" href="index.php?cmd=edit&amp;page=%25E3%2583%25AA%25E3%2583%25B3%25E3%2582%25AF%25E9%259B%2586&amp;id=o6259671"><img src="image/plus/paraedit.png" width="9" height="9" alt="Edit" title="Edit" /></a></h3>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>apache friends - xampp
+<a class="ext" href="http://www.apachefriends.org/jp/xampp.html" rel="nofollow">http://www.apachefriends.org/jp/xampp.html<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://www.apachefriends.org/jp/xampp.html', '_blank');" /></a></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>Pleiades
+<a class="ext" href="http://mergedoc.sourceforge.jp/" rel="nofollow">http://mergedoc.sourceforge.jp/<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://mergedoc.sourceforge.jp/', '_blank');" /></a></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>PDT Project
+<a class="ext" href="http://www.eclipse.org/pdt/" rel="nofollow">http://www.eclipse.org/pdt/<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://www.eclipse.org/pdt/', '_blank');" /></a></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>Xdebug - Debugger and Profiler Tool for PHP
+<a class="ext" href="http://xdebug.org/" rel="nofollow">http://xdebug.org/<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://xdebug.org/', '_blank');" /></a></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>SourceForge.net XAMPP
+<a class="ext" href="http://sourceforge.net/projects/xampp/" rel="nofollow">http://sourceforge.net/projects/xampp/<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://sourceforge.net/projects/xampp/', '_blank');" /></a></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>apache friends - xampp for windows
+<a class="ext" href="http://www.apachefriends.org/jp/xampp-windows.html" rel="nofollow">http://www.apachefriends.org/jp/xampp-windows.html<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://www.apachefriends.org/jp/xampp-windows.html', '_blank');" /></a></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>Pleiades All in One PHP のダウンロード
+<ul class="list2" style="padding-left:16px;margin-left:16px"><li>Eclipse 3.3 JRE付き <a class="ext" href="http://mergedoc.sourceforge.jp/pleiades-redirect/3.3/pleiades_php_jre.zip.html" rel="nofollow">http://mergedoc.sourceforge.jp/pleiades-redirect/3.3/pleiades_php_jre.zip.html<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://mergedoc.sourceforge.jp/pleiades-redirect/3.3/pleiades_php_jre.zip.html', '_blank');" /></a></li>
+<li>Eclispe 3.3 JREなし
+<a class="ext" href="http://mergedoc.sourceforge.jp/pleiades-redirect/3.3/pleiades_php.zip.html" rel="nofollow">http://mergedoc.sourceforge.jp/pleiades-redirect/3.3/pleiades_php.zip.html<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://mergedoc.sourceforge.jp/pleiades-redirect/3.3/pleiades_php.zip.html', '_blank');" /></a></li></ul></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>秀丸エディタ
+<a class="ext" href="http://hide.maruo.co.jp/software/hidemaru.html" rel="nofollow">http://hide.maruo.co.jp/software/hidemaru.html<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://hide.maruo.co.jp/software/hidemaru.html', '_blank');" /></a></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>サクラエディタ
+<a class="ext" href="http://sakura-editor.sourceforge.net/" rel="nofollow">http://sakura-editor.sourceforge.net/<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://sakura-editor.sourceforge.net/', '_blank');" /></a></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>xyzzy
+<a class="ext" href="http://www.jsdlab.co.jp/~kamei/" rel="nofollow">http://www.jsdlab.co.jp/~kamei/<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://www.jsdlab.co.jp/~kamei/', '_blank');" /></a></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>「Microsoft Visual C++ 2005 SP1 再頒布可能パッケージ (x86)」
+<a class="ext" href="http://www.microsoft.com/downloads/search.aspx?displaylang=ja" rel="nofollow">http://www.microsoft.com/downloads/search.aspx?displaylang=ja<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://www.microsoft.com/downloads/search.aspx?displaylang=ja', '_blank');" /></a></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>XAMPP のセキュリティについて
+<a class="ext" href="http://www.apachefriends.org/jp/xampp-windows.html#2784" rel="nofollow">http://www.apachefriends.org/jp/xampp-windows.html#2784<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://www.apachefriends.org/jp/xampp-windows.html#2784', '_blank');" /></a></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>PDT の新規更新サイト
+<a class="ext" href="http://download.eclipse.org/tools/pdt/updates/" rel="nofollow">http://download.eclipse.org/tools/pdt/updates/<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://download.eclipse.org/tools/pdt/updates/', '_blank');" /></a></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>Java がインストール済みかどうかの確認および最新版のダウンロード
+<a class="ext" href="http://www.java.com/ja/" rel="nofollow">http://www.java.com/ja/<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://www.java.com/ja/', '_blank');" /></a></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>CodeIgniter のダウンロード
+<a class="ext" href="http://codeigniter.com/downloads/" rel="nofollow">http://codeigniter.com/downloads/<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://codeigniter.com/downloads/', '_blank');" /></a></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>日本語言語パックのダウンロード
+<a class="ext" href="http://codeigniter.jp/download/" rel="nofollow">http://codeigniter.jp/download/<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://codeigniter.jp/download/', '_blank');" /></a></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>apache friends - xampp for linux
+<a class="ext" href="http://www.apachefriends.org/jp/xampp-linux.html" rel="nofollow">http://www.apachefriends.org/jp/xampp-linux.html<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://www.apachefriends.org/jp/xampp-linux.html', '_blank');" /></a></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>Xdebug のダウンロード
+<a class="ext" href="http://xdebug.org/" rel="nofollow">http://xdebug.org/<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://xdebug.org/', '_blank');" /></a></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>PDT All-in-One のダウンロード
+<a class="ext" href="http://www.eclipse.org/pdt/" rel="nofollow">http://www.eclipse.org/pdt/<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://www.eclipse.org/pdt/', '_blank');" /></a></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>PDT の新規更新サイト
+<a class="ext" href="http://download.eclipse.org/tools/pdt/updates/" rel="nofollow">http://download.eclipse.org/tools/pdt/updates/<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://download.eclipse.org/tools/pdt/updates/', '_blank');" /></a></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>Pleiades のダウンロード
+<a class="ext" href="http://mergedoc.sourceforge.jp/" rel="nofollow">http://mergedoc.sourceforge.jp/<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://mergedoc.sourceforge.jp/', '_blank');" /></a></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>Java Runtime Environment (JRE) 5.0 のダウンロード
+<a class="ext" href="http://java.sun.com/javase/downloads/index_jdk5.jsp" rel="nofollow">http://java.sun.com/javase/downloads/index_jdk5.jsp<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://java.sun.com/javase/downloads/index_jdk5.jsp', '_blank');" /></a></li></ul>
+
+<h3 id="h3_content_1_3">第3章  <a class="anchor_super" id="n6e8f664"></a> <a class="anchor_super" href="index.php?cmd=edit&amp;page=%25E3%2583%25AA%25E3%2583%25B3%25E3%2582%25AF%25E9%259B%2586&amp;id=n6e8f664"><img src="image/plus/paraedit.png" width="9" height="9" alt="Edit" title="Edit" /></a></h3>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>CodeIgniter公式サイト
+<a class="ext" href="http://codeigniter.com/" rel="nofollow">http://codeigniter.com/<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://codeigniter.com/', '_blank');" /></a></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>Apache チュートリアル: .htaccess ファイル
+<a class="ext" href="http://httpd.apache.org/docs/2.2/ja/howto/htaccess.html" rel="nofollow">http://httpd.apache.org/docs/2.2/ja/howto/htaccess.html<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://httpd.apache.org/docs/2.2/ja/howto/htaccess.html', '_blank');" /></a></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>日本CodeIgniterユーザ会
+<a class="ext" href="http://codeigniter.jp/" rel="nofollow">http://codeigniter.jp/<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://codeigniter.jp/', '_blank');" /></a></li></ul>
+
+<h3 id="h3_content_1_4">第4章  <a class="anchor_super" id="v50cbd98"></a> <a class="anchor_super" href="index.php?cmd=edit&amp;page=%25E3%2583%25AA%25E3%2583%25B3%25E3%2582%25AF%25E9%259B%2586&amp;id=v50cbd98"><img src="image/plus/paraedit.png" width="9" height="9" alt="Edit" title="Edit" /></a></h3>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>Smarty : Template Engine
+<a class="ext" href="http://www.smarty.net/" rel="nofollow">http://www.smarty.net/<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://www.smarty.net/', '_blank');" /></a></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>PHPマニュアル「short_open_tag」
+<a class="ext" href="http://jp2.php.net/manual/ja/ini.core.php" rel="nofollow">http://jp2.php.net/manual/ja/ini.core.php<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://jp2.php.net/manual/ja/ini.core.php', '_blank');" /></a></li></ul>
+
+<h3 id="h3_content_1_5">第5章  <a class="anchor_super" id="u6666a55"></a> <a class="anchor_super" href="index.php?cmd=edit&amp;page=%25E3%2583%25AA%25E3%2583%25B3%25E3%2582%25AF%25E9%259B%2586&amp;id=u6666a55"><img src="image/plus/paraedit.png" width="9" height="9" alt="Edit" title="Edit" /></a></h3>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>Ruby on Rails
+<a class="ext" href="http://www.rubyonrails.org/" rel="nofollow">http://www.rubyonrails.org/<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://www.rubyonrails.org/', '_blank');" /></a></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>phpMyAdmin | MySQL Database Administration Tool | www.phpmyadmin.net
+<a class="ext" href="http://www.phpmyadmin.net/home_page/index.php" rel="nofollow">http://www.phpmyadmin.net/home_page/index.php<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://www.phpmyadmin.net/home_page/index.php', '_blank');" /></a></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>PHPマニュアル「コア php.ini ディレクティブに関する説明」（register_globals）
+<a class="ext" href="http://jp2.php.net/manual/ja/ini.core.php" rel="nofollow">http://jp2.php.net/manual/ja/ini.core.php<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://jp2.php.net/manual/ja/ini.core.php', '_blank');" /></a></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>PHPマニュアル「PHP オプションと情報」（magic_quotes_runtime）
+<a class="ext" href="http://jp2.php.net/manual/ja/book.info.php" rel="nofollow">http://jp2.php.net/manual/ja/book.info.php<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://jp2.php.net/manual/ja/book.info.php', '_blank');" /></a></li></ul>
+
+<h3 id="h3_content_1_6">第6章  <a class="anchor_super" id="y2886358"></a> <a class="anchor_super" href="index.php?cmd=edit&amp;page=%25E3%2583%25AA%25E3%2583%25B3%25E3%2582%25AF%25E9%259B%2586&amp;id=y2886358"><img src="image/plus/paraedit.png" width="9" height="9" alt="Edit" title="Edit" /></a></h3>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>PHPマニュアル「error_reporting」
+<a class="ext" href="http://jp2.php.net/manual/ja/function.error-reporting.php" rel="nofollow">http://jp2.php.net/manual/ja/function.error-reporting.php<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://jp2.php.net/manual/ja/function.error-reporting.php', '_blank');" /></a></li></ul>
+
+<h3 id="h3_content_1_7">第7章  <a class="anchor_super" id="ic5b579f"></a> <a class="anchor_super" href="index.php?cmd=edit&amp;page=%25E3%2583%25AA%25E3%2583%25B3%25E3%2582%25AF%25E9%259B%2586&amp;id=ic5b579f"><img src="image/plus/paraedit.png" width="9" height="9" alt="Edit" title="Edit" /></a></h3>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>PHPマニュアル「セッション処理関数」
+<a class="ext" href="http://jp2.php.net/manual/ja/book.session.php" rel="nofollow">http://jp2.php.net/manual/ja/book.session.php<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://jp2.php.net/manual/ja/book.session.php', '_blank');" /></a></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>HTML 4.01 仕様書
+<a class="ext" href="http://www.w3.org/TR/html401/charset.html#h-5.2.2" rel="nofollow">http://www.w3.org/TR/html401/charset.html#h-5.2.2<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://www.w3.org/TR/html401/charset.html#h-5.2.2', '_blank');" /></a></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>Mercury のライセンス購入方法
+<a class="ext" href="http://www.pmail.com/mlicense.htm" rel="nofollow">http://www.pmail.com/mlicense.htm<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://www.pmail.com/mlicense.htm', '_blank');" /></a></li></ul>
+
+<h3 id="h3_content_1_8">第8章  <a class="anchor_super" id="re17ba76"></a> <a class="anchor_super" href="index.php?cmd=edit&amp;page=%25E3%2583%25AA%25E3%2583%25B3%25E3%2582%25AF%25E9%259B%2586&amp;id=re17ba76"><img src="image/plus/paraedit.png" width="9" height="9" alt="Edit" title="Edit" /></a></h3>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>PEAR
+<a class="ext" href="http://pear.php.net/" rel="nofollow">http://pear.php.net/<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://pear.php.net/', '_blank');" /></a></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>PHPマニュアル「uniqid」
+<a class="ext" href="http://jp2.php.net/manual/ja/function.uniqid.php" rel="nofollow">http://jp2.php.net/manual/ja/function.uniqid.php<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://jp2.php.net/manual/ja/function.uniqid.php', '_blank');" /></a></li></ul>
+
+<h3 id="h3_content_1_9">第9章  <a class="anchor_super" id="ud632ed9"></a> <a class="anchor_super" href="index.php?cmd=edit&amp;page=%25E3%2583%25AA%25E3%2583%25B3%25E3%2582%25AF%25E9%259B%2586&amp;id=ud632ed9"><img src="image/plus/paraedit.png" width="9" height="9" alt="Edit" title="Edit" /></a></h3>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>Ruby on Rails
+<a class="ext" href="http://www.rubyonrails.org/" rel="nofollow">http://www.rubyonrails.org/<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://www.rubyonrails.org/', '_blank');" /></a></li></ul>
+
+<h3 id="h3_content_1_10">第10章  <a class="anchor_super" id="ya5806dd"></a> <a class="anchor_super" href="index.php?cmd=edit&amp;page=%25E3%2583%25AA%25E3%2583%25B3%25E3%2582%25AF%25E9%259B%2586&amp;id=ya5806dd"><img src="image/plus/paraedit.png" width="9" height="9" alt="Edit" title="Edit" /></a></h3>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>Ajax for CodeIgniter
+<a class="ext" href="http://codeigniter.com/wiki/Ajax_for_CodeIgniter/" rel="nofollow">http://codeigniter.com/wiki/Ajax_for_CodeIgniter/<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://codeigniter.com/wiki/Ajax_for_CodeIgniter/', '_blank');" /></a></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>Googleマップ
+<a class="ext" href="http://maps.google.co.jp/" rel="nofollow">http://maps.google.co.jp/<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://maps.google.co.jp/', '_blank');" /></a></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>Prototype
+<a class="ext" href="http://prototype.conio.net/" rel="nofollow">http://prototype.conio.net/<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://prototype.conio.net/', '_blank');" /></a></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>script.aculo.us
+<a class="ext" href="http://script.aculo.us/" rel="nofollow">http://script.aculo.us/<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://script.aculo.us/', '_blank');" /></a></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>Smarty のダウンロード
+<a class="ext" href="http://www.smarty.net/download.php" rel="nofollow">http://www.smarty.net/download.php<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://www.smarty.net/download.php', '_blank');" /></a></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>Yet Another Smarty
+<a class="ext" href="http://codeigniter.com/wiki/Smarty/" rel="nofollow">http://codeigniter.com/wiki/Smarty/<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://codeigniter.com/wiki/Smarty/', '_blank');" /></a></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>PEAR のダウンロード
+<a class="ext" href="http://pear.php.net/package/PEAR" rel="nofollow">http://pear.php.net/package/PEAR<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://pear.php.net/package/PEAR', '_blank');" /></a></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>PEAR::Spreadsheet_Excel_Writer のダウンロードします。
+<a class="ext" href="http://pear.php.net/package/Spreadsheet_Excel_Writer" rel="nofollow">http://pear.php.net/package/Spreadsheet_Excel_Writer<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://pear.php.net/package/Spreadsheet_Excel_Writer', '_blank');" /></a></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>PEAR::OLE のダウンロード
+<a class="ext" href="http://pear.php.net/package/OLE" rel="nofollow">http://pear.php.net/package/OLE<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://pear.php.net/package/OLE', '_blank');" /></a></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>simplelogin のダウンロード
+<a class="ext" href="http://codeigniter.com/wiki/File:simplelogin_0.1.zip/" rel="nofollow">http://codeigniter.com/wiki/File:simplelogin_0.1.zip/<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://codeigniter.com/wiki/File:simplelogin_0.1.zip/', '_blank');" /></a></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>OpenID Foundation
+<a class="ext" href="http://openid.net/" rel="nofollow">http://openid.net/<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://openid.net/', '_blank');" /></a></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>OpenID の仕様
+<a class="ext" href="http://openid.net/developers/specs/" rel="nofollow">http://openid.net/developers/specs/<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://openid.net/developers/specs/', '_blank');" /></a></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>OpenID.ne.jp
+<a class="ext" href="http://www.openid.ne.jp/" rel="nofollow">http://www.openid.ne.jp/<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://www.openid.ne.jp/', '_blank');" /></a></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>livedoor Auth
+<a class="ext" href="http://auth.livedoor.com/" rel="nofollow">http://auth.livedoor.com/<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://auth.livedoor.com/', '_blank');" /></a></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>はてなでOpenID
+<a class="ext" href="http://www.hatena.ne.jp/info/openid/" rel="nofollow">http://www.hatena.ne.jp/info/openid/<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://www.hatena.ne.jp/info/openid/', '_blank');" /></a></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>Yahoo! JAPAN
+<a class="ext" href="http://openid.yahoo.co.jp/" rel="nofollow">http://openid.yahoo.co.jp/<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://openid.yahoo.co.jp/', '_blank');" /></a></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>JugemKey
+<a class="ext" href="http://jugemkey.jp/" rel="nofollow">http://jugemkey.jp/<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://jugemkey.jp/', '_blank');" /></a></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>OpenID ライブラリのダウンロード
+<a class="ext" href="http://codeigniter.com/wiki/OpenID/" rel="nofollow">http://codeigniter.com/wiki/OpenID/<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://codeigniter.com/wiki/OpenID/', '_blank');" /></a></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>PHP OpenID Library のダウンロード
+<a class="ext" href="http://openidenabled.com/php-openid/" rel="nofollow">http://openidenabled.com/php-openid/<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://openidenabled.com/php-openid/', '_blank');" /></a></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>Zend Framework のダウンロード
+<a class="ext" href="http://framework.zend.com/download" rel="nofollow">http://framework.zend.com/download<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://framework.zend.com/download', '_blank');" /></a></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>Zend_Service_Amazon のドキュメント
+<a class="ext" href="http://framework.zend.com/manual/ja/zend.service.amazon.html" rel="nofollow">http://framework.zend.com/manual/ja/zend.service.amazon.html<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://framework.zend.com/manual/ja/zend.service.amazon.html', '_blank');" /></a></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>Wikipedia API
+<a class="ext" href="http://wikipedia.simpleapi.net/" rel="nofollow">http://wikipedia.simpleapi.net/<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://wikipedia.simpleapi.net/', '_blank');" /></a></li></ul>
+
+<h3 id="h3_content_1_11">第11章  <a class="anchor_super" id="c095026b"></a> <a class="anchor_super" href="index.php?cmd=edit&amp;page=%25E3%2583%25AA%25E3%2583%25B3%25E3%2582%25AF%25E9%259B%2586&amp;id=c095026b"><img src="image/plus/paraedit.png" width="9" height="9" alt="Edit" title="Edit" /></a></h3>
+
+<h3 id="h3_content_1_12">第12章  <a class="anchor_super" id="c154cac3"></a> <a class="anchor_super" href="index.php?cmd=edit&amp;page=%25E3%2583%25AA%25E3%2583%25B3%25E3%2582%25AF%25E9%259B%2586&amp;id=c154cac3"><img src="image/plus/paraedit.png" width="9" height="9" alt="Edit" title="Edit" /></a></h3>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>PHPマニュアル「Mcrypt 暗号化 関数」
+<a class="ext" href="http://jp2.php.net/manual/ja/ref.mcrypt.php" rel="nofollow">http://jp2.php.net/manual/ja/ref.mcrypt.php<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://jp2.php.net/manual/ja/ref.mcrypt.php', '_blank');" /></a></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>Windows 版のImageMagick のダウンロード
+<a class="ext" href="http://www.imagemagick.net/www/binaryreleases.html#windows" rel="nofollow">http://www.imagemagick.net/www/binaryreleases.html#windows<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://www.imagemagick.net/www/binaryreleases.html#windows', '_blank');" /></a>
+→ 変更されました
+<a class="ext" href="http://www.imagemagick.net/script/binary-releases.php#windows" rel="nofollow">http://www.imagemagick.net/script/binary-releases.php#windows<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://www.imagemagick.net/script/binary-releases.php#windows', '_blank');" /></a></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>IPAフォントのダウンロード
+<a class="ext" href="http://ossipedia.ipa.go.jp/ipafont/" rel="nofollow">http://ossipedia.ipa.go.jp/ipafont/<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://ossipedia.ipa.go.jp/ipafont/', '_blank');" /></a></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>文字エンコードの一覧
+<a class="ext" href="http://www.iana.org/assignments/character-sets" rel="nofollow">http://www.iana.org/assignments/character-sets<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://www.iana.org/assignments/character-sets', '_blank');" /></a></li></ul>
+
+<h3 id="h3_content_1_13">第13章  <a class="anchor_super" id="ec5be998"></a> <a class="anchor_super" href="index.php?cmd=edit&amp;page=%25E3%2583%25AA%25E3%2583%25B3%25E3%2582%25AF%25E9%259B%2586&amp;id=ec5be998"><img src="image/plus/paraedit.png" width="9" height="9" alt="Edit" title="Edit" /></a></h3>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>PHPマニュアル「time」
+<a class="ext" href="http://jp2.php.net/manual/ja/function.time.php" rel="nofollow">http://jp2.php.net/manual/ja/function.time.php<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://jp2.php.net/manual/ja/function.time.php', '_blank');" /></a></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>PHPマニュアル「date」
+<a class="ext" href="http://jp2.php.net/manual/ja/function.date.php" rel="nofollow">http://jp2.php.net/manual/ja/function.date.php<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://jp2.php.net/manual/ja/function.date.php', '_blank');" /></a></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>PHPマニュアル「header]
+<a class="ext" href="http://jp2.php.net/manual/ja/function.header.php" rel="nofollow">http://jp2.php.net/manual/ja/function.header.php<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://jp2.php.net/manual/ja/function.header.php', '_blank');" /></a></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>PHPマニュアル「セーフモード」（open_basedir）
+<a class="ext" href="http://jp2.php.net/manual/ja/features.safe-mode.php" rel="nofollow">http://jp2.php.net/manual/ja/features.safe-mode.php<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://jp2.php.net/manual/ja/features.safe-mode.php', '_blank');" /></a></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>PHPマニュアル「fopen」
+<a class="ext" href="http://jp2.php.net/manual/ja/function.fopen.php" rel="nofollow">http://jp2.php.net/manual/ja/function.fopen.php<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://jp2.php.net/manual/ja/function.fopen.php', '_blank');" /></a></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>PHPマニュアル「unlink」
+<a class="ext" href="http://jp2.php.net/manual/ja/function.unlink.php" rel="nofollow">http://jp2.php.net/manual/ja/function.unlink.php<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://jp2.php.net/manual/ja/function.unlink.php', '_blank');" /></a></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>PHPマニュアル「uniqid」
+<a class="ext" href="http://jp2.php.net/manual/ja/function.uniqid.php" rel="nofollow">http://jp2.php.net/manual/ja/function.uniqid.php<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://jp2.php.net/manual/ja/function.uniqid.php', '_blank');" /></a></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>PHPマニュアル「highlight_string」
+<a class="ext" href="http://jp2.php.net/manual/ja/function.highlight-string.php" rel="nofollow">http://jp2.php.net/manual/ja/function.highlight-string.php<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://jp2.php.net/manual/ja/function.highlight-string.php', '_blank');" /></a></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>PHPマニュアル「nl2br」
+<a class="ext" href="http://jp2.php.net/manual/ja/function.nl2br.php" rel="nofollow">http://jp2.php.net/manual/ja/function.nl2br.php<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://jp2.php.net/manual/ja/function.nl2br.php', '_blank');" /></a></li></ul>
+
+<h3 id="h3_content_1_14">付録B  <a class="anchor_super" id="ca3d66d4"></a> <a class="anchor_super" href="index.php?cmd=edit&amp;page=%25E3%2583%25AA%25E3%2583%25B3%25E3%2582%25AF%25E9%259B%2586&amp;id=ca3d66d4"><img src="image/plus/paraedit.png" width="9" height="9" alt="Edit" title="Edit" /></a></h3>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>PHPマニュアル
+<a class="ext" href="http://www.php.net/manual/ja/" rel="nofollow">http://www.php.net/manual/ja/<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://www.php.net/manual/ja/', '_blank');" /></a></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>CodeIgniterユーザガイド
+<a class="ext" href="http://codeigniter.com/user_guide/" rel="nofollow">http://codeigniter.com/user_guide/<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://codeigniter.com/user_guide/', '_blank');" /></a></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>CodeIgniter ユーザガイド 日本語版 Version 1.5.4
+<a class="ext" href="http://userguide.cilab.info/" rel="nofollow">http://userguide.cilab.info/<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://userguide.cilab.info/', '_blank');" /></a></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>Rapyd SA
+<a class="ext" href="http://www.rapyd.com/" rel="nofollow">http://www.rapyd.com/<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://www.rapyd.com/', '_blank');" /></a></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>Kohana
+<a class="ext" href="http://kohanaphp.com/" rel="nofollow">http://kohanaphp.com/<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://kohanaphp.com/', '_blank');" /></a></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>ユーザ会Web サイト
+<a class="ext" href="http://codeigniter.jp/" rel="nofollow">http://codeigniter.jp/<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://codeigniter.jp/', '_blank');" /></a></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>ユーザ会ML
+<a class="ext" href="http://lists.sourceforge.jp/mailman/listinfo/codeigniter-users" rel="nofollow">http://lists.sourceforge.jp/mailman/listinfo/codeigniter-users<img src="image/plus/ext.png" alt="" title="" class="ext" onclick="return open_uri('http://lists.sourceforge.jp/mailman/listinfo/codeigniter-users', '_blank');" /></a></li></ul>
+<!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+ <rdf:Description
+   rdf:about="http://codeigniter.jp/tettei/index.php?%E3%83%AA%E3%83%B3%E3%82%AF%E9%9B%86"
+   dc:identifier="http://codeigniter.jp/tettei/index.php?%E3%83%AA%E3%83%B3%E3%82%AF%E9%9B%86"
+   dc:title="リンク集"
+   trackback:ping="http://codeigniter.jp/tettei/index.php?tb_id=61e2afc32b84b352bfa9cf43a5f5429c" />
+</rdf:RDF>
+-->   </div>
+  </div>
+ </div>
+  <div style="clear:both;height:1em;"></div>
+ <div id="logo"><a href="index.php" style="background-image: url(image/pukiwiki.plus_logo_trans.png);"></a></div>
+ <div id="personal"><ul><li id="login"><a href="http://codeigniter.jp/tettei/index.php?cmd=login&amp;page=%E3%83%AA%E3%83%B3%E3%82%AF%E9%9B%86">ログインまたはアカウント作成</a></li></ul></div>
+ <div id="footer">
+  <div id="f-officialico">
+   <a href="http://pukiwiki.cafelounge.net/plus/"><img src="image/pukiwiki-plus.png" alt="PukiWikiPlus" /></a>
+  </div>
+  <div id="f-officialdevico">
+   <a href="http://pukiwiki.cafelounge.net/plus/"><img src="image/pukiwiki-plus.dev.png" alt="PukiWikiPlus-dev" /></a>
+  </div>
+  <div id="f-list">
+   <ul><li id="lastmod">Last-modified: Tue, 19 May 2009 15:12:47 JST  (2844d)</li><li>Site admin: <a href="index.html">anonymous</a></li>    <li>convert time: 0.071 sec</li>
+    <li>Powered by PukiWiki</li>
+    <li><a href="http://lsx.sourceforge.jp/?monobook">Monobook for PukiWiki Plus! i18n</a></li>
+   </ul>
+  </div>
+  <div style="clear:both;"></div>
+ </div>
+</div>
+</body>
+</html>

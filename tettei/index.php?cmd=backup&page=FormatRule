@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja-JP">
+
+<head>
+ <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+ <meta name="robots" content="NOINDEX,NOFOLLOW" /> <meta http-equiv="Content-Script-Type" content="text/javascript" />
+ <title>FormatRule のバックアップ一覧 - CodeIgniter Memo</title>
+ <link rel="stylesheet" type="text/css" media="screen" href="skin/monobook/monobook.css" />
+ <link rel="stylesheet" type="text/css" media="print" href="skin/monobook/monobook.print.css" />
+ <link rel="alternate" type="application/rss+xml" title="RSS" href="index.php?cmd=rss" />
+ <script type="text/javascript">
+ <!--
+var SKIN_DIR="skin/";
+var IMAGE_DIR="image/";
+var DEFAULT_LANG="ja_JP";
+var LANG="ja_JP";
+ // -->
+ </script>
+ <script type="text/javascript" src="skin/lang/ja_JP.js"></script>
+ <script type="text/javascript" src="skin/default.js"></script>
+ <script type="text/javascript" src="skin/ajax/textloader.js"></script>
+ <script type="text/javascript" src="skin/ajax/glossary.js"></script>
+ <script type="text/javascript" src="skin/tzCalculation_LocalTimeZone.js"></script>
+</head>
+<body>
+<div id="globalWrapper">
+ <div id="menubar"><h4 id="h4_content_1_0">ナビゲーション</h4><div class="menubox"><ul class="menu"><li><a href="https://github.com/codeigniter-jp/codeigniter-tettei-note" rel="nofollow">『CodeIgniter徹底入門』に対するノート</a></li><li><a href="http://www.seshop.com/book/errata/9185/list" rel="nofollow">正誤情報</a></li><li><a href="index.php?%25E3%2583%25AA%25E3%2583%25B3%25E3%2582%25AF%25E9%259B%2586" title="リンク集 (2844d)">リンク集</a></li><li><a href="index.php?%25E3%2582%25B5%25E3%2583%25B3%25E3%2583%2597%25E3%2583%25AB%25E3%2582%25B3%25E3%2583%25BC%25E3%2583%2589%25E3%2583%2580%25E3%2582%25A6%25E3%2583%25B3%25E3%2583%25AD%25E3%2583%25BC%25E3%2583%2589" title="サンプルコードダウンロード (623d)">サンプルコードダウンロード</a></li><li><a href="index.php?%25E8%25AA%25AD%25E8%2580%2585%25E3%2581%25AE%25E5%25A3%25B0" title="読者の声 (3144d)">読者の声</a></li><li><a href="http://codeigniter.jp/" rel="nofollow">日本CodeIgniterユーザ会</a></li></ul></div><h4 id="h4_content_1_1">広告</h4><iframe src="http://rcm-jp.amazon.co.jp/e/cm?t=bandnavi08-22&o=9&p=8&l=as1&asins=4798116769&fc1=000000&IS2=1&lt1=_blank&lc1=0000FF&bc1=000000&bg1=FFFFFF&f=ifr" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe><h4 id="h4_content_1_2">検索</h4><div class="monobook_search"><form action="index.php" method="get">
+<div><input type="hidden" name="encode_hint" value="ぷ" /></div><div><input type="hidden" name="encode_hint" value="ぷ" /></div> <div>  <input type="hidden" name="cmd" value="search" />  <input class="searchInput" type="text"  name="word" value="" size="20" />  <input type="hidden" name="type" id="_p_search_AND" value="AND"  checked="checked" />  &nbsp;<input class="searchButton" type="submit" value="Search" /> </div></form></div><h4 id="h4_content_1_3">ツールボックス</h4><div class="toolbox"><ul><li><a href="index.php?cmd=backup&amp;page=FormatRule">バックアップの表示</a></li><li><a href="index.php?plugin=related&amp;page=FormatRule">リンク元</a></li><li><a href="index.php?RecentChanges">最近更新したページ</a></li><li><a href="index.php?cmd=list">全ページ</a></li><li><a href="index.php?cmd=help">ヘルプ</a></li></ul></div><h5>recent(5)</h5><div class="monobook_recent"><strong>2015-09-03</strong><ul class="recent_list"> <li><a href="index.php?%25E3%2580%258ECodeIgniter%25E5%25BE%25B9%25E5%25BA%2595%25E5%2585%25A5%25E9%2596%2580%25E3%2580%258F%25E6%2583%2585%25E5%25A0%25B1%25E3%2583%259A%25E3%2583%25BC%25E3%2582%25B8" title="『CodeIgniter徹底入門』情報ページ (546d)">『CodeIgniter徹底入門』情報ページ</a></li> <li><a href="index.php?MenuBar" title="MenuBar (546d)">MenuBar</a></li></ul><strong>2015-06-18</strong><ul class="recent_list"> <li><a href="index.php?%25E3%2582%25B5%25E3%2583%25B3%25E3%2583%2597%25E3%2583%25AB%25E3%2582%25B3%25E3%2583%25BC%25E3%2583%2589%25E3%2583%2580%25E3%2582%25A6%25E3%2583%25B3%25E3%2583%25AD%25E3%2583%25BC%25E3%2583%2589" title="サンプルコードダウンロード (623d)">サンプルコードダウンロード</a></li></ul><strong>2009-05-19</strong><ul class="recent_list"> <li><a href="index.php?%25E3%2583%25AA%25E3%2583%25B3%25E3%2582%25AF%25E9%259B%2586" title="リンク集 (2844d)">リンク集</a></li></ul><strong>2008-07-22</strong><ul class="recent_list"> <li><a href="index.php?%25E8%25AA%25AD%25E8%2580%2585%25E3%2581%25AE%25E5%25A3%25B0" title="読者の声 (3144d)">読者の声</a></li></ul></div></div>
+ <div id="mainColumnWrapper">
+  <div id="main-column">
+   <div id="navigator"><ul><li id="wn_main" class="selected"><a href="index.php?FormatRule" title="FormatRule (3607d)">本文</a></li><li id="wn_note" class="noexists"><a href="index.php?cmd=wikinote&amp;page=note%252FFormatRule">ノート</a></li><li class="selected"><a href="index.php?cmd=backup&amp;page=FormatRule">バックアップ</a></li><li><a href="index.php?cmd=diff&amp;page=FormatRule">差分</a></li></ul></div>
+   <div id="content">
+    <h1 class="firstHeading">FormatRule のバックアップ一覧</h1><div id="contentSub"></div>
+    <ul>
+ <li><a href="http://codeigniter.jp/tettei/index.php?cmd=backup">バックアップ一覧</a>
+  <ul>
+   <li><a href="index.php?FormatRule" title="FormatRule (3607d)">FormatRule</a> のバックアップはありません。</li>
+  </ul>
+ </li>
+</ul>   </div>
+  </div>
+ </div>
+  <div style="clear:both;height:1em;"></div>
+ <div id="logo"><a href="index.php" style="background-image: url(image/pukiwiki.plus_logo_trans.png);"></a></div>
+ <div id="personal"><ul><li id="login"><a href="http://codeigniter.jp/tettei/index.php?cmd=login&amp;page=FormatRule">ログインまたはアカウント作成</a></li></ul></div>
+ <div id="footer">
+  <div id="f-officialico">
+   <a href="http://pukiwiki.cafelounge.net/plus/"><img src="image/pukiwiki-plus.png" alt="PukiWikiPlus" /></a>
+  </div>
+  <div id="f-officialdevico">
+   <a href="http://pukiwiki.cafelounge.net/plus/"><img src="image/pukiwiki-plus.dev.png" alt="PukiWikiPlus-dev" /></a>
+  </div>
+  <div id="f-list">
+   <ul><li>Site admin: <a href="index.html">anonymous</a></li>    <li>convert time: 0.002 sec</li>
+    <li>Powered by PukiWiki</li>
+    <li><a href="http://lsx.sourceforge.jp/?monobook">Monobook for PukiWiki Plus! i18n</a></li>
+   </ul>
+  </div>
+  <div style="clear:both;"></div>
+ </div>
+</div>
+</body>
+</html>

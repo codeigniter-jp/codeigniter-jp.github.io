@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja-JP">
+
+<head>
+ <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+ <meta name="robots" content="NOINDEX,NOFOLLOW" /> <meta http-equiv="Content-Script-Type" content="text/javascript" />
+ <title>Help の変更点 - CodeIgniter Memo</title>
+ <link rel="stylesheet" type="text/css" media="screen" href="skin/monobook/monobook.css" />
+ <link rel="stylesheet" type="text/css" media="print" href="skin/monobook/monobook.print.css" />
+ <link rel="alternate" type="application/rss+xml" title="RSS" href="index.php?cmd=rss" />
+ <script type="text/javascript">
+ <!--
+var SKIN_DIR="skin/";
+var IMAGE_DIR="image/";
+var DEFAULT_LANG="ja_JP";
+var LANG="ja_JP";
+ // -->
+ </script>
+ <script type="text/javascript" src="skin/lang/ja_JP.js"></script>
+ <script type="text/javascript" src="skin/default.js"></script>
+ <script type="text/javascript" src="skin/ajax/textloader.js"></script>
+ <script type="text/javascript" src="skin/ajax/glossary.js"></script>
+ <script type="text/javascript" src="skin/tzCalculation_LocalTimeZone.js"></script>
+</head>
+<body>
+<div id="globalWrapper">
+ <div id="menubar"><h4 id="h4_content_1_0">ナビゲーション</h4><div class="menubox"><ul class="menu"><li><a href="https://github.com/codeigniter-jp/codeigniter-tettei-note" rel="nofollow">『CodeIgniter徹底入門』に対するノート</a></li><li><a href="http://www.seshop.com/book/errata/9185/list" rel="nofollow">正誤情報</a></li><li><a href="index.php?%25E3%2583%25AA%25E3%2583%25B3%25E3%2582%25AF%25E9%259B%2586" title="リンク集 (2844d)">リンク集</a></li><li><a href="index.php?%25E3%2582%25B5%25E3%2583%25B3%25E3%2583%2597%25E3%2583%25AB%25E3%2582%25B3%25E3%2583%25BC%25E3%2583%2589%25E3%2583%2580%25E3%2582%25A6%25E3%2583%25B3%25E3%2583%25AD%25E3%2583%25BC%25E3%2583%2589" title="サンプルコードダウンロード (623d)">サンプルコードダウンロード</a></li><li><a href="index.php?%25E8%25AA%25AD%25E8%2580%2585%25E3%2581%25AE%25E5%25A3%25B0" title="読者の声 (3144d)">読者の声</a></li><li><a href="http://codeigniter.jp/" rel="nofollow">日本CodeIgniterユーザ会</a></li></ul></div><h4 id="h4_content_1_1">広告</h4><iframe src="http://rcm-jp.amazon.co.jp/e/cm?t=bandnavi08-22&o=9&p=8&l=as1&asins=4798116769&fc1=000000&IS2=1&lt1=_blank&lc1=0000FF&bc1=000000&bg1=FFFFFF&f=ifr" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe><h4 id="h4_content_1_2">検索</h4><div class="monobook_search"><form action="index.php" method="get">
+<div><input type="hidden" name="encode_hint" value="ぷ" /></div><div><input type="hidden" name="encode_hint" value="ぷ" /></div> <div>  <input type="hidden" name="cmd" value="search" />  <input class="searchInput" type="text"  name="word" value="" size="20" />  <input type="hidden" name="type" id="_p_search_AND" value="AND"  checked="checked" />  &nbsp;<input class="searchButton" type="submit" value="Search" /> </div></form></div><h4 id="h4_content_1_3">ツールボックス</h4><div class="toolbox"><ul><li><a href="index.php?cmd=backup&amp;page=Help">バックアップの表示</a></li><li><a href="index.php?plugin=related&amp;page=Help">リンク元</a></li><li><a href="index.php?RecentChanges">最近更新したページ</a></li><li><a href="index.php?cmd=list">全ページ</a></li><li><a href="index.php?cmd=help">ヘルプ</a></li></ul></div><h5>recent(5)</h5><div class="monobook_recent"><strong>2015-09-03</strong><ul class="recent_list"> <li><a href="index.php?%25E3%2580%258ECodeIgniter%25E5%25BE%25B9%25E5%25BA%2595%25E5%2585%25A5%25E9%2596%2580%25E3%2580%258F%25E6%2583%2585%25E5%25A0%25B1%25E3%2583%259A%25E3%2583%25BC%25E3%2582%25B8" title="『CodeIgniter徹底入門』情報ページ (546d)">『CodeIgniter徹底入門』情報ページ</a></li> <li><a href="index.php?MenuBar" title="MenuBar (546d)">MenuBar</a></li></ul><strong>2015-06-18</strong><ul class="recent_list"> <li><a href="index.php?%25E3%2582%25B5%25E3%2583%25B3%25E3%2583%2597%25E3%2583%25AB%25E3%2582%25B3%25E3%2583%25BC%25E3%2583%2589%25E3%2583%2580%25E3%2582%25A6%25E3%2583%25B3%25E3%2583%25AD%25E3%2583%25BC%25E3%2583%2589" title="サンプルコードダウンロード (623d)">サンプルコードダウンロード</a></li></ul><strong>2009-05-19</strong><ul class="recent_list"> <li><a href="index.php?%25E3%2583%25AA%25E3%2583%25B3%25E3%2582%25AF%25E9%259B%2586" title="リンク集 (2844d)">リンク集</a></li></ul><strong>2008-07-22</strong><ul class="recent_list"> <li><a href="index.php?%25E8%25AA%25AD%25E8%2580%2585%25E3%2581%25AE%25E5%25A3%25B0" title="読者の声 (3144d)">読者の声</a></li></ul></div></div>
+ <div id="mainColumnWrapper">
+  <div id="main-column">
+   <div id="navigator"><ul class="specialbg"><li id="wn_main" class="selected"><a href="index.php?cmd=help" title="Help (3607d)">本文</a></li><li id="wn_note" class="noexists"><a href="index.php?cmd=wikinote&amp;page=note%252FHelp">ノート</a></li><li><a href="http://codeigniter.jp/tettei/index.php?cmd=revert&amp;page=Help">この版へ差し戻し</a></li><li class="selected"><a href="index.php?cmd=diff&amp;page=Help">差分</a></li></ul></div>
+   <div id="content" class="specialbg">
+    <h1 class="firstHeading">Help の変更点</h1><div id="contentSub"></div>
+    <ul>
+<li>追加された行は<span class="diff_added">この色</span>です。</li>
+<li>削除された行は<span class="diff_removed">この色</span>です。</li>
+ <li><a href="index.php?cmd=help">Help</a> へ行く。</li>
+</ul>
+<hr class="full_hr" /><pre><span class="diff_added">#multilang(ja){{
+TITLE:ヘルプ
+#norelated
+* [[PukiWiki]]ヘルプ [#s14a5adf]
+
+- [[FAQ(pukiwiki.org)&gt;pukiwiki:FAQ]](日本語)
+- [[テキスト整形のルール&gt;整形ルール]] 
+- [[プラグインマニュアル&gt;PukiWiki/1.4/Manual/Plugin]] 
+----------------------------
+#contents
+----------------------------
+** [[PukiWiki]] って 何なの? [#vf801b51]
+すべてのページが誰でも編集できます。変更したいページでページ上部の「編集」をクリックするとそのページが編集できます。編集内容は、整形ルールに従って整形されます。
+
+[[練習用ページ&gt;SandBox]]は基本的にどのように手を加えても問題ないので、結果を恐れず編集してみてください。
+
+** 新しいページを作成するには? [#n2c2eb75]
+すでにあるページ(例えば[[練習用ページ&gt;SandBox]]など)で、ページのどこかにWikiName(大文字と小文字混合)かBracketName([[]]で囲う)を入力すると入力した部分の後ろに ? というリンクがつきます。そこをクリックすると新しいページの編集画面が用意されるので、あとは普通のページ変更と同様に書き込むことができます。
+
+** リンクについてる(3m)とかは? [#aeb02253]
+3mは3分前くらい、5hは5時間前くらい、8dは8日前くらいに更新された、という意味です。
+
+** 掲示板と違う? [#qf09daf7]
+ページに手を加えても誰がその変更をしたかわからなくなります。不安な場合は、手を加えた部分に自分の名前を書いておきましょう。 -- [[hogehoge]] ←こんなかんじで。
+
+** 誰かが書き込みを書き換えてしまう? [#k1149f33]
+Wikiとはそういうものです。誰でもどこでも書き加えたり、直したりできます。PukiWikiには定期的にバックアップを取る機能がありますので、バックアップから復旧させることもできます。
+
+** ブラウザやプロクシのキャッシュで人の変更を消してしまわないだろうか? [#zee20d44]
+ページを編集する以上、編集時の状態から手を加える形になります。しかし、もし編集中に誰かが更新していてしまっていたらどうします? 安心してください。PukiWikiには、更新時のページの更新日時と元データの更新日時を比較して一緒かどうかチェックします。「更新の衝突」が起きた場合はそのページをリロードし、編集し直してください。
+}}
+
+#multilang(en){{
+#contents
+-[[FAQ(pukiwiki.org)&gt;pukiwiki:PukiWiki/FAQ]](Japanese)
+-[[Text Formatting Rule Abstract&gt;FormatRule]] (also included as the last part of this page)
+--[[Text Formatting Rule&gt;TextFormattingRule]] (now preparing. Please refer to pukiwiki.dev site: [[Text Formatting Rule:http://pukiwiki.sourceforge.jp/dev/index.php?cmd=read&amp;page=%3ACategoryDev%2FDocument%2FText%20Formatting%20Rule]].)
+-[[Plugin Help&gt;PluginHelp]]
+
+***What's PukiWiki? [#vf6f358a]
+Anyone can edit all of the pages((except for pages frozen by the administrators)) in the PukiWiki. You move to the page you want to edit, and click &quot;[ Edit ]&quot; at the top of the page. Then you can see a textfield, in which you can edit the descriptions of page.
+The edited content are formed by the [[FormatRule]].
+
+You can edit the page [[ForPractice]] in any way as a rule. So we advise you to try and edit a page!
+
+***How to make a new page [#neb8078e]
+If you write '''WikiName''' that includes two capitalized letters and '''BracketName''' enclosing [[]], the mark ''?'' appears at the tail of the written text strings. If you click the mark, the new page and the editable textfield are created, and you can modify the page the same way you usually edit a page.
+
+***What's the string attached to Links, such as &quot;(3m)&quot;? [#ab8c62f1]
+The string (3m) shows that the page was updated about 3 minites ago , (5h) means about 5 hours, and (8d) means  about 8 days.
+
+***Is this different from a BBS? [#q5170569]
+Yes, a little. If you modify a page, the page cannot show who was the modifier. So you can write your name near your changes. -- [[Developer Team]] ... like this.
+
+***Can someone remove all the descriptions in a page? [#k3570b93]
+Yes! In WikiClone, such as PukiWiki, anyone can dirty, remove, and even ruin pages. PukiWiki, however, can do periodical backups, so the bad attacks will be ineffective. It is possible to recover the attacked pages easily.  
+
+***Could the browser cache and proxy cancel my modifications? [#z07c55bf]
+If another person is editing the page you are editing, what happens? It's OK. PukiWiki checks the differences between the changes on the original page and your modifications, by comparing the date of the  updated original page with the date of your updated page. 
+
+In the case of conflict, you should reload the page you have edited and try to edit it again.
+
+#include(FormatRule)
+}}
+
+#multilang(zh_TW){{
+TITLE:求助
+#norelated
+* [[PukiWiki]]求助 [#fbb8c9aa]
+
+// -[[關於 PukiWiki&gt;About PukiWiki]](包含在本頁面的開頭部份)
+-[[原版的FAQ&gt;PukiWiki.org:FAQ]](日文)
+// -[[寫作語法&gt;FormatRule]] (也包含在本頁面的最後部份)
+-[[寫作語法&gt;FormatRule]]
+-[[插件說明&gt;PukiWiki/1.4/Manual/Plugin]] 
+----------------------------
+#contents
+----------------------------
+// #include(About PukiWiki)
+
+**什麼是 PukiWiki? [#qed4fb24]
+任何人都可以編輯所有在 PukiWiki 裡((除了被管理者封鎖的頁面外))的頁面。要編輯一個頁面時，請先移動到該頁面，點選上方工具列中的 &quot;[ 編輯 ]&quot; 鈕，然後您會看到一個文字編輯視窗，您可以在裡面編輯該頁面的內容。所有編輯的內容都會根據寫作語法中的規則被重新編排過。
+
+我們建議您可以先嘗試編輯 &quot;[[測試區]]&quot; 來練習寫作的語法及規則。
+
+**如何產生新的頁面? [#d0f9946d]
+如果您寫了一個 '''WikiName'''(包含了兩個大小寫混合的英文字)或是 '''BracketName'''(用[[]]包圍起來的)，那麼在該字串後面就會出現一個　''?'' 代表該連結的頁面尚未存在。若您點選該 ''?''，就會建立一個新頁面並會出現一個文字編輯視窗，您可以編輯該頁面就像平常編輯一般頁面時一樣。
+
+**連結後面附加的字串如 &quot;(3m)&quot; 代表什麼意思? [#pb87339c]
+字串 (3m) 表示該頁面在三分鐘前被更新過，(5h) 表示該頁面在五小時前被更新過，而 (8d) 則表示該頁面在八天前被更新過。
+
+**這和電子佈告欄(BBS)有什麼不同? [#h15d9a0d]
+是的，有一些不同。若您修改了一個頁面，該頁面無法顥示是誰修改的。所以您可以在您所變更的地方附近寫下您的名字。類似這樣 -- ([[Developer Team]])
+
+**任何一個人都可以移除一個頁面中的所有內容嗎? [#o95d9b93]
+是的！在 WikiClone 裡，例如 PukiWiki，任何人都可以污染、刪除甚至破壞頁面。然而，PukiWiki 可以定期的備份，所以這些不好的攻擊將會無效。因為我們可以很容易的復原那些被攻擊的頁面。
+
+**瀏覽器的快取(Cache)或是代理伺服器(Proxy)有沒有可能會取消掉我的修改? [#r7d487c9]
+若有其他人也在編輯你正在編輯的頁面時，會發生什麼事﹖這不會有影響。PukiWiki 會比較原來頁面更新的日期和您修改頁面更新的日期來檢查您所變更的頁面跟原來的頁面之間的差異。
+
+若遇到衝突的狀況時，您應該重新載入您已經編輯過的頁面，並嘗試再重新編輯一次。
+// #include(FormatRule)
+}}</span></pre>
+   </div>
+  </div>
+ </div>
+  <div style="clear:both;height:1em;"></div>
+ <div id="logo"><a href="index.php" style="background-image: url(image/pukiwiki.plus_logo_trans.png);"></a></div>
+ <div id="personal"><ul><li id="login"><a href="http://codeigniter.jp/tettei/index.php?cmd=login&amp;page=Help">ログインまたはアカウント作成</a></li></ul></div>
+ <div id="footer">
+  <div id="f-officialico">
+   <a href="http://pukiwiki.cafelounge.net/plus/"><img src="image/pukiwiki-plus.png" alt="PukiWikiPlus" /></a>
+  </div>
+  <div id="f-officialdevico">
+   <a href="http://pukiwiki.cafelounge.net/plus/"><img src="image/pukiwiki-plus.dev.png" alt="PukiWikiPlus-dev" /></a>
+  </div>
+  <div id="f-list">
+   <ul><li>Site admin: <a href="index.html">anonymous</a></li>    <li>convert time: 0.002 sec</li>
+    <li>Powered by PukiWiki</li>
+    <li><a href="http://lsx.sourceforge.jp/?monobook">Monobook for PukiWiki Plus! i18n</a></li>
+   </ul>
+  </div>
+  <div style="clear:both;"></div>
+ </div>
+</div>
+</body>
+</html>

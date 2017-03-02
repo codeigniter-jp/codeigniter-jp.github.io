@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE rss PUBLIC "-//Netscape Communications//DTD RSS 0.91//EN" "http://my.netscape.com/publish/formats/rss-0.91.dtd">
+<rss version="0.91">
+ <channel>
+  <title><![CDATA[CodeIgniter Memo]]></title>
+  <link>http://codeigniter.jp/tettei/index.php?RecentChanges</link>
+  <description><![CDATA[PukiWiki RecentChanges]]></description>
+  <language>ja_JP</language>
+
+<item>
+ <title>『CodeIgniter徹底入門』情報ページ</title>
+ <link>http://codeigniter.jp/tettei/index.php?%E3%80%8ECodeIgniter%E5%BE%B9%E5%BA%95%E5%85%A5%E9%96%80%E3%80%8F%E6%83%85%E5%A0%B1%E3%83%9A%E3%83%BC%E3%82%B8</link>
+ <description>Thu, 03 Sep 2015 14:22:27 JST</description>
+</item>
+<item>
+ <title>MenuBar</title>
+ <link>http://codeigniter.jp/tettei/index.php?MenuBar</link>
+ <description>Thu, 03 Sep 2015 14:20:30 JST</description>
+</item>
+<item>
+ <title>サンプルコードダウンロード</title>
+ <link>http://codeigniter.jp/tettei/index.php?%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB%E3%82%B3%E3%83%BC%E3%83%89%E3%83%80%E3%82%A6%E3%83%B3%E3%83%AD%E3%83%BC%E3%83%89</link>
+ <description>Thu, 18 Jun 2015 16:41:48 JST</description>
+</item>
+<item>
+ <title>リンク集</title>
+ <link>http://codeigniter.jp/tettei/index.php?%E3%83%AA%E3%83%B3%E3%82%AF%E9%9B%86</link>
+ <description>Tue, 19 May 2009 15:12:47 JST</description>
+</item>
+<item>
+ <title>読者の声</title>
+ <link>http://codeigniter.jp/tettei/index.php?%E8%AA%AD%E8%80%85%E3%81%AE%E5%A3%B0</link>
+ <description>Tue, 22 Jul 2008 20:55:07 JST</description>
+</item>
+<item>
+ <title>RecentDeleted</title>
+ <link>http://codeigniter.jp/tettei/index.php?RecentDeleted</link>
+ <description>Mon, 09 Jun 2008 13:01:21 JST</description>
+</item>
+<item>
+ <title>FrontPage</title>
+ <link>http://codeigniter.jp/tettei/index.php?FrontPage</link>
+ <description>Mon, 05 May 2008 01:54:48 JST</description>
+</item>
+<item>
+ <title>InterWikiName</title>
+ <link>http://codeigniter.jp/tettei/index.php?InterWikiName</link>
+ <description>Mon, 05 May 2008 01:20:19 JST</description>
+</item>
+<item>
+ <title>Help</title>
+ <link>http://codeigniter.jp/tettei/index.php?Help</link>
+ <description>Tue, 17 Apr 2007 16:03:08 JST</description>
+</item>
+<item>
+ <title>FormatRule</title>
+ <link>http://codeigniter.jp/tettei/index.php?FormatRule</link>
+ <description>Tue, 17 Apr 2007 16:03:08 JST</description>
+</item>
+
+ </channel>
+</rss>
